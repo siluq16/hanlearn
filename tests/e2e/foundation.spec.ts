@@ -69,7 +69,13 @@ test("private pages and API fail closed without a session/config", async ({
   page,
   request,
 }) => {
-  for (const route of ["/dashboard", "/roadmap", "/vocabulary", "/settings"]) {
+  for (const route of [
+    "/dashboard",
+    "/roadmap",
+    "/vocabulary",
+    "/settings",
+    "/lessons/20000000-0000-4000-8000-000000000001",
+  ]) {
     await page.goto(route);
     await expect(page).toHaveURL(/\/(setup|login)$/);
   }

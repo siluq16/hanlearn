@@ -45,6 +45,10 @@ const sourceFiles = files.filter(
 for (const file of sourceFiles) {
   const source = readFileSync(file, "utf8");
   assert(
+    !/tests\/fixtures|lessonFixture|lesson-ui-harness/.test(source),
+    `Test fixture/harness reference in app source: ${file}`,
+  );
+  assert(
     !/SUPABASE_(SERVICE_ROLE|SECRET|DB_PASSWORD)/.test(source),
     `Forbidden runtime secret reference: ${file}`,
   );
@@ -69,6 +73,10 @@ function walk(dir) {
 if (existsSync(".next/static"))
   for (const file of walk(".next/static").filter((f) => f.endsWith(".js"))) {
     const text = readFileSync(file, "utf8");
+    assert(
+      !/lessonFixture|private-test-marker|SYNTHETIC LOCAL TEST/.test(text),
+      `Synthetic lesson fixture found in browser bundle ${file}`,
+    );
     for (const pattern of secretPatterns)
       assert(
         !pattern.test(text),

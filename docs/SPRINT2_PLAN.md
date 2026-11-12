@@ -1,6 +1,8 @@
 # Sprint 2 technical plan
 
-2026-11-12. **Planning only: no Sprint 2 feature, SQL migration or content import implemented.** Sprint 1 remains PARTIAL (SPRINT1_ACCEPTANCE.md). DOMAIN_CONTRACTS.md and SRS_SPEC.md remain authoritative. Proposed contracts and screens are specified separately in SPRINT2_API_CONTRACTS.md and SPRINT2_UI_SPEC.md.
+2026-11-12. **2.1 read-only implemented under separate approval; remaining steps planning only.** No SQL migration or content import. Sprint 1 remains PARTIAL (SPRINT1_ACCEPTANCE.md). DOMAIN_CONTRACTS.md and SRS_SPEC.md remain authoritative. Proposed contracts and screens are specified separately in SPRINT2_API_CONTRACTS.md and SPRINT2_UI_SPEC.md.
+
+Later scoped execution: the user separately approved **2.1 read-only only**, with the Sprint 1 blockers carried explicitly. That reader is now implemented; see [SPRINT2_1_VERIFICATION](SPRINT2_1_VERIFICATION.md) and [LESSON_CONTENT_V1](LESSON_CONTENT_V1.md). The planning baseline below is preserved. All mutation/quiz/SRS/planning/session/analytics/import steps remain unimplemented and require their own approval; 2.1 is not a release approval.
 
 ## Sequence and architecture
 

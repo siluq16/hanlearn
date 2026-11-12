@@ -28,6 +28,7 @@ Both are public configuration. App uses no database password/service-role key. N
 - Feature-based modular monolith: auth, dashboard, roadmap, vocabulary, settings.
 - Email/password login/logout, separate Supabase browser/server clients, SSR cookies and Proxy refresh; Auth revalidation and DB allowlist at every private server boundary.
 - Dashboard/HSK 1–5 roadmap, literal vocabulary search + HSK filter + pagination/detail; Settings profile persistence, fixed 60m/day and Vietnam timezone.
+- Sprint 2.1: `/lessons/[id]` read-only published lesson reader, strict Content V1, vocabulary/grammar joins, pinyin toggle, credits and saved progress. No learning writes or section audio signing. [Contract](docs/LESSON_CONTENT_V1.md) · [verification and blockers](docs/SPRINT2_1_VERIFICATION.md).
 - Responsive desktop sidebar/mobile nav, light/dark theme persisted on this browser, skeleton/empty/error states, safe short-lived audio endpoint.
 - Published content only through RLS. No curriculum was imported or invented; no full lesson/quiz/SRS UI in Sprint 1.
 
@@ -73,6 +74,8 @@ Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPME
 - [Sprint 1 final acceptance](docs/SPRINT1_ACCEPTANCE.md)
 - [Sprint 2 plan](docs/SPRINT2_PLAN.md), [API contracts](docs/SPRINT2_API_CONTRACTS.md), [UI specification](docs/SPRINT2_UI_SPEC.md), [pilot content plan](docs/PILOT_CONTENT_PLAN.md) — planning only
 - [Agent instructions](AGENTS.md)
+
+Read-only lesson UI tests: `npm run test:lessons:browser` uses actual components on a separate loopback-only synthetic harness, not an Auth shim or Cloud fixture route. `npm run test:lessons:catalog` compares exact selected fields against an existing trusted ignored Cloud catalog capture; it does not generate complete database types.
 
 No official HSK syllabus edition, content license, audio object or HelloChinese API has been verified. Synthetic test fixtures must never become published curriculum.
 
