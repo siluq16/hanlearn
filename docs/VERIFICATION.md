@@ -1,5 +1,7 @@
 # Verification — 2026-11-12
 
+This is preserved **Sprint 0 historical evidence**. Current no-Docker Cloud Development policy and new results: [SPRINT1_VERIFICATION](SPRINT1_VERIFICATION.md), [CLOUD_DEVELOPMENT](CLOUD_DEVELOPMENT.md). Historical local-Supabase blockers below do not require installing a container runtime now.
+
 ## Executed
 
 Windows PostgreSQL 18.4, isolated repository-local cluster on loopback port 55439. A new `hanlearn_test_<timestamp>` database for each native harness run; minimal test-only Auth/roles shim. No production connection or deployment. The server was stopped after testing. Ignored .local contains disposable local cluster/test data, not application assets.

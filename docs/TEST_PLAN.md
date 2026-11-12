@@ -1,5 +1,7 @@
 # Test plan and verification record
 
+Current Sprint 1 policy: Windows + Next.js local -> dedicated Supabase Cloud Development, **no Docker/local Supabase**. Preserve the Sprint 0 results below as historical evidence. Current results are in [SPRINT1_VERIFICATION](SPRINT1_VERIFICATION.md); target-specific approval and safe live checks in [CLOUD_DEVELOPMENT](CLOUD_DEVELOPMENT.md).
+
 ## Actual verification — 2026-11-12
 
 Environment: Windows, native PostgreSQL 18.4 at 127.0.0.1:55439 in repository-local ignored .local/pgdata; no access to an existing user database. Native harness creates a new disposable database, applies a minimal auth.users/auth.uid/roles shim, applies ordered migrations atomically per file, runs assertions and two-connection tests, then stops PostgreSQL.
@@ -10,7 +12,7 @@ Environment: Windows, native PostgreSQL 18.4 at 127.0.0.1:55439 in repository-lo
 - Synthetic fixtures are testing placeholders, not HSK vocabulary. Contract suite rolls back; concurrency fixture explicitly cleaned.
 - Native Auth shim is NOT Supabase. It cannot validate real JWT verification, cookies, PostgREST exposure or Storage.
 - Docker Desktop and Supabase CLI were not found. Full local Supabase reset/Auth/API/RLS/Storage checks have NOT run.
-- No frontend exists: browser reload, mobile UI, SSR and accessibility tests have NOT run.
+- At Sprint 0 no frontend existed: browser reload, mobile UI, SSR and accessibility tests had NOT run. See the separate Sprint 1 record for current results.
 - No pilot content/license/official syllabus has been verified or imported.
 
 ## Commands
@@ -30,19 +32,7 @@ Native supplementary database tests (requires PostgreSQL binaries, uses a fresh 
 
 Do not expose the native trust-auth cluster to a network; harness binds only 127.0.0.1. .local is ignored and must never be deployed/committed. Use separate OS-controlled test environment if running untrusted local processes. The auth shim is test-only, never a production/Supabase migration.
 
-Full local Supabase: install Docker Desktop with Linux containers and a current supported CLI using the [official instructions](https://supabase.com/docs/guides/local-development/cli/getting-started). Docker first needs to be running.
-
-```powershell
-supabase init
-# Review config: expose public/graphql_public only; disable public signup.
-supabase start
-supabase db reset --local
-$env:HANLEARN_TEST_DATABASE_URL = 'postgresql://postgres:postgres@127.0.0.1:54322/postgres'
-$env:HANLEARN_ALLOW_DB_TESTS = 'yes'
-node scripts/test-database.mjs
-```
-
-Database URL must be disposable loopback; never pass production. Do not run native_auth_shim.sql on Supabase. The shared suite inserts only minimal synthetic auth users and rolls back fixtures. API integration tests below require users created through real Auth, not just SQL fixtures.
+Supabase validation now targets an approved dedicated Cloud Development project, with no local stack. Follow CLOUD_DEVELOPMENT.md for CLI 3 remote history/dry-run, explicit approval and Auth/API tests. Do not run native_auth_shim.sql or the native fixture runner on Cloud. The native runner remains disposable loopback-only; live API tests use approved real Auth accounts and separately scoped isolated data.
 
 ## Executable SQL and concurrency coverage
 
@@ -82,9 +72,9 @@ Database URL must be disposable loopback; never pass production. Do not run nati
 
 The native suite uses new connections for concurrency and readback. Full browser reload/completed-lesson resume still needs the real app; SQL assertions alone are not an e2e result.
 
-## Required additional local Supabase/API tests
+## Required additional Cloud Development/API tests
 
-1. Reset from migrations with CLI; run shared suite against actual Supabase auth schema. Inspect API schema list/default grants as deployed.
+1. Review migration history/preflight/dry-run, obtain explicit project-specific approval, apply pending migrations without resets, and inspect actual schemas/grants. Keep the native fixture suite off Cloud; use separately approved integration data.
 2. Provision allowlisted A/B and outsider through Auth with confirmed email. Obtain real JWTs. Anonymous uses anon/publishable key only.
 3. REST every exposed table/view and RPC with each role. Assert 401/403 or empty results as appropriate, no owned record cross-read, no writable protected columns. Direct private schema/key URLs must fail even if client requests a different PostgREST profile.
 4. Use malicious RPC inputs: null/negative version, ratings outside 1–4, response time overflow, unknown UUID, other user's quiz attempt/session/task, invalid/foreign quiz question IDs. No side effects after any failure.
@@ -93,7 +83,7 @@ The native suite uses new connections for concurrency and readback. Full browser
 7. Signed audio URL request rechecks learner and current asset publication. Anonymous/other unauthorized users denied. Private bucket prevents unsigned access; enforce actual MIME/size, path ownership and license status.
 8. Restart local services and read completed lesson/cards/events/quiz result from a new authenticated session: identical persisted state.
 
-## Sprint 1 application tests (not runnable yet)
+## Remaining learning-loop tests (Sprint 2; no lesson/quiz/SRS UI in Sprint 1)
 
 - Auth SSR login/logout/expiry; protected routes and request origin/CSRF checks.
 - Complete study+quiz, reload page, close/open browser, resume from another authenticated tab; no lost progress, duplicate cards or retry reviews.
@@ -104,5 +94,9 @@ The native suite uses new connections for concurrency and readback. Full browser
 
 ## Release blockers
 
-Real local Supabase verification; configured verified private Auth; reviewed authorized pilot; actual private Storage objects/policies; API/JWT/e2e tests; operational backup/restore and secret handling. A native pass makes the SQL reviewable and runnable, not production-ready.
+Real Cloud Development verification after explicit approval; configured verified private Auth; reviewed authorized pilot; actual private Storage objects/policies; API/JWT/e2e tests; operational backup/restore and secret handling. A native pass makes the SQL reviewable and runnable, not production-ready.
+
+## Sprint 1 executable tests
+
+npm run typecheck, npm run lint, npm run test, npm run build, npm run test:e2e, npm run test:contracts and npm run test:security. Supabase CLI help/version checks are not integration tests. Browser suite currently exercises public/unconfigured flows on desktop/mobile; mocked authorization tests are labeled mocks. Actual login/session/Settings persistence with Cloud, authenticated catalog rendering and A/B isolation remain BLOCKED until approved credentials/target exist. The optional native suite now also executes supabase/tests/sprint1.sql without weakening the original 86 assertions.
 

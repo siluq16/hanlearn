@@ -19,3 +19,5 @@ Deferred: full exams, FSRS, AI, transcription, automatic HelloChinese sync, offl
 
 Sprint 1: migration/RLS validation + reviewed pilot import, Auth/profile, app shell, vocabulary/roadmap, one persisted lesson-to-quiz-to-SRS slice. Loading/empty/error/mobile/accessibility and reload persistence precede release.
 
+Sprint 1 execution update (2026-11-12): the user's approved first implementation is foundation, Supabase Cloud Development/Auth, Dashboard, roadmap, vocabulary/detail and Settings only. The lesson -> quiz -> SRS UI vertical slice moves to Sprint 2. Full MVP scope and database business rules above are unchanged. No Docker/local Supabase; real Cloud integration requires explicit target-specific approval. See CLOUD_DEVELOPMENT.md and SPRINT1_VERIFICATION.md.
+

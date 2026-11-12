@@ -61,3 +61,5 @@ daily_study_metrics and vocabulary_progress are security-invoker views. Other me
 
 Public RPCs: submit_review, set_card_status, mark_lesson_studied, start_quiz, submit_quiz, generate_daily_plan, update_task, start_timer, stop_timer, log_manual_session. Signatures in migrations. SQLSTATE PT404=not found, PT409=state/idempotency conflict, 22023=invalid input, 42501=unauthorized; future handlers map to 404/409/400/403. No user_id input. PostgreSQL errors must be mapped to safe messages in future handlers. No exam route in MVP.
 
+Sprint 1 adds only read RPCs: get_learner_access (existing verified-UUID predicate), get_due_review_count (database now(), eligible owned cards), search_vocabulary (literal substring, one published syllabus, exact introduced-level filter, offset/limit, true total even on empty pages). These are invoker functions and do not alter SRS/mastery/quiz/progress contracts. Settings persists the existing profile fields; theme is a local browser preference.
+

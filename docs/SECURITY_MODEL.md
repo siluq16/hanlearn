@@ -38,7 +38,7 @@ No account erasure implemented/executed in this task. Trigger exception checks c
 
 ## Release gates and residual risks
 
-- Test native PostgreSQL AND real local Supabase Auth/PostgREST/Storage; shim cannot verify JWT/cookies/schema exposure/default privileges.
+- Test native PostgreSQL AND explicitly approved Supabase Cloud Development Auth/PostgREST/Storage; shim cannot verify JWT/cookies/schema exposure/default privileges. Windows development uses no containers or local Supabase. Never reset/drop cloud databases.
 - Read-only catalog to all allowlisted learners is intentional; private-user records remain isolated.
 - Content provenance constraints check metadata, not truth of license/review. Operator verifies actual rights, raw imports and payloads (including absence of hidden answer fields).
 - Storage bucket/policy/signed URL endpoints not provisioned here. Do not publish/play production audio before these checks.
@@ -46,4 +46,12 @@ No account erasure implemented/executed in this task. Trigger exception checks c
 - Publish configuration, JWT/session refresh, CSRF/input limits, API error mapping, backups and restore drill remain Sprint 1/release checks.
 
 Primary basis: [Supabase database functions](https://supabase.com/docs/guides/database/functions), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security). Local execution results are in TEST_PLAN.
+
+## Sprint 1 application boundary
+
+Server getUser revalidates the current Auth identity/email confirmation; get_learner_access invokes the existing DB allowlist predicate through a read-only SECURITY INVOKER wrapper. No profile needed to check authorization. Proxy uses getClaims for refresh and forwards all refreshed cookies; pages/actions/handlers still check independently. Private data is dynamic/no-store and React cache is request-scoped only.
+
+Search RPC and due-count RPC are SECURITY INVOKER and inherit all existing RLS. Search text is a literal SQL parameter (not PostgREST filter syntax); limit/offset/level bounded. Due-count time comes from PostgreSQL. Settings writes only explicit allowed columns with server user ID. No SRS/quiz write UI or answer-key query in app. Theme persists per browser, not as a new account domain field.
+
+Public environment validation accepts only HTTPS project URLs and publishable keys; secret/legacy JWT keys rejected. Application code uses no privileged key. Audio signing uses the learner JWT and fails closed until actual private bucket/object policies are provisioned and verified. Live Cloud verification remains BLOCKED; static/unit tests are not a substitute.
 

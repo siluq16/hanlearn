@@ -39,12 +39,14 @@ No official vocabulary totals or calendar-to-proficiency promises asserted. Veri
 ## Delivery gates
 
 1. Contracts/migrations/grants and executable tests reviewed.
-2. Clean local Supabase reset; anonymous, second-user, API, retry/concurrency/rollback verification.
+2. Approved dedicated Supabase Cloud Development migrations; anonymous, second-user, Auth/JWT/API verification, plus isolated retry/concurrency/rollback tests. No Docker/local Supabase is used.
 3. Authorized pilot with 5–10 reviewed quiz questions per lesson.
 4. Persisted vertical slice, then remaining MVP.
 5. SSR/session, phone accessibility and private Storage tests.
 
 Full exams, FSRS, AI, offline and automatic HelloChinese wait until MVP is proven. Account erasure is an audited administrative operation, not card deletion.
+
+Sprint 1 execution is foundation/Auth/catalog/settings only. Lesson, mini-quiz and SRS UI are deferred to Sprint 2 by the user's latest scope. Next.js local connects to Cloud Development. No remote changes before explicit approval; absent credentials do not prevent local implementation and must result in PARTIAL status. See CLOUD_DEVELOPMENT.md.
 
 ## Primary references
 
