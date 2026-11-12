@@ -1,0 +1,67 @@
+{
+  "description": "Catalog reference for approved six migrations; excludes PG18 NOT NULL constraint rows (column not_null is checked); search_path=pg_catalog.",
+  "migrationHashes": [
+    {
+      "sha256": "A2454231EFE7334EA6B2B9417D4EDDD8143E47BB8B0367EAE8C6CBFC3868B154",
+      "file": "202611120001_catalog.sql"
+    },
+    {
+      "sha256": "8C88E6D1158B4E9455E146F9B910AB2C51A22625D713631A4A9F8AEACF6650F8",
+      "file": "202611120002_srs.sql"
+    },
+    {
+      "sha256": "D80152B6BC2B27874D3D2B196449BB0D6A43584EF16EA26E027EF038F01B8C7C",
+      "file": "202611120003_quiz.sql"
+    },
+    {
+      "sha256": "3D7E11CDC230E6C0577ACC905261BC2DDCB168FFD8615E8DDF795A13C083EDDF",
+      "file": "202611120004_plans_sessions.sql"
+    },
+    {
+      "sha256": "3912E078FB61936342B1BB3423DD34028D04AFC9C91766F4F6F6AC10DD4CB26C",
+      "file": "202611120005_learner_access.sql"
+    },
+    {
+      "sha256": "14201CAE8A6823A43A621B55953B5610C631B628F1FE73E59F1BDD49934A7FC7",
+      "file": "202611120006_catalog_queries.sql"
+    }
+  ],
+  "sections": {
+    "columns": {
+      "count": 230,
+      "sha256": "72244d5bd01c0dcad54cb9fc024e93ff062bbe41a6f95fae3e09d1bc74512630"
+    },
+    "indexes": {
+      "count": 51,
+      "sha256": "1cbc68dc9d87c906c86156118c61a93d78e3a8918beb544c419f30e43f4dfcd4"
+    },
+    "policies": {
+      "count": 26,
+      "sha256": "3d840ef36cdb2bd8e6e4778da5ed2f1547b0c349cfe105aca2c5ce624d165995"
+    },
+    "triggers": {
+      "count": 6,
+      "sha256": "62329ee3f8651ed83f8ca842a0915f5fa7b30a9f40aa92967704083ced674242"
+    },
+    "functions": {
+      "count": 30,
+      "sha256": "96c3217860c1bccd7abd7cda9ec42f898f0bfd6e723c064ce619d0e553517d48"
+    },
+    "relations": {
+      "count": 28,
+      "sha256": "c1d8480e8f0df9bf06e9f4ceb179114e8d281e8248cb4947687e9d99f4224836"
+    },
+    "constraints": {
+      "count": 149,
+      "sha256": "f5c407b4f96efca9a4c86116b83e05a8a943bafc2d10e408824beb5928c13609"
+    },
+    "table_privileges": {
+      "count": 56,
+      "sha256": "0ca38a9c6957628ab0491078e72901a09b39e0eea2678f3bb46e7d0beeb44e2d"
+    },
+    "column_privileges": {
+      "count": 460,
+      "sha256": "5af71cd734fe8c84027bac37ddf713ff6e101693675a6da7d3d2e4b98d4e87db"
+    }
+  }
+}

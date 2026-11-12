@@ -1,6 +1,6 @@
 # Sprint 1 — Foundation, Authentication & Cloud integration
 
-Date: 2026-11-12. **Status: PARTIAL.** Sprint 0 evidence remains in VERIFICATION.md. No Docker/local Supabase was used. No Cloud project/user/bucket/data was created or changed and no remote migration ran.
+Date: 2026-11-12. **Status: PARTIAL.** Sprint 0 evidence remains in VERIFICATION.md. The original implementation evidence below describes the initial run; the later approved Development migration outcome is appended at the end. No Docker/local Supabase was used.
 
 ## Implementation
 
@@ -95,3 +95,17 @@ Native tests use a disposable PostgreSQL cluster and minimal Auth shim ONLY for 
 Owner completes Cloud setup locally, reviews exact Development target/history/dry-run, then explicitly approves pending migrations and owner/test provisioning. After successful apply, inspect live schema and run real Auth/JWT/PostgREST/Storage and authenticated browser tests. Review/import authorized pilot content. Follow CLOUD_DEVELOPMENT.md; never reset/drop Cloud or send secrets to chat.
 
 Only then can Sprint 1 be marked COMPLETED. Sprint 2 order: read-only lesson content -> study confirmation + mini-quiz -> SRS card creation/review/retry UX -> daily-plan/manual time UI. Preserve atomic database operations and mastery separation throughout.
+
+## Approved Development migration follow-up — 2026-11-12, 21:26 +07
+
+The owner separately approved exactly migrations 001–006 for `hhgxrjqkuwdgurphopok` and ran the bounded Windows helper using hidden local password input. **Apply: PASS, all six recorded remotely. Full post-verification: BLOCKED.** See [CLOUD_MIGRATION_REPORT](CLOUD_MIGRATION_REPORT.md) for final history, hashes, object inventories and the precise verification limit. This follow-up supersedes the original no-remote-approval/no-schema statements above, without replacing their historical evidence or Sprint 0 results.
+
+- Fresh project/tenant/TLS verify-full, six hashes, empty history and exact-six dry-run passed before one CLI 3.1.0 `db push --remote=<approved pooler> --skip-vault`; no seeds/custom roles or Vault synchronization.
+- Read-only Cloud catalog matches the native reference for 28 relations (26 tables, two invoker views), 230 columns, 149 constraints including 39 FKs, 51 valid indexes, 26 policies, six triggers, and effective anon/authenticated table/column privileges. All 24 public base tables have RLS.
+- All 30 application functions match the expected signature/result, owner, SECURITY DEFINER flag, empty search_path and client EXECUTE metadata. Thirteen public wrappers are invokers; anon/PUBLIC cannot execute any application function.
+- The strict whole-schema function comparison stopped on an extra `public.rls_auto_enable()` event-trigger function. The preflight snapshot proves it already existed before apply. It is not created by these migrations. No function was ignored or changed to turn the original failed comparison green.
+- The later private-schema HTTP exposure check was **NOT RUN** after the stop. Schema API exposure and actual Auth/JWT/SSR isolation remain unverified. No Cloud command was issued after reviewing the failed verification result.
+- No Auth user, allowlist row, content, Storage bucket, seed, production change or Sprint 2 work was created. Local reporting fixes do not change Cloud schema. The original `.local/cloud-apply/result.json` is preserved.
+- Final local checks: 67 tests in 10 files PASS (including actual PowerShell 5.1 history-array regression); lint, typecheck, format:check, static contracts/security and git diff --check PASS. Six migration hashes and the generated SQL snapshot remain unchanged. These checks do not replace the pending Cloud acceptance checks.
+
+Owner authentication remains a separate provisioning step: disable public signup/anonymous sign-in, configure email/password and localhost redirects, create/invite and confirm the owner, then separately authorize adding only that verified UUID to `private.allowed_learners`. This task performed none of those changes. After provisioning, test real login/logout/refresh/reload, Settings persistence and direct anonymous/outsider/owner RPC access. Keep destructive/concurrency fixtures off Cloud in this scope.

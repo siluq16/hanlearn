@@ -2,6 +2,8 @@
 
 Current environment: Next.js local at http://localhost:3000 -> a dedicated Supabase Cloud Development project. No local Supabase/container runtime is needed or used. The existing native PostgreSQL/Auth-shim test is optional supplementary regression only, not the application backend.
 
+**2026-11-12 follow-up:** all six approved migrations were applied to `hhgxrjqkuwdgurphopok`. Post-verification stopped on a pre-existing extra event-trigger function; private Data API exposure remains unchecked. See [CLOUD_MIGRATION_REPORT](CLOUD_MIGRATION_REPORT.md). The fresh-install helpers below must not be rerun against this populated history. No owner account/allowlist/content was provisioned.
+
 ## 1. Project and public configuration (owner action)
 
 Create a separate Development project in Supabase Dashboard. Do not reuse Production. Choose its region and plan yourself; this task has not created resources or costs. Record its project reference privately so the migration target can be reviewed.
@@ -59,7 +61,7 @@ CLI 3.1.0's direct query path deliberately uses extended protocol (`queryMode: "
 
 The separate report [CLOUD_PREFLIGHT_REPORT](CLOUD_PREFLIGHT_REPORT.md) records actual local versus Cloud results. Do not run the apply command later in this general guide during a preflight-only task; stop after dry-run and seek separate project-specific approval.
 
-Installed npm dev dependency: Supabase CLI **3.1.0**. Its help was inspected locally. CLI v3 uses **--remote**, not the historical v2 --linked flag. Initial Sprint 1 did not execute any Cloud operation. The later preflight-only task has separate read-attempt/status evidence in CLOUD_PREFLIGHT_REPORT.md; no remote migration apply has been performed.
+Installed npm dev dependency: Supabase CLI **3.1.0**. Its help was inspected locally. CLI v3 uses **--remote**, not the historical v2 --linked flag. Initial Sprint 1 did not execute any Cloud operation. The later preflight-only task has separate evidence in CLOUD_PREFLIGHT_REPORT.md; the subsequent explicitly approved apply has separate evidence in CLOUD_MIGRATION_REPORT.md.
 
 Before proposing execution:
 
@@ -89,6 +91,8 @@ npx --no-install supabase db push --remote=$env:HANLEARN_APPROVED_DEV_PROJECT_RE
 ```
 
 After execution, check migration history AGAIN, table/RLS/grant state, function ownership/search_path and live Auth/PostgREST behavior. Exit code alone is not acceptance. Never reset/drop the cloud database. Keep the six migrations immutable once deployed.
+
+The bounded `scripts/cloud-apply.ps1 -ApplyApprovedSix` helper was used for this specific six-file approval. It pins hashes/project/CA, requires empty history, repeats dry-run and history checks, then allows one exact CLI apply with `--skip-vault --yes`; `--yes` consumes the existing explicit approval rather than authorizing extra scope. It defaults all other DB processes to READ ONLY and stops on any error. It is not an upgrade/retry tool. Reports are in ignored `.local/cloud-apply/`; do not rerun it to complete post-verification.
 
 ## 4. Public type generation
 
