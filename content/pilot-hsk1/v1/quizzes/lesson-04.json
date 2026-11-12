@@ -1,0 +1,125 @@
+{
+  "quiz": {
+    "id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+    "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+    "revision": 1,
+    "title": "Luyện tập bài 4 — bản nháp",
+    "published_at": null,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:4",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "questions": [
+    {
+      "id": "0a2c1d0a-1a1c-5584-8059-2fcc75ed8c95",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 1,
+      "prompt": "星期一 tương ứng ngày nào trong tuần?",
+      "choices": [
+        "Thứ Hai.",
+        "Chủ nhật.",
+        "Thứ Ba.",
+        "Thứ Bảy."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:1",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "2552f8cb-f9b0-5cea-ab30-71937c8544b8",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 2,
+      "prompt": "Chọn cách nói Chủ nhật được dạy trong bài.",
+      "choices": [
+        "星期七",
+        "星期六",
+        "星期天",
+        "星期五"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:2",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "eff3d559-eb5d-5d65-aea6-750f85b970a2",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 3,
+      "prompt": "五月三号 có nghĩa là ngày nào?",
+      "choices": [
+        "Ngày 5 tháng 3.",
+        "Ngày 3 tháng 5.",
+        "Ngày 3 tháng 3.",
+        "Ngày 5 tháng 5."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:3",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "48b4204d-18c7-52ac-9b2b-010f9cb011e6",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 4,
+      "prompt": "Câu nào hỏi ngày và tháng, không phải giờ hoặc thứ?",
+      "choices": [
+        "现在几点？",
+        "今天星期几？",
+        "你家有几口人？",
+        "今天几月几号？"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:4",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "9be0f982-ab43-5113-bc16-b025f778a83b",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 5,
+      "prompt": "Chọn cách nói 'bây giờ là hai giờ' trong mẫu cơ bản.",
+      "choices": [
+        "现在两点。",
+        "现在二月。",
+        "今天星期二。",
+        "现在三点。"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:5",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "a5bd22ed-b611-54c8-b3c7-d29c3f1f9419",
+      "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "sort_order": 6,
+      "prompt": "Ở tình huống giả định chỉ nói giờ đúng trên đồng hồ 12 giờ, 现在三点。 diễn đạt mốc nào?",
+      "choices": [
+        "5:00",
+        "2:00",
+        "3:00",
+        "4:00"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:6",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  ]
+}

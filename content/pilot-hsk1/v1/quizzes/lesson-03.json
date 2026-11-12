@@ -1,0 +1,125 @@
+{
+  "quiz": {
+    "id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+    "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+    "revision": 1,
+    "title": "Luyện tập bài 3 — bản nháp",
+    "published_at": null,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:3",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "questions": [
+    {
+      "id": "e80b9bac-ded5-5899-95a5-034d60d17dec",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 1,
+      "prompt": "Trong 我的家, 的 có vai trò gì?",
+      "choices": [
+        "Chỉ giờ.",
+        "Nối người sở hữu với danh từ.",
+        "Chỉ câu hỏi có/không.",
+        "Lời tạm biệt."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:1",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "c46b5ddf-12d7-549d-96e8-ed1bfb6d1e56",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 2,
+      "prompt": "Theo tình huống: 我家有三口人：爸爸、妈妈和我。 Gia đình nhân vật có bao nhiêu người?",
+      "choices": [
+        "Một.",
+        "Hai.",
+        "Ba.",
+        "Bốn."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:2",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "a88919fb-4ac3-55c6-b4e3-5bf038e2e94e",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 3,
+      "prompt": "Chọn câu hỏi số thành viên gia đình theo bài.",
+      "choices": [
+        "你家有几口人？",
+        "现在几点？",
+        "你叫什么名字？",
+        "你好吗？"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:3",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "7dca8e38-6482-5716-87f8-0086c6f02b93",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 4,
+      "prompt": "Chọn cách điền số hai vào 我有___个姐姐 theo mẫu đã học.",
+      "choices": [
+        "二",
+        "三",
+        "一",
+        "两"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:4",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "a9210b85-32ff-5ad7-bf21-ea9afe62171e",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 5,
+      "prompt": "Trong 爸爸和妈妈, 和 có nghĩa gì?",
+      "choices": [
+        "Không.",
+        "Và.",
+        "Mấy.",
+        "Là."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:5",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "cf4e0131-8a8d-5e76-a5d0-caac94400e89",
+      "quiz_id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "sort_order": 6,
+      "prompt": "Theo bản dịch của bài, 哥哥 và 姐姐 lần lượt là ai?",
+      "choices": [
+        "Bố và mẹ.",
+        "Mẹ và bố.",
+        "Chị gái và anh trai.",
+        "Anh trai và chị gái."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:6",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  ]
+}

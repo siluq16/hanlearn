@@ -1,0 +1,166 @@
+{
+  "id": "47097e01-9557-5f82-a84b-fba132cfca05",
+  "unit_id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+  "title": "今天星期几？ — Ngày tháng và thời gian",
+  "objective_vi": "Hỏi thứ, hỏi tháng/ngày và hỏi giờ đúng; dùng 星期天 cho Chủ nhật; phân biệt 二月、星期二 với 两点. Chỉ luyện phạm vi số đã học.",
+  "estimated_minutes": 30,
+  "sort_order": 4,
+  "status": "draft",
+  "review_status": "pending",
+  "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-04",
+  "content_license": "pending-rights-review",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "content": {
+    "version": 1,
+    "sections": [
+      {
+        "id": "l4-intro",
+        "title": "Mục tiêu và cách học",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Hỏi thứ, hỏi tháng/ngày và hỏi giờ đúng; dùng 星期天 cho Chủ nhật; phân biệt 二月、星期二 với 两点. Chỉ luyện phạm vi số đã học.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ôn 一、二、三、两 từ bài gia đình, sau đó học 四、五、六、七. 星期一 là thứ Hai; đến 星期六 là thứ Bảy. Chủ nhật dùng 星期天, không dùng 星期七.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ba đoạn luyện đọc dưới đây là ba tình huống giả định độc lập: thứ, ngày trong tháng và giờ. Không coi chúng là thông tin về ngày giờ hiện tại hoặc một lịch năm cụ thể.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Trong mẫu ngày tháng của bài, 月 đứng sau số tháng và 号 đứng sau số ngày. 五月三号 là ngày 3 tháng 5, không phải ngày 5 tháng 3.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Bài chỉ có giờ đúng, chưa xác định buổi sáng/chiều hoặc phút. Dùng 两点 cho hai giờ. 一 trong tên ngày/tháng thường giữ cách đọc yī; 一个 ở bài trước đọc yí ge.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l4-words",
+        "title": "Từ vựng mới và ôn lại",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "14303981-2984-5515-8609-95898457dd7c",
+          "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+          "ad545a62-ac16-5d78-ac42-377f56bc4716",
+          "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+          "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+          "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+          "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+          "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+          "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+          "a0c51256-1682-5c09-9736-7996bd8293f2",
+          "c390f103-ab57-531b-808b-e1c734509c22",
+          "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+          "04c5a876-74d3-5b7d-9cde-416352dcd276",
+          "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+          "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+          "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+          "a925741e-b594-59dc-8a10-ee8600a4caad",
+          "30dd26d7-593c-5002-b3de-e1fd35b87562"
+        ]
+      },
+      {
+        "id": "l4-grammar",
+        "title": "Mẫu câu từng bước",
+        "type": "grammar_refs",
+        "grammarIds": [
+          "dfd72859-fe60-5806-b445-6b49db3e4c00",
+          "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+          "a4cb6f03-db4b-5659-b9fc-7181e37ce472"
+        ]
+      },
+      {
+        "id": "l4-dialogue",
+        "title": "Ba tình huống thời gian độc lập",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "example",
+            "hanzi": "今天星期几？",
+            "pinyin": "Jīntiān xīngqī jǐ?",
+            "translationVi": "Tình huống A — hỏi: Hôm nay là thứ mấy?"
+          },
+          {
+            "type": "example",
+            "hanzi": "今天星期三。",
+            "pinyin": "Jīntiān xīngqīsān.",
+            "translationVi": "Tình huống A — đáp: Hôm nay là thứ Tư (giả định)."
+          },
+          {
+            "type": "example",
+            "hanzi": "今天几月几号？",
+            "pinyin": "Jīntiān jǐ yuè jǐ hào?",
+            "translationVi": "Tình huống B — hỏi: Hôm nay là ngày mấy tháng mấy?"
+          },
+          {
+            "type": "example",
+            "hanzi": "五月三号。",
+            "pinyin": "Wǔ yuè sān hào.",
+            "translationVi": "Tình huống B — đáp: Ngày 3 tháng 5 (giả định)."
+          },
+          {
+            "type": "example",
+            "hanzi": "现在几点？",
+            "pinyin": "Xiànzài jǐ diǎn?",
+            "translationVi": "Tình huống C — hỏi: Bây giờ là mấy giờ?"
+          },
+          {
+            "type": "example",
+            "hanzi": "现在两点。",
+            "pinyin": "Xiànzài liǎng diǎn.",
+            "translationVi": "Tình huống C — đáp: Bây giờ là hai giờ (giả định)."
+          }
+        ]
+      },
+      {
+        "id": "l4-listening",
+        "title": "Lời thoại để đọc — chưa có audio",
+        "type": "listening",
+        "audioAssetId": null,
+        "transcript": [
+          {
+            "type": "example",
+            "hanzi": "今天星期几？",
+            "pinyin": "Jīntiān xīngqī jǐ?",
+            "translationVi": "Tình huống A — hỏi: Hôm nay là thứ mấy?"
+          },
+          {
+            "type": "example",
+            "hanzi": "今天星期三。",
+            "pinyin": "Jīntiān xīngqīsān.",
+            "translationVi": "Tình huống A — đáp: Hôm nay là thứ Tư (giả định)."
+          }
+        ]
+      },
+      {
+        "id": "l4-review",
+        "title": "Tự ôn sau khi đọc",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Đọc ba câu hỏi thời gian và tự phân biệt chúng. Không dùng mẫu trong bài như ngày giờ thật; việc đọc đủ ngày 1–31 và tháng 1–12 cần học thêm số.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chưa có file audio được duyệt. Nội dung này do AI hỗ trợ tự biên soạn, đang chờ người kiểm tra tiếng Trung và quyền sử dụng; chưa được phát hành.",
+            "lang": "vi"
+          }
+        ]
+      }
+    ]
+  }
+}

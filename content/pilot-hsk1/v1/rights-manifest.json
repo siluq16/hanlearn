@@ -1,0 +1,40 @@
+{
+  "package_id": "hanlearn-pilot-hsk1-v1",
+  "review_state": "pending_review",
+  "declared_origin": "AI-assisted original Vietnamese teaching text, examples and quiz drafting",
+  "authoring_date": "2026-11-13",
+  "human_reviewer": null,
+  "human_reviewed_at": null,
+  "distribution_license": null,
+  "sources": [
+    {
+      "source_id": "cti-hsk-2025-11",
+      "uri": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+      "use": "Selected lexical membership/readings and grammar-category comparison only; no copied lessons or full list.",
+      "full_document_distributed": false,
+      "permission_state": "pending_review"
+    }
+  ],
+  "scopes": [
+    "Vietnamese explanations/translations",
+    "Original example sentences and fictional dialogues",
+    "Grammar presentation",
+    "Quiz prompts/distractors",
+    "Private explanations/answer-key management"
+  ],
+  "review_required": [
+    "Chinese language/pinyin/native naturalness",
+    "Rights/originality and permission for intended distribution",
+    "No proprietary HelloChinese or paid-textbook copying",
+    "Exact source edition/senses and supplemental labeling",
+    "Private answer storage/sharing/backups before approval"
+  ],
+  "third_party_lesson_text_copied": false,
+  "third_party_reference_facts_used": true,
+  "ai_assistance_disclosed": true,
+  "audio": {
+    "files": [],
+    "state": "unavailable_no_assets"
+  },
+  "publication_blocked": true
+}

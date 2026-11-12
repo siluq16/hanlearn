@@ -1,0 +1,290 @@
+[
+  {
+    "id": "2822b103-89dd-5819-b360-7315aef042b6",
+    "title": "Đại từ làm chủ ngữ",
+    "pattern": "我 / 你 + vị ngữ",
+    "explanation_vi": "我 là tôi, 你 là bạn. Trong các mẫu đầu tiên, đặt người được nói đến trước phần nói về người đó. Không dùng trật tự tiếng Việt để tự ý đảo các thành phần.",
+    "examples": [
+      {
+        "hanzi": "我很好。",
+        "pinyin": "Wǒ hěn hǎo.",
+        "translationVi": "Tôi khỏe."
+      },
+      {
+        "hanzi": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "translationVi": "Bạn có khỏe không?"
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:1",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+    "title": "Câu trần thuật với 很 và tính từ",
+    "pattern": "Chủ ngữ + 很 + 好",
+    "explanation_vi": "Dùng 我很好 để trả lời ngắn trong bài hỏi thăm. 很 có thể diễn đạt mức độ rất, nhưng trong mẫu tính từ đơn giản không nhất thiết cần nhấn mạnh như từ rất trong mọi câu tiếng Việt. Không thêm 是 vào trước 很好 ở mẫu này.",
+    "examples": [
+      {
+        "hanzi": "我很好。",
+        "pinyin": "Wǒ hěn hǎo.",
+        "translationVi": "Tôi khỏe."
+      },
+      {
+        "hanzi": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "translationVi": "Bạn có khỏe không?"
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:2",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+    "title": "Câu hỏi có/không với 吗 và hỏi tiếp bằng 呢",
+    "pattern": "Mệnh đề + 吗？ / Người được hỏi + 呢？",
+    "explanation_vi": "Thêm 吗 cuối câu trần thuật để hỏi có/không. Mẫu 你呢？ dùng khi nội dung câu hỏi đã rõ từ lượt nói trước, gần nghĩa còn bạn thì sao. Không thêm 呢 một cách tùy ý vào mọi câu hỏi.",
+    "examples": [
+      {
+        "hanzi": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "translationVi": "Bạn có khỏe không?"
+      },
+      {
+        "hanzi": "我很好，你呢？",
+        "pinyin": "Wǒ hěn hǎo, nǐ ne?",
+        "translationVi": "Tôi khỏe, còn bạn?"
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:3",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+    "title": "Giới thiệu tên với 叫",
+    "pattern": "Người + 叫 + tên",
+    "explanation_vi": "Dùng 我叫... để giới thiệu tên. Ở bài này, 小明 (Xiǎomíng) và 小红 (Xiǎohóng) là tên nhân vật hư cấu, không phải từ mới cần suy ra nghĩa hoặc nhãn HSK. Không thêm 是 trước 叫.",
+    "examples": [
+      {
+        "hanzi": "我叫小明。",
+        "pinyin": "Wǒ jiào Xiǎomíng.",
+        "translationVi": "Tôi tên là Tiểu Minh."
+      },
+      {
+        "hanzi": "我叫小红。",
+        "pinyin": "Wǒ jiào Xiǎohóng.",
+        "translationVi": "Tôi tên là Tiểu Hồng."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:4",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+    "title": "Hỏi tên với 什么",
+    "pattern": "你叫什么名字？",
+    "explanation_vi": "什么 là từ hỏi gì. Trong câu hỏi tên, giữ vị trí của phần cần biết: 你叫什么名字？ Không thêm 吗 vào cuối mẫu hỏi đã dùng 什么 này.",
+    "examples": [
+      {
+        "hanzi": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "translationVi": "Bạn tên là gì?"
+      },
+      {
+        "hanzi": "我叫小明。",
+        "pinyin": "Wǒ jiào Xiǎomíng.",
+        "translationVi": "Tôi tên là Tiểu Minh."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:5",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+    "title": "Danh tính với 是 và phủ định 不是",
+    "pattern": "Người + 是 / 不是 + quốc gia + 人",
+    "explanation_vi": "Dùng 是 nối người với một danh tính. 不是 phủ định mẫu đó. 不 có dạng từ điển bù nhưng trước 是 (thanh 4) thường đọc bú; phần pinyin câu thể hiện biến điệu này. 越南 là tên quốc gia bổ trợ cho người Việt, chưa gán membership HSK 1.",
+    "examples": [
+      {
+        "hanzi": "我是越南人。",
+        "pinyin": "Wǒ shì Yuènán rén.",
+        "translationVi": "Tôi là người Việt Nam."
+      },
+      {
+        "hanzi": "我不是中国人。",
+        "pinyin": "Wǒ bú shì Zhōngguó rén.",
+        "translationVi": "Tôi không phải người Trung Quốc."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:6",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+    "title": "Sở hữu với 的 trong chủ đề gia đình",
+    "pattern": "我 + 的 + danh từ / 我家 / 我爸爸",
+    "explanation_vi": "的 đọc nhẹ de, nối người sở hữu với danh từ. Với quan hệ thân thuộc có thể gặp 我家 hoặc 我爸爸 không có 的; đây không phải quy tắc bỏ 的 trước mọi danh từ. 我的家 là cụm danh từ, chưa phải một câu thông báo đầy đủ.",
+    "examples": [
+      {
+        "hanzi": "我的家。",
+        "pinyin": "Wǒ de jiā.",
+        "translationVi": "Gia đình / ngôi nhà của tôi (cụm danh từ)."
+      },
+      {
+        "hanzi": "我爸爸很好。",
+        "pinyin": "Wǒ bàba hěn hǎo.",
+        "translationVi": "Bố tôi khỏe."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:7",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+    "title": "有 và số lượng: 个, 口, 二, 两",
+    "pattern": "Người / gia đình + 有 + số + lượng từ + danh từ",
+    "explanation_vi": "Có thể dùng 个 để đếm người trong mẫu thông dụng, 口 trong mẫu đếm thành viên gia đình. Trước lượng từ ở đây dùng 两 cho hai: 两个人; 二 dùng khi đếm 一、二、三 hoặc trong 星期二 / 二月 ở bài sau. 一个 thường đọc yí ge; 个 có thể nhẹ thành ge. Không ghép 不 với 有 để tự tạo phủ định sở hữu.",
+    "examples": [
+      {
+        "hanzi": "我家有三口人。",
+        "pinyin": "Wǒ jiā yǒu sān kǒu rén.",
+        "translationVi": "Gia đình tôi có ba người."
+      },
+      {
+        "hanzi": "我有两个姐姐。",
+        "pinyin": "Wǒ yǒu liǎng ge jiějie.",
+        "translationVi": "Tôi có hai chị gái."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:8",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+    "title": "Liên kết danh từ bằng 和",
+    "pattern": "Danh từ + 和 + danh từ",
+    "explanation_vi": "和 nối danh từ hoặc cụm danh từ tương đương và trong mẫu của bài. Ví dụ liệt kê thành viên gia đình. Không suy ra rằng 和 thay được và để nối mọi loại mệnh đề tiếng Việt.",
+    "examples": [
+      {
+        "hanzi": "爸爸和妈妈。",
+        "pinyin": "Bàba hé māma.",
+        "translationVi": "Bố và mẹ (cụm danh từ)."
+      },
+      {
+        "hanzi": "爸爸、妈妈和我。",
+        "pinyin": "Bàba, māma hé wǒ.",
+        "translationVi": "Bố, mẹ và tôi (cụm liệt kê)."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:9",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+    "title": "Thứ trong tuần và vị ngữ thời gian",
+    "pattern": "今天 + 星期 + số / 今天星期天",
+    "explanation_vi": "星期一 là thứ Hai, 星期二 thứ Ba, lần lượt đến 星期六 là thứ Bảy; 星期天 là Chủ nhật. Không dùng 星期七 cho Chủ nhật. Trong các câu thời gian đơn giản này có thể nói 今天星期三, không cần thêm 是. Các tình huống là giả định, không thông báo ngày thực tế.",
+    "examples": [
+      {
+        "hanzi": "今天星期几？",
+        "pinyin": "Jīntiān xīngqī jǐ?",
+        "translationVi": "Hôm nay là thứ mấy?"
+      },
+      {
+        "hanzi": "今天星期天。",
+        "pinyin": "Jīntiān xīngqītiān.",
+        "translationVi": "Hôm nay là Chủ nhật (giả định)."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:10",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+    "title": "Ngày tháng theo thứ tự tháng rồi ngày",
+    "pattern": "Số + 月 + số + 号",
+    "explanation_vi": "Trong cách nói được học, đặt tháng trước ngày: 五月三号 là ngày 3 tháng 5. Hỏi bằng 今天几月几号？ Hai tình huống ngày và thứ trong bài độc lập; không ghép chúng thành một lịch thực. Pilot chỉ luyện các số đã giới thiệu, chưa bao phủ mọi ngày 1–31 hoặc tháng 1–12.",
+    "examples": [
+      {
+        "hanzi": "今天几月几号？",
+        "pinyin": "Jīntiān jǐ yuè jǐ hào?",
+        "translationVi": "Hôm nay là ngày mấy tháng mấy?"
+      },
+      {
+        "hanzi": "五月三号。",
+        "pinyin": "Wǔ yuè sān hào.",
+        "translationVi": "Ngày ba tháng năm."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:11",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+    "title": "Hỏi giờ đúng với 现在、几点",
+    "pattern": "现在 + số + 点 / 现在几点？",
+    "explanation_vi": "现在 chỉ thời điểm hiện tại. Trong bài chỉ học giờ đúng, chưa có phút hoặc buổi sáng/chiều. Dùng 两点 cho hai giờ ở mẫu cơ bản; 二月 và 星期二 vẫn dùng 二. Trong câu 现在三点 của bài, không cần thêm 是. Các ví dụ giờ đều là giả định.",
+    "examples": [
+      {
+        "hanzi": "现在几点？",
+        "pinyin": "Xiànzài jǐ diǎn?",
+        "translationVi": "Bây giờ là mấy giờ?"
+      },
+      {
+        "hanzi": "现在两点。",
+        "pinyin": "Xiànzài liǎng diǎn.",
+        "translationVi": "Bây giờ là hai giờ (giả định)."
+      }
+    ],
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:12",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  }
+]

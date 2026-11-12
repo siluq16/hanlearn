@@ -2,6 +2,8 @@
 
 2026-11-12. **Plan only: no curriculum supplied, imported or published.** No official HSK vocabulary list or HelloChinese API is asserted. A source URL is provenance evidence, not proof of permission. Content quality/rights review and a separate Cloud import approval are prerequisites, not an implicit part of Sprint 2 frontend work.
 
+2026-11-13 follow-up: an explicitly requested AI-assisted offline draft now exists at [pilot v1](../content/pilot-hsk1/v1/README.md): four lessons, 44 words, 12 grammar points and 24 questions. Source edition/headword evidence is recorded, while human language/rights/quiz review and import/publication remain blocked. See [authoring report](PILOT_CONTENT_AUTHORING_REPORT.md). The original plan below remains a review/import gate, not permission to execute it.
+
 ## Target and identity
 
 One reviewed HSK 1 course, one unit, 3–5 ordered lessons, 30–50 distinct lexical vocabulary items across those lessons and 5–10 single-choice questions per lesson quiz. Reused words can appear in multiple lesson joins but count once in the 30–50 total. Two to six choices, zero-based key index and exactly one correct choice. Allocate lessons/words using a reviewed manifest, not a hardcoded React array or fabricated official seed.

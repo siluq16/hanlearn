@@ -12,6 +12,7 @@
     "test:e2e": "playwright test",
     "test:lessons:browser": "playwright test --config playwright.lessons.config.ts",
     "test:lessons:catalog": "node scripts/check-lesson-catalog.mjs",
+    "content:validate": "node --experimental-strip-types scripts/validate-pilot.mjs",
     "test:contracts": "node scripts/check-contracts.mjs",
     "test:db:native": "powershell -NoProfile -File scripts/test-native.ps1",
     "test:security": "node scripts/check-security.mjs",

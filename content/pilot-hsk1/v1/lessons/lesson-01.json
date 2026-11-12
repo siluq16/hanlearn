@@ -1,0 +1,145 @@
+{
+  "id": "639665c9-952d-5714-a276-537a3568b463",
+  "unit_id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+  "title": "你好！ — Chào hỏi và làm quen",
+  "objective_vi": "Nhận biết 8 mục từ; chào, cảm ơn và tạm biệt; hỏi thăm bằng 吗 và hỏi tiếp bằng 呢. Hiểu rằng pinyin có thanh nhẹ và biến điệu khi nói.",
+  "estimated_minutes": 20,
+  "sort_order": 1,
+  "status": "draft",
+  "review_status": "pending",
+  "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-01",
+  "content_license": "pending-rights-review",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "content": {
+    "version": 1,
+    "sections": [
+      {
+        "id": "l1-intro",
+        "title": "Mục tiêu và cách học",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Nhận biết 8 mục từ; chào, cảm ơn và tạm biệt; hỏi thăm bằng 吗 và hỏi tiếp bằng 呢. Hiểu rằng pinyin có thanh nhẹ và biến điệu khi nói.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Các mẫu dưới đây dành cho luyện chào hỏi và hỏi thăm giữa hai bạn. Tần suất dùng lời hỏi thăm còn tùy hoàn cảnh, không cần lặp lại mọi lần gặp người quen.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "你 và 好 đều có thanh 3 ở dạng từ điển; khi nói liền 你好, thanh đầu thường đọc gần ní. Gói lưu nǐ hǎo để thấy thanh gốc. 吗 và 呢 đọc nhẹ, không đánh dấu thanh.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "很 trong 我很好 không phải lúc nào cũng cần dịch nhấn mạnh rất. Mục tiêu là hiểu và nói một lời đáp tự nhiên theo tình huống.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l1-words",
+        "title": "Từ vựng mới và ôn lại",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "04c5a876-74d3-5b7d-9cde-416352dcd276",
+          "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+          "cce00807-ca0f-59fe-acbe-81d6744583c0",
+          "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+          "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+          "29771f36-43ad-5f67-bf22-a8fc61f82896",
+          "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+          "bccefc87-a163-5bde-b48a-438de4aa4986"
+        ]
+      },
+      {
+        "id": "l1-grammar",
+        "title": "Mẫu câu từng bước",
+        "type": "grammar_refs",
+        "grammarIds": [
+          "2822b103-89dd-5819-b360-7315aef042b6",
+          "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+          "af6b2bab-c806-53a3-b16a-4f637741fd39"
+        ]
+      },
+      {
+        "id": "l1-dialogue",
+        "title": "Đọc hội thoại theo lượt",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "example",
+            "hanzi": "你好！",
+            "pinyin": "Nǐ hǎo!",
+            "translationVi": "A: Xin chào!"
+          },
+          {
+            "type": "example",
+            "hanzi": "你好！你好吗？",
+            "pinyin": "Nǐ hǎo! Nǐ hǎo ma?",
+            "translationVi": "B: Chào bạn! Bạn có khỏe không?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我很好，你呢？",
+            "pinyin": "Wǒ hěn hǎo, nǐ ne?",
+            "translationVi": "A: Tôi khỏe, còn bạn?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我很好，谢谢你！",
+            "pinyin": "Wǒ hěn hǎo, xièxie nǐ!",
+            "translationVi": "B: Tôi khỏe, cảm ơn bạn!"
+          },
+          {
+            "type": "example",
+            "hanzi": "再见！",
+            "pinyin": "Zàijiàn!",
+            "translationVi": "A: Tạm biệt!"
+          }
+        ]
+      },
+      {
+        "id": "l1-listening",
+        "title": "Lời thoại để đọc — chưa có audio",
+        "type": "listening",
+        "audioAssetId": null,
+        "transcript": [
+          {
+            "type": "example",
+            "hanzi": "你好！",
+            "pinyin": "Nǐ hǎo!",
+            "translationVi": "A: Xin chào!"
+          },
+          {
+            "type": "example",
+            "hanzi": "你好！你好吗？",
+            "pinyin": "Nǐ hǎo! Nǐ hǎo ma?",
+            "translationVi": "B: Chào bạn! Bạn có khỏe không?"
+          }
+        ]
+      },
+      {
+        "id": "l1-review",
+        "title": "Tự ôn sau khi đọc",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tự đọc một lời chào, một câu hỏi và một lời đáp. Đây là hoạt động đọc offline, không ghi tiến độ hoặc tự chấm điểm.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chưa có file audio được duyệt. Nội dung này do AI hỗ trợ tự biên soạn, đang chờ người kiểm tra tiếng Trung và quyền sử dụng; chưa được phát hành.",
+            "lang": "vi"
+          }
+        ]
+      }
+    ]
+  }
+}

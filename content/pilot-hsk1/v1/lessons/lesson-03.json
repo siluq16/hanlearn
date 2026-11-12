@@ -1,0 +1,164 @@
+{
+  "id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+  "unit_id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+  "title": "我的家 — Gia đình",
+  "objective_vi": "Giới thiệu người thân; dùng 的 và 有; hỏi số thành viên với 几口人; phân biệt 个/口 và 二/两 trong các mẫu đã học.",
+  "estimated_minutes": 30,
+  "sort_order": 3,
+  "status": "draft",
+  "review_status": "pending",
+  "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-03",
+  "content_license": "pending-rights-review",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "content": {
+    "version": 1,
+    "sections": [
+      {
+        "id": "l3-intro",
+        "title": "Mục tiêu và cách học",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Giới thiệu người thân; dùng 的 và 有; hỏi số thành viên với 几口人; phân biệt 个/口 và 二/两 trong các mẫu đã học.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Học các số 一、二、三 trước khi đọc tình huống gia đình. Dùng 两 khi đếm hai người trước lượng từ trong các mẫu này; đừng tự ghép 二 với mọi lượng từ.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "我的家 là cụm danh từ. 我家 là cách nói quen dùng về gia đình mình; 我爸爸 / 我妈妈 có thể bỏ 的 trong quan hệ thân thuộc. Không mở rộng quy tắc này tùy ý.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Các ví dụ từ vựng là những phát ngôn độc lập. Hội thoại chính chỉ mô tả gia đình ba người của một nhân vật, không cộng các ví dụ anh/chị khác vào gia đình đó.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "一个 đọc yí ge ở đây; trước thanh gốc 4 của 个, 一 đổi cách đọc. Thanh 3 liên tiếp có biến điệu khi nói; pinyin chữ thường vẫn giữ thanh từ điển trừ các trường hợp 一/不 đã ghi chú.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l3-words",
+        "title": "Từ vựng mới và ôn lại",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "81ce53a0-5394-5278-81fe-c67961c8c34d",
+          "a6c5e400-0154-5884-9810-f8245adfce8e",
+          "8d613286-431b-5f14-8ed7-e45ca0178168",
+          "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+          "7dec5724-9256-5404-8938-647c52f6f504",
+          "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+          "29784008-ba30-53e7-9f9d-04c98583dc51",
+          "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+          "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+          "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+          "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+          "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+          "a925741e-b594-59dc-8a10-ee8600a4caad",
+          "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+          "30dd26d7-593c-5002-b3de-e1fd35b87562",
+          "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+          "04c5a876-74d3-5b7d-9cde-416352dcd276",
+          "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+          "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+          "cce00807-ca0f-59fe-acbe-81d6744583c0",
+          "ce52e655-b0aa-5915-b790-63712a3180bd",
+          "ce2949af-3761-5a54-8a8b-8dbf2275bbd4"
+        ]
+      },
+      {
+        "id": "l3-grammar",
+        "title": "Mẫu câu từng bước",
+        "type": "grammar_refs",
+        "grammarIds": [
+          "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+          "8c80e333-e978-5244-806c-26ecc3e80d4a",
+          "df9491e4-ab8a-5fa6-abce-4e4e00eeb928"
+        ]
+      },
+      {
+        "id": "l3-dialogue",
+        "title": "Đọc hội thoại theo lượt",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "example",
+            "hanzi": "你家有几口人？",
+            "pinyin": "Nǐ jiā yǒu jǐ kǒu rén?",
+            "translationVi": "A: Gia đình bạn có mấy người?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我家有三口人。",
+            "pinyin": "Wǒ jiā yǒu sān kǒu rén.",
+            "translationVi": "B: Gia đình tôi có ba người."
+          },
+          {
+            "type": "example",
+            "hanzi": "爸爸、妈妈和我。",
+            "pinyin": "Bàba, māma hé wǒ.",
+            "translationVi": "B: Bố, mẹ và tôi."
+          },
+          {
+            "type": "example",
+            "hanzi": "你爸爸好吗？",
+            "pinyin": "Nǐ bàba hǎo ma?",
+            "translationVi": "A: Bố bạn có khỏe không?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我爸爸很好，谢谢你。",
+            "pinyin": "Wǒ bàba hěn hǎo, xièxie nǐ.",
+            "translationVi": "B: Bố tôi khỏe, cảm ơn bạn."
+          }
+        ]
+      },
+      {
+        "id": "l3-listening",
+        "title": "Lời thoại để đọc — chưa có audio",
+        "type": "listening",
+        "audioAssetId": null,
+        "transcript": [
+          {
+            "type": "example",
+            "hanzi": "你家有几口人？",
+            "pinyin": "Nǐ jiā yǒu jǐ kǒu rén?",
+            "translationVi": "A: Gia đình bạn có mấy người?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我家有三口人。",
+            "pinyin": "Wǒ jiā yǒu sān kǒu rén.",
+            "translationVi": "B: Gia đình tôi có ba người."
+          }
+        ]
+      },
+      {
+        "id": "l3-review",
+        "title": "Tự ôn sau khi đọc",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Đọc lại câu hỏi số thành viên. Tập mô tả một gia đình giả định, không mặc định mọi gia đình có cùng thành phần và không đưa thông tin cá nhân thật vào gói nội dung.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chưa có file audio được duyệt. Nội dung này do AI hỗ trợ tự biên soạn, đang chờ người kiểm tra tiếng Trung và quyền sử dụng; chưa được phát hành.",
+            "lang": "vi"
+          }
+        ]
+      }
+    ]
+  }
+}

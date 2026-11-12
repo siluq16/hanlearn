@@ -1,0 +1,125 @@
+{
+  "quiz": {
+    "id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+    "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+    "revision": 1,
+    "title": "Luyện tập bài 2 — bản nháp",
+    "published_at": null,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:2",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "questions": [
+    {
+      "id": "00dd5cdb-560f-5f5f-8090-5958308f30b4",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 1,
+      "prompt": "Chọn câu hỏi tên theo mẫu của bài.",
+      "choices": [
+        "你叫什么名字？",
+        "你好吗？",
+        "你是中国人吗？",
+        "你呢？"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:1",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "377cb504-b54a-51a9-8559-64f2d3037870",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 2,
+      "prompt": "Nhân vật hư cấu tên 小明. Chọn lời giới thiệu đúng theo mẫu 'tôi tên là...'.",
+      "choices": [
+        "我名字什么。",
+        "我叫小明。",
+        "我很小明。",
+        "我吗小明。"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:2",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "df3aa84d-ad70-577a-a1e4-73d7a980459f",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 3,
+      "prompt": "Chọn nghĩa của 我是越南人。",
+      "choices": [
+        "Tôi học tiếng Trung.",
+        "Tôi không phải người Việt Nam.",
+        "Tôi là người Việt Nam.",
+        "Bạn là người Trung Quốc."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:3",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "359886c6-b796-5943-ab65-89baccd14cc8",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 4,
+      "prompt": "Câu nào phủ định danh tính 'tôi là người Trung Quốc'?",
+      "choices": [
+        "我是中国人。",
+        "我叫小明。",
+        "我学习汉语。",
+        "我不是中国人。"
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:4",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "35cb53f7-ff50-5605-b5e5-95d217b133c3",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 5,
+      "prompt": "Chọn nghĩa của 我学习汉语。",
+      "choices": [
+        "Tôi học tiếng Trung.",
+        "Bạn tên là gì?",
+        "Tôi là tiếng Trung.",
+        "Tôi không học tiếng Trung."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:5",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    {
+      "id": "c208de2b-95d5-5afd-b9cc-002fa90dfe25",
+      "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "sort_order": 6,
+      "prompt": "Trong câu hỏi có 什么 theo mẫu 你叫什么名字？, cách dùng nào phù hợp với bài?",
+      "choices": [
+        "Thay 什么 bằng 很 trong mọi câu.",
+        "Thêm 是 trước 叫.",
+        "Không cần thêm 吗 cuối mẫu hỏi này.",
+        "Thêm 再见 để biến thành câu hỏi."
+      ],
+      "status": "draft",
+      "review_status": "pending",
+      "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:6",
+      "content_license": "pending-rights-review",
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  ]
+}

@@ -1,0 +1,1970 @@
+{
+  "package_id": "hanlearn-pilot-hsk1-v1",
+  "package_version": 1,
+  "authored_on": "2026-11-13",
+  "review_state": "pending_review",
+  "origin": "ai_assisted_original",
+  "import_authorized": false,
+  "publish_authorized": false,
+  "counts": {
+    "syllabuses": 1,
+    "courses": 1,
+    "units": 1,
+    "lessons": 4,
+    "vocabulary": 44,
+    "grammar": 12,
+    "quizzes": 4,
+    "questions": 24
+  },
+  "source": {
+    "id": "cti-hsk-2025-11",
+    "title": "HSK考试大纲",
+    "edition": "2025-11; cover states implementation 2026-07",
+    "landing_uri": "https://www.chinesetest.cn/syllabus",
+    "source_uri": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+    "pdf_sha256": "d8b6646599bc9a0c9616a4cb06d4b37461f8792f70a3171016d00fcd8eda09ad",
+    "extracted_text_sha256": "37e73e1f4de2c8f7652acc3b92788f7f37232d47862f3fe7725510896e87c5b1",
+    "cover_pdf_page": 1,
+    "vocabulary_pdf_pages": [
+      80,
+      87
+    ],
+    "vocabulary_printed_pages": [
+      77,
+      84
+    ],
+    "grammar_pdf_pages": [
+      386,
+      388
+    ],
+    "grammar_printed_pages": [
+      383,
+      385
+    ],
+    "selected_level1_headwords": 43,
+    "machine_checked_on": "2026-11-13",
+    "comparison_by": "AI-assisted exact-headword/reading lookup; not human approval",
+    "human_reviewer": null,
+    "human_reviewed_at": null
+  },
+  "syllabus": {
+    "id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+    "code": "HSK-2025-11-HANLEARN-PILOT-V1",
+    "display_name": "HSK 1 pilot — đối chiếu đề cương 11/2025, chờ kiểm duyệt",
+    "published_on": null,
+    "effective_on": null,
+    "verified_at": null,
+    "official_vocab_totals": {},
+    "is_active": false,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:syllabus",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "course": {
+    "id": "2c99d2ff-db03-5ef5-ace1-0a8669d4ac28",
+    "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+    "hsk_level": 1,
+    "title": "Tiếng Trung khởi đầu cho người Việt — HSK 1 pilot",
+    "sort_order": 1,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:course",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "unit": {
+    "id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+    "course_id": "2c99d2ff-db03-5ef5-ace1-0a8669d4ac28",
+    "title": "Chào hỏi, bản thân, gia đình và thời gian",
+    "sort_order": 1,
+    "status": "draft",
+    "review_status": "pending",
+    "source_uri": "urn:hanlearn:pilot-hsk1:v1:unit",
+    "content_license": "pending-rights-review",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "lessons": [
+    {
+      "id": "639665c9-952d-5714-a276-537a3568b463",
+      "file": "lessons/lesson-01.json",
+      "quiz_file": "quizzes/lesson-01.json",
+      "title_zh": "你好！",
+      "title_vi": "Chào hỏi và làm quen",
+      "new_vocabulary_ids": [
+        "04c5a876-74d3-5b7d-9cde-416352dcd276",
+        "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+        "cce00807-ca0f-59fe-acbe-81d6744583c0",
+        "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+        "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+        "29771f36-43ad-5f67-bf22-a8fc61f82896",
+        "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+        "bccefc87-a163-5bde-b48a-438de4aa4986"
+      ],
+      "review_state": "pending_review"
+    },
+    {
+      "id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "file": "lessons/lesson-02.json",
+      "quiz_file": "quizzes/lesson-02.json",
+      "title_zh": "我叫……",
+      "title_vi": "Giới thiệu bản thân",
+      "new_vocabulary_ids": [
+        "169b7623-b96a-5447-940b-f54efd6e2547",
+        "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+        "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+        "ce52e655-b0aa-5915-b790-63712a3180bd",
+        "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+        "d610982b-750e-5c68-b58e-4ae39f8badaf",
+        "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+        "d3550460-986b-55cf-8138-fe4a18985944",
+        "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+        "df6876e3-e013-584d-b584-64c5d6f29048"
+      ],
+      "review_state": "pending_review"
+    },
+    {
+      "id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "file": "lessons/lesson-03.json",
+      "quiz_file": "quizzes/lesson-03.json",
+      "title_zh": "我的家",
+      "title_vi": "Gia đình",
+      "new_vocabulary_ids": [
+        "81ce53a0-5394-5278-81fe-c67961c8c34d",
+        "a6c5e400-0154-5884-9810-f8245adfce8e",
+        "8d613286-431b-5f14-8ed7-e45ca0178168",
+        "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+        "7dec5724-9256-5404-8938-647c52f6f504",
+        "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+        "29784008-ba30-53e7-9f9d-04c98583dc51",
+        "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+        "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+        "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+        "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+        "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+        "a925741e-b594-59dc-8a10-ee8600a4caad",
+        "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+        "30dd26d7-593c-5002-b3de-e1fd35b87562"
+      ],
+      "review_state": "pending_review"
+    },
+    {
+      "id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "file": "lessons/lesson-04.json",
+      "quiz_file": "quizzes/lesson-04.json",
+      "title_zh": "今天星期几？",
+      "title_vi": "Ngày tháng và thời gian",
+      "new_vocabulary_ids": [
+        "14303981-2984-5515-8609-95898457dd7c",
+        "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+        "ad545a62-ac16-5d78-ac42-377f56bc4716",
+        "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+        "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+        "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+        "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+        "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+        "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+        "a0c51256-1682-5c09-9736-7996bd8293f2",
+        "c390f103-ab57-531b-808b-e1c734509c22"
+      ],
+      "review_state": "pending_review"
+    }
+  ],
+  "lesson_vocabulary": [
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "sort_order": 4
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "sort_order": 5
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+      "sort_order": 6
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+      "sort_order": 7
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "vocabulary_id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+      "sort_order": 8
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "169b7623-b96a-5447-940b-f54efd6e2547",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+      "sort_order": 4
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+      "sort_order": 5
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "d610982b-750e-5c68-b58e-4ae39f8badaf",
+      "sort_order": 6
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+      "sort_order": 7
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "d3550460-986b-55cf-8138-fe4a18985944",
+      "sort_order": 8
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+      "sort_order": 9
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "df6876e3-e013-584d-b584-64c5d6f29048",
+      "sort_order": 10
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "sort_order": 11
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "sort_order": 12
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "sort_order": 13
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "sort_order": 14
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "sort_order": 15
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+      "sort_order": 16
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+      "sort_order": 17
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "vocabulary_id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+      "sort_order": 18
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "81ce53a0-5394-5278-81fe-c67961c8c34d",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "a6c5e400-0154-5884-9810-f8245adfce8e",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "8d613286-431b-5f14-8ed7-e45ca0178168",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+      "sort_order": 4
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "7dec5724-9256-5404-8938-647c52f6f504",
+      "sort_order": 5
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+      "sort_order": 6
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "29784008-ba30-53e7-9f9d-04c98583dc51",
+      "sort_order": 7
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+      "sort_order": 8
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+      "sort_order": 9
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+      "sort_order": 10
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+      "sort_order": 11
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+      "sort_order": 12
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+      "sort_order": 13
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+      "sort_order": 14
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+      "sort_order": 15
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "sort_order": 16
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "sort_order": 17
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "sort_order": 18
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "sort_order": 19
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "sort_order": 20
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+      "sort_order": 21
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "vocabulary_id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+      "sort_order": 22
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "14303981-2984-5515-8609-95898457dd7c",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "ad545a62-ac16-5d78-ac42-377f56bc4716",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+      "sort_order": 4
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+      "sort_order": 5
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+      "sort_order": 6
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+      "sort_order": 7
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+      "sort_order": 8
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+      "sort_order": 9
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "a0c51256-1682-5c09-9736-7996bd8293f2",
+      "sort_order": 10
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "c390f103-ab57-531b-808b-e1c734509c22",
+      "sort_order": 11
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "sort_order": 12
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "sort_order": 13
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+      "sort_order": 14
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+      "sort_order": 15
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+      "sort_order": 16
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+      "sort_order": 17
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "vocabulary_id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+      "sort_order": 18
+    }
+  ],
+  "lesson_grammar": [
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "grammar_id": "2822b103-89dd-5819-b360-7315aef042b6",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "grammar_id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
+      "grammar_id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "grammar_id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "grammar_id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "grammar_id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "grammar_id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "grammar_id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "grammar_id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+      "sort_order": 3
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "grammar_id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+      "sort_order": 1
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "grammar_id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+      "sort_order": 2
+    },
+    {
+      "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "grammar_id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+      "sort_order": 3
+    }
+  ],
+  "syllabus_vocabulary": [
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "169b7623-b96a-5447-940b-f54efd6e2547",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "d610982b-750e-5c68-b58e-4ae39f8badaf",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "d3550460-986b-55cf-8138-fe4a18985944",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "df6876e3-e013-584d-b584-64c5d6f29048",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "81ce53a0-5394-5278-81fe-c67961c8c34d",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "a6c5e400-0154-5884-9810-f8245adfce8e",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "8d613286-431b-5f14-8ed7-e45ca0178168",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "7dec5724-9256-5404-8938-647c52f6f504",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "29784008-ba30-53e7-9f9d-04c98583dc51",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "14303981-2984-5515-8609-95898457dd7c",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "ad545a62-ac16-5d78-ac42-377f56bc4716",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "a0c51256-1682-5c09-9736-7996bd8293f2",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "vocabulary_id": "c390f103-ab57-531b-808b-e1c734509c22",
+      "introduced_level": 1
+    }
+  ],
+  "syllabus_grammar": [
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "2822b103-89dd-5819-b360-7315aef042b6",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+      "introduced_level": 1
+    },
+    {
+      "syllabus_id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "grammar_id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+      "introduced_level": 1
+    }
+  ],
+  "hsk_verification": [
+    {
+      "vocabulary_id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "term": "你",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 146,
+        "source_term": "你",
+        "source_level_label": "1",
+        "pdf_page": 83,
+        "printed_page": 80,
+        "source_pinyin": "nǐ"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "term": "好",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 71,
+        "source_term": "好",
+        "source_level_label": "1（2）（4）",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "hǎo"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "term": "吗",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 115,
+        "source_term": "吗",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "ma"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "term": "很",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 79,
+        "source_term": "很",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "hěn"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "term": "我",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 221,
+        "source_term": "我",
+        "source_level_label": "1",
+        "pdf_page": 85,
+        "printed_page": 82,
+        "source_pinyin": "wǒ"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+      "term": "谢谢",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 241,
+        "source_term": "谢谢",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "xièxie"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+      "term": "再见",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 271,
+        "source_term": "再见",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "zàijiàn"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+      "term": "呢",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 144,
+        "source_term": "呢",
+        "source_level_label": "1",
+        "pdf_page": 83,
+        "printed_page": 80,
+        "source_pinyin": "ne"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "169b7623-b96a-5447-940b-f54efd6e2547",
+      "term": "叫",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 91,
+        "source_term": "叫",
+        "source_level_label": "1（4）",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "jiào"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+      "term": "什么",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 182,
+        "source_term": "什么",
+        "source_level_label": "1",
+        "pdf_page": 84,
+        "printed_page": 81,
+        "source_pinyin": "shénme"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+      "term": "名字",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 128,
+        "source_term": "名字",
+        "source_level_label": "1",
+        "pdf_page": 83,
+        "printed_page": 80,
+        "source_pinyin": "míngzi"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+      "term": "是",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 188,
+        "source_term": "是",
+        "source_level_label": "1",
+        "pdf_page": 84,
+        "printed_page": 81,
+        "source_pinyin": "shì"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+      "term": "人",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 170,
+        "source_term": "人",
+        "source_level_label": "1",
+        "pdf_page": 84,
+        "printed_page": 81,
+        "source_pinyin": "rén"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "d610982b-750e-5c68-b58e-4ae39f8badaf",
+      "term": "中国",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 289,
+        "source_term": "中国",
+        "source_level_label": "1",
+        "pdf_page": 87,
+        "printed_page": 84,
+        "source_pinyin": "Zhōngguó"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+      "term": "越南",
+      "classification": "supplementary_outside_verified_list",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": null,
+      "note": "Country name supplied for Vietnamese learners; not located as an exact headword in the checked vocabulary table. No assertion that the exam forbids the name; no automatic level-1 membership."
+    },
+    {
+      "vocabulary_id": "d3550460-986b-55cf-8138-fe4a18985944",
+      "term": "汉语",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 69,
+        "source_term": "汉语",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "Hànyǔ"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+      "term": "学习",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 249,
+        "source_term": "学习",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "xuéxí"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "df6876e3-e013-584d-b584-64c5d6f29048",
+      "term": "不",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 13,
+        "source_term": "不",
+        "source_level_label": "1",
+        "pdf_page": 80,
+        "printed_page": 77,
+        "source_pinyin": "bù"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "81ce53a0-5394-5278-81fe-c67961c8c34d",
+      "term": "家",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 86,
+        "source_term": "家",
+        "source_level_label": "1（3）",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "jiā"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "a6c5e400-0154-5884-9810-f8245adfce8e",
+      "term": "的",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 30,
+        "source_term": "的",
+        "source_level_label": "1",
+        "pdf_page": 80,
+        "printed_page": 77,
+        "source_pinyin": "de"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "8d613286-431b-5f14-8ed7-e45ca0178168",
+      "term": "有",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 263,
+        "source_term": "有",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "yǒu"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+      "term": "几",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 85,
+        "source_term": "几",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "jǐ"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "7dec5724-9256-5404-8938-647c52f6f504",
+      "term": "口",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 104,
+        "source_term": "口",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "kǒu"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+      "term": "爸爸",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 3,
+        "source_term": "爸爸",
+        "source_level_label": "1",
+        "pdf_page": 80,
+        "printed_page": 77,
+        "source_pinyin": "bàba"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "29784008-ba30-53e7-9f9d-04c98583dc51",
+      "term": "妈妈",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 114,
+        "source_term": "妈妈",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "māma"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+      "term": "哥哥",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 58,
+        "source_term": "哥哥",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "gēge"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+      "term": "姐姐",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 92,
+        "source_term": "姐姐",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "jiějie"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+      "term": "和",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 78,
+        "source_term": "和1",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "hé"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+      "term": "一",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 254,
+        "source_term": "一",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "yī"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+      "term": "二",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 49,
+        "source_term": "二",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "èr"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+      "term": "三",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 173,
+        "source_term": "三",
+        "source_level_label": "1",
+        "pdf_page": 84,
+        "printed_page": 81,
+        "source_pinyin": "sān"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+      "term": "个",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 60,
+        "source_term": "个",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "gè"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+      "term": "两",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 111,
+        "source_term": "两1",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "liǎng"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "14303981-2984-5515-8609-95898457dd7c",
+      "term": "今天",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 94,
+        "source_term": "今天",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "jīntiān"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+      "term": "星期",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 243,
+        "source_term": "星期",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "xīngqī"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "ad545a62-ac16-5d78-ac42-377f56bc4716",
+      "term": "四",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 198,
+        "source_term": "四",
+        "source_level_label": "1",
+        "pdf_page": 84,
+        "printed_page": 81,
+        "source_pinyin": "sì"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+      "term": "五",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 223,
+        "source_term": "五",
+        "source_level_label": "1",
+        "pdf_page": 85,
+        "printed_page": 82,
+        "source_pinyin": "wǔ"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+      "term": "六",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 113,
+        "source_term": "六",
+        "source_level_label": "1",
+        "pdf_page": 82,
+        "printed_page": 79,
+        "source_pinyin": "liù"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+      "term": "七",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 160,
+        "source_term": "七",
+        "source_level_label": "1",
+        "pdf_page": 83,
+        "printed_page": 80,
+        "source_pinyin": "qī"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+      "term": "月",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 269,
+        "source_term": "月",
+        "source_level_label": "1",
+        "pdf_page": 86,
+        "printed_page": 83,
+        "source_pinyin": "yuè"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+      "term": "号",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 76,
+        "source_term": "号",
+        "source_level_label": "1",
+        "pdf_page": 81,
+        "printed_page": 78,
+        "source_pinyin": "hào"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+      "term": "现在",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 232,
+        "source_term": "现在",
+        "source_level_label": "1",
+        "pdf_page": 85,
+        "printed_page": 82,
+        "source_pinyin": "xiànzài"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "a0c51256-1682-5c09-9736-7996bd8293f2",
+      "term": "点",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 33,
+        "source_term": "点1",
+        "source_level_label": "1（3）",
+        "pdf_page": 80,
+        "printed_page": 77,
+        "source_pinyin": "diǎn"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    },
+    {
+      "vocabulary_id": "c390f103-ab57-531b-808b-e1c734509c22",
+      "term": "天",
+      "classification": "verified_hsk1_headword",
+      "review_state": "pending_review",
+      "sense_review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null,
+      "machine_checked_on": "2026-11-13",
+      "evidence": {
+        "source_id": "cti-hsk-2025-11",
+        "ordinal": 207,
+        "source_term": "天",
+        "source_level_label": "1",
+        "pdf_page": 85,
+        "printed_page": 82,
+        "source_pinyin": "tiān"
+      },
+      "note": "Exact selected headword/reading located; annotations retained; specific sense and teaching use still need human review."
+    }
+  ],
+  "grammar_verification": [
+    {
+      "grammar_id": "2822b103-89dd-5819-b360-7315aef042b6",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "personal-pronouns-and-subject",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 387,
+      "printed_page": 384,
+      "source_category": "adjective-predicate",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "question-particles",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 387,
+      "printed_page": 384,
+      "source_category": "verb-predicate",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "interrogative-pronouns",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 387,
+      "printed_page": 384,
+      "source_category": "copular-identity-and-negation",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "possessive-particle",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "classifiers-and-numerals",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 386,
+      "printed_page": 383,
+      "source_category": "noun-coordination",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 388,
+      "printed_page": 385,
+      "source_category": "weekday-expression",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 388,
+      "printed_page": 385,
+      "source_category": "calendar-date",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "grammar_id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+      "source_id": "cti-hsk-2025-11",
+      "pdf_page": 388,
+      "printed_page": 385,
+      "source_category": "clock-time",
+      "alignment_state": "source_category_located_pending_review",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    }
+  ],
+  "supporting_expressions": [
+    {
+      "hanzi": "你好",
+      "pinyin": "nǐ hǎo",
+      "classification": "supplementary_composition",
+      "note": "Greeting built from core 你 and 好; not an extra vocabulary row or automatic official-list claim.",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "hanzi": "星期天",
+      "pinyin": "xīngqītiān",
+      "classification": "supplementary_composition",
+      "note": "Sunday expression built from core 星期 and 天; no 星期七.",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "hanzi": "小明",
+      "pinyin": "Xiǎomíng",
+      "classification": "supplementary_fictional_proper_name",
+      "note": "Fictional nickname; not learner identity or HSK membership.",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    },
+    {
+      "hanzi": "小红",
+      "pinyin": "Xiǎohóng",
+      "classification": "supplementary_fictional_proper_name",
+      "note": "Fictional nickname; not learner identity or HSK membership.",
+      "review_state": "pending_review",
+      "human_reviewer": null,
+      "human_reviewed_at": null
+    }
+  ],
+  "pinyin_policy": {
+    "review_state": "pending_review",
+    "dictionary_heads": "Match cited reading for 43 located headwords; neutral syllables unmarked.",
+    "sentences": "Word-oriented spelling; weekday expressions joined. Written underlying tones retained for third-tone sandhi; 一/不 surface variants shown and explained. Calendar numeral 一 retains yī; 一个 uses yí ge; two before classifiers/clock uses 两.",
+    "limitations": "Character/NFC/tone-mark checks do not establish phonetic accuracy or naturalness; human Chinese review required."
+  },
+  "human_review": {
+    "language": "pending_review",
+    "rights": "pending_review",
+    "pedagogy": "pending_review",
+    "quiz_semantics": "pending_review",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "private_answer_store": {
+    "location": ".local/pilot-hsk1/v1/private/answers.json",
+    "committed": false,
+    "frontend_access": false,
+    "management_state": "local_acl_restricted_pending_workflow_approval",
+    "note": "Ignored local owner/SYSTEM ACL directory. Not encryption or approved shared key-management. No private keys or digest of answer indices in this package."
+  },
+  "limitations": [
+    "Draft only; record.review_status=pending is the deployed SQL enum; authoring review_state=pending_review is manifest metadata, not a database column.",
+    "No audio objects; every listening audioAssetId is null.",
+    "Official totals deliberately empty until human verification; this pilot is not the full HSK1 list.",
+    "Grammar level memberships are draft proposals; human alignment review required before import.",
+    "No imports/users/allowlist/Storage/schema changes or Sprint2.2."
+  ],
+  "files": [
+    {
+      "path": "vocabulary.json",
+      "sha256": "5e86220727c13738be3cb8c8113c93037e753a96fd62374fa19380ae56cd505f"
+    },
+    {
+      "path": "grammar.json",
+      "sha256": "4cb6f248a4b306bbad119534af5bf86ec57f267d7a7be2fb40ceb43858828a37"
+    },
+    {
+      "path": "rights-manifest.json",
+      "sha256": "44a20c6e11d350887c38f7b9be40171a162f29b360f047b750a8ddbee50cbd57"
+    },
+    {
+      "path": "lessons/lesson-01.json",
+      "sha256": "61156a8cb4cada424021eefff27e01c78e9e7de68e36b9882bf41ee66e0a5786"
+    },
+    {
+      "path": "lessons/lesson-02.json",
+      "sha256": "af56b1c523c3b5b588e85629fd34e15424bacd5020a8a8af89cf1493995a7983"
+    },
+    {
+      "path": "lessons/lesson-03.json",
+      "sha256": "0dbd13d4570d1bfe632a80e54dadf68aab6719ff06a6d773d26e5f80e01eb1d4"
+    },
+    {
+      "path": "lessons/lesson-04.json",
+      "sha256": "247e39b606a3d1f3648695b8642dda4107166307eee921edbf8131d4ae70e2be"
+    },
+    {
+      "path": "quizzes/lesson-01.json",
+      "sha256": "15a142f9ceb1a4c4c03c1386ca51c22f03e3651175f4852e9f3ab20bab27c86f"
+    },
+    {
+      "path": "quizzes/lesson-02.json",
+      "sha256": "a8e606c2395521221a89372fdc6ddf09aaca4f9fbae56a50eeb3687f7c3ae272"
+    },
+    {
+      "path": "quizzes/lesson-03.json",
+      "sha256": "334a2e77951b47b11ed0eeb038926335fde37842b425d01ef932f96ad6dae011"
+    },
+    {
+      "path": "quizzes/lesson-04.json",
+      "sha256": "ad641a11a08e225533c834f003c13f352c6e8dfec8b74bb9bb10f079eb331dce"
+    }
+  ]
+}

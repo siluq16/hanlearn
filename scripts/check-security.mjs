@@ -22,6 +22,20 @@ for (const file of files) {
     `Sensitive filename tracked/unignored: ${file}`,
   );
   const text = readFileSync(file, "utf8");
+  if (file.startsWith("content/pilot-hsk1/") && file.endsWith(".json")) {
+    const forbidden =
+      /^(correct_index|correctIndex|correctAnswer|correct_answer|answerKey|answer_key|answer_keys|is_correct|isCorrect|solution|solutions|submission_payload|submission_fingerprint)$/;
+    const hasPrivateKey = (value) =>
+      value &&
+      typeof value === "object" &&
+      Object.entries(value).some(
+        ([key, child]) => forbidden.test(key) || hasPrivateKey(child),
+      );
+    assert(
+      !hasPrivateKey(JSON.parse(text)),
+      `Private quiz key field in public pilot file ${file}; values suppressed`,
+    );
+  }
   for (const pattern of secretPatterns)
     assert(
       !pattern.test(text),
@@ -44,6 +58,10 @@ const sourceFiles = files.filter(
 );
 for (const file of sourceFiles) {
   const source = readFileSync(file, "utf8");
+  assert(
+    !/content\/pilot-hsk1/.test(source),
+    `Offline draft pilot imported into app source: ${file}`,
+  );
   assert(
     !/tests\/fixtures|lessonFixture|lesson-ui-harness/.test(source),
     `Test fixture/harness reference in app source: ${file}`,
@@ -73,6 +91,10 @@ function walk(dir) {
 if (existsSync(".next/static"))
   for (const file of walk(".next/static").filter((f) => f.endsWith(".js"))) {
     const text = readFileSync(file, "utf8");
+    assert(
+      !/urn:hanlearn:pilot-hsk1:v1|hanlearn-pilot-hsk1-v1/.test(text),
+      `Draft pilot bundled in production client ${file}`,
+    );
     assert(
       !/lessonFixture|private-test-marker|SYNTHETIC LOCAL TEST/.test(text),
       `Synthetic lesson fixture found in browser bundle ${file}`,

@@ -1,0 +1,166 @@
+{
+  "id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+  "unit_id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+  "title": "我叫…… — Giới thiệu bản thân",
+  "objective_vi": "Hỏi và nói tên bằng 叫; giới thiệu quốc tịch với 是; nói 我学习汉语. Phân biệt từ/cụm bổ trợ với membership HSK đã đối chiếu.",
+  "estimated_minutes": 25,
+  "sort_order": 2,
+  "status": "draft",
+  "review_status": "pending",
+  "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-02",
+  "content_license": "pending-rights-review",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "content": {
+    "version": 1,
+    "sections": [
+      {
+        "id": "l2-intro",
+        "title": "Mục tiêu và cách học",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Hỏi và nói tên bằng 叫; giới thiệu quốc tịch với 是; nói 我学习汉语. Phân biệt từ/cụm bổ trợ với membership HSK đã đối chiếu.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ôn lời chào và câu hỏi 吗 từ bài trước. 小明 (Xiǎomíng) và 小红 (Xiǎohóng) là hai tên nhân vật hư cấu dùng để luyện đọc; không cần phân tích tên thành từ mới.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dùng 你叫什么名字？ để hỏi tên và 我叫... để trả lời. Khi hỏi bằng 什么, không thêm 吗 vào cuối mẫu này.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dùng quốc gia + 人 để giới thiệu xuất xứ trong phạm vi của bài. 越南 là nội dung bổ trợ cho người Việt, không được gắn nhãn từ HSK 1 đã xác minh.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "不 giữ dạng từ điển bù trong mục từ; trước 是 đọc bú. Pinyin câu có bú shì phản ánh biến điệu, không đổi nghĩa phủ định.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l2-words",
+        "title": "Từ vựng mới và ôn lại",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "169b7623-b96a-5447-940b-f54efd6e2547",
+          "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+          "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+          "ce52e655-b0aa-5915-b790-63712a3180bd",
+          "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+          "d610982b-750e-5c68-b58e-4ae39f8badaf",
+          "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+          "d3550460-986b-55cf-8138-fe4a18985944",
+          "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+          "df6876e3-e013-584d-b584-64c5d6f29048",
+          "04c5a876-74d3-5b7d-9cde-416352dcd276",
+          "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+          "cce00807-ca0f-59fe-acbe-81d6744583c0",
+          "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+          "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+          "29771f36-43ad-5f67-bf22-a8fc61f82896",
+          "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+          "bccefc87-a163-5bde-b48a-438de4aa4986"
+        ]
+      },
+      {
+        "id": "l2-grammar",
+        "title": "Mẫu câu từng bước",
+        "type": "grammar_refs",
+        "grammarIds": [
+          "453bae52-e01b-587a-a6ad-d2d440a51feb",
+          "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+          "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f"
+        ]
+      },
+      {
+        "id": "l2-dialogue",
+        "title": "Đọc hội thoại theo lượt",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "example",
+            "hanzi": "你好！你叫什么名字？",
+            "pinyin": "Nǐ hǎo! Nǐ jiào shénme míngzi?",
+            "translationVi": "A: Chào bạn! Bạn tên là gì?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我叫小明。你呢？",
+            "pinyin": "Wǒ jiào Xiǎomíng. Nǐ ne?",
+            "translationVi": "B: Tôi tên là Tiểu Minh. Còn bạn?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我叫小红。",
+            "pinyin": "Wǒ jiào Xiǎohóng.",
+            "translationVi": "A: Tôi tên là Tiểu Hồng."
+          },
+          {
+            "type": "example",
+            "hanzi": "你是中国人吗？",
+            "pinyin": "Nǐ shì Zhōngguó rén ma?",
+            "translationVi": "B: Bạn là người Trung Quốc phải không?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我不是中国人。我是越南人。",
+            "pinyin": "Wǒ bú shì Zhōngguó rén. Wǒ shì Yuènán rén.",
+            "translationVi": "A: Tôi không phải người Trung Quốc. Tôi là người Việt Nam."
+          },
+          {
+            "type": "example",
+            "hanzi": "我学习汉语。",
+            "pinyin": "Wǒ xuéxí Hànyǔ.",
+            "translationVi": "B: Tôi học tiếng Trung."
+          }
+        ]
+      },
+      {
+        "id": "l2-listening",
+        "title": "Lời thoại để đọc — chưa có audio",
+        "type": "listening",
+        "audioAssetId": null,
+        "transcript": [
+          {
+            "type": "example",
+            "hanzi": "你好！你叫什么名字？",
+            "pinyin": "Nǐ hǎo! Nǐ jiào shénme míngzi?",
+            "translationVi": "A: Chào bạn! Bạn tên là gì?"
+          },
+          {
+            "type": "example",
+            "hanzi": "我叫小明。你呢？",
+            "pinyin": "Wǒ jiào Xiǎomíng. Nǐ ne?",
+            "translationVi": "B: Tôi tên là Tiểu Minh. Còn bạn?"
+          }
+        ]
+      },
+      {
+        "id": "l2-review",
+        "title": "Tự ôn sau khi đọc",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Thay tên nhân vật bằng tên bạn muốn dùng khi luyện nói, nhưng không sửa bản ghi học trên Cloud. Đọc một câu giới thiệu và một câu phủ định danh tính.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chưa có file audio được duyệt. Nội dung này do AI hỗ trợ tự biên soạn, đang chờ người kiểm tra tiếng Trung và quyền sử dụng; chưa được phát hành.",
+            "lang": "vi"
+          }
+        ]
+      }
+    ]
+  }
+}
