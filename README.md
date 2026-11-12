@@ -1,6 +1,6 @@
 # HanLearn
 
-Private, mobile-first Chinese learning app. **Sprint 1: PARTIAL** — Next.js foundation and tests are implemented; Supabase Cloud Development credentials, remote approval and real integration verification remain pending. No Docker required.
+Private, mobile-first Chinese learning app. **Sprint 1: PARTIAL** — six Development migrations and read-only security checks PASS; real owner Auth/SSR/navigation/profile readback now PASS. Outsider/A/B isolation, remaining session/security cases, licensed pilot/Storage and full release evidence remain open. See [final acceptance](docs/SPRINT1_ACCEPTANCE.md). No Docker required.
 
 ## Run on Windows
 
@@ -49,10 +49,11 @@ Browser tests use a production build and default Playwright Chromium. Stop the d
 ```powershell
 # Either: npx playwright install chromium
 $env:PLAYWRIGHT_CHANNEL = 'chrome'
+$env:HANLEARN_E2E_PORT = '3102' # optional isolated test port if 3000 is already in use
 npm run test:e2e
 ```
 
-The browser suite checks the public/missing-configuration flow; it does not prove real cloud Auth or authenticated-page behavior. Optional no-container native PostgreSQL regression: npm run test:db:native (PostgreSQL 18 binaries required). It uses a disposable database/Auth shim, never the app backend and never Cloud.
+The normal browser suite checks public/anonymous flows (missing-config cases skip in a configured build). Real owner acceptance uses `powershell -NoProfile -File .\scripts\acceptance-auth.ps1` after a production build, with hidden local email/password input and an isolated localhost:3101 server. It reads existing profile/learning data, tests login/refresh/logout and never clicks Settings save or records tokens/screenshots/traces. Do not send credentials to chat. Its safe result is ignored under .local/acceptance/. It does not prove outsider/A/B isolation. Optional native regression: npm run test:db:native (PostgreSQL 18 binaries), disposable Auth shim only, never Cloud.
 
 npm run test:cloud and npm run db:types require explicit local approval/ref and appropriate Cloud setup. Read [Cloud Development](docs/CLOUD_DEVELOPMENT.md) first. No remote migration is automatic.
 
@@ -60,7 +61,7 @@ npm run test:cloud and npm run db:types require explicit local approval/ref and 
 
 Six ordered version-controlled migrations: the four preserved Sprint 0 migrations plus additive learner-access and catalog-query RPCs. docs/postgres_schema.sql is their generated inspection snapshot: **do not apply both snapshot and migrations**. Existing deployments require migration-history review, not baseline replay.
 
-Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPMENT.md) for project creation, private owner provisioning, migration preflight/dry-run, live schema inspection, Auth/RLS tests and Storage. CLI 3.1.0 is pinned and uses explicit --remote targeting. No cloud project, users, buckets or data were created/changed by this task.
+Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPMENT.md). CLI 3.1.0 is pinned and uses explicit --remote targeting. Six migrations were applied under separate approval; owner provisioning was performed by the user. This acceptance task created no users/allowlist/content/Storage or schema changes. Never rerun the fresh-install apply helper on populated history.
 
 ## Contracts and evidence
 
@@ -69,6 +70,8 @@ Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPME
 - [Test plan](docs/TEST_PLAN.md)
 - [Sprint 0 historical evidence](docs/VERIFICATION.md)
 - [Sprint 1 results and blockers](docs/SPRINT1_VERIFICATION.md)
+- [Sprint 1 final acceptance](docs/SPRINT1_ACCEPTANCE.md)
+- [Sprint 2 plan](docs/SPRINT2_PLAN.md), [API contracts](docs/SPRINT2_API_CONTRACTS.md), [UI specification](docs/SPRINT2_UI_SPEC.md), [pilot content plan](docs/PILOT_CONTENT_PLAN.md) — planning only
 - [Agent instructions](AGENTS.md)
 
 No official HSK syllabus edition, content license, audio object or HelloChinese API has been verified. Synthetic test fixtures must never become published curriculum.

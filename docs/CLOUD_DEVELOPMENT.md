@@ -4,6 +4,8 @@ Current environment: Next.js local at http://localhost:3000 -> a dedicated Supab
 
 **2026-11-12 follow-up:** all six approved migrations were applied to `hhgxrjqkuwdgurphopok`. The subsequent read-only security verification PASS includes classification/body/wiring of the pre-existing event-trigger function, private Data API exclusion and anonymous API denials. Real-account Auth/JWT checks remain pending. See [CLOUD_MIGRATION_REPORT](CLOUD_MIGRATION_REPORT.md). The fresh-install helpers below must not be rerun against this populated history. No owner account/allowlist/content was provisioned.
 
+Later acceptance update: the user provisioned/confirmed/allowlisted the owner. Real owner Auth/SSR acceptance now passes (33 secure-local checks); outsider/B/session-expiry and release gates remain open. See [SPRINT1_ACCEPTANCE](SPRINT1_ACCEPTANCE.md). The initial no-owner statements above describe the earlier migration task; no agent provisioning occurred. Run the acceptance helper only with approved existing credentials, never scripts/check-cloud.mjs as a read-only substitute because it includes mutation probes and requires two allowlisted test users.
+
 ## 1. Project and public configuration (owner action)
 
 Create a separate Development project in Supabase Dashboard. Do not reuse Production. Choose its region and plan yourself; this task has not created resources or costs. Record its project reference privately so the migration target can be reviewed.
