@@ -40,7 +40,26 @@ Check exactly one intended owner was provisioned. Login itself does not create a
 
 ## 3. Migration review and approval gate
 
-Installed npm dev dependency: Supabase CLI **3.1.0**. Its help was inspected locally. CLI v3 uses **--remote**, not the historical v2 --linked flag. No CLI login, link, remote command, project creation or remote migration has been performed in this task.
+### Preflight/dry-run helper (Windows PowerShell 5.1)
+
+The currently approved preflight-only target is `hhgxrjqkuwdgurphopok`, through `aws-1-ap-southeast-2.pooler.supabase.com:5432`, database `postgres`, login `postgres.hhgxrjqkuwdgurphopok`. This authorization does **not** include applying migrations. The helper rejects a different target and cross-checks the public URL in .env.local before connecting.
+
+Download the **Server root certificate** from this project's Supabase Dashboard / Database Settings into `.local/cloud-preflight/prod-supabase.cer` (or supply a trusted path with -SslRootCert). This is a public CA certificate, not a password/private key. Tests on this machine found that both generic OpenSSL system roots and Windows roots alone fail certificate verification for this pooler. Do not replace verify-full with require/disable or trust an unverified certificate copied from a TLS failure.
+
+```powershell
+# Run in the repository, using built-in Windows PowerShell; pwsh is not required.
+powershell -NoProfile -File .\scripts\cloud-preflight.ps1
+```
+
+The password is requested using Read-Host -AsSecureString on the local terminal. Never put it in chat, a connection URL, command arguments, a transcript or a committed env file. The helper injects it only into each child's PGPASSWORD environment, disposes its secure buffer, captures native output rather than printing it, and saves only metadata/results into ignored `.local/cloud-preflight/result.json`.
+
+The helper enforces IPv4, TLS verify-full, default_transaction_read_only=on, psql -X/-w/ON_ERROR_STOP, an explicit REPEATABLE READ READ ONLY transaction and ROLLBACK. Client TLS is guaranteed by libpq's forced verify-full connection with the trusted project CA; pg_stat_ssl describes the pooler-to-database leg and is recorded separately, not used to infer client TLS. It checks Auth prerequisites, role/schema privileges, object/function collisions, private-schema ownership and empty migration history. It then uses the password-free Session Pooler URL plus child PGPASSWORD to run migration list and exactly `db push --dry-run --skip-vault`. There is no apply/reset/repair option. A failure blocks all later steps. A dry-run does not execute/validate the pending DDL and never counts as migration success.
+
+CLI 3.1.0's direct query path deliberately uses extended protocol (`queryMode: "extended"`), which rejects multi-command strings. The previous eight-statement preflight hit that boundary; migrations were not implicated. The preflight SQL is now **one SELECT with JSON metadata**, preserving the original checks and adding prerequisite/collision checks. It can also be executed as one CLI read-only prepared query when that connection is authorized; psql is the preferred batch/transaction runner. Never pass a BEGIN/SELECT/ROLLBACK script as one prepared query.
+
+The separate report [CLOUD_PREFLIGHT_REPORT](CLOUD_PREFLIGHT_REPORT.md) records actual local versus Cloud results. Do not run the apply command later in this general guide during a preflight-only task; stop after dry-run and seek separate project-specific approval.
+
+Installed npm dev dependency: Supabase CLI **3.1.0**. Its help was inspected locally. CLI v3 uses **--remote**, not the historical v2 --linked flag. Initial Sprint 1 did not execute any Cloud operation. The later preflight-only task has separate read-attempt/status evidence in CLOUD_PREFLIGHT_REPORT.md; no remote migration apply has been performed.
 
 Before proposing execution:
 
