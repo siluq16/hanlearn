@@ -8,6 +8,7 @@ export const config = {
     "/login",
     "/dashboard/:path*",
     "/roadmap/:path*",
+    "/lessons/:path*",
     "/vocabulary/:path*",
     "/settings/:path*",
     "/api/:path*",

@@ -102,6 +102,32 @@ export type AudioAsset = {
   source_uri: string | null;
   content_license: string | null;
 };
+// Additive reviewed SELECT projections for Sprint 2.1; still not CLI-generated.
+export type PublicationFields = {
+  review_status: string;
+  source_uri: string | null;
+  content_license: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+};
+export type GrammarPoint = PublicationFields & {
+  id: string;
+  title: string;
+  pattern: string;
+  explanation_vi: string;
+  examples: Json;
+  status: string;
+};
+export type LessonVocabulary = {
+  lesson_id: string;
+  vocabulary_id: string;
+  sort_order: number;
+};
+export type LessonGrammar = {
+  lesson_id: string;
+  grammar_id: string;
+  sort_order: number;
+};
 type Table<Row> = {
   Row: Row;
   Insert: Partial<Row>;
@@ -112,12 +138,17 @@ export type Database = {
   public: {
     Tables: {
       profiles: Table<Profile>;
-      syllabus_versions: Table<Syllabus>;
-      courses: Table<Course>;
-      units: Table<Unit>;
-      lessons: Table<Lesson>;
+      syllabus_versions: Table<
+        Syllabus & PublicationFields & { verified_at: string | null }
+      >;
+      courses: Table<Course & PublicationFields>;
+      units: Table<Unit & PublicationFields>;
+      lessons: Table<Lesson & PublicationFields & { content: Json }>;
+      lesson_vocabulary: Table<LessonVocabulary>;
+      lesson_grammar: Table<LessonGrammar>;
+      grammar_points: Table<GrammarPoint>;
       lesson_progress: Table<Progress>;
-      vocabulary: Table<Vocabulary>;
+      vocabulary: Table<Vocabulary & PublicationFields>;
       syllabus_vocabulary: Table<Membership>;
       review_cards: Table<Card>;
       study_sessions: Table<Session>;

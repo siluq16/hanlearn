@@ -112,15 +112,11 @@ export default async function Roadmap() {
                             <Clock3 size={14} />
                             Dự kiến {lesson.estimated_minutes} phút
                           </p>
-                          <p className="mt-3 text-muted-foreground">
-                            Trình học bài và mini-quiz sẽ được mở trong Sprint
-                            2.
-                          </p>
                           <Link
-                            href="/vocabulary"
+                            href={`/lessons/${lesson.id}`}
                             className="mt-3 inline-flex min-h-11 items-center text-primary underline underline-offset-4"
                           >
-                            Khám phá từ vựng
+                            Đọc bài học
                           </Link>
                         </div>
                       </details>
