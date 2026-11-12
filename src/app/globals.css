@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--primary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --color-destructive: var(--destructive);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+}
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #fff;
+  --primary: #2563eb;
+  --primary-foreground: #fff;
+  --destructive: #dc2626;
+  --secondary: #eff6ff;
+  --muted: #f1f5f9;
+  --muted-foreground: #526176;
+  --border: #e2e8f0;
+  color-scheme: light;
+}
+.dark {
+  --background: #0b1220;
+  --foreground: #e7edf7;
+  --card: #111c2e;
+  --primary: #7aa7ff;
+  --primary-foreground: #07162e;
+  --destructive: #f87171;
+  --secondary: #172c4d;
+  --muted: #1c2a40;
+  --muted-foreground: #a2b2ca;
+  --border: #29394e;
+  color-scheme: dark;
+}
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Inter Variable", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  summary,
+  select {
+    cursor: pointer;
+  }
+  a,
+  button,
+  input,
+  select,
+  summary {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring;
+  }
+  ::selection {
+    background: #bfdbfe;
+    color: #172554;
+  }
+}
+.hanzi {
+  font-family: "Noto Sans SC", sans-serif;
+}
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  transform: translateY(-160%);
+  background: var(--card);
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
