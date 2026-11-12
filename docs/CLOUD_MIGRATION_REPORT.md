@@ -1,6 +1,8 @@
 # Development migration apply — 2026-11-12
 
-**Apply PASS: six of six migrations. Overall verification BLOCKED.** The owner explicitly approved only the six files below for Development `hhgxrjqkuwdgurphopok`, then executed the secure local helper. The captured result was written at 21:26 +07. Execution stopped at a strict catalog comparison difference; no apply retry, manual repair or later Cloud operation was performed. Sprint 1 remains PARTIAL.
+**Current result: apply PASS; read-only post-migration security verification PASS. Real-account Auth/JWT integration remains BLOCKED.** Development: `hhgxrjqkuwdgurphopok`. See the final follow-up section for the resolved platform-function classification and live HTTP evidence. Sprint 1 remains PARTIAL.
+
+The initial apply record below is preserved as historical evidence: the owner approved six files, the helper applied them successfully at 21:26 +07 and then stopped on a whole-namespace comparison difference. No retry or manual repair occurred. Later Cloud SELECT/GET checks were separately authorized in the follow-up task.
 
 ## Target, integrity and execution
 
@@ -94,3 +96,51 @@ Storage provisioning, licensed pilot content, authenticated browser checks and c
 Added: scripts/cloud-apply.ps1, scripts/verify-schema.mjs, scripts/check-private-api.mjs, supabase/verification/cloud_schema_manifest.sql, supabase/verification/expected_schema.json, tests/cloud-apply.test.ts and this report. Updated: docs/CLOUD_DEVELOPMENT.md and docs/SPRINT1_VERIFICATION.md. Migration source and generated SQL snapshot unchanged. Local credential/CA/result artifacts remain ignored.
 
 Local checks: 67 tests in 10 files PASS, including an actual Windows PowerShell 5.1 regression for empty/six-row history; lint, typecheck, format:check, static contracts/security and git diff --check PASS. Migration hashes were checked again and remain unchanged. No real Auth integration test, Cloud concurrency test or further migration execution was attempted after the verification stop.
+
+## Read-only security completion — 2026-11-12
+
+**PASS for the requested database/catalog/anonymous HTTP scope.** This supersedes the initial verification BLOCKED and NOT RUN entries above, without rewriting the initial evidence. No database, function, grant, RLS, Auth setting, user, allowlist row, bucket or content was changed. No migration was applied or replayed.
+
+The owner executed `scripts/cloud-security-verify.ps1` with hidden local password input. Fresh catalog capture completed at 21:46:55 +07 through the same fixed IPv4 Session Pooler and trusted CA/TLS verify-full. Backend identity: database/role postgres; transaction_read_only=on. The helper has no write/migration mode: only psql SELECT snapshots within explicit REPEATABLE READ READ ONLY, ON_ERROR_STOP, timeouts and ROLLBACK. Credential buffer was disposed afterwards. HTTP checks used only the public publishable key, with no Auth-user JWT.
+
+| Category | Final result | Evidence |
+| --- | --- | --- |
+| HanLearn schema objects | PASS | Nine comparison sections match: 28 relations, 230 columns, 149 constraints, 51 indexes, 26 policies, six table triggers, 30 application functions, 56 table-privilege and 460 column-privilege entries |
+| rls_auto_enable and event trigger | PASS, scoped review | Actual body/definition, owner/config/language and ensure_rls wiring reviewed and fingerprinted; proven pre-existing |
+| Database grants/RLS metadata | PASS | All 24 public base tables have RLS; two invoker views; effective app grants/EXECUTE match; namespace CREATE denied and anon/authenticated have no superuser/RLS bypass/create-role/create-db |
+| Private schema HTTP exposure | PASS | Three GETs using private profile: both private tables and is_learner RPC return 406/PGRST106 |
+| Anonymous application API permissions | PASS | GETs for 24 public tables + two views and three read-only RPCs all return 401/42501 |
+| Platform function through HTTP | PASS, rejection confirmed | GET rpc/rls_auto_enable returns 400/0A000 with exact unsupported event_trigger return-type diagnostic; not a successful ordinary RPC |
+| Real owner/outsider Auth/JWT/browser behavior | BLOCKED | No approved/provisioned real Auth accounts or allowlist changes in this task |
+
+### Actual platform body and affected objects
+
+`public.rls_auto_enable()` has no arguments, returns event_trigger, uses trusted plpgsql, is SECURITY DEFINER owned by postgres, and fixes search_path to pg_catalog. The preflight already contained its signature/security/search_path. Its captured body SHA-256 is `325ae266d9b166715ef5230ceaf7ff9d523e483cf5610dfb9779ab3f183f4af9`; full definition and metadata are also pinned in `supabase/verification/reviewed_platform.json`.
+
+The function loops over pg_event_trigger_ddl_commands(), accepts only CREATE TABLE / CREATE TABLE AS / SELECT INTO and only table/partitioned-table objects. It acts only when schema_name is public, excludes system/temp schema patterns, looks up the relation name using pg_catalog.pg_class and the event object's OID, then uses `format('alter table if exists %I.%I enable row level security', ...)`. Identifier quoting prevents the schema/table names being injected into the DDL. It contains no DML, external network call, arbitrary user parameter or grant-changing operation.
+
+`ensure_rls` is owned by postgres, enabled `O` (origin/local), fires on ddl_command_end with exactly those three tags and calls public.rls_auto_enable() with no arguments. It affects newly created public tables in those DDL commands. It does not backfill RLS onto existing tables, apply policies, target private/auth/storage/extensions, or act on ordinary application SELECT/INSERT/UPDATE/DELETE. No firing/mutation experiment was performed.
+
+**Operational limitation:** this installed body catches WHEN OTHERS, logs the failure and continues without re-raising. Auto-enable is best effort, not a guarantee or replacement for explicit migration RLS checks. It differs in this respect from the documented example. Current HanLearn RLS was separately confirmed on every public table; no reliance on future trigger success is claimed.
+
+Effective PUBLIC/anon/authenticated EXECUTE remains present on this platform/setup function. It was not revoked. Event-trigger functions require trigger context, unlike ordinary application RPCs ([PostgreSQL](https://www.postgresql.org/docs/17/plpgsql-trigger.html)). The live HTTP probe returned `400/0A000: cannot display a value of type event_trigger`. The route therefore resolves far enough to hit PostgreSQL's unsupported-type rejection; it must not be reported as absent/404 or as a successful anonymously callable business RPC. No anonymous/authenticated schema CREATE privilege or elevated role flags were found.
+
+Six additional event triggers are classified separately as Supabase infrastructure **metadata**: issue_graphql_placeholder, issue_pg_cron_access, issue_pg_graphql_access, issue_pg_net_access, pgrst_ddl_watch and pgrst_drop_watch. All are enabled O, owned by supabase_admin and wired to the expected extensions functions. The extension hooks are tagged CREATE/DROP EXTENSION; PostgREST watchers use ddl_command_end/sql_drop. Their identities/wiring are present in [Supabase's PostgreSQL schema source](https://github.com/supabase/postgres/blob/develop/migrations/schema-17.sql). Their bodies were not audited, and this focused review is not a full Supabase-platform security certification. None is a HanLearn-created function or an unclassified namespace difference.
+
+### Verifier correction and HTTP interpretation
+
+The immutable native reference remains unchanged. Application function names are derived from the six hash-verified migration sources, then all 30 complete captured metadata entries are compared to the original reference hash. A separate reviewed pre-existing function must match its exact metadata and pass body/definition/wiring checks before classification. Missing app functions, unexpected overloads/functions, altered metadata/body/wiring, unexpected relations/grants or disabled/new event triggers still fail. Every extra public/private function is reported; no wildcard exclusion exists.
+
+The final HTTP suite has 33 GET-only probes: three private-profile checks, 26 public relation checks, three application read RPCs and one reviewed event-trigger probe. Table probes use limit=0 and do not retain rows. The application RPCs are get_learner_access, get_due_review_count and search_vocabulary (zero UUID). All are expected to deny anonymous access: this private application has no intentionally anonymous business RPC. No write RPC was tested via HTTP. Client write permissions are verified by catalog metadata, not by mutation attempts.
+
+Initial HTTP attempts inside the network-restricted sandbox were BLOCKED and were rerun with approved network access. The added platform RPC probe initially expected 404 and failed on 400/0A000; direct inspection identified the exact unsupported-type diagnostic. The final check accepts only the reviewed trigger-specific diagnostic, not arbitrary 0A000 errors. Tests assert that unclassified errors remain FAIL. No Cloud configuration was changed to accommodate a check.
+
+Artifacts are ignored local files under `.local/cloud-security/`: capture.json, platform.json (reviewed function definition only), schema.json, http.json and result.json. Original preflight/apply result artifacts are preserved. No password/access token/secret key is in these reports. The pure local analyzer `node scripts/verify-cloud-security.mjs` joins catalog, unchanged history/hash and complete HTTP coverage evidence; it performs no network or SQL operation.
+
+### Remaining acceptance boundaries
+
+Database has passed this read-only verification step. Real Auth-user JWT/PostgREST isolation, verified-email/allowlist behavior, successful owner RPCs, login/logout/refresh/reload, persisted Settings and authenticated mobile browser flows remain unverified. Provisioning the owner or test accounts requires its own authorized task. No account provisioning, allowlist insertion, Storage setup, content import, destructive/concurrency Cloud test, Docker, Production access or Sprint 2 work was performed. Do not rerun the migration apply helper.
+
+Final local suite: **84 tests in 11 files PASS**. Lint/typecheck/format, static contracts/security and git diff checks were rerun for this follow-up. New regressions reject unknown/missing/overloaded functions, altered platform metadata/body/wiring/grants, successful anonymous reads even with empty responses, missing endpoints used as false permission proof, unrelated 0A000 errors and raw network diagnostic leakage. Unchanged migrations, native reference and generated SQL snapshot were checked separately.
+
+Files for this follow-up: added scripts/cloud-security-verify.ps1, scripts/check-anonymous-api.mjs, scripts/verify-cloud-security.mjs, supabase/verification/cloud_platform_security.sql, supabase/verification/reviewed_platform.json and tests/cloud-security.test.ts; updated scripts/verify-schema.mjs and the three Cloud/Sprint 1 documents. No application feature or migration source changed.

@@ -15,10 +15,41 @@ const normalize = (v) =>
             .map((k) => [k, normalize(v[k])]),
         )
       : v;
-export function compareSchema(expected, actual) {
+export function compareSchema(expected, actual, classification = null) {
+  const appNames = classification?.applicationFunctionNames;
+  const extras =
+    appNames && Array.isArray(actual.functions)
+      ? actual.functions.filter(
+          (f) => !appNames.includes(`${f.schema}.${f.name}`),
+        )
+      : [];
+  const preexistingObjects = extras.map((f) => ({
+    schema: f.schema,
+    name: f.name,
+    arguments: f.arguments,
+    classification: classification.reviewedPreexistingFunctions?.some(
+      (reviewed) =>
+        JSON.stringify(normalize(reviewed)) === JSON.stringify(normalize(f)),
+    )
+      ? "REVIEWED_PREEXISTING"
+      : "UNCLASSIFIED",
+  }));
+  const preexistingBaselineMatches =
+    !classification ||
+    (classification.reviewedPreexistingFunctions ?? []).every((reviewed) =>
+      extras.some(
+        (f) =>
+          JSON.stringify(normalize(reviewed)) === JSON.stringify(normalize(f)),
+      ),
+    );
   const sections = Object.fromEntries(
     Object.entries(expected.sections).map(([key, value]) => {
-      const rows = actual[key];
+      const rows =
+        key === "functions" && appNames && Array.isArray(actual.functions)
+          ? actual.functions.filter((f) =>
+              appNames.includes(`${f.schema}.${f.name}`),
+            )
+          : actual[key];
       const sha256 = Array.isArray(rows)
         ? createHash("sha256")
             .update(JSON.stringify(normalize(rows)))
@@ -40,10 +71,18 @@ export function compareSchema(expected, actual) {
     }),
   );
   const result = {
-    status: Object.values(sections).every((v) => v.status === "PASS")
-      ? "PASS"
-      : "FAIL",
+    status:
+      Object.values(sections).every((v) => v.status === "PASS") &&
+      preexistingBaselineMatches &&
+      preexistingObjects.every(
+        (v) => v.classification === "REVIEWED_PREEXISTING",
+      )
+        ? "PASS"
+        : "FAIL",
     sections,
+    ...(classification
+      ? { preexistingObjects, preexistingBaselineMatches }
+      : {}),
   };
   return result;
 }

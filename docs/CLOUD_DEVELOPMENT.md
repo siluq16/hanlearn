@@ -2,7 +2,7 @@
 
 Current environment: Next.js local at http://localhost:3000 -> a dedicated Supabase Cloud Development project. No local Supabase/container runtime is needed or used. The existing native PostgreSQL/Auth-shim test is optional supplementary regression only, not the application backend.
 
-**2026-11-12 follow-up:** all six approved migrations were applied to `hhgxrjqkuwdgurphopok`. Post-verification stopped on a pre-existing extra event-trigger function; private Data API exposure remains unchecked. See [CLOUD_MIGRATION_REPORT](CLOUD_MIGRATION_REPORT.md). The fresh-install helpers below must not be rerun against this populated history. No owner account/allowlist/content was provisioned.
+**2026-11-12 follow-up:** all six approved migrations were applied to `hhgxrjqkuwdgurphopok`. The subsequent read-only security verification PASS includes classification/body/wiring of the pre-existing event-trigger function, private Data API exclusion and anonymous API denials. Real-account Auth/JWT checks remain pending. See [CLOUD_MIGRATION_REPORT](CLOUD_MIGRATION_REPORT.md). The fresh-install helpers below must not be rerun against this populated history. No owner account/allowlist/content was provisioned.
 
 ## 1. Project and public configuration (owner action)
 
@@ -93,6 +93,16 @@ npx --no-install supabase db push --remote=$env:HANLEARN_APPROVED_DEV_PROJECT_RE
 After execution, check migration history AGAIN, table/RLS/grant state, function ownership/search_path and live Auth/PostgREST behavior. Exit code alone is not acceptance. Never reset/drop the cloud database. Keep the six migrations immutable once deployed.
 
 The bounded `scripts/cloud-apply.ps1 -ApplyApprovedSix` helper was used for this specific six-file approval. It pins hashes/project/CA, requires empty history, repeats dry-run and history checks, then allows one exact CLI apply with `--skip-vault --yes`; `--yes` consumes the existing explicit approval rather than authorizing extra scope. It defaults all other DB processes to READ ONLY and stops on any error. It is not an upgrade/retry tool. Reports are in ignored `.local/cloud-apply/`; do not rerun it to complete post-verification.
+
+For separately authorized post-migration read-only verification, use:
+
+```powershell
+powershell -NoProfile -File .\scripts\cloud-security-verify.ps1
+node scripts/check-anonymous-api.mjs
+node scripts/verify-cloud-security.mjs
+```
+
+The first command requires hidden local DB password input and captures only SELECT catalogs/body/wiring with verify-full/READ ONLY; it has no migration/write path. The second uses only GET/publishable key and does not log rows. The third analyzes the captured evidence locally against immutable application hashes and the explicitly reviewed platform baseline. Any changed/unclassified object still fails and requires review; never regenerate the platform baseline merely to silence a failure. Results are ignored under `.local/cloud-security/`. Neither these scripts nor a PASS result authorizes owner provisioning, live-account tests or new migrations.
 
 ## 4. Public type generation
 

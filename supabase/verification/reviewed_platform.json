@@ -1,0 +1,177 @@
+{
+  "projectRef": "hhgxrjqkuwdgurphopok",
+  "reviewedAt": "2026-11-12",
+  "description": "Read-only reviewed platform/setup baseline. rls_auto_enable body: new public tables only, identifier quoting, fixed pg_catalog path, logs and swallows failures. Six extensions event triggers classified by Supabase schema-17 metadata; their bodies are outside this focused review.",
+  "sources": [
+    "https://supabase.com/docs/guides/database/postgres/event-triggers",
+    "https://github.com/supabase/postgres/blob/develop/migrations/schema-17.sql"
+  ],
+  "functionBodySha256": "325ae266d9b166715ef5230ceaf7ff9d523e483cf5610dfb9779ab3f183f4af9",
+  "functionDefinitionSha256": "b21d88816c445d14cef5032c3cd4abaebc1db2001fcb3435022ab6b496182ca4",
+  "functionMetadata": {
+    "name": "rls_auto_enable",
+    "owner": "postgres",
+    "config": [
+      "search_path=pg_catalog"
+    ],
+    "result": "event_trigger",
+    "schema": "public",
+    "definer": true,
+    "language": "plpgsql",
+    "arguments": "",
+    "anon_execute": true,
+    "trusted_language": true,
+    "authenticated_execute": true
+  },
+  "manifestFunction": {
+    "name": "rls_auto_enable",
+    "owner": "postgres",
+    "config": [
+      "search_path=pg_catalog"
+    ],
+    "result": "event_trigger",
+    "schema": "public",
+    "definer": true,
+    "arguments": "",
+    "anon_execute": true,
+    "public_execute": true,
+    "authenticated_execute": true
+  },
+  "eventTriggers": [
+    {
+      "name": "ensure_rls",
+      "tags": [
+        "CREATE TABLE",
+        "CREATE TABLE AS",
+        "SELECT INTO"
+      ],
+      "event": "ddl_command_end",
+      "owner": "postgres",
+      "enabled": "O",
+      "function_name": "rls_auto_enable",
+      "function_schema": "public",
+      "function_arguments": ""
+    },
+    {
+      "name": "issue_graphql_placeholder",
+      "tags": [
+        "DROP EXTENSION"
+      ],
+      "event": "sql_drop",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "set_graphql_placeholder",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    },
+    {
+      "name": "issue_pg_cron_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "grant_pg_cron_access",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    },
+    {
+      "name": "issue_pg_graphql_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "grant_pg_graphql_access",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    },
+    {
+      "name": "issue_pg_net_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "grant_pg_net_access",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    },
+    {
+      "name": "pgrst_ddl_watch",
+      "tags": null,
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "pgrst_ddl_watch",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    },
+    {
+      "name": "pgrst_drop_watch",
+      "tags": null,
+      "event": "sql_drop",
+      "owner": "supabase_admin",
+      "enabled": "O",
+      "function_name": "pgrst_drop_watch",
+      "function_schema": "extensions",
+      "function_arguments": ""
+    }
+  ],
+  "schemaPrivileges": [
+    {
+      "role": "anon",
+      "owner": "postgres",
+      "usage": false,
+      "create": false,
+      "schema": "private"
+    },
+    {
+      "role": "authenticated",
+      "owner": "postgres",
+      "usage": true,
+      "create": false,
+      "schema": "private"
+    },
+    {
+      "role": "anon",
+      "owner": "pg_database_owner",
+      "usage": true,
+      "create": false,
+      "schema": "public"
+    },
+    {
+      "role": "authenticated",
+      "owner": "pg_database_owner",
+      "usage": true,
+      "create": false,
+      "schema": "public"
+    }
+  ],
+  "roleFlags": [
+    {
+      "name": "anon",
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false
+    },
+    {
+      "name": "authenticated",
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false
+    },
+    {
+      "name": "postgres",
+      "create_db": true,
+      "superuser": false,
+      "bypass_rls": true,
+      "create_role": true
+    }
+  ]
+}
