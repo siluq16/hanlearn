@@ -1,5 +1,9 @@
 # HSK 1 Pilot v1 — Content Quality Review
 
+**Cập nhật 2026-11-13: đã sửa draft_revision 2 theo phạm vi được phê duyệt.** CQ-01–CQ-11 đều FIXED ở mức triển khai offline; bảng remediation ở cuối và [PILOT_CONTENT_REMEDIATION](PILOT_CONTENT_REMEDIATION.md) là trạng thái hiện tại. Human review vẫn pending và import/publish BLOCKED. Các nhận xét, số đếm và kết quả kiểm thử của baseline dưới đây được giữ làm bằng chứng lịch sử, không áp dụng nguyên trạng cho revision 2.
+
+## Review baseline revision 1 — giữ bằng chứng
+
 Ngày: **2026-11-13, Asia/Saigon**. Baseline nội dung: commit `61aa76e`. Đây là rà soát có AI hỗ trợ, **không phải human review**, không điền tên/chữ ký người duyệt. Tất cả `review_status=pending`, `status=draft`, human reviewer/date null và import/publish authorization false được giữ nguyên.
 
 **Kết luận: CẦN CHỈNH SỬA / CHƯA ĐỦ ĐIỀU KIỆN IMPORT.** Đã đọc 44 mục vocabulary, 12 grammar, toàn bộ 24 sections của 4 lesson, 24 câu quiz và REVIEW_CHECKLIST. Phát hiện 1 vấn đề mức Cao, 6 mức Vừa và 4 mức Thấp bên dưới; đây gồm cả rủi ro sư phạm và đề xuất biên tập, không phải 11 lỗi phát âm đã được chuyên gia xác nhận. Không sửa payload draft hoặc private answers trong vòng này để giữ baseline review rõ ràng; mọi đề xuất đang mở.
@@ -182,3 +186,23 @@ Lệnh hiện có trong repository là `npm run content:validate` (không có sc
 Không thêm test mới chỉ để kiểm tra một báo cáo Markdown. Kiểm thử cấu trúc không tự đóng các finding sư phạm. Không chạy lại lint/typecheck/build vì không sửa code hoặc payload; lần build baseline là bằng chứng đã có, không được tính là build mới của vòng review này.
 
 Trước import: xử lý CQ-01; sửa/giải trình các vấn đề Vừa; người duyệt đọc riêng mọi key/explanation và toàn bộ nội dung Trung/Việt; duyệt senses/nguồn/quyền và workflow private store; nếu chỉnh draft thì cập nhật manifest public hashes, đối chiếu key revision và chạy lại validator/regressions; chốt package/revision rồi xin phê duyệt riêng Development import. Tất cả human review và import/publish vẫn **pending/BLOCKED**. Không thay Supabase, không migration hoặc Sprint 2.2.
+
+## Kết quả remediation draft_revision 2 — trạng thái hiện tại
+
+Ngày 2026-11-13. Các finding của baseline đã được xử lý trực tiếp trong JSON; chi tiết field, quiz revisions và giới hạn nằm trong [PILOT_CONTENT_REMEDIATION](PILOT_CONTENT_REMEDIATION.md).
+
+| Finding | Trạng thái | Thay đổi chính |
+| --- | --- | --- |
+| CQ-01 | FIXED | Thu hẹp stem L2-Q1 thành câu hỏi tên đầy đủ khi chưa có ngữ cảnh trước; kiểm lại cả 24 câu và private explanations. |
+| CQ-02 | FIXED | Bài 3 có ba lượt 6/6/3, guides/refs và ôn ngắn, 40 phút dự kiến; ví dụ từ mới không cần chữ của lượt sau. |
+| CQ-03 | FIXED | Thay distractor bài 4 trong quiz bài 3 bằng mẫu danh tính đã học. |
+| CQ-04 | FIXED | Cải thiện các distractor mục tiêu, cùng khung/loại ngữ nghĩa; giữ một số câu dễ có lý do scaffold trong báo cáo remediation. |
+| CQ-05 | FIXED | Nhãn cụm và lời đáp rút gọn, dấu câu standalone; thêm câu ngày tháng hoàn chỉnh. |
+| CQ-06 | FIXED | Làm rõ thanh 3/nhịp/ngữ cảnh và 一/不/gè–ge; giữ thanh gốc headwords. |
+| CQ-07 | FIXED | Giải thích chủ ngữ/vị ngữ theo mẫu cụ thể, bỏ lời cấm chung về tiếng Việt. |
+| CQ-08 | FIXED | Sửa diễn đạt 和 và giới hạn nối danh từ/cụm. |
+| CQ-09 | FIXED | Chỉ giữ ví dụ trần thuật minh họa 很; dẫn sang mục hỏi hiện có. |
+| CQ-10 | FIXED | Mục tiêu và tự ôn lesson 2 bỏ thuật ngữ Cloud/membership. |
+| CQ-11 | FIXED | Thống nhất nghĩa ngữ cảnh và ví dụ của 家/天/叫 cùng family examples. |
+
+FIXED là kết quả sửa draft và AI review, **không phải human PASS**. Kết quả hiện tại: `npm run content` PASS, 140 tests/15 files PASS; lint/typecheck/format/contracts/security PASS. Private store revision 2 bind đúng quiz hashes, 24 keys tính lại và đối chiếu; không xuất key/explanation. Human language/quiz/pedagogy/rights review vẫn pending; import/publish **BLOCKED**. Các kết quả 136 tests, 24 sections, câu còn mơ hồ và package bytes không đổi ở phần baseline là lịch sử, đã được thay thế bằng 29 sections và remediation này.

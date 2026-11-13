@@ -3,7 +3,7 @@
   "unit_id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
   "title": "我的家 — Gia đình",
   "objective_vi": "Giới thiệu người thân; dùng 的 và 有; hỏi số thành viên với 几口人; phân biệt 个/口 và 二/两 trong các mẫu đã học.",
-  "estimated_minutes": 30,
+  "estimated_minutes": 40,
   "sort_order": 3,
   "status": "draft",
   "review_status": "pending",
@@ -26,12 +26,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Học các số 一、二、三 trước khi đọc tình huống gia đình. Dùng 两 khi đếm hai người trước lượng từ trong các mẫu này; đừng tự ghép 二 với mọi lượng từ.",
-            "lang": "vi"
-          },
-          {
-            "type": "paragraph",
-            "text": "我的家 là cụm danh từ. 我家 là cách nói quen dùng về gia đình mình; 我爸爸 / 我妈妈 có thể bỏ 的 trong quan hệ thân thuộc. Không mở rộng quy tắc này tùy ý.",
+            "text": "Bài có ba lượt học 6/6/3 từ mới. Học hết một lượt, dành 2–3 phút tự nhớ lại trước khi sang lượt sau; có thể chia thành hai buổi ngắn. Thời gian 40 phút gồm ôn tập, là ước tính cần được thử với người học.",
             "lang": "vi"
           },
           {
@@ -41,31 +36,44 @@
           },
           {
             "type": "paragraph",
-            "text": "一个 đọc yí ge ở đây; trước thanh gốc 4 của 个, 一 đổi cách đọc. Thanh 3 liên tiếp có biến điệu khi nói; pinyin chữ thường vẫn giữ thanh từ điển trừ các trường hợp 一/不 đã ghi chú.",
+            "text": "Pinyin của âm tiết mang thanh 3 vẫn ghi thanh gốc; cách đọc khi nói phụ thuộc nhóm nhịp và ngữ cảnh. Không tự đổi tất cả thanh 3 liền nhau thành thanh 2. Cách ghi này không liên quan đến chữ hoa hay chữ thường.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "一 có dạng từ điển yī. Trong 一个, 一 thường đọc yí trước thanh gốc 4 của 个, dù 个 có thể đọc nhẹ ge. Trong chuỗi đếm hoặc tên ngày/tháng ở bài sau, giữ cách đọc yī đã nêu. 不 có dạng bù; trong 不是 ở bài trước đọc bú shì. Đây là cách chú âm giảng dạy cho các mẫu cụ thể, không phải quy tắc đổi mọi âm tiết.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l3-round-a-guide",
+        "title": "Lượt A — Người thân và cụm sở hữu",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Học 6 từ: 家、爸爸、妈妈、哥哥、姐姐、的. 我的家 nghĩa là gia đình của tôi, là cụm danh từ. Với người thân, có thể gặp 我爸爸 / 我妈妈 không có 的; không mở rộng quy tắc bỏ 的 sang mọi danh từ.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ôn 2–3 phút: che pinyin, nhận diện bốn người thân rồi tự nói một cụm sở hữu. Sau đó nói một câu trạng thái theo mẫu đã học. Phân biệt cụm gọi tên người với câu nói người đó thế nào.",
             "lang": "vi"
           }
         ]
       },
       {
         "id": "l3-words",
-        "title": "Từ vựng mới và ôn lại",
+        "title": "Lượt A — 6 từ mới và từ ôn",
         "type": "vocabulary_refs",
         "vocabularyIds": [
           "81ce53a0-5394-5278-81fe-c67961c8c34d",
-          "a6c5e400-0154-5884-9810-f8245adfce8e",
-          "8d613286-431b-5f14-8ed7-e45ca0178168",
-          "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
-          "7dec5724-9256-5404-8938-647c52f6f504",
           "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
           "29784008-ba30-53e7-9f9d-04c98583dc51",
           "ed41c330-70ca-5535-8bdb-8b19b661bd11",
           "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
-          "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
-          "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
-          "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
-          "a925741e-b594-59dc-8a10-ee8600a4caad",
-          "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
-          "30dd26d7-593c-5002-b3de-e1fd35b87562",
+          "a6c5e400-0154-5884-9810-f8245adfce8e",
           "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
           "04c5a876-74d3-5b7d-9cde-416352dcd276",
           "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
@@ -73,6 +81,63 @@
           "cce00807-ca0f-59fe-acbe-81d6744583c0",
           "ce52e655-b0aa-5915-b790-63712a3180bd",
           "ce2949af-3761-5a54-8a8b-8dbf2275bbd4"
+        ]
+      },
+      {
+        "id": "l3-round-b-guide",
+        "title": "Lượt B — Đếm và nói số lượng",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Học 6 từ: 一、二、三、两、有、个. Trước hết đọc chuỗi 一、二、三; sau đó dùng 有 với số và 个 để nói số anh/chị. Ở các mẫu này, hai trước 个 dùng 两; 一个 đọc yí ge.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ôn 2–3 phút: không nhìn pinyin, đọc chuỗi số rồi nói một câu 有 về anh hoặc chị trong gia đình giả định. Không suy số người của các ví dụ riêng thành số người của hội thoại chính.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l3-round-b-words",
+        "title": "Lượt B — 6 từ mới",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+          "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+          "a925741e-b594-59dc-8a10-ee8600a4caad",
+          "30dd26d7-593c-5002-b3de-e1fd35b87562",
+          "8d613286-431b-5f14-8ed7-e45ca0178168",
+          "cdf09665-aaf2-5aad-8697-073a91f5ddaa"
+        ]
+      },
+      {
+        "id": "l3-round-c-guide",
+        "title": "Lượt C — Hỏi thành viên và liệt kê",
+        "type": "text",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Học 3 từ: 几、口、和. 口 dùng trong mẫu đếm thành viên gia đình; 个 vẫn dùng trong các mẫu đếm người thông dụng đã học. 和 nối các thành viên được liệt kê.",
+            "lang": "vi"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ôn 2–3 phút: che pinyin, tự hỏi số thành viên của một gia đình giả định, trả lời rồi liệt kê họ. Khi liệt kê để bổ sung cho câu vừa nói, có thể dùng lời đáp rút gọn; không coi cụm liệt kê đứng riêng là câu trần thuật đầy đủ.",
+            "lang": "vi"
+          }
+        ]
+      },
+      {
+        "id": "l3-round-c-words",
+        "title": "Lượt C — 3 từ mới",
+        "type": "vocabulary_refs",
+        "vocabularyIds": [
+          "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+          "7dec5724-9256-5404-8938-647c52f6f504",
+          "2aa17a86-f44e-5af2-87e3-32eb104bf7f5"
         ]
       },
       {
@@ -106,7 +171,7 @@
             "type": "example",
             "hanzi": "爸爸、妈妈和我。",
             "pinyin": "Bàba, māma hé wǒ.",
-            "translationVi": "B: Bố, mẹ và tôi."
+            "translationVi": "B: Bố, mẹ và tôi (cụm liệt kê bổ sung cho câu trả lời trước; không phải câu trần thuật đầy đủ khi đứng riêng)."
           },
           {
             "type": "example",

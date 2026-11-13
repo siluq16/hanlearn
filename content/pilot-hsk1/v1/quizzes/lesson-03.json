@@ -2,7 +2,7 @@
   "quiz": {
     "id": "1149a0b7-b545-5838-91e2-14f2a152d260",
     "lesson_id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
-    "revision": 1,
+    "revision": 2,
     "title": "Luyện tập bài 3 — bản nháp",
     "published_at": null,
     "status": "draft",
@@ -56,7 +56,7 @@
       "prompt": "Chọn câu hỏi số thành viên gia đình theo bài.",
       "choices": [
         "你家有几口人？",
-        "现在几点？",
+        "你是中国人吗？",
         "你叫什么名字？",
         "你好吗？"
       ],
@@ -74,8 +74,6 @@
       "prompt": "Chọn cách điền số hai vào 我有___个姐姐 theo mẫu đã học.",
       "choices": [
         "二",
-        "三",
-        "一",
         "两"
       ],
       "status": "draft",

@@ -2,7 +2,7 @@
   "quiz": {
     "id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
     "lesson_id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
-    "revision": 1,
+    "revision": 2,
     "title": "Luyện tập bài 2 — bản nháp",
     "published_at": null,
     "status": "draft",
@@ -17,7 +17,7 @@
       "id": "00dd5cdb-560f-5f5f-8090-5958308f30b4",
       "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
       "sort_order": 1,
-      "prompt": "Chọn câu hỏi tên theo mẫu của bài.",
+      "prompt": "Hai người mới gặp nhau và chưa ai nói tên. Chọn câu hỏi tên đầy đủ, tự hiểu được khi đứng riêng.",
       "choices": [
         "你叫什么名字？",
         "你好吗？",
@@ -35,12 +35,12 @@
       "id": "377cb504-b54a-51a9-8559-64f2d3037870",
       "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
       "sort_order": 2,
-      "prompt": "Nhân vật hư cấu tên 小明. Chọn lời giới thiệu đúng theo mẫu 'tôi tên là...'.",
+      "prompt": "Nhân vật hư cấu 小明 tự giới thiệu tên của mình. Chọn câu phù hợp.",
       "choices": [
-        "我名字什么。",
+        "你叫小明。",
         "我叫小明。",
-        "我很小明。",
-        "我吗小明。"
+        "我叫小红。",
+        "你叫小红。"
       ],
       "status": "draft",
       "review_status": "pending",
@@ -55,10 +55,10 @@
       "sort_order": 3,
       "prompt": "Chọn nghĩa của 我是越南人。",
       "choices": [
-        "Tôi học tiếng Trung.",
+        "Tôi là người Trung Quốc.",
         "Tôi không phải người Việt Nam.",
         "Tôi là người Việt Nam.",
-        "Bạn là người Trung Quốc."
+        "Bạn là người Việt Nam."
       ],
       "status": "draft",
       "review_status": "pending",
@@ -71,11 +71,11 @@
       "id": "359886c6-b796-5943-ab65-89baccd14cc8",
       "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
       "sort_order": 4,
-      "prompt": "Câu nào phủ định danh tính 'tôi là người Trung Quốc'?",
+      "prompt": "Chọn câu trực tiếp phủ định phát biểu “Tôi là người Trung Quốc”, giữ người nói là tôi.",
       "choices": [
         "我是中国人。",
-        "我叫小明。",
-        "我学习汉语。",
+        "你不是中国人。",
+        "我不是越南人。",
         "我不是中国人。"
       ],
       "status": "draft",
@@ -92,9 +92,9 @@
       "prompt": "Chọn nghĩa của 我学习汉语。",
       "choices": [
         "Tôi học tiếng Trung.",
-        "Bạn tên là gì?",
-        "Tôi là tiếng Trung.",
-        "Tôi không học tiếng Trung."
+        "Bạn học tiếng Trung.",
+        "Tôi không học tiếng Trung.",
+        "Người Trung Quốc học tiếng Trung."
       ],
       "status": "draft",
       "review_status": "pending",
@@ -107,12 +107,12 @@
       "id": "c208de2b-95d5-5afd-b9cc-002fa90dfe25",
       "quiz_id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
       "sort_order": 6,
-      "prompt": "Trong câu hỏi có 什么 theo mẫu 你叫什么名字？, cách dùng nào phù hợp với bài?",
+      "prompt": "Trong mẫu hỏi tên 你叫什么名字？, chọn nhận định đúng về vị trí 什么 và việc thêm 吗.",
       "choices": [
-        "Thay 什么 bằng 很 trong mọi câu.",
-        "Thêm 是 trước 叫.",
-        "Không cần thêm 吗 cuối mẫu hỏi này.",
-        "Thêm 再见 để biến thành câu hỏi."
+        "Đặt 什么 trước chủ ngữ 你 và thêm 吗 ở cuối.",
+        "Giữ 什么 sau 叫 và thêm 吗 ở cuối mẫu này.",
+        "Giữ 什么 trong 什么名字 sau 叫, không thêm 吗 vào cuối mẫu này.",
+        "Đặt 什么 sau 名字 và bỏ 叫."
       ],
       "status": "draft",
       "review_status": "pending",

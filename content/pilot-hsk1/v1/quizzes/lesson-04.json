@@ -2,7 +2,7 @@
   "quiz": {
     "id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
     "lesson_id": "47097e01-9557-5f82-a84b-fba132cfca05",
-    "revision": 1,
+    "revision": 2,
     "title": "Luyện tập bài 4 — bản nháp",
     "published_at": null,
     "status": "draft",
@@ -71,11 +71,11 @@
       "id": "48b4204d-18c7-52ac-9b2b-010f9cb011e6",
       "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
       "sort_order": 4,
-      "prompt": "Câu nào hỏi ngày và tháng, không phải giờ hoặc thứ?",
+      "prompt": "Câu nào hỏi cả ngày và tháng, không phải chỉ hỏi ngày, giờ hoặc thứ?",
       "choices": [
         "现在几点？",
         "今天星期几？",
-        "你家有几口人？",
+        "今天几号？",
         "今天几月几号？"
       ],
       "status": "draft",
@@ -92,9 +92,9 @@
       "prompt": "Chọn cách nói 'bây giờ là hai giờ' trong mẫu cơ bản.",
       "choices": [
         "现在两点。",
-        "现在二月。",
-        "今天星期二。",
-        "现在三点。"
+        "现在三点。",
+        "现在四点。",
+        "现在五点。"
       ],
       "status": "draft",
       "review_status": "pending",
@@ -107,7 +107,7 @@
       "id": "a5bd22ed-b611-54c8-b3c7-d29c3f1f9419",
       "quiz_id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
       "sort_order": 6,
-      "prompt": "Ở tình huống giả định chỉ nói giờ đúng trên đồng hồ 12 giờ, 现在三点。 diễn đạt mốc nào?",
+      "prompt": "Đọc giờ đúng trên đồng hồ 12 giờ: 现在三点。 tương ứng mốc nào?",
       "choices": [
         "5:00",
         "2:00",

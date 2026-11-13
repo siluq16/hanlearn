@@ -2,7 +2,7 @@
   "quiz": {
     "id": "08f2e3a1-e171-5aa6-93b9-ac777b053a41",
     "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
-    "revision": 1,
+    "revision": 2,
     "title": "Luyện tập bài 1 — bản nháp",
     "published_at": null,
     "status": "draft",
@@ -22,7 +22,7 @@
         "谢谢！",
         "再见！",
         "你好！",
-        "我。"
+        "你好吗？"
       ],
       "status": "draft",
       "review_status": "pending",
@@ -75,7 +75,7 @@
       "choices": [
         "Bạn tên gì?",
         "Bạn là ai?",
-        "Tạm biệt bạn.",
+        "Bạn có khỏe không?",
         "Còn bạn thì sao?"
       ],
       "status": "draft",
@@ -109,9 +109,9 @@
       "sort_order": 6,
       "prompt": "Chọn lời tạm biệt ở cuối buổi gặp.",
       "choices": [
-        "我。",
-        "很。",
-        "吗？",
+        "你好！",
+        "谢谢你！",
+        "你好吗？",
         "再见！"
       ],
       "status": "draft",

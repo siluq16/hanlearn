@@ -41,7 +41,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Bài chỉ có giờ đúng, chưa xác định buổi sáng/chiều hoặc phút. Dùng 两点 cho hai giờ. 一 trong tên ngày/tháng thường giữ cách đọc yī; 一个 ở bài trước đọc yí ge.",
+            "text": "Bài chỉ có giờ đúng, chưa xác định sáng/chiều hoặc phút. Dùng 两点 cho hai giờ; 二月 và 星期二 vẫn dùng 二. 一 trong tên ngày/tháng của bài đọc yī; 一个 ở bài trước đọc yí ge. Pinyin giữ thanh gốc cho thanh 3; không tự đổi tất cả thanh 3 liền nhau thành thanh 2.",
             "lang": "vi"
           }
         ]
@@ -108,7 +108,7 @@
             "type": "example",
             "hanzi": "五月三号。",
             "pinyin": "Wǔ yuè sān hào.",
-            "translationVi": "Tình huống B — đáp: Ngày 3 tháng 5 (giả định)."
+            "translationVi": "Tình huống B — đáp: Ngày 3 tháng 5 (lời đáp rút gọn cho câu hỏi trước; tình huống giả định)."
           },
           {
             "type": "example",

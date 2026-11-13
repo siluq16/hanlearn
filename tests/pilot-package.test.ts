@@ -23,6 +23,20 @@ function load() {
 function syntheticKeys(pkg: ReturnType<typeof load>) {
   return {
     package_id: pkg.manifest.package_id,
+    package_revision: pkg.manifest.draft_revision,
+    quiz_bindings: pkg.quizzes.map(
+      (q: { quiz: { id: string; lesson_id: string; revision: number } }) => ({
+        quiz_id: q.quiz.id,
+        revision: q.quiz.revision,
+        public_sha256: pkg.manifest.files.find(
+          (f: { path: string }) =>
+            f.path ===
+            pkg.manifest.lessons.find(
+              (l: { id: string }) => l.id === q.quiz.lesson_id,
+            ).quiz_file,
+        ).sha256,
+      }),
+    ),
     review_state: "pending_review",
     human_reviewer: null,
     human_reviewed_at: null,
@@ -37,6 +51,67 @@ function syntheticKeys(pkg: ReturnType<typeof load>) {
   };
 }
 describe("offline draft pilot package", () => {
+  it("binds private keys to current package and quiz revisions/hashes", () => {
+    const pkg = load(),
+      keys = syntheticKeys(pkg);
+    keys.quiz_bindings[0].revision--;
+    expect(validatePilot(pkg, { privateKeys: keys }).privateValidation).toBe(
+      "FAIL",
+    );
+    const wrongHash = syntheticKeys(pkg);
+    wrongHash.quiz_bindings[0].public_sha256 = "0".repeat(64);
+    expect(
+      validatePilot(pkg, { privateKeys: wrongHash }).privateValidation,
+    ).toBe("FAIL");
+    const stalePackage = syntheticKeys(pkg);
+    stalePackage.package_revision--;
+    expect(
+      validatePilot(pkg, { privateKeys: stalePackage }).privateValidation,
+    ).toBe("FAIL");
+    pkg.manifest.lessons[0].quiz_revision++;
+    expect(validatePilot(pkg).status).toBe("FAIL");
+  });
+  it("keeps three learning rounds in lesson 3 with 6/6/3 distinct new words", () => {
+    const pkg = load();
+    expect(
+      pkg.manifest.lessons[2].learning_rounds.map(
+        (r: { new_vocabulary_ids: string[] }) => r.new_vocabulary_ids.length,
+      ),
+    ).toEqual([6, 6, 3]);
+    pkg.manifest.lessons[2].learning_rounds[0].new_vocabulary_ids.pop();
+    expect(validatePilot(pkg).status).toBe("FAIL");
+  });
+  it("does not require later-round characters in the new family-word examples", () => {
+    const pkg = load();
+    const earlier = pkg.manifest.lessons
+      .slice(0, 2)
+      .flatMap((l: { new_vocabulary_ids: string[] }) => l.new_vocabulary_ids);
+    const known = new Set(
+      pkg.vocabulary
+        .filter((v: { id: string }) => earlier.includes(v.id))
+        .flatMap((v: { simplified: string }) => [...v.simplified]),
+    );
+    for (const round of pkg.manifest.lessons[2].learning_rounds) {
+      const words = pkg.vocabulary.filter((v: { id: string }) =>
+        round.new_vocabulary_ids.includes(v.id),
+      );
+      words.forEach((v: { simplified: string }) =>
+        [...v.simplified].forEach((c) => known.add(c)),
+      );
+      for (const word of words) {
+        expect(
+          [...word.example_zh]
+            .filter((c) => /\p{Script=Han}/u.test(c))
+            .every((c) => known.has(c)),
+        ).toBe(true);
+      }
+    }
+  });
+  it("rejects quiz distractors with Chinese characters from a later lesson", () => {
+    const pkg = load();
+    pkg.quizzes[2].questions[2].choices[1] = "现在几点？";
+    expect(validatePilot(pkg).status).toBe("FAIL");
+  });
   it("validates public draft payloads with the real Content V1 schema", () => {
     const result = validatePilot(load());
     expect(result.publicValidation).toBe("PASS");

@@ -2,16 +2,20 @@
 
 Biên soạn: 2026-11-13. **pending_review — chưa được người kiểm duyệt duyệt, chưa được phép import hoặc publish.** Nội dung do AI hỗ trợ tự biên soạn cho người Việt; không phải giáo trình chính thức của đơn vị tổ chức HSK. Không sử dụng nội dung độc quyền HelloChinese hoặc sách trả phí.
 
+Hiện tại: **draft_revision 2**, xử lý CQ-01–CQ-11 ngày 2026-11-13. `package_version: 1` và `content.version: 1` là phiên bản định dạng, không thay đổi. Bốn quiz có revision 2; tất cả entity/question IDs và joins được giữ nguyên. Xem [báo cáo remediation](../../../docs/PILOT_CONTENT_REMEDIATION.md).
+
 ## Quy mô và trình tự
 
 | Bài | Tiêu đề | Mục từ mới | Ngữ pháp | Câu quiz | Dự kiến |
 | --- | --- | --- | --- | --- | --- |
 | 1 | 你好！ — Chào hỏi và làm quen | 8 | 3 | 6 | 20 phút |
 | 2 | 我叫…… — Giới thiệu bản thân | 10 | 3 | 6 | 25 phút |
-| 3 | 我的家 — Gia đình | 15 | 3 | 6 | 30 phút |
+| 3 | 我的家 — Gia đình | 15 (6/6/3) | 3 | 6 | 40 phút |
 | 4 | 今天星期几？— Ngày tháng và thời gian | 11 | 3 | 6 | 30 phút |
 
 Tổng: **1 syllabus, 1 course, 1 unit, 4 lessons, 44 mục từ distinct, 12 điểm ngữ pháp, 4 quiz/24 câu**. Có 66 liên kết lesson–vocabulary (bao gồm ôn lại), 12 liên kết lesson–grammar. Số lượng là quy mô pilot, không phải toàn bộ danh sách HSK 1. Thời gian chỉ là ước tính học, không tạo study session hoặc streak.
+
+Có 29 sections tổng cộng: bài 1/2/4 mỗi bài 6, bài 3 có 11. Bài 3 học ba lượt A/B/C với 6/6/3 từ mới và ôn ngắn; ví dụ của nhóm trước không đòi chữ mới của nhóm sau. Các section IDs cũ vẫn tồn tại, chỉ bổ sung 5 section cho lượt học. Thời lượng 40 phút cần thử nghiệm với người học thật.
 
 ```text
 manifest.json                  Catalog draft, IDs/joins, phân loại HSK, review gates, hashes
@@ -50,6 +54,8 @@ Mọi listening.audioAssetId đều null; transcript chỉ để đọc, không 
 
 Đáp án và giải thích quiz chỉ ở **`.local/pilot-hsk1/v1/private/answers.json`**; source biên soạn chứa key cũng nằm trong thư mục private đó. Thư mục đã tắt kế thừa ACL và chỉ cho tài khoản local hiện tại/SYSTEM truy cập, đồng thời bị Git ignore. Không có key, đáp án đánh dấu, feedback sau chấm hoặc digest của vector đáp án trong payload công khai.
 
+Private store hiện được bind với package draft_revision và quiz ID/revision/SHA-256 của file quiz công khai. Thiếu hoặc lệch binding phải FAIL/BLOCKED. Bản trước remediation và các helper chứa key cũng chỉ nằm trong vùng private; không dùng helper review revision 1 cho dữ liệu revision 2. Không chạy lại author.mjs hoặc remediation.mjs để tái tạo nội dung đã được chỉnh/review. Các helper thực thi chỉ in counts/booleans/IDs, không in key/explanation.
+
 Đây là biện pháp cách ly local, **không phải mã hóa hoặc quy trình quản lý/chia sẻ key đã được duyệt**. Cần duyệt quyền truy cập, backup và bàn giao riêng. Không copy vào content/, public/, src/, log, frontend bundle hoặc Git. Không chạy lại private authoring source sau khi người kiểm đã chỉnh sửa vì có thể ghi đè công việc review. Nếu clone repository mà không có private store, validator phải báo BLOCKED; không tự đoán/tạo lại đáp án từ file công khai.
 
 ## Validation offline
@@ -57,6 +63,7 @@ Mọi listening.audioAssetId đều null; transcript chỉ để đọc, không 
 Chạy tại root repo, Node 24 đã kiểm thử:
 
 ```powershell
+npm run content
 npm run content:validate
 npm run test
 npm run typecheck

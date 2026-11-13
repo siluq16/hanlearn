@@ -64,7 +64,7 @@ const quiz = z
       .object({
         id: uuid,
         lesson_id: uuid,
-        revision: z.literal(1),
+        revision: z.number().int().positive(),
         title: lessonText(300),
         published_at: z.null(),
         ...draft,
@@ -108,6 +108,18 @@ const unit = z
 const keySchema = z
   .object({
     package_id: lessonText(100),
+    package_revision: z.number().int().positive(),
+    quiz_bindings: z
+      .array(
+        z
+          .object({
+            quiz_id: uuid,
+            revision: z.number().int().positive(),
+            public_sha256: z.string().regex(/^[a-f0-9]{64}$/),
+          })
+          .strict(),
+      )
+      .length(4),
     review_state: z.literal("pending_review"),
     human_reviewer: z.null(),
     human_reviewed_at: z.null(),
@@ -398,6 +410,33 @@ export function validatePilot(pkg, { privateKeys = null, source = null } = {}) {
     fail("duplicate_section_id");
   const newWords = m.lessons.flatMap((l) => l.new_vocabulary_ids);
   if (!sameSet(newWords, ids.words)) fail("new_vocabulary_distribution");
+  if (
+    !z.number().int().min(2).safeParse(m.draft_revision).success ||
+    !date.safeParse(m.revised_on).success
+  )
+    fail("draft_revision_metadata_missing");
+  const rounds = m.lessons[2]?.learning_rounds;
+  if (
+    !Array.isArray(rounds) ||
+    rounds.length !== 3 ||
+    rounds.some(
+      (r, i) =>
+        r.id !== ["A", "B", "C"][i] ||
+        !Array.isArray(r.new_vocabulary_ids) ||
+        r.new_vocabulary_ids.length !== [6, 6, 3][i] ||
+        !pkg.lessons[2].content.sections.some(
+          (s) =>
+            s.id === r.section_id &&
+            s.type === "vocabulary_refs" &&
+            r.new_vocabulary_ids.every((id) => s.vocabularyIds.includes(id)),
+        ),
+    ) ||
+    !sameSet(
+      rounds.flatMap((r) => r.new_vocabulary_ids),
+      m.lessons[2].new_vocabulary_ids,
+    )
+  )
+    fail("lesson_three_learning_rounds_invalid");
   for (const l of pkg.lessons) {
     const vl = m.lesson_vocabulary.filter((x) => x.lesson_id === l.id),
       gl = m.lesson_grammar.filter((x) => x.lesson_id === l.id);
@@ -452,6 +491,29 @@ export function validatePilot(pkg, { privateKeys = null, source = null } = {}) {
       q.questions.some((x) => x.quiz_id !== q.quiz.id)
     )
       fail("quiz_question_relation", q.quiz.id);
+  for (const [i, l] of m.lessons.entries()) {
+    const q = pkg.quizzes.find((q) => q.quiz.lesson_id === l.id);
+    if (l.quiz_revision !== q?.quiz.revision)
+      fail("quiz_manifest_revision_mismatch", l.id);
+    const taughtIds = m.lessons
+      .slice(0, i + 1)
+      .flatMap((x) => x.new_vocabulary_ids);
+    // Character coverage catches later-lesson distractors; word/sense suitability still needs review.
+    const taughtHanzi = new Set(
+      pkg.vocabulary
+        .filter((v) => taughtIds.includes(v.id))
+        .flatMap((v) => [...v.simplified]),
+    );
+    if (i >= 1) for (const char of "小明小红") taughtHanzi.add(char);
+    if (
+      q?.questions.some((question) =>
+        [...question.prompt, ...question.choices.join("")].some(
+          (char) => /\p{Script=Han}/u.test(char) && !taughtHanzi.has(char),
+        ),
+      )
+    )
+      fail("quiz_untaught_hanzi", l.id);
+  }
   const actual = summary().counts;
   for (const [key, count] of Object.entries({
     ...actual,
@@ -580,6 +642,23 @@ export function validatePilot(pkg, { privateKeys = null, source = null } = {}) {
       questions = pkg.quizzes.flatMap((q) => q.questions);
     if (!parsed.success || privateKeys.package_id !== m.package_id)
       fail("private_answer_structure_invalid");
+    else if (
+      privateKeys.package_revision !== m.draft_revision ||
+      !sameSet(
+        privateKeys.quiz_bindings.map((b) => b.quiz_id),
+        pkg.quizzes.map((q) => q.quiz.id),
+      ) ||
+      privateKeys.quiz_bindings.some((b) => {
+        const q = pkg.quizzes.find((q) => q.quiz.id === b.quiz_id);
+        const l = m.lessons.find((l) => l.id === q?.quiz.lesson_id);
+        return (
+          b.revision !== q?.quiz.revision ||
+          b.public_sha256 !==
+            m.files?.find((f) => f.path === l?.quiz_file)?.sha256
+        );
+      })
+    )
+      fail("private_answer_revision_binding");
     else if (
       !sameSet(
         privateKeys.keys.map((k) => k.question_id),

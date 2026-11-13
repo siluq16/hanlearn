@@ -3,7 +3,7 @@
     "id": "2822b103-89dd-5819-b360-7315aef042b6",
     "title": "Đại từ làm chủ ngữ",
     "pattern": "我 / 你 + vị ngữ",
-    "explanation_vi": "我 là tôi, 你 là bạn. Trong các mẫu đầu tiên, đặt người được nói đến trước phần nói về người đó. Không dùng trật tự tiếng Việt để tự ý đảo các thành phần.",
+    "explanation_vi": "我 là tôi, 你 là bạn. Trong các mẫu của bài, 我/你 đứng trước phần nói về người đó. Ví dụ 我很好: 我 là chủ ngữ, 很好 là phần nói về trạng thái. Học cả mẫu, chưa tự đảo vị trí. Không suy từ mẫu này rằng trật tự câu tiếng Trung và tiếng Việt luôn đối lập.",
     "examples": [
       {
         "hanzi": "我很好。",
@@ -27,17 +27,12 @@
     "id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
     "title": "Câu trần thuật với 很 và tính từ",
     "pattern": "Chủ ngữ + 很 + 好",
-    "explanation_vi": "Dùng 我很好 để trả lời ngắn trong bài hỏi thăm. 很 có thể diễn đạt mức độ rất, nhưng trong mẫu tính từ đơn giản không nhất thiết cần nhấn mạnh như từ rất trong mọi câu tiếng Việt. Không thêm 是 vào trước 很好 ở mẫu này.",
+    "explanation_vi": "Dùng 我很好 để trả lời ngắn trong bài hỏi thăm. 很 có thể diễn đạt mức độ rất, nhưng trong mẫu tính từ đơn giản không nhất thiết cần nhấn mạnh như từ rất trong mọi câu tiếng Việt. Không thêm 是 vào trước 很好 ở mẫu này. Ví dụ ở mục này là câu trần thuật; xem mục 吗/呢 để luyện hỏi và đáp.",
     "examples": [
       {
         "hanzi": "我很好。",
         "pinyin": "Wǒ hěn hǎo.",
         "translationVi": "Tôi khỏe."
-      },
-      {
-        "hanzi": "你好吗？",
-        "pinyin": "Nǐ hǎo ma?",
-        "translationVi": "Bạn có khỏe không?"
       }
     ],
     "status": "draft",
@@ -75,7 +70,7 @@
     "id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
     "title": "Giới thiệu tên với 叫",
     "pattern": "Người + 叫 + tên",
-    "explanation_vi": "Dùng 我叫... để giới thiệu tên. Ở bài này, 小明 (Xiǎomíng) và 小红 (Xiǎohóng) là tên nhân vật hư cấu, không phải từ mới cần suy ra nghĩa hoặc nhãn HSK. Không thêm 是 trước 叫.",
+    "explanation_vi": "Dùng 我叫… để giới thiệu tên. 叫 trong bài chỉ được học với nghĩa mang tên, chưa mở rộng sang mọi nghĩa gọi. 小明 (Xiǎomíng) và 小红 (Xiǎohóng) là tên nhân vật hư cấu để luyện đọc. Không thêm 是 trước 叫 trong mẫu này.",
     "examples": [
       {
         "hanzi": "我叫小明。",
@@ -123,7 +118,7 @@
     "id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
     "title": "Danh tính với 是 và phủ định 不是",
     "pattern": "Người + 是 / 不是 + quốc gia + 人",
-    "explanation_vi": "Dùng 是 nối người với một danh tính. 不是 phủ định mẫu đó. 不 có dạng từ điển bù nhưng trước 是 (thanh 4) thường đọc bú; phần pinyin câu thể hiện biến điệu này. 越南 là tên quốc gia bổ trợ cho người Việt, chưa gán membership HSK 1.",
+    "explanation_vi": "Dùng 是 nối người với một danh tính. 不是 phủ định mẫu đó. 不 có dạng từ điển bù; trước 是 mang thanh 4, thường đọc bú. Pinyin câu dùng bú shì để hỗ trợ luyện nói. Mẫu quốc gia + 人 giới thiệu xuất xứ trong bài; không phải cách xác minh quốc tịch pháp lý.",
     "examples": [
       {
         "hanzi": "我是越南人。",
@@ -150,9 +145,9 @@
     "explanation_vi": "的 đọc nhẹ de, nối người sở hữu với danh từ. Với quan hệ thân thuộc có thể gặp 我家 hoặc 我爸爸 không có 的; đây không phải quy tắc bỏ 的 trước mọi danh từ. 我的家 là cụm danh từ, chưa phải một câu thông báo đầy đủ.",
     "examples": [
       {
-        "hanzi": "我的家。",
-        "pinyin": "Wǒ de jiā.",
-        "translationVi": "Gia đình / ngôi nhà của tôi (cụm danh từ)."
+        "hanzi": "我的家",
+        "pinyin": "Wǒ de jiā",
+        "translationVi": "Gia đình của tôi (cụm danh từ, chưa phải câu trần thuật đầy đủ)."
       },
       {
         "hanzi": "我爸爸很好。",
@@ -171,7 +166,7 @@
     "id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
     "title": "有 và số lượng: 个, 口, 二, 两",
     "pattern": "Người / gia đình + 有 + số + lượng từ + danh từ",
-    "explanation_vi": "Có thể dùng 个 để đếm người trong mẫu thông dụng, 口 trong mẫu đếm thành viên gia đình. Trước lượng từ ở đây dùng 两 cho hai: 两个人; 二 dùng khi đếm 一、二、三 hoặc trong 星期二 / 二月 ở bài sau. 一个 thường đọc yí ge; 个 có thể nhẹ thành ge. Không ghép 不 với 有 để tự tạo phủ định sở hữu.",
+    "explanation_vi": "Học theo ba lượt trong bài: cụm sở hữu, số lượng với 有/个, rồi hỏi thành viên với 几/口 và liệt kê bằng 和. 个 dùng đếm người trong mẫu thông dụng; 口 dùng trong mẫu đếm thành viên gia đình. Đọc chuỗi số là 一、二、三; trước lượng từ ở các mẫu này dùng 两 cho hai, như 两个人. 个 có dạng từ điển gè, có thể đọc nhẹ ge trong câu. 一个 ở ví dụ đọc yí ge: 一 đổi theo thanh gốc 4 của 个. Không dùng 不 để tự tạo phủ định của 有; bài chưa luyện phủ định sở hữu.",
     "examples": [
       {
         "hanzi": "我家有三口人。",
@@ -195,16 +190,16 @@
     "id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
     "title": "Liên kết danh từ bằng 和",
     "pattern": "Danh từ + 和 + danh từ",
-    "explanation_vi": "和 nối danh từ hoặc cụm danh từ tương đương và trong mẫu của bài. Ví dụ liệt kê thành viên gia đình. Không suy ra rằng 和 thay được và để nối mọi loại mệnh đề tiếng Việt.",
+    "explanation_vi": "和 nối danh từ hoặc cụm danh từ, gần nghĩa “và” trong các mẫu của bài. Nó không dùng để nối tùy ý mọi mệnh đề. Hai ví dụ dưới là cụm danh từ hoặc cụm liệt kê, chưa phải câu trần thuật đầy đủ khi đứng riêng.",
     "examples": [
       {
-        "hanzi": "爸爸和妈妈。",
-        "pinyin": "Bàba hé māma.",
+        "hanzi": "爸爸和妈妈",
+        "pinyin": "Bàba hé māma",
         "translationVi": "Bố và mẹ (cụm danh từ)."
       },
       {
-        "hanzi": "爸爸、妈妈和我。",
-        "pinyin": "Bàba, māma hé wǒ.",
+        "hanzi": "爸爸、妈妈和我",
+        "pinyin": "Bàba, māma hé wǒ",
         "translationVi": "Bố, mẹ và tôi (cụm liệt kê)."
       }
     ],
@@ -253,7 +248,12 @@
       {
         "hanzi": "五月三号。",
         "pinyin": "Wǔ yuè sān hào.",
-        "translationVi": "Ngày ba tháng năm."
+        "translationVi": "Ngày ba tháng năm (cụm chỉ ngày; dùng như lời đáp rút gọn cho câu hỏi trước)."
+      },
+      {
+        "hanzi": "今天五月三号。",
+        "pinyin": "Jīntiān wǔ yuè sān hào.",
+        "translationVi": "Hôm nay là ngày ba tháng năm (câu trần thuật trong tình huống giả định)."
       }
     ],
     "status": "draft",

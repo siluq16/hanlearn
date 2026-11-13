@@ -1,5 +1,11 @@
 # HSK 1 pilot offline authoring — 2026-11-13
 
+**Trạng thái mới nhất: draft_revision 2 sau remediation CQ-01–CQ-11.** Số lượng 4 bài/44 từ/12 grammar/24 câu giữ nguyên; hiện có 29 sections, bài 3 chia lượt 6/6/3 và dự kiến 40 phút. Các quiz đều revision 2, IDs/joins giữ nguyên, private answers được tính lại và bind theo quiz revision/hash. Tất cả vẫn draft/pending; human review và import readiness BLOCKED. Xem [PILOT_CONTENT_REMEDIATION](PILOT_CONTENT_REMEDIATION.md) cho file/field, lý do và kết quả kiểm thử hiện tại.
+
+Phần authoring và kiểm thử bên dưới ghi nhận baseline revision 1; câu “mỗi bài 6 sections” và test count ở đó là lịch sử, không phải số đếm revision 2.
+
+Kiểm chứng revision 2 (2026-11-13): `npm run content` PASS Zod/IDs/refs/hashes/source và private revision binding; **140 tests / 15 files PASS**. Lint, typecheck, format, contracts và static security scan PASS. Đã rà lại 24 quiz và viết lại giải thích riêng theo lựa chọn hiện tại; các trường reviewer/approval vẫn pending, không đưa raw explanation vào repo. Không chạy build mới hoặc Cloud checks trong remediation; browser chunks hiện có được scan bổ sung. Chi tiết kiểm bất biến trong báo cáo remediation.
+
 **Biên soạn draft và kiểm tra kỹ thuật offline; chưa được người kiểm duyệt phê duyệt. Import/publish: BLOCKED.** Nội dung nằm ở [content/pilot-hsk1/v1](../content/pilot-hsk1/v1/README.md), chốt theo Content V1 production, không thay Zod/schema/PostgreSQL/app behavior.
 
 ## Sản phẩm

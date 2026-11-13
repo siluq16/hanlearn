@@ -2,6 +2,8 @@
 
 Ngày biên soạn: 2026-11-13. Người duyệt: **chưa có**. Không đánh dấu xong thay cho người kiểm duyệt. Phiếu này không chứa đáp án hoặc feedback của câu quiz.
 
+Đối tượng duyệt hiện tại: **draft_revision 2 / quiz revision 2** sau remediation CQ-01–CQ-11. Mọi checkbox dưới đây vẫn để trống cho người duyệt độc lập; FIXED trong báo cáo kỹ thuật không thay cho chữ ký con người.
+
 ## Ngôn ngữ và pinyin
 
 - [ ] Kiểm toàn bộ 44 nghĩa Việt và ví dụ, không chỉ 43 đối chiếu headword/reading. Nhãn source có các nghĩa/từ loại ở cấp khác; xét đúng cách dùng đã chọn.
@@ -17,12 +19,13 @@ Ngày biên soạn: 2026-11-13. Người duyệt: **chưa có**. Không đánh d
 
 ## Nội dung và sư phạm
 
-- [ ] Đọc cả 4 mục tiêu, 24 sections và hội thoại: tự nhiên, rõ người nói, tải từ mới vừa sức. Bài gia đình có 15 mục mới kể cả số/lượng từ, cần kiểm thời lượng và mức độ khó.
+- [ ] Đọc cả 4 mục tiêu, 29 sections và hội thoại: tự nhiên, rõ người nói, tải từ mới vừa sức. Bài gia đình có 15 mục mới chia ba lượt 6/6/3, cần thử thời lượng 40 phút, hoạt động tự nhớ và mức độ khó.
 - [ ] Các ví dụ từ vựng độc lập không phải cùng một gia đình; không suy cộng anh/chị của các ví dụ vào tình huống ba người chính.
 - [ ] Xác nhận mọi từ/cụm ngoài từ mới đã được ôn/giải thích; tách tên riêng/cụm cấu tạo khỏi danh sách distinct.
 - [ ] Giữ 越南 là bổ trợ ngoài danh mục headword đã kiểm, không tự thêm membership cấp 1. Người duyệt có thể xác minh bổ sung bằng nguồn chính thức riêng.
 - [ ] Kiểm đủ 24 câu quiz và mọi distractor qua vùng riêng: đúng một đáp án về nghĩa/grammar/ngữ cảnh, không có lựa chọn tương đương hoặc gợi ý do formatting.
 - [ ] Kiểm giải thích quiz trong private store đầy đủ và khớp revision; cấu trúc PASS không thay cho kiểm ngữ nghĩa. Không chép chúng vào file công khai.
+- [ ] Đọc lại stem L2-Q1 khi không có ngữ cảnh tên trước đó; xác nhận một lựa chọn phù hợp duy nhất. Đối chiếu toàn bộ 24 key/explanation revision 2 qua vùng private, kể cả câu giữ nguyên wording.
 
 ## Nguồn và quyền
 
