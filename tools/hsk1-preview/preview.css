@@ -1,0 +1,4 @@
+/* Local fonts cover both Vietnamese and Hanzi, including mixed-language titles. */
+body {
+  font-family: "Inter Variable", "Noto Sans SC", sans-serif;
+}

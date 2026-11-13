@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
-import type { LessonBundle, LessonGrammar, LessonWord } from "../types";
+import type { ReaderContent, ReaderGrammar, ReaderWord } from "./reader-types";
 import { ContentProvenance } from "./provenance";
 
 function Example({
@@ -41,7 +41,7 @@ function WordCard({
   word,
   showPinyin,
 }: {
-  word: LessonWord;
+  word: ReaderWord;
   showPinyin: boolean;
 }) {
   return (
@@ -87,7 +87,7 @@ function GrammarCard({
   grammar,
   showPinyin,
 }: {
-  grammar: LessonGrammar;
+  grammar: ReaderGrammar;
   showPinyin: boolean;
 }) {
   return (
@@ -113,11 +113,7 @@ function GrammarCard({
     </Card>
   );
 }
-export function LessonReader({
-  content,
-  vocabulary,
-  grammar,
-}: Pick<LessonBundle, "content" | "vocabulary" | "grammar">) {
+export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
   const [showPinyin, setShowPinyin] = useState(true);
   const usedWords = new Set(
     content.sections.flatMap((s) =>

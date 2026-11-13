@@ -1,4 +1,4 @@
-import type { Provenance } from "../types";
+import type { ReaderProvenance } from "./reader-types";
 export function safeSourceHref(value: string): string | null {
   try {
     const url = new URL(value);
@@ -9,7 +9,7 @@ export function safeSourceHref(value: string): string | null {
     return null;
   }
 }
-export function ContentProvenance({ value }: { value: Provenance }) {
+export function ContentProvenance({ value }: { value: ReaderProvenance }) {
   const href = safeSourceHref(value.sourceUri);
   return (
     <details className="mt-4 border-t border-border pt-2 text-xs leading-6 text-muted-foreground">
@@ -17,17 +17,25 @@ export function ContentProvenance({ value }: { value: Provenance }) {
         Nguồn và quyền sử dụng
       </summary>
       <div className="space-y-1 pb-2">
-        <p className="[overflow-wrap:anywhere]">Giấy phép: {value.license}</p>
         <p className="[overflow-wrap:anywhere]">
-          Người rà soát: {value.reviewedBy}
+          {value.license === "pending-rights-review"
+            ? "Quyền sử dụng: metadata bản nháp đang chờ rà soát"
+            : `Giấy phép: ${value.license}`}
+        </p>
+        <p className="[overflow-wrap:anywhere]">
+          Người rà soát: {value.reviewedBy ?? "Chưa ghi nhận"}
         </p>
         <p>
           Rà soát ngày{" "}
-          <time dateTime={value.reviewedAt}>
-            {new Intl.DateTimeFormat("vi-VN", {
-              timeZone: "Asia/Ho_Chi_Minh",
-            }).format(new Date(value.reviewedAt))}
-          </time>
+          {value.reviewedAt ? (
+            <time dateTime={value.reviewedAt}>
+              {new Intl.DateTimeFormat("vi-VN", {
+                timeZone: "Asia/Ho_Chi_Minh",
+              }).format(new Date(value.reviewedAt))}
+            </time>
+          ) : (
+            "Chưa ghi nhận"
+          )}
         </p>
         {href ? (
           <a
