@@ -247,4 +247,3 @@ Mẫu: 现在 + số + 点 / 现在几点？
 Xuất xứ biên soạn: urn:hanlearn:pilot-hsk1:v1:grammar:12. Quyền: pending-rights-review; chưa được duyệt.
 
 Đối chiếu: [cti-hsk-2025-11](https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf), PDF 388, trang in 385, category nội bộ clock-time; source_category_located_pending_review. Không phải phê duyệt mọi cách dùng.
-

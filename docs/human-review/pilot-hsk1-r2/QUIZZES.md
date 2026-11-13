@@ -467,4 +467,3 @@ D. 4:00
 Cần xác nhận: Đúng một lựa chọn phù hợp với toàn stem, distractors cùng phạm vi kiến thức, không suy từ formatting.
 
 Attestation riêng: `private/a5bd22ed-b611-54c8-b3c7-d29c3f1f9419`. Không điền đáp án vào hồ sơ chung.
-

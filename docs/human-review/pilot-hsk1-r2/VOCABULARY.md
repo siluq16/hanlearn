@@ -799,4 +799,3 @@ Xuất xứ biên soạn: urn:hanlearn:pilot-hsk1:v1:word:天. Quyền: pending-
 HSK: **verified_hsk1_headword**; sense vẫn pending_review.
 
 Nguồn đối chiếu: [cti-hsk-2025-11](https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf), edition 2025-11; cover states implementation 2026-07; ordinal 207, term 天, nhãn 1, reading tiān; PDF 85, trang in 82; đối chiếu máy 2026-11-13.
-

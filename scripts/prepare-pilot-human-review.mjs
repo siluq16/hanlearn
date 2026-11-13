@@ -362,6 +362,8 @@ export function buildHumanReview() {
       ...rows.map((r) => columns.map((c) => csv(r[c])).join(",")),
     ].join("\r\n") +
     "\r\n";
+  for (const file of Object.keys(outputs).filter((file) => file.endsWith(".md")))
+    outputs[file] = outputs[file].trimEnd() + "\n";
   return { outputs, snapshot };
 }
 if (

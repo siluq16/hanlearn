@@ -455,5 +455,3 @@ Stable ID: `47097e01-9557-5f82-a84b-fba132cfca05/l4-review`.
 Đọc ba câu hỏi thời gian và tự phân biệt chúng. Không dùng mẫu trong bài như ngày giờ thật; việc đọc đủ ngày 1–31 và tháng 1–12 cần học thêm số.
 
 Chưa có file audio được duyệt. Nội dung này do AI hỗ trợ tự biên soạn, đang chờ người kiểm tra tiếng Trung và quyền sử dụng; chưa được phát hành.
-
-
