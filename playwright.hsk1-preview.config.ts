@@ -17,6 +17,10 @@ export default defineConfig({
         hasTouch: true,
       },
     },
+    {
+      name: "preview-tablet",
+      use: { viewport: { width: 768, height: 1024 } },
+    },
   ],
   webServer: {
     command: "npm run preview:hsk1",

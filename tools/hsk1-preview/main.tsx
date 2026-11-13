@@ -68,8 +68,8 @@ function App() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return (
-    <main className="mx-auto max-w-5xl space-y-8 px-4 py-8 sm:px-8">
-      <header className="space-y-4 rounded-2xl border border-primary/20 bg-secondary p-6">
+    <main className="mx-auto max-w-5xl space-y-6 px-4 py-5 sm:space-y-8 sm:px-8 sm:py-8">
+      <header className="space-y-3 rounded-2xl border border-primary/20 bg-secondary p-4 sm:p-6">
         <p className="text-xs font-bold tracking-widest text-primary">
           LOCAL CONTENT PREVIEW
         </p>
@@ -87,14 +87,17 @@ function App() {
           hoặc xác nhận hoàn thành.
         </p>
       </header>
-      <nav aria-label="Danh sách bài học" className="grid gap-3 sm:grid-cols-2">
+      <nav
+        aria-label="Danh sách bài học"
+        className="flex gap-3 overflow-x-auto overscroll-x-contain pb-2 sm:grid sm:grid-cols-2"
+      >
         {data.lessons.map((l, i) => (
           <button
             key={l.id}
             type="button"
             aria-current={i === index ? "page" : undefined}
             onClick={() => navigate(i)}
-            className={`min-h-24 rounded-xl border p-4 text-left focus-visible:outline-2 focus-visible:outline-primary ${i === index ? "border-primary bg-secondary" : "border-border bg-card"}`}
+            className={`min-h-24 w-64 shrink-0 rounded-xl border p-4 text-left focus-visible:outline-2 focus-visible:outline-primary sm:w-auto ${i === index ? "border-primary bg-secondary" : "border-border bg-card"}`}
           >
             <span className="block text-xs text-muted-foreground">
               Bài {i + 1} · {l.estimatedMinutes} phút · {l.newWordCount} từ mới
@@ -197,6 +200,9 @@ function App() {
             Tải ghi chú
           </Button>
         </div>
+        <p className="text-xs leading-6 text-muted-foreground">
+          Chưa lưu bền vững: tải file ghi chú trước khi tải lại hoặc đóng tab.
+        </p>
         <p role="status" className="text-sm">
           {notes.length} ghi chú trong phiên này
         </p>

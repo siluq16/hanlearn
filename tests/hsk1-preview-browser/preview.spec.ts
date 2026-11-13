@@ -2,6 +2,50 @@ import fs from "node:fs";
 import path from "node:path";
 import { expect, test } from "@playwright/test";
 
+test("UX comparison screenshots", async ({ page }, info) => {
+  const stage = process.env.PREVIEW_UX_STAGE === "before" ? "before" : "after";
+  const folder = `.local/previews/ux-${stage}`;
+  fs.mkdirSync(folder, { recursive: true });
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({
+    path: `${folder}/${info.project.name}-overview.png`,
+  });
+  await page
+    .getByRole("navigation", { name: "Các phần của bài học" })
+    .evaluate((el) => el.scrollIntoView({ block: "start" }));
+  await page.screenshot({
+    path: `${folder}/${info.project.name}-navigation.png`,
+  });
+  await page
+    .locator("#section-l1-words")
+    .evaluate((el) => el.scrollIntoView({ block: "start" }));
+  if (stage === "after")
+    await expect(
+      page
+        .getByRole("navigation", { name: "Các phần của bài học" })
+        .getByRole("link")
+        .nth(1),
+    ).toHaveAttribute("aria-current", "location");
+  await page.screenshot({
+    path: `${folder}/${info.project.name}-vocabulary.png`,
+  });
+  await page
+    .locator("article section[id^='section-']")
+    .nth(3)
+    .evaluate((el) => el.scrollIntoView({ block: "start" }));
+  if (stage === "after")
+    await expect(
+      page
+        .getByRole("navigation", { name: "Các phần của bài học" })
+        .getByRole("link")
+        .nth(3),
+    ).toHaveAttribute("aria-current", "location");
+  await page.screenshot({
+    path: `${folder}/${info.project.name}-dialogue.png`,
+  });
+});
+
 test("all frozen lessons render locally with toggle, navigation and no Cloud traffic", async ({
   page,
 }, info) => {
@@ -90,6 +134,84 @@ test("feedback stays in memory and exports only public snapshot-bound notes", as
   );
   await page.reload();
   await expect(page.getByRole("status")).toContainText("0 ghi chú");
+});
+
+test("section chips track reading position and support keyboard navigation without hiding headings", async ({
+  page,
+}, info) => {
+  await page.goto("/?lesson=3");
+  const nav = page.getByRole("navigation", { name: "Các phần của bài học" });
+  const links = nav.getByRole("link");
+  await expect(links).toHaveCount(11);
+  await links.first().focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(links.nth(1)).toBeFocused();
+  await page.keyboard.press("End");
+  await expect(links.last()).toBeFocused();
+  await page.keyboard.press("Home");
+  await expect(links.first()).toBeFocused();
+  await page.keyboard.press("ArrowLeft");
+  await expect(links.last()).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(links.last()).toHaveAttribute("aria-current", "location");
+  const target = page.locator("article section[id^='section-']").last();
+  await expect(target).toBeFocused();
+  const navBox = await nav.boundingBox(),
+    targetBox = await target.boundingBox();
+  expect(targetBox!.y).toBeGreaterThanOrEqual(navBox!.y + navBox!.height);
+  await page
+    .locator("article section[id^='section-']")
+    .nth(2)
+    .evaluate((el) => el.scrollIntoView({ block: "start" }));
+  await expect(links.nth(2)).toHaveAttribute("aria-current", "location");
+  await expect(nav.locator('[aria-current="location"]')).toHaveCount(1);
+  const activeBox = await links.nth(2).boundingBox();
+  expect(activeBox!.x).toBeGreaterThanOrEqual(0);
+  expect(activeBox!.x + activeBox!.width).toBeLessThanOrEqual(
+    info.project.use.viewport!.width,
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.getByRole("button", { name: "← Bài trước" }).click();
+  await expect(
+    page
+      .getByRole("navigation", { name: "Các phần của bài học" })
+      .getByRole("link")
+      .first(),
+  ).toHaveAttribute("aria-current", "location");
+});
+
+test("vocabulary hierarchy preserves every source meaning and has one common audio notice", async ({
+  page,
+}) => {
+  const source = JSON.parse(
+    fs.readFileSync("content/pilot-hsk1/v1/vocabulary.json", "utf8"),
+  ) as { simplified: string; meaning_vi: string }[];
+  const seen = new Set<string>();
+  for (let i = 1; i <= 4; i++) {
+    await page.goto(`/?lesson=${i}`);
+    const cards = page.locator("[data-vocabulary-card]");
+    await expect(cards.first()).toBeVisible();
+    await expect(page.locator("[data-vocabulary-audio-notice]")).toHaveCount(1);
+    await expect(cards.getByText(/Audio.*chưa khả dụng/)).toHaveCount(0);
+    for (const card of await cards.all()) {
+      const hanzi = await card.locator('[lang="zh-Hans"]').first().innerText();
+      const word = source.find((w) => w.simplified === hanzi)!;
+      expect(word).toBeDefined();
+      expect(await card.locator("[data-word-meaning]").textContent()).toBe(
+        word.meaning_vi,
+      );
+      await expect(
+        card.getByText("Nghĩa & cách dùng", { exact: true }),
+      ).toBeVisible();
+      await expect(card.getByText("Ví dụ", { exact: true })).toBeVisible();
+      seen.add(hanzi);
+    }
+  }
+  expect(seen.size).toBe(44);
 });
 
 test("static allowlist and headers isolate draft assets; browser output contains no key payloads", async ({

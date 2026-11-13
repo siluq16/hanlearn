@@ -9,9 +9,35 @@ import {
 // @ts-expect-error Node-only HTTP tool has no declaration file.
 import { requestStatus } from "../scripts/hsk1-preview-server.mjs";
 import { ContentProvenance } from "@/features/lessons/components/provenance";
+import { LessonReader } from "@/features/lessons/components/lesson-reader";
 import type { PreviewDataset } from "../tools/hsk1-preview/types";
 
 describe("frozen public-only local preview", () => {
+  it("renders one vocabulary audio notice and a single current reading section", () => {
+    const data = loadPreview() as PreviewDataset;
+    const html = renderToStaticMarkup(
+      createElement(LessonReader, data.lessons[0]),
+    );
+    expect(html.match(/data-vocabulary-audio-notice/g)).toHaveLength(1);
+    expect(html.match(/aria-current="location"/g)).toHaveLength(1);
+    expect(html).toContain("Nghĩa &amp; cách dùng");
+    expect(html).not.toContain(
+      "Audio chưa khả dụng. Bạn vẫn có thể đọc từ và ví dụ.",
+    );
+    expect(html).not.toMatch(/studiedAt|completedAt|mark_lesson_studied/);
+  });
+  it("does not invent a section or audio notice for empty content", () => {
+    const html = renderToStaticMarkup(
+      createElement(LessonReader, {
+        content: { version: 1, sections: [] },
+        vocabulary: [],
+        grammar: [],
+      }),
+    );
+    expect(html).toContain("Chưa có phần nội dung");
+    expect(html).not.toContain('aria-current="location"');
+    expect(html).not.toContain("data-vocabulary-audio-notice");
+  });
   it("validates r3 and projects all sections and linked catalog", () => {
     const data = loadPreview() as PreviewDataset;
     expect(data.revision).toBe(3);

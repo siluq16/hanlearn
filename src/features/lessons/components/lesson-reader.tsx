@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
 import type { ReaderContent, ReaderGrammar, ReaderWord } from "./reader-types";
 import { ContentProvenance } from "./provenance";
+import { SectionNavigation } from "./section-navigation";
 
 function Example({
   value,
@@ -14,17 +15,20 @@ function Example({
   showPinyin: boolean;
 }) {
   return (
-    <div className="space-y-2 border-l-2 border-primary/30 pl-4">
+    <div
+      data-lesson-example
+      className="max-w-prose space-y-2 rounded-r-xl border-l-2 border-primary/30 bg-secondary/40 px-4 py-3"
+    >
       <p
         lang="zh-Hans"
-        className="hanzi [overflow-wrap:anywhere] text-xl leading-loose"
+        className="hanzi whitespace-pre-wrap [overflow-wrap:anywhere] text-xl leading-loose sm:text-2xl"
       >
         {value.hanzi}
       </p>
       {showPinyin && value.pinyin && (
         <p
           data-pinyin-text
-          className="[overflow-wrap:anywhere] text-sm text-primary"
+          className="whitespace-pre-wrap [overflow-wrap:anywhere] text-sm leading-7 text-primary"
         >
           {value.pinyin}
         </p>
@@ -45,11 +49,12 @@ function WordCard({
   showPinyin: boolean;
 }) {
   return (
-    <Card>
-      <CardContent className="p-5">
+    <Card data-vocabulary-card className="min-w-0 self-start">
+      <CardContent className="p-5 sm:p-6">
+        <p className="mb-1 text-xs font-medium text-muted-foreground">Hán tự</p>
         <p
           lang="zh-Hans"
-          className="hanzi [overflow-wrap:anywhere] text-3xl leading-relaxed"
+          className="hanzi [overflow-wrap:anywhere] text-4xl leading-relaxed"
         >
           {word.hanzi}
         </p>
@@ -64,20 +69,42 @@ function WordCard({
         {showPinyin && (
           <p
             data-pinyin-text
-            className="mt-2 [overflow-wrap:anywhere] text-primary"
+            aria-label="Pinyin"
+            className="mt-1 [overflow-wrap:anywhere] text-lg leading-8 text-primary"
           >
             {word.pinyin}
           </p>
         )}
-        <p className="my-4 whitespace-pre-wrap [overflow-wrap:anywhere] leading-7">
-          {word.meaningVi}
-        </p>
+        <div className="my-5 space-y-2 border-t border-border pt-4">
+          <p className="text-xs font-medium text-muted-foreground">
+            Nghĩa & cách dùng
+          </p>
+          <p
+            data-word-meaning
+            className="whitespace-pre-wrap [overflow-wrap:anywhere] text-base leading-8"
+          >
+            {/* Preserve every character; parentheses get visual emphasis only.
+                Semicolons are not inferred to separate definitions from usage. */}
+            {word.meaningVi.split(/(\([^()]*\))/u).map((part, i) => (
+              <span
+                key={i}
+                className={
+                  part.startsWith("(") && part.endsWith(")")
+                    ? "text-sm text-muted-foreground"
+                    : "font-medium"
+                }
+              >
+                {part}
+              </span>
+            ))}
+          </p>
+        </div>
         {word.example && (
-          <Example value={word.example} showPinyin={showPinyin} />
+          <div className="space-y-2">
+            <p className="text-xs font-medium text-muted-foreground">Ví dụ</p>
+            <Example value={word.example} showPinyin={showPinyin} />
+          </div>
         )}
-        <p className="mt-4 text-xs leading-6 text-muted-foreground">
-          Audio chưa khả dụng. Bạn vẫn có thể đọc từ và ví dụ.
-        </p>
         <ContentProvenance value={word.provenance} />
       </CardContent>
     </Card>
@@ -140,22 +167,16 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
           Hiển thị pinyin
         </Button>
       </div>
-      {content.sections.length > 0 && (
-        <nav
-          aria-label="Các phần của bài học"
-          className="flex flex-wrap gap-x-5 gap-y-1"
+      {vocabulary.length > 0 && (
+        <p
+          data-vocabulary-audio-notice
+          className="rounded-xl border border-dashed border-border px-4 py-3 text-sm leading-7 text-muted-foreground"
         >
-          {content.sections.map((s, index) => (
-            <a
-              key={s.id}
-              href={`#section-${s.id}`}
-              className="inline-flex min-h-11 items-center text-sm text-primary underline underline-offset-4"
-            >
-              {index + 1}. {s.title}
-            </a>
-          ))}
-        </nav>
+          Audio từ vựng chưa khả dụng trong bài này. Bạn có thể đọc Hán tự,
+          pinyin và ví dụ bên dưới.
+        </p>
       )}
+      <SectionNavigation sections={content.sections} />
       {content.sections.length === 0 && (
         <EmptyState
           title="Chưa có phần nội dung"
@@ -168,7 +189,7 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
           id={`section-${section.id}`}
           tabIndex={-1}
           aria-labelledby={`heading-${section.id}`}
-          className="scroll-mt-8 space-y-5 outline-offset-4"
+          className="scroll-mt-32 space-y-5 rounded-xl outline-offset-4"
         >
           <h2
             id={`heading-${section.id}`}
@@ -182,7 +203,7 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
                 <p
                   key={i}
                   lang={block.lang}
-                  className={`whitespace-pre-wrap [overflow-wrap:anywhere] leading-8 ${block.lang === "zh-Hans" ? "hanzi text-xl" : "text-sm"}`}
+                  className={`max-w-prose whitespace-pre-wrap [overflow-wrap:anywhere] leading-8 ${block.lang === "zh-Hans" ? "hanzi text-xl" : "text-base"}`}
                 >
                   {block.text}
                 </p>
