@@ -1,5 +1,7 @@
 # Sprint 2 technical plan
 
+2026-11-13 scoped update: Sprint 2.2 study confirmation source/local tests are implemented under separate approval; see [SPRINT2_2_VERIFICATION](SPRINT2_2_VERIFICATION.md). All Cloud writes remain hard-blocked in this iteration. The baseline below is historical; steps 2.3+ remain unimplemented, Sprint 1 PARTIAL and pilot human review/import BLOCKED.
+
 2026-11-12. **2.1 read-only implemented under separate approval; remaining steps planning only.** No SQL migration or content import. Sprint 1 remains PARTIAL (SPRINT1_ACCEPTANCE.md). DOMAIN_CONTRACTS.md and SRS_SPEC.md remain authoritative. Proposed contracts and screens are specified separately in SPRINT2_API_CONTRACTS.md and SPRINT2_UI_SPEC.md.
 
 Later scoped execution: the user separately approved **2.1 read-only only**, with the Sprint 1 blockers carried explicitly. That reader is now implemented; see [SPRINT2_1_VERIFICATION](SPRINT2_1_VERIFICATION.md) and [LESSON_CONTENT_V1](LESSON_CONTENT_V1.md). The planning baseline below is preserved. All mutation/quiz/SRS/planning/session/analytics/import steps remain unimplemented and require their own approval; 2.1 is not a release approval.

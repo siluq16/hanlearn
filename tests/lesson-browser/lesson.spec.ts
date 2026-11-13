@@ -85,6 +85,111 @@ test("long content wraps without mobile overflow", async ({ page }) => {
     ),
   ).toBe(true);
 });
+
+test("study confirmation is explicit, pending-safe, separate from completion and survives fixture reload", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/?mode=study");
+  await expect(
+    page.getByText("Chưa xác nhận học", { exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("synthetic-study:study")),
+  ).toBeNull();
+  const button = page.getByRole("button", {
+    name: "Tôi đã học nội dung này",
+    exact: true,
+  });
+  await button.focus();
+  const target = await button.boundingBox();
+  expect(target?.height).toBeGreaterThanOrEqual(44);
+  await expect(button).toBeFocused();
+  await page.keyboard.press("Space");
+  await expect(
+    page.getByRole("button", { name: "Đang xử lý…" }),
+  ).toBeDisabled();
+  await expect(
+    page.getByText("Đã xác nhận học", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("Đã hoàn thành", { exact: true })).toHaveCount(0);
+  await expect(page.getByText(/Chức năng làm quiz chưa được mở/)).toBeVisible();
+  await page
+    .getByRole("button", { name: "Xác nhận lại việc học", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Xác nhận lại việc học", exact: true }),
+  ).toBeEnabled();
+  await expect(
+    page.locator('time[datetime="2026-11-13T02:00:00Z"]'),
+  ).toHaveCount(1);
+  await page
+    .getByRole("button", { name: "Tải lại tiến độ", exact: true })
+    .click();
+  await expect(
+    page.getByText("Đã xác nhận học", { exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: `.local/previews/study-${testInfo.project.name}-synthetic.png`,
+    fullPage: true,
+  });
+});
+test("unknown outcome retries the original lesson and no receipt-only optimistic completion", async ({
+  page,
+}) => {
+  await page.goto("/?mode=study-retry");
+  await page
+    .getByRole("button", { name: "Tôi đã học nội dung này", exact: true })
+    .click();
+  await expect(page.getByRole("alert")).toContainText(
+    "kết quả có thể đã được lưu",
+  );
+  await expect(
+    page.getByText("Chưa xác nhận học", { exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Thử xác nhận lại an toàn" }).click();
+  await expect(
+    page.getByText("Đã xác nhận học", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole("alert")).toHaveCount(0);
+  await page.goto("/?mode=study-no-render");
+  await page
+    .getByRole("button", { name: "Tôi đã học nội dung này", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Tôi đã học nội dung này", exact: true }),
+  ).toBeEnabled();
+  await expect(
+    page.getByText("Chưa xác nhận học", { exact: true }),
+  ).toBeVisible();
+});
+test("fixture completion uses readback and blocked mode never submits", async ({
+  page,
+}) => {
+  await page.goto("/?mode=study-complete");
+  await page
+    .getByRole("button", { name: "Tôi đã học nội dung này", exact: true })
+    .click();
+  await expect(page.getByText("Đã hoàn thành", { exact: true })).toBeVisible();
+  await expect(
+    page.locator('time[datetime="2026-11-13T02:01:00Z"]'),
+  ).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("Đã hoàn thành", { exact: true })).toBeVisible();
+  await page.goto("/?mode=study-blocked");
+  await expect(
+    page.getByRole("button", { name: "Tôi đã học nội dung này", exact: true }),
+  ).toBeDisabled();
+  expect(
+    await page.evaluate(() =>
+      sessionStorage.getItem("synthetic-study:study-blocked"),
+    ),
+  ).toBeNull();
+});
 test("unavailable/invalid/empty/loading/error are distinct and do not leak raw metadata", async ({
   page,
 }) => {

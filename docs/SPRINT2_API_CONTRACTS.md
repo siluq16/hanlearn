@@ -1,5 +1,7 @@
 # Sprint 2 API and persistence contracts
 
+2026-11-13: L2 now has a local-only Server Action adapter with independent requireLearner, strict input, RPC/readback and server hard block on Cloud targets. See [SPRINT2_2_VERIFICATION](SPRINT2_2_VERIFICATION.md) for actual test limits; no RPC signature or migration changed, and proposals outside 2.2 remain unimplemented.
+
 2026-11-12. **Specification only.** Existing signatures below are from migrations 001–006. Proposed RPCs/routes are explicitly marked and do not exist yet. Never call a privileged private table from Next with a secret key to fill a missing API.
 
 ## Shared boundary

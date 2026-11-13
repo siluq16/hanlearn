@@ -22,6 +22,9 @@ if(existsSync('supabase/tests/sprint1.sql')) {
 }
 
 const uid='e0000000-0000-0000-0000-000000000001';
+const study=spawnSync(psql,[...args,'-f','supabase/tests/study_confirmation.sql'],{encoding:'utf8'});
+if(study.status!==0) throw Error(study.stderr || study.error?.message || 'Study confirmation SQL failed');
+console.log(`PASS ${(study.stderr.match(/NOTICE:  PASS:/g)||[]).length} study confirmation SQL assertions (disposable native/Auth shim only)`);
 const vid='d0000000-0000-0000-0000-000000000001';
 const cid='c0000000-0000-0000-0000-000000000001';
 const auth=`set local role authenticated; select set_config('request.jwt.claim.sub','${uid}',true);`;

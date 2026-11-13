@@ -1,5 +1,7 @@
 # Sprint 2 UI specification
 
+2026-11-13: study confirmation presentation is implemented for 2.2 with pending/error/retry and server-read progress, local-only gate; [verification](SPRINT2_2_VERIFICATION.md). Quiz/SRS/plan/timer/analytics interactions below remain specifications, not implemented screens. Earlier read-only-only statements describe the preserved 2.1 baseline.
+
 2026-11-12. UI planning baseline with the later 2.1 read-only implementation noted below; other routes/interactions remain unimplemented. Read SPRINT2_PLAN.md for each item's dependencies, database objects, RPCs, authorization, acceptance/tests and blockers. API payloads/receipts are defined in SPRINT2_API_CONTRACTS.md; this document defines presentation and interaction states.
 
 Scoped implementation update: 2.1 lesson read UI is implemented under separate user approval; [verification](SPRINT2_1_VERIFICATION.md). Pinyin is a stable labelled aria-pressed toggle; audio remains unavailable. The other proposed interactions, including study confirmation in the combined 2.1/2.2 section below, remain plans only.
