@@ -2,7 +2,7 @@
   "quiz": {
     "id": "08f2e3a1-e171-5aa6-93b9-ac777b053a41",
     "lesson_id": "639665c9-952d-5714-a276-537a3568b463",
-    "revision": 2,
+    "revision": 3,
     "title": "Luyện tập bài 1 — bản nháp",
     "published_at": null,
     "status": "draft",
@@ -71,12 +71,12 @@
       "id": "76015916-80bf-52c2-bd11-a9a9812b0408",
       "quiz_id": "08f2e3a1-e171-5aa6-93b9-ac777b053a41",
       "sort_order": 4,
-      "prompt": "Trong 我很好，你呢？, 你呢？ có nghĩa gần nhất là gì?",
+      "prompt": "Trong cuộc hỏi thăm sức khỏe, A nói 我很好，你呢？. Phần 你呢？ thực hiện chức năng nào ở lượt nói này?",
       "choices": [
-        "Bạn tên gì?",
-        "Bạn là ai?",
-        "Bạn có khỏe không?",
-        "Còn bạn thì sao?"
+        "Đề nghị người nghe cho biết tên của mình.",
+        "Hỏi tiếp người nghe về cùng chủ đề vừa được nói đến.",
+        "Hỏi người nghe xác nhận danh tính.",
+        "Báo hiệu người nói muốn kết thúc cuộc gặp."
       ],
       "status": "draft",
       "review_status": "pending",

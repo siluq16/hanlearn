@@ -1,5 +1,7 @@
 # Phiếu kiểm duyệt pilot v1 — tất cả pending_review
 
+Trạng thái hiện tại: **draft_revision 3**, quiz revisions **3/2/2/2**; HSK-AI-01 sửa L1-Q4 cần được owner/người duyệt xem lại. Mọi checkbox vẫn trống. Hồ sơ r2 được giữ nguyên trong docs/human-review/pilot-hsk1-r2; dùng packet r3 cho dữ liệu hiện tại. Chính sách private-use chưa được owner ký hoặc chính thức áp dụng.
+
 Ngày biên soạn: 2026-11-13. Người duyệt: **chưa có**. Không đánh dấu xong thay cho người kiểm duyệt. Phiếu này không chứa đáp án hoặc feedback của câu quiz.
 
 Đối tượng duyệt hiện tại: **draft_revision 2 / quiz revision 2** sau remediation CQ-01–CQ-11. Mọi checkbox dưới đây vẫn để trống cho người duyệt độc lập; FIXED trong báo cáo kỹ thuật không thay cho chữ ký con người.

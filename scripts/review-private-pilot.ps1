@@ -8,7 +8,6 @@ try {
     $root = Join-Path $repo 'content/pilot-hsk1/v1'
     $privateDir = Join-Path $repo '.local/pilot-hsk1/v1/private'
     $privateFile = Join-Path $privateDir 'answers.json'
-    $snapshotFile = Join-Path $repo 'docs/human-review/pilot-hsk1-r2/SOURCE_SNAPSHOT.json'
     function Read-LocalJson([string]$file) {
         return (Get-Content -LiteralPath $file -Raw -Encoding UTF8 | ConvertFrom-Json)
     }
@@ -26,9 +25,11 @@ try {
             if ($sid -ne $identity -and $sid -ne 'S-1-5-18') { throw 'ACL' }
         }
     }
-    $snapshot = Read-LocalJson $snapshotFile
     $manifest = Read-LocalJson (Join-Path $root 'manifest.json')
-    if ($snapshot.draft_revision -ne 2 -or $manifest.draft_revision -ne 2 -or
+    if ($manifest.draft_revision -isnot [int] -or $manifest.draft_revision -lt 2) { throw 'Revision' }
+    $snapshotFile = Join-Path $repo ('docs/human-review/pilot-hsk1-r{0}/SOURCE_SNAPSHOT.json' -f $manifest.draft_revision)
+    $snapshot = Read-LocalJson $snapshotFile
+    if ($snapshot.draft_revision -ne $manifest.draft_revision -or
         $manifest.import_authorized -ne $false -or $manifest.publish_authorized -ne $false) { throw 'Revision' }
     $expected = @('manifest.json', 'vocabulary.json', 'grammar.json', 'rights-manifest.json')
     foreach ($i in 1..4) { $expected += ('lessons/lesson-0{0}.json' -f $i); $expected += ('quizzes/lesson-0{0}.json' -f $i) }
@@ -47,7 +48,7 @@ try {
     $privateInitialHash = Hash-File $privateFile
     $answers = Read-LocalJson $privateFile
     if ((Hash-File $privateFile) -ne $privateInitialHash) { throw 'Private source changed' }
-    if ($answers.package_revision -ne 2 -or $answers.package_id -ne $manifest.package_id -or
+    if ($answers.package_revision -ne $manifest.draft_revision -or $answers.package_id -ne $manifest.package_id -or
         $answers.review_state -ne 'pending_review' -or $null -ne $answers.human_reviewer -or
         $null -ne $answers.human_reviewed_at -or @($answers.keys).Count -ne 24 -or
         @($answers.keys.question_id | Select-Object -Unique).Count -ne 24 -or
@@ -76,7 +77,7 @@ try {
     Add-Type -AssemblyName System.Windows.Forms
     Add-Type -AssemblyName System.Drawing
     $form = New-Object Windows.Forms.Form
-    $form.Text = 'HanLearn private review - LOCAL ONLY - revision 2'
+    $form.Text = ('HanLearn private review - LOCAL ONLY - revision {0}' -f $manifest.draft_revision)
     $form.Size = New-Object Drawing.Size(1000,750)
     $form.StartPosition = 'CenterScreen'
     $notice = New-Object Windows.Forms.Label

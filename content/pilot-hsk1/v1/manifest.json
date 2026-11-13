@@ -106,7 +106,7 @@
         "bccefc87-a163-5bde-b48a-438de4aa4986"
       ],
       "review_state": "pending_review",
-      "quiz_revision": 2
+      "quiz_revision": 3
     },
     {
       "id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
@@ -1991,7 +1991,7 @@
     },
     {
       "path": "quizzes/lesson-01.json",
-      "sha256": "d6668e6d143f1df0a452d6ba37ac320aa432525d41bbeff4b7a71b6ddd8e2564"
+      "sha256": "d6a9dcbf6e64905dc1a3987bf9687c86f0f4a0326c15ac3f8504c4501948dfd1"
     },
     {
       "path": "quizzes/lesson-02.json",
@@ -2006,7 +2006,7 @@
       "sha256": "567f7f62b31ceb260be82af079da93dc6926bbb1d702c38ed148cbcba5094242"
     }
   ],
-  "draft_revision": 2,
+  "draft_revision": 3,
   "revised_on": "2026-11-13",
   "revision_history": [
     {
@@ -2019,6 +2019,18 @@
       "draft_revision": 2,
       "revised_on": "2026-11-13",
       "reason": "CQ-01 through CQ-11 offline remediation; no human approval or import authorization."
+    },
+    {
+      "draft_revision": 3,
+      "revised_on": "2026-11-13",
+      "reason": "HSK-AI-01: clarify L1-Q4 discourse function; owner private-use policy proposed separately, not accepted.",
+      "changed_question_ids": [
+        "76015916-80bf-52c2-bd11-a9a9812b0408"
+      ],
+      "changed_quiz_ids": [
+        "08f2e3a1-e171-5aa6-93b9-ac777b053a41"
+      ],
+      "previous_revision": 2
     }
   ]
 }

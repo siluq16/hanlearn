@@ -1,8 +1,10 @@
 # HanLearn HSK 1 pilot v1 — offline draft
 
+**Hiện tại: draft_revision 3** sau HSK-AI-01 (L1-Q4). Chỉ quiz bài 1 revision 3, các quiz bài 2–4 revision 2; IDs/relationships giữ nguyên. [Hồ sơ r3](../../../docs/human-review/pilot-hsk1-r3/README.md) và [Private Pilot Readiness](../../../docs/PRIVATE_PILOT_READINESS.md) là trạng thái hiện tại. Nội dung và hồ sơ r2 phía dưới là mốc remediation lịch sử, không sửa chữ ký/hash r2. Chính sách owner private-use chỉ được đề xuất, chưa có owner acceptance; mọi draft/pending và quyền import/publish false giữ nguyên.
+
 Biên soạn: 2026-11-13. **pending_review — chưa được người kiểm duyệt duyệt, chưa được phép import hoặc publish.** Nội dung do AI hỗ trợ tự biên soạn cho người Việt; không phải giáo trình chính thức của đơn vị tổ chức HSK. Không sử dụng nội dung độc quyền HelloChinese hoặc sách trả phí.
 
-Hiện tại: **draft_revision 2**, xử lý CQ-01–CQ-11 ngày 2026-11-13. `package_version: 1` và `content.version: 1` là phiên bản định dạng, không thay đổi. Bốn quiz có revision 2; tất cả entity/question IDs và joins được giữ nguyên. Xem [báo cáo remediation](../../../docs/PILOT_CONTENT_REMEDIATION.md).
+Mốc remediation trước: **draft_revision 2**, xử lý CQ-01–CQ-11 ngày 2026-11-13. `package_version: 1` và `content.version: 1` là phiên bản định dạng, không thay đổi. Ở mốc đó bốn quiz có revision 2; tất cả entity/question IDs và joins được giữ nguyên. Xem [báo cáo remediation lịch sử](../../../docs/PILOT_CONTENT_REMEDIATION.md).
 
 ## Quy mô và trình tự
 

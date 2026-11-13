@@ -1,0 +1,72 @@
+{
+  "package_id": "hanlearn-pilot-hsk1-v1",
+  "draft_revision": 3,
+  "source_root": "content/pilot-hsk1/v1",
+  "manifest_sha256": "dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b",
+  "package_snapshot_sha256": "2cb3e0d7a667dd6faba633c4df1e87e6dbaee539e19d0cb394e9dcc769c91deb",
+  "files": [
+    {
+      "path": "grammar.json",
+      "sha256": "ce25e063ecc967792b537d09585de8812b16efe7cf5e43883dee9c1299b87061"
+    },
+    {
+      "path": "lessons/lesson-01.json",
+      "sha256": "05ff3d13842a5809429333dfde42cdf4faaa407b521492a70a898d30d7c8f237"
+    },
+    {
+      "path": "lessons/lesson-02.json",
+      "sha256": "16a5c5b128b6b8141a8c8cb2007232f8932c97d0fae5be6e1ec874717cc12dc0"
+    },
+    {
+      "path": "lessons/lesson-03.json",
+      "sha256": "ae5c364eb0995b792748b66e94905f3ddff6432f841695c0d448cedcbcde8245"
+    },
+    {
+      "path": "lessons/lesson-04.json",
+      "sha256": "be7dd97643be8d8a77e506320020dad85aabc78894e0086628f36a55f905a154"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b"
+    },
+    {
+      "path": "quizzes/lesson-01.json",
+      "sha256": "d6a9dcbf6e64905dc1a3987bf9687c86f0f4a0326c15ac3f8504c4501948dfd1"
+    },
+    {
+      "path": "quizzes/lesson-02.json",
+      "sha256": "e711bb3460527796b5f483f704c193c7dfbfe1c68767641edc5bf3de3d891ffb"
+    },
+    {
+      "path": "quizzes/lesson-03.json",
+      "sha256": "54c7473961bfb9499d914a5f140a3d9d25a66f25508e918801005c85e7b6ca15"
+    },
+    {
+      "path": "quizzes/lesson-04.json",
+      "sha256": "567f7f62b31ceb260be82af079da93dc6926bbb1d702c38ed148cbcba5094242"
+    },
+    {
+      "path": "rights-manifest.json",
+      "sha256": "44a20c6e11d350887c38f7b9be40171a162f29b360f047b750a8ddbee50cbd57"
+    },
+    {
+      "path": "vocabulary.json",
+      "sha256": "2f4ad5e6f0212205370d04e5ef365f4bd2b46cb392d033211703f410ad417063"
+    }
+  ],
+  "review_counts": {
+    "vocabulary": 44,
+    "grammar": 12,
+    "lesson": 4,
+    "section": 29,
+    "quiz": 4,
+    "question": 24,
+    "private_explanation": 24,
+    "syllabus": 1,
+    "course": 1,
+    "unit": 1,
+    "rights": 6,
+    "focus": 9
+  },
+  "review_rows": 159
+}

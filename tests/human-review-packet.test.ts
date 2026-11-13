@@ -21,11 +21,11 @@ describe("public human review packet", () => {
       course: 1,
       unit: 1,
       rights: 6,
-      focus: 8,
+      focus: 9,
     });
     expect(
       new Set(rows.map((r: { stable_id: string }) => r.stable_id)).size,
-    ).toBe(158);
+    ).toBe(159);
     for (const row of rows) {
       expect(row.review_status).toBe("PENDING");
       for (const field of [
@@ -35,7 +35,7 @@ describe("public human review packet", () => {
         "proposed_change",
       ])
         expect(row[field]).toBe("");
-      expect(row.draft_revision).toBe(2);
+      expect(row.draft_revision).toBe(3);
       expect(row.package_snapshot_sha256).toBe(
         snapshot.package_snapshot_sha256,
       );
@@ -141,5 +141,84 @@ describe("public human review packet", () => {
       expect(fs.readFileSync(review.packetRoot + "/" + file, "utf8")).toBe(
         body,
       );
+  });
+  it("flags only L1-Q4 in revision 3 and uses actual mixed quiz revisions", () => {
+    const rows = JSON.parse(
+      review.buildHumanReview().outputs["REVIEW_REGISTER.template.json"],
+    );
+    const questions = rows.filter(
+      (r: { kind: string }) => r.kind === "question",
+    );
+    expect(
+      questions
+        .filter(
+          (r: { changed_in_current_revision: boolean }) =>
+            r.changed_in_current_revision,
+        )
+        .map((r: { label: string }) => r.label),
+    ).toEqual(["L1-Q4"]);
+    const m = read("manifest.json");
+    expect(
+      m.lessons.map(
+        (l: { quiz_file: string }) => read(l.quiz_file).quiz.revision,
+      ),
+    ).toEqual([3, 2, 2, 2]);
+    for (const q of questions)
+      expect(q.quiz_revision).toBe(q.label.startsWith("L1-") ? 3 : 2);
+    expect(
+      rows.find((r: { stable_id: string }) => r.stable_id === "focus/l1-q4")
+        .review_status,
+    ).toBe("PENDING");
+  });
+  it("keeps revision 2 evidence separate and unmodified while other source data stays fixed", () => {
+    const oldRoot = "docs/human-review/pilot-hsk1-r2/";
+    const old = JSON.parse(
+      fs.readFileSync(oldRoot + "SOURCE_SNAPSHOT.json", "utf8"),
+    );
+    const oldRows = JSON.parse(
+      fs.readFileSync(oldRoot + "REVIEW_REGISTER.template.json", "utf8"),
+    );
+    expect(old.draft_revision).toBe(2);
+    expect(old.package_snapshot_sha256).toBe(
+      "f6bee81f2329f7822d2aeab8187b7f45de324c0fa7fd3744f2373672b40b2b94",
+    );
+    expect(oldRows).toHaveLength(158);
+    expect(
+      oldRows.every(
+        (r: { review_status: string; reviewer: string; reviewed_at: string }) =>
+          r.review_status === "PENDING" && !r.reviewer && !r.reviewed_at,
+      ),
+    ).toBe(true);
+    const current = review.buildHumanReview();
+    for (const file of current.snapshot.files) {
+      const previous = old.files.find(
+        (f: { path: string }) => f.path === file.path,
+      );
+      if (["manifest.json", "quizzes/lesson-01.json"].includes(file.path))
+        expect(file.sha256).not.toBe(previous.sha256);
+      else expect(file.sha256).toBe(previous.sha256);
+    }
+    const rows = JSON.parse(current.outputs["REVIEW_REGISTER.template.json"]);
+    expect(
+      rows
+        .filter((r: { kind: string }) => r.kind === "question")
+        .map((r: { stable_id: string }) => r.stable_id),
+    ).toEqual(
+      oldRows
+        .filter((r: { kind: string }) => r.kind === "question")
+        .map((r: { stable_id: string }) => r.stable_id),
+    );
+  });
+  it("keeps L1-Q4 about discourse function without the overlapping health paraphrase", () => {
+    const question = read("quizzes/lesson-01.json").questions.find(
+      (q: { id: string }) => q.id === "76015916-80bf-52c2-bd11-a9a9812b0408",
+    );
+    expect(question.prompt).toContain("chức năng");
+    expect(question.prompt).toContain("我很好，你呢？");
+    expect(question.choices).not.toContain("Bạn có khỏe không?");
+    expect(
+      new Set(question.choices.map((s: string) => s.trim().normalize("NFC")))
+        .size,
+    ).toBe(4);
   });
 });

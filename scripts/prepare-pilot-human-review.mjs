@@ -4,7 +4,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 export const sourceRoot = "content/pilot-hsk1/v1";
-export const packetRoot = "docs/human-review/pilot-hsk1-r2";
+export const packetRoot = `docs/human-review/pilot-hsk1-r${JSON.parse(fs.readFileSync(sourceRoot + "/manifest.json", "utf8")).draft_revision}`;
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const text = (v) =>
@@ -14,8 +14,13 @@ const text = (v) =>
 const json = (v) => JSON.stringify(v, null, 2) + "\n";
 export function buildHumanReview() {
   const m = read(sourceRoot + "/manifest.json");
-  if (m.draft_revision !== 2 || m.import_authorized || m.publish_authorized)
-    throw Error("Expected pending revision 2");
+  if (
+    !Number.isSafeInteger(m.draft_revision) ||
+    m.draft_revision < 2 ||
+    m.import_authorized ||
+    m.publish_authorized
+  )
+    throw Error("Expected pending versioned draft");
   const expectedFiles = [
     "vocabulary.json",
     "grammar.json",
@@ -51,7 +56,7 @@ export function buildHumanReview() {
   const manifestSha = files.find((f) => f.path === "manifest.json").sha256;
   const snapshot = {
     package_id: m.package_id,
-    draft_revision: 2,
+    draft_revision: m.draft_revision,
     source_root: sourceRoot,
     manifest_sha256: manifestSha,
     // Digest of sorted public {path,sha256} entries encoded by JSON.stringify (no newline).
@@ -78,7 +83,7 @@ export function buildHumanReview() {
       reviewer: "",
       reviewed_at: "",
       package_id: m.package_id,
-      draft_revision: 2,
+      draft_revision: m.draft_revision,
       source_file_sha256: files.find((f) => f.path === file).sha256,
       public_item_sha256:
         kind === "private_explanation" ? "" : sha(JSON.stringify(value)),
@@ -86,11 +91,12 @@ export function buildHumanReview() {
       package_snapshot_sha256: snapshot.package_snapshot_sha256,
       quiz_revision: "",
       changed_in_remediation: "",
+      changed_in_current_revision: false,
       requires_private_view: false,
       ...extra,
     });
   const header = (title) =>
-    `# ${title}\n\nDraft revision 2 — chỉ là hồ sơ chờ người duyệt. Không có human PASS.\n\nManifest SHA-256: \`${manifestSha}\`.\n\nPackage snapshot SHA-256: \`${snapshot.package_snapshot_sha256}\`.\n\nGhi quyết định theo stable_id trong REVIEW_REGISTER; không sửa nội dung nguồn.\n\n`;
+    `# ${title}\n\nDraft revision ${m.draft_revision} — chỉ là hồ sơ chờ người duyệt. Không có human PASS.\n\nManifest SHA-256: \`${manifestSha}\`.\n\nPackage snapshot SHA-256: \`${snapshot.package_snapshot_sha256}\`.\n\nGhi quyết định theo stable_id trong REVIEW_REGISTER; không sửa nội dung nguồn.\n\n`;
   const example = (e) =>
     `- Chữ Hán: ${text(e.hanzi)}\n- Pinyin: ${text(e.pinyin)}\n- Tiếng Việt: ${text(e.translationVi)}\n\n`;
   const provenance = (x) =>
@@ -199,17 +205,21 @@ export function buildHumanReview() {
     add(
       q.quiz.id,
       "quiz",
-      `L${i + 1} quiz revision 2`,
+      `L${i + 1} quiz revision ${q.quiz.revision}`,
       lm.quiz_file,
       "/quiz",
       q.quiz,
       "Phạm vi từ đã học, 6 câu và mức độ khó; không chấp thuận grading trước khi duyệt từng câu/private explanation.",
-      { quiz_revision: 2 },
+      { quiz_revision: q.quiz.revision },
     );
     quizDoc += `## Quiz bài ${i + 1} — ${text(l.title)}\n\nQuiz ID: \`${q.quiz.id}\`, revision ${q.quiz.revision}.\n\nNgữ cảnh học: ${text(l.objective_vi)}\n\nTham khảo đầy đủ hội thoại/sections bài ${i + 1} trong LESSONS.md.\n\n`;
     q.questions.forEach((question, j) => {
       const label = `L${i + 1}-Q${j + 1}`,
         isChanged = changed[i].includes(j + 1);
+      const currentChanged =
+        m.revision_history
+          ?.find((r) => r.draft_revision === m.draft_revision)
+          ?.changed_question_ids?.includes(question.id) ?? false;
       const focus =
         label === "L2-Q1"
           ? "Ưu tiên: câu hỏi tên đứng riêng, chưa có lượt giới thiệu; đúng một lựa chọn phù hợp, không nhận mẫu hỏi tiếp phụ thuộc ngữ cảnh."
@@ -222,7 +232,11 @@ export function buildHumanReview() {
         `/questions/${j}`,
         question,
         focus,
-        { quiz_revision: 2, changed_in_remediation: isChanged },
+        {
+          quiz_revision: q.quiz.revision,
+          changed_in_remediation: isChanged,
+          changed_in_current_revision: currentChanged,
+        },
       );
       add(
         `private/${question.id}`,
@@ -233,12 +247,13 @@ export function buildHumanReview() {
         null,
         "Chỉ mở private viewer: tự giải trước, đối chiếu key, đọc toàn explanation và từng distractor; không ghi nội dung giải vào register chung.",
         {
-          quiz_revision: 2,
+          quiz_revision: q.quiz.revision,
           requires_private_view: true,
           changed_in_remediation: isChanged,
+          changed_in_current_revision: currentChanged,
         },
       );
-      quizDoc += `### ${label}${isChanged ? " — ĐÃ ĐỔI trong remediation" : " — wording giữ nguyên, vẫn phải duyệt"}\n\nStable ID: \`${question.id}\`.\n\n${text(question.prompt)}\n\n`;
+      quizDoc += `### ${label}${currentChanged ? " — THAY ĐỔI Ở REVISION HIỆN TẠI" : ""}${isChanged ? " — ĐÃ ĐỔI trong remediation" : " — wording giữ nguyên, vẫn phải duyệt"}\n\nStable ID: \`${question.id}\`.\n\n${text(question.prompt)}\n\n`;
       question.choices.forEach((choice, k) => {
         quizDoc += `${String.fromCharCode(65 + k)}. ${text(choice)}\n\n`;
       });
@@ -305,7 +320,7 @@ export function buildHumanReview() {
     ],
     [
       "private-24",
-      "24 explanations revision 2",
+      `24 explanations package revision ${m.draft_revision}`,
       "Đọc toàn văn 24 giải thích trong private viewer, từng distractor hợp lý; public register chỉ attestation, không giải thích/đáp án.",
     ],
     [
@@ -334,6 +349,12 @@ export function buildHumanReview() {
       "Đọc theo vai cả 4 bài: đúng ngữ cảnh, household giả định độc lập, cụm/câu/lời đáp và ba tình huống thời gian riêng.",
     ],
   ];
+  if (m.draft_revision >= 3)
+    focuses.push([
+      "l1-q4",
+      "HSK-AI-01 — L1-Q4",
+      "Kiểm chức năng hỏi tiếp của 呢 trong stem hiện tại; không nhận hai cách diễn đạt hàm ý gần nghĩa như hai lựa chọn riêng; xem private explanation tại local.",
+    ]);
   for (const [id, label, focus] of focuses)
     add(`focus/${id}`, "focus", label, "manifest.json", "", m, focus);
   const counts = Object.fromEntries(
@@ -362,7 +383,9 @@ export function buildHumanReview() {
       ...rows.map((r) => columns.map((c) => csv(r[c])).join(",")),
     ].join("\r\n") +
     "\r\n";
-  for (const file of Object.keys(outputs).filter((file) => file.endsWith(".md")))
+  for (const file of Object.keys(outputs).filter((file) =>
+    file.endsWith(".md"),
+  ))
     outputs[file] = outputs[file].trimEnd() + "\n";
   return { outputs, snapshot };
 }

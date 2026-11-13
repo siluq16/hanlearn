@@ -1,4 +1,6 @@
 .local/
+# User-supplied AI review may include solution suggestions; preserve locally, never bundle/commit.
+docs/HanLearn_HSK1_AI_Review_R2_Full.md
 node_modules/
 .next/
 out/
