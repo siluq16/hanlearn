@@ -6,8 +6,17 @@
 BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY;
 SET LOCAL statement_timeout = '30s';
 SET LOCAL lock_timeout = '5s';
-SELECT current_database() AS database, current_user AS role,
- current_setting('transaction_read_only') AS read_only;
+SET LOCAL search_path = pg_catalog;
+SELECT current_database()='postgres' AND current_user='postgres'
+ AND current_setting('transaction_read_only')='on' AS backend_matches
+\gset
+\if :backend_matches
+\else
+\echo BLOCKED: backend identity/read-only mismatch.
+\quit 1
+\endif
+SELECT jsonb_build_object('identity',jsonb_build_object('database',current_database(),
+ 'role',current_user,'read_only',current_setting('transaction_read_only')));
 -- Database name alone does not authenticate the Supabase project.
 SELECT coalesce(jsonb_agg(jsonb_build_object('version',version,'name',name) ORDER BY version),'[]'::jsonb)
  = '[{"version":"202611120001","name":"catalog"},{"version":"202611120002","name":"srs"},{"version":"202611120003","name":"quiz"},{"version":"202611120004","name":"plans_sessions"},{"version":"202611120005","name":"learner_access"},{"version":"202611120006","name":"catalog_queries"}]'::jsonb AS history_matches
@@ -18,12 +27,13 @@ FROM supabase_migrations.schema_migrations
 \echo BLOCKED: unexpected migration history. Disconnecting without changes.
 \quit 1
 \endif
-SELECT version,name FROM supabase_migrations.schema_migrations ORDER BY version;
+SELECT jsonb_build_object('history',jsonb_agg(jsonb_build_object('version',version,'name',name) ORDER BY version))
+FROM supabase_migrations.schema_migrations;
 -- Existing reviewed SELECT-only metadata queries; paths relative to this file.
 \ir cloud_schema_manifest.sql
 \ir cloud_platform_security.sql
 -- Partial unique index: incoming syllabus remains inactive. Activation needs separate approval.
-SELECT count(*) AS current_active_syllabuses FROM public.syllabus_versions WHERE is_active;
+SELECT jsonb_build_object('current_active_syllabuses',count(*)) FROM public.syllabus_versions WHERE is_active;
 -- Zero rows expected. ALL UUID/UNIQUE collisions block; ADVISORY requires classification.
 -- Key data is public catalog identity only; never reads private quiz keys or learner state.
 WITH incoming AS (
@@ -369,12 +379,13 @@ WITH incoming AS (
  UNION ALL
  SELECT 'lesson_grammar'::text AS table_name, jsonb_build_object('lesson_id',t.lesson_id,'grammar_id',t.grammar_id) AS key_data FROM public.lesson_grammar t
 )
-SELECT i.item->>'table' AS table_name, i.item->>'kind' AS collision_kind,
+SELECT jsonb_build_object('collisions',coalesce(jsonb_agg(to_jsonb(matches) ORDER BY table_name,collision_kind,incoming_key::text),'[]'::jsonb))
+FROM (SELECT i.item->>'table' AS table_name, i.item->>'kind' AS collision_kind,
  i.item->'key' AS incoming_key, i.item->'incoming_revision' AS incoming_revision,
  r.key_data AS existing_catalog_identity
 FROM incoming i JOIN remote_keys r ON r.table_name=i.item->>'table'
  AND r.key_data @> (i.item->'key')
-ORDER BY table_name,collision_kind,(i.item->'key')::text;
+) matches;
 ROLLBACK;
 -- Successful SQL execution alone is not security/compatibility approval.
 -- Compare every metadata difference with reference; do not ignore unknown objects.
