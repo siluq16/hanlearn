@@ -87,6 +87,7 @@ export function buildPublicationProposal() {
   };
 }
 export function realReadAuthorizationTemplate() {
+  // Historical format only. Local read validation no longer consumes this record.
   const audit = auditPilot();
   return {
     template_only: true,

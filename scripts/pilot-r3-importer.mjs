@@ -126,7 +126,7 @@ export function preview(plan) {
       records: 24,
       realDelivery: "BLOCKED_SEPARATE_REAL_DB_APPROVAL",
       localProtectedAdapter:
-        "SYNTHETIC_PARAMETERIZED_PATH_REAL_READ_AUTH_REQUIRED",
+        "SYNTHETIC_PARAMETERIZED_PATH_TRUSTED_LOCAL_READ_REAL_DB_BLOCKED",
     },
     publication: "BLOCKED_RIGHTS_AND_POLICY_DECISION_REQUIRED",
     cloudExecution: "UNSUPPORTED",

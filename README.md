@@ -22,7 +22,34 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=YOUR_DEVELOPMENT_PUBLISHABLE_KEY
 
 Both are public configuration. App uses no database password/service-role key. Never send secrets to chat or commit .env.local. Keep Development separate from Production.
 
-## Implemented
+## Personal local workflow
+
+Run these from the owner-controlled Windows checkout. Local reads no longer need authorization JSON, signatures, dates, TTY prompts or a new Markdown report. Earlier local-read authorization templates/reports are historical; they are not consumed by current commands. Existing signed records are retained without modification.
+
+| Command                       | Purpose                                                                                                                           |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run content`             | Validate frozen r3 public content and all 24 real private bindings; status/counts only, no report writes                          |
+| `npm run test:local`          | Unit tests plus synthetic Lesson Detail and local preview browser suites; no Cloud or real-key DB delivery                        |
+| `npm run preview:hsk1`        | Loopback-only HSK 1 reader at http://127.0.0.1:3114; no private answers or progress writes                                        |
+| `npm run backup:status`       | Inspect recorded core/rights restore evidence and archive presence; **does not decrypt, retest restore or certify current bytes** |
+| `npm run content:import:plan` | Public draft import order/counts with synthetic keys only; no database connection                                                 |
+| `npm run check:local`         | Content, typecheck, lint, contracts, security and all local tests in one fail-fast command                                        |
+
+Stop a manually running preview before browser tests, since tests own port 3114. `npm run test` remains the fast unit-only command. Native disposable database suites remain separate opt-in commands and use synthetic keys. Encrypted restore verification is `npm run backup:verify`; its password prompt is required by encryption, not an approval ritual. It retains the source and archives.
+
+Trusted local reads require Windows, the matching Git checkout, known operator command entry points, restricted owner/SYSTEM ACL, no reparse paths, Git-ignored/untracked private store, exact frozen public hashes, stable private bytes and valid IDs/revisions/bindings. CI/Vitest, browser/Next, production/deployment and other working directories/entry points are rejected. No environment flag can enable real-key DB delivery. This protects accidental use outside local tooling; a malicious process already running as the owner is outside the OS trust boundary.
+
+Minimal product flow:
+
+1. Author/preview locally. Revision 3 stays frozen; future content edits use a new reviewed revision with hashes/bindings updated together.
+2. Run `npm run check:local`, inspect content and record actual rights/review decisions where needed; do not turn the 159 PENDING records into fictional approval.
+3. Prepare the import plan and honest metadata/rights scope. When requested, run Development read-only preflight with verified target/TLS/credentials to refresh schema/history/collisions/effective allowlist. Reading needs no extra signature record and never imports; no Cloud check was run in this workflow change.
+4. Approve **one exact Cloud write plan** (target, rows, revisions/hash/overlay, private delivery/logging, transaction and rollback). Real-key DB delivery is still unsupported/blocked until separately implemented and reviewed. Publication, security changes and real learner mutations require their own explicit scope.
+5. After approved import/promotion, verify the real catalog/read permissions in HanLearn. The Sprint 2.2 Cloud mutation guard stays in place until live study/quiz mutations are separately approved.
+
+Database/RLS requirements are real: published ancestry/approved provenance, valid constraints/FKs, private answer isolation and server-authoritative completion. Truthful rights/reviewer evidence remains necessary; SQL CHECKs cannot certify its truth. Per-read signature JSON, TTY gating and repeated long verification reports were process rules and have been removed. Local success does not grant Cloud write, publication, Auth/RLS/migration changes, deletion/overwrite, push or deploy permission. Owner-only published access still depends on the effective allowlist; no RLS was widened.
+
+## Implemented features
 
 - Next.js 16 App Router, strict TypeScript, Tailwind 4, locally owned shadcn/ui primitives, Lucide, self-hosted Inter/Noto Sans SC.
 - Feature-based modular monolith: auth, dashboard, roadmap, vocabulary, settings.
@@ -78,4 +105,3 @@ Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPME
 Read-only lesson UI tests: `npm run test:lessons:browser` uses actual components on a separate loopback-only synthetic harness, not an Auth shim or Cloud fixture route. `npm run test:lessons:catalog` compares exact selected fields against an existing trusted ignored Cloud catalog capture; it does not generate complete database types.
 
 No official HSK syllabus edition, content license, audio object or HelloChinese API has been verified. Synthetic test fixtures must never become published curriculum.
-

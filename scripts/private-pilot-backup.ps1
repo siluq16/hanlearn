@@ -1,8 +1,13 @@
 #requires -Version 5.1
 # Local only. Passwords are entered directly into 7-Zip's native hidden prompts.
 [CmdletBinding()]
-param([switch]$NoPrompt,[switch]$VerifyExisting,[switch]$RightsOnly)
+param([switch]$NoPrompt,[switch]$VerifyExisting,[switch]$RightsOnly,[switch]$Status)
 $ErrorActionPreference='Stop'
+# Resolve built-in cmdlets in this PowerShell edition, including when npm inherits PS7 paths.
+$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
+if($env:CI -or $env:VITEST -or $env:NEXT_RUNTIME -or $env:VERCEL -or $env:NODE_ENV -eq 'production') {
+ Write-Output 'BLOCKED: trusted local backup environment required'; exit 2
+}
 $repo=Split-Path -Parent $PSScriptRoot
 $approvedBackupRoot='D:\nam4\prj\backup'
 $sevenZip='D:\Program\7-Zip\7z.exe'
@@ -33,6 +38,26 @@ function Protect-Directory([string]$path) {
  }
 }
 function File-Hash([string]$path) { return (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash }
+if($Status) {
+ # Status is read-only evidence inspection, not a new password/decrypt/restore test.
+ $pending=$false
+ foreach($kind in @('private','rights')) {
+  try {
+   $evidencePath=Join-Path $repo ('.local/pilot-hsk1/'+$kind+'-backup-result.json')
+   Assert-PlainPath $evidencePath
+   $evidence=Get-Content -LiteralPath $evidencePath -Raw -Encoding UTF8 | ConvertFrom-Json
+   $savedArchive=[IO.Path]::GetFullPath([string]$evidence.archive)
+   $savedParent=Split-Path -Parent $savedArchive
+   $prefix=if($kind -eq 'rights'){'hanlearn-rights-r3-'}else{'hanlearn-pilot-r3-'}
+   $name=if($kind -eq 'rights'){'rights-r3.7z'}else{'private-pilot-r3.7z'}
+   if((Split-Path -Parent $savedParent) -ine $approvedBackupRoot -or (Split-Path -Leaf $savedParent) -notmatch ('^'+[regex]::Escape($prefix)+'[a-f0-9]{32}$') -or (Split-Path -Leaf $savedArchive) -cne $name){throw 'PATH'}
+   Assert-PlainPath $savedArchive
+   if($evidence.status -ne 'BACKUP_VERIFIED' -or -not $evidence.encryptedHeader -or [int]$evidence.sourceFiles -le 0 -or $evidence.sourceFiles -ne $evidence.matchedFiles){throw 'EVIDENCE'}
+   Write-Output ($kind.ToUpper()+': RECORDED_VERIFIED_ARCHIVE_PRESENT; files='+[int]$evidence.matchedFiles+'; restore_retested=false; current_bytes_verified=false')
+  } catch { $pending=$true; Write-Output ($kind.ToUpper()+': BACKUP_PENDING; recorded evidence or archive unavailable; details suppressed') }
+ }
+ if($pending){exit 2}else{exit 0}
+}
 try {
  Assert-PlainPath $privateRoot
  Assert-PlainPath $approvedBackupRoot

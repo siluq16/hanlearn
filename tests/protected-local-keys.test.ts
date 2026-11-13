@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import fs from "node:fs";
 import { inspect } from "node:util";
+import path from "node:path";
 // @ts-expect-error Local ESM utility.
 import * as delivery from "../scripts/protected-local-keys.mjs";
 // @ts-expect-error Local ESM utility.
@@ -35,20 +36,70 @@ describe("protected local delivery", () => {
     pkg.lessons[0].title = "Changed draft";
     expect(delivery.deliverLocalSynthetic(pkg, handle).status).toBe("BLOCKED");
   });
-  it("denies real reading without a separate actual authorization", () => {
-    // No auth file is generated and no answers file is opened in this test.
+  it("denies private reading in Vitest before any file I/O", () => {
     const pkg = importer.loadPilot();
     const guard = vi.spyOn(fs, "readFileSync").mockImplementation(() => {
       throw Error("FILE_READ_FORBIDDEN_IN_DENIAL_TEST");
     });
     try {
       expect(() => delivery.readApprovedRealStore(pkg)).toThrow(
-        "REAL_READ_NOT_AUTHORIZED",
+        "TRUSTED_LOCAL_REQUIRED",
       );
       expect(guard).not.toHaveBeenCalled();
     } finally {
       guard.mockRestore();
     }
+  });
+  it("permits a trusted local command without signatures, TTY or approval flags", () => {
+    expect(
+      delivery.trustedLocalRuntime({
+        platform: "win32",
+        env: {},
+        cwd: process.cwd(),
+        entry: path.resolve("scripts/validate-pilot.mjs"),
+        browser: false,
+      }),
+    ).toBe(true);
+  });
+  it.each([
+    "CI",
+    "VITEST",
+    "NEXT_RUNTIME",
+    "GITHUB_ACTIONS",
+    "TF_BUILD",
+    "JENKINS_URL",
+    "BUILD_BUILDID",
+    "VERCEL",
+    "NETLIFY",
+  ])("rejects %s runtimes", (flag) => {
+    expect(
+      delivery.trustedLocalRuntime({
+        platform: "win32",
+        env: { [flag]: "1" },
+        cwd: process.cwd(),
+        entry: path.resolve("scripts/validate-pilot.mjs"),
+        browser: false,
+      }),
+    ).toBe(false);
+  });
+  it("rejects production, browser, non-Windows and another working directory", () => {
+    const local = {
+      platform: "win32",
+      env: {},
+      cwd: process.cwd(),
+      entry: path.resolve("scripts/validate-pilot.mjs"),
+      browser: false,
+    };
+    for (const override of [
+      { env: { NODE_ENV: "production" } },
+      { browser: true },
+      { platform: "linux" },
+      { cwd: "D:/untrusted-checkout" },
+      { entry: path.resolve("node_modules/next/dist/bin/next") },
+    ])
+      expect(delivery.trustedLocalRuntime({ ...local, ...override })).toBe(
+        false,
+      );
   });
   it("has no target fallback when local fixture opt-in is missing", () => {
     const before = process.env.HANLEARN_IMPORT_LOCAL_ONLY;
