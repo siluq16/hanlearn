@@ -161,6 +161,7 @@ export type Database = {
       };
     };
     Functions: {
+      mark_lesson_studied: { Args: { p_lesson_id: string }; Returns: Json };
       get_learner_access: { Args: Record<string, never>; Returns: boolean };
       get_due_review_count: { Args: Record<string, never>; Returns: number };
       search_vocabulary: {

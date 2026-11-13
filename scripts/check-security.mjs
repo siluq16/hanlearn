@@ -59,6 +59,17 @@ const sourceFiles = files.filter(
 for (const file of sourceFiles) {
   const source = readFileSync(file, "utf8");
   assert(
+    !/\.rpc\(["']mark_lesson_studied["']/.test(source) ||
+      file === "src/features/lessons/actions.ts",
+    `Study mutation outside the guarded Server Action: ${file}`,
+  );
+  assert(
+    !/\.from\(["']lesson_progress["']\)\.(insert|update|upsert|delete)/.test(
+      source,
+    ),
+    `Forbidden direct lesson progress mutation: ${file}`,
+  );
+  assert(
     !/content\/pilot-hsk1/.test(source),
     `Offline draft pilot imported into app source: ${file}`,
   );

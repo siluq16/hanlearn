@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import type { LessonBundle } from "../types";
 import { LessonReader } from "./lesson-reader";
 import { ContentProvenance } from "./provenance";
+import type { ReactNode } from "react";
 
 function SavedDate({ value }: { value: string | null }) {
   return value ? (
@@ -18,7 +19,13 @@ function SavedDate({ value }: { value: string | null }) {
     <>Chưa ghi nhận</>
   );
 }
-export function LessonView({ bundle }: { bundle: LessonBundle }) {
+export function LessonView({
+  bundle,
+  studyConfirmation,
+}: {
+  bundle: LessonBundle;
+  studyConfirmation?: ReactNode;
+}) {
   const { lesson, course, unit, syllabus, progress } = bundle;
   return (
     <article aria-labelledby="lesson-title" className="min-w-0">
@@ -57,35 +64,37 @@ export function LessonView({ bundle }: { bundle: LessonBundle }) {
           grammar={bundle.grammar}
         />
         <aside className="min-w-0 space-y-5 lg:order-none">
-          <Card>
-            <CardContent className="space-y-4 p-5">
-              <h2 className="text-base font-semibold">Tiến độ đã lưu</h2>
-              <Badge>
-                {progress.completedAt
-                  ? "Đã hoàn thành"
-                  : progress.studiedAt
-                    ? "Đã xác nhận học"
-                    : "Chưa xác nhận học"}
-              </Badge>
-              <dl className="space-y-3 text-xs leading-6">
-                <div>
-                  <dt className="text-muted-foreground">Xác nhận học</dt>
-                  <dd>
-                    <SavedDate value={progress.studiedAt} />
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-muted-foreground">Hoàn thành</dt>
-                  <dd>
-                    <SavedDate value={progress.completedAt} />
-                  </dd>
-                </div>
-              </dl>
-              <p className="text-xs leading-6 text-muted-foreground">
-                Hoàn thành bài học không đồng nghĩa với thành thạo từ vựng.
-              </p>
-            </CardContent>
-          </Card>
+          {studyConfirmation ?? (
+            <Card>
+              <CardContent className="space-y-4 p-5">
+                <h2 className="text-base font-semibold">Tiến độ đã lưu</h2>
+                <Badge>
+                  {progress.completedAt
+                    ? "Đã hoàn thành"
+                    : progress.studiedAt
+                      ? "Đã xác nhận học"
+                      : "Chưa xác nhận học"}
+                </Badge>
+                <dl className="space-y-3 text-xs leading-6">
+                  <div>
+                    <dt className="text-muted-foreground">Xác nhận học</dt>
+                    <dd>
+                      <SavedDate value={progress.studiedAt} />
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Hoàn thành</dt>
+                    <dd>
+                      <SavedDate value={progress.completedAt} />
+                    </dd>
+                  </div>
+                </dl>
+                <p className="text-xs leading-6 text-muted-foreground">
+                  Hoàn thành bài học không đồng nghĩa với thành thạo từ vựng.
+                </p>
+              </CardContent>
+            </Card>
+          )}
           <Card>
             <CardContent className="p-5">
               <h2 className="text-base font-semibold">Nguồn bài học</h2>

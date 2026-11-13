@@ -63,6 +63,7 @@ for (const [alias, table] of Object.entries(tables)) {
   }
 }
 for (const [name, result, args] of [
+  ["mark_lesson_studied", "jsonb", ["p_lesson_id uuid"]],
   ["get_learner_access", "boolean", []],
   ["get_due_review_count", "bigint", []],
   [
@@ -92,7 +93,7 @@ const report = {
   status: checks.every((c) => c.status === "PASS") ? "PASS" : "FAIL",
   checks,
   limits:
-    "Selected 11 table Row projections + 3 read-RPC catalog signatures only; not CLI-generated types, full Insert/Update/Relationships, view nullability or JSON schema verification",
+    "Selected 11 table Row projections + 4 RPC catalog signatures (including study) only; not CLI-generated types, full Insert/Update/Relationships, view nullability or JSON schema verification",
 };
 fs.mkdirSync(".local/acceptance", { recursive: true });
 fs.writeFileSync(
