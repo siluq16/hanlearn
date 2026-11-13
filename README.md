@@ -29,7 +29,7 @@ Run these from the owner-controlled Windows checkout. Local reads no longer need
 | Command                       | Purpose                                                                                                                           |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `npm run content`             | Validate frozen r3 public content and all 24 real private bindings; status/counts only, no report writes                          |
-| `npm run test:local`          | Unit tests plus synthetic Lesson Detail and local preview browser suites; no Cloud or real-key DB delivery                        |
+| `npm run test:local`          | Unit tests plus synthetic Lesson Detail, preview and mini-quiz browser suites; no Cloud or real-key DB delivery                   |
 | `npm run preview:hsk1`        | Loopback-only HSK 1 reader at http://127.0.0.1:3114; no private answers or progress writes                                        |
 | `npm run backup:status`       | Inspect recorded core/rights restore evidence and archive presence; **does not decrypt, retest restore or certify current bytes** |
 | `npm run content:import:plan` | Public draft import order/counts with synthetic keys only; no database connection                                                 |
@@ -49,6 +49,8 @@ Minimal product flow:
 
 Database/RLS requirements are real: published ancestry/approved provenance, valid constraints/FKs, private answer isolation and server-authoritative completion. Truthful rights/reviewer evidence remains necessary; SQL CHECKs cannot certify its truth. Per-read signature JSON, TTY gating and repeated long verification reports were process rules and have been removed. Local success does not grant Cloud write, publication, Auth/RLS/migration changes, deletion/overwrite, push or deploy permission. Owner-only published access still depends on the effective allowlist; no RLS was widened.
 
+Quiz checks: `npm run test:quizzes:browser`; native database regression: `npm run test:db:native` (synthetic disposable/Auth shim only). The main quiz route requires real published catalog data. Writes need `HANLEARN_LOCAL_MINI_QUIZ=1` and a verified literal HTTPS loopback API target; setting the flag with a Cloud URL never enables writes. No such API/credentials or Cloud writes were provisioned by this sprint.
+
 ## Implemented features
 
 - Next.js 16 App Router, strict TypeScript, Tailwind 4, locally owned shadcn/ui primitives, Lucide, self-hosted Inter/Noto Sans SC.
@@ -56,6 +58,7 @@ Database/RLS requirements are real: published ancestry/approved provenance, vali
 - Email/password login/logout, separate Supabase browser/server clients, SSR cookies and Proxy refresh; Auth revalidation and DB allowlist at every private server boundary.
 - Dashboard/HSK 1–5 roadmap, literal vocabulary search + HSK filter + pagination/detail; Settings profile persistence, fixed 60m/day and Vietnam timezone.
 - Sprint 2.1: `/lessons/[id]` read-only published lesson reader, strict Content V1, vocabulary/grammar joins, pinyin toggle, credits and saved progress. No learning writes or section audio signing. [Contract](docs/LESSON_CONTENT_V1.md) · [verification and blockers](docs/SPRINT2_1_VERIFICATION.md).
+- Sprint 2.3: `/lessons/[id]/quiz` implements explicit start, single-question radios, submission confirmation, backend grading/readback, own recent history, retakes and immutable retry envelopes. **LOCAL_PASS only**; start/submit Server Actions reject Cloud even when called directly. Explanations remain unavailable because Q4 is not deployed. [Verification](docs/SPRINT2_3_VERIFICATION.md).
 - Responsive desktop sidebar/mobile nav, light/dark theme persisted on this browser, skeleton/empty/error states, safe short-lived audio endpoint.
 - Published content only through RLS. No curriculum was imported or invented; no full lesson/quiz/SRS UI in Sprint 1.
 

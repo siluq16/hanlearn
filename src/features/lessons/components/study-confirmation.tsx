@@ -82,9 +82,15 @@ export function StudyConfirmation({
         {!progress.completedAt && (
           <p className="text-sm leading-7">
             Hoàn thành bài cần cả xác nhận học và quiz đạt ít nhất 80%. Chức
-            năng làm quiz chưa được mở trong phiên bản này.
+            năng làm quiz phụ thuộc môi trường hiện tại.
           </p>
         )}
+        <a
+          href={`/lessons/${lessonId}/quiz`}
+          className="inline-flex min-h-11 items-center text-sm text-primary underline"
+        >
+          Mở mini quiz
+        </a>
         <p className="text-xs leading-6 text-muted-foreground">
           Xác nhận học là tự xác nhận; hoàn thành bài không đồng nghĩa với thành
           thạo từ vựng hoặc thời gian học.

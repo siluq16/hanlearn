@@ -153,6 +153,43 @@ export type Database = {
       review_cards: Table<Card>;
       study_sessions: Table<Session>;
       audio_assets: Table<AudioAsset>;
+      lesson_quizzes: Table<
+        PublicationFields & {
+          id: string;
+          lesson_id: string;
+          revision: number;
+          title: string;
+          status: string;
+          published_at: string | null;
+        }
+      >;
+      quiz_questions: Table<
+        PublicationFields & {
+          id: string;
+          quiz_id: string;
+          sort_order: number;
+          prompt: string;
+          choices: Json;
+          status: string;
+        }
+      >;
+      quiz_attempts: Table<{
+        id: string;
+        user_id: string;
+        quiz_id: string;
+        started_at: string;
+        submitted_at: string | null;
+        correct_count: number | null;
+        question_count: number | null;
+        passed: boolean | null;
+      }>;
+      quiz_responses: Table<{
+        attempt_id: string;
+        user_id: string;
+        question_id: string;
+        answer_index: number | null;
+        is_correct: boolean;
+      }>;
     };
     Views: {
       vocabulary_progress: {
@@ -162,6 +199,14 @@ export type Database = {
     };
     Functions: {
       mark_lesson_studied: { Args: { p_lesson_id: string }; Returns: Json };
+      start_quiz: {
+        Args: { p_quiz_id: string; p_idempotency_key: string };
+        Returns: Json;
+      };
+      submit_quiz: {
+        Args: { p_attempt_id: string; p_answers: Json };
+        Returns: Json;
+      };
       get_learner_access: { Args: Record<string, never>; Returns: boolean };
       get_due_review_count: { Args: Record<string, never>; Returns: number };
       search_vocabulary: {

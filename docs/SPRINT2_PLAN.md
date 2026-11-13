@@ -1,5 +1,7 @@
 # Sprint 2 technical plan
 
+2026-11-13 scoped update: Sprint 2.3 Mini Quiz is now implemented and verified **LOCAL_PASS** under the owner's separate local-development approval; see [SPRINT2_3_VERIFICATION](SPRINT2_3_VERIFICATION.md). Cloud start/submit remain server-blocked; Q4 explanations and steps 2.4+ are not implemented. Earlier status paragraphs below are historical planning snapshots, not current implementation claims.
+
 2026-11-13 scoped update: Sprint 2.2 study confirmation source/local tests are implemented under separate approval; see [SPRINT2_2_VERIFICATION](SPRINT2_2_VERIFICATION.md). All Cloud writes remain hard-blocked in this iteration. The baseline below is historical; steps 2.3+ remain unimplemented, Sprint 1 PARTIAL and pilot human review/import BLOCKED.
 
 2026-11-12. **2.1 read-only implemented under separate approval; remaining steps planning only.** No SQL migration or content import. Sprint 1 remains PARTIAL (SPRINT1_ACCEPTANCE.md). DOMAIN_CONTRACTS.md and SRS_SPEC.md remain authoritative. Proposed contracts and screens are specified separately in SPRINT2_API_CONTRACTS.md and SPRINT2_UI_SPEC.md.

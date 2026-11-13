@@ -1,5 +1,6 @@
 param([string]$PgBin = 'C:\Program Files\PostgreSQL\18\bin')
 $ErrorActionPreference = 'Stop'
+$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
 $repo = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $repo
 $testRoot = Join-Path $repo '.local'

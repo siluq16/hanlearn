@@ -64,6 +64,21 @@ for (const file of sourceFiles) {
     `Study mutation outside the guarded Server Action: ${file}`,
   );
   assert(
+    !/\.rpc\(["'](?:start_quiz|submit_quiz)["']/.test(source) ||
+      file === "src/features/quizzes/actions.ts",
+    `Quiz write outside guarded Server Actions: ${file}`,
+  );
+  assert(
+    !/\.from\(["'](?:quiz_attempts|quiz_responses)["']\)\.(insert|update|upsert|delete)/.test(
+      source,
+    ),
+    `Direct quiz state mutation: ${file}`,
+  );
+  assert(
+    !/protected-local-keys|pilot-r3-importer|\.local\/pilot-hsk1/.test(source),
+    `Operator private tooling imported into app: ${file}`,
+  );
+  assert(
     !/\.from\(["']lesson_progress["']\)\.(insert|update|upsert|delete)/.test(
       source,
     ),
@@ -74,7 +89,9 @@ for (const file of sourceFiles) {
     `Offline draft pilot imported into app source: ${file}`,
   );
   assert(
-    !/tests\/fixtures|lessonFixture|lesson-ui-harness/.test(source),
+    !/tests\/fixtures|lessonFixture|quizFixture|lesson-ui-harness|quiz-ui-harness/.test(
+      source,
+    ),
     `Test fixture/harness reference in app source: ${file}`,
   );
   assert(
@@ -102,6 +119,12 @@ function walk(dir) {
 if (existsSync(".next/static"))
   for (const file of walk(".next/static").filter((f) => f.endsWith(".js"))) {
     const text = readFileSync(file, "utf8");
+    assert(
+      !/correct_index|explanation_vi|submission_fingerprint|submission_payload/.test(
+        text,
+      ),
+      `Private quiz field bundled in client ${file}; values suppressed`,
+    );
     assert(
       !/urn:hanlearn:pilot-hsk1:v1|hanlearn-pilot-hsk1-v1/.test(text),
       `Draft pilot bundled in production client ${file}`,

@@ -28,8 +28,9 @@
     "test:preview:hsk1": "playwright test --config playwright.hsk1-preview.config.ts",
     "backup:status": "powershell -NoProfile -File scripts/private-pilot-backup.ps1 -Status",
     "backup:verify": "powershell -NoProfile -File scripts/private-pilot-backup.ps1 -VerifyExisting",
-    "test:local": "npm run test && npm run test:lessons:browser && npm run test:preview:hsk1",
-    "check:local": "npm run content && npm run typecheck && npm run lint && npm run test:contracts && npm run test:security && npm run test:local"
+    "test:local": "npm run test && npm run test:lessons:browser && npm run test:preview:hsk1 && npm run test:quizzes:browser",
+    "check:local": "npm run content && npm run typecheck && npm run lint && npm run test:contracts && npm run test:security && npm run test:local",
+    "test:quizzes:browser": "playwright test --config playwright.quizzes.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",
