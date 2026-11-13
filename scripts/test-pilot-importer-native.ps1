@@ -2,6 +2,7 @@
 # Always a new loopback-only cluster/database. Never reuse a configured database or .env.
 param([switch]$ProtectedDelivery)
 $ErrorActionPreference='Stop'
+$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
 $repo=Split-Path -Parent $PSScriptRoot
 $bin='C:\Program Files\PostgreSQL\18\bin'
 $run=[Guid]::NewGuid().ToString('N')

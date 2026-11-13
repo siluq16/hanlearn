@@ -2,6 +2,11 @@
 Never prints payloads, SQL, parameters, libpq error strings, or integrity digests.
 """
 import ctypes as C
+# CPython builtin hashing avoids a competing OpenSSL DLL before libpq on Windows.
+try:
+    from _sha2 import sha256
+except ImportError:
+    from _sha256 import sha256
 import json
 import os
 import re
@@ -21,6 +26,30 @@ def run(request):
         raise SafeFailure("LOCAL_SYNTHETIC_TARGET_REQUIRED")
     # Independent worker gate: a forged Node handle cannot deliver real content here.
     public_root = Path(__file__).resolve().parent.parent / "content/pilot-hsk1/v1"
+    manifest_bytes = (public_root / "manifest.json").read_bytes()
+    if sha256(manifest_bytes).hexdigest() != "dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b":
+        raise SafeFailure("PUBLIC_FREEZE_MISMATCH")
+    manifest = json.loads(manifest_bytes)
+    for file in manifest["files"]:
+        if sha256((public_root / file["path"]).read_bytes()).hexdigest() != file["sha256"]:
+            raise SafeFailure("PUBLIC_FREEZE_MISMATCH")
+    read = lambda name: json.loads((public_root / name).read_text(encoding="utf-8"))
+    expected_batches = [
+        ["public.syllabus_versions", [manifest["syllabus"]]],
+        ["public.courses", [manifest["course"]]], ["public.units", [manifest["unit"]]],
+        ["public.vocabulary", read("vocabulary.json")], ["public.grammar_points", read("grammar.json")],
+        ["public.lessons", [read(l["file"]) for l in manifest["lessons"]]],
+        *[["public." + name, manifest[name]] for name in ("syllabus_vocabulary", "syllabus_grammar", "lesson_vocabulary", "lesson_grammar")],
+        ["public.lesson_quizzes", [read(l["quiz_file"])["quiz"] for l in manifest["lessons"]]],
+        ["public.quiz_questions", [q for l in manifest["lessons"] for q in read(l["quiz_file"])["questions"]]],
+    ]
+    batches = request.get("public", {}).get("batches")
+    if json.dumps(batches, sort_keys=True) != json.dumps(expected_batches, sort_keys=True):
+        raise SafeFailure("PUBLIC_BATCHES_REJECTED")
+    operation = request.get("operation", "draft_import")
+    if operation not in ("draft_import", "promote_fixture"):
+        raise SafeFailure("SYNTHETIC_OPERATION_REQUIRED")
+    tables = [table for table, _ in expected_batches] + ["private.quiz_answer_keys"]
     expected = {}
     for index in range(1, 5):
         quiz = json.loads((public_root / f"quizzes/lesson-0{index}.json").read_text(encoding="utf-8"))
@@ -35,7 +64,8 @@ def run(request):
                 r["correct_index"] != expected[r["question_id"]] or
                 r.get("explanation_vi") != sentinel for r in rows)):
         raise SafeFailure("SYNTHETIC_PAYLOAD_REQUIRED")
-    if request.get("fault") not in (None, "partial", "duplicate", "foreign_key", "unsafe_logging"):
+    allowed_faults = (None, "partial", "duplicate", "foreign_key", "unsafe_logging") if operation == "draft_import" else (None, "promotion_partial", "promotion_metadata", "unsafe_logging")
+    if request.get("fault") not in allowed_faults:
         raise SafeFailure("UNKNOWN_FIXTURE_FAULT")
     pg_bin = r"C:\Program Files\PostgreSQL\18\bin"
     dll_directory = os.add_dll_directory(pg_bin)
@@ -71,12 +101,14 @@ def run(request):
         pq.PQsetNoticeProcessor(connection, C.cast(quiet_notice, C.c_void_p), None)
     transaction = False
     attempted = 0
+    public_rows = 0
+    promoted = 0
 
     def execute(sql, parameters=None, scalar=False):
         if parameters is None:
             result = pq.PQexec(connection, sql.encode("utf-8"))
         else:
-            encoded = [str(p).encode("utf-8") for p in parameters]
+            encoded = [None if p is None else str(p).encode("utf-8") for p in parameters]
             args = (C.c_char_p * len(encoded))(*encoded)
             result = pq.PQexecParams(connection, sql.encode("utf-8"), len(encoded), None, args, None, None, 0)
         if not result:
@@ -112,15 +144,35 @@ def run(request):
         execute("BEGIN ISOLATION LEVEL SERIALIZABLE")
         transaction = True
         execute("SET LOCAL search_path=pg_catalog; SET LOCAL standard_conforming_strings=on; SET LOCAL statement_timeout='30s'; SET LOCAL lock_timeout='5s'")
-        execute(request["public"]["lock"])
-        execute(request["public"]["collision"])
-        for statement in request["public"]["inserts"]:
-            execute(statement)  # Frozen public rows only. No private values in these statements.
+        execute("LOCK TABLE " + ",".join(tables) + " IN SHARE ROW EXCLUSIVE MODE")
+        if operation == "draft_import":
+            # Use the pinned collision query, never caller-provided executable SQL.
+            preflight = (public_root.parent.parent.parent / "supabase/verification/pilot_r3_readonly_preflight.sql").read_bytes()
+            if sha256(preflight).hexdigest() != "e952c38ab4392221b5f7cdaf1df5e44141536f3f4e2dcad162bab63a89fad908":
+                raise SafeFailure("COLLISION_SQL_DRIFT")
+            sql = preflight.decode("utf-8")
+            start = sql.index("WITH incoming AS (")
+            end = sql.index("SELECT jsonb_build_object('collisions'", start)
+            execute("DO $guard$ DECLARE hit boolean; BEGIN " + sql[start:end] + "SELECT EXISTS(SELECT 1 FROM incoming i JOIN remote_keys r ON r.table_name=i.item->>'table' AND r.key_data @> (i.item->'key')) INTO hit; IF hit THEN RAISE EXCEPTION 'import_collision' USING ERRCODE='23505'; END IF; END $guard$;")
+            for table, records in batches:
+                columns = ",".join('"' + c + '"' for c in records[0])
+                execute("INSERT INTO " + table + "(" + columns + ") SELECT " + columns + " FROM jsonb_populate_recordset(NULL::" + table + ",$1::jsonb)", [json.dumps(records, ensure_ascii=False)])
+                public_rows += len(records)
+        else:
+            # Promotion is a SEPARATE transaction after an exact draft import.
+            for table, records in batches:
+                columns = ",".join("'" + c + "',a.\"" + c + '\"' for c in records[0])
+                matched = int(execute("SELECT count(*) FROM " + table + " a JOIN jsonb_array_elements($1::jsonb) e ON jsonb_build_object(" + columns + ")=e.value", [json.dumps(records, ensure_ascii=False)], True))
+                if matched != len(records) or int(execute("SELECT count(*) FROM " + table, scalar=True)) != len(records):
+                    raise SafeFailure("DRAFT_SNAPSHOT_MISMATCH")
         statement = "INSERT INTO private.quiz_answer_keys(question_id,correct_index,explanation_vi) VALUES($1::uuid,$2::integer,$3::text)"
         for row in rows:
             parameters = [row["question_id"], row["correct_index"], row["explanation_vi"]]
-            execute(statement, parameters)
-            attempted += 1
+            if operation == "draft_import":
+                execute(statement, parameters)
+                attempted += 1
+            elif execute("SELECT count(*) FROM private.quiz_answer_keys WHERE question_id=$1::uuid AND correct_index=$2::integer AND explanation_vi=$3::text", parameters, True) != "1":
+                raise SafeFailure("SYNTHETIC_STORED_KEYS_REQUIRED")
             if attempted == 7:
                 if request.get("fault") == "partial":
                     raise SafeFailure("SYNTHETIC_PARTIAL_FAILURE")
@@ -131,9 +183,22 @@ def run(request):
         matches = int(execute("SELECT count(*) FROM private.quiz_answer_keys WHERE explanation_vi=$1", [sentinel], True))
         if matches != 24:
             raise SafeFailure("PARAMETER_ROUNDTRIP_MISMATCH")
+        if operation == "promote_fixture":
+            # Fixed synthetic metadata ONLY; no owner evidence or real license enters this path.
+            for table in ("public.syllabus_versions", "public.courses", "public.units", "public.vocabulary", "public.grammar_points", "public.lessons", "public.quiz_questions", "public.lesson_quizzes"):
+                ids = [r["id"] for t, records in batches if t == table for r in records]
+                license_text = None if request.get("fault") == "promotion_metadata" else "SYNTHETIC FIXTURE - NOT A RIGHTS GRANT; SYNTHETIC FIXTURE ONLY"
+                extra = ",verified_at=$3::timestamptz" if table == "public.syllabus_versions" else ""
+                execute("UPDATE " + table + " SET status='published',review_status='approved',content_license=$1,reviewed_by=$2,reviewed_at=$3::timestamptz" + extra + " WHERE id IN (SELECT value::uuid FROM jsonb_array_elements_text($4::jsonb)) AND status='draft'", [license_text, "SYNTHETIC FIXTURE REVIEWER", "2026-01-01T00:00:00Z", json.dumps(ids)])
+                promoted += len(ids)
+                if table == "public.lessons" and request.get("fault") == "promotion_partial":
+                    raise SafeFailure("SYNTHETIC_PROMOTION_FAILURE")
+            if int(execute("SELECT count(*) FROM public.syllabus_versions WHERE is_active", scalar=True)) != 0 or execute("SELECT bool_and(published_at IS NOT NULL) FROM public.lesson_quizzes", scalar=True) != "t":
+                raise SafeFailure("PROMOTION_POSTCONDITION_FAILED")
         execute("COMMIT")
         transaction = False
-        return {"status": "LOCAL_PASS", "committedKeys": 24, "parameterizedKeyRows": 24,
+        return {"status": "LOCAL_PASS", "committedKeys": 24 if operation == "draft_import" else 0, "parameterizedKeyRows": attempted,
+                "parameterizedPublicRows": public_rows, "promotedEntities": promoted,
                 "matchedSyntheticText": matches, "rawErrorsExposed": False}
     except SafeFailure as error:
         if transaction:
@@ -155,7 +220,14 @@ if __name__ == "__main__":
         if len(request_bytes) > 4_000_000:
             raise SafeFailure("INPUT_LIMIT")
         outcome = run(json.loads(request_bytes))
-    except Exception:
-        outcome = {"status": "BLOCKED", "code": "LOCAL_INPUT_OR_RUNTIME_REJECTED", "committedKeys": 0}
+    except SafeFailure as error:
+        code = str(error)
+        outcome = {"status": "BLOCKED", "code": code if re.fullmatch(r"[A-Z0-9_]{1,80}", code) else "LOCAL_GUARD_REJECTED", "committedKeys": 0}
+    except Exception as error:
+        trace = error.__traceback__
+        while trace.tb_next:
+            trace = trace.tb_next
+        # Type/line only; never exception messages, frames, locals or SQL values.
+        outcome = {"status": "BLOCKED", "code": "LOCAL_RUNTIME_" + type(error).__name__.upper() + "_L" + str(trace.tb_lineno), "committedKeys": 0}
     print(json.dumps(outcome))
     sys.exit(0 if outcome["status"] == "LOCAL_PASS" else 2)

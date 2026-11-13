@@ -11,6 +11,10 @@ import {
   publicDraftParts,
 } from "./pilot-r3-importer.mjs";
 import { validatePilot } from "./pilot-validation.mjs";
+import {
+  syntheticPublicationMapping,
+  validatePublicationMapping,
+} from "./pilot-r3-publication-validator.mjs";
 const handles = new WeakMap();
 const sentinel =
   "SYNTHETIC PARAMETERIZED FIXTURE 'quoted' \\ slash\nCHỈ THỬ NGHIỆM — NOT LEARNING FEEDBACK";
@@ -167,7 +171,11 @@ export function readLocalRealStore(pkg) {
 }
 // Compatibility only; old authorization records are historical and never read.
 export const readApprovedRealStore = readLocalRealStore;
-export function deliverLocalSynthetic(pkg, token, { fault = null } = {}) {
+export function deliverLocalSynthetic(
+  pkg,
+  token,
+  { fault = null, operation = "draft_import" } = {},
+) {
   const entry = handles.get(token);
   if (!entry) return { status: "BLOCKED", code: "UNTRUSTED_HANDLE" };
   if (entry.mode !== "synthetic")
@@ -176,6 +184,14 @@ export function deliverLocalSynthetic(pkg, token, { fault = null } = {}) {
       code: "REAL_DB_DELIVERY_REQUIRES_SEPARATE_APPROVAL_AND_REVIEW",
     };
   try {
+    if (!["draft_import", "promote_fixture"].includes(operation))
+      throw Error("operation");
+    if (
+      operation === "promote_fixture" &&
+      validatePublicationMapping(syntheticPublicationMapping()).status !==
+        "PASS"
+    )
+      throw Error("metadata");
     validateStore(pkg, entry.store);
     const database = process.env.HANLEARN_IMPORT_DATABASE,
       nonce = process.env.HANLEARN_IMPORT_NONCE;
@@ -189,9 +205,10 @@ export function deliverLocalSynthetic(pkg, token, { fault = null } = {}) {
       mode: "SYNTHETIC_DISPOSABLE",
       database,
       nonce,
-      public: publicDraftParts(pkg),
+      public: { batches: publicDraftParts(pkg).batches },
       rows: entry.store.keys,
       fault,
+      operation,
     });
     const env = Object.fromEntries(
       Object.entries(process.env).filter(
@@ -220,10 +237,19 @@ export function deliverLocalSynthetic(pkg, token, { fault = null } = {}) {
       ![r.parameterizedKeyRows ?? 0, r.matchedSyntheticText ?? 0].every(
         (n) => Number.isSafeInteger(n) && n >= 0 && n <= 24,
       ) ||
+      !Number.isSafeInteger(r.parameterizedPublicRows ?? 0) ||
+      (r.parameterizedPublicRows ?? 0) < 0 ||
+      (r.parameterizedPublicRows ?? 0) > 224 ||
+      !Number.isSafeInteger(r.promotedEntities ?? 0) ||
+      (r.promotedEntities ?? 0) < 0 ||
+      (r.promotedEntities ?? 0) > 91 ||
       (r.status === "LOCAL_PASS" &&
         (child.status !== 0 ||
-          r.committedKeys !== 24 ||
-          r.parameterizedKeyRows !== 24 ||
+          r.committedKeys !== (operation === "draft_import" ? 24 : 0) ||
+          r.parameterizedKeyRows !== (operation === "draft_import" ? 24 : 0) ||
+          r.parameterizedPublicRows !==
+            (operation === "draft_import" ? 224 : 0) ||
+          r.promotedEntities !== (operation === "promote_fixture" ? 91 : 0) ||
           r.matchedSyntheticText !== 24)) ||
       (r.code && !/^[A-Z0-9_]{1,80}$/.test(r.code))
     )
@@ -234,6 +260,8 @@ export function deliverLocalSynthetic(pkg, token, { fault = null } = {}) {
       committedKeys: r.committedKeys,
       parameterizedKeyRows: r.parameterizedKeyRows ?? 0,
       matchedSyntheticText: r.matchedSyntheticText ?? 0,
+      parameterizedPublicRows: r.parameterizedPublicRows ?? 0,
+      promotedEntities: r.promotedEntities ?? 0,
     };
   } catch {
     return {

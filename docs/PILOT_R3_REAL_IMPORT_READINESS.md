@@ -1,5 +1,45 @@
 # HSK 1 Pilot r3 — real import readiness
 
+## Current preparation — 2026-11-13
+
+**LOCAL_TECHNICAL_PASS; PUBLICATION_METADATA_BLOCKED; CLOUD_EXECUTION_UNSUPPORTED.** The historical assessment below is retained as evidence. Its missing-identity/local-read-authorization/real-read blockers are superseded: owner acceptance and rights decision are RECORDED/VERIFIED, existing backups were restore-verified, and real-key local validation PASS (24 bindings). Routine local reads need no JSON/signature gate. None of those results certifies all third-party rights or authorizes Cloud writes.
+
+Ready locally: draft plan is **224 public rows + 24 protected keys**; the protected worker now binds every public batch and each key with `PQexecParams`. Fixed loopback/sentinel target, exact hashes/bindings, logging guards, collision rejection, SERIALIZABLE transaction and rollback remain enforced. A **separate** synthetic promotion transaction validates the existing draft snapshot, publishes 91 entities with quizzes last, preserves key sealing and leaves `is_active=false`. Worker independently rejects non-synthetic keys/feedback; no real-key database or Cloud execution mode exists.
+
+New public data artifact: [grouped overlay v2](../content/proposals/pilot-hsk1-r3/publication-overlay.v2.json). V1/frozen r3 and 159 PENDING review records are untouched. V2 is a metadata proposal, **not another authorization/signature form**; it reuses locators for the existing acceptance/rights records. Every exact table/UUID/source URI is listed under `groups[].entities`:
+
+| Group      | Exact scope                            | Missing factual decisions                                                                                                      |
+| ---------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| curriculum | 1 syllabus + 1 course + 1 unit (3 IDs) | Actual permission/credit and owner-review metadata; actual source/edition verification timestamp/reference for the syllabus    |
+| vocabulary | 44 IDs                                 | AI-assisted meanings/examples vs 43 referenced HSK headword/readings; personal permission/credit and actual owner-review scope |
+| grammar    | 12 IDs                                 | AI-assisted explanations/examples vs HSK categories/Pinyin references; same metadata and actual input scope                    |
+| lessons    | 4 IDs / 29 sections                    | AI-assisted dialogue/transcripts/objectives; actual inputs, permission/credit and owner-review scope                           |
+| quizzes    | 4 IDs                                  | Quiz metadata permission/credit and actual owner-review scope                                                                  |
+| questions  | 24 IDs                                 | AI-assisted stems/choices and scoped declaration covering protected feedback; no raw keys/feedback in the overlay              |
+
+Special source cases: 越南 `aa4a8f04-c772-54ef-a296-a7fd0a6d37c3` is supplemental, not one of the 43 verified headwords. Grammar 很 `fa09d24a-1c47-51aa-91fa-143b3877e98a` has a remediation trace gap, not evidence of copying. GB/T is an orthography reference; its full text/pages are not imported. pinyin.info is a citation in AI review with no established direct-copy dependency. The existing rights decision E reports no recalled commercial app/book/exam-bank inputs; it is not a proof about every website/dictionary or all AI output. No specific copied third-party passage/ID was established by this preparation. Do not falsely exclude/clear all 91 IDs merely because a source was mentioned.
+
+**Owner input needed once, grouped (chat or an existing evidence record is sufficient; no new signature JSON):** confirm actual inputs and any copied/unresolved portions with affected IDs; choose a truthful personal-use permission statement and attribution; confirm how the existing acceptance represents actual owner/AI-assisted personal review, the reviewer label safe to store/display, and the actual review date/time. Existing recorded name/date may be reused only if they really describe that review, not automatically as an import timestamp. Confirm actual syllabus source verification evidence/time. One package-wide statement may cover multiple groups where accurate; no independent/native certificate or 159 individual PASS decisions is required by the SQL schema/private policy. AI origin is not itself a license.
+
+The validator checks exact hashes/91 identities/references, strict metadata, real reader length limits (license 500/reviewer 200), dates, actual-review declaration, rights/input scope and unresolved copied IDs. Attribution must be present in the persisted license/permission text because current UI has no separate credit field. It rejects unknown/private fields and apply/public-release/activation flags. Formal PASS is **structure/declaration completeness only**, never a rights certificate or execution permission. Current metadata remains null/unconfirmed, so `content:publication:check` correctly returns BLOCKED for all six groups and syllabus verification. No fake reviewer/license/time was filled.
+
+### Fresh Development preflight — prepared, NOT connected
+
+When requested, `powershell -NoProfile -File .\scripts\pilot-r3-preflight.ps1 -SecurityPosture` uses the fixed Development `hhgxrjqkuwdgurphopok`, IPv4 Session Pooler, trusted CA/TLS verify-full, secure password prompt, READ ONLY and ON_ERROR_STOP. It captures the frozen six-frame checks plus the separately hash-pinned aggregate-only security supplement. `node scripts/pilot-r3-preflight.mjs --review` supports both formats. The supplement/helper were tested locally; the Cloud helper was parsed, not invoked here.
+
+Recheck: exact connection routing/project/configuration (SQL `postgres` alone is not project identity); six migration versions/hashes; schema/FKs/checks/indexes/triggers/ownership/search_path/EXECUTE/grants/RLS; all 315 UUID/unique/natural/semantic collision probes and revisions 3/2/2/2; effective allowlist and the **actual owner** from verified Auth, not counts alone; DB/pooler/audit parameter logging for the intended write connection; fresh HTTP anonymous/private-schema denial. The new reviewer BLOCKS known unsafe logging/grants/allowlist metadata and otherwise returns WARNING until owner identity, external logging and HTTP checks are resolved. No automated Cloud fixes or TLS downgrades.
+
+### Shortest execution path, future approval only
+
+1. Complete/confirm the actual group metadata and references once; validate a versioned exact promotion payload. No new schema is needed for honest owner-reviewed personal use. `reviewed_by`/permission wording must disclose that method without claiming independent language verification.
+2. Perform requested read-only preflight, review secure real-key transport/logging for the actual target, then obtain approval for **one exact draft transaction**: revalidate target/hash/history/collisions under locks → insert 224 draft public rows + 24 real keys with bind parameters → verify scoped postconditions → COMMIT, or rollback all on error. No overwrite/upsert, activation, users or learner progress.
+3. A **separate explicitly approved promotion transaction** rechecks scoped draft bytes/IDs/joins/keys and approved overlay hash → publishes ancestry/vocabulary/grammar/lessons/questions with actual metadata → publishes quizzes last. `is_active` is not required for readability: current Settings/Roadmap picks preferred syllabus, then active, then the first readable syllabus. Do not turn activation into an invented blocker or set it automatically.
+4. Verify real Lesson Detail/quiz reads. Study Confirmation and quiz start/submit **still reject Cloud on the server**. Actual learning writes therefore need a separately approved narrowly scoped Development guard change and live mutation acceptance; do not tunnel Cloud through loopback to bypass those guards.
+
+Local evidence for this preparation: full unit/quality checks and protected native suite (15 baseline + 17 protected cases) PASS; 224 public rows/24 synthetic keys bound, rollback/publication constraints/collision/no overwrite/log-canary checks, separate 91-entity promotion and read-only posture capture verified. An OpenSSL DLL collision from Python hashlib was reproduced without data and fixed using CPython's builtin SHA-256; hashes/security checks were not lowered. No real keys entered a database, no Cloud connection, new Auth/RLS/migration, activation, owner-data mutation, push or deploy occurred. App browser/live PASS reports were not recreated.
+
+## Historical assessment (superseded where noted above)
+
 2026-11-13, Asia/Saigon. **Rights decision: PENDING. Protected delivery: LOCAL_PASS cho parameterized synthetic integration; real-store E2E BLOCKED. Publication mapping: PROPOSED, chưa APPROVED và chưa được phép thực thi.** Không đọc answers thật, không ghi Cloud hoặc publish r3 trong nhiệm vụ này.
 
 ## 1. Rights decision đã đọc, không tự hoàn thiện

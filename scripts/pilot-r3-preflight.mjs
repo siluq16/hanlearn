@@ -68,6 +68,47 @@ export function auditPilot() {
     uuidProbes: 91,
   };
 }
+export function reviewSecurityPosture(p) {
+  const checks = {
+    identity:
+      p?.database === "postgres" &&
+      p?.role === "postgres" &&
+      p?.read_only === "on",
+    singleConfirmedLearner:
+      p?.allowlisted_count === 1 &&
+      p?.confirmed_allowlisted_count === 1 &&
+      p?.missing_or_unconfirmed_allowlisted_count === 0,
+    noPrivateTableGrants:
+      p?.authenticated_private_keys_select === false &&
+      p?.anon_private_keys_select === false,
+    noDeclaredPrivateApiSchema:
+      Array.isArray(p?.api_schema_role_settings) &&
+      p.api_schema_role_settings.every(
+        (s) => typeof s === "string" && !/private/i.test(s),
+      ),
+    statementLoggingOff: p?.logging?.log_statement === "none",
+    errorParameterLoggingOff:
+      p?.logging?.log_parameter_max_length_on_error === "0",
+    durationParametersSafe:
+      p?.logging?.log_parameter_max_length === "0" ||
+      (p?.logging?.log_min_duration_statement === "-1" &&
+        p?.logging?.log_min_duration_sample === "-1" &&
+        p?.logging?.log_transaction_sample_rate === "0"),
+    auditParameterLoggingOff:
+      p?.pgaudit_parameter_logging === "off" ||
+      (p?.pgaudit_extension_present === false &&
+        p?.pgaudit_parameter_logging === null),
+  };
+  return {
+    status: Object.values(checks).every(Boolean) ? "WARNING" : "BLOCKED",
+    checks,
+    remaining: [
+      "Match the actual owner identity via verified Auth, not counts alone",
+      "Review DB/pooler/audit parameter logging for the exact write connection; metadata alone is not a no-logging proof",
+      "Fresh read-only HTTP private-schema/anonymous checks still required",
+    ],
+  };
+}
 export function reviewFrames(
   frames,
   expected,
@@ -75,7 +116,7 @@ export function reviewFrames(
   oldFunctions,
   appNames,
 ) {
-  if (!Array.isArray(frames) || frames.length !== 6)
+  if (!Array.isArray(frames) || ![6, 7].includes(frames.length))
     throw Error("Incomplete capture frames");
   const [identity, history, schema, platform, active, collisions] = frames;
   if (
@@ -109,8 +150,18 @@ export function reviewFrames(
     platformSecurity: platformReview.status === "PASS",
     noCollisions: collisions.collisions.length === 0,
   };
+  const posture =
+    frames.length === 7
+      ? reviewSecurityPosture(frames[6].security_posture)
+      : null;
+  if (posture) checks.securityPosture = posture.status !== "BLOCKED";
   return {
-    status: Object.values(checks).every(Boolean) ? "PASS" : "BLOCKED",
+    status: Object.values(checks).every(Boolean)
+      ? posture
+        ? "WARNING"
+        : "PASS"
+      : "BLOCKED",
+    securityPosture: posture,
     checks,
     history: history.history,
     schema: structural,
@@ -154,6 +205,17 @@ if (
         .split(/\r?\n/)
         .filter(Boolean)
         .map((line) => JSON.parse(line));
+      if (
+        frames.length === 7 &&
+        (capture.securityPostureSqlHash !==
+          "78f8989ddf71d672c9a23d694d1405e0232c144e55d6ce8298b6af067550b828" ||
+          hash(
+            fs.readFileSync(
+              "supabase/verification/pilot_r3_security_posture.sql",
+            ),
+          ) !== capture.securityPostureSqlHash)
+      )
+        throw Error("Supplement capture SQL drift");
       if (hash(fs.readFileSync(dir + "result.txt")) !== capture.resultSha256)
         throw Error("Capture bytes changed");
       const expected = read("supabase/verification/expected_schema.json");

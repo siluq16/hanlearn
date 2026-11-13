@@ -51,6 +51,8 @@ Database/RLS requirements are real: published ancestry/approved provenance, vali
 
 Quiz checks: `npm run test:quizzes:browser`; native database regression: `npm run test:db:native` (synthetic disposable/Auth shim only). The main quiz route requires real published catalog data. Writes need `HANLEARN_LOCAL_MINI_QUIZ=1` and a verified literal HTTPS loopback API target; setting the flag with a Cloud URL never enables writes. No such API/credentials or Cloud writes were provisioned by this sprint.
 
+Publication preparation: `npm run content:publication:plan` inspects the grouped v2 proposal without writing; `npm run content:publication:check` validates it and exits nonzero while actual metadata/evidence is missing. Both keep execution disabled. V1 and signed owner records remain historical evidence. Exact 91 IDs, source classifications and missing fields are in `content/proposals/pilot-hsk1-r3/publication-overlay.v2.json`; [current readiness](docs/PILOT_R3_REAL_IMPORT_READINESS.md) describes the remaining decisions, separate draft/promotion transactions and future read-only preflight. No new local authorization/signature files are required.
+
 ## Implemented features
 
 - Next.js 16 App Router, strict TypeScript, Tailwind 4, locally owned shadcn/ui primitives, Lucide, self-hosted Inter/Noto Sans SC.

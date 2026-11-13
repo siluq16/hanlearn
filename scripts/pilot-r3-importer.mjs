@@ -161,6 +161,7 @@ function collisionGuard() {
 export function publicDraftParts(pkg) {
   const plan = draftPlan(pkg, syntheticDelivery(pkg));
   return {
+    batches: plan.batches,
     lock: `LOCK TABLE ${[...plan.batches.map(([t]) => t), "private.quiz_answer_keys"].join(",")} IN SHARE ROW EXCLUSIVE MODE;`,
     collision: collisionGuard(),
     inserts: plan.batches.map(([table, rows]) => insert(table, rows)),

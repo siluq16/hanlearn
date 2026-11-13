@@ -1,5 +1,7 @@
 # HSK 1 Pilot r3 — final rights and publication gates
 
+Current-state note: local read authorization requirements and NOT_AUTHORIZED below are historical. Routine trusted local reads and real-key validation have since PASS; see README and the current section of [real import readiness](PILOT_R3_REAL_IMPORT_READINESS.md). Grouped overlay v2 now records exact promotion scope/missing metadata. Historical rights evidence is preserved; no Cloud import/publication or guard change has been approved by those local results.
+
 2026-11-13, Asia/Saigon. Chỉ kiểm tra hồ sơ/quyền và chuẩn bị artifacts local. Không đọc answers thật, mở kết nối Cloud, import/publish hoặc thay đổi frozen content/migrations/RLS/guard.
 
 | Gate                | Trạng thái cuối    | Ý nghĩa                                                                                                                                                        |

@@ -1,13 +1,16 @@
 #requires -Version 5.1
 # Fixed Development target; SELECT-only capture. Password only in transient child environment.
 [CmdletBinding()]
-param([Security.SecureString]$DatabasePassword,[switch]$NoPrompt,
+param([Security.SecureString]$DatabasePassword,[switch]$NoPrompt,[switch]$SecurityPosture,
  [string]$PsqlPath='C:\Program Files\PostgreSQL\18\bin\psql.exe',
  [string]$SslRootCert='.local/cloud-preflight/prod-supabase.cer')
 $ErrorActionPreference='Stop'
+$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
 $repo=Split-Path -Parent $PSScriptRoot
 $ProjectRef='hhgxrjqkuwdgurphopok'
 $PoolerHost='aws-1-ap-southeast-2.pooler.supabase.com'
+$postureFile=Join-Path $repo 'supabase/verification/pilot_r3_security_posture.sql'
+$postureSha='78f8989ddf71d672c9a23d694d1405e0232c144e55d6ce8298b6af067550b828'
 $reportDir=Join-Path $repo '.local/pilot-r3-preflight'
 $report=[ordered]@{projectRef=$ProjectRef;checkedAt=[DateTime]::UtcNow.ToString('o');status='BLOCKED';reason=$null}
 function ConvertTo-NativeArgument([string]$Value) {
@@ -82,6 +85,7 @@ try {
  if($publicUrl.Scheme -ne 'https' -or $publicUrl.Host -cne ($ProjectRef+'.supabase.co') -or $publicUrl.UserInfo -or -not $publicUrl.IsDefaultPort) { throw 'Development public URL mismatch. No connection attempted.' }
  if(-not [IO.Path]::IsPathRooted($SslRootCert)) { $SslRootCert=Join-Path $repo $SslRootCert }
  if(-not (Test-Path -LiteralPath $SslRootCert) -or -not (Test-Path -LiteralPath $PsqlPath)) { throw 'Trusted project CA or psql missing. No TLS downgrade.' }
+ if($SecurityPosture -and (Get-FileHash -LiteralPath $postureFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne $postureSha) { throw 'Read-only security posture SQL hash mismatch. No connection attempted.' }
  New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
  if(-not $DatabasePassword) {
   if($NoPrompt) { throw 'Secure local database credential required. No Cloud connection attempted.' }
@@ -93,12 +97,21 @@ try {
  foreach($property in $audit.sqlHashes.PSObject.Properties) {
   if((Get-FileHash -LiteralPath (Join-Path $repo $property.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $property.Value) { throw 'Audited SQL changed before connection.' }
  }
- $result=Invoke-Captured $PsqlPath @('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f',(Join-Path $repo 'supabase/verification/pilot_r3_readonly_preflight.sql'))
+ $readArguments=@('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f',(Join-Path $repo 'supabase/verification/pilot_r3_readonly_preflight.sql'))
+ if($SecurityPosture){$readArguments+=@('-f',$postureFile)}
+ $result=Invoke-Captured $PsqlPath $readArguments
  foreach($property in $audit.sqlHashes.PSObject.Properties) {
   if((Get-FileHash -LiteralPath (Join-Path $repo $property.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $property.Value) { throw 'Audited SQL changed during capture.' }
  }
  $frames=@($result.Out.Trim() -split '\r?\n' | Where-Object {$_} | ForEach-Object { $_ | ConvertFrom-Json })
- if($frames.Count -ne 6 -or $frames[0].identity.database -ne 'postgres' -or $frames[0].identity.role -ne 'postgres' -or $frames[0].identity.read_only -ne 'on') { throw 'Capture identity/shape failed; no result accepted.' }
+ $expectedFrames=if($SecurityPosture){7}else{6}
+ if($frames.Count -ne $expectedFrames -or $frames[0].identity.database -ne 'postgres' -or $frames[0].identity.role -ne 'postgres' -or $frames[0].identity.read_only -ne 'on') { throw 'Capture identity/shape failed; no result accepted.' }
+ if($SecurityPosture){
+  if((Get-FileHash -LiteralPath $postureFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne $postureSha -or $frames[-1].security_posture.read_only -ne 'on' -or $frames[-1].security_posture.role -ne 'postgres'){throw 'Read-only security posture capture rejected.'}
+  $report['securityPostureSqlHash']=$postureSha
+  $report['securityPosture']=$frames[-1].security_posture
+  $report['securityPostureReview']='REQUIRED: match actual owner, inspect logging/pooler and HTTP private exposure; counts alone are not approval.'
+ }
  $resultFile=Join-Path $reportDir 'result.txt'
  [IO.File]::WriteAllText($resultFile,$result.Out,(New-Object Text.UTF8Encoding($false)))
  $report['resultSha256']=(Get-FileHash -LiteralPath $resultFile -Algorithm SHA256).Hash.ToLowerInvariant()

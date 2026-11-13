@@ -72,6 +72,7 @@ const r = deliverLocalSynthetic(pkg, syntheticProtectedHandle(pkg));
 assert.equal(r.status, "LOCAL_PASS");
 assert.equal(r.committedKeys, 24);
 assert.equal(r.matchedSyntheticText, 24);
+assert.equal(r.parameterizedPublicRows, 224);
 assert.equal(total(), 248);
 pass("parameterized_commit_24_keys_and_quoted_unicode_safe_text");
 const duplicate = deliverLocalSynthetic(pkg, syntheticProtectedHandle(pkg));
@@ -86,6 +87,72 @@ assert(
   ),
 );
 pass("no_parameter_text_in_error_result");
+for (const [fault, code] of [
+  ["promotion_partial", "SYNTHETIC_PROMOTION_FAILURE"],
+  ["promotion_metadata", "23514"],
+]) {
+  const failed = deliverLocalSynthetic(pkg, syntheticProtectedHandle(pkg), {
+    operation: "promote_fixture",
+    fault,
+  });
+  assert.equal(failed.status, "BLOCKED");
+  assert.equal(failed.code, code);
+  assert.equal(total(), 248);
+  assert.equal(
+    query(
+      "SELECT " +
+        plan.batches
+          .filter(([, rows]) => rows[0].id)
+          .map(([t]) => `(SELECT count(*) FROM ${t} WHERE status='published')`)
+          .join("+"),
+    ),
+    "0",
+  );
+  pass("separate_promotion_rollback_" + fault);
+}
+const promoted = deliverLocalSynthetic(pkg, syntheticProtectedHandle(pkg), {
+  operation: "promote_fixture",
+});
+assert.equal(promoted.status, "LOCAL_PASS");
+assert.equal(promoted.promotedEntities, 91);
+assert.equal(promoted.committedKeys, 0);
+assert.equal(
+  query("SELECT count(*) FROM public.syllabus_versions WHERE is_active"),
+  "0",
+);
+assert.equal(
+  query(
+    "SELECT count(*) FROM public.lesson_quizzes WHERE published_at IS NOT NULL",
+  ),
+  "4",
+);
+assert.equal(
+  query(
+    `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${second}';SELECT count(*) FROM public.lessons;ROLLBACK;`,
+  ),
+  "4",
+);
+pass("separate_parameterized_promotion_91_entities_quizzes_last_no_activation");
+assert.equal(
+  deliverLocalSynthetic(pkg, syntheticProtectedHandle(pkg), {
+    operation: "promote_fixture",
+  }).code,
+  "DRAFT_SNAPSHOT_MISMATCH",
+);
+pass("promotion_rejects_non_draft_or_drift_no_blind_overwrite");
+const posture = JSON.parse(
+  query(
+    fs.readFileSync(
+      "supabase/verification/pilot_r3_security_posture.sql",
+      "utf8",
+    ),
+  ),
+).security_posture;
+assert.equal(posture.read_only, "on");
+assert.equal(posture.authenticated_private_keys_select, false);
+assert.equal(posture.anon_private_keys_select, false);
+assert.equal(posture.confirmed_allowlisted_count, 2);
+pass("readonly_security_posture_supplement_detects_multi_learner_fixture");
 const run = process.env.HANLEARN_IMPORT_DATABASE.replace(
   "hanlearn_import_r3_",
   "",
