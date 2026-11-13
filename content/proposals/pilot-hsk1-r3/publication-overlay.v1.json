@@ -1,0 +1,1766 @@
+{
+  "format": "hanlearn.publication-overlay.proposal",
+  "proposal_version": 1,
+  "base_package_id": "hanlearn-pilot-hsk1-v1",
+  "base_draft_revision": 3,
+  "base_manifest_sha256": "dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b",
+  "base_public_snapshot_sha256": "2cb3e0d7a667dd6faba633c4df1e87e6dbaee539e19d0cb394e9dcc769c91deb",
+  "proposal_status": "PROPOSED_BLOCKED",
+  "apply_authorized": false,
+  "public_release_authorized": false,
+  "execution_supported": false,
+  "owner_review_method": "AI_assisted_owner_accepted_private_use_not_independent_language_review",
+  "effective_allowlist_requirement": {
+    "confirmed_learner_count": 1,
+    "live_verified": false,
+    "owner_identity_reference": null
+  },
+  "private_evidence": {
+    "rights_decision_reference": null,
+    "owner_review_scope_reference": null,
+    "real_key_review_reference": null
+  },
+  "unresolved_gates": [
+    "bind_verified_rights_record_to_overlay",
+    "rights_clearance_for_actual_use",
+    "honest_review_and_license_metadata",
+    "publication_mapping_approval",
+    "effective_allowlist_live_check",
+    "separate_real_key_authorization",
+    "exact_cloud_transaction_approval"
+  ],
+  "quiz_published_at_strategy": "DATABASE_TRIGGER_ONLY_AFTER_REVIEWED_QUESTIONS_AND_KEYS",
+  "activation_proposed": false,
+  "entities": [
+    {
+      "table": "public.syllabus_versions",
+      "id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:syllabus",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null,
+        "verified_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.courses",
+      "id": "2c99d2ff-db03-5ef5-ace1-0a8669d4ac28",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:course",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.units",
+      "id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:unit",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:你",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:好",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:吗",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:很",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:我",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:谢谢",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:再见",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:呢",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "169b7623-b96a-5447-940b-f54efd6e2547",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:叫",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:什么",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:名字",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:是",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:人",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "d610982b-750e-5c68-b58e-4ae39f8badaf",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:中国",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:越南",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "d3550460-986b-55cf-8138-fe4a18985944",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:汉语",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:学习",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "df6876e3-e013-584d-b584-64c5d6f29048",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:不",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "81ce53a0-5394-5278-81fe-c67961c8c34d",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:家",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "a6c5e400-0154-5884-9810-f8245adfce8e",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:的",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "8d613286-431b-5f14-8ed7-e45ca0178168",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:有",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:几",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "7dec5724-9256-5404-8938-647c52f6f504",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:口",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:爸爸",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "29784008-ba30-53e7-9f9d-04c98583dc51",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:妈妈",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:哥哥",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:姐姐",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:和",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:一",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:二",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:三",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:个",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:两",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "14303981-2984-5515-8609-95898457dd7c",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:今天",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:星期",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "ad545a62-ac16-5d78-ac42-377f56bc4716",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:四",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:五",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:六",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:七",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:月",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:号",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:现在",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "a0c51256-1682-5c09-9736-7996bd8293f2",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:点",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.vocabulary",
+      "id": "c390f103-ab57-531b-808b-e1c734509c22",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:天",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "2822b103-89dd-5819-b360-7315aef042b6",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:5",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:6",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:7",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:8",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:9",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:10",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:11",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.grammar_points",
+      "id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:12",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lessons",
+      "id": "639665c9-952d-5714-a276-537a3568b463",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-01",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lessons",
+      "id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-02",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lessons",
+      "id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-03",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lessons",
+      "id": "47097e01-9557-5f82-a84b-fba132cfca05",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-04",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lesson_quizzes",
+      "id": "08f2e3a1-e171-5aa6-93b9-ac777b053a41",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lesson_quizzes",
+      "id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lesson_quizzes",
+      "id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.lesson_quizzes",
+      "id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "9083a912-73c2-5e44-9168-895e45874b44",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "2f062e7a-9319-5503-bdb1-4c1978af128d",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "609acd8b-6358-51c5-bc21-b41f8dc2d82f",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "76015916-80bf-52c2-bd11-a9a9812b0408",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "af8cab1c-15a1-56e9-bb6f-099be1abd140",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:5",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "b7c8e3aa-0ccc-5fa4-bd42-24fe182a0225",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:6",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "00dd5cdb-560f-5f5f-8090-5958308f30b4",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "377cb504-b54a-51a9-8559-64f2d3037870",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "df3aa84d-ad70-577a-a1e4-73d7a980459f",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "359886c6-b796-5943-ab65-89baccd14cc8",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "35cb53f7-ff50-5605-b5e5-95d217b133c3",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:5",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "c208de2b-95d5-5afd-b9cc-002fa90dfe25",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:6",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "e80b9bac-ded5-5899-95a5-034d60d17dec",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "c46b5ddf-12d7-549d-96e8-ed1bfb6d1e56",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "a88919fb-4ac3-55c6-b4e3-5bf038e2e94e",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "7dca8e38-6482-5716-87f8-0086c6f02b93",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "a9210b85-32ff-5ad7-bf21-ea9afe62171e",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:5",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "cf4e0131-8a8d-5e76-a5d0-caac94400e89",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:6",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "0a2c1d0a-1a1c-5584-8059-2fcc75ed8c95",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:1",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "2552f8cb-f9b0-5cea-ab30-71937c8544b8",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:2",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "eff3d559-eb5d-5d65-aea6-750f85b970a2",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:3",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "48b4204d-18c7-52ac-9b2b-010f9cb011e6",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:4",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "9be0f982-ab43-5113-bc16-b025f778a83b",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:5",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    },
+    {
+      "table": "public.quiz_questions",
+      "id": "a5bd22ed-b611-54c8-b3c7-d29c3f1f9419",
+      "current": {
+        "status": "draft",
+        "review_status": "pending"
+      },
+      "required_for_readability": {
+        "status": "published",
+        "review_status": "approved"
+      },
+      "proposed_metadata": {
+        "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:6",
+        "content_license": null,
+        "reviewed_by": null,
+        "reviewed_at": null
+      },
+      "evidence_reference": null
+    }
+  ]
+}
