@@ -1,5 +1,6 @@
 #requires -Version 5.1
 # Always a new loopback-only cluster/database. Never reuse a configured database or .env.
+param([switch]$ProtectedDelivery)
 $ErrorActionPreference='Stop'
 $repo=Split-Path -Parent $PSScriptRoot
 $bin='C:\Program Files\PostgreSQL\18\bin'
@@ -13,7 +14,7 @@ $saved=@{}
 foreach($name in $names){$saved[$name]=[Environment]::GetEnvironmentVariable($name);[Environment]::SetEnvironmentVariable($name,$null)}
 function Invoke-PgCtl([string]$operation) {
  $arguments=if($operation -eq 'start') {
-  '-D "'+$data+'" -l "'+(Join-Path $data 'fixture.log')+'" -o "-h 127.0.0.1 -p 55449 -c log_statement=none -c log_min_error_statement=panic -c log_parameter_max_length_on_error=0" -w start'
+  '-D "'+$data+'" -l "'+(Join-Path $data 'fixture.log')+'" -o "-h 127.0.0.1 -p 55449 -c log_statement=none -c log_min_error_statement=panic -c log_parameter_max_length_on_error=0 -c log_error_verbosity=terse -c log_min_messages=panic" -w start'
  } else { '-D "'+$data+'" -m fast -w stop' }
  # Do not capture a pipe inherited by the background server or use Start-Process -Wait (tree wait).
  $process=Start-Process -FilePath (Join-Path $bin 'pg_ctl.exe') -ArgumentList $arguments -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $data ($operation+'.out')) -RedirectStandardError (Join-Path $data ($operation+'.err'))
@@ -45,7 +46,8 @@ try {
  $output=& $psql @base -d $database -c "CREATE SCHEMA importer_fixture; CREATE TABLE importer_fixture.guard(token text NOT NULL); INSERT INTO importer_fixture.guard VALUES('$nonce');" 2>&1
  if($LASTEXITCODE -ne 0){throw 'DISPOSABLE_SENTINEL_FAILED'}
  $env:HANLEARN_IMPORT_DATABASE=$database;$env:HANLEARN_IMPORT_NONCE=$nonce;$env:HANLEARN_IMPORT_LOCAL_ONLY='SYNTHETIC_DISPOSABLE'
- & node --experimental-strip-types scripts/test-pilot-importer-db.mjs
+ if($ProtectedDelivery){ & node --experimental-strip-types scripts/test-protected-delivery.mjs }
+ else{ & node --experimental-strip-types scripts/test-pilot-importer-db.mjs }
  if($LASTEXITCODE -ne 0){throw 'LOCAL_IMPORTER_DATABASE_TESTS_FAILED'}
 } finally {
  if($started -or (Test-Path -LiteralPath (Join-Path $data 'postmaster.pid'))){try{Invoke-PgCtl 'stop'}catch{Write-Warning 'Check this new fixture cluster shutdown locally.'}}

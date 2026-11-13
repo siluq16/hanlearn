@@ -124,7 +124,9 @@ export function preview(plan) {
     privateDelivery: {
       mode: "SYNTHETIC_FIXTURE_ONLY",
       records: 24,
-      realDelivery: "BLOCKED_NOT_IMPLEMENTED",
+      realDelivery: "BLOCKED_SEPARATE_REAL_DB_APPROVAL",
+      localProtectedAdapter:
+        "SYNTHETIC_PARAMETERIZED_PATH_REAL_READ_AUTH_REQUIRED",
     },
     publication: "BLOCKED_RIGHTS_AND_POLICY_DECISION_REQUIRED",
     cloudExecution: "UNSUPPORTED",
@@ -154,6 +156,15 @@ function collisionGuard() {
   return `DO $guard$ DECLARE hit boolean; BEGIN ${sql.slice(start, end)}
     SELECT EXISTS(SELECT 1 FROM incoming i JOIN remote_keys r ON r.table_name=i.item->>'table' AND r.key_data @> (i.item->'key')) INTO hit;
     IF hit THEN RAISE EXCEPTION 'import_collision' USING ERRCODE='23505'; END IF; END $guard$;`;
+}
+// Public SQL only, shared by the protected parameterized worker. Never contains keys.
+export function publicDraftParts(pkg) {
+  const plan = draftPlan(pkg, syntheticDelivery(pkg));
+  return {
+    lock: `LOCK TABLE ${[...plan.batches.map(([t]) => t), "private.quiz_answer_keys"].join(",")} IN SHARE ROW EXCLUSIVE MODE;`,
+    collision: collisionGuard(),
+    inserts: plan.batches.map(([table, rows]) => insert(table, rows)),
+  };
 }
 function transaction(pkg, delivery, { fault = null, rollback = false } = {}) {
   auditPilot();

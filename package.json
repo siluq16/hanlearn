@@ -21,7 +21,8 @@
     "test:cloud": "node --env-file-if-exists=.env.local --env-file-if-exists=.env.cloud-test.local scripts/check-cloud.mjs",
     "format:check": "prettier --check src tests next.config.ts playwright.config.ts playwright.lessons.config.ts vitest.config.ts",
     "content:import:plan": "node --experimental-strip-types scripts/pilot-r3-importer.mjs --preview",
-    "test:importer:native": "powershell -NoProfile -File scripts/test-pilot-importer-native.ps1"
+    "test:importer:native": "powershell -NoProfile -File scripts/test-pilot-importer-native.ps1",
+    "test:delivery:native": "powershell -NoProfile -File scripts/test-pilot-importer-native.ps1 -ProtectedDelivery"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",

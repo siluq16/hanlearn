@@ -1,13 +1,16 @@
 #requires -Version 5.1
 # Local only. Passwords are entered directly into 7-Zip's native hidden prompts.
 [CmdletBinding()]
-param([switch]$NoPrompt,[switch]$VerifyExisting)
+param([switch]$NoPrompt,[switch]$VerifyExisting,[switch]$RightsOnly)
 $ErrorActionPreference='Stop'
 $repo=Split-Path -Parent $PSScriptRoot
 $approvedBackupRoot='D:\nam4\prj\backup'
 $sevenZip='D:\Program\7-Zip\7z.exe'
 $privateRoot=Join-Path $repo '.local/pilot-hsk1/v1/private'
 $resultPath=Join-Path $repo '.local/pilot-hsk1/private-backup-result.json'
+if($RightsOnly){$privateRoot=Join-Path $repo '.local/pilot-hsk1/v1/rights';$resultPath=Join-Path $repo '.local/pilot-hsk1/rights-backup-result.json'}
+$archivePrefix=if($RightsOnly){'hanlearn-rights-r3-'}else{'hanlearn-pilot-r3-'}
+$archiveName=if($RightsOnly){'rights-r3.7z'}else{'private-pilot-r3.7z'}
 $result=[ordered]@{status='BACKUP_PENDING';checkedAt=[DateTime]::UtcNow.ToString('o');backupRoot=$approvedBackupRoot;archive=$null;sourceFiles=0;matchedFiles=0;privateFiles=0;encryptedHeader=$false;cleanup='NOT_CREATED';reason=$null}
 function Assert-PlainPath([string]$path) {
  $item=Get-Item -LiteralPath $path -Force
@@ -41,8 +44,8 @@ try {
   $existingArchive=[IO.Path]::GetFullPath([string]$previous.archive)
   $archiveParent=Split-Path -Parent $existingArchive
   if((Split-Path -Parent $archiveParent) -ine $approvedBackupRoot -or
-     (Split-Path -Leaf $archiveParent) -notmatch '^hanlearn-pilot-r3-[a-f0-9]{32}$' -or
-     (Split-Path -Leaf $existingArchive) -cne 'private-pilot-r3.7z') { throw 'DESTINATION' }
+     (Split-Path -Leaf $archiveParent) -notmatch ('^'+[regex]::Escape($archivePrefix)+'[a-f0-9]{32}$') -or
+     (Split-Path -Leaf $existingArchive) -cne $archiveName) { throw 'DESTINATION' }
   Assert-PlainPath $existingArchive
  }
  $result['toolVersion']=(Get-Item -LiteralPath $sevenZip).VersionInfo.FileVersion
@@ -54,7 +57,7 @@ try {
  $identity=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value
  if(-not (Get-Acl -LiteralPath $privateRoot).AreAccessRulesProtected) { throw 'ACL' }
  $privateFiles=@(Get-ChildItem -LiteralPath $privateRoot -Force -File)
- if($privateFiles.Count -ne 11 -or @(Get-ChildItem -LiteralPath $privateRoot -Force -Directory).Count -ne 0) { throw 'SOURCE_SET' }
+ if(((-not $RightsOnly) -and $privateFiles.Count -ne 11) -or ($RightsOnly -and $privateFiles.Count -lt 1) -or @(Get-ChildItem -LiteralPath $privateRoot -Force -Directory).Count -ne 0) { throw 'SOURCE_SET' }
  foreach($entry in @((Get-Item -LiteralPath $privateRoot))+$privateFiles) {
   Assert-PlainPath $entry.FullName
   foreach($rule in (Get-Acl -LiteralPath $entry.FullName).Access) {
@@ -63,6 +66,10 @@ try {
  }
  $sourceRoot='content/pilot-hsk1/v1/'
  $snapshot=Get-Content -LiteralPath (Join-Path $repo 'docs/human-review/pilot-hsk1-r3/SOURCE_SNAPSHOT.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+ if($RightsOnly){
+  $sources=@($privateFiles | ForEach-Object {'.local/pilot-hsk1/v1/rights/'+$_.Name})
+  $sources+=@('content/pilot-hsk1/v1/manifest.json','docs/human-review/pilot-hsk1-r3/SOURCE_SNAPSHOT.json')
+ } else {
  $sources=@($privateFiles | ForEach-Object {'.local/pilot-hsk1/v1/private/'+$_.Name})
  $sources+=@($snapshot.files | ForEach-Object {$sourceRoot+$_.path})
  $sources+=@('content/pilot-hsk1/v1/README.md','content/pilot-hsk1/v1/REVIEW_CHECKLIST.md',
@@ -71,6 +78,7 @@ try {
   'docs/human-review/pilot-hsk1-r3/REVIEW_REGISTER.template.csv',
   '.local/pilot-hsk1/official-syllabus.pdf','.local/pilot-hsk1/source-pages.json')
  if($sources.Count -ne 30 -or @($sources | Select-Object -Unique).Count -ne 30) { throw 'SOURCE_SET' }
+ }
  $before=@{}
  foreach($relative in $sources) {
   $original=Join-Path $repo $relative
@@ -78,7 +86,9 @@ try {
   $before[$relative]=File-Hash $original
  }
  $result.sourceFiles=$sources.Count
- $result.privateFiles=$privateFiles.Count
+ $result.privateFiles=if($RightsOnly){0}else{$privateFiles.Count}
+ $result['rightsFiles']=if($RightsOnly){$privateFiles.Count}else{0}
+ $result['scope']=if($RightsOnly){'RIGHTS_SUPPLEMENT_ONLY'}else{'CORE_PRIVATE_R3'}
  if($NoPrompt -or -not [Environment]::UserInteractive) { throw 'PROMPT_REQUIRED' }
  $workParent=Join-Path $repo '.local/pilot-backup-r3-work'
  New-Item -ItemType Directory -Force -Path $workParent | Out-Null
@@ -96,10 +106,10 @@ try {
    Copy-Item -LiteralPath (Join-Path $repo $relative) -Destination $copy
    if((File-Hash $copy) -cne $before[$relative]) { throw 'STAGING_COMPARE' }
   }
-  $destination=Join-Path $approvedBackupRoot ('hanlearn-pilot-r3-'+[Guid]::NewGuid().ToString('N'))
+  $destination=Join-Path $approvedBackupRoot ($archivePrefix+[Guid]::NewGuid().ToString('N'))
   New-Item -ItemType Directory -Path $destination | Out-Null
   Protect-Directory $destination
-  $archive=Join-Path $destination 'private-pilot-r3.7z'
+  $archive=Join-Path $destination $archiveName
   if(Test-Path -LiteralPath $archive) { throw 'EXISTS' }
  } else { $archive=$existingArchive }
  $result.archive=$archive
