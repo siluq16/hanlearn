@@ -6,6 +6,7 @@ import {
   Target,
   Clock3,
   Route,
+  Headphones,
 } from "lucide-react";
 import { getDashboard } from "@/features/dashboard/queries";
 import { PageHeading } from "@/components/page-heading";
@@ -37,6 +38,26 @@ export default async function Dashboard() {
         title={name ? `Chào ${name}.` : `Một ngày mới để học.`}
         description={date}
       />
+      <div className="mb-3 flex flex-wrap gap-3">
+        <Button
+          asChild
+          variant="outline"
+          className="min-h-12 w-full whitespace-normal sm:w-auto"
+        >
+          <Link href="/review">
+            <Layers size={18} /> Ôn tập · {d.dueCount} thẻ đến hạn
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="min-h-12 w-full whitespace-normal sm:w-auto"
+        >
+          <Link href="/listening">
+            <Headphones size={18} /> Luyện nghe HSK 1
+          </Link>
+        </Button>
+      </div>
       <div className="mt-7 grid gap-6 xl:grid-cols-[1.4fr_1fr]">
         <Card>
           <CardHeader>

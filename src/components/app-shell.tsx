@@ -9,6 +9,8 @@ import {
   ArrowUpRight,
   LogOut,
   UserRound,
+  Layers,
+  Headphones,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -18,6 +20,8 @@ const links = [
   { href: "/dashboard", label: "Tổng quan", icon: LayoutDashboard },
   { href: "/roadmap", label: "Lộ trình", icon: Route },
   { href: "/vocabulary", label: "Từ vựng", icon: BookOpen },
+  { href: "/listening", label: "Luyện nghe", icon: Headphones },
+  { href: "/review", label: "Ôn tập", icon: Layers },
   { href: "/settings", label: "Cài đặt", icon: Settings },
 ];
 export function AppShell({
@@ -133,7 +137,7 @@ export function AppShell({
       </div>
       <nav
         aria-label="Điều hướng di động"
-        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-card px-2 pb-[env(safe-area-inset-bottom)] lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-6 border-t border-border bg-card px-1 pb-[env(safe-area-inset-bottom)] lg:hidden"
       >
         {links.map(({ href, label, icon: Icon }) => (
           <Link

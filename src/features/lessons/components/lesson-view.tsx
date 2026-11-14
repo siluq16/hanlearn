@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock3 } from "lucide-react";
+import { ArrowLeft, Clock3, Headphones } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { LessonBundle } from "../types";
@@ -72,6 +72,13 @@ export function LessonView({
               className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground hover:opacity-90"
             >
               Làm mini quiz
+            </a>
+            <a
+              href={`/listening?lesson=${lesson.id}`}
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground hover:bg-muted"
+            >
+              <Headphones size={16} aria-hidden="true" />
+              Luyện nghe bài này
             </a>
           </nav>
         )}
