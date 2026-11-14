@@ -11,6 +11,9 @@ export default defineConfig({
   },
   test: {
     environment: "node",
+    // Source-hash checks and Windows PowerShell fixtures compete for local CPU.
+    maxWorkers: 4,
+    testTimeout: 15000,
     include: ["tests/**/*.test.ts"],
     clearMocks: true,
   },

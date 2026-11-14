@@ -82,7 +82,9 @@ export function useMandarinRecognition() {
     setIsRequestingPermission(false);
 
     if (!micResult.ok) {
-      setError(micResult.message || getRecognitionErrorMessage(micResult.code || "unknown"));
+      setError(
+        micResult.message || getRecognitionErrorMessage(micResult.code || "unknown"),
+      );
       setErrorCode(micResult.code || "unknown");
       return;
     }

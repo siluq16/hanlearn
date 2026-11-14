@@ -710,9 +710,31 @@ export function SpeakingPlayer({
                       </div>
                     )}
                     {recognitionErrorCode === "not-allowed" && (
-                      <p className="text-muted-foreground pt-1 border-t border-destructive/20 leading-relaxed">
-                        👉 <strong>Cách xử lý:</strong> Nhấn vào biểu tượng khóa hoặc micro trên thanh địa chỉ URL của trình duyệt $\rightarrow$ Chọn <em>Cho phép (Allow)</em> cho Micro $\rightarrow$ Tải lại trang.
-                      </p>
+                      <div className="text-muted-foreground pt-1.5 border-t border-destructive/20 space-y-1.5 leading-relaxed">
+                        <p className="font-medium text-foreground">
+                          👉 <strong>Cách xử lý:</strong>
+                        </p>
+                        <ol className="list-decimal list-inside space-y-1 pl-1 text-[11px]">
+                          <li>
+                            Nhấn vào biểu tượng khóa hoặc micro trên thanh địa chỉ URL của trình duyệt $\rightarrow$ Chọn <em>Cho phép (Allow)</em> cho Micro $\rightarrow$ Tải lại trang.
+                          </li>
+                          <li>
+                            <strong>Nếu đã bấm Cho phép nhưng vẫn báo lỗi:</strong> Mở <em>Windows Settings $\rightarrow$ Privacy & security $\rightarrow$ Microphone</em>, đảm bảo <em>Microphone access</em> và <em>Let desktop apps access your microphone</em> đều đang ở trạng thái <strong>On</strong>.
+                          </li>
+                        </ol>
+                        <div className="pt-1">
+                          <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            onClick={handleStartRecording}
+                            className="text-xs h-8 rounded-lg"
+                          >
+                            <RotateCcw className="size-3.5 mr-1.5" />
+                            Bấm để thử lại quyền micro
+                          </Button>
+                        </div>
+                      </div>
                     )}
                     {recognitionErrorCode === "insecure-context" && (
                       <p className="text-muted-foreground pt-1 border-t border-destructive/20 leading-relaxed">
@@ -796,9 +818,30 @@ export function SpeakingPlayer({
             </div>
           )}
 
-          {/* Next Button when no transcript yet but learner wants to skip */}
+          {/* Fallback actions when no transcript yet */}
           {!transcript && (
-            <div className="flex justify-end pt-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
+              {recognitionError ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    if (currentItem) {
+                      evaluatedTranscriptRef.current = currentItem.hanzi;
+                      setLastMatchResult(
+                        evaluateSpeakingAttempt(currentItem.hanzi, currentItem.hanzi),
+                      );
+                    }
+                  }}
+                  className="text-xs h-8 rounded-lg"
+                >
+                  <CheckCircle2 className="size-3.5 mr-1.5 text-emerald-600" />
+                  Tự xác nhận đã phát âm câu này
+                </Button>
+              ) : (
+                <div />
+              )}
               <Button
                 type="button"
                 variant="ghost"

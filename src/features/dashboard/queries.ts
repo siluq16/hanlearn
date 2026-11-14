@@ -14,6 +14,8 @@ export async function getDashboard() {
     membership,
     dueResult,
     sessionsResult,
+    quizzesResult,
+    quizAttemptsResult,
   ] = await Promise.all([
     getSettings(),
     getCurriculum(),
@@ -44,6 +46,23 @@ export async function getDashboard() {
       .eq("user_id", user.id)
       .order("started_at", { ascending: false })
       .limit(5),
+    readAll((f, t) =>
+      supabase
+        .from("lesson_quizzes")
+        .select("id,lesson_id,title")
+        .eq("status", "published")
+        .order("id")
+        .range(f, t),
+    ),
+    supabase
+      .from("quiz_attempts")
+      .select(
+        "id,quiz_id,started_at,submitted_at,correct_count,question_count,passed",
+      )
+      .eq("user_id", user.id)
+      .not("submitted_at", "is", null)
+      .order("submitted_at", { ascending: false })
+      .limit(5),
   ]);
   const published = new Set(vocabulary.map((v) => v.id));
   const introduced = new Set(
@@ -61,12 +80,33 @@ export async function getDashboard() {
   const completed = curriculum.progress.filter(
     (p) => p.completed_at && lessonIds.has(p.lesson_id),
   ).length;
+  const quizzes = quizzesResult;
+  const quizMap = new Map(quizzes.map((q) => [q.id, q]));
+  const lessonMap = new Map(curriculum.lessons.map((l) => [l.id, l]));
+
+  const quizAttempts = dataOrThrow(quizAttemptsResult);
+  const quizHistory = quizAttempts.map((a) => {
+    const quiz = quizMap.get(a.quiz_id);
+    const lesson = quiz ? lessonMap.get(quiz.lesson_id) : undefined;
+    return {
+      id: a.id,
+      quizId: a.quiz_id,
+      lessonId: quiz?.lesson_id,
+      lessonTitle: lesson ? lesson.title : (quiz?.title ?? "Mini Quiz"),
+      correctCount: a.correct_count,
+      questionCount: a.question_count,
+      passed: a.passed,
+      submittedAt: a.submitted_at,
+    };
+  });
+
   return {
     ...settings,
     curriculum,
     totalWords: introduced.size,
     dueCount: dataOrThrow(dueResult),
     sessions: dataOrThrow(sessionsResult),
+    quizHistory,
     next: nextLesson(
       curriculum.courses,
       curriculum.units,

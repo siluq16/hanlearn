@@ -180,7 +180,7 @@ export function getRecognitionErrorMessage(code: RecognitionErrorCode): string {
     case "insecure-context":
       return "Tính năng nhận dạng giọng nói yêu cầu kết nối bảo mật (HTTPS hoặc localhost). Bạn đang truy cập qua HTTP không bảo mật nên trình duyệt chặn quyền sử dụng micro.";
     case "not-allowed":
-      return "Quyền truy cập micro đã bị từ chối hoặc chưa được cấp. Vui lòng bấm vào biểu tượng ổ khoá hoặc micro trên thanh địa chỉ URL của trình duyệt để Cho phép (Allow).";
+      return "Quyền truy cập micro đã bị từ chối hoặc bị hệ thống chặn. Nếu đã bấm Cho phép (Allow) trên thanh địa chỉ URL của trình duyệt, hãy kiểm tra thêm Cài đặt Windows: 'Privacy & security > Microphone' đảm bảo trình duyệt được phép truy cập micro.";
     case "audio-capture":
       return "Không tìm thấy thiết bị micro hoặc micro đang bị ứng dụng khác chiếm giữ. Vui lòng kiểm tra lại thiết bị thu âm trên máy tính/điện thoại.";
     case "no-speech":

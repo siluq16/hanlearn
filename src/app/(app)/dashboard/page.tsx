@@ -227,54 +227,120 @@ export default async function Dashboard() {
           </Card>
         ))}
       </div>
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Hoạt động gần đây</CardTitle>
-          <CardDescription>
-            Những phiên học đã được lưu của bạn.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {d.sessions.length ? (
-            <ul className="divide-y divide-border">
-              {d.sessions.map((s) => (
-                <li
-                  key={s.id}
-                  className="flex flex-wrap items-center justify-between gap-3 py-4"
-                >
-                  <div>
-                    <p className="text-sm font-medium">
-                      {s.source === "hellochinese_manual"
-                        ? "HelloChinese"
-                        : s.source === "hanlearn"
-                          ? "HanLearn"
-                          : "Tự học"}
-                    </p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      {new Intl.DateTimeFormat("vi-VN", {
-                        dateStyle: "medium",
-                        timeStyle: "short",
-                        timeZone: "Asia/Ho_Chi_Minh",
-                      }).format(new Date(s.started_at))}
-                    </p>
-                  </div>
-                  <Badge>
-                    {s.evidence === "self_reported"
-                      ? "Tự khai báo"
-                      : "Timer hệ thống"}
-                    {!s.ended_at ? " · Đang mở" : ""}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <EmptyState
-              title="Chưa có hoạt động học"
-              description="Khi bạn ghi nhận một phiên học, lịch sử sẽ được lưu và hiển thị tại đây."
-            />
-          )}
-        </CardContent>
-      </Card>
+      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle>Kết quả Mini Quiz</CardTitle>
+              <Badge className="border border-border bg-transparent text-foreground">
+                Kiểm tra kiến thức
+              </Badge>
+            </div>
+            <CardDescription>
+              Các lần làm bài quiz đã được lưu điểm.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {d.quizHistory.length ? (
+              <ul className="divide-y divide-border">
+                {d.quizHistory.map((q) => (
+                  <li
+                    key={q.id}
+                    className="flex flex-wrap items-center justify-between gap-3 py-4"
+                  >
+                    <div>
+                      <p className="text-sm font-semibold">
+                        {q.lessonTitle}
+                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {q.submittedAt
+                          ? new Intl.DateTimeFormat("vi-VN", {
+                            dateStyle: "medium",
+                            timeStyle: "short",
+                            timeZone: "Asia/Ho_Chi_Minh",
+                          }).format(new Date(q.submittedAt))
+                          : "Đã nộp"}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge
+                        className={
+                          q.passed
+                            ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+                            : "bg-amber-500/15 text-amber-700 dark:text-amber-400"
+                        }
+                      >
+                        {q.correctCount}/{q.questionCount} đúng · {q.passed ? "Đạt" : "Chưa đạt"}
+                      </Badge>
+                      {q.lessonId && (
+                        <Button asChild size="sm" variant="ghost" className="h-8 px-2 text-xs">
+                          <Link href={`/lessons/${q.lessonId}/quiz?attempt=${q.id}`}>
+                            Xem lại
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <EmptyState
+                title="Chưa có lượt làm quiz"
+                description="Bạn có thể làm quiz ở cuối mỗi bài học để củng cố từ vựng và ngữ pháp."
+              />
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Hoạt động gần đây</CardTitle>
+            <CardDescription>
+              Những phiên học đã được lưu của bạn.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {d.sessions.length ? (
+              <ul className="divide-y divide-border">
+                {d.sessions.map((s) => (
+                  <li
+                    key={s.id}
+                    className="flex flex-wrap items-center justify-between gap-3 py-4"
+                  >
+                    <div>
+                      <p className="text-sm font-medium">
+                        {s.source === "hellochinese_manual"
+                          ? "HelloChinese"
+                          : s.source === "hanlearn"
+                            ? "HanLearn"
+                            : "Tự học"}
+                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {new Intl.DateTimeFormat("vi-VN", {
+                          dateStyle: "medium",
+                          timeStyle: "short",
+                          timeZone: "Asia/Ho_Chi_Minh",
+                        }).format(new Date(s.started_at))}
+                      </p>
+                    </div>
+                    <Badge>
+                      {s.evidence === "self_reported"
+                        ? "Tự khai báo"
+                        : "Timer hệ thống"}
+                      {!s.ended_at ? " · Đang mở" : ""}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <EmptyState
+                title="Chưa có hoạt động học"
+                description="Khi bạn ghi nhận một phiên học, lịch sử sẽ được lưu và hiển thị tại đây."
+              />
+            )}
+          </CardContent>
+        </Card>
+      </div>
     </>
   );
 }
