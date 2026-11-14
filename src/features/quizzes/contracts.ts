@@ -8,17 +8,22 @@ export const responseRow = z
     is_correct: z.boolean(),
   })
   .strict();
+export const lessonIdSchema = z.union([
+  z.uuid(),
+  z.string().regex(/^[a-zA-Z0-9_-]{3,64}$/),
+]);
+
 export const readInput = z
-  .object({ lessonId: z.uuid(), attemptId: z.uuid().optional() })
+  .object({ lessonId: lessonIdSchema, attemptId: z.uuid().optional() })
   .strict();
 export const startInput = z
-  .object({ lessonId: z.uuid(), startKey: z.uuid() })
+  .object({ lessonId: lessonIdSchema, startKey: z.uuid() })
   .strict();
 export const answersSchema = z
   .record(z.uuid(), z.number().int().min(0).max(5))
   .refine((a) => Object.keys(a).length <= 10);
 export const submitInput = z
-  .object({ lessonId: z.uuid(), attemptId: z.uuid(), answers: answersSchema })
+  .object({ lessonId: lessonIdSchema, attemptId: z.uuid(), answers: answersSchema })
   .strict();
 export const startReceipt = z
   .object({ attemptId: z.uuid(), quizId: z.uuid() })

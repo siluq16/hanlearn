@@ -1,10 +1,53 @@
 {
-  "title": "HSK 2025 Exam Syllabus (300 words) vs GF0025-2021 Standard (500 words) Reconciliation",
-  "total_official_2025_exam_words": 300,
-  "total_gf0025_2021_hsk1_words": 500,
-  "matched_intersection_count": 264,
-  "only_in_2025_exam_count": 38,
-  "only_in_gf0025_2021_count": 236,
+  "title": "HSK 2025 Exam Reference (300 words) vs GF0025-2021 Standard (500 items) Reconciliation",
+  "provenance_statement": "Dataset 300 words is from MandarinBean educational syllabus compilation referencing CTI HSK 3.0 Band 1 outline, not an official authenticated binary directly from chinesetest.cn.",
+  "dataset_300_total": 300,
+  "dataset_300_unique_hanzi": 300,
+  "dataset_500_total_entries": 500,
+  "dataset_500_unique_hanzi": 496,
+  "polyphone_double_entries_in_500": [
+    {
+      "hanzi": "地",
+      "meanings": [
+        "trợ từ - de",
+        "danh từ - dì"
+      ]
+    },
+    {
+      "hanzi": "干",
+      "meanings": [
+        "tính từ - gān",
+        "động từ - gàn"
+      ]
+    },
+    {
+      "hanzi": "还",
+      "meanings": [
+        "phó từ - hái",
+        "động từ - huán"
+      ]
+    },
+    {
+      "hanzi": "有",
+      "meanings": [
+        "động từ - yǒu",
+        "phó từ - yǒu"
+      ]
+    }
+  ],
+  "mathematical_set_partition": {
+    "set_A_300_words": 300,
+    "set_B_500_unique_words": 496,
+    "intersection_A_and_B": 262,
+    "difference_A_minus_B_only_in_2025": 38,
+    "difference_B_minus_A_only_in_gf0025": 234,
+    "exact_verification_sum": "262 + 38 = 300 (strictly matches 300)"
+  },
+  "entry_level_counts_in_500": {
+    "entries_matching_2025": 264,
+    "entries_not_in_2025": 236,
+    "exact_entries_sum": "264 + 236 = 500 (strictly matches 500)"
+  },
   "breakdown_only_in_2025_exam": [
     {
       "hanzi": "边",
@@ -235,5 +278,5 @@
       "gf0025_origin": "HSK 2 (STT 772)"
     }
   ],
-  "methodology": "Exact character, pinyin, and semantic matching without assuming sequential order from GF0025-2021 PDF."
+  "methodology": "Strict mathematical set decomposition distinguishing unique Hanzi keys from multi-POS catalog entries."
 }

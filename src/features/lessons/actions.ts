@@ -104,3 +104,88 @@ export async function confirmLessonStudy(input: unknown): Promise<StudyResult> {
     );
   }
 }
+
+const stageProgressInputSchema = z.object({
+  lessonId: z.string().min(1).max(100),
+  completedStages: z.array(z.number().int().min(0).max(9)).max(10),
+  currentStage: z.number().int().min(0).max(9),
+});
+
+export type StageProgressData = {
+  lessonId: string;
+  userId: string;
+  completedStages: number[];
+  currentStage: number;
+  updatedAt: string;
+};
+
+export async function saveStageProgress(input: unknown): Promise<{
+  ok: boolean;
+  progress?: StageProgressData;
+  error?: string;
+}> {
+  try {
+    const { user, supabase } = await requireLearner();
+    const parsed = stageProgressInputSchema.safeParse(input);
+    if (!parsed.success) {
+      return { ok: false, error: "INVALID_INPUT" };
+    }
+
+    const { lessonId, completedStages, currentStage } = parsed.data;
+    const updatedAt = new Date().toISOString();
+    const key = `stage_prog_${lessonId.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
+
+    const existingMeta = user.user_metadata || {};
+    const updatedMeta = {
+      ...existingMeta,
+      [key]: {
+        completed_stages: completedStages,
+        current_stage: currentStage,
+        updated_at: updatedAt,
+      },
+    };
+
+    const { error } = await supabase.auth.updateUser({
+      data: updatedMeta,
+    });
+
+    if (error) {
+      return { ok: false, error: error.message };
+    }
+
+    return {
+      ok: true,
+      progress: {
+        lessonId,
+        userId: user.id,
+        completedStages,
+        currentStage,
+        updatedAt,
+      },
+    };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "UNKNOWN_ERROR";
+    return { ok: false, error: message };
+  }
+}
+
+export async function getStageProgress(lessonId: string): Promise<StageProgressData | null> {
+  try {
+    const { user } = await requireLearner();
+    const key = `stage_prog_${lessonId.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
+    const stored = user.user_metadata?.[key];
+    if (!stored || !Array.isArray(stored.completed_stages)) {
+      return null;
+    }
+
+    return {
+      lessonId,
+      userId: user.id,
+      completedStages: stored.completed_stages,
+      currentStage: typeof stored.current_stage === "number" ? stored.current_stage : 0,
+      updatedAt: stored.updated_at || new Date().toISOString(),
+    };
+  } catch {
+    return null;
+  }
+}

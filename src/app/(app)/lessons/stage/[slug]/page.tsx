@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { requireLearner } from "@/features/auth/session";
 import { findNineStageLesson, HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
 import { NineStageReader } from "@/features/lessons/components/nine-stage-reader";
+import { getStageProgress } from "@/features/lessons/actions";
 
 export const dynamic = "force-dynamic";
 
@@ -24,13 +25,15 @@ export default async function NineStageLessonPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  await requireLearner();
+  const { user } = await requireLearner();
   const { slug } = await params;
   const lesson = findNineStageLesson(slug);
 
   if (!lesson) {
     notFound();
   }
+
+  const initialProgress = await getStageProgress(lesson.slug || lesson.id);
 
   return (
     <div className="space-y-6">
@@ -62,7 +65,11 @@ export default async function NineStageLessonPage({
         </div>
       </div>
 
-      <NineStageReader lesson={lesson} />
+      <NineStageReader
+        lesson={lesson}
+        initialProgress={initialProgress}
+        userId={user.id}
+      />
     </div>
   );
 }

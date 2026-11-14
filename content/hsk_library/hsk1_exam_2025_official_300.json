@@ -5,6 +5,9 @@
     "pinyin": "ài",
     "part_of_speech": "verb",
     "meaning_en": "to love",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 1,
     "in_hsk1_500": true
@@ -15,6 +18,9 @@
     "pinyin": "bā",
     "part_of_speech": "number",
     "meaning_en": "eight",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 3,
     "in_hsk1_500": true
@@ -25,6 +31,9 @@
     "pinyin": "bàba",
     "part_of_speech": "noun",
     "meaning_en": "dad",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 4,
     "in_hsk1_500": true
@@ -35,6 +44,9 @@
     "pinyin": "ba",
     "part_of_speech": "auxiliary",
     "meaning_en": "particle indicating suggestion, confirmation, or hesitation",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 5,
     "in_hsk1_500": true
@@ -45,6 +57,9 @@
     "pinyin": "báitiān",
     "part_of_speech": "noun",
     "meaning_en": "daytime",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 7,
     "in_hsk1_500": true
@@ -55,6 +70,9 @@
     "pinyin": "bǎi",
     "part_of_speech": "number",
     "meaning_en": "hundred",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 8,
     "in_hsk1_500": true
@@ -65,6 +83,9 @@
     "pinyin": "bàn",
     "part_of_speech": "number、（adverb）",
     "meaning_en": "half; (half, semi-)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 10,
     "in_hsk1_500": true
@@ -75,6 +96,9 @@
     "pinyin": "bāozi",
     "part_of_speech": "noun",
     "meaning_en": "steamed stuffed bun",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 16,
     "in_hsk1_500": true
@@ -85,6 +109,9 @@
     "pinyin": "bēizi",
     "part_of_speech": "noun",
     "meaning_en": "cup, glass",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 18,
     "in_hsk1_500": true
@@ -95,6 +122,9 @@
     "pinyin": "běn",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for books",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 22,
     "in_hsk1_500": true
@@ -105,6 +135,9 @@
     "pinyin": "biān",
     "part_of_speech": "noun、suffix",
     "meaning_en": "side; suffix indicating direction",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 24,
     "in_hsk1_500": false
@@ -115,6 +148,9 @@
     "pinyin": "bìng",
     "part_of_speech": "noun、verb",
     "meaning_en": "illness, disease; to be ill",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 28,
     "in_hsk1_500": true
@@ -125,6 +161,9 @@
     "pinyin": "bù",
     "part_of_speech": "adverb",
     "meaning_en": "not, no",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 34,
     "in_hsk1_500": true
@@ -135,6 +174,9 @@
     "pinyin": "bú kèqi",
     "part_of_speech": "",
     "meaning_en": "you&#8217;re welcome",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 32,
     "in_hsk1_500": true
@@ -145,6 +187,9 @@
     "pinyin": "búyào",
     "part_of_speech": "adverb",
     "meaning_en": "don&#8217;t, not want",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 35,
     "in_hsk1_500": false
@@ -155,6 +200,9 @@
     "pinyin": "cài",
     "part_of_speech": "noun",
     "meaning_en": "vegetable, dish",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 35,
     "in_hsk1_500": true
@@ -165,6 +213,9 @@
     "pinyin": "chá",
     "part_of_speech": "noun",
     "meaning_en": "tea",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 36,
     "in_hsk1_500": true
@@ -175,6 +226,9 @@
     "pinyin": "chàng",
     "part_of_speech": "verb",
     "meaning_en": "to sing",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 40,
     "in_hsk1_500": true
@@ -185,6 +239,9 @@
     "pinyin": "chāoshì",
     "part_of_speech": "noun",
     "meaning_en": "supermarket",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 60,
     "in_hsk1_500": false
@@ -195,6 +252,9 @@
     "pinyin": "chē",
     "part_of_speech": "noun",
     "meaning_en": "vehicle, car",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 42,
     "in_hsk1_500": true
@@ -205,6 +265,9 @@
     "pinyin": "chī",
     "part_of_speech": "verb",
     "meaning_en": "to eat",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 46,
     "in_hsk1_500": true
@@ -215,6 +278,9 @@
     "pinyin": "chūzūchē",
     "part_of_speech": "noun",
     "meaning_en": "taxi",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 76,
     "in_hsk1_500": false
@@ -225,6 +291,9 @@
     "pinyin": "chuān",
     "part_of_speech": "verb",
     "meaning_en": "to wear",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 51,
     "in_hsk1_500": true
@@ -235,6 +304,9 @@
     "pinyin": "dǎ diànhuà",
     "part_of_speech": "",
     "meaning_en": "to make a phone call",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 58,
     "in_hsk1_500": true
@@ -245,6 +317,9 @@
     "pinyin": "dà",
     "part_of_speech": "adjective",
     "meaning_en": "big",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 61,
     "in_hsk1_500": true
@@ -255,6 +330,9 @@
     "pinyin": "dàjiā",
     "part_of_speech": "pronoun",
     "meaning_en": "everyone",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 93,
     "in_hsk1_500": false
@@ -265,6 +343,9 @@
     "pinyin": "dàxué",
     "part_of_speech": "noun",
     "meaning_en": "university",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 62,
     "in_hsk1_500": true
@@ -275,6 +356,9 @@
     "pinyin": "dàxuéshēng",
     "part_of_speech": "noun",
     "meaning_en": "university student",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 63,
     "in_hsk1_500": true
@@ -285,6 +369,9 @@
     "pinyin": "dào",
     "part_of_speech": "verb",
     "meaning_en": "to arrive",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 64,
     "in_hsk1_500": true
@@ -295,6 +382,9 @@
     "pinyin": "de",
     "part_of_speech": "auxiliary",
     "meaning_en": "possessive or modifying particle",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 67,
     "in_hsk1_500": true
@@ -305,6 +395,9 @@
     "pinyin": "dì",
     "part_of_speech": "prefix",
     "meaning_en": "prefix for ordinal numbers",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 75,
     "in_hsk1_500": true
@@ -315,6 +408,9 @@
     "pinyin": "dìdi",
     "part_of_speech": "noun",
     "meaning_en": "younger brother",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 74,
     "in_hsk1_500": true
@@ -325,6 +421,9 @@
     "pinyin": "diǎn",
     "part_of_speech": "classifier、（noun）",
     "meaning_en": "measure word for small round things; (point, dot)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 76,
     "in_hsk1_500": true
@@ -335,6 +434,9 @@
     "pinyin": "diàn",
     "part_of_speech": "noun",
     "meaning_en": "shop, store",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 128,
     "in_hsk1_500": false
@@ -345,6 +447,9 @@
     "pinyin": "diànhuà",
     "part_of_speech": "noun",
     "meaning_en": "telephone, phone call",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 78,
     "in_hsk1_500": true
@@ -355,6 +460,9 @@
     "pinyin": "diànnǎo",
     "part_of_speech": "noun",
     "meaning_en": "computer",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 79,
     "in_hsk1_500": true
@@ -365,6 +473,9 @@
     "pinyin": "diànshì",
     "part_of_speech": "noun",
     "meaning_en": "television",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 80,
     "in_hsk1_500": true
@@ -375,6 +486,9 @@
     "pinyin": "diànyǐng",
     "part_of_speech": "noun",
     "meaning_en": "movie, film",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 82,
     "in_hsk1_500": true
@@ -385,6 +499,9 @@
     "pinyin": "diànyǐngyuàn",
     "part_of_speech": "noun",
     "meaning_en": "cinema",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 83,
     "in_hsk1_500": true
@@ -395,6 +512,9 @@
     "pinyin": "dōngxi",
     "part_of_speech": "noun",
     "meaning_en": "thing, object",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 86,
     "in_hsk1_500": true
@@ -405,6 +525,9 @@
     "pinyin": "dōu",
     "part_of_speech": "adverb",
     "meaning_en": "all, both",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 89,
     "in_hsk1_500": true
@@ -415,6 +538,9 @@
     "pinyin": "dú",
     "part_of_speech": "verb",
     "meaning_en": "to read",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 90,
     "in_hsk1_500": true
@@ -425,6 +551,9 @@
     "pinyin": "dúshū",
     "part_of_speech": "verb",
     "meaning_en": "to read a book",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 91,
     "in_hsk1_500": true
@@ -435,6 +564,9 @@
     "pinyin": "duì",
     "part_of_speech": "adjective、preposition、（verb、classifier）",
     "meaning_en": "correct, right; to, toward, for; (to treat; pair)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 92,
     "in_hsk1_500": true
@@ -445,6 +577,9 @@
     "pinyin": "duìbuqǐ",
     "part_of_speech": "verb",
     "meaning_en": "sorry",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 93,
     "in_hsk1_500": true
@@ -455,6 +590,9 @@
     "pinyin": "duō",
     "part_of_speech": "adjective、verb、pronoun、（number、adverb）",
     "meaning_en": "many, much; to have more; how many, how much; (more, over)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 94,
     "in_hsk1_500": true
@@ -465,6 +603,9 @@
     "pinyin": "duōshao",
     "part_of_speech": "pronoun",
     "meaning_en": "how many, how much",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 95,
     "in_hsk1_500": true
@@ -475,6 +616,9 @@
     "pinyin": "érzi",
     "part_of_speech": "noun",
     "meaning_en": "son",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 97,
     "in_hsk1_500": true
@@ -485,6 +629,9 @@
     "pinyin": "èr",
     "part_of_speech": "number",
     "meaning_en": "two",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 98,
     "in_hsk1_500": true
@@ -495,6 +642,9 @@
     "pinyin": "fàn",
     "part_of_speech": "noun",
     "meaning_en": "cooked rice, meal",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 99,
     "in_hsk1_500": true
@@ -505,6 +655,9 @@
     "pinyin": "fàndiàn",
     "part_of_speech": "noun",
     "meaning_en": "restaurant",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 100,
     "in_hsk1_500": true
@@ -515,6 +668,9 @@
     "pinyin": "fángjiān",
     "part_of_speech": "noun",
     "meaning_en": "room",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 101,
     "in_hsk1_500": true
@@ -525,6 +681,9 @@
     "pinyin": "fēicháng",
     "part_of_speech": "adverb",
     "meaning_en": "very, extremely",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 108,
     "in_hsk1_500": true
@@ -535,6 +694,9 @@
     "pinyin": "fēijī",
     "part_of_speech": "noun",
     "meaning_en": "airplane",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 107,
     "in_hsk1_500": true
@@ -545,6 +707,9 @@
     "pinyin": "fēn",
     "part_of_speech": "classifier、（verb、noun）",
     "meaning_en": "minute; (to divide, to separate; component, part)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 109,
     "in_hsk1_500": true
@@ -555,6 +720,9 @@
     "pinyin": "fēnzhōng",
     "part_of_speech": "classifier",
     "meaning_en": "minute",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 167,
     "in_hsk1_500": false
@@ -565,6 +733,9 @@
     "pinyin": "gāoxìng",
     "part_of_speech": "adjective",
     "meaning_en": "happy, glad",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 116,
     "in_hsk1_500": true
@@ -575,6 +746,9 @@
     "pinyin": "gē",
     "part_of_speech": "noun",
     "meaning_en": "song",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 119,
     "in_hsk1_500": true
@@ -585,6 +759,9 @@
     "pinyin": "gēge",
     "part_of_speech": "noun",
     "meaning_en": "older brother",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 118,
     "in_hsk1_500": true
@@ -595,6 +772,9 @@
     "pinyin": "gè",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for general objects",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 120,
     "in_hsk1_500": true
@@ -605,6 +785,9 @@
     "pinyin": "gěi",
     "part_of_speech": "verb、（preposition）",
     "meaning_en": "to give; (to, for)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 121,
     "in_hsk1_500": true
@@ -615,6 +798,9 @@
     "pinyin": "gōngsī",
     "part_of_speech": "noun",
     "meaning_en": "company",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 194,
     "in_hsk1_500": false
@@ -625,6 +811,9 @@
     "pinyin": "gōngzuò",
     "part_of_speech": "verb、noun",
     "meaning_en": "work; to work",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 124,
     "in_hsk1_500": true
@@ -635,6 +824,9 @@
     "pinyin": "gǒu",
     "part_of_speech": "noun",
     "meaning_en": "dog",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 196,
     "in_hsk1_500": false
@@ -645,6 +837,9 @@
     "pinyin": "guì",
     "part_of_speech": "adjective",
     "meaning_en": "expensive",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 127,
     "in_hsk1_500": true
@@ -655,6 +850,9 @@
     "pinyin": "guó",
     "part_of_speech": "noun",
     "meaning_en": "country",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 128,
     "in_hsk1_500": true
@@ -665,6 +863,9 @@
     "pinyin": "hái",
     "part_of_speech": "adverb",
     "meaning_en": "still, also; quite",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 153,
     "in_hsk1_500": true
@@ -675,6 +876,9 @@
     "pinyin": "háizi",
     "part_of_speech": "noun",
     "meaning_en": "child",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 135,
     "in_hsk1_500": true
@@ -685,6 +889,9 @@
     "pinyin": "Hànyǔ",
     "part_of_speech": "noun",
     "meaning_en": "Chinese language",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 136,
     "in_hsk1_500": true
@@ -695,6 +902,9 @@
     "pinyin": "Hànzì",
     "part_of_speech": "noun",
     "meaning_en": "Chinese character",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 137,
     "in_hsk1_500": true
@@ -705,6 +915,9 @@
     "pinyin": "hǎo",
     "part_of_speech": "adjective、（adverb）、（verb）",
     "meaning_en": "good; (well); (to be fond of)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 138,
     "in_hsk1_500": true
@@ -715,6 +928,9 @@
     "pinyin": "hǎochī",
     "part_of_speech": "adjective",
     "meaning_en": "delicious, tasty",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 139,
     "in_hsk1_500": true
@@ -725,6 +941,9 @@
     "pinyin": "hǎokàn",
     "part_of_speech": "adjective",
     "meaning_en": "good-looking",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 140,
     "in_hsk1_500": true
@@ -735,6 +954,9 @@
     "pinyin": "hǎotīng",
     "part_of_speech": "adjective",
     "meaning_en": "pleasant to listen to",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 141,
     "in_hsk1_500": true
@@ -745,6 +967,9 @@
     "pinyin": "hǎowánr",
     "part_of_speech": "adjective",
     "meaning_en": "fun, amusing",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 142,
     "in_hsk1_500": true
@@ -755,6 +980,9 @@
     "pinyin": "hào",
     "part_of_speech": "noun、classifier",
     "meaning_en": "number; measure word for people, items",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 143,
     "in_hsk1_500": true
@@ -765,6 +993,9 @@
     "pinyin": "hē",
     "part_of_speech": "verb",
     "meaning_en": "to drink",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 144,
     "in_hsk1_500": true
@@ -775,6 +1006,9 @@
     "pinyin": "hé",
     "part_of_speech": "preposition、conjunction",
     "meaning_en": "and, with",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 145,
     "in_hsk1_500": true
@@ -785,6 +1019,9 @@
     "pinyin": "hěn",
     "part_of_speech": "adverb",
     "meaning_en": "very",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 146,
     "in_hsk1_500": true
@@ -795,6 +1032,9 @@
     "pinyin": "hòu",
     "part_of_speech": "noun",
     "meaning_en": "behind, later",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 147,
     "in_hsk1_500": true
@@ -805,6 +1045,9 @@
     "pinyin": "huí",
     "part_of_speech": "verb、（classifier）",
     "meaning_en": "to return; (measure word for times)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 154,
     "in_hsk1_500": true
@@ -815,6 +1058,9 @@
     "pinyin": "huì",
     "part_of_speech": "verb",
     "meaning_en": "can, to be able to",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 160,
     "in_hsk1_500": true
@@ -825,6 +1071,9 @@
     "pinyin": "huǒchē",
     "part_of_speech": "noun",
     "meaning_en": "train",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 161,
     "in_hsk1_500": true
@@ -835,6 +1084,9 @@
     "pinyin": "jīdàn",
     "part_of_speech": "noun",
     "meaning_en": "egg",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 164,
     "in_hsk1_500": true
@@ -845,6 +1097,9 @@
     "pinyin": "jǐ",
     "part_of_speech": "pronoun、number",
     "meaning_en": "how many, a few",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 165,
     "in_hsk1_500": true
@@ -855,6 +1110,9 @@
     "pinyin": "jiā",
     "part_of_speech": "noun、classifier、（suffix）",
     "meaning_en": "home, family; measure word for families; (suffix indicating a person specializing in something)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 169,
     "in_hsk1_500": true
@@ -865,6 +1123,9 @@
     "pinyin": "jiārén",
     "part_of_speech": "noun",
     "meaning_en": "family member",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 171,
     "in_hsk1_500": true
@@ -875,6 +1136,9 @@
     "pinyin": "jiàn",
     "part_of_speech": "verb",
     "meaning_en": "to see",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 173,
     "in_hsk1_500": true
@@ -885,6 +1149,9 @@
     "pinyin": "jiàn",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for items",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 265,
     "in_hsk1_500": false
@@ -895,6 +1162,9 @@
     "pinyin": "jiǎozi",
     "part_of_speech": "noun",
     "meaning_en": "dumpling",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 275,
     "in_hsk1_500": false
@@ -905,6 +1175,9 @@
     "pinyin": "jiào",
     "part_of_speech": "verb、（preposition）",
     "meaning_en": "to be called, to call; to make; (by)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 176,
     "in_hsk1_500": true
@@ -915,6 +1188,9 @@
     "pinyin": "jiějie",
     "part_of_speech": "noun",
     "meaning_en": "older sister",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 178,
     "in_hsk1_500": true
@@ -925,6 +1201,9 @@
     "pinyin": "jīnnián",
     "part_of_speech": "noun",
     "meaning_en": "this year",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 180,
     "in_hsk1_500": true
@@ -935,6 +1214,9 @@
     "pinyin": "jīntiān",
     "part_of_speech": "noun",
     "meaning_en": "today",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 181,
     "in_hsk1_500": true
@@ -945,6 +1227,9 @@
     "pinyin": "jiǔ",
     "part_of_speech": "number",
     "meaning_en": "nine",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 185,
     "in_hsk1_500": true
@@ -955,6 +1240,9 @@
     "pinyin": "juéde",
     "part_of_speech": "verb",
     "meaning_en": "to feel, to think",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 187,
     "in_hsk1_500": true
@@ -965,6 +1253,9 @@
     "pinyin": "kāi",
     "part_of_speech": "verb",
     "meaning_en": "to open",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 188,
     "in_hsk1_500": true
@@ -975,6 +1266,9 @@
     "pinyin": "kāichē",
     "part_of_speech": "verb",
     "meaning_en": "to drive",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 189,
     "in_hsk1_500": true
@@ -985,6 +1279,9 @@
     "pinyin": "kàn",
     "part_of_speech": "verb",
     "meaning_en": "to see, to look",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 192,
     "in_hsk1_500": true
@@ -995,6 +1292,9 @@
     "pinyin": "kànbìng",
     "part_of_speech": "verb",
     "meaning_en": "to see a doctor",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 193,
     "in_hsk1_500": true
@@ -1005,6 +1305,9 @@
     "pinyin": "kànjiàn",
     "part_of_speech": "verb",
     "meaning_en": "to see",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 195,
     "in_hsk1_500": true
@@ -1015,6 +1318,9 @@
     "pinyin": "kěyǐ",
     "part_of_speech": "verb、adjective",
     "meaning_en": "can, may; okay, fine",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 322,
     "in_hsk1_500": false
@@ -1025,6 +1331,9 @@
     "pinyin": "kè",
     "part_of_speech": "noun",
     "meaning_en": "class, lesson",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 199,
     "in_hsk1_500": true
@@ -1035,6 +1344,9 @@
     "pinyin": "kǒu",
     "part_of_speech": "noun、classifier",
     "meaning_en": "mouth; measure word for family members, bites",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 202,
     "in_hsk1_500": true
@@ -1045,6 +1357,9 @@
     "pinyin": "kuài",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for pieces, chunks, money",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 203,
     "in_hsk1_500": true
@@ -1055,6 +1370,9 @@
     "pinyin": "lái",
     "part_of_speech": "verb",
     "meaning_en": "to come",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 205,
     "in_hsk1_500": true
@@ -1065,6 +1383,9 @@
     "pinyin": "lǎoshī",
     "part_of_speech": "noun",
     "meaning_en": "teacher",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 209,
     "in_hsk1_500": true
@@ -1075,6 +1396,9 @@
     "pinyin": "le",
     "part_of_speech": "auxiliary",
     "meaning_en": "particle indicating completed action or change of state",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 210,
     "in_hsk1_500": true
@@ -1085,6 +1409,9 @@
     "pinyin": "lěng",
     "part_of_speech": "adjective",
     "meaning_en": "cold",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 212,
     "in_hsk1_500": true
@@ -1095,6 +1422,9 @@
     "pinyin": "lǐ",
     "part_of_speech": "noun",
     "meaning_en": "inside, in, mile",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 213,
     "in_hsk1_500": true
@@ -1105,6 +1435,9 @@
     "pinyin": "liǎng",
     "part_of_speech": "number",
     "meaning_en": "two",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 215,
     "in_hsk1_500": true
@@ -1115,6 +1448,9 @@
     "pinyin": "líng",
     "part_of_speech": "number",
     "meaning_en": "zero",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 216,
     "in_hsk1_500": true
@@ -1125,6 +1461,9 @@
     "pinyin": "liù",
     "part_of_speech": "number",
     "meaning_en": "six",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 217,
     "in_hsk1_500": true
@@ -1135,6 +1474,9 @@
     "pinyin": "māma",
     "part_of_speech": "noun",
     "meaning_en": "mom",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 224,
     "in_hsk1_500": true
@@ -1145,6 +1487,9 @@
     "pinyin": "ma",
     "part_of_speech": "auxiliary",
     "meaning_en": "question particle",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 227,
     "in_hsk1_500": true
@@ -1155,6 +1500,9 @@
     "pinyin": "mǎi",
     "part_of_speech": "verb",
     "meaning_en": "to buy",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 228,
     "in_hsk1_500": true
@@ -1165,6 +1513,9 @@
     "pinyin": "mài",
     "part_of_speech": "verb",
     "meaning_en": "to sell",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 372,
     "in_hsk1_500": false
@@ -1175,6 +1526,9 @@
     "pinyin": "máng",
     "part_of_speech": "adjective、verb",
     "meaning_en": "busy; to be busy",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 230,
     "in_hsk1_500": true
@@ -1185,6 +1539,9 @@
     "pinyin": "māo",
     "part_of_speech": "noun",
     "meaning_en": "cat",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 375,
     "in_hsk1_500": false
@@ -1195,6 +1552,9 @@
     "pinyin": "méi guānxi",
     "part_of_speech": "",
     "meaning_en": "never mind, it&#8217;s okay",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 233,
     "in_hsk1_500": true
@@ -1205,6 +1565,9 @@
     "pinyin": "méishì",
     "part_of_speech": "verb",
     "meaning_en": "to have nothing to do, it doesn&#8217;t matter",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -1215,6 +1578,9 @@
     "pinyin": "méiyǒu",
     "part_of_speech": "verb、adverb",
     "meaning_en": "to not have; have not",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 236,
     "in_hsk1_500": true
@@ -1225,6 +1591,9 @@
     "pinyin": "mèimei",
     "part_of_speech": "noun",
     "meaning_en": "younger sister",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 237,
     "in_hsk1_500": true
@@ -1235,6 +1604,9 @@
     "pinyin": "men",
     "part_of_speech": "suffix",
     "meaning_en": "plural suffix for pronouns and nouns",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 241,
     "in_hsk1_500": true
@@ -1245,6 +1617,9 @@
     "pinyin": "mǐfàn",
     "part_of_speech": "noun",
     "meaning_en": "cooked rice",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 242,
     "in_hsk1_500": true
@@ -1255,6 +1630,9 @@
     "pinyin": "miànbāo",
     "part_of_speech": "noun",
     "meaning_en": "bread",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 243,
     "in_hsk1_500": true
@@ -1265,6 +1643,9 @@
     "pinyin": "miàntiáor",
     "part_of_speech": "noun",
     "meaning_en": "noodles",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 244,
     "in_hsk1_500": true
@@ -1275,6 +1656,9 @@
     "pinyin": "míngnián",
     "part_of_speech": "noun",
     "meaning_en": "next year",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 247,
     "in_hsk1_500": true
@@ -1285,6 +1669,9 @@
     "pinyin": "míngtiān",
     "part_of_speech": "noun",
     "meaning_en": "tomorrow",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 248,
     "in_hsk1_500": true
@@ -1295,6 +1682,9 @@
     "pinyin": "míngzi",
     "part_of_speech": "noun",
     "meaning_en": "name",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 245,
     "in_hsk1_500": true
@@ -1305,6 +1695,9 @@
     "pinyin": "nǎ",
     "part_of_speech": "pronoun",
     "meaning_en": "which",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 250,
     "in_hsk1_500": true
@@ -1315,6 +1708,9 @@
     "pinyin": "nǎge",
     "part_of_speech": "pronoun",
     "meaning_en": "which one",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -1325,6 +1721,9 @@
     "pinyin": "nǎlǐ",
     "part_of_speech": "pronoun",
     "meaning_en": "where",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 251,
     "in_hsk1_500": true
@@ -1335,6 +1734,9 @@
     "pinyin": "nǎr",
     "part_of_speech": "pronoun",
     "meaning_en": "where",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 252,
     "in_hsk1_500": true
@@ -1345,6 +1747,9 @@
     "pinyin": "nǎxiē",
     "part_of_speech": "pronoun",
     "meaning_en": "which ones",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 253,
     "in_hsk1_500": true
@@ -1355,6 +1760,9 @@
     "pinyin": "nà",
     "part_of_speech": "pronoun、（conjunction）",
     "meaning_en": "that; (then)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 254,
     "in_hsk1_500": true
@@ -1365,6 +1773,9 @@
     "pinyin": "nàbiān",
     "part_of_speech": "pronoun",
     "meaning_en": "over there",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 255,
     "in_hsk1_500": true
@@ -1375,6 +1786,9 @@
     "pinyin": "nàge",
     "part_of_speech": "pronoun",
     "meaning_en": "that one",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -1385,6 +1799,9 @@
     "pinyin": "nàlǐ",
     "part_of_speech": "pronoun",
     "meaning_en": "there",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 256,
     "in_hsk1_500": true
@@ -1395,6 +1812,9 @@
     "pinyin": "nàr",
     "part_of_speech": "pronoun",
     "meaning_en": "there",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 257,
     "in_hsk1_500": true
@@ -1405,6 +1825,9 @@
     "pinyin": "nàxiē",
     "part_of_speech": "pronoun",
     "meaning_en": "those",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 258,
     "in_hsk1_500": true
@@ -1415,6 +1838,9 @@
     "pinyin": "nán",
     "part_of_speech": "adjective",
     "meaning_en": "male",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 261,
     "in_hsk1_500": true
@@ -1425,6 +1851,9 @@
     "pinyin": "nánpéngyou",
     "part_of_speech": "noun",
     "meaning_en": "boyfriend",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 263,
     "in_hsk1_500": true
@@ -1435,6 +1864,9 @@
     "pinyin": "ne",
     "part_of_speech": "auxiliary",
     "meaning_en": "question or continuation particle",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 269,
     "in_hsk1_500": true
@@ -1445,6 +1877,9 @@
     "pinyin": "néng",
     "part_of_speech": "verb",
     "meaning_en": "can, be able to",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 270,
     "in_hsk1_500": true
@@ -1455,6 +1890,9 @@
     "pinyin": "nǐ",
     "part_of_speech": "pronoun",
     "meaning_en": "you",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 271,
     "in_hsk1_500": true
@@ -1465,6 +1903,9 @@
     "pinyin": "nǐ hǎo",
     "part_of_speech": "",
     "meaning_en": "hello",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -1475,6 +1916,9 @@
     "pinyin": "nǐmen",
     "part_of_speech": "pronoun",
     "meaning_en": "you plural",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 272,
     "in_hsk1_500": true
@@ -1485,6 +1929,9 @@
     "pinyin": "nián",
     "part_of_speech": "noun、classifier",
     "meaning_en": "year; measure word for years",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 273,
     "in_hsk1_500": true
@@ -1495,6 +1942,9 @@
     "pinyin": "nín",
     "part_of_speech": "pronoun",
     "meaning_en": "you",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 274,
     "in_hsk1_500": true
@@ -1505,6 +1955,9 @@
     "pinyin": "niúnǎi",
     "part_of_speech": "noun",
     "meaning_en": "milk",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 275,
     "in_hsk1_500": true
@@ -1515,6 +1968,9 @@
     "pinyin": "nǚ",
     "part_of_speech": "adjective",
     "meaning_en": "female",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 276,
     "in_hsk1_500": true
@@ -1525,6 +1981,9 @@
     "pinyin": "nǚ’ér",
     "part_of_speech": "noun",
     "meaning_en": "daughter",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 277,
     "in_hsk1_500": true
@@ -1535,6 +1994,9 @@
     "pinyin": "nǚpéngyou",
     "part_of_speech": "noun",
     "meaning_en": "girlfriend",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 279,
     "in_hsk1_500": true
@@ -1545,6 +2007,9 @@
     "pinyin": "nǚshì",
     "part_of_speech": "noun",
     "meaning_en": "lady, Ms.",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 4,
     "gf0025_stt": 543,
     "in_hsk1_500": false
@@ -1555,6 +2020,9 @@
     "pinyin": "péngyou",
     "part_of_speech": "noun",
     "meaning_en": "friend",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 284,
     "in_hsk1_500": true
@@ -1565,6 +2033,9 @@
     "pinyin": "piányi",
     "part_of_speech": "adjective",
     "meaning_en": "cheap",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 414,
     "in_hsk1_500": false
@@ -1575,6 +2046,9 @@
     "pinyin": "piàoliang",
     "part_of_speech": "adjective",
     "meaning_en": "beautiful",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 416,
     "in_hsk1_500": false
@@ -1585,6 +2059,9 @@
     "pinyin": "píngguǒ",
     "part_of_speech": "noun",
     "meaning_en": "apple",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 3,
     "gf0025_stt": 539,
     "in_hsk1_500": false
@@ -1595,6 +2072,9 @@
     "pinyin": "qī",
     "part_of_speech": "number",
     "meaning_en": "seven",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 286,
     "in_hsk1_500": true
@@ -1605,6 +2085,9 @@
     "pinyin": "qǐchuáng",
     "part_of_speech": "verb",
     "meaning_en": "to get up",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 288,
     "in_hsk1_500": true
@@ -1615,6 +2098,9 @@
     "pinyin": "qiān",
     "part_of_speech": "number",
     "meaning_en": "thousand",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 433,
     "in_hsk1_500": false
@@ -1625,6 +2111,9 @@
     "pinyin": "qián",
     "part_of_speech": "noun",
     "meaning_en": "front, before",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 291,
     "in_hsk1_500": true
@@ -1635,6 +2124,9 @@
     "pinyin": "qián",
     "part_of_speech": "noun",
     "meaning_en": "money",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 294,
     "in_hsk1_500": true
@@ -1645,6 +2137,9 @@
     "pinyin": "qǐng",
     "part_of_speech": "verb",
     "meaning_en": "please",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 296,
     "in_hsk1_500": true
@@ -1655,6 +2150,9 @@
     "pinyin": "qǐngwèn",
     "part_of_speech": "verb",
     "meaning_en": "may I ask",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 299,
     "in_hsk1_500": true
@@ -1665,6 +2163,9 @@
     "pinyin": "qù",
     "part_of_speech": "verb",
     "meaning_en": "to go",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 302,
     "in_hsk1_500": true
@@ -1675,6 +2176,9 @@
     "pinyin": "qùnián",
     "part_of_speech": "noun",
     "meaning_en": "last year",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 303,
     "in_hsk1_500": true
@@ -1685,6 +2189,9 @@
     "pinyin": "rè",
     "part_of_speech": "adjective",
     "meaning_en": "hot",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 304,
     "in_hsk1_500": true
@@ -1695,6 +2202,9 @@
     "pinyin": "rén",
     "part_of_speech": "noun",
     "meaning_en": "person",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 305,
     "in_hsk1_500": true
@@ -1705,6 +2215,9 @@
     "pinyin": "rènshi",
     "part_of_speech": "verb",
     "meaning_en": "to know, to recognize",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 306,
     "in_hsk1_500": true
@@ -1715,6 +2228,9 @@
     "pinyin": "rì",
     "part_of_speech": "classifier、（noun）",
     "meaning_en": "measure word for days; (sun)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 308,
     "in_hsk1_500": true
@@ -1725,6 +2241,9 @@
     "pinyin": "sān",
     "part_of_speech": "number",
     "meaning_en": "three",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 311,
     "in_hsk1_500": true
@@ -1735,6 +2254,9 @@
     "pinyin": "shāngdiàn",
     "part_of_speech": "noun",
     "meaning_en": "store, shop",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 314,
     "in_hsk1_500": true
@@ -1745,6 +2267,9 @@
     "pinyin": "shàng",
     "part_of_speech": "noun、verb",
     "meaning_en": "up, above; to go up",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 315,
     "in_hsk1_500": true
@@ -1755,6 +2280,9 @@
     "pinyin": "shàngbān",
     "part_of_speech": "verb",
     "meaning_en": "to go to work",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 316,
     "in_hsk1_500": true
@@ -1765,6 +2293,9 @@
     "pinyin": "shàngkè",
     "part_of_speech": "verb",
     "meaning_en": "to attend class",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 320,
     "in_hsk1_500": true
@@ -1775,6 +2306,9 @@
     "pinyin": "shàngwǔ",
     "part_of_speech": "noun",
     "meaning_en": "morning",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 322,
     "in_hsk1_500": true
@@ -1785,6 +2319,9 @@
     "pinyin": "shàngxué",
     "part_of_speech": "verb",
     "meaning_en": "to go to school",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 323,
     "in_hsk1_500": true
@@ -1795,6 +2332,9 @@
     "pinyin": "shǎo",
     "part_of_speech": "adjective、verb",
     "meaning_en": "few, little; to lack",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 324,
     "in_hsk1_500": true
@@ -1805,6 +2345,9 @@
     "pinyin": "shéi/shuí",
     "part_of_speech": "pronoun",
     "meaning_en": "who",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 325,
     "in_hsk1_500": true
@@ -1815,6 +2358,9 @@
     "pinyin": "shénme",
     "part_of_speech": "pronoun",
     "meaning_en": "what",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 328,
     "in_hsk1_500": true
@@ -1825,6 +2371,9 @@
     "pinyin": "shēngbìng",
     "part_of_speech": "verb",
     "meaning_en": "to get sick",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 329,
     "in_hsk1_500": true
@@ -1835,6 +2384,9 @@
     "pinyin": "shí",
     "part_of_speech": "number",
     "meaning_en": "ten",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 332,
     "in_hsk1_500": true
@@ -1845,6 +2397,9 @@
     "pinyin": "shíhou",
     "part_of_speech": "noun",
     "meaning_en": "moment, time",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 333,
     "in_hsk1_500": true
@@ -1855,6 +2410,9 @@
     "pinyin": "shíjiān",
     "part_of_speech": "noun",
     "meaning_en": "time",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 334,
     "in_hsk1_500": true
@@ -1865,6 +2423,9 @@
     "pinyin": "shì",
     "part_of_speech": "noun",
     "meaning_en": "matter, thing",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 335,
     "in_hsk1_500": true
@@ -1875,6 +2436,9 @@
     "pinyin": "shì",
     "part_of_speech": "verb",
     "meaning_en": "to be",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 337,
     "in_hsk1_500": true
@@ -1885,6 +2449,9 @@
     "pinyin": "shǒujī",
     "part_of_speech": "noun",
     "meaning_en": "cell phone",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 340,
     "in_hsk1_500": true
@@ -1895,6 +2462,9 @@
     "pinyin": "shū",
     "part_of_speech": "noun",
     "meaning_en": "book",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 341,
     "in_hsk1_500": true
@@ -1905,6 +2475,9 @@
     "pinyin": "shūdiàn",
     "part_of_speech": "noun",
     "meaning_en": "bookstore",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 343,
     "in_hsk1_500": true
@@ -1915,6 +2488,9 @@
     "pinyin": "shuǐ",
     "part_of_speech": "noun",
     "meaning_en": "water",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 345,
     "in_hsk1_500": true
@@ -1925,6 +2501,9 @@
     "pinyin": "shuǐguǒ",
     "part_of_speech": "noun",
     "meaning_en": "fruit",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 346,
     "in_hsk1_500": true
@@ -1935,6 +2514,9 @@
     "pinyin": "shuì",
     "part_of_speech": "verb",
     "meaning_en": "to sleep",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 347,
     "in_hsk1_500": true
@@ -1945,6 +2527,9 @@
     "pinyin": "shuìjiào",
     "part_of_speech": "verb",
     "meaning_en": "to sleep",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 348,
     "in_hsk1_500": true
@@ -1955,6 +2540,9 @@
     "pinyin": "shuō",
     "part_of_speech": "verb",
     "meaning_en": "to speak, to say",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 349,
     "in_hsk1_500": true
@@ -1965,6 +2553,9 @@
     "pinyin": "shuōhuà",
     "part_of_speech": "verb",
     "meaning_en": "to talk",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 350,
     "in_hsk1_500": true
@@ -1975,6 +2566,9 @@
     "pinyin": "sì",
     "part_of_speech": "number",
     "meaning_en": "four",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 351,
     "in_hsk1_500": true
@@ -1985,6 +2579,9 @@
     "pinyin": "suì",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for age",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 353,
     "in_hsk1_500": true
@@ -1995,6 +2592,9 @@
     "pinyin": "tā",
     "part_of_speech": "pronoun",
     "meaning_en": "he, him",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 354,
     "in_hsk1_500": true
@@ -2005,6 +2605,9 @@
     "pinyin": "tā",
     "part_of_speech": "pronoun",
     "meaning_en": "it",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 515,
     "in_hsk1_500": false
@@ -2015,6 +2618,9 @@
     "pinyin": "tā",
     "part_of_speech": "pronoun",
     "meaning_en": "she",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 356,
     "in_hsk1_500": true
@@ -2025,6 +2631,9 @@
     "pinyin": "tāmen",
     "part_of_speech": "pronoun",
     "meaning_en": "they",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 355,
     "in_hsk1_500": true
@@ -2035,6 +2644,9 @@
     "pinyin": "tāmen",
     "part_of_speech": "pronoun",
     "meaning_en": "they",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 516,
     "in_hsk1_500": false
@@ -2045,6 +2657,9 @@
     "pinyin": "tāmen",
     "part_of_speech": "pronoun",
     "meaning_en": "they",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 357,
     "in_hsk1_500": true
@@ -2055,6 +2670,9 @@
     "pinyin": "tài",
     "part_of_speech": "adverb",
     "meaning_en": "too, extremely",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 358,
     "in_hsk1_500": true
@@ -2065,6 +2683,9 @@
     "pinyin": "tiān",
     "part_of_speech": "noun、classifier",
     "meaning_en": "day; measure word for days",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 359,
     "in_hsk1_500": true
@@ -2075,6 +2696,9 @@
     "pinyin": "tiānqì",
     "part_of_speech": "noun",
     "meaning_en": "weather",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 360,
     "in_hsk1_500": true
@@ -2085,6 +2709,9 @@
     "pinyin": "tīng",
     "part_of_speech": "verb",
     "meaning_en": "to listen",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 361,
     "in_hsk1_500": true
@@ -2095,6 +2722,9 @@
     "pinyin": "tīngjiàn",
     "part_of_speech": "verb",
     "meaning_en": "to hear",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 363,
     "in_hsk1_500": true
@@ -2105,6 +2735,9 @@
     "pinyin": "tóngxué",
     "part_of_speech": "noun",
     "meaning_en": "classmate",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 365,
     "in_hsk1_500": true
@@ -2115,6 +2748,9 @@
     "pinyin": "wài",
     "part_of_speech": "noun",
     "meaning_en": "outside, exterior",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 367,
     "in_hsk1_500": true
@@ -2125,6 +2761,9 @@
     "pinyin": "wàibian",
     "part_of_speech": "noun",
     "meaning_en": "outside",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 368,
     "in_hsk1_500": true
@@ -2135,6 +2774,9 @@
     "pinyin": "wán",
     "part_of_speech": "verb",
     "meaning_en": "to play",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -2145,6 +2787,9 @@
     "pinyin": "wǎn",
     "part_of_speech": "adjective",
     "meaning_en": "late",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 372,
     "in_hsk1_500": true
@@ -2155,6 +2800,9 @@
     "pinyin": "wǎnfàn",
     "part_of_speech": "noun",
     "meaning_en": "dinner",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 373,
     "in_hsk1_500": true
@@ -2165,6 +2813,9 @@
     "pinyin": "wǎnshang",
     "part_of_speech": "noun",
     "meaning_en": "evening",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 374,
     "in_hsk1_500": true
@@ -2175,6 +2826,9 @@
     "pinyin": "wèi",
     "part_of_speech": "interjection",
     "meaning_en": "hello used when answering the phone)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 574,
     "in_hsk1_500": false
@@ -2185,6 +2839,9 @@
     "pinyin": "wèn",
     "part_of_speech": "verb",
     "meaning_en": "to ask",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 379,
     "in_hsk1_500": true
@@ -2195,6 +2852,9 @@
     "pinyin": "wèntí",
     "part_of_speech": "noun",
     "meaning_en": "question",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 578,
     "in_hsk1_500": false
@@ -2205,6 +2865,9 @@
     "pinyin": "wǒ",
     "part_of_speech": "pronoun",
     "meaning_en": "I",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 380,
     "in_hsk1_500": true
@@ -2215,6 +2878,9 @@
     "pinyin": "wǒmen",
     "part_of_speech": "pronoun",
     "meaning_en": "we",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 381,
     "in_hsk1_500": true
@@ -2225,6 +2891,9 @@
     "pinyin": "wǔ",
     "part_of_speech": "number",
     "meaning_en": "five",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 382,
     "in_hsk1_500": true
@@ -2235,6 +2904,9 @@
     "pinyin": "wǔfàn",
     "part_of_speech": "noun",
     "meaning_en": "lunch",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 383,
     "in_hsk1_500": true
@@ -2245,6 +2917,9 @@
     "pinyin": "xǐhuan",
     "part_of_speech": "verb",
     "meaning_en": "to like",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 388,
     "in_hsk1_500": true
@@ -2255,6 +2930,9 @@
     "pinyin": "xià",
     "part_of_speech": "noun、verb、classifier",
     "meaning_en": "down, below; to go down; measure word for times",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 389,
     "in_hsk1_500": true
@@ -2265,6 +2943,9 @@
     "pinyin": "xià yǔ",
     "part_of_speech": "",
     "meaning_en": "to rain",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 396,
     "in_hsk1_500": true
@@ -2275,6 +2956,9 @@
     "pinyin": "xiàbān",
     "part_of_speech": "verb",
     "meaning_en": "to get off work",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 390,
     "in_hsk1_500": true
@@ -2285,6 +2969,9 @@
     "pinyin": "xiàkè",
     "part_of_speech": "verb",
     "meaning_en": "to finish class",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 394,
     "in_hsk1_500": true
@@ -2295,6 +2982,9 @@
     "pinyin": "xiàwǔ",
     "part_of_speech": "noun",
     "meaning_en": "afternoon",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 395,
     "in_hsk1_500": true
@@ -2305,6 +2995,9 @@
     "pinyin": "xiānsheng",
     "part_of_speech": "noun",
     "meaning_en": "Mr., husband",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 398,
     "in_hsk1_500": true
@@ -2315,6 +3008,9 @@
     "pinyin": "xiànzài",
     "part_of_speech": "noun",
     "meaning_en": "now",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 399,
     "in_hsk1_500": true
@@ -2325,6 +3021,9 @@
     "pinyin": "xiǎng",
     "part_of_speech": "verb",
     "meaning_en": "to think; to want",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 400,
     "in_hsk1_500": true
@@ -2335,6 +3034,9 @@
     "pinyin": "xiǎo",
     "part_of_speech": "adjective、prefix",
     "meaning_en": "small; prefix indicating small size or endearment",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 401,
     "in_hsk1_500": true
@@ -2345,6 +3047,9 @@
     "pinyin": "xiǎopéngyǒu",
     "part_of_speech": "noun",
     "meaning_en": "little friend, child",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 404,
     "in_hsk1_500": true
@@ -2355,6 +3060,9 @@
     "pinyin": "xiǎoshí",
     "part_of_speech": "noun",
     "meaning_en": "hour",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 405,
     "in_hsk1_500": true
@@ -2365,6 +3073,9 @@
     "pinyin": "xiǎoxué",
     "part_of_speech": "noun",
     "meaning_en": "primary school",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 406,
     "in_hsk1_500": true
@@ -2375,6 +3086,9 @@
     "pinyin": "xiǎoxuéshēng",
     "part_of_speech": "noun",
     "meaning_en": "primary school student",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 407,
     "in_hsk1_500": true
@@ -2385,6 +3099,9 @@
     "pinyin": "xiē",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for an indefinite amount",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 4,
     "gf0025_stt": 812,
     "in_hsk1_500": false
@@ -2395,6 +3112,9 @@
     "pinyin": "xiě",
     "part_of_speech": "verb",
     "meaning_en": "to write",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 409,
     "in_hsk1_500": true
@@ -2405,6 +3125,9 @@
     "pinyin": "xièxie",
     "part_of_speech": "verb",
     "meaning_en": "to thank",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 410,
     "in_hsk1_500": true
@@ -2415,6 +3138,9 @@
     "pinyin": "xīn",
     "part_of_speech": "adjective",
     "meaning_en": "new",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 411,
     "in_hsk1_500": true
@@ -2425,6 +3151,9 @@
     "pinyin": "xīngqī",
     "part_of_speech": "noun",
     "meaning_en": "week",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 413,
     "in_hsk1_500": true
@@ -2435,6 +3164,9 @@
     "pinyin": "xīngqīrì",
     "part_of_speech": "noun",
     "meaning_en": "Sunday",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 414,
     "in_hsk1_500": true
@@ -2445,6 +3177,9 @@
     "pinyin": "xīngqītiān",
     "part_of_speech": "noun",
     "meaning_en": "Sunday",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 415,
     "in_hsk1_500": true
@@ -2455,6 +3190,9 @@
     "pinyin": "xiūxi",
     "part_of_speech": "verb",
     "meaning_en": "to rest",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 417,
     "in_hsk1_500": true
@@ -2465,6 +3203,9 @@
     "pinyin": "xué",
     "part_of_speech": "verb",
     "meaning_en": "to learn, to study",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 418,
     "in_hsk1_500": true
@@ -2475,6 +3216,9 @@
     "pinyin": "xuéshēng",
     "part_of_speech": "noun",
     "meaning_en": "student",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 419,
     "in_hsk1_500": true
@@ -2485,6 +3229,9 @@
     "pinyin": "xuéxí",
     "part_of_speech": "verb",
     "meaning_en": "to study",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 420,
     "in_hsk1_500": true
@@ -2495,6 +3242,9 @@
     "pinyin": "xuéxiào",
     "part_of_speech": "noun",
     "meaning_en": "school",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 421,
     "in_hsk1_500": true
@@ -2505,6 +3255,9 @@
     "pinyin": "xuě",
     "part_of_speech": "noun",
     "meaning_en": "snow",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 632,
     "in_hsk1_500": false
@@ -2515,6 +3268,9 @@
     "pinyin": "yào",
     "part_of_speech": "verb",
     "meaning_en": "to want, to need",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 423,
     "in_hsk1_500": true
@@ -2525,6 +3281,9 @@
     "pinyin": "yě",
     "part_of_speech": "adverb",
     "meaning_en": "also, too",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 425,
     "in_hsk1_500": true
@@ -2535,6 +3294,9 @@
     "pinyin": "yī",
     "part_of_speech": "number",
     "meaning_en": "one",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 427,
     "in_hsk1_500": true
@@ -2545,6 +3307,9 @@
     "pinyin": "yīfu",
     "part_of_speech": "noun",
     "meaning_en": "clothes",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 428,
     "in_hsk1_500": true
@@ -2555,6 +3320,9 @@
     "pinyin": "yīshēng",
     "part_of_speech": "noun",
     "meaning_en": "doctor",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 429,
     "in_hsk1_500": true
@@ -2565,6 +3333,9 @@
     "pinyin": "yīyuàn",
     "part_of_speech": "noun",
     "meaning_en": "hospital",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 430,
     "in_hsk1_500": true
@@ -2575,6 +3346,9 @@
     "pinyin": "yíbàn",
     "part_of_speech": "number",
     "meaning_en": "half",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 431,
     "in_hsk1_500": true
@@ -2585,6 +3359,9 @@
     "pinyin": "yíxià",
     "part_of_speech": "numberclassifier、（adverb）",
     "meaning_en": "once, a little; (in a short while)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -2595,6 +3372,9 @@
     "pinyin": "yǐzi",
     "part_of_speech": "noun",
     "meaning_en": "chair",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 659,
     "in_hsk1_500": false
@@ -2605,6 +3385,9 @@
     "pinyin": "yìdiǎnr",
     "part_of_speech": "number-classifier",
     "meaning_en": "a little, a bit",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 437,
     "in_hsk1_500": true
@@ -2615,6 +3398,9 @@
     "pinyin": "yìxiē",
     "part_of_speech": "number-classifier",
     "meaning_en": "some, a few",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 439,
     "in_hsk1_500": true
@@ -2625,6 +3411,9 @@
     "pinyin": "yǒu",
     "part_of_speech": "verb",
     "meaning_en": "to have, to exist",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 445,
     "in_hsk1_500": true
@@ -2635,6 +3424,9 @@
     "pinyin": "yǒude",
     "part_of_speech": "pronoun",
     "meaning_en": "some of them",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 442,
     "in_hsk1_500": true
@@ -2645,6 +3437,9 @@
     "pinyin": "yǒudiǎnr",
     "part_of_speech": "adverb",
     "meaning_en": "a little, slightly",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -2655,6 +3450,9 @@
     "pinyin": "yǒuxiē",
     "part_of_speech": "pronoun、（adverb）",
     "meaning_en": "some, some of; (somewhat, rather)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -2665,6 +3463,9 @@
     "pinyin": "yǔ",
     "part_of_speech": "noun",
     "meaning_en": "rain",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 449,
     "in_hsk1_500": true
@@ -2675,6 +3476,9 @@
     "pinyin": "yuán",
     "part_of_speech": "classifier",
     "meaning_en": "yuan",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 450,
     "in_hsk1_500": true
@@ -2685,6 +3489,9 @@
     "pinyin": "yuè",
     "part_of_speech": "noun",
     "meaning_en": "month; moon",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 452,
     "in_hsk1_500": true
@@ -2695,6 +3502,9 @@
     "pinyin": "zài",
     "part_of_speech": "adverb",
     "meaning_en": "again, then",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 453,
     "in_hsk1_500": true
@@ -2705,6 +3515,9 @@
     "pinyin": "zài",
     "part_of_speech": "verb、preposition、adverb",
     "meaning_en": "to be at; at; in the middle of",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 455,
     "in_hsk1_500": true
@@ -2715,6 +3528,9 @@
     "pinyin": "zàijiàn",
     "part_of_speech": "verb",
     "meaning_en": "goodbye",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 454,
     "in_hsk1_500": true
@@ -2725,6 +3541,9 @@
     "pinyin": "zǎo",
     "part_of_speech": "adjective",
     "meaning_en": "early",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 457,
     "in_hsk1_500": true
@@ -2735,6 +3554,9 @@
     "pinyin": "zǎofàn",
     "part_of_speech": "noun",
     "meaning_en": "breakfast",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 458,
     "in_hsk1_500": true
@@ -2745,6 +3567,9 @@
     "pinyin": "zǎoshang",
     "part_of_speech": "noun",
     "meaning_en": "morning",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 459,
     "in_hsk1_500": true
@@ -2755,6 +3580,9 @@
     "pinyin": "zěnme",
     "part_of_speech": "pronoun",
     "meaning_en": "how",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 460,
     "in_hsk1_500": true
@@ -2765,6 +3593,9 @@
     "pinyin": "zěnmeyàng",
     "part_of_speech": "pronoun",
     "meaning_en": "how about, what do you think",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 710,
     "in_hsk1_500": false
@@ -2775,6 +3606,9 @@
     "pinyin": "zhǎo",
     "part_of_speech": "verb",
     "meaning_en": "to look for",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 462,
     "in_hsk1_500": true
@@ -2785,6 +3619,9 @@
     "pinyin": "zhè",
     "part_of_speech": "pronoun",
     "meaning_en": "this",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 464,
     "in_hsk1_500": true
@@ -2795,6 +3632,9 @@
     "pinyin": "zhèbiān",
     "part_of_speech": "pronoun",
     "meaning_en": "here",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 465,
     "in_hsk1_500": true
@@ -2805,6 +3645,9 @@
     "pinyin": "zhège",
     "part_of_speech": "pronoun",
     "meaning_en": "this one",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": null,
     "gf0025_stt": null,
     "in_hsk1_500": false
@@ -2815,6 +3658,9 @@
     "pinyin": "zhèlǐ",
     "part_of_speech": "pronoun",
     "meaning_en": "here",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 466,
     "in_hsk1_500": true
@@ -2825,6 +3671,9 @@
     "pinyin": "zhèr",
     "part_of_speech": "pronoun",
     "meaning_en": "here",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 467,
     "in_hsk1_500": true
@@ -2835,6 +3684,9 @@
     "pinyin": "zhèxiē",
     "part_of_speech": "pronoun",
     "meaning_en": "these",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 468,
     "in_hsk1_500": true
@@ -2845,6 +3697,9 @@
     "pinyin": "zhēn",
     "part_of_speech": "adverb、（adjective）",
     "meaning_en": "really; (true)",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 470,
     "in_hsk1_500": true
@@ -2855,6 +3710,9 @@
     "pinyin": "zhèngzài",
     "part_of_speech": "adverb",
     "meaning_en": "in the process of",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 473,
     "in_hsk1_500": true
@@ -2865,6 +3723,9 @@
     "pinyin": "zhī",
     "part_of_speech": "classifier",
     "meaning_en": "measure word for animals, one of a pair",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 730,
     "in_hsk1_500": false
@@ -2875,6 +3736,9 @@
     "pinyin": "zhīdào",
     "part_of_speech": "verb",
     "meaning_en": "to know",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 474,
     "in_hsk1_500": true
@@ -2885,6 +3749,9 @@
     "pinyin": "Zhōngguó",
     "part_of_speech": "noun",
     "meaning_en": "China",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 477,
     "in_hsk1_500": true
@@ -2895,6 +3762,9 @@
     "pinyin": "Zhōngwén",
     "part_of_speech": "noun",
     "meaning_en": "Chinese language",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 479,
     "in_hsk1_500": true
@@ -2905,6 +3775,9 @@
     "pinyin": "zhōngwǔ",
     "part_of_speech": "noun",
     "meaning_en": "noon",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 480,
     "in_hsk1_500": true
@@ -2915,6 +3788,9 @@
     "pinyin": "zhōngxué",
     "part_of_speech": "noun",
     "meaning_en": "middle school",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 481,
     "in_hsk1_500": true
@@ -2925,6 +3801,9 @@
     "pinyin": "zhōngxuéshēng",
     "part_of_speech": "noun",
     "meaning_en": "middle school student",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 482,
     "in_hsk1_500": true
@@ -2935,6 +3814,9 @@
     "pinyin": "zhù",
     "part_of_speech": "verb",
     "meaning_en": "to live, to reside",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 485,
     "in_hsk1_500": true
@@ -2945,6 +3827,9 @@
     "pinyin": "zhuōzi",
     "part_of_speech": "noun",
     "meaning_en": "table, desk",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 487,
     "in_hsk1_500": true
@@ -2955,6 +3840,9 @@
     "pinyin": "zì",
     "part_of_speech": "noun",
     "meaning_en": "character, script",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 488,
     "in_hsk1_500": true
@@ -2965,6 +3853,9 @@
     "pinyin": "zuótiān",
     "part_of_speech": "noun",
     "meaning_en": "yesterday",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 495,
     "in_hsk1_500": true
@@ -2975,6 +3866,9 @@
     "pinyin": "zuò",
     "part_of_speech": "verb",
     "meaning_en": "to sit",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 498,
     "in_hsk1_500": true
@@ -2985,6 +3879,9 @@
     "pinyin": "zuò",
     "part_of_speech": "verb",
     "meaning_en": "to do, to make",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 1,
     "gf0025_stt": 500,
     "in_hsk1_500": true
@@ -2995,6 +3892,9 @@
     "pinyin": "zuò fàn",
     "part_of_speech": "verb",
     "meaning_en": "to cook",
+    "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
+    "source_reference": "MandarinBean HSK 3.0 Band 1 educational syllabus table, referencing CTI HSK 3.0 outline",
+    "verified_official_download": false,
     "gf0025_level": 2,
     "gf0025_stt": 772,
     "in_hsk1_500": false

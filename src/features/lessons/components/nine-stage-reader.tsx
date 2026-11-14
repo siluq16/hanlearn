@@ -20,23 +20,43 @@ import { Badge } from "@/components/ui/badge";
 import { MandarinAudioButton } from "@/components/mandarin-audio";
 import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
 import { ExerciseEngine } from "@/features/exercises/components/exercise-engine";
+import { saveStageProgress, type StageProgressData } from "@/features/lessons/actions";
 import type { NineStageLessonData } from "@/features/content-library/curriculum-data";
 
 interface NineStageReaderProps {
   lesson: NineStageLessonData;
+  initialProgress?: StageProgressData | null;
+  userId?: string;
 }
 
-export function NineStageReader({ lesson }: NineStageReaderProps) {
-  const [currentStageIndex, setCurrentStageIndex] = useState(0);
+export function NineStageReader({ lesson, initialProgress, userId }: NineStageReaderProps) {
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
   const { speak, preferredRate } = useMandarinSpeech();
 
-  const storageKey = `hanlearn_9stage_${lesson.slug || lesson.id}`;
+  const lessonKey = lesson.slug || lesson.id;
+  const storageKey = userId
+    ? `hanlearn_9stage_${userId}_${lessonKey}`
+    : `hanlearn_9stage_${lessonKey}`;
+
+  const [currentStageIndex, setCurrentStageIndex] = useState<number>(() => {
+    if (initialProgress && typeof initialProgress.currentStage === "number") {
+      return initialProgress.currentStage;
+    }
+    return 0;
+  });
+
   const [completedStages, setCompletedStages] = useState<number[]>(() => {
+    if (
+      initialProgress &&
+      Array.isArray(initialProgress.completedStages) &&
+      initialProgress.completedStages.length > 0
+    ) {
+      return initialProgress.completedStages;
+    }
     if (typeof window === "undefined") return [];
     try {
-      const saved = localStorage.getItem(`hanlearn_9stage_${lesson.slug || lesson.id}`);
+      const saved = localStorage.getItem(storageKey);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed)) return parsed;
@@ -52,8 +72,23 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
       try {
         localStorage.setItem(storageKey, JSON.stringify(next));
       } catch {}
+      // Persist stage progress to Supabase
+      saveStageProgress({
+        lessonId: lesson.slug || lesson.id,
+        completedStages: next,
+        currentStage: currentStageIndex,
+      }).catch(() => {});
       return next;
     });
+  }
+
+  function handleSelectStage(idx: number) {
+    setCurrentStageIndex(idx);
+    saveStageProgress({
+      lessonId: lesson.slug || lesson.id,
+      completedStages,
+      currentStage: idx,
+    }).catch(() => {});
   }
 
   const stages = lesson.stages;
@@ -106,7 +141,7 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
               type="button"
               onClick={() => {
                 markStageComplete(currentStageIndex);
-                setCurrentStageIndex(idx);
+                handleSelectStage(idx);
               }}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                 isActive
@@ -385,7 +420,7 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
             variant="outline"
             size="sm"
             disabled={currentStageIndex === 0}
-            onClick={() => setCurrentStageIndex((prev) => Math.max(0, prev - 1))}
+            onClick={() => handleSelectStage(Math.max(0, currentStageIndex - 1))}
             className="gap-1.5"
           >
             <ChevronLeft className="size-4" />
@@ -402,7 +437,7 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
             onClick={() => {
               markStageComplete(currentStageIndex);
               if (currentStageIndex < stages.length - 1) {
-                setCurrentStageIndex((prev) => prev + 1);
+                handleSelectStage(currentStageIndex + 1);
               }
             }}
             className="gap-1.5"

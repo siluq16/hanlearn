@@ -47,39 +47,56 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     expect(w389?.simplified).toBe("下");
   });
 
-  it("reconciles HSK 1 using official 2025 300-word syllabus without relying on STT order", () => {
+  it("reconciles HSK 1 with strict mathematical set partition (|A ∩ B| + |A \\ B| = 300)", () => {
     const officialPath = path.join(libraryDir, "hsk1_exam_2025_official_300.json");
     expect(fs.existsSync(officialPath)).toBe(true);
-    const official300: Array<Record<string, unknown>> = JSON.parse(
+    const official300: Array<{ hanzi: string; in_hsk1_500: boolean }> = JSON.parse(
       fs.readFileSync(officialPath, "utf8"),
     );
     expect(official300.length).toBe(300);
 
+    // Uniqueness assertion: exactly 300 distinct hanzi
+    const uniqueHanzi300 = new Set(official300.map((w) => w.hanzi));
+    expect(uniqueHanzi300.size).toBe(300);
+
     const hsk1Path = path.join(libraryDir, "hsk1_vocabulary.json");
-    const hsk1: Array<Record<string, unknown>> = JSON.parse(
+    const hsk1: Array<{ simplified: string; is_hsk_2025_core: boolean; hsk_2025_no: number | null }> = JSON.parse(
       fs.readFileSync(hsk1Path, "utf8"),
     );
+    expect(hsk1.length).toBe(500);
 
-    const core2025 = hsk1.filter((w) => w.is_hsk_2025_core === true);
-    const extended2021 = hsk1.filter((w) => w.is_hsk_2025_core === false);
+    const uniqueHanzi500 = new Set(hsk1.map((w) => w.simplified));
+    expect(uniqueHanzi500.size).toBe(496); // 500 entries minus 4 polyphones (地, 干, 还, 有)
 
-    // Exact empirical reconciliation counts
-    expect(core2025.length).toBe(264);
-    expect(extended2021.length).toBe(236);
+    // Mathematical set partition
+    const intersection = [...uniqueHanzi300].filter((h) => uniqueHanzi500.has(h));
+    const onlyIn300 = [...uniqueHanzi300].filter((h) => !uniqueHanzi500.has(h));
+    expect(intersection.length).toBe(262);
+    expect(onlyIn300.length).toBe(38);
+    // Strict mathematical identity: |A ∩ B| + |A \ B| = |A|
+    expect(intersection.length + onlyIn300.length).toBe(300);
+
+    // Catalog entry counts in 500 standard:
+    const coreEntries2025 = hsk1.filter((w) => w.is_hsk_2025_core === true);
+    const extendedEntries2021 = hsk1.filter((w) => w.is_hsk_2025_core === false);
+    expect(coreEntries2025.length).toBe(264);
+    expect(extendedEntries2021.length).toBe(236);
+    expect(coreEntries2025.length + extendedEntries2021.length).toBe(500);
 
     // Verify word at end of alphabet like '做' (STT 499) is correctly identified as core 2025 (No. 299)
     const zuo = hsk1.find((w) => w.simplified === "做");
     expect(zuo?.is_hsk_2025_core).toBe(true);
     expect(zuo?.hsk_2025_no).toBe(299);
 
-    // Verify reconciliation report exists with exact 38 supplemental words
+    // Verify reconciliation report exists with exact 38 supplemental words and correct math
     const reportPath = path.join(libraryDir, "hsk_mapping_reconciliation.json");
     expect(fs.existsSync(reportPath)).toBe(true);
     const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
-    expect(report.total_official_2025_exam_words).toBe(300);
-    expect(report.matched_intersection_count).toBe(264);
-    expect(report.only_in_2025_exam_count).toBe(38);
-    expect(report.only_in_gf0025_2021_count).toBe(236);
+    expect(report.dataset_300_total).toBe(300);
+    expect(report.mathematical_set_partition.intersection_A_and_B).toBe(262);
+    expect(report.mathematical_set_partition.difference_A_minus_B_only_in_2025).toBe(38);
+    expect(report.entry_level_counts_in_500.entries_matching_2025).toBe(264);
+    expect(report.entry_level_counts_in_500.entries_not_in_2025).toBe(236);
   });
 
   it("preserves 43 out of 44 pilot words in the HSK 1 vocabulary list", () => {

@@ -613,7 +613,7 @@ export function ExerciseEngine({
                       onClick={() => handleShadowingComplete(true)}
                       className="text-xs text-emerald-600 hover:text-emerald-700"
                     >
-                      ✓ Tôi đã đọc to &amp; chuẩn
+                      ✓ Tôi đã luyện đọc
                     </Button>
                     <Button
                       type="button"
@@ -625,6 +625,9 @@ export function ExerciseEngine({
                       ✕ Cần luyện tập thêm
                     </Button>
                   </div>
+                  <p className="text-[11px] text-muted-foreground/80">
+                    Tự đánh giá ghi nhận nỗ lực luyện tập của bạn (không đại diện cho kiểm định phát âm chính thức).
+                  </p>
                 </div>
               </div>
             )}

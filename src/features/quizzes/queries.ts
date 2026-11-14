@@ -4,6 +4,7 @@ import { z } from "zod";
 import { requireLearner } from "@/features/auth/session";
 import { getLessonBundle } from "@/features/lessons/queries";
 import { DataError } from "@/lib/data";
+import { findCurriculumQuiz } from "./curriculum-quizzes";
 import {
   responseRow,
   readInput,
@@ -32,6 +33,76 @@ export async function getQuizView(
 ): Promise<QuizView | null> {
   const { user, supabase } = await requireLearner();
   if (!readInput.safeParse({ lessonId, attemptId }).success) return null;
+
+  // Handle curriculum quizzes (Lesson 5, 6, etc.)
+  const curriculum = findCurriculumQuiz(lessonId);
+  if (curriculum) {
+    const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
+    const rawAttempts: Array<{
+      id: string;
+      started_at: string;
+      submitted_at: string | null;
+      correct_count: number | null;
+      question_count: number | null;
+      passed: boolean | null;
+      answers?: Record<string, number>;
+    }> = Array.isArray(user.user_metadata?.[metaKey]) ? user.user_metadata[metaKey] : [];
+
+    const history: Attempt[] = rawAttempts.map((a) => ({
+      id: a.id,
+      startedAt: a.started_at,
+      submittedAt: a.submitted_at,
+      correctCount: a.correct_count,
+      questionCount: a.question_count,
+      passed: a.passed,
+    }));
+
+    const attemptRaw = attemptId ? rawAttempts.find((a) => a.id === attemptId) : null;
+    const attempt: Attempt | null = attemptRaw ? {
+      id: attemptRaw.id,
+      startedAt: attemptRaw.started_at,
+      submittedAt: attemptRaw.submitted_at,
+      correctCount: attemptRaw.correct_count,
+      questionCount: attemptRaw.question_count,
+      passed: attemptRaw.passed,
+    } : null;
+
+    let responses: Array<{ question_id: string; answer_index: number | null; is_correct: boolean }> = [];
+    if (attemptRaw?.submitted_at && attemptRaw.answers) {
+      responses = curriculum.questions.map((q) => {
+        const ans = attemptRaw.answers ? attemptRaw.answers[q.id] : null;
+        const key = curriculum.answerKeys[q.id];
+        const isCorrect = ans !== undefined && ans !== null && ans === key?.correct_index;
+        return {
+          question_id: q.id,
+          answer_index: ans ?? null,
+          is_correct: isCorrect,
+        };
+      });
+    }
+
+    return {
+      lessonId: curriculum.lessonId,
+      lessonTitle: curriculum.lessonTitle,
+      quiz: curriculum.quiz,
+      questions: curriculum.questions.map((q) => ({
+        id: q.id,
+        prompt: q.prompt,
+        choices: q.choices,
+      })),
+      attempt,
+      history,
+      responses,
+      progress: {
+        studiedAt: new Date().toISOString(),
+        completedAt: history.some((h) => h.passed === true) ? new Date().toISOString() : null,
+      },
+      recoveryScope: createHash("sha256")
+        .update(`${user.id}:${curriculum.quiz.id}:${curriculum.quiz.revision}`)
+        .digest("hex"),
+    };
+  }
+
   const lesson = await getLessonBundle(lessonId);
   if (!lesson || lesson.kind !== "ready") return null;
   const result = await supabase

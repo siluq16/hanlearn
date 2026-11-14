@@ -1,7 +1,9 @@
 "use server";
+import { randomUUID } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { requireLearner } from "@/features/auth/session";
 import { getQuizView } from "./queries";
+import { findCurriculumQuiz } from "./curriculum-quizzes";
 import {
   readInput,
   startInput,
@@ -44,10 +46,40 @@ function rpcFailure(code: string): QuizResult {
   return failure("RETRY", true, true);
 }
 export async function startQuiz(input: unknown): Promise<QuizResult> {
-  const { supabase } = await requireLearner();
+  const { user, supabase } = await requireLearner();
   const parsed = startInput.safeParse(input);
   if (!parsed.success) return failure("INVALID_INPUT");
   if (!learningEnabled("quiz")) return failure("LOCAL_ONLY");
+
+  const curriculum = findCurriculumQuiz(parsed.data.lessonId);
+  if (curriculum) {
+    const attemptId = randomUUID();
+    const newAttempt = {
+      id: attemptId,
+      started_at: new Date().toISOString(),
+      submitted_at: null,
+      correct_count: null,
+      question_count: curriculum.questions.length,
+      passed: null,
+    };
+    const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
+    const prevAttempts = Array.isArray(user.user_metadata?.[metaKey])
+      ? user.user_metadata[metaKey]
+      : [];
+    const nextAttempts = [newAttempt, ...prevAttempts].slice(0, 20);
+    const { error } = await supabase.auth.updateUser({
+      data: {
+        ...user.user_metadata,
+        [metaKey]: nextAttempts,
+      },
+    });
+    if (error) return failure("RETRY", true, true);
+    const readback = await getQuizView(curriculum.lessonId, attemptId);
+    if (!readback) return failure("RETRY", true, true);
+    revalidatePath(`/lessons/${curriculum.lessonId}/quiz`);
+    return { ok: true, view: readback };
+  }
+
   let attempted = false;
   try {
     const view = await getQuizView(parsed.data.lessonId);
@@ -70,10 +102,69 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
   }
 }
 export async function submitQuiz(input: unknown): Promise<QuizResult> {
-  const { supabase } = await requireLearner();
+  const { user, supabase } = await requireLearner();
   const parsed = submitInput.safeParse(input);
   if (!parsed.success) return failure("INVALID_INPUT");
   if (!learningEnabled("quiz")) return failure("LOCAL_ONLY");
+
+  const curriculum = findCurriculumQuiz(parsed.data.lessonId);
+  if (curriculum) {
+    const p = parsed.data;
+    const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
+    const prevAttempts: Array<{
+      id: string;
+      started_at: string;
+      submitted_at: string | null;
+      correct_count: number | null;
+      question_count: number | null;
+      passed: boolean | null;
+      answers?: Record<string, number>;
+    }> = Array.isArray(user.user_metadata?.[metaKey]) ? [...user.user_metadata[metaKey]] : [];
+
+    const targetAttempt = prevAttempts.find((a) => a.id === p.attemptId);
+    if (!targetAttempt) return failure("UNAVAILABLE");
+    if (targetAttempt.submitted_at) return failure("CONFLICT", false, true);
+
+    let correctCount = 0;
+    for (const q of curriculum.questions) {
+      const key = curriculum.answerKeys[q.id];
+      const given = p.answers[q.id];
+      if (given !== undefined && given === key?.correct_index) {
+        correctCount++;
+      }
+    }
+    const questionCount = curriculum.questions.length;
+    const passed = correctCount / questionCount >= 0.6;
+    const submittedAt = new Date().toISOString();
+
+    targetAttempt.submitted_at = submittedAt;
+    targetAttempt.correct_count = correctCount;
+    targetAttempt.question_count = questionCount;
+    targetAttempt.passed = passed;
+    targetAttempt.answers = p.answers;
+
+    const { error } = await supabase.auth.updateUser({
+      data: {
+        ...user.user_metadata,
+        [metaKey]: prevAttempts,
+      },
+    });
+    if (error) return failure("RETRY", true, true);
+
+    const readback = await getQuizView(curriculum.lessonId, p.attemptId);
+    if (!readback) return failure("RETRY", true, true);
+
+    for (const path of [
+      `/lessons/${curriculum.lessonId}/quiz`,
+      `/lessons/stage/${curriculum.slug}`,
+      "/roadmap",
+      "/dashboard",
+    ]) {
+      revalidatePath(path);
+    }
+    return { ok: true, view: readback };
+  }
+
   let attempted = false;
   try {
     const p = parsed.data;
