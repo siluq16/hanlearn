@@ -176,16 +176,28 @@ export function ExerciseEngine({
     }
   }
 
-  // Handle dictation check
+  // Handle dictation check (accepts Hanzi, Accented Pinyin, or Plain Pinyin)
   function handleCheckDictation() {
     if (isAnswered || !textInput.trim()) return;
     setIsAnswered(true);
-    const cleanInput = textInput.trim().toLowerCase().replace(/[\s\.\,\!\?，。！？]/g, "");
+    const cleanInput = textInput.trim().toLowerCase().replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
     const cleanExpected = (currentExercise.expectedAnswer || currentExercise.targetContent?.hanzi || "")
       .trim()
       .toLowerCase()
-      .replace(/[\s\.\,\!\?，。！？]/g, "");
-    const isMatch = cleanInput === cleanExpected;
+      .replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
+    const cleanPinyin = (currentExercise.targetContent?.pinyin || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
+
+    const stripTones = (str: string) =>
+      str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[\s\.\,\!\?，。！？'’\-]/g, "").toLowerCase();
+
+    const isMatch =
+      cleanInput === cleanExpected ||
+      cleanInput === cleanPinyin ||
+      (cleanPinyin.length > 0 && stripTones(cleanInput) === stripTones(cleanPinyin));
+
     setIsCorrect(isMatch);
     if (isMatch) setScore((prev) => prev + 1);
   }

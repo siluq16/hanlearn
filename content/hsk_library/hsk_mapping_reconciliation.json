@@ -1,0 +1,239 @@
+{
+  "title": "HSK 2025 Exam Syllabus (300 words) vs GF0025-2021 Standard (500 words) Reconciliation",
+  "total_official_2025_exam_words": 300,
+  "total_gf0025_2021_hsk1_words": 500,
+  "matched_intersection_count": 264,
+  "only_in_2025_exam_count": 38,
+  "only_in_gf0025_2021_count": 236,
+  "breakdown_only_in_2025_exam": [
+    {
+      "hanzi": "边",
+      "no_2025": 11,
+      "pinyin": "biān",
+      "gf0025_origin": "HSK 2 (STT 24)"
+    },
+    {
+      "hanzi": "不要",
+      "no_2025": 15,
+      "pinyin": "búyào",
+      "gf0025_origin": "HSK 2 (STT 35)"
+    },
+    {
+      "hanzi": "超市",
+      "no_2025": 19,
+      "pinyin": "chāoshì",
+      "gf0025_origin": "HSK 2 (STT 60)"
+    },
+    {
+      "hanzi": "出租车",
+      "no_2025": 22,
+      "pinyin": "chūzūchē",
+      "gf0025_origin": "HSK 2 (STT 76)"
+    },
+    {
+      "hanzi": "大家",
+      "no_2025": 26,
+      "pinyin": "dàjiā",
+      "gf0025_origin": "HSK 2 (STT 93)"
+    },
+    {
+      "hanzi": "店",
+      "no_2025": 34,
+      "pinyin": "diàn",
+      "gf0025_origin": "HSK 2 (STT 128)"
+    },
+    {
+      "hanzi": "分钟",
+      "no_2025": 56,
+      "pinyin": "fēnzhōng",
+      "gf0025_origin": "HSK 2 (STT 167)"
+    },
+    {
+      "hanzi": "公司",
+      "no_2025": 62,
+      "pinyin": "gōngsī",
+      "gf0025_origin": "HSK 2 (STT 194)"
+    },
+    {
+      "hanzi": "狗",
+      "no_2025": 64,
+      "pinyin": "gǒu",
+      "gf0025_origin": "HSK 2 (STT 196)"
+    },
+    {
+      "hanzi": "件",
+      "no_2025": 89,
+      "pinyin": "jiàn",
+      "gf0025_origin": "HSK 2 (STT 265)"
+    },
+    {
+      "hanzi": "饺子",
+      "no_2025": 90,
+      "pinyin": "jiǎozi",
+      "gf0025_origin": "HSK 2 (STT 275)"
+    },
+    {
+      "hanzi": "可以",
+      "no_2025": 102,
+      "pinyin": "kěyǐ",
+      "gf0025_origin": "HSK 2 (STT 322)"
+    },
+    {
+      "hanzi": "卖",
+      "no_2025": 117,
+      "pinyin": "mài",
+      "gf0025_origin": "HSK 2 (STT 372)"
+    },
+    {
+      "hanzi": "猫",
+      "no_2025": 119,
+      "pinyin": "māo",
+      "gf0025_origin": "HSK 2 (STT 375)"
+    },
+    {
+      "hanzi": "没事",
+      "no_2025": 121,
+      "pinyin": "méishì",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "哪个",
+      "no_2025": 132,
+      "pinyin": "nǎge",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "那个",
+      "no_2025": 138,
+      "pinyin": "nàge",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "你好",
+      "no_2025": 147,
+      "pinyin": "nǐ hǎo",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "女士",
+      "no_2025": 155,
+      "pinyin": "nǚshì",
+      "gf0025_origin": "HSK 4 (STT 543)"
+    },
+    {
+      "hanzi": "便宜",
+      "no_2025": 157,
+      "pinyin": "piányi",
+      "gf0025_origin": "HSK 2 (STT 414)"
+    },
+    {
+      "hanzi": "漂亮",
+      "no_2025": 158,
+      "pinyin": "piàoliang",
+      "gf0025_origin": "HSK 2 (STT 416)"
+    },
+    {
+      "hanzi": "苹果",
+      "no_2025": 159,
+      "pinyin": "píngguǒ",
+      "gf0025_origin": "HSK 3 (STT 539)"
+    },
+    {
+      "hanzi": "千",
+      "no_2025": 162,
+      "pinyin": "qiān",
+      "gf0025_origin": "HSK 2 (STT 433)"
+    },
+    {
+      "hanzi": "它",
+      "no_2025": 201,
+      "pinyin": "tā",
+      "gf0025_origin": "HSK 2 (STT 515)"
+    },
+    {
+      "hanzi": "它们",
+      "no_2025": 204,
+      "pinyin": "tāmen",
+      "gf0025_origin": "HSK 2 (STT 516)"
+    },
+    {
+      "hanzi": "玩",
+      "no_2025": 214,
+      "pinyin": "wán",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "喂",
+      "no_2025": 218,
+      "pinyin": "wèi",
+      "gf0025_origin": "HSK 2 (STT 574)"
+    },
+    {
+      "hanzi": "问题",
+      "no_2025": 220,
+      "pinyin": "wèntí",
+      "gf0025_origin": "HSK 2 (STT 578)"
+    },
+    {
+      "hanzi": "些",
+      "no_2025": 239,
+      "pinyin": "xiē",
+      "gf0025_origin": "HSK 4 (STT 812)"
+    },
+    {
+      "hanzi": "雪",
+      "no_2025": 251,
+      "pinyin": "xuě",
+      "gf0025_origin": "HSK 2 (STT 632)"
+    },
+    {
+      "hanzi": "一下",
+      "no_2025": 259,
+      "pinyin": "yíxià",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "椅子",
+      "no_2025": 260,
+      "pinyin": "yǐzi",
+      "gf0025_origin": "HSK 2 (STT 659)"
+    },
+    {
+      "hanzi": "有点儿",
+      "no_2025": 265,
+      "pinyin": "yǒudiǎnr",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "有些",
+      "no_2025": 266,
+      "pinyin": "yǒuxiē",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "怎么样",
+      "no_2025": 277,
+      "pinyin": "zěnmeyàng",
+      "gf0025_origin": "HSK 2 (STT 710)"
+    },
+    {
+      "hanzi": "这个",
+      "no_2025": 281,
+      "pinyin": "zhège",
+      "gf0025_origin": "Colloquial Compound / Spoken Chunk"
+    },
+    {
+      "hanzi": "只",
+      "no_2025": 287,
+      "pinyin": "zhī",
+      "gf0025_origin": "HSK 2 (STT 730)"
+    },
+    {
+      "hanzi": "做饭",
+      "no_2025": 300,
+      "pinyin": "zuò fàn",
+      "gf0025_origin": "HSK 2 (STT 772)"
+    }
+  ],
+  "methodology": "Exact character, pinyin, and semantic matching without assuming sequential order from GF0025-2021 PDF."
+}

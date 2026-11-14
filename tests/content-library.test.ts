@@ -47,7 +47,14 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     expect(w389?.simplified).toBe("下");
   });
 
-  it("separates HSK 1 into HSK_EXAM_2025 core (300 words) and GF0025_2021 (200 words)", () => {
+  it("reconciles HSK 1 using official 2025 300-word syllabus without relying on STT order", () => {
+    const officialPath = path.join(libraryDir, "hsk1_exam_2025_official_300.json");
+    expect(fs.existsSync(officialPath)).toBe(true);
+    const official300: Array<Record<string, unknown>> = JSON.parse(
+      fs.readFileSync(officialPath, "utf8"),
+    );
+    expect(official300.length).toBe(300);
+
     const hsk1Path = path.join(libraryDir, "hsk1_vocabulary.json");
     const hsk1: Array<Record<string, unknown>> = JSON.parse(
       fs.readFileSync(hsk1Path, "utf8"),
@@ -56,10 +63,23 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     const core2025 = hsk1.filter((w) => w.is_hsk_2025_core === true);
     const extended2021 = hsk1.filter((w) => w.is_hsk_2025_core === false);
 
-    expect(core2025.length).toBe(300);
-    expect(extended2021.length).toBe(200);
-    expect(core2025[0].curriculum_version).toBe("HSK_EXAM_2025");
-    expect(extended2021[0].curriculum_version).toBe("GF0025_2021");
+    // Exact empirical reconciliation counts
+    expect(core2025.length).toBe(264);
+    expect(extended2021.length).toBe(236);
+
+    // Verify word at end of alphabet like '做' (STT 499) is correctly identified as core 2025 (No. 299)
+    const zuo = hsk1.find((w) => w.simplified === "做");
+    expect(zuo?.is_hsk_2025_core).toBe(true);
+    expect(zuo?.hsk_2025_no).toBe(299);
+
+    // Verify reconciliation report exists with exact 38 supplemental words
+    const reportPath = path.join(libraryDir, "hsk_mapping_reconciliation.json");
+    expect(fs.existsSync(reportPath)).toBe(true);
+    const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+    expect(report.total_official_2025_exam_words).toBe(300);
+    expect(report.matched_intersection_count).toBe(264);
+    expect(report.only_in_2025_exam_count).toBe(38);
+    expect(report.only_in_gf0025_2021_count).toBe(236);
   });
 
   it("preserves 43 out of 44 pilot words in the HSK 1 vocabulary list", () => {

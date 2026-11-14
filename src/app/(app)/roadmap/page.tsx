@@ -27,36 +27,16 @@ export default async function Roadmap() {
         </p>
       )}
 
-      {/* 9-Stage Interactive Lessons Banner */}
-      <div className="mb-8 p-5 sm:p-6 rounded-2xl border border-primary/30 bg-primary/5 shadow-xs space-y-3">
-        <div className="flex items-center gap-2">
-          <Sparkles className="size-5 text-primary" />
-          <h2 className="text-base font-bold text-foreground">
-            Lộ trình Tương tác 9 Giai đoạn (HSK 1 Chuẩn 2025)
-          </h2>
-        </div>
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Trải nghiệm mô hình học 9 bước toàn diện: Khởi động ngữ âm → Từ vựng → Bài tập nối từ → Ngữ pháp → Hội thoại đóng vai → Luyện nghe ẩn transcript → Luyện nhại âm shadowing (kèm chế độ thủ công) → Đọc hiểu Đúng/Sai → Mini Quiz → Thẻ ôn tập SRS.
-        </p>
-        <div className="flex flex-wrap gap-2 pt-1">
-          <Link
-            href="/lessons/stage/hsk1-lesson-01"
-            className="inline-flex items-center px-3.5 py-2 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 shadow-xs"
-          >
-            Bài 1: Chào hỏi &amp; Tự giới thiệu
-          </Link>
-          <Link
-            href="/lessons/stage/hsk1-lesson-05"
-            className="inline-flex items-center px-3.5 py-2 rounded-xl border border-border bg-card text-xs font-semibold text-foreground hover:bg-muted shadow-xs"
-          >
-            Bài 5: Gia đình &amp; Nghề nghiệp
-          </Link>
-          <Link
-            href="/lessons/stage/hsk1-lesson-06"
-            className="inline-flex items-center px-3.5 py-2 rounded-xl border border-border bg-card text-xs font-semibold text-foreground hover:bg-muted shadow-xs"
-          >
-            Bài 6: Bây giờ là mấy giờ?
-          </Link>
+      {/* 9-Stage Interactive Lessons Notice */}
+      <div className="mb-8 p-4 sm:p-5 rounded-2xl border border-primary/20 bg-primary/5 shadow-xs flex items-start gap-3">
+        <Sparkles className="size-5 text-primary shrink-0 mt-0.5" />
+        <div className="space-y-1 text-xs leading-relaxed text-muted-foreground">
+          <p className="font-semibold text-sm text-foreground">
+            Lộ trình học đã tích hợp Chế độ Luyện tập 9 Giai đoạn
+          </p>
+          <p>
+            Mỗi bài học hỗ trợ chuyển đổi linh hoạt giữa <strong>Đọc lý thuyết</strong> và <strong>Luyện tập tương tác 9 bước</strong> (Khởi động ngữ âm, từ vựng, bài tập nối từ, ngữ pháp, hội thoại đóng vai, nghe ẩn transcript, nhại âm, đọc hiểu Đúng/Sai, Quiz và SRS).
+          </p>
         </div>
       </div>
       <div className="space-y-5">
@@ -151,11 +131,79 @@ export default async function Roadmap() {
                             href={`/lessons/${lesson.id}`}
                             className="mt-3 inline-flex min-h-11 items-center text-primary underline underline-offset-4"
                           >
-                            Đọc bài học
+                            Đọc bài học &amp; Luyện tập 9 giai đoạn
                           </Link>
                         </div>
                       </details>
                     ))}
+                    {l.level === 1 && (
+                      <div className="pt-3 space-y-3">
+                        <div className="flex items-center gap-2 pt-2">
+                          <Sparkles className="size-4 text-primary" />
+                          <h4 className="text-xs font-semibold text-primary uppercase tracking-wider">
+                            Bài học tiếp theo trong lộ trình (Interactive 9 Stages)
+                          </h4>
+                        </div>
+                        {/* Lesson 5 */}
+                        <details id="lesson-hsk1-05" className="scroll-mt-8 rounded-xl border border-primary/20 bg-primary/5">
+                          <summary className="flex min-h-16 list-none items-center gap-3 p-4 cursor-pointer">
+                            <span className="text-xs font-bold text-primary">05</span>
+                            <BookOpen size={18} className="shrink-0 text-primary" />
+                            <span className="min-w-0 flex-1 break-words text-sm font-medium leading-6">
+                              Bài 5: Gia đình &amp; Nghề nghiệp của tôi (我的家与职业)
+                              <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+                                Bài tiếp theo · 9 Giai đoạn tương tác (Gia đình, nghề nghiệp, trợ từ 的, lượng từ 口/个)
+                              </span>
+                            </span>
+                            <ChevronDown size={16} />
+                          </summary>
+                          <div className="px-4 pb-5 text-sm leading-7">
+                            <p>Học từ vựng về thành viên gia đình (爸爸, 妈妈, 哥哥...), nghề nghiệp (老师, 医生), mẫu câu sở hữu 的 và cấu trúc hỏi số lượng 口/个.</p>
+                            <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                              <Clock3 size={14} />
+                              Dự kiến 25 phút
+                            </p>
+                            <div className="mt-3 flex gap-3">
+                              <Link
+                                href="/lessons/stage/hsk1-lesson-05"
+                                className="inline-flex min-h-11 items-center px-4 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90"
+                              >
+                                Học bài 5 (9 Giai đoạn)
+                              </Link>
+                            </div>
+                          </div>
+                        </details>
+                        {/* Lesson 6 */}
+                        <details id="lesson-hsk1-06" className="scroll-mt-8 rounded-xl border border-primary/20 bg-primary/5">
+                          <summary className="flex min-h-16 list-none items-center gap-3 p-4 cursor-pointer">
+                            <span className="text-xs font-bold text-primary">06</span>
+                            <BookOpen size={18} className="shrink-0 text-primary" />
+                            <span className="min-w-0 flex-1 break-words text-sm font-medium leading-6">
+                              Bài 6: Bây giờ là mấy giờ? (现在几点？)
+                              <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+                                Bài tiếp theo · 9 Giai đoạn tương tác (Giờ giấc 点/分, buổi sáng/chiều, các thứ trong tuần)
+                              </span>
+                            </span>
+                            <ChevronDown size={16} />
+                          </summary>
+                          <div className="px-4 pb-5 text-sm leading-7">
+                            <p>Hỏi và nói giờ giấc (点, 分), các buổi trong ngày (上午, 下午), các thứ trong tuần (星期一..), và diễn đạt lịch sinh hoạt thường ngày.</p>
+                            <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                              <Clock3 size={14} />
+                              Dự kiến 25 phút
+                            </p>
+                            <div className="mt-3 flex gap-3">
+                              <Link
+                                href="/lessons/stage/hsk1-lesson-06"
+                                className="inline-flex min-h-11 items-center px-4 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90"
+                              >
+                                Học bài 6 (9 Giai đoạn)
+                              </Link>
+                            </div>
+                          </div>
+                        </details>
+                      </div>
+                    )}
                   </div>
                 </section>
               ))}

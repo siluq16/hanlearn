@@ -32,6 +32,30 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
   const [showTranslation, setShowTranslation] = useState(true);
   const { speak, preferredRate } = useMandarinSpeech();
 
+  const storageKey = `hanlearn_9stage_${lesson.slug || lesson.id}`;
+  const [completedStages, setCompletedStages] = useState<number[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const saved = localStorage.getItem(`hanlearn_9stage_${lesson.slug || lesson.id}`);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    } catch {}
+    return [];
+  });
+
+  function markStageComplete(idx: number) {
+    setCompletedStages((prev) => {
+      if (prev.includes(idx)) return prev;
+      const next = [...prev, idx];
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  }
+
   const stages = lesson.stages;
   const currentStage = stages[currentStageIndex];
 
@@ -75,21 +99,24 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
       <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
         {stages.map((st, idx) => {
           const isActive = idx === currentStageIndex;
-          const isPassed = idx < currentStageIndex;
+          const isDone = completedStages.includes(idx);
           return (
             <button
               key={st.stage}
               type="button"
-              onClick={() => setCurrentStageIndex(idx)}
+              onClick={() => {
+                markStageComplete(currentStageIndex);
+                setCurrentStageIndex(idx);
+              }}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                 isActive
                   ? "bg-primary text-primary-foreground shadow-xs"
-                  : isPassed
-                    ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20"
+                  : isDone
+                    ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
-              <span>{stageIcons[idx] || (idx + 1)}</span>
+              <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
               <span>GĐ {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
             </button>
           );
@@ -372,11 +399,15 @@ export function NineStageReader({ lesson }: NineStageReaderProps) {
           <Button
             type="button"
             size="sm"
-            disabled={currentStageIndex === stages.length - 1}
-            onClick={() => setCurrentStageIndex((prev) => Math.min(stages.length - 1, prev + 1))}
+            onClick={() => {
+              markStageComplete(currentStageIndex);
+              if (currentStageIndex < stages.length - 1) {
+                setCurrentStageIndex((prev) => prev + 1);
+              }
+            }}
             className="gap-1.5"
           >
-            Giai đoạn tiếp theo
+            <span>{currentStageIndex === stages.length - 1 ? "Hoàn thành bài học ✓" : "Giai đoạn tiếp theo"}</span>
             <ChevronRight className="size-4" />
           </Button>
         </div>
