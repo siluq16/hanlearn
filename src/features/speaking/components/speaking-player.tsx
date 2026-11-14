@@ -354,7 +354,7 @@ export function SpeakingPlayer({
               </p>
               <ul className="list-disc list-inside space-y-1 pl-1">
                 <li>
-                  Giọng nói của bạn được xử lý trực tiếp trên trình duyệt bằng Web Speech API zh-CN. HanLearn <strong>không ghi âm, không lưu trữ</strong> và <strong>không tải tệp âm thanh</strong> của bạn lên máy chủ.
+                  HanLearn <strong>không chủ động ghi âm, không lưu trữ và không tải tệp âm thanh</strong> của bạn lên máy chủ ứng dụng. Tuy nhiên, tính năng sử dụng Web Speech API của trình duyệt: dịch vụ nhận dạng của trình duyệt (ví dụ Google Speech trên Chrome) có thể truyền âm thanh về máy chủ của nhà cung cấp trình duyệt để xử lý chữ Hán, và chỉ thực hiện hoàn toàn trên thiết bị nếu trình duyệt cùng hệ điều hành thực sự hỗ trợ và đã bật chế độ nhận dạng cục bộ (on-device).
                 </li>
                 <li>
                   Việc hệ thống nhận dạng đúng chữ Hán hỗ trợ người học kiểm tra xem âm phát ra có rõ ràng không; điều này <strong>không thay thế cho đánh giá thanh điệu chuyên sâu</strong> hoặc khẩu hình âm học.
