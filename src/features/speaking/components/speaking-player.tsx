@@ -679,6 +679,36 @@ export function SpeakingPlayer({
                         : "Lỗi nhận dạng giọng nói:"}
                     </p>
                     <p className="text-foreground/90 leading-relaxed">{recognitionError}</p>
+                    {recognitionErrorCode === "network" && (
+                      <div className="text-muted-foreground pt-1.5 border-t border-destructive/20 space-y-1.5 leading-relaxed">
+                        <p className="font-medium text-foreground">
+                          👉 <strong>Nguyên nhân thường gặp & Hướng xử lý:</strong>
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 pl-1 text-[11px]">
+                          <li>
+                            <strong>Trình duyệt Brave / Cốc Cốc / Opera:</strong> Các trình duyệt này mặc định không tích hợp khóa dịch vụ nhận dạng của Google. Khuyến nghị mở trang web bằng <strong>Google Chrome chính thức</strong> hoặc <strong>Microsoft Edge</strong>.
+                          </li>
+                          <li>
+                            <strong>Cài đặt Windows Speech:</strong> Vào <em>Windows Settings $\rightarrow$ Time & Language (hoặc Privacy & Security) $\rightarrow$ Speech</em> $\rightarrow$ Bật <strong>&ldquo;Online speech recognition&rdquo;</strong> (Nhận dạng giọng nói trực tuyến).
+                          </li>
+                          <li>
+                            <strong>Tiện ích chặn (Adblock / VPN / Pi-hole):</strong> Một số tiện ích như uBlock Origin, AdGuard hoặc VPN có thể chặn kết nối nền tới máy chủ nhận dạng của Google. Hãy thử tạm tắt trên <code>localhost</code>.
+                          </li>
+                        </ul>
+                        <div className="pt-1">
+                          <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            onClick={handleStartRecording}
+                            className="text-xs h-8 rounded-lg"
+                          >
+                            <RotateCcw className="size-3.5 mr-1.5" />
+                            Bấm để thử kết nối lại
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                     {recognitionErrorCode === "not-allowed" && (
                       <p className="text-muted-foreground pt-1 border-t border-destructive/20 leading-relaxed">
                         👉 <strong>Cách xử lý:</strong> Nhấn vào biểu tượng khóa hoặc micro trên thanh địa chỉ URL của trình duyệt $\rightarrow$ Chọn <em>Cho phép (Allow)</em> cho Micro $\rightarrow$ Tải lại trang.

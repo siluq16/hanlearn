@@ -186,7 +186,7 @@ export function getRecognitionErrorMessage(code: RecognitionErrorCode): string {
     case "no-speech":
       return "Không phát hiện giọng nói. Hãy nhấn micro và thử nói to, rõ ràng hơn.";
     case "network":
-      return "Không thể kết nối tới dịch vụ nhận dạng giọng nói của trình duyệt. Vui lòng kiểm tra lại kết nối mạng Internet.";
+      return "Không thể kết nối tới dịch vụ nhận dạng giọng nói của trình duyệt. Vui lòng kiểm tra lại kết nối mạng Internet, tắt tiện ích chặn (Adblock/VPN) hoặc thử chuyển sang Google Chrome chính thức.";
     case "service-not-allowed":
       return "Dịch vụ nhận dạng giọng nói của trình duyệt bị từ chối. Trình duyệt hoặc hệ điều hành có thể đang chặn kết nối nhận dạng ngôn ngữ zh-CN.";
     case "unsupported":
