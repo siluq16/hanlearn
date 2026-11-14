@@ -277,6 +277,7 @@ try {
           ["study", "/lessons/" + lessonIds[1]],
           ["quiz", "/lessons/" + lessonIds[0] + "/quiz"],
           ["listening", "/listening"],
+          ["speaking", "/speaking"],
         ]) {
           stage = "ux-" + size.name + "-" + name;
           const response = await page.goto(origin + route);
@@ -638,6 +639,27 @@ try {
       await page.click('[data-testid="next-question-btn"]');
       await page.waitForTimeout(200);
       check("development-listening-advances-to-next-question", true);
+      stage = "speaking-practice-cloud-development";
+      await page.goto(origin + "/speaking");
+      await page.locator('[data-testid="start-speaking-btn"]').waitFor();
+      check("development-speaking-setup-loads", true);
+      for (let n = 1; n <= 4; n++) {
+        await expect(
+          page.locator(`[data-testid="scope-lesson-${n}"]`),
+        ).toBeVisible();
+      }
+      check("development-speaking-all-four-lessons-available", true);
+      await page.click('[data-testid="count-5"]');
+      await page.click('[data-testid="start-speaking-btn"]');
+      await page.locator('[data-testid="speaking-session-screen"]').waitFor();
+      check("development-speaking-session-starts", true);
+      await expect(
+        page.locator('[data-testid="target-hanzi"]'),
+      ).toBeVisible();
+      await expect(
+        page.locator('[data-testid="target-pinyin"]'),
+      ).toBeVisible();
+      check("development-speaking-target-card-visible", true);
       stage = "real-browser-relogin";
       await page.locator("header details summary").click();
       await page

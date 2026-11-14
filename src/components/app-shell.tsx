@@ -11,6 +11,7 @@ import {
   UserRound,
   Layers,
   Headphones,
+  Mic,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -21,6 +22,7 @@ const links = [
   { href: "/roadmap", label: "Lộ trình", icon: Route },
   { href: "/vocabulary", label: "Từ vựng", icon: BookOpen },
   { href: "/listening", label: "Luyện nghe", icon: Headphones },
+  { href: "/speaking", label: "Luyện nói", icon: Mic },
   { href: "/review", label: "Ôn tập", icon: Layers },
   { href: "/settings", label: "Cài đặt", icon: Settings },
 ];
@@ -137,7 +139,7 @@ export function AppShell({
       </div>
       <nav
         aria-label="Điều hướng di động"
-        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-6 border-t border-border bg-card px-1 pb-[env(safe-area-inset-bottom)] lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-7 border-t border-border bg-card px-0.5 pb-[env(safe-area-inset-bottom)] lg:hidden"
       >
         {links.map(({ href, label, icon: Icon }) => (
           <Link
@@ -145,12 +147,12 @@ export function AppShell({
             href={href}
             aria-current={path.startsWith(href) ? "page" : undefined}
             className={cn(
-              "flex min-h-18 flex-col items-center justify-center gap-1 text-[11px] text-muted-foreground",
+              "flex min-h-16 flex-col items-center justify-center gap-1 text-[10px] text-muted-foreground",
               path.startsWith(href) && "text-primary",
             )}
           >
-            <Icon size={21} aria-hidden="true" />
-            {label}
+            <Icon size={18} aria-hidden="true" />
+            <span className="truncate max-w-[48px] text-center">{label}</span>
           </Link>
         ))}
       </nav>

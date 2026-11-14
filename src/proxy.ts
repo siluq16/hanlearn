@@ -12,6 +12,7 @@ export const config = {
     "/review/:path*",
     "/vocabulary/:path*",
     "/listening/:path*",
+    "/speaking/:path*",
     "/settings/:path*",
     "/api/:path*",
   ],

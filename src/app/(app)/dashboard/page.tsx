@@ -7,6 +7,7 @@ import {
   Clock3,
   Route,
   Headphones,
+  Mic,
 } from "lucide-react";
 import { getDashboard } from "@/features/dashboard/queries";
 import { PageHeading } from "@/components/page-heading";
@@ -55,6 +56,15 @@ export default async function Dashboard() {
         >
           <Link href="/listening">
             <Headphones size={18} /> Luyện nghe HSK 1
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="min-h-12 w-full whitespace-normal sm:w-auto"
+        >
+          <Link href="/speaking">
+            <Mic size={18} /> Luyện nói HSK 1
           </Link>
         </Button>
       </div>
