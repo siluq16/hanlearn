@@ -51,6 +51,15 @@ test("explicit start, keyboard answers, confirmation, DB receipt and reload", as
   await expect(page.getByText("4 / 5 câu đúng")).toBeVisible();
   await expect(page.getByText(/Quiz đạt chưa có nghĩa/)).toBeVisible();
   await expect(page.getByText(/Giải thích đáp án chưa khả dụng/)).toBeVisible();
+  await expect(
+    page.getByRole("link", {
+      name: "Về bài học để xác nhận đã học",
+      exact: true,
+    }),
+  ).toHaveAttribute("href", /#lesson-progress$/);
+  await expect(
+    page.locator('a[aria-current="page"][href^="?attempt="]'),
+  ).toHaveCount(1);
   await page.screenshot({
     path: `.local/previews/${info.project.name}-result.png`,
   });
@@ -71,7 +80,7 @@ test("lost start retries identical key and no mutation on mount", async ({
   await page.getByRole("button", { name: "Bắt đầu quiz", exact: true }).click();
   await expect(page.getByRole("alert")).toBeVisible();
   await page
-    .getByRole("button", { name: "Đọc lại kết quả", exact: true })
+    .getByRole("button", { name: "Tải lại kết quả và tiến độ", exact: true })
     .click();
   await expect(
     page.getByRole("button", { name: "Thử lại yêu cầu cũ" }),

@@ -37,66 +37,6 @@ export default async function Dashboard() {
         title={name ? `Chào ${name}.` : `Một ngày mới để học.`}
         description={date}
       />
-      {!d.profile && (
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-secondary p-5">
-          <div>
-            <p className="font-semibold">Bắt đầu bằng hồ sơ của bạn</p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Chọn trình độ tự khai báo và mục tiêu học tập.
-            </p>
-          </div>
-          <Button asChild>
-            <Link href="/settings">
-              Thiết lập hồ sơ <ArrowRight />
-            </Link>
-          </Button>
-        </div>
-      )}
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {[
-          {
-            label: "HSK hiện tại",
-            value: d.profile
-              ? `HSK ${d.profile.baseline_hsk_level}`
-              : "Chưa thiết lập",
-            note: "Trình độ tự khai báo",
-            icon: BookOpen,
-          },
-          {
-            label: "Mục tiêu của bạn",
-            value: d.profile
-              ? `HSK ${d.profile.target_hsk_level}`
-              : "Chưa thiết lập",
-            note: "Hành trình dài hạn",
-            icon: Target,
-          },
-          {
-            label: "Từ đã tiếp cận",
-            value: String(d.totalWords),
-            note: "Từ có thẻ đang được lưu",
-            icon: Layers,
-          },
-          {
-            label: "Thẻ đến hạn ôn",
-            value: String(d.dueCount),
-            note: "Theo lịch ôn trong database",
-            icon: Clock3,
-          },
-        ].map(({ label, value, note, icon: Icon }) => (
-          <Card key={label}>
-            <CardContent className="p-5">
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
-                {label}
-                <Icon className="size-4 text-primary" aria-hidden="true" />
-              </div>
-              <p className="my-4 text-2xl font-semibold tracking-tight">
-                {value}
-              </p>
-              <p className="text-xs text-muted-foreground">{note}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
       <div className="mt-7 grid gap-6 xl:grid-cols-[1.4fr_1fr]">
         <Card>
           <CardHeader>
@@ -123,16 +63,27 @@ export default async function Dashboard() {
                     {d.next.objective_vi}
                   </p>
                 )}
-                <Button asChild>
-                  <Link href={`/roadmap#lesson-${d.next.id}`}>
-                    Xem bài trong lộ trình <ArrowRight />
+                <Button
+                  asChild
+                  className="min-h-12 w-full whitespace-normal sm:w-auto"
+                >
+                  <Link href={`/lessons/${d.next.id}`}>
+                    Tiếp tục học <ArrowRight />
                   </Link>
                 </Button>
               </div>
             ) : (
               <EmptyState
-                title="Chưa có bài tiếp theo"
-                description="Bài học sẽ xuất hiện khi giáo trình được duyệt và phát hành. Bạn có thể xem các cấp HSK trong lộ trình."
+                title={
+                  d.totalLessons
+                    ? "Bạn đã hoàn thành các bài hiện có"
+                    : "Chưa có bài tiếp theo"
+                }
+                description={
+                  d.totalLessons
+                    ? "Bạn có thể mở lại bài học hoặc làm lại quiz từ lộ trình để ôn tập."
+                    : "Bài học sẽ xuất hiện khi có giáo trình được phát hành. Bạn có thể xem các cấp HSK trong lộ trình."
+                }
               />
             )}
           </CardContent>
@@ -184,6 +135,66 @@ export default async function Dashboard() {
             </Button>
           </CardContent>
         </Card>
+      </div>
+      {!d.profile && (
+        <div className="mb-6 mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-secondary p-5">
+          <div>
+            <p className="font-semibold">Bắt đầu bằng hồ sơ của bạn</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Chọn trình độ tự khai báo và mục tiêu học tập.
+            </p>
+          </div>
+          <Button asChild>
+            <Link href="/settings">
+              Thiết lập hồ sơ <ArrowRight />
+            </Link>
+          </Button>
+        </div>
+      )}
+      <div className="mt-6 grid grid-cols-2 gap-3 xl:grid-cols-4">
+        {[
+          {
+            label: "HSK hiện tại",
+            value: d.profile
+              ? `HSK ${d.profile.baseline_hsk_level}`
+              : "Chưa thiết lập",
+            note: "Trình độ tự khai báo",
+            icon: BookOpen,
+          },
+          {
+            label: "Mục tiêu của bạn",
+            value: d.profile
+              ? `HSK ${d.profile.target_hsk_level}`
+              : "Chưa thiết lập",
+            note: "Hành trình dài hạn",
+            icon: Target,
+          },
+          {
+            label: "Từ đã tiếp cận",
+            value: String(d.totalWords),
+            note: "Từ có thẻ đang được lưu",
+            icon: Layers,
+          },
+          {
+            label: "Thẻ đến hạn ôn",
+            value: String(d.dueCount),
+            note: "Theo lịch ôn trong database",
+            icon: Clock3,
+          },
+        ].map(({ label, value, note, icon: Icon }) => (
+          <Card key={label}>
+            <CardContent className="p-5">
+              <div className="flex items-center justify-between text-sm text-muted-foreground">
+                {label}
+                <Icon className="size-4 text-primary" aria-hidden="true" />
+              </div>
+              <p className="my-4 text-xl font-semibold tracking-tight sm:text-2xl">
+                {value}
+              </p>
+              <p className="text-xs text-muted-foreground">{note}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
       <Card className="mt-6">
         <CardHeader>

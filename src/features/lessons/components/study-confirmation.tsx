@@ -69,32 +69,11 @@ export function StudyConfirmation({
           </Badge>
           {pending && <p className="mt-3 text-sm">Đang xác nhận học…</p>}
         </div>
-        <dl className="space-y-3 text-xs leading-6">
-          <div>
-            <dt>Xác nhận học</dt>
-            <dd>{format(progress.studiedAt)}</dd>
-          </div>
-          <div>
-            <dt>Hoàn thành</dt>
-            <dd>{format(progress.completedAt)}</dd>
-          </div>
-        </dl>
         {!progress.completedAt && (
           <p className="text-sm leading-7">
-            Hoàn thành bài cần cả xác nhận học và quiz đạt ít nhất 80%. Chức
-            năng làm quiz phụ thuộc môi trường hiện tại.
+            Hoàn thành bài cần cả xác nhận học và quiz đạt ít nhất 80%.
           </p>
         )}
-        <a
-          href={`/lessons/${lessonId}/quiz`}
-          className="inline-flex min-h-11 items-center text-sm text-primary underline"
-        >
-          Mở mini quiz
-        </a>
-        <p className="text-xs leading-6 text-muted-foreground">
-          Xác nhận học là tự xác nhận; hoàn thành bài không đồng nghĩa với thành
-          thạo từ vựng hoặc thời gian học.
-        </p>
         {!enabled && (
           <p className="text-sm">
             Chức năng xác nhận học chưa được mở trong môi trường này.
@@ -120,10 +99,29 @@ export function StudyConfirmation({
             ? "Đang xử lý…"
             : result && !result.ok && result.error.retryable
               ? "Thử xác nhận lại an toàn"
-              : progress.studiedAt
-                ? "Xác nhận lại việc học"
-                : "Tôi đã học nội dung này"}
+              : progress.completedAt
+                ? "Bài học đã hoàn thành"
+                : progress.studiedAt
+                  ? "Xác nhận lại việc học"
+                  : "Tôi đã học nội dung này"}
         </Button>
+        <Button asChild variant="outline" className="min-h-11 w-full">
+          <a href={`/lessons/${lessonId}/quiz`}>Mở mini quiz</a>
+        </Button>
+        <dl className="grid grid-cols-2 gap-3 border-t border-border pt-4 text-xs leading-6">
+          <div>
+            <dt className="text-muted-foreground">Xác nhận học</dt>
+            <dd>{format(progress.studiedAt)}</dd>
+          </div>
+          <div>
+            <dt className="text-muted-foreground">Hoàn thành</dt>
+            <dd>{format(progress.completedAt)}</dd>
+          </div>
+        </dl>
+        <p className="text-xs leading-6 text-muted-foreground">
+          Hoàn thành bài không đồng nghĩa với thành thạo từ vựng hoặc thời gian
+          học.
+        </p>
         <Button
           variant="outline"
           className="min-h-11 w-full"

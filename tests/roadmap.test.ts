@@ -55,6 +55,30 @@ const progress: Progress[] = [
   },
 ];
 describe("roadmap contracts", () => {
+  it("distinguishes persisted study-only from completion without advancing the lesson", () => {
+    const studiedOnly: Progress[] = [
+      {
+        user_id: "a",
+        lesson_id: "first",
+        studied_at: "2026-01-01",
+        completed_at: null,
+      },
+    ];
+    const level = buildRoadmap(courses, units, lessons, studiedOnly)[0];
+    expect(level.units[0].lessons[0]).toMatchObject({
+      id: "first",
+      studied: true,
+      completed: false,
+    });
+    expect(level.units[0].lessons[1]).toMatchObject({
+      id: "second",
+      studied: false,
+      completed: false,
+    });
+    expect(level.completed).toBe(0);
+    expect(level.studied).toBe(1);
+    expect(nextLesson(courses, units, lessons, studiedOnly)?.id).toBe("first");
+  });
   it("keeps five roadmap levels without inventing content or percentages", () => {
     const result = buildRoadmap([], [], [], []);
     expect(result).toHaveLength(5);

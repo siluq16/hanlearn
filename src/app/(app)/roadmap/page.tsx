@@ -44,7 +44,7 @@ export default async function Roadmap() {
                         ? "Chưa có nội dung"
                         : l.completed === l.total
                           ? "Đã hoàn thành"
-                          : l.completed
+                          : l.completed || l.studied
                             ? "Đang học"
                             : "Sẵn sàng khám phá"}
                     </Badge>
@@ -96,12 +96,14 @@ export default async function Roadmap() {
                               className="shrink-0 text-primary"
                             />
                           )}
-                          <span className="flex-1 text-sm font-medium">
+                          <span className="min-w-0 flex-1 break-words text-sm font-medium leading-6">
                             {lesson.title}
                             <span className="mt-1 block text-xs font-normal text-muted-foreground">
                               {lesson.completed
                                 ? "Đã hoàn thành"
-                                : "Chưa hoàn thành"}
+                                : lesson.studied
+                                  ? "Đã xác nhận học · Chờ quiz đạt"
+                                  : "Chưa xác nhận học"}
                             </span>
                           </span>
                           <ChevronDown size={16} />

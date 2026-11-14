@@ -102,6 +102,14 @@ export default async function VocabularyPage({
             : "Chưa có syllabus được phát hành"}
         </span>
         {result.total > 0 && <span>20 từ mỗi trang</span>}
+        {(filters.q || filters.level) && result.items.length > 0 && (
+          <Link
+            href="/vocabulary"
+            className="inline-flex min-h-11 items-center text-primary underline"
+          >
+            Xóa bộ lọc
+          </Link>
+        )}
       </div>
       {result.items.length ? (
         <>
@@ -153,7 +161,9 @@ export default async function VocabularyPage({
         >
           {(filters.q || filters.level || filters.page > 1) && (
             <Button asChild variant="outline">
-              <Link href="/vocabulary">Xóa bộ lọc / về trang đầu</Link>
+              <Link href="/vocabulary">
+                {filters.q || filters.level ? "Xóa bộ lọc" : "Về trang đầu"}
+              </Link>
             </Button>
           )}
         </EmptyState>
@@ -161,13 +171,19 @@ export default async function VocabularyPage({
       {totalPages > 1 && (
         <nav
           aria-label="Phân trang từ vựng"
-          className="mt-6 flex flex-wrap items-center justify-between gap-3"
+          className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-2"
         >
           {filters.page > 1 ? (
-            <Button asChild variant="outline">
-              <Link href={pageUrl(filters.page - 1)}>
+            <Button
+              asChild
+              variant="outline"
+              className="justify-self-start px-3 sm:px-4"
+            >
+              <Link href={pageUrl(filters.page - 1)} aria-label="Trang trước">
                 <ArrowLeft />
-                Trang trước
+                <span>
+                  <span className="hidden sm:inline">Trang </span>trước
+                </span>
               </Link>
             </Button>
           ) : (
@@ -177,9 +193,15 @@ export default async function VocabularyPage({
             Trang {filters.page}/{totalPages}
           </span>
           {filters.page < totalPages ? (
-            <Button asChild variant="outline">
-              <Link href={pageUrl(filters.page + 1)}>
-                Trang sau
+            <Button
+              asChild
+              variant="outline"
+              className="justify-self-end px-3 sm:px-4"
+            >
+              <Link href={pageUrl(filters.page + 1)} aria-label="Trang sau">
+                <span>
+                  <span className="hidden sm:inline">Trang </span>sau
+                </span>
                 <ArrowRight />
               </Link>
             </Button>

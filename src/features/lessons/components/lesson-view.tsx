@@ -39,7 +39,7 @@ export function LessonView({
       <header className="mb-8 space-y-4">
         <Badge>HSK {course.hskLevel}</Badge>
         <p className="[overflow-wrap:anywhere] text-sm leading-7 text-muted-foreground">
-          {syllabus.title} · {course.title} · {unit.title}
+          {unit.title}
         </p>
         <h1
           id="lesson-title"
@@ -56,6 +56,25 @@ export function LessonView({
           <Clock3 size={16} aria-hidden="true" />
           Dự kiến {lesson.estimatedMinutes} phút
         </p>
+        {studyConfirmation && (
+          <nav
+            aria-label="Hành động bài học"
+            className="flex flex-wrap gap-2 pt-2"
+          >
+            <a
+              href="#lesson-progress"
+              className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-4 text-sm font-medium text-primary hover:bg-muted"
+            >
+              Tiến độ & xác nhận học
+            </a>
+            <a
+              href={`/lessons/${lesson.id}/quiz`}
+              className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            >
+              Làm mini quiz
+            </a>
+          </nav>
+        )}
       </header>
       <div className="grid min-w-0 gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(240px,300px)]">
         <LessonReader
@@ -63,7 +82,12 @@ export function LessonView({
           vocabulary={bundle.vocabulary}
           grammar={bundle.grammar}
         />
-        <aside className="min-w-0 space-y-5 lg:order-none">
+        <aside
+          id="lesson-progress"
+          tabIndex={-1}
+          aria-label="Tiến độ và nguồn bài học"
+          className="min-w-0 scroll-mt-32 space-y-5 outline-offset-4 lg:order-none"
+        >
           {studyConfirmation ?? (
             <Card>
               <CardContent className="space-y-4 p-5">

@@ -5,6 +5,9 @@ export function buildRoadmap(
   lessons: Lesson[],
   progress: Progress[],
 ) {
+  const studied = new Set(
+    progress.filter((p) => p.studied_at).map((p) => p.lesson_id),
+  );
   const completed = new Set(
     progress.filter((p) => p.completed_at).map((p) => p.lesson_id),
   );
@@ -33,9 +36,14 @@ export function buildRoadmap(
         lessons: levelLessons
           .filter((l) => l.unit_id === u.id)
           .sort((a, b) => a.sort_order - b.sort_order)
-          .map((l) => ({ ...l, completed: completed.has(l.id) })),
+          .map((l) => ({
+            ...l,
+            studied: studied.has(l.id),
+            completed: completed.has(l.id),
+          })),
       })),
       total: levelLessons.length,
+      studied: levelLessons.filter((l) => studied.has(l.id)).length,
       completed: done,
       percent: levelLessons.length ? (done / levelLessons.length) * 100 : null,
     };

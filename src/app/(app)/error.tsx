@@ -9,6 +9,9 @@ export default function ErrorPage({ reset }: { reset: () => void }) {
         nguyên.
       </p>
       <Button onClick={reset}>Thử lại</Button>
+      <Button asChild variant="outline" className="ml-3">
+        <a href="/roadmap">Về lộ trình</a>
+      </Button>
     </div>
   );
 }

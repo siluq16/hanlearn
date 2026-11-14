@@ -113,7 +113,9 @@ test("study confirmation is explicit, pending-safe, separate from completion and
   ).toBeVisible();
   await expect(page.getByText("Đã hoàn thành", { exact: true })).toHaveCount(0);
   await expect(
-    page.getByText(/Chức năng làm quiz phụ thuộc môi trường/),
+    page.getByText(
+      /Hoàn thành bài cần cả xác nhận học và quiz đạt ít nhất 80%/,
+    ),
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Mở mini quiz" }),

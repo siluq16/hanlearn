@@ -288,6 +288,27 @@ export function QuizPlayer({
               Kết quả không đồng nghĩa với thành thạo từ vựng. Giải thích đáp án
               chưa khả dụng.
             </p>
+            <Button
+              asChild
+              variant="outline"
+              className="min-h-11 w-full whitespace-normal sm:w-auto"
+            >
+              <a
+                href={
+                  view.progress.completedAt
+                    ? "/roadmap"
+                    : attempt.passed && !view.progress.studiedAt
+                      ? `/lessons/${view.lessonId}#lesson-progress`
+                      : `/lessons/${view.lessonId}`
+                }
+              >
+                {view.progress.completedAt
+                  ? "Tiếp tục lộ trình"
+                  : attempt.passed && !view.progress.studiedAt
+                    ? "Về bài học để xác nhận đã học"
+                    : "Ôn lại nội dung bài"}
+              </a>
+            </Button>
             <ul className="space-y-4">
               {view.questions.map((q, i) => {
                 const r = view.responses.find((x) => x.question_id === q.id);
@@ -457,8 +478,9 @@ export function QuizPlayer({
             {view.history.map((a) => (
               <li key={a.id}>
                 <a
-                  className="block min-h-11 rounded-xl border border-border p-3 text-sm leading-7 text-primary underline"
+                  className={`block min-h-11 rounded-xl border p-3 text-sm leading-7 text-primary ${a.id === attempt?.id ? "border-primary bg-secondary font-medium" : "border-border underline"}`}
                   href={`?attempt=${a.id}`}
+                  aria-current={a.id === attempt?.id ? "page" : undefined}
                 >
                   <time dateTime={a.startedAt}>
                     {new Intl.DateTimeFormat("vi-VN", {
