@@ -3,35 +3,35 @@
   "slug": "hsk1-lesson-23",
   "hsk_level": 1,
   "unit_id": "u-hsk1-05",
-  "title": "Bài 23: Phương hướng & Vị trí không gian (学校在前面)",
-  "objective_vi": "Làm chủ các từ chỉ phương vị và phương hướng (trên, dưới, trong, ngoài, bên cạnh, đông, tây, nam, bắc, phía trước, phía sau).",
+  "title": "Bài 23: Đại từ nhân xưng & Số nhiều (大家都是好朋友)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 23: Đại từ nhân xưng & Số nhiều (大家都是好朋友).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
-          "hanzi": "上",
-          "pinyin": "shàng",
-          "vi": "trên, lên"
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "vi": "mọi người, cả nhà"
         },
         {
-          "hanzi": "下",
-          "pinyin": "xià",
-          "vi": "dưới, xuống"
+          "hanzi": "您",
+          "pinyin": "nín",
+          "vi": "ngài, ông (kính ngữ)"
         },
         {
-          "hanzi": "里",
-          "pinyin": "lǐ",
-          "vi": "trong, bên trong"
+          "hanzi": "他",
+          "pinyin": "tā",
+          "vi": "anh ấy, cậu ấy"
         },
         {
-          "hanzi": "外",
-          "pinyin": "wài",
-          "vi": "ngoài, bên ngoài"
+          "hanzi": "她",
+          "pinyin": "tā",
+          "vi": "cô ấy, chị ấy"
         }
       ]
     },
@@ -40,79 +40,59 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
-          "simplified": "上",
-          "pinyin": "shàng",
-          "meaning_vi": "trên, lên"
+          "simplified": "大家",
+          "pinyin": "dàjiā",
+          "meaning_vi": "mọi người, cả nhà"
         },
         {
-          "simplified": "下",
-          "pinyin": "xià",
-          "meaning_vi": "dưới, xuống"
+          "simplified": "您",
+          "pinyin": "nín",
+          "meaning_vi": "ngài, ông (kính ngữ)"
         },
         {
-          "simplified": "里",
-          "pinyin": "lǐ",
-          "meaning_vi": "trong, bên trong"
+          "simplified": "他",
+          "pinyin": "tā",
+          "meaning_vi": "anh ấy, cậu ấy"
         },
         {
-          "simplified": "外",
-          "pinyin": "wài",
-          "meaning_vi": "ngoài, bên ngoài"
+          "simplified": "她",
+          "pinyin": "tā",
+          "meaning_vi": "cô ấy, chị ấy"
         },
         {
-          "simplified": "旁",
-          "pinyin": "",
-          "meaning_vi": "bên, cạnh"
+          "simplified": "它",
+          "pinyin": "tā",
+          "meaning_vi": "nó (chỉ vật/con vật)"
         },
         {
-          "simplified": "旁边",
-          "pinyin": "",
-          "meaning_vi": "bên cạnh"
+          "simplified": "他们",
+          "pinyin": "tāmen",
+          "meaning_vi": "họ, các anh ấy"
         },
         {
-          "simplified": "边",
-          "pinyin": "biān",
-          "meaning_vi": "phía, bên"
+          "simplified": "她们",
+          "pinyin": "tāmen",
+          "meaning_vi": "họ, các cô ấy"
         },
         {
-          "simplified": "东",
-          "pinyin": "",
-          "meaning_vi": "đông (hướng đông)"
+          "simplified": "它们",
+          "pinyin": "tāmen",
+          "meaning_vi": "chúng nó"
         },
         {
-          "simplified": "西",
-          "pinyin": "",
-          "meaning_vi": "tây (hướng tây)"
+          "simplified": "我们",
+          "pinyin": "wǒmen",
+          "meaning_vi": "chúng tôi, chúng ta"
         },
         {
-          "simplified": "南",
-          "pinyin": "",
-          "meaning_vi": "nam (hướng nam)"
+          "simplified": "你们",
+          "pinyin": "nǐmen",
+          "meaning_vi": "các bạn"
         },
         {
-          "simplified": "北",
-          "pinyin": "",
-          "meaning_vi": "bắc (hướng bắc)"
-        },
-        {
-          "simplified": "前边",
-          "pinyin": "",
-          "meaning_vi": "phía trước"
-        },
-        {
-          "simplified": "后边",
-          "pinyin": "",
-          "meaning_vi": "phía sau"
-        },
-        {
-          "simplified": "里边",
-          "pinyin": "",
-          "meaning_vi": "bên trong"
-        },
-        {
-          "simplified": "外边",
-          "pinyin": "wàibian",
-          "meaning_vi": "bên ngoài"
+          "simplified": "们",
+          "pinyin": "men",
+          "meaning_vi": "các, chúng (hậu tố)"
         }
       ]
     },
@@ -123,44 +103,54 @@
         {
           "id": "ex-v-23-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'trên, lên'?",
-          "pinyin_prompt": "",
-          "correct_answer": "上",
+          "prompt": "Từ nào có nghĩa là: 'mọi người, cả nhà'?",
+          "correct_answer": "大家",
           "options": [
-            "上",
-            "下",
-            "里",
-            "没有"
+            "大家",
+            "您",
+            "对不起",
+            "再见"
           ],
-          "explanation": "上 (shàng) mang nghĩa là 'trên, lên'."
+          "explanation": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
         },
         {
           "id": "ex-v-23-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '下' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "xià",
+          "prompt": "Pinyin chuẩn xác của từ '您' là gì?",
+          "correct_answer": "nín",
           "options": [
-            "xià",
-            "shàng",
+            "nín",
+            "dàjiā",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 下 phát âm chuẩn là xià."
+          "explanation": "Từ '您' đọc chuẩn là nín."
         },
         {
           "id": "ex-v-23-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
-          "correct_answer": "上",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 23:",
+          "correct_answer": "大家",
           "options": [
-            "上",
-            "衣服",
+            "大家",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '上' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '大家' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-23-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Đại từ chỉ 'các bạn' và 'họ (toàn nữ)' là:",
+          "correct_answer": "你们、她们",
+          "options": [
+            "你们、她们",
+            "我们、他们",
+            "大家、它们",
+            "您、他们"
+          ],
+          "explanation": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
         }
       ]
     },
@@ -170,32 +160,27 @@
       "grammar_points": [
         {
           "id": "g-23-01",
-          "titleVi": "Cấu trúc định vị với 在 và Từ chỉ phương vị",
-          "pattern": "Vật / Người + 在 + Địa điểm + (的) + Phương vị từ",
-          "explanationVi": "Diễn đạt vị trí tương quan trong không gian.",
+          "titleVi": "Hậu tố số nhiều 们",
+          "pattern": "Đại từ/Danh từ + 们",
+          "explanationVi": "Chỉ số nhiều cho người/vật.",
           "examples": [
             {
-              "hanzi": "小猫在桌子下面。",
-              "pinyin": "Xiǎo māo zài zhuōzi xiàmiàn.",
-              "translationVi": "Chú mèo con ở dưới gầm bàn."
-            },
-            {
-              "hanzi": "商店在学校的前边。",
-              "pinyin": "Shāngdiàn zài xuéxiào de qiánbiān.",
-              "translationVi": "Cửa hàng ở phía trước trường học."
+              "hanzi": "我们都是大学生。",
+              "pinyin": "Wǒmen dōu shì dàxuéshēng.",
+              "translationVi": "Chúng tôi đều là sinh viên."
             }
           ]
         },
         {
           "id": "g-23-02",
-          "titleVi": "Bốn phương hướng chính: 东南西北",
-          "pattern": "Phía Đông (东边), Phía Tây (西边), Phía Nam (南边), Phía Bắc (北边)",
-          "explanationVi": "Chỉ các hướng địa lý cơ bản.",
+          "titleVi": "Đại từ chỉ vật 它 / 它们",
+          "pattern": "它 (nó) / 它们 (chúng nó)",
+          "explanationVi": "Dùng cho động vật hoặc đồ vật.",
           "examples": [
             {
-              "hanzi": "火车站就在医院的东边。",
-              "pinyin": "Huǒchēzhàn jiù zài yīyuàn de dōngbiān.",
-              "translationVi": "Ga tàu hỏa nằm ngay phía đông của bệnh viện."
+              "hanzi": "我家有两只猫，它们很喜欢在桌子下睡觉。",
+              "pinyin": "Wǒ jiā yǒu liǎng zhī māo, tāmen hěn xǐhuan zài zhuōzi xià shuìjiào.",
+              "translationVi": "Nhà tôi có 2 con mèo, chúng thích ngủ dưới bàn."
             }
           ]
         }
@@ -208,27 +193,25 @@
         {
           "id": "ex-g-23-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "小猫在桌子下面。",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "我们都是大学生。",
           "options": [
-            "小猫在桌子下面。"
+            "我们都是大学生。"
           ],
-          "explanation": "Cấu trúc đúng: Vật / Người + 在 + Địa điểm + (的) + Phương vị từ."
+          "explanation": "Cấu trúc đúng: Đại từ/Danh từ + 们."
         },
         {
           "id": "ex-g-23-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Vật / Người + 在 + Địa điểm + (的) + Phương vị từ",
-          "pinyin_prompt": "",
-          "correct_answer": "Cấu trúc định vị với 在 và Từ chỉ phương vị",
+          "prompt": "Chọn cấu trúc chuẩn xác: Đại từ/Danh từ + 们",
+          "correct_answer": "Hậu tố số nhiều 们",
           "options": [
-            "Cấu trúc định vị với 在 và Từ chỉ phương vị",
+            "Hậu tố số nhiều 们",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Cấu trúc định vị với 在 và Từ chỉ phương vị."
+          "explanation": "Đây là cấu trúc: Hậu tố số nhiều 们."
         }
       ]
     },
@@ -237,31 +220,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-23",
-        "titleVi": "Hỏi vị trí phòng học",
+        "titleVi": "Cả lớp chúng mình",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "请问，图书馆在什么地方？",
-            "pinyin": "Qǐngwèn, túshūguǎn zài shénme dìfang?",
-            "vi": "Xin hỏi, thư viện ở chỗ nào ạ?"
+            "hanzi": "大家早上好！他们都来了吗？",
+            "pinyin": "Dàjiā zǎoshang hǎo! Tāmen dōu lái le ma?",
+            "vi": "Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?"
           },
           {
             "speaker": "B",
-            "hanzi": "图书馆在教学楼的后边，旁边是一个大操场。",
-            "pinyin": "Túshūguǎn zài jiàoxuélóu de hòubiān, pángbiān shì yí gè dà cāochǎng.",
-            "vi": "Thư viện ở phía sau tòa nhà học đường, bên cạnh là một sân tập lớn."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "洗手间在楼里边还是外边？",
-            "pinyin": "Xǐshǒujiān zài lóu lǐbiān háishi wàibiān?",
-            "vi": "Nhà vệ sinh ở bên trong tòa nhà hay ở bên ngoài?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "在一楼里边，左边就是。",
-            "pinyin": "Zài yī lóu lǐbiān, zuǒbiān jiù shì.",
-            "vi": "Ở bên trong tầng một, phía bên trái là thấy ngay."
+            "hanzi": "我们都来了，老师您请坐！",
+            "pinyin": "Wǒmen dōu lái le, lǎoshī nín qǐng zuò!",
+            "vi": "Chúng em đều đến rồi, mời thầy ngồi ạ!"
           }
         ]
       },
@@ -269,16 +240,15 @@
         {
           "id": "ex-d-23-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "请问，图书馆在什么地方？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "大家早上好！他们都来了吗？",
           "options": [
-            "请问，图书馆在什么地方？",
-            "你好吗？",
+            "大家早上好！他们都来了吗？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '请问，图书馆在什么地方？' (Xin hỏi, thư viện ở chỗ nào ạ?)."
+          "explanation": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
         }
       ]
     },
@@ -289,28 +259,28 @@
         {
           "id": "ex-ls-23-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 23:",
-          "audio_target": "图书馆在教学楼的后边，旁边是一个大操场。",
-          "correct_answer": "图书馆在教学楼的后边，旁边是一个大操场。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 23:",
+          "audio_target": "我们都来了，老师您请坐！",
+          "correct_answer": "我们都来了，老师您请坐！",
           "options": [
-            "图书馆在教学楼的后边，旁边是一个大操场。",
+            "我们都来了，老师您请坐！",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '图书馆在教学楼的后边，旁边是一个大操场。'."
+          "explanation": "Câu nghe được là: '我们都来了，老师您请坐！'."
         },
         {
           "id": "ex-ls-23-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "请问，图书馆在什么地方？",
-          "pinyin_target": "Qǐngwèn, túshūguǎn zài shénme dìfang?",
-          "correct_answer": "请问，图书馆在什么地方？",
+          "speech_target": "大家早上好！他们都来了吗？",
+          "pinyin_target": "Dàjiā zǎoshang hǎo! Tāmen dōu lái le ma?",
+          "correct_answer": "大家早上好！他们都来了吗？",
           "options": [
-            "请问，图书馆在什么地方？"
+            "大家早上好！他们都来了吗？"
           ],
-          "explanation": "Phát âm to rõ ràng: '请问，图书馆在什么地方？'."
+          "explanation": "Phát âm to rõ ràng: '大家早上好！他们都来了吗？'."
         }
       ]
     },
@@ -318,34 +288,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Ngôi nhà của tôi",
-        "text": "我家前面有一个大花园，花园里有红色的花。房子后面是一座小山。房子旁边住着我的好朋友。我们每天都在外边一起玩儿。",
-        "translationVi": "Phía trước nhà tôi có một khu vườn lớn, trong vườn có hoa màu đỏ. Phía sau nhà là một ngọn đồi nhỏ. Bên cạnh nhà là nơi ở của người bạn thân của tôi. Chúng tôi ngày nào cũng chơi đùa cùng nhau ở bên ngoài."
+        "title": "Lớp học của chúng tôi",
+        "text": "我们班有二十个学生。他们来自不同国家。老师对大家都很关心，我们也非常爱老师。",
+        "translationVi": "Lớp chúng tôi có 20 học sinh."
       },
       "exercises": [
         {
           "id": "ex-r-23-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 23 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Ngôi nhà của tôi'."
-        },
-        {
-          "id": "ex-r-23-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Phía trước nhà tôi có một khu vườn lớn, ...",
-          "options": [
-            "Phía trước nhà tôi có một khu vườn lớn, ...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Phía trước nhà tôi có một khu vườn lớn, trong vườn có hoa màu đỏ. Phía sau nhà là một ngọn đồi nhỏ. Bên cạnh nhà là nơi ở của người bạn thân của tôi. Chúng tôi ngày nào cũng chơi đùa cùng nhau ở bên ngoài.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Lớp học của chúng tôi."
         }
       ]
     },

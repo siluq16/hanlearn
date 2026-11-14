@@ -1,0 +1,312 @@
+{
+  "id": "l-hsk1-030",
+  "slug": "hsk1-lesson-30",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-06",
+  "title": "Bài 30: Tâm lý & Động từ năng nguyện (我爱学中文，希望去中国)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 30: Tâm lý & Động từ năng nguyện (我爱学中文，希望去中国).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
+      "warmup_words": [
+        {
+          "hanzi": "爱",
+          "pinyin": "ài",
+          "vi": "yêu, thích"
+        },
+        {
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "vi": "thích"
+        },
+        {
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "vi": "cảm thấy, cho rằng"
+        },
+        {
+          "hanzi": "知道",
+          "pinyin": "zhīdào",
+          "vi": "biết"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "爱",
+          "pinyin": "ài",
+          "meaning_vi": "yêu, thích"
+        },
+        {
+          "simplified": "喜欢",
+          "pinyin": "xǐhuan",
+          "meaning_vi": "thích"
+        },
+        {
+          "simplified": "觉得",
+          "pinyin": "juéde",
+          "meaning_vi": "cảm thấy, cho rằng"
+        },
+        {
+          "simplified": "知道",
+          "pinyin": "zhīdào",
+          "meaning_vi": "biết"
+        },
+        {
+          "simplified": "想",
+          "pinyin": "xiǎng",
+          "meaning_vi": "muốn, nghĩ, nhớ"
+        },
+        {
+          "simplified": "希望",
+          "pinyin": "xīwàng",
+          "meaning_vi": "hy vọng"
+        },
+        {
+          "simplified": "可以",
+          "pinyin": "kěyǐ",
+          "meaning_vi": "có thể (được phép)"
+        },
+        {
+          "simplified": "能",
+          "pinyin": "néng",
+          "meaning_vi": "có thể (năng lực)"
+        },
+        {
+          "simplified": "会",
+          "pinyin": "huì",
+          "meaning_vi": "biết (kỹ năng), sẽ"
+        },
+        {
+          "simplified": "要",
+          "pinyin": "yào",
+          "meaning_vi": "muốn, cần, phải"
+        },
+        {
+          "simplified": "给",
+          "pinyin": "gěi",
+          "meaning_vi": "cho, gửi cho"
+        },
+        {
+          "simplified": "找",
+          "pinyin": "zhǎo",
+          "meaning_vi": "tìm kiếm, thối tiền"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-30-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'yêu, thích'?",
+          "correct_answer": "爱",
+          "options": [
+            "爱",
+            "喜欢",
+            "对不起",
+            "再见"
+          ],
+          "explanation": "爱 (ài) mang nghĩa là 'yêu, thích'."
+        },
+        {
+          "id": "ex-v-30-02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin chuẩn xác của từ '喜欢' là gì?",
+          "correct_answer": "xǐhuan",
+          "options": [
+            "xǐhuan",
+            "ài",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ '喜欢' đọc chuẩn là xǐhuan."
+        },
+        {
+          "id": "ex-v-30-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 30:",
+          "correct_answer": "爱",
+          "options": [
+            "爱",
+            "学校",
+            "医院",
+            "睡觉"
+          ],
+          "explanation": "Từ '爱' là đáp án phù hợp nhất."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-30-01",
+          "titleVi": "Động từ năng nguyện 会, 能, 可以",
+          "pattern": "Chủ ngữ + 会/能/可以 + Động từ",
+          "explanationVi": "会 (biết kỹ năng), 能 (có khả năng), 可以 (được phép).",
+          "examples": [
+            {
+              "hanzi": "我会说一点儿汉语。",
+              "pinyin": "Wǒ huì shuō yìdiǎnr hànyǔ.",
+              "translationVi": "Tôi biết nói một chút tiếng Hán."
+            }
+          ]
+        },
+        {
+          "id": "g-30-02",
+          "titleVi": "Động từ tâm lý 觉得, 知道, 希望",
+          "pattern": "Chủ ngữ + 觉得/知道/希望 + Mệnh đề",
+          "explanationVi": "Biểu thị nhận thức cảm xúc.",
+          "examples": [
+            {
+              "hanzi": "我觉得学中文很有意思。",
+              "pinyin": "Wǒ juéde xué zhōngwén hěn yǒu yìsi.",
+              "translationVi": "Tôi cảm thấy học tiếng Trung rất thú vị."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-30-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "我会说一点儿汉语。",
+          "options": [
+            "我会说一点儿汉语。"
+          ],
+          "explanation": "Cấu trúc đúng: Chủ ngữ + 会/能/可以 + Động từ."
+        },
+        {
+          "id": "ex-g-30-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc chuẩn xác: Chủ ngữ + 会/能/可以 + Động từ",
+          "correct_answer": "Động từ năng nguyện 会, 能, 可以",
+          "options": [
+            "Động từ năng nguyện 会, 能, 可以",
+            "Câu chữ 把",
+            "Câu chữ 被",
+            "So sánh hơn 比"
+          ],
+          "explanation": "Đây là cấu trúc: Động từ năng nguyện 会, 能, 可以."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-30",
+        "titleVi": "Chia sẻ ước mơ",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你希望去中国留学吗？",
+            "pinyin": "Nǐ xīwàng qù Zhōngguó liúxué ma?",
+            "vi": "Bạn có hy vọng đi du học Trung Quốc không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我非常希望！我爱中国文化，想去北京大学读书。",
+            "pinyin": "Wǒ fēicháng xīwàng! Wǒ ài Zhōngguó wénhuà, xiǎng qù Běijīng Dàxué dúshū.",
+            "vi": "Mình rất hy vọng! Mình yêu văn hóa Trung Hoa, muốn đến Đại học Bắc Kinh học."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-30-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "你希望去中国留学吗？",
+          "options": [
+            "你希望去中国留学吗？",
+            "你好！",
+            "再见！",
+            "我是学生。"
+          ],
+          "explanation": "Lời thoại của A: '你希望去中国留学吗？' (Bạn có hy vọng đi du học Trung Quốc không?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-30-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 30:",
+          "audio_target": "我非常希望！我爱中国文化，想去北京大学读书。",
+          "correct_answer": "我非常希望！我爱中国文化，想去北京大学读书。",
+          "options": [
+            "我非常希望！我爱中国文化，想去北京大学读书。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '我非常希望！我爱中国文化，想去北京大学读书。'."
+        },
+        {
+          "id": "ex-ls-30-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你希望去中国留学吗？",
+          "pinyin_target": "Nǐ xīwàng qù Zhōngguó liúxué ma?",
+          "correct_answer": "你希望去中国留学吗？",
+          "options": [
+            "你希望去中国留学吗？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你希望去中国留学吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Ước mơ học tiếng Trung",
+        "text": "我们大家都喜欢学汉语。大卫知道很多汉字，他希望明年能去中国旅行。老师找来很多中文书给大家看。",
+        "translationVi": "Tất cả chúng tôi đều thích học tiếng Trung."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-30-01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 30 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Ước mơ học tiếng Trung."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-30"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

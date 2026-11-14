@@ -3,35 +3,35 @@
   "slug": "hsk1-lesson-24",
   "hsk_level": 1,
   "unit_id": "u-hsk1-05",
-  "title": "Bài 24: Số đếm lớn, Số thứ tự & Lượng từ (几只小狗与几岁)",
-  "objective_vi": "Nắm vững số đếm lớn (trăm, nghìn, vạn), số 0, phân số (một nửa), tiền tố số thứ tự 第, lượng từ chỉ số lượng (những, một ít, một lát).",
+  "title": "Bài 24: Đại từ chỉ định & Nghi vấn (这个、那些与哪里)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 24: Đại từ chỉ định & Nghi vấn (这个、那些与哪里).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
-          "hanzi": "零",
-          "pinyin": "líng",
-          "vi": "số không (0)"
+          "hanzi": "这",
+          "pinyin": "zhè",
+          "vi": "đây, này"
         },
         {
-          "hanzi": "八",
-          "pinyin": "bā",
-          "vi": "tám (8)"
+          "hanzi": "这个",
+          "pinyin": "zhè ge",
+          "vi": "cái này"
         },
         {
-          "hanzi": "九",
-          "pinyin": "jiǔ",
-          "vi": "chín (9)"
+          "hanzi": "这些",
+          "pinyin": "zhèxiē",
+          "vi": "những cái này"
         },
         {
-          "hanzi": "十",
-          "pinyin": "shí",
-          "vi": "mười (10)"
+          "hanzi": "这儿",
+          "pinyin": "zhèr",
+          "vi": "ở đây, chỗ này"
         }
       ]
     },
@@ -40,114 +40,74 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
-          "simplified": "零",
-          "pinyin": "líng",
-          "meaning_vi": "số không (0)"
+          "simplified": "这",
+          "pinyin": "zhè",
+          "meaning_vi": "đây, này"
         },
         {
-          "simplified": "八",
-          "pinyin": "bā",
-          "meaning_vi": "tám (8)"
+          "simplified": "这个",
+          "pinyin": "zhè ge",
+          "meaning_vi": "cái này"
         },
         {
-          "simplified": "九",
-          "pinyin": "jiǔ",
-          "meaning_vi": "chín (9)"
+          "simplified": "这些",
+          "pinyin": "zhèxiē",
+          "meaning_vi": "những cái này"
         },
         {
-          "simplified": "十",
-          "pinyin": "shí",
-          "meaning_vi": "mười (10)"
+          "simplified": "这儿",
+          "pinyin": "zhèr",
+          "meaning_vi": "ở đây, chỗ này"
         },
         {
-          "simplified": "百",
-          "pinyin": "bǎi",
-          "meaning_vi": "trăm (100)"
+          "simplified": "这里",
+          "pinyin": "zhèlǐ",
+          "meaning_vi": "ở đây, nơi này"
         },
         {
-          "simplified": "千",
-          "pinyin": "qiān",
-          "meaning_vi": "nghìn (1.000)"
+          "simplified": "那",
+          "pinyin": "nà",
+          "meaning_vi": "kia, đó"
         },
         {
-          "simplified": "万",
-          "pinyin": "",
-          "meaning_vi": "mười nghìn (vạn, 10.000)"
+          "simplified": "那个",
+          "pinyin": "nà ge",
+          "meaning_vi": "cái kia"
         },
         {
-          "simplified": "两",
-          "pinyin": "",
-          "meaning_vi": "hai (dùng trước lượng từ)"
+          "simplified": "那些",
+          "pinyin": "nàxiē",
+          "meaning_vi": "những cái kia"
         },
         {
-          "simplified": "半",
-          "pinyin": "bàn",
-          "meaning_vi": "nửa, rưỡi"
+          "simplified": "那儿",
+          "pinyin": "nàr",
+          "meaning_vi": "chỗ kia, đằng kia"
         },
         {
-          "simplified": "一半",
-          "pinyin": "yíbàn",
-          "meaning_vi": "một nửa"
+          "simplified": "那里",
+          "pinyin": "nàlǐ",
+          "meaning_vi": "ở đó, nơi đó"
         },
         {
-          "simplified": "些",
-          "pinyin": "xiē",
-          "meaning_vi": "một vài, vài"
+          "simplified": "哪",
+          "pinyin": "nǎ",
+          "meaning_vi": "nào"
         },
         {
-          "simplified": "一些",
-          "pinyin": "yìxiē",
-          "meaning_vi": "một số, một ít"
+          "simplified": "哪个",
+          "pinyin": "nǎ ge",
+          "meaning_vi": "cái nào"
         },
         {
-          "simplified": "有些",
-          "pinyin": "yǒuxiē",
-          "meaning_vi": "có một số, có phần"
+          "simplified": "哪里",
+          "pinyin": "nǎlǐ",
+          "meaning_vi": "ở đâu"
         },
         {
-          "simplified": "有的",
-          "pinyin": "yǒude",
-          "meaning_vi": "có người, có thứ"
-        },
-        {
-          "simplified": "几",
-          "pinyin": "",
-          "meaning_vi": "mấy, vài"
-        },
-        {
-          "simplified": "只",
-          "pinyin": "zhī",
-          "meaning_vi": "con (lượng từ động vật), chỉ"
-        },
-        {
-          "simplified": "岁",
-          "pinyin": "suì",
-          "meaning_vi": "tuổi"
-        },
-        {
-          "simplified": "第",
-          "pinyin": "dì",
-          "meaning_vi": "thứ (tiền tố số thứ tự)"
-        },
-        {
-          "simplified": "多",
-          "pinyin": "duō",
-          "meaning_vi": "nhiều"
-        },
-        {
-          "simplified": "少",
-          "pinyin": "shǎo",
-          "meaning_vi": "ít"
-        },
-        {
-          "simplified": "一点儿",
-          "pinyin": "yìdiǎnr",
-          "meaning_vi": "một chút, một ít"
-        },
-        {
-          "simplified": "一下",
-          "pinyin": "yíxià",
-          "meaning_vi": "một lát, một chút (thử làm)"
+          "simplified": "哪些",
+          "pinyin": "nǎxiē",
+          "meaning_vi": "những cái nào"
         }
       ]
     },
@@ -158,44 +118,54 @@
         {
           "id": "ex-v-24-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'số không (0)'?",
-          "pinyin_prompt": "",
-          "correct_answer": "零",
+          "prompt": "Từ nào có nghĩa là: 'đây, này'?",
+          "correct_answer": "这",
           "options": [
-            "零",
-            "八",
-            "九",
-            "没有"
+            "这",
+            "这个",
+            "对不起",
+            "再见"
           ],
-          "explanation": "零 (líng) mang nghĩa là 'số không (0)'."
+          "explanation": "这 (zhè) mang nghĩa là 'đây, này'."
         },
         {
           "id": "ex-v-24-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '八' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "bā",
+          "prompt": "Pinyin chuẩn xác của từ '这个' là gì?",
+          "correct_answer": "zhè ge",
           "options": [
-            "bā",
-            "líng",
+            "zhè ge",
+            "zhè",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 八 phát âm chuẩn là bā."
+          "explanation": "Từ '这个' đọc chuẩn là zhè ge."
         },
         {
           "id": "ex-v-24-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
-          "correct_answer": "零",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 24:",
+          "correct_answer": "这",
           "options": [
-            "零",
-            "衣服",
+            "这",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '零' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '这' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-24-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Các từ 'những... nào', 'chỗ này', 'cái kia' lần lượt là:",
+          "correct_answer": "哪些、这儿、那个",
+          "options": [
+            "哪些、这儿、那个",
+            "这些、那儿、这个",
+            "那些、哪儿、哪个",
+            "有的、这里、那个"
+          ],
+          "explanation": "'哪些' (những cái nào), '这儿' (ở đây, chỗ này), '那个' (cái kia)."
         }
       ]
     },
@@ -205,32 +175,27 @@
       "grammar_points": [
         {
           "id": "g-24-01",
-          "titleVi": "Tiền tố số thứ tự 第",
-          "pattern": "第 + Số từ (+ Lượng từ)",
-          "explanationVi": "Dùng để tạo thành số thứ tự (thứ nhất, thứ hai, bài thứ ba...).",
+          "titleVi": "Đại từ chỉ định gần 这 và xa 那",
+          "pattern": "这/那 + (Lượng từ) + Danh từ",
+          "explanationVi": "Chỉ định sự vật cự ly gần hoặc xa.",
           "examples": [
             {
-              "hanzi": "这是我第一次来北京。",
-              "pinyin": "Zhè shì wǒ dì-yī cì lái Běijīng.",
-              "translationVi": "Đây là lần đầu tiên tôi đến Bắc Kinh."
+              "hanzi": "这本书是我的，那些本子是他的。",
+              "pinyin": "Zhè běn shū shì wǒ de, nàxiē běnzi shì tā de.",
+              "translationVi": "Cuốn sách này của tôi, những cuốn vở kia của cậu ấy."
             }
           ]
         },
         {
           "id": "g-24-02",
-          "titleVi": "Phân biệt 一点儿 và 一下",
-          "pattern": "Tính từ / Động từ + 一点儿 (một chút) vs Động từ + 一下 (thử làm một lát)",
-          "explanationVi": "一点儿 chỉ số lượng ít hoặc mức độ nhẹ; 一下 đặt sau động từ chỉ hành động diễn ra nhanh chóng hoặc mang sắc thái nhẹ nhàng.",
+          "titleVi": "Đại từ nghi vấn 哪 và 哪里",
+          "pattern": "哪 + Lượng từ？ / 在哪里？",
+          "explanationVi": "Dùng để hỏi cái nào hoặc ở đâu.",
           "examples": [
             {
-              "hanzi": "请你等我一下。",
-              "pinyin": "Qǐng nǐ děng wǒ yíxià.",
-              "translationVi": "Xin bạn đợi tôi một lát."
-            },
-            {
-              "hanzi": "我只想喝一点儿水。",
-              "pinyin": "Wǒ zhǐ xiǎng hē yìdiǎnr shuǐ.",
-              "translationVi": "Tôi chỉ muốn uống một chút nước."
+              "hanzi": "你要买哪个苹果？",
+              "pinyin": "Nǐ yào mǎi nǎge píngguǒ?",
+              "translationVi": "Bạn muốn mua quả táo nào?"
             }
           ]
         }
@@ -243,27 +208,25 @@
         {
           "id": "ex-g-24-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "这是我第一次来北京。",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "这本书是我的，那些本子是他的。",
           "options": [
-            "这是我第一次来北京。"
+            "这本书是我的，那些本子是他的。"
           ],
-          "explanation": "Cấu trúc đúng: 第 + Số từ (+ Lượng từ)."
+          "explanation": "Cấu trúc đúng: 这/那 + (Lượng từ) + Danh từ."
         },
         {
           "id": "ex-g-24-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 第 + Số từ (+ Lượng từ)",
-          "pinyin_prompt": "",
-          "correct_answer": "Tiền tố số thứ tự 第",
+          "prompt": "Chọn cấu trúc chuẩn xác: 这/那 + (Lượng từ) + Danh từ",
+          "correct_answer": "Đại từ chỉ định gần 这 và xa 那",
           "options": [
-            "Tiền tố số thứ tự 第",
+            "Đại từ chỉ định gần 这 và xa 那",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Tiền tố số thứ tự 第."
+          "explanation": "Đây là cấu trúc: Đại từ chỉ định gần 这 và xa 那."
         }
       ]
     },
@@ -272,31 +235,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-24",
-        "titleVi": "Hỏi giá và số lượng",
+        "titleVi": "Hỏi mua đồ",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "这台电脑多少钱？",
-            "pinyin": "Zhè tái diànnǎo duōshao qián?",
-            "vi": "Chiếc máy tính này bao nhiêu tiền?"
+            "hanzi": "请问，哪里有卖中文书的？",
+            "pinyin": "Qǐngwèn, nǎlǐ yǒu mài zhōngwén shū de?",
+            "vi": "Xin hỏi, ở đâu có bán sách tiếng Trung?"
           },
           {
             "speaker": "B",
-            "hanzi": "三千五百块。",
-            "pinyin": "Sānqiān wǔbǎi kuài.",
-            "vi": "Ba nghìn năm trăm tệ."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "太贵了，可以少一点儿吗？",
-            "pinyin": "Tài guì le, kěyǐ shǎo yìdiǎnr ma?",
-            "vi": "Đắt quá, có thể bớt một chút được không?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "你可以看这台，只要两千块。",
-            "pinyin": "Nǐ kěyǐ kàn zhè tái, zhǐ yào liǎngqiān kuài.",
-            "vi": "Bạn có thể xem chiếc này, chỉ hai nghìn tệ thôi."
+            "hanzi": "那儿有一家小书店，那些书都在那里。",
+            "pinyin": "Nàr yǒu yì jiā xiǎo shūdiàn, nàxiē shū dōu zài nàlǐ.",
+            "vi": "Đằng kia có một hiệu sách nhỏ, những cuốn sách đó đều ở nơi đó."
           }
         ]
       },
@@ -304,16 +255,15 @@
         {
           "id": "ex-d-24-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "这台电脑多少钱？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "请问，哪里有卖中文书的？",
           "options": [
-            "这台电脑多少钱？",
-            "你好吗？",
+            "请问，哪里有卖中文书的？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '这台电脑多少钱？' (Chiếc máy tính này bao nhiêu tiền?)."
+          "explanation": "Lời thoại của A: '请问，哪里有卖中文书的？' (Xin hỏi, ở đâu có bán sách tiếng Trung?)."
         }
       ]
     },
@@ -324,28 +274,28 @@
         {
           "id": "ex-ls-24-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 24:",
-          "audio_target": "三千五百块。",
-          "correct_answer": "三千五百块。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 24:",
+          "audio_target": "那儿有一家小书店，那些书都在那里。",
+          "correct_answer": "那儿有一家小书店，那些书都在那里。",
           "options": [
-            "三千五百块。",
+            "那儿有一家小书店，那些书都在那里。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '三千五百块。'."
+          "explanation": "Câu nghe được là: '那儿有一家小书店，那些书都在那里。'."
         },
         {
           "id": "ex-ls-24-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "这台电脑多少钱？",
-          "pinyin_target": "Zhè tái diànnǎo duōshao qián?",
-          "correct_answer": "这台电脑多少钱？",
+          "speech_target": "请问，哪里有卖中文书的？",
+          "pinyin_target": "Qǐngwèn, nǎlǐ yǒu mài zhōngwén shū de?",
+          "correct_answer": "请问，哪里有卖中文书的？",
           "options": [
-            "这台电脑多少钱？"
+            "请问，哪里有卖中文书的？"
           ],
-          "explanation": "Phát âm to rõ ràng: '这台电脑多少钱？'."
+          "explanation": "Phát âm to rõ ràng: '请问，哪里有卖中文书的？'."
         }
       ]
     },
@@ -353,34 +303,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Đàn thú cưng đáng yêu",
-        "text": "王爷爷家里有九只小猫和两只狗。大狗已经五岁了，小狗才一岁半。有些小猫是白色的，有些是黑色的。老爷爷每天给它们很多好吃的，非常爱它们。",
-        "translationVi": "Nhà ông Vương có chín con mèo con và hai con chó. Chú chó lớn đã năm tuổi rồi, chú chó nhỏ mới một tuổi rưỡi. Có vài chú mèo con màu trắng, có vài chú màu đen. Ông cụ ngày nào cũng cho chúng nhiều đồ ăn ngon, rất yêu quý chúng."
+        "title": "Đồ dùng trong phòng",
+        "text": "这个房间很大。这里的桌子很新。那些书是王老师的，这些笔是我的。",
+        "translationVi": "Căn phòng này rất rộng."
       },
       "exercises": [
         {
           "id": "ex-r-24-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 24 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Đàn thú cưng đáng yêu'."
-        },
-        {
-          "id": "ex-r-24-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Nhà ông Vương có chín con mèo con và hai...",
-          "options": [
-            "Nhà ông Vương có chín con mèo con và hai...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Nhà ông Vương có chín con mèo con và hai con chó. Chú chó lớn đã năm tuổi rồi, chú chó nhỏ mới một tuổi rưỡi. Có vài chú mèo con màu trắng, có vài chú màu đen. Ông cụ ngày nào cũng cho chúng nhiều đồ ăn ngon, rất yêu quý chúng.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Đồ dùng trong phòng."
         }
       ]
     },

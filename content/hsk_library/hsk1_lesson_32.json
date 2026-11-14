@@ -1,0 +1,322 @@
+{
+  "id": "l-hsk1-032",
+  "slug": "hsk1-lesson-32",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-06",
+  "title": "Bài 32: Trợ từ ngữ khí & Cú pháp tổng kết (我们一起走吧！)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 32: Trợ từ ngữ khí & Cú pháp tổng kết (我们一起走吧！).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
+      "warmup_words": [
+        {
+          "hanzi": "吧",
+          "pinyin": "ba",
+          "vi": "nhé, đi (trợ từ ngữ khí)"
+        },
+        {
+          "hanzi": "呢",
+          "pinyin": "ne",
+          "vi": "thì sao, đang (trợ từ)"
+        },
+        {
+          "hanzi": "了",
+          "pinyin": "le",
+          "vi": "rồi (trợ từ hoàn thành)"
+        },
+        {
+          "hanzi": "怎么",
+          "pinyin": "zěnme",
+          "vi": "thế nào, làm sao"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "吧",
+          "pinyin": "ba",
+          "meaning_vi": "nhé, đi (trợ từ ngữ khí)"
+        },
+        {
+          "simplified": "呢",
+          "pinyin": "ne",
+          "meaning_vi": "thì sao, đang (trợ từ)"
+        },
+        {
+          "simplified": "了",
+          "pinyin": "le",
+          "meaning_vi": "rồi (trợ từ hoàn thành)"
+        },
+        {
+          "simplified": "怎么",
+          "pinyin": "zěnme",
+          "meaning_vi": "thế nào, làm sao"
+        },
+        {
+          "simplified": "怎么样",
+          "pinyin": "zěnmeyàng",
+          "meaning_vi": "như thế nào"
+        },
+        {
+          "simplified": "对",
+          "pinyin": "duì",
+          "meaning_vi": "đúng, đối với"
+        },
+        {
+          "simplified": "错",
+          "pinyin": "cuò",
+          "meaning_vi": "sai, nhầm"
+        },
+        {
+          "simplified": "没有",
+          "pinyin": "méiyǒu",
+          "meaning_vi": "không có, chưa"
+        },
+        {
+          "simplified": "大",
+          "pinyin": "dà",
+          "meaning_vi": "to, lớn"
+        },
+        {
+          "simplified": "小",
+          "pinyin": "xiǎo",
+          "meaning_vi": "nhỏ, bé"
+        },
+        {
+          "simplified": "男",
+          "pinyin": "nán",
+          "meaning_vi": "nam"
+        },
+        {
+          "simplified": "女",
+          "pinyin": "nǚ",
+          "meaning_vi": "nữ"
+        },
+        {
+          "simplified": "国",
+          "pinyin": "guó",
+          "meaning_vi": "quốc gia, đất nước"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-32-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'nhé, đi (trợ từ ngữ khí)'?",
+          "correct_answer": "吧",
+          "options": [
+            "吧",
+            "呢",
+            "对不起",
+            "再见"
+          ],
+          "explanation": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+        },
+        {
+          "id": "ex-v-32-02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin chuẩn xác của từ '呢' là gì?",
+          "correct_answer": "ne",
+          "options": [
+            "ne",
+            "ba",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ '呢' đọc chuẩn là ne."
+        },
+        {
+          "id": "ex-v-32-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 32:",
+          "correct_answer": "吧",
+          "options": [
+            "吧",
+            "学校",
+            "医院",
+            "睡觉"
+          ],
+          "explanation": "Từ '吧' là đáp án phù hợp nhất."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-32-01",
+          "titleVi": "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
+          "pattern": "Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)",
+          "explanationVi": "Trợ từ ngữ khí cuối câu.",
+          "examples": [
+            {
+              "hanzi": "我们走吧！",
+              "pinyin": "Wǒmen zǒu ba!",
+              "translationVi": "Chúng ta đi thôi nào!"
+            },
+            {
+              "hanzi": "下雨了，带伞吧！",
+              "pinyin": "Xiàyǔ le, dài sǎn ba!",
+              "translationVi": "Trời mưa rồi, mang ô nhé!"
+            }
+          ]
+        },
+        {
+          "id": "g-32-02",
+          "titleVi": "Đại từ nghi vấn 怎么 và 怎么样",
+          "pattern": "怎么 + Động từ (làm thế nào) / ... + 怎么样 (như thế nào)",
+          "explanationVi": "Hỏi phương thức hoặc tình hình.",
+          "examples": [
+            {
+              "hanzi": "这个字怎么写？—— 这个字很大很好看。",
+              "pinyin": "Zhè ge zì zěnme xiě? —— Zhè ge zì hěn dà hěn hǎokàn.",
+              "translationVi": "Chữ này viết thế nào? —— Chữ này to và đẹp."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-32-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "我们走吧！",
+          "options": [
+            "我们走吧！"
+          ],
+          "explanation": "Cấu trúc đúng: Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)."
+        },
+        {
+          "id": "ex-g-32-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc chuẩn xác: Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)",
+          "correct_answer": "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
+          "options": [
+            "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
+            "Câu chữ 把",
+            "Câu chữ 被",
+            "So sánh hơn 比"
+          ],
+          "explanation": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-32",
+        "titleVi": "Tổng kết HSK 1",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你觉得这道题对不对？",
+            "pinyin": "Nǐ juéde zhè dào tí duì bu duì?",
+            "vi": "Bạn thấy câu hỏi này đúng hay không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对的，没有错！我们准备好去参加考试吧！",
+            "pinyin": "Duì de, méiyǒu cuò! Wǒmen zhǔnbèi hǎo qù cānjiā kǎoshì ba!",
+            "vi": "Đúng rồi, không có sai đâu! Chúng ta sẵn sàng đi thi thôi nào!"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-32-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "你觉得这道题对不对？",
+          "options": [
+            "你觉得这道题对不对？",
+            "你好！",
+            "再见！",
+            "我是学生。"
+          ],
+          "explanation": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-32-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 32:",
+          "audio_target": "对的，没有错！我们准备好去参加考试吧！",
+          "correct_answer": "对的，没有错！我们准备好去参加考试吧！",
+          "options": [
+            "对的，没有错！我们准备好去参加考试吧！",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+        },
+        {
+          "id": "ex-ls-32-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你觉得这道题对不对？",
+          "pinyin_target": "Nǐ juéde zhè dào tí duì bu duì?",
+          "correct_answer": "你觉得这道题对不对？",
+          "options": [
+            "你觉得这道题对不对？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你觉得这道题对不对？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Hoàn thành HSK 1",
+        "text": "经过了三十二课的认真学习，我们掌握了三百个汉语词汇。无论大国还是小国，男同学还是女同学，大家都能用汉语流利对话。祝愿大家在HSK 1考试中取得优异成绩！",
+        "translationVi": "Trải qua 32 bài học chăm chỉ, chúng tôi đã nắm vững 300 từ vựng tiếng Hán."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-32-01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 32 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Hoàn thành HSK 1."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-32"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

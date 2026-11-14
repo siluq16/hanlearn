@@ -3,35 +3,35 @@
   "slug": "hsk1-lesson-26",
   "hsk_level": 1,
   "unit_id": "u-hsk1-06",
-  "title": "Bài 26: Tâm lý, Năng nguyện & Trợ từ ngữ khí (我们都爱学中文)",
-  "objective_vi": "Hoàn thiện toàn bộ các động từ năng nguyện (có thể, biết, muốn, cần), động từ tâm lý (yêu, thích, cảm thấy, hy vọng), phó từ chỉ mức độ và trợ từ ngữ khí cuối câu (吧, 呢, 了).",
+  "title": "Bài 26: Số đếm lớn, Hàng nghìn & Phân số (一百与一千)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 26: Số đếm lớn, Hàng nghìn & Phân số (一百与一千).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
-          "hanzi": "爱",
-          "pinyin": "ài",
-          "vi": "yêu, thích"
+          "hanzi": "零",
+          "pinyin": "líng",
+          "vi": "số không (0)"
         },
         {
-          "hanzi": "喜欢",
-          "pinyin": "",
-          "vi": "thích, yêu mến"
+          "hanzi": "八",
+          "pinyin": "bā",
+          "vi": "tám (8)"
         },
         {
-          "hanzi": "觉得",
-          "pinyin": "juéde",
-          "vi": "cảm thấy, thấy rằng"
+          "hanzi": "九",
+          "pinyin": "jiǔ",
+          "vi": "chín (9)"
         },
         {
-          "hanzi": "知道",
-          "pinyin": "zhīdào",
-          "vi": "biết, nhận biết"
+          "hanzi": "十",
+          "pinyin": "shí",
+          "vi": "mười (10)"
         }
       ]
     },
@@ -40,194 +40,54 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
-          "simplified": "爱",
-          "pinyin": "ài",
-          "meaning_vi": "yêu, thích"
+          "simplified": "零",
+          "pinyin": "líng",
+          "meaning_vi": "số không (0)"
         },
         {
-          "simplified": "喜欢",
-          "pinyin": "",
-          "meaning_vi": "thích, yêu mến"
+          "simplified": "八",
+          "pinyin": "bā",
+          "meaning_vi": "tám (8)"
         },
         {
-          "simplified": "觉得",
-          "pinyin": "juéde",
-          "meaning_vi": "cảm thấy, thấy rằng"
+          "simplified": "九",
+          "pinyin": "jiǔ",
+          "meaning_vi": "chín (9)"
         },
         {
-          "simplified": "知道",
-          "pinyin": "zhīdào",
-          "meaning_vi": "biết, nhận biết"
+          "simplified": "十",
+          "pinyin": "shí",
+          "meaning_vi": "mười (10)"
         },
         {
-          "simplified": "想",
-          "pinyin": "",
-          "meaning_vi": "muốn, nhớ, nghĩ"
+          "simplified": "百",
+          "pinyin": "bǎi",
+          "meaning_vi": "trăm (100)"
         },
         {
-          "simplified": "希望",
-          "pinyin": "",
-          "meaning_vi": "hy vọng, mong ước"
+          "simplified": "千",
+          "pinyin": "qiān",
+          "meaning_vi": "nghìn (1.000)"
         },
         {
-          "simplified": "可以",
-          "pinyin": "kěyǐ",
-          "meaning_vi": "có thể, được phép"
+          "simplified": "万",
+          "pinyin": "wàn",
+          "meaning_vi": "mười nghìn (10.000)"
         },
         {
-          "simplified": "能",
-          "pinyin": "",
-          "meaning_vi": "có thể (năng lực, điều kiện)"
+          "simplified": "两",
+          "pinyin": "liǎng",
+          "meaning_vi": "hai (dùng trước lượng từ)"
         },
         {
-          "simplified": "会",
-          "pinyin": "",
-          "meaning_vi": "biết (qua học hỏi), sẽ"
+          "simplified": "半",
+          "pinyin": "bàn",
+          "meaning_vi": "nửa, rưỡi"
         },
         {
-          "simplified": "要",
-          "pinyin": "yào",
-          "meaning_vi": "muốn, cần, phải"
-        },
-        {
-          "simplified": "给",
-          "pinyin": "gěi",
-          "meaning_vi": "cho, gửi cho"
-        },
-        {
-          "simplified": "找",
-          "pinyin": "zhǎo",
-          "meaning_vi": "tìm kiếm, trả lại tiền thừa"
-        },
-        {
-          "simplified": "别",
-          "pinyin": "",
-          "meaning_vi": "đừng"
-        },
-        {
-          "simplified": "不要",
-          "pinyin": "búyào",
-          "meaning_vi": "đừng, không cần"
-        },
-        {
-          "simplified": "非常",
-          "pinyin": "fēicháng",
-          "meaning_vi": "vô cùng, rất"
-        },
-        {
-          "simplified": "真",
-          "pinyin": "zhēn",
-          "meaning_vi": "thật là, thật sự"
-        },
-        {
-          "simplified": "太",
-          "pinyin": "",
-          "meaning_vi": "quá, lắm"
-        },
-        {
-          "simplified": "最",
-          "pinyin": "",
-          "meaning_vi": "nhất (so sánh nhất)"
-        },
-        {
-          "simplified": "还",
-          "pinyin": "hái",
-          "meaning_vi": "còn, vẫn còn"
-        },
-        {
-          "simplified": "也",
-          "pinyin": "yě",
-          "meaning_vi": "cũng"
-        },
-        {
-          "simplified": "都",
-          "pinyin": "dōu",
-          "meaning_vi": "đều"
-        },
-        {
-          "simplified": "正在",
-          "pinyin": "zhèngzài",
-          "meaning_vi": "đang (hành động đang diễn ra)"
-        },
-        {
-          "simplified": "已经",
-          "pinyin": "",
-          "meaning_vi": "đã, rồi"
-        },
-        {
-          "simplified": "有点儿",
-          "pinyin": "yǒudiǎnr",
-          "meaning_vi": "hơi hơi, có chút"
-        },
-        {
-          "simplified": "吧",
-          "pinyin": "ba",
-          "meaning_vi": "nhé, đi (trợ từ ngữ khí gợi ý/hỏi)"
-        },
-        {
-          "simplified": "呢",
-          "pinyin": "",
-          "meaning_vi": "thì sao, đang (trợ từ)"
-        },
-        {
-          "simplified": "了",
-          "pinyin": "le",
-          "meaning_vi": "rồi (trợ từ hoàn thành)"
-        },
-        {
-          "simplified": "怎么",
-          "pinyin": "zěnme",
-          "meaning_vi": "thế nào, làm sao"
-        },
-        {
-          "simplified": "怎么样",
-          "pinyin": "zěnmeyàng",
-          "meaning_vi": "như thế nào, ra sao"
-        },
-        {
-          "simplified": "对",
-          "pinyin": "duì",
-          "meaning_vi": "đúng, đối với"
-        },
-        {
-          "simplified": "错",
-          "pinyin": "",
-          "meaning_vi": "sai, nhầm"
-        },
-        {
-          "simplified": "没有",
-          "pinyin": "méiyǒu",
-          "meaning_vi": "không có, chưa"
-        },
-        {
-          "simplified": "再",
-          "pinyin": "zài",
-          "meaning_vi": "lại, hãy, tiếp tục"
-        },
-        {
-          "simplified": "大",
-          "pinyin": "dà",
-          "meaning_vi": "to, lớn"
-        },
-        {
-          "simplified": "小",
-          "pinyin": "xiǎo",
-          "meaning_vi": "nhỏ, bé"
-        },
-        {
-          "simplified": "男",
-          "pinyin": "nán",
-          "meaning_vi": "nam, đàn ông"
-        },
-        {
-          "simplified": "女",
-          "pinyin": "nǚ",
-          "meaning_vi": "nữ, phụ nữ"
-        },
-        {
-          "simplified": "国",
-          "pinyin": "guó",
-          "meaning_vi": "quốc gia, đất nước"
+          "simplified": "一半",
+          "pinyin": "yíbàn",
+          "meaning_vi": "một nửa"
         }
       ]
     },
@@ -238,44 +98,54 @@
         {
           "id": "ex-v-26-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'yêu, thích'?",
-          "pinyin_prompt": "",
-          "correct_answer": "爱",
+          "prompt": "Từ nào có nghĩa là: 'số không (0)'?",
+          "correct_answer": "零",
           "options": [
-            "爱",
-            "喜欢",
-            "觉得",
-            "没有"
+            "零",
+            "八",
+            "对不起",
+            "再见"
           ],
-          "explanation": "爱 (ài) mang nghĩa là 'yêu, thích'."
+          "explanation": "零 (líng) mang nghĩa là 'số không (0)'."
         },
         {
           "id": "ex-v-26-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '喜欢' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "",
+          "prompt": "Pinyin chuẩn xác của từ '八' là gì?",
+          "correct_answer": "bā",
           "options": [
-            "",
-            "ài",
+            "bā",
+            "líng",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 喜欢 phát âm chuẩn là ."
+          "explanation": "Từ '八' đọc chuẩn là bā."
         },
         {
           "id": "ex-v-26-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
-          "correct_answer": "爱",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 26:",
+          "correct_answer": "零",
           "options": [
-            "爱",
-            "衣服",
+            "零",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '爱' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '零' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-26-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ chỉ 'một nửa (50%)' trong tiếng Trung là:",
+          "correct_answer": "一半",
+          "options": [
+            "一半",
+            "一点儿",
+            "一下",
+            "一块"
+          ],
+          "explanation": "'一半' (yíbàn) nghĩa là một nửa."
         }
       ]
     },
@@ -285,37 +155,27 @@
       "grammar_points": [
         {
           "id": "g-26-01",
-          "titleVi": "Hệ thống động từ năng nguyện 会, 能, 可以, 要, 想",
-          "pattern": "Chủ ngữ + Năng nguyện từ + Động từ",
-          "explanationVi": "会 (biết kỹ năng qua học hỏi), 能 (có khả năng/điều kiện thực tế), 可以 (được phép/khả thi), 要 (cần/muốn/phải), 想 (dự định/mong muốn).",
+          "titleVi": "Hàng trăm (百), nghìn (千), vạn (万)",
+          "pattern": "Số + 百/千/万",
+          "explanationVi": "Đếm số lượng lớn.",
           "examples": [
             {
-              "hanzi": "我会说一点儿汉语。",
-              "pinyin": "Wǒ huì shuō yìdiǎnr hànyǔ.",
-              "translationVi": "Tôi biết nói một chút tiếng Hán."
-            },
-            {
-              "hanzi": "这里可以坐吗？",
-              "pinyin": "Zhèlǐ kěyǐ zuò ma?",
-              "translationVi": "Ở đây có thể ngồi được không?"
+              "hanzi": "这台电脑三千块钱。",
+              "pinyin": "Zhè tái diànnǎo sānqiān kuài qián.",
+              "translationVi": "Chiếc máy tính này ba nghìn đồng."
             }
           ]
         },
         {
           "id": "g-26-02",
-          "titleVi": "Trợ từ ngữ khí 吧, 呢 và 了",
-          "pattern": "Đề nghị (吧) / Tiến hành/tiếp diễn (呢) / Thay đổi/hoàn thành (了)",
-          "explanationVi": "Ba trợ từ ngữ khí cốt lõi của HSK 1 thể hiện thái độ, sắc thái tình cảm và ngữ điệu tự nhiên của người bản ngữ.",
+          "titleVi": "Phân số 一半 và cách dùng 两",
+          "pattern": "一半 (1/2) & 两 + Lượng từ",
+          "explanationVi": "Số 2 trước lượng từ đọc là 两.",
           "examples": [
             {
-              "hanzi": "我们走吧！",
-              "pinyin": "Wǒmen zǒu ba!",
-              "translationVi": "Chúng ta đi thôi nào!"
-            },
-            {
-              "hanzi": "他正在看书呢。",
-              "pinyin": "Tā zhèngzài kànshū ne.",
-              "translationVi": "Anh ấy đang đọc sách đấy."
+              "hanzi": "我只要一半，两个人吃。",
+              "pinyin": "Wǒ zhǐ yào yíbàn, liǎng gè rén chī.",
+              "translationVi": "Tôi chỉ lấy một nửa, hai người ăn."
             }
           ]
         }
@@ -328,27 +188,25 @@
         {
           "id": "ex-g-26-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "我会说一点儿汉语。",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "这台电脑三千块钱。",
           "options": [
-            "我会说一点儿汉语。"
+            "这台电脑三千块钱。"
           ],
-          "explanation": "Cấu trúc đúng: Chủ ngữ + Năng nguyện từ + Động từ."
+          "explanation": "Cấu trúc đúng: Số + 百/千/万."
         },
         {
           "id": "ex-g-26-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Chủ ngữ + Năng nguyện từ + Động từ",
-          "pinyin_prompt": "",
-          "correct_answer": "Hệ thống động từ năng nguyện 会, 能, 可以, 要, 想",
+          "prompt": "Chọn cấu trúc chuẩn xác: Số + 百/千/万",
+          "correct_answer": "Hàng trăm (百), nghìn (千), vạn (万)",
           "options": [
-            "Hệ thống động từ năng nguyện 会, 能, 可以, 要, 想",
+            "Hàng trăm (百), nghìn (千), vạn (万)",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Hệ thống động từ năng nguyện 会, 能, 可以, 要, 想."
+          "explanation": "Đây là cấu trúc: Hàng trăm (百), nghìn (千), vạn (万)."
         }
       ]
     },
@@ -357,31 +215,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-26",
-        "titleVi": "Chia sẻ ước mơ và sở thích",
+        "titleVi": "Hỏi giá máy tính",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "你觉得学中文难不难？",
-            "pinyin": "Nǐ juéde xué zhōngwén nán bu nán?",
-            "vi": "Bạn cảm thấy học tiếng Trung có khó không?"
+            "hanzi": "这台新电脑多少钱？",
+            "pinyin": "Zhè tái xīn diànnǎo duōshao qián?",
+            "vi": "Máy tính mới này bao nhiêu tiền?"
           },
           {
             "speaker": "B",
-            "hanzi": "汉字有点儿难写，但是我非常喜欢！",
-            "pinyin": "Hànzì yǒudiǎnr nán xiě, dànshì wǒ fēicháng xǐhuan!",
-            "vi": "Chữ Hán hơi khó viết một chút, nhưng tôi vô cùng thích!"
-          },
-          {
-            "speaker": "A",
-            "hanzi": "你希望去中国留学吗？",
-            "pinyin": "Nǐ xīwàng qù Zhōngguó liúxué ma?",
-            "vi": "Bạn có hy vọng đi du học Trung Quốc không?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "希望！我爱中国文化，明年一定要去！",
-            "pinyin": "Xīwàng! Wǒ ài Zhōngguó wénhuà, míngnián yídìng yào qù!",
-            "vi": "Có chứ! Tôi yêu văn hóa Trung Hoa, năm sau nhất định phải đi!"
+            "hanzi": "两千八百块钱。",
+            "pinyin": "Liǎngqiān bābǎi kuài qián.",
+            "vi": "Hai nghìn tám trăm đồng."
           }
         ]
       },
@@ -389,16 +235,15 @@
         {
           "id": "ex-d-26-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "你觉得学中文难不难？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "这台新电脑多少钱？",
           "options": [
-            "你觉得学中文难不难？",
-            "你好吗？",
+            "这台新电脑多少钱？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '你觉得学中文难不难？' (Bạn cảm thấy học tiếng Trung có khó không?)."
+          "explanation": "Lời thoại của A: '这台新电脑多少钱？' (Máy tính mới này bao nhiêu tiền?)."
         }
       ]
     },
@@ -409,28 +254,28 @@
         {
           "id": "ex-ls-26-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 26:",
-          "audio_target": "汉字有点儿难写，但是我非常喜欢！",
-          "correct_answer": "汉字有点儿难写，但是我非常喜欢！",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 26:",
+          "audio_target": "两千八百块钱。",
+          "correct_answer": "两千八百块钱。",
           "options": [
-            "汉字有点儿难写，但是我非常喜欢！",
+            "两千八百块钱。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '汉字有点儿难写，但是我非常喜欢！'."
+          "explanation": "Câu nghe được là: '两千八百块钱。'."
         },
         {
           "id": "ex-ls-26-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你觉得学中文难不难？",
-          "pinyin_target": "Nǐ juéde xué zhōngwén nán bu nán?",
-          "correct_answer": "你觉得学中文难不难？",
+          "speech_target": "这台新电脑多少钱？",
+          "pinyin_target": "Zhè tái xīn diànnǎo duōshao qián?",
+          "correct_answer": "这台新电脑多少钱？",
           "options": [
-            "你觉得学中文难不难？"
+            "这台新电脑多少钱？"
           ],
-          "explanation": "Phát âm to rõ ràng: '你觉得学中文难不难？'."
+          "explanation": "Phát âm to rõ ràng: '这台新电脑多少钱？'."
         }
       ]
     },
@@ -438,34 +283,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Tôi yêu tiếng Trung",
-        "text": "我们大家都很喜欢学中文。每天我们读汉字、听录音、写练习。虽然有的时候觉得累，但是我们知道只要认真学习，就一定能说得很好。中国的朋友们也都热情地帮助我们！",
-        "translationVi": "Tất cả chúng tôi đều rất thích học tiếng Trung. Ngày nào chúng tôi cũng đọc chữ Hán, nghe băng ghi âm, làm bài tập. Dù đôi lúc cảm thấy mệt mỏi, nhưng chúng tôi biết chỉ cần chăm chỉ học tập là nhất định có thể nói rất tốt. Các bạn bè người Trung Quốc cũng nhiệt tình giúp đỡ chúng tôi!"
+        "title": "Số lượng trong trường",
+        "text": "我们大学有一千五百个学生。图书室里有八千本书。学生们都很喜欢读书。",
+        "translationVi": "Trường chúng tôi có một nghìn năm trăm sinh viên."
       },
       "exercises": [
         {
           "id": "ex-r-26-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 26 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Tôi yêu tiếng Trung'."
-        },
-        {
-          "id": "ex-r-26-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Tất cả chúng tôi đều rất thích học tiếng...",
-          "options": [
-            "Tất cả chúng tôi đều rất thích học tiếng...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Tất cả chúng tôi đều rất thích học tiếng Trung. Ngày nào chúng tôi cũng đọc chữ Hán, nghe băng ghi âm, làm bài tập. Dù đôi lúc cảm thấy mệt mỏi, nhưng chúng tôi biết chỉ cần chăm chỉ học tập là nhất định có thể nói rất tốt. Các bạn bè người Trung Quốc cũng nhiệt tình giúp đỡ chúng tôi!."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Số lượng trong trường."
         }
       ]
     },

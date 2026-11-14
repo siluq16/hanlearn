@@ -2,36 +2,36 @@
   "id": "l-hsk1-025",
   "slug": "hsk1-lesson-25",
   "hsk_level": 1,
-  "unit_id": "u-hsk1-06",
-  "title": "Bài 25: Thời gian, Lịch trình & Ngày tháng (去年、今年与明年)",
-  "objective_vi": "Hệ thống hóa toàn bộ các mốc thời gian quá khứ, hiện tại, tương lai (hôm qua, năm ngoái, năm nay, sang năm), các buổi trong ngày và mốc 以前/以后.",
+  "unit_id": "u-hsk1-05",
+  "title": "Bài 25: Vị trí & Phương hướng không gian (学校在前面)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 25: Vị trí & Phương hướng không gian (学校在前面).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
-          "hanzi": "年",
-          "pinyin": "nián",
-          "vi": "năm"
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "vi": "trên, lên"
         },
         {
-          "hanzi": "月",
-          "pinyin": "",
-          "vi": "tháng"
+          "hanzi": "下",
+          "pinyin": "xià",
+          "vi": "dưới, xuống"
         },
         {
-          "hanzi": "日",
-          "pinyin": "rì",
-          "vi": "ngày (văn viết)"
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "vi": "trong"
         },
         {
-          "hanzi": "号",
-          "pinyin": "",
-          "vi": "ngày (khẩu ngữ), số"
+          "hanzi": "外",
+          "pinyin": "wài",
+          "vi": "ngoài"
         }
       ]
     },
@@ -40,124 +40,79 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
-          "simplified": "年",
-          "pinyin": "nián",
-          "meaning_vi": "năm"
+          "simplified": "上",
+          "pinyin": "shàng",
+          "meaning_vi": "trên, lên"
         },
         {
-          "simplified": "月",
-          "pinyin": "",
-          "meaning_vi": "tháng"
+          "simplified": "下",
+          "pinyin": "xià",
+          "meaning_vi": "dưới, xuống"
         },
         {
-          "simplified": "日",
-          "pinyin": "rì",
-          "meaning_vi": "ngày (văn viết)"
+          "simplified": "里",
+          "pinyin": "lǐ",
+          "meaning_vi": "trong"
         },
         {
-          "simplified": "号",
-          "pinyin": "",
-          "meaning_vi": "ngày (khẩu ngữ), số"
+          "simplified": "外",
+          "pinyin": "wài",
+          "meaning_vi": "ngoài"
         },
         {
-          "simplified": "星期",
-          "pinyin": "",
-          "meaning_vi": "tuần, thứ"
+          "simplified": "旁",
+          "pinyin": "páng",
+          "meaning_vi": "bên"
         },
         {
-          "simplified": "星期天",
-          "pinyin": "xīngqītiān",
-          "meaning_vi": "Chủ nhật"
+          "simplified": "旁边",
+          "pinyin": "pángbiān",
+          "meaning_vi": "bên cạnh"
         },
         {
-          "simplified": "星期日",
-          "pinyin": "xīngqīrì",
-          "meaning_vi": "Chủ nhật"
+          "simplified": "边",
+          "pinyin": "biān",
+          "meaning_vi": "phía, bên"
         },
         {
-          "simplified": "分钟",
-          "pinyin": "fēnzhōng",
-          "meaning_vi": "phút"
+          "simplified": "东",
+          "pinyin": "dōng",
+          "meaning_vi": "hướng đông"
         },
         {
-          "simplified": "小时",
-          "pinyin": "xiǎoshí",
-          "meaning_vi": "tiếng đồng hồ, giờ"
+          "simplified": "西",
+          "pinyin": "xī",
+          "meaning_vi": "hướng tây"
         },
         {
-          "simplified": "时间",
-          "pinyin": "shíjiān",
-          "meaning_vi": "thời gian"
+          "simplified": "南",
+          "pinyin": "nán",
+          "meaning_vi": "hướng nam"
         },
         {
-          "simplified": "时候",
-          "pinyin": "shíhou",
-          "meaning_vi": "lúc, khi"
+          "simplified": "北",
+          "pinyin": "běi",
+          "meaning_vi": "hướng bắc"
         },
         {
-          "simplified": "白天",
-          "pinyin": "báitiān",
-          "meaning_vi": "ban ngày"
+          "simplified": "前边",
+          "pinyin": "qiánbiān",
+          "meaning_vi": "phía trước"
         },
         {
-          "simplified": "早上",
-          "pinyin": "zǎoshang",
-          "meaning_vi": "buổi sáng sớm"
+          "simplified": "后边",
+          "pinyin": "hòubiān",
+          "meaning_vi": "phía sau"
         },
         {
-          "simplified": "中午",
-          "pinyin": "zhōngwǔ",
-          "meaning_vi": "buổi trưa"
+          "simplified": "里边",
+          "pinyin": "lǐbiān",
+          "meaning_vi": "bên trong"
         },
         {
-          "simplified": "晚上",
-          "pinyin": "wǎnshang",
-          "meaning_vi": "buổi tối"
-        },
-        {
-          "simplified": "早",
-          "pinyin": "zǎo",
-          "meaning_vi": "sớm"
-        },
-        {
-          "simplified": "晚",
-          "pinyin": "wǎn",
-          "meaning_vi": "muộn, muộn màng"
-        },
-        {
-          "simplified": "昨天",
-          "pinyin": "zuótiān",
-          "meaning_vi": "hôm qua"
-        },
-        {
-          "simplified": "明天",
-          "pinyin": "",
-          "meaning_vi": "ngày mai"
-        },
-        {
-          "simplified": "今年",
-          "pinyin": "jīnnián",
-          "meaning_vi": "năm nay"
-        },
-        {
-          "simplified": "明年",
-          "pinyin": "míngnián",
-          "meaning_vi": "năm sau, năm tới"
-        },
-        {
-          "simplified": "去年",
-          "pinyin": "qùnián",
-          "meaning_vi": "năm ngoái"
-        },
-        {
-          "simplified": "以前",
-          "pinyin": "",
-          "meaning_vi": "trước đây, trước khi"
-        },
-        {
-          "simplified": "以后",
-          "pinyin": "",
-          "meaning_vi": "sau này, sau khi"
+          "simplified": "外边",
+          "pinyin": "wàibiān",
+          "meaning_vi": "bên ngoài"
         }
       ]
     },
@@ -168,44 +123,41 @@
         {
           "id": "ex-v-25-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'năm'?",
-          "pinyin_prompt": "",
-          "correct_answer": "年",
+          "prompt": "Từ nào có nghĩa là: 'trên, lên'?",
+          "correct_answer": "上",
           "options": [
-            "年",
-            "月",
-            "日",
-            "没有"
+            "上",
+            "下",
+            "对不起",
+            "再见"
           ],
-          "explanation": "年 (nián) mang nghĩa là 'năm'."
+          "explanation": "上 (shàng) mang nghĩa là 'trên, lên'."
         },
         {
           "id": "ex-v-25-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '月' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "",
+          "prompt": "Pinyin chuẩn xác của từ '下' là gì?",
+          "correct_answer": "xià",
           "options": [
-            "",
-            "nián",
+            "xià",
+            "shàng",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 月 phát âm chuẩn là ."
+          "explanation": "Từ '下' đọc chuẩn là xià."
         },
         {
           "id": "ex-v-25-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
-          "correct_answer": "年",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 25:",
+          "correct_answer": "上",
           "options": [
-            "年",
-            "衣服",
+            "上",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '年' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '上' là đáp án phù hợp nhất."
         }
       ]
     },
@@ -215,32 +167,27 @@
       "grammar_points": [
         {
           "id": "g-25-01",
-          "titleVi": "Trật tự thời gian từ lớn đến nhỏ",
-          "pattern": "Năm (年) + Tháng (月) + Ngày (日/号) + Buổi (早上/下午) + Giờ (点) + Phút (分)",
-          "explanationVi": "Trong tiếng Trung, quy tắc biểu đạt thời gian luôn đi từ đơn vị lớn nhất đến đơn vị nhỏ nhất.",
+          "titleVi": "Phương vị từ kết hợp với 在",
+          "pattern": "Ở + Địa điểm + Phương vị từ (上/下/里/旁边)",
+          "explanationVi": "Vị trí không gian.",
           "examples": [
             {
-              "hanzi": "二零二五年十月一日上午九点",
-              "pinyin": "Èr líng èrwǔ nián shí yuè yī rì shàngwǔ jiǔ diǎn",
-              "translationVi": "9 giờ sáng ngày 1 tháng 10 năm 2025"
+              "hanzi": "小猫在桌子下面。",
+              "pinyin": "Xiǎo māo zài zhuōzi xiàmiàn.",
+              "translationVi": "Mèo con ở dưới gầm bàn."
             }
           ]
         },
         {
           "id": "g-25-02",
-          "titleVi": "Cách dùng 以前 và 以后",
-          "pattern": "Mốc thời gian / Hành động + 以前 (trước khi) / 以后 (sau khi)",
-          "explanationVi": "Dùng để biểu thị thời điểm trước hoặc sau một sự kiện nào đó.",
+          "titleVi": "Bốn hướng địa lý 东南西北",
+          "pattern": "Hướng Đông (东边), Tây (西边), Nam (南边), Bắc (北边)",
+          "explanationVi": "Chỉ phương hướng.",
           "examples": [
             {
-              "hanzi": "吃饭以前要洗手。",
-              "pinyin": "Chīfàn yǐqián yào xǐshǒu.",
-              "translationVi": "Trước khi ăn cơm phải rửa tay."
-            },
-            {
-              "hanzi": "下课以后我想去书店。",
-              "pinyin": "Xiàkè yǐhòu wǒ xiǎng qù shūdiàn.",
-              "translationVi": "Sau khi tan học tôi muốn đi hiệu sách."
+              "hanzi": "火车站就在医院的东边。",
+              "pinyin": "Huǒchēzhàn jiù zài yīyuàn de dōngbiān.",
+              "translationVi": "Ga tàu hỏa ở phía đông bệnh viện."
             }
           ]
         }
@@ -253,27 +200,25 @@
         {
           "id": "ex-g-25-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "二零二五年十月一日上午九点",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "小猫在桌子下面。",
           "options": [
-            "二零二五年十月一日上午九点"
+            "小猫在桌子下面。"
           ],
-          "explanation": "Cấu trúc đúng: Năm (年) + Tháng (月) + Ngày (日/号) + Buổi (早上/下午) + Giờ (点) + Phút (分)."
+          "explanation": "Cấu trúc đúng: Ở + Địa điểm + Phương vị từ (上/下/里/旁边)."
         },
         {
           "id": "ex-g-25-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Năm (年) + Tháng (月) + Ngày (日/号) + Buổi (早上/下午) + Giờ (点) + Phút (分)",
-          "pinyin_prompt": "",
-          "correct_answer": "Trật tự thời gian từ lớn đến nhỏ",
+          "prompt": "Chọn cấu trúc chuẩn xác: Ở + Địa điểm + Phương vị từ (上/下/里/旁边)",
+          "correct_answer": "Phương vị từ kết hợp với 在",
           "options": [
-            "Trật tự thời gian từ lớn đến nhỏ",
+            "Phương vị từ kết hợp với 在",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Trật tự thời gian từ lớn đến nhỏ."
+          "explanation": "Đây là cấu trúc: Phương vị từ kết hợp với 在."
         }
       ]
     },
@@ -282,31 +227,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-25",
-        "titleVi": "Kế hoạch năm sau",
+        "titleVi": "Hỏi đường",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "你什么时候去中国？",
-            "pinyin": "Nǐ shénme shíhou qù Zhōngguó?",
-            "vi": "Khi nào bạn đi Trung Quốc?"
+            "hanzi": "请问，图书馆在什么地方？",
+            "pinyin": "Qǐngwèn, túshūguǎn zài shénme dìfang?",
+            "vi": "Xin hỏi, thư viện ở đâu ạ?"
           },
           {
             "speaker": "B",
-            "hanzi": "明年九月。去年我去过一次，玩了一个星期。",
-            "pinyin": "Míngnián jiǔ yuè. Qùnián wǒ qù guo yí cì, wán le yí gè xīngqī.",
-            "vi": "Tháng chín năm sau. Năm ngoái tôi từng đi một lần, chơi một tuần."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "你今天晚上有时间吗？",
-            "pinyin": "Nǐ jīntiān wǎnshang yǒu shíjiān ma?",
-            "vi": "Tối nay bạn có thời gian không?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "八点以后有时间，我们一起喝茶吧。",
-            "pinyin": "Bā diǎn yǐhòu yǒu shíjiān, wǒmen yìqǐ hē chá ba.",
-            "vi": "Sau tám giờ tôi có thời gian, chúng mình cùng đi uống trà nhé."
+            "hanzi": "在教学楼后边，旁边有一个大操场。",
+            "pinyin": "Zài jiàoxuélóu hòubiān, pángbiān yǒu yí gè dà cāochǎng.",
+            "vi": "Ở phía sau tòa nhà học đường, bên cạnh có một sân bãi lớn."
           }
         ]
       },
@@ -314,16 +247,15 @@
         {
           "id": "ex-d-25-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "你什么时候去中国？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "请问，图书馆在什么地方？",
           "options": [
-            "你什么时候去中国？",
-            "你好吗？",
+            "请问，图书馆在什么地方？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '你什么时候去中国？' (Khi nào bạn đi Trung Quốc?)."
+          "explanation": "Lời thoại của A: '请问，图书馆在什么地方？' (Xin hỏi, thư viện ở đâu ạ?)."
         }
       ]
     },
@@ -334,28 +266,28 @@
         {
           "id": "ex-ls-25-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 25:",
-          "audio_target": "明年九月。去年我去过一次，玩了一个星期。",
-          "correct_answer": "明年九月。去年我去过一次，玩了一个星期。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 25:",
+          "audio_target": "在教学楼后边，旁边有一个大操场。",
+          "correct_answer": "在教学楼后边，旁边有一个大操场。",
           "options": [
-            "明年九月。去年我去过一次，玩了一个星期。",
+            "在教学楼后边，旁边有一个大操场。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '明年九月。去年我去过一次，玩了一个星期。'."
+          "explanation": "Câu nghe được là: '在教学楼后边，旁边有一个大操场。'."
         },
         {
           "id": "ex-ls-25-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你什么时候去中国？",
-          "pinyin_target": "Nǐ shénme shíhou qù Zhōngguó?",
-          "correct_answer": "你什么时候去中国？",
+          "speech_target": "请问，图书馆在什么地方？",
+          "pinyin_target": "Qǐngwèn, túshūguǎn zài shénme dìfang?",
+          "correct_answer": "请问，图书馆在什么地方？",
           "options": [
-            "你什么时候去中国？"
+            "请问，图书馆在什么地方？"
           ],
-          "explanation": "Phát âm to rõ ràng: '你什么时候去中国？'."
+          "explanation": "Phát âm to rõ ràng: '请问，图书馆在什么地方？'."
         }
       ]
     },
@@ -363,34 +295,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Một ngày bận rộn của Lan",
-        "text": "昨天是星期日，兰兰早上七点起床。白天她看了两个小时的汉语书。中午十二点吃了午饭。下午三点她去超市买东西。晚上八点以后，她和家人一起看电视。",
-        "translationVi": "Hôm qua là Chủ nhật, Lan Lan thức dậy lúc bảy giờ sáng. Ban ngày cô ấy đọc sách Hán ngữ hai tiếng đồng hồ. Mười hai giờ trưa ăn bữa trưa. Ba giờ chiều cô ấy đi siêu thị mua sắm. Sau tám giờ tối, cô ấy cùng gia đình xem ti vi."
+        "title": "Xung quanh nhà tôi",
+        "text": "我家前面是一个小公园，里面有很多花。房子后面是学校。我们在外边玩儿。",
+        "translationVi": "Phía trước nhà tôi là một công viên nhỏ."
       },
       "exercises": [
         {
           "id": "ex-r-25-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 25 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Một ngày bận rộn của Lan'."
-        },
-        {
-          "id": "ex-r-25-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Hôm qua là Chủ nhật, Lan Lan thức dậy lú...",
-          "options": [
-            "Hôm qua là Chủ nhật, Lan Lan thức dậy lú...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Hôm qua là Chủ nhật, Lan Lan thức dậy lúc bảy giờ sáng. Ban ngày cô ấy đọc sách Hán ngữ hai tiếng đồng hồ. Mười hai giờ trưa ăn bữa trưa. Ba giờ chiều cô ấy đi siêu thị mua sắm. Sau tám giờ tối, cô ấy cùng gia đình xem ti vi.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Xung quanh nhà tôi."
         }
       ]
     },

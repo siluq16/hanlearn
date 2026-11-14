@@ -3,35 +3,35 @@
   "slug": "hsk1-lesson-22",
   "hsk_level": 1,
   "unit_id": "u-hsk1-05",
-  "title": "Bài 22: Đại từ nhân xưng & Chỉ định (大家都是好朋友)",
-  "objective_vi": "Hệ thống hóa toàn bộ đại từ nhân xưng (anh ấy, cô ấy, nó, chúng tôi, các bạn, mọi người) và các đại từ chỉ định gần/xa (đây, kia, này, nọ, nào).",
+  "title": "Bài 22: Bạn bè, Xưng hô & Giúp đỡ (很高兴认识您)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 22: Bạn bè, Xưng hô & Giúp đỡ (很高兴认识您).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
-          "hanzi": "大家",
-          "pinyin": "dàjiā",
-          "vi": "mọi người, cả nhà"
+          "hanzi": "问",
+          "pinyin": "wèn",
+          "vi": "hỏi"
         },
         {
-          "hanzi": "您",
-          "pinyin": "nín",
-          "vi": "ngài, ông (kính ngữ)"
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "vi": "giúp"
         },
         {
-          "hanzi": "他",
-          "pinyin": "tā",
-          "vi": "anh ấy, ông ấy"
+          "hanzi": "帮助",
+          "pinyin": "bāngzhù",
+          "vi": "giúp đỡ"
         },
         {
-          "hanzi": "她",
-          "pinyin": "tā",
-          "vi": "cô ấy, chị ấy"
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "vi": "bạn bè"
         }
       ]
     },
@@ -40,129 +40,54 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
-          "simplified": "大家",
-          "pinyin": "dàjiā",
-          "meaning_vi": "mọi người, cả nhà"
+          "simplified": "问",
+          "pinyin": "wèn",
+          "meaning_vi": "hỏi"
         },
         {
-          "simplified": "您",
-          "pinyin": "nín",
-          "meaning_vi": "ngài, ông (kính ngữ)"
+          "simplified": "帮",
+          "pinyin": "bāng",
+          "meaning_vi": "giúp"
         },
         {
-          "simplified": "他",
-          "pinyin": "tā",
-          "meaning_vi": "anh ấy, ông ấy"
+          "simplified": "帮助",
+          "pinyin": "bāngzhù",
+          "meaning_vi": "giúp đỡ"
         },
         {
-          "simplified": "她",
-          "pinyin": "tā",
-          "meaning_vi": "cô ấy, chị ấy"
+          "simplified": "朋友",
+          "pinyin": "péngyou",
+          "meaning_vi": "bạn bè"
         },
         {
-          "simplified": "它",
-          "pinyin": "tā",
-          "meaning_vi": "nó (chỉ vật/động vật)"
+          "simplified": "男朋友",
+          "pinyin": "nánpéngyou",
+          "meaning_vi": "bạn trai"
         },
         {
-          "simplified": "他们",
-          "pinyin": "tāmen",
-          "meaning_vi": "họ, các anh ấy"
+          "simplified": "女朋友",
+          "pinyin": "nǚpéngyou",
+          "meaning_vi": "bạn gái"
         },
         {
-          "simplified": "她们",
-          "pinyin": "tāmen",
-          "meaning_vi": "họ, các cô ấy"
+          "simplified": "认识",
+          "pinyin": "rènshi",
+          "meaning_vi": "quen biết"
         },
         {
-          "simplified": "它们",
-          "pinyin": "tāmen",
-          "meaning_vi": "chúng nó"
+          "simplified": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning_vi": "vui vẻ"
         },
         {
-          "simplified": "我们",
-          "pinyin": "wǒmen",
-          "meaning_vi": "chúng tôi, chúng ta"
+          "simplified": "先生",
+          "pinyin": "xiānsheng",
+          "meaning_vi": "ông, ngài, thầy"
         },
         {
-          "simplified": "你们",
-          "pinyin": "nǐmen",
-          "meaning_vi": "các bạn, các anh"
-        },
-        {
-          "simplified": "们",
-          "pinyin": "men",
-          "meaning_vi": "các, chúng (hậu tố số nhiều)"
-        },
-        {
-          "simplified": "这",
-          "pinyin": "zhè",
-          "meaning_vi": "đây, này"
-        },
-        {
-          "simplified": "这个",
-          "pinyin": "zhège",
-          "meaning_vi": "cái này"
-        },
-        {
-          "simplified": "这些",
-          "pinyin": "zhèxiē",
-          "meaning_vi": "những cái này"
-        },
-        {
-          "simplified": "这儿",
-          "pinyin": "zhèr",
-          "meaning_vi": "ở đây, chỗ này"
-        },
-        {
-          "simplified": "这里",
-          "pinyin": "zhèlǐ",
-          "meaning_vi": "ở đây, nơi này"
-        },
-        {
-          "simplified": "那",
-          "pinyin": "nà",
-          "meaning_vi": "kia, đó"
-        },
-        {
-          "simplified": "那个",
-          "pinyin": "nàge",
-          "meaning_vi": "cái kia, cái đó"
-        },
-        {
-          "simplified": "那些",
-          "pinyin": "nàxiē",
-          "meaning_vi": "những cái kia"
-        },
-        {
-          "simplified": "那儿",
-          "pinyin": "nàr",
-          "meaning_vi": "chỗ kia, đằng kia"
-        },
-        {
-          "simplified": "那里",
-          "pinyin": "nàlǐ",
-          "meaning_vi": "ở đó, nơi đó"
-        },
-        {
-          "simplified": "哪",
-          "pinyin": "nǎ",
-          "meaning_vi": "nào"
-        },
-        {
-          "simplified": "哪个",
-          "pinyin": "nǎge",
-          "meaning_vi": "cái nào"
-        },
-        {
-          "simplified": "哪里",
-          "pinyin": "nǎlǐ",
-          "meaning_vi": "ở đâu, đâu có"
-        },
-        {
-          "simplified": "哪些",
-          "pinyin": "nǎxiē",
-          "meaning_vi": "những cái nào"
+          "simplified": "女士",
+          "pinyin": "nǚshì",
+          "meaning_vi": "bà, cô, quý cô"
         }
       ]
     },
@@ -173,44 +98,54 @@
         {
           "id": "ex-v-22-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'mọi người, cả nhà'?",
-          "pinyin_prompt": "",
-          "correct_answer": "大家",
+          "prompt": "Từ nào có nghĩa là: 'hỏi'?",
+          "correct_answer": "问",
           "options": [
-            "大家",
-            "您",
-            "他",
-            "没有"
+            "问",
+            "帮",
+            "对不起",
+            "再见"
           ],
-          "explanation": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+          "explanation": "问 (wèn) mang nghĩa là 'hỏi'."
         },
         {
           "id": "ex-v-22-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '您' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "nín",
+          "prompt": "Pinyin chuẩn xác của từ '帮' là gì?",
+          "correct_answer": "bāng",
           "options": [
-            "nín",
-            "dàjiā",
+            "bāng",
+            "wèn",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 您 phát âm chuẩn là nín."
+          "explanation": "Từ '帮' đọc chuẩn là bāng."
         },
         {
           "id": "ex-v-22-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
-          "correct_answer": "大家",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 22:",
+          "correct_answer": "问",
           "options": [
-            "大家",
-            "衣服",
+            "问",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '大家' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '问' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-22-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Bạn trai và bạn gái lần lượt là:",
+          "correct_answer": "男朋友、女朋友",
+          "options": [
+            "男朋友、女朋友",
+            "男老师、女老师",
+            "男学生、女学生",
+            "爸爸、妈妈"
+          ],
+          "explanation": "'男朋友' (bạn trai) và '女朋友' (bạn gái)."
         }
       ]
     },
@@ -220,27 +155,27 @@
       "grammar_points": [
         {
           "id": "g-22-01",
-          "titleVi": "Hậu tố số nhiều 们",
-          "pattern": "Đại từ / Danh từ chỉ người + 们",
-          "explanationVi": "Dùng để biểu thị số nhiều cho người (chúng tôi, các bạn, họ, các bạn học, các thầy cô).",
+          "titleVi": "Chào hỏi làm quen 很高兴认识你",
+          "pattern": "很高兴 + 认识 + Bạn/Ngài",
+          "explanationVi": "Cách nói lịch sự khi kết bạn.",
           "examples": [
             {
-              "hanzi": "我们都是北京大学的学生。",
-              "pinyin": "Wǒmen dōu shì Běijīng Dàxué de xuésheng.",
-              "translationVi": "Chúng tôi đều là sinh viên Đại học Bắc Kinh."
+              "hanzi": "张先生，很高兴认识您！",
+              "pinyin": "Zhāng xiānsheng, hěn gāoxìng rènshi nín!",
+              "translationVi": "Chào ông Trương, rất vui được quen biết ông!"
             }
           ]
         },
         {
           "id": "g-22-02",
-          "titleVi": "Đại từ chỉ định 这 (gần) và 那 (xa)",
-          "pattern": "这 / 那 + (Lượng từ) + Danh từ",
-          "explanationVi": "这 dùng chỉ người hoặc vật ở cự ly gần; 那 dùng chỉ người hoặc vật ở cự ly xa.",
+          "titleVi": "Động từ 帮助 và 帮",
+          "pattern": "帮/帮助 + Ai + (làm gì)",
+          "explanationVi": "Diễn đạt giúp đỡ.",
           "examples": [
             {
-              "hanzi": "这些书是我的，那些书是他的。",
-              "pinyin": "Zhèxiē shū shì wǒ de, nàxiē shū shì tā de.",
-              "translationVi": "Những cuốn sách này là của tôi, những cuốn sách kia là của anh ấy."
+              "hanzi": "谢谢你的帮助！",
+              "pinyin": "Xièxie nǐ de bāngzhù!",
+              "translationVi": "Cảm ơn sự giúp đỡ của bạn!"
             }
           ]
         }
@@ -253,27 +188,25 @@
         {
           "id": "ex-g-22-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "我们都是北京大学的学生。",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "张先生，很高兴认识您！",
           "options": [
-            "我们都是北京大学的学生。"
+            "张先生，很高兴认识您！"
           ],
-          "explanation": "Cấu trúc đúng: Đại từ / Danh từ chỉ người + 们."
+          "explanation": "Cấu trúc đúng: 很高兴 + 认识 + Bạn/Ngài."
         },
         {
           "id": "ex-g-22-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Đại từ / Danh từ chỉ người + 们",
-          "pinyin_prompt": "",
-          "correct_answer": "Hậu tố số nhiều 们",
+          "prompt": "Chọn cấu trúc chuẩn xác: 很高兴 + 认识 + Bạn/Ngài",
+          "correct_answer": "Chào hỏi làm quen 很高兴认识你",
           "options": [
-            "Hậu tố số nhiều 们",
+            "Chào hỏi làm quen 很高兴认识你",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Hậu tố số nhiều 们."
+          "explanation": "Đây là cấu trúc: Chào hỏi làm quen 很高兴认识你."
         }
       ]
     },
@@ -282,31 +215,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-22",
-        "titleVi": "Phân chia đồ dùng trong phòng",
+        "titleVi": "Làm quen bạn mới",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "这些本子是谁的？",
-            "pinyin": "Zhèxiē běnzi shì shéi de?",
-            "vi": "Những cuốn vở này là của ai?"
+            "hanzi": "王先生您好，这是我的好朋友李小姐。",
+            "pinyin": "Wáng xiānsheng nín hǎo, zhè shì wǒ de hǎo péngyou Lǐ xiǎojiě.",
+            "vi": "Chào ông Vương, đây là bạn thân của tôi cô Lý."
           },
           {
             "speaker": "B",
-            "hanzi": "这个是我的，那些是他们的。",
-            "pinyin": "Zhè ge shì wǒ de, nàxiē shì tāmen de.",
-            "vi": "Cái này là của tôi, những cái kia là của họ."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "哪里有卖铅笔的？",
-            "pinyin": "Nǎlǐ yǒu mài qiānbǐ de?",
-            "vi": "Ở đâu có bán bút chì thế?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "那儿有一家小书店，里边有卖。",
-            "pinyin": "Nàr yǒu yì jiā xiǎo shūdiàn, lǐbiān yǒu mài.",
-            "vi": "Đằng kia có một hiệu sách nhỏ, bên trong có bán đấy."
+            "hanzi": "李女士，很高兴认识您！有什么问题我可以帮助你。",
+            "pinyin": "Lǐ nǚshì, hěn gāoxìng rènshi nín! Yǒu shénme wèntí wǒ kěyǐ bāngzhù nǐ.",
+            "vi": "Chào cô Lý, rất vui được quen biết cô! Có câu hỏi gì tôi có thể giúp cô."
           }
         ]
       },
@@ -314,16 +235,15 @@
         {
           "id": "ex-d-22-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "这些本子是谁的？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "王先生您好，这是我的好朋友李小姐。",
           "options": [
-            "这些本子是谁的？",
-            "你好吗？",
+            "王先生您好，这是我的好朋友李小姐。",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '这些本子是谁的？' (Những cuốn vở này là của ai?)."
+          "explanation": "Lời thoại của A: '王先生您好，这是我的好朋友李小姐。' (Chào ông Vương, đây là bạn thân của tôi cô Lý.)."
         }
       ]
     },
@@ -334,28 +254,28 @@
         {
           "id": "ex-ls-22-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 22:",
-          "audio_target": "这个是我的，那些是他们的。",
-          "correct_answer": "这个是我的，那些是他们的。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 22:",
+          "audio_target": "李女士，很高兴认识您！有什么问题我可以帮助你。",
+          "correct_answer": "李女士，很高兴认识您！有什么问题我可以帮助你。",
           "options": [
-            "这个是我的，那些是他们的。",
+            "李女士，很高兴认识您！有什么问题我可以帮助你。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '这个是我的，那些是他们的。'."
+          "explanation": "Câu nghe được là: '李女士，很高兴认识您！有什么问题我可以帮助你。'."
         },
         {
           "id": "ex-ls-22-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "这些本子是谁的？",
-          "pinyin_target": "Zhèxiē běnzi shì shéi de?",
-          "correct_answer": "这些本子是谁的？",
+          "speech_target": "王先生您好，这是我的好朋友李小姐。",
+          "pinyin_target": "Wáng xiānsheng nín hǎo, zhè shì wǒ de hǎo péngyou Lǐ xiǎojiě.",
+          "correct_answer": "王先生您好，这是我的好朋友李小姐。",
           "options": [
-            "这些本子是谁的？"
+            "王先生您好，这是我的好朋友李小姐。"
           ],
-          "explanation": "Phát âm to rõ ràng: '这些本子是谁的？'."
+          "explanation": "Phát âm to rõ ràng: '王先生您好，这是我的好朋友李小姐。'."
         }
       ]
     },
@@ -363,34 +283,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Lớp học đa quốc gia",
-        "text": "我们班有十五个学生。大家来自不同的国家。有的来自越南，有的来自日本。我们在这里一起学习汉语，互相帮助。老师对我们大家都很好。",
-        "translationVi": "Lớp chúng tôi có mười lăm học sinh. Mọi người đến từ các quốc gia khác nhau. Có bạn đến từ Việt Nam, có bạn đến từ Nhật Bản. Chúng tôi ở đây cùng nhau học tiếng Hán, giúp đỡ lẫn nhau. Thầy cô đối xử với tất cả chúng tôi đều rất tốt."
+        "title": "Tình bạn đẹp",
+        "text": "大卫在中国认识了许多好朋友。大家互相帮助，每天一起学习中文，过得非常高兴。",
+        "translationVi": "David làm quen với nhiều bạn tốt ở Trung Quốc."
       },
       "exercises": [
         {
           "id": "ex-r-22-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 22 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Lớp học đa quốc gia'."
-        },
-        {
-          "id": "ex-r-22-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Lớp chúng tôi có mười lăm học sinh. Mọi ...",
-          "options": [
-            "Lớp chúng tôi có mười lăm học sinh. Mọi ...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Lớp chúng tôi có mười lăm học sinh. Mọi người đến từ các quốc gia khác nhau. Có bạn đến từ Việt Nam, có bạn đến từ Nhật Bản. Chúng tôi ở đây cùng nhau học tiếng Hán, giúp đỡ lẫn nhau. Thầy cô đối xử với tất cả chúng tôi đều rất tốt.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Tình bạn đẹp."
         }
       ]
     },

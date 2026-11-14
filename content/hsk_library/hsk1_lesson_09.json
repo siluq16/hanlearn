@@ -168,6 +168,19 @@
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
           }
+        },
+        {
+          "id": "ex-09-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ mang nghĩa 'phía bên này, đằng này' là gì?",
+          "correct_answer": "这边",
+          "options": [
+            "这边",
+            "那边",
+            "哪边",
+            "前边"
+          ],
+          "explanation": "'这边' (zhèbiān) nghĩa là phía này, bên này."
         }
       ]
     },

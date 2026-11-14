@@ -3,20 +3,25 @@
   "slug": "hsk1-checkpoint-05",
   "hsk_level": 1,
   "unit_id": "u-hsk1-05",
-  "title": "Chặng 5: Tổng ôn & Đánh giá Toàn diện Chặng 5 (Bài 21–26)",
-  "objective_vi": "Cột mốc đánh giá năng lực Chặng 5 (Bài 21–26). Kiểm tra phản xạ từ vựng, ngữ pháp và đối thoại.",
+  "title": "Chặng 5: Tổng ôn & Đánh giá Năng lực (Bài 21–25)",
+  "objective_vi": "Cột mốc đánh giá năng lực Chặng 5 (Bài 21–25). Kiểm tra toàn diện phản xạ giao tiếp, gọi điện, đại từ và chỉ dẫn phương vị.",
   "estimated_minutes": 30,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
-      "title_vi": "Khởi động Cột mốc Chặng 5",
-      "instruction": "Tổng ôn toàn diện các chủ đề từ 21–26.",
+      "title_vi": "Khởi động & Kích hoạt phản xạ Chặng 5",
+      "instruction": "Ôn lại các từ then chốt về giao tiếp, đại từ và không gian trước khi vào bài đánh giá.",
       "warmup_words": [
         {
           "hanzi": "电话",
           "pinyin": "diànhuà",
           "vi": "điện thoại"
+        },
+        {
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "vi": "bạn bè"
         },
         {
           "hanzi": "大家",
@@ -27,17 +32,12 @@
           "hanzi": "旁边",
           "pinyin": "pángbiān",
           "vi": "bên cạnh"
-        },
-        {
-          "hanzi": "千",
-          "pinyin": "qiān",
-          "vi": "nghìn"
         }
       ]
     },
     {
       "stage": "1_vocab_learn",
-      "title_vi": "Từ vựng trọng điểm Chặng",
+      "title_vi": "Tổng quan từ vựng trọng tâm Chặng 5 (Bài 21–25)",
       "vocabulary": [
         {
           "simplified": "电话",
@@ -45,39 +45,14 @@
           "meaning_vi": "điện thoại"
         },
         {
-          "simplified": "大家",
-          "pinyin": "dàjiā",
-          "meaning_vi": "mọi người"
-        },
-        {
-          "simplified": "旁边",
-          "pinyin": "pángbiān",
-          "meaning_vi": "bên cạnh"
-        },
-        {
-          "simplified": "千",
-          "pinyin": "qiān",
-          "meaning_vi": "nghìn"
-        },
-        {
-          "simplified": "时间",
-          "pinyin": "shíjiān",
-          "meaning_vi": "thời gian"
-        },
-        {
-          "simplified": "喜欢",
-          "pinyin": "xǐhuan",
-          "meaning_vi": "thích"
-        },
-        {
-          "simplified": "可以",
-          "pinyin": "kěyǐ",
-          "meaning_vi": "có thể"
-        },
-        {
           "simplified": "帮助",
           "pinyin": "bāngzhù",
           "meaning_vi": "giúp đỡ"
+        },
+        {
+          "simplified": "大家",
+          "pinyin": "dàjiā",
+          "meaning_vi": "mọi người"
         },
         {
           "simplified": "认识",
@@ -85,9 +60,34 @@
           "meaning_vi": "quen biết"
         },
         {
-          "simplified": "明年",
-          "pinyin": "míngnián",
-          "meaning_vi": "năm sau"
+          "simplified": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning_vi": "vui mừng"
+        },
+        {
+          "simplified": "这些",
+          "pinyin": "zhèxiē",
+          "meaning_vi": "những cái này"
+        },
+        {
+          "simplified": "哪里",
+          "pinyin": "nǎli",
+          "meaning_vi": "ở đâu, đâu"
+        },
+        {
+          "simplified": "旁边",
+          "pinyin": "pángbiān",
+          "meaning_vi": "bên cạnh"
+        },
+        {
+          "simplified": "前边",
+          "pinyin": "qiánbian",
+          "meaning_vi": "phía trước"
+        },
+        {
+          "simplified": "请问",
+          "pinyin": "qǐngwèn",
+          "meaning_vi": "xin hỏi"
         }
       ]
     },
@@ -98,45 +98,63 @@
         {
           "id": "ex-cp5-v01",
           "type": "vocab_mcq",
-          "prompt": "Trong đợt ôn tập Chặng 5, từ nào có nghĩa là: 'điện thoại'?",
-          "correct_answer": "电话",
+          "prompt": "Từ nào mang nghĩa là 'giúp đỡ'?",
+          "correct_answer": "帮助",
           "options": [
-            "电话",
-            "大家",
-            "不是",
-            "再见"
+            "帮助",
+            "认识",
+            "说话",
+            "看见"
           ],
-          "explanation": "电话 (diànhuà) là 'điện thoại'."
+          "explanation": "'帮助' (bāngzhù) nghĩa là giúp đỡ."
         },
         {
           "id": "ex-cp5-v02",
           "type": "pinyin_mcq",
-          "prompt": "Pinyin đúng của từ '大家' là gì?",
-          "correct_answer": "dàjiā",
+          "prompt": "Chọn Pinyin chuẩn xác của '旁边':",
+          "correct_answer": "pángbiān",
           "options": [
-            "dàjiā",
-            "diànhuà",
-            "shénme",
-            "xièxie"
+            "pángbiān",
+            "qiánbiān",
+            "hòubiān",
+            "dōngbiān"
           ],
-          "explanation": "大家 đọc là dàjiā."
+          "explanation": "'旁边' có phiên âm chuẩn là pángbiān (bên cạnh)."
         }
       ]
     },
     {
       "stage": "3_grammar_learn",
-      "title_vi": "Hệ thống hóa ngữ pháp",
+      "title_vi": "Ôn tập các điểm ngữ pháp then chốt Chặng 5",
       "grammar_points": [
         {
-          "id": "g-cp5-01",
-          "titleVi": "Tổng ôn: Động từ năng nguyện, Phương hướng và Trợ từ ngữ khí",
-          "pattern": "Năng nguyện (会/能/可以/想/要) + Động từ + Trợ từ (吧/呢/了)",
-          "explanationVi": "Kết hợp nhuần nhuyễn năng nguyện từ và ngữ khí tự nhiên của HSK 1.",
+          "id": "g-cp05-01",
+          "titleVi": "Tổng ôn: Đại từ chỉ định và nghi vấn (这 / 那 / 哪)",
+          "pattern": "这 / 那 / 哪 + (Lượng từ) + Danh từ",
+          "explanationVi": "Dùng '这' (này), '那' (kia), '哪' (nào) để xác định vị trí hoặc đặt câu hỏi về đồ vật, phương hướng.",
           "examples": [
             {
-              "hanzi": "我们大家都爱学中文！",
-              "pinyin": "Wǒmen dàjiā dōu ài xué zhōngwén!",
-              "translationVi": "Tất cả chúng tôi đều yêu thích học tiếng Trung!"
+              "hanzi": "这些人是我的朋友。",
+              "pinyin": "Zhèxiē rén shì wǒ de péngyou.",
+              "vi": "Những người này là bạn của tôi."
+            },
+            {
+              "hanzi": "你要哪本书？",
+              "pinyin": "Nǐ yào nǎ běn shū?",
+              "vi": "Bạn muốn cuốn sách nào?"
+            }
+          ]
+        },
+        {
+          "id": "g-cp05-02",
+          "titleVi": "Tổng ôn: Từ chỉ phương vị (方位词)",
+          "pattern": "Danh từ + 上 / 下 / 里 / 外 / 旁边",
+          "explanationVi": "Phương vị từ đứng sau danh từ để tạo thành cụm từ chỉ nơi chốn cụ thể.",
+          "examples": [
+            {
+              "hanzi": "学校在医院旁边。",
+              "pinyin": "Xuéxiào zài yīyuàn pángbiān.",
+              "vi": "Trường học ở bên cạnh bệnh viện."
             }
           ]
         }
@@ -144,44 +162,52 @@
     },
     {
       "stage": "4_grammar_practice",
-      "title_vi": "Luyện tập ngữ pháp tổng hợp",
+      "title_vi": "Thực hành cấu trúc câu tổng hợp",
       "exercises": [
         {
           "id": "ex-cp5-g01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp câu chuẩn theo ngữ pháp ôn tập:",
-          "correct_answer": "我们大家都爱学中文！",
-          "options": [
-            "我们大家都爱学中文！"
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh chỉ vị trí:",
+          "words": [
+            "学校",
+            "在",
+            "旁边",
+            "医院"
           ],
-          "explanation": "Cấu trúc: Năng nguyện (会/能/可以/想/要) + Động từ + Trợ từ (吧/呢/了)."
+          "correct_answer": "学校在医院旁边。",
+          "explanation": "Cấu trúc: Địa điểm A + 在 + Địa điểm B + Phương vị từ."
         }
       ]
     },
     {
       "stage": "5_dialogue_interactive",
-      "title_vi": "Hội thoại đối đáp tổng hợp",
+      "title_vi": "Hội thoại đối đáp Chặng 5",
       "dialogue": {
-        "id": "d-cp5",
-        "titleVi": "Chia tay và lời chúc",
+        "title": "Hỏi thăm và chỉ đường",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "喂，李月，明年你真的要去中国吗？",
-            "pinyin": "Wèi, Lǐ Yuè, míngnián nǐ zhēn de yào qù Zhōngguó ma?",
-            "vi": "Alo, Lý Nguyệt, năm sau bạn thật sự đi Trung Quốc à?"
+            "hanzi": "请问，李先生的办公室在哪里？",
+            "pinyin": "Qǐngwèn, Lǐ xiānsheng de bàngōngshì zài nǎli?",
+            "vi": "Xin hỏi, văn phòng ông Lý ở đâu?"
           },
           {
             "speaker": "B",
-            "hanzi": "对，九月去北京大学。很高兴能认识你们大家！",
-            "pinyin": "Duì, jiǔ yuè qù Běijīng Dàxué. Hěn gāoxìng néng rènshi nǐmen dàjiā!",
-            "vi": "Đúng thế, tháng 9 mình đến Đại học Bắc Kinh. Rất vui được quen biết tất cả các bạn!"
+            "hanzi": "在学校东边，离这里很近。",
+            "pinyin": "Zài xuéxiào dōngbiān, lí zhèlǐ hěn jìn.",
+            "vi": "Ở phía đông trường học, cách đây rất gần."
           },
           {
             "speaker": "A",
-            "hanzi": "祝你学习进步，常给我们打电话！",
-            "pinyin": "Zhù nǐ xuéxí jìnbù, cháng gěi wǒmen dǎ diànhuà!",
-            "vi": "Chúc bạn học tập tiến bộ, hãy thường xuyên gọi điện cho chúng mình nhé!"
+            "hanzi": "太感谢您了！",
+            "pinyin": "Tài gǎnxiè nín le!",
+            "vi": "Cảm ơn ngài rất nhiều!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不客气，很高兴帮助你。",
+            "pinyin": "Bù kèqi, hěn gāoxìng bāngzhù nǐ.",
+            "vi": "Không có chi, rất vui được giúp bạn."
           }
         ]
       },
@@ -189,80 +215,81 @@
         {
           "id": "ex-cp5-d01",
           "type": "vocab_mcq",
-          "prompt": "Nhân vật A trong đoạn hội thoại ôn tập nói câu gì?",
-          "correct_answer": "喂，李月，明年你真的要去中国吗？",
+          "prompt": "Văn phòng ông Lý nằm ở đâu theo lời B?",
+          "correct_answer": "在学校东边",
           "options": [
-            "喂，李月，明年你真的要去中国吗？",
-            "你好吗？",
-            "对不起。",
-            "我是学生。"
+            "在学校东边",
+            "在医院西边",
+            "在商店旁边",
+            "在家里"
           ],
-          "explanation": "A nói: '喂，李月，明年你真的要去中国吗？' (Alo, Lý Nguyệt, năm sau bạn thật sự đi Trung Quốc à?)."
+          "explanation": "B nói: '在学校东边，离这里很近。'"
         }
       ]
     },
     {
       "stage": "6_listening_speaking",
-      "title_vi": "Luyện Nghe & Luyện Nói Chặng",
+      "title_vi": "Luyện nghe & Nhại âm Chặng 5",
       "exercises": [
         {
           "id": "ex-cp5-ls01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp đúng trong Chặng 5:",
-          "audio_target": "对，九月去北京大学。很高兴能认识你们大家！",
-          "correct_answer": "对，九月去北京大学。很高兴能认识你们大家！",
+          "prompt": "Nghe đoạn phát âm và chọn nội dung chuẩn xác:",
+          "audio_target": "请问，李先生的办公室在哪里？",
+          "correct_answer": "请问，李先生的办公室在哪里？",
           "options": [
-            "对，九月去北京大学。很高兴能认识你们大家！",
-            "我不知道。",
-            "明天见。",
-            "很高兴。"
+            "请问，李先生的办公室在哪里？",
+            "请问，王老师现在在学校吗？",
+            "李先生今天给我打电话了。",
+            "我们都是李先生的朋友。"
           ],
-          "explanation": "Câu nghe được là: '对，九月去北京大学。很高兴能认识你们大家！'."
+          "explanation": "Câu phát âm chuẩn xác là: '请问，李先生的办公室在哪里？'"
         },
         {
           "id": "ex-cp5-ls02",
           "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm câu tổng ôn:",
-          "speech_target": "喂，李月，明年你真的要去中国吗？",
-          "pinyin_target": "Wèi, Lǐ Yuè, míngnián nǐ zhēn de yào qù Zhōngguó ma?",
-          "correct_answer": "喂，李月，明年你真的要去中国吗？",
+          "prompt": "Luyện nói nhại âm câu chúc mừng:",
+          "speech_target": "很高兴帮助你。",
+          "pinyin_target": "Hěn gāoxìng bāngzhù nǐ.",
+          "correct_answer": "很高兴帮助你。",
           "options": [
-            "喂，李月，明年你真的要去中国吗？"
+            "很高兴帮助你。"
           ],
-          "explanation": "Luyện nói to rõ: '喂，李月，明年你真的要去中国吗？'."
+          "explanation": "Phát âm diễn cảm, tròn vành rõ chữ."
         }
       ]
     },
     {
       "stage": "7_reading_comprehension",
-      "title_vi": "Đọc hiểu đoạn văn tổng hợp",
+      "title_vi": "Đọc hiểu Chặng 5",
       "passage": {
-        "title": "Hành trình HSK 1 trọn vẹn",
-        "text": "经过了二十六课的学习，我们已经掌握了三百个汉语词汇。我们能用汉语介绍自己、问路、买东西、点菜和打电话。学习汉语是一件非常快乐的事情。祝大家在HSK 1考试中取得优异的成绩！",
-        "translationVi": "Trải qua 26 bài học, chúng tôi đã nắm vững 300 từ vựng tiếng Hán. Chúng tôi có thể dùng tiếng Hán để giới thiệu bản thân, hỏi đường, mua sắm, gọi món và gọi điện thoại. Học tiếng Hán là một điều vô cùng vui vẻ. Chúc các bạn đạt kết quả xuất sắc trong kỳ thi HSK 1!"
+        "title": "我的新朋友",
+        "content": "大家好！我认识了一个新朋友，他叫张明。张明的家在医院旁边。昨天他给我打电话，请我去他家玩儿。我们一起说话，非常高兴。",
+        "pinyin": "Dàjiā hǎo! Wǒ rènshi le yí gè xīn péngyou, tā jiào Zhāng Míng. Zhāng Míng de jiā zài yīyuàn pángbiān. Zuótiān tā gěi wǒ dǎ diànhuà, qǐng wǒ qù tā jiā wánr. Wǒmen yìqǐ shuōhuà, fēicháng gāoxìng.",
+        "translation_vi": "Chào mọi người! Tôi đã quen một người bạn mới tên là Trương Minh. Nhà của Trương Minh ở bên cạnh bệnh viện. Hôm qua cậu ấy gọi điện thoại mời tôi đến nhà chơi. Chúng tôi cùng nhau trò chuyện, rất vui vẻ."
       },
       "exercises": [
         {
           "id": "ex-cp5-r01",
           "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với kiến thức tổng ôn Chặng 5 không?",
+          "prompt": "Đúng hay Sai: '张明的家在医院旁边。' (Nhà của Trương Minh ở bên cạnh bệnh viện)?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin chính xác theo đoạn văn: Hành trình HSK 1 trọn vẹn."
+          "explanation": "Đoạn văn ghi rõ: '张明的家在医院旁边。'"
         }
       ]
     },
     {
       "stage": "8_mini_quiz",
-      "title_vi": "Đánh giá năng lực Chặng 5",
+      "title_vi": "Đánh giá Năng lực Chặng 5",
       "quizUrl": "/quizzes/hsk1-checkpoint-05"
     },
     {
       "stage": "9_srs_review",
-      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "title_vi": "Ôn tập củng cố Chặng 5 (SRS Review)",
       "reviewUrl": "/srs"
     }
   ]

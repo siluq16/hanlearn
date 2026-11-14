@@ -1,0 +1,330 @@
+{
+  "id": "l-hsk1-031",
+  "slug": "hsk1-lesson-31",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-06",
+  "title": "Bài 31: Phó từ mức độ, Cấm chỉ & Tiếp diễn (非常、不要与正在)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 31: Phó từ mức độ, Cấm chỉ & Tiếp diễn (非常、不要与正在).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
+      "warmup_words": [
+        {
+          "hanzi": "别",
+          "pinyin": "bié",
+          "vi": "đừng"
+        },
+        {
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "vi": "đừng, không cần"
+        },
+        {
+          "hanzi": "非常",
+          "pinyin": "fēicháng",
+          "vi": "vô cùng, rất"
+        },
+        {
+          "hanzi": "真",
+          "pinyin": "zhēn",
+          "vi": "thật là, thật sự"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "别",
+          "pinyin": "bié",
+          "meaning_vi": "đừng"
+        },
+        {
+          "simplified": "不要",
+          "pinyin": "búyào",
+          "meaning_vi": "đừng, không cần"
+        },
+        {
+          "simplified": "非常",
+          "pinyin": "fēicháng",
+          "meaning_vi": "vô cùng, rất"
+        },
+        {
+          "simplified": "真",
+          "pinyin": "zhēn",
+          "meaning_vi": "thật là, thật sự"
+        },
+        {
+          "simplified": "太",
+          "pinyin": "tài",
+          "meaning_vi": "quá, lắm"
+        },
+        {
+          "simplified": "最",
+          "pinyin": "zuì",
+          "meaning_vi": "nhất"
+        },
+        {
+          "simplified": "还",
+          "pinyin": "hái",
+          "meaning_vi": "vẫn còn, còn"
+        },
+        {
+          "simplified": "也",
+          "pinyin": "yě",
+          "meaning_vi": "cũng"
+        },
+        {
+          "simplified": "都",
+          "pinyin": "dōu",
+          "meaning_vi": "đều"
+        },
+        {
+          "simplified": "正在",
+          "pinyin": "zhèngzài",
+          "meaning_vi": "đang"
+        },
+        {
+          "simplified": "已经",
+          "pinyin": "yǐjīng",
+          "meaning_vi": "đã, rồi"
+        },
+        {
+          "simplified": "有点儿",
+          "pinyin": "yǒudiǎnr",
+          "meaning_vi": "hơi hơi, có chút"
+        },
+        {
+          "simplified": "再",
+          "pinyin": "zài",
+          "meaning_vi": "lại, tiếp tục"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-31-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'đừng'?",
+          "correct_answer": "别",
+          "options": [
+            "别",
+            "不要",
+            "对不起",
+            "再见"
+          ],
+          "explanation": "别 (bié) mang nghĩa là 'đừng'."
+        },
+        {
+          "id": "ex-v-31-02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin chuẩn xác của từ '不要' là gì?",
+          "correct_answer": "búyào",
+          "options": [
+            "búyào",
+            "bié",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ '不要' đọc chuẩn là búyào."
+        },
+        {
+          "id": "ex-v-31-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 31:",
+          "correct_answer": "别",
+          "options": [
+            "别",
+            "学校",
+            "医院",
+            "睡觉"
+          ],
+          "explanation": "Từ '别' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-31-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ đứng trước tính từ biểu thị 'hơi... một chút (không vừa ý)' là:",
+          "correct_answer": "有点儿",
+          "options": [
+            "有点儿",
+            "一点儿",
+            "非常",
+            "十分"
+          ],
+          "explanation": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-31-01",
+          "titleVi": "Phó từ cấm chỉ 别 và 不要",
+          "pattern": "别 / 不要 + Động từ",
+          "explanationVi": "Khuyên ngăn hoặc cấm chỉ (Đừng...)",
+          "examples": [
+            {
+              "hanzi": "在教室里请不要大声说话。",
+              "pinyin": "Zài jiàoshì lǐ qǐng búyào dàshēng shuōhuà.",
+              "translationVi": "Trong lớp học xin đừng nói chuyện to tiếng."
+            }
+          ]
+        },
+        {
+          "id": "g-31-02",
+          "titleVi": "Phó từ tiếp diễn 正在 và hoàn thành 已经",
+          "pattern": "正在 + Động từ (đang) / 已经 + Động từ (đã)",
+          "explanationVi": "Thời thái hành động.",
+          "examples": [
+            {
+              "hanzi": "他正在看书，我已经吃过饭了。",
+              "pinyin": "Tā zhèngzài kànshū, wǒ yǐjīng chī guo fàn le.",
+              "translationVi": "Cậu ấy đang đọc sách, tôi đã ăn cơm rồi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-31-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "在教室里请不要大声说话。",
+          "options": [
+            "在教室里请不要大声说话。"
+          ],
+          "explanation": "Cấu trúc đúng: 别 / 不要 + Động từ."
+        },
+        {
+          "id": "ex-g-31-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc chuẩn xác: 别 / 不要 + Động từ",
+          "correct_answer": "Phó từ cấm chỉ 别 và 不要",
+          "options": [
+            "Phó từ cấm chỉ 别 và 不要",
+            "Câu chữ 把",
+            "Câu chữ 被",
+            "So sánh hơn 比"
+          ],
+          "explanation": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-31",
+        "titleVi": "Nhắc nhở học tập",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "外面太冷了，你别出去了！",
+            "pinyin": "Wàimiàn tài lěng le, nǐ bié chūqù le!",
+            "vi": "Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好的，我正在房间里复习功课呢。",
+            "pinyin": "Hǎo de, wǒ zhèngzài fángjiān lǐ fùxí gōngkè ne.",
+            "vi": "Được rồi, mình đang ở trong phòng ôn bài đây."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-31-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "外面太冷了，你别出去了！",
+          "options": [
+            "外面太冷了，你别出去了！",
+            "你好！",
+            "再见！",
+            "我是学生。"
+          ],
+          "explanation": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-31-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 31:",
+          "audio_target": "好的，我正在房间里复习功课呢。",
+          "correct_answer": "好的，我正在房间里复习功课呢。",
+          "options": [
+            "好的，我正在房间里复习功课呢。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+        },
+        {
+          "id": "ex-ls-31-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "外面太冷了，你别出去了！",
+          "pinyin_target": "Wàimiàn tài lěng le, nǐ bié chūqù le!",
+          "correct_answer": "外面太冷了，你别出去了！",
+          "options": [
+            "外面太冷了，你别出去了！"
+          ],
+          "explanation": "Phát âm to rõ ràng: '外面太冷了，你别出去了！'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Chăm chỉ ôn tập",
+        "text": "今天天气非常冷。同学们都在图书馆里。大卫正在做练习，大家都很认真，谁也不说话。",
+        "translationVi": "Thời tiết hôm nay rất lạnh. Các bạn đều ở thư viện."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-31-01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 31 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Chăm chỉ ôn tập."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-31"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

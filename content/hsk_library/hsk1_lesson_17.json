@@ -4,24 +4,24 @@
   "hsk_level": 1,
   "unit_id": "u-hsk1-04",
   "title": "Bài 17: Trang phục, Màu sắc & Mua sắm (这件衣服很漂亮)",
-  "objective_vi": "Nắm vững từ vựng về quần áo, màu sắc cơ bản (đỏ, trắng, đen, lam, lục, vàng), tính từ miêu tả (dài, ngắn, mới, cũ, đẹp) và lượng từ 件.",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 17: Trang phục, Màu sắc & Mua sắm (这件衣服很漂亮).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
           "hanzi": "衣服",
           "pinyin": "yīfu",
-          "vi": "quần áo, trang phục"
+          "vi": "quần áo"
         },
         {
           "hanzi": "穿",
           "pinyin": "chuān",
-          "vi": "mặc, đi (giày)"
+          "vi": "mặc, đi giày"
         },
         {
           "hanzi": "件",
@@ -30,7 +30,7 @@
         },
         {
           "hanzi": "颜色",
-          "pinyin": "",
+          "pinyin": "yánsè",
           "vi": "màu sắc"
         }
       ]
@@ -42,12 +42,12 @@
         {
           "simplified": "衣服",
           "pinyin": "yīfu",
-          "meaning_vi": "quần áo, trang phục"
+          "meaning_vi": "quần áo"
         },
         {
           "simplified": "穿",
           "pinyin": "chuān",
-          "meaning_vi": "mặc, đi (giày)"
+          "meaning_vi": "mặc, đi giày"
         },
         {
           "simplified": "件",
@@ -56,52 +56,52 @@
         },
         {
           "simplified": "颜色",
-          "pinyin": "",
+          "pinyin": "yánsè",
           "meaning_vi": "màu sắc"
         },
         {
           "simplified": "红",
-          "pinyin": "",
-          "meaning_vi": "đỏ"
+          "pinyin": "hóng",
+          "meaning_vi": "màu đỏ"
         },
         {
           "simplified": "白",
-          "pinyin": "",
-          "meaning_vi": "trắng"
+          "pinyin": "bái",
+          "meaning_vi": "màu trắng"
         },
         {
           "simplified": "黑",
-          "pinyin": "",
-          "meaning_vi": "đen"
+          "pinyin": "hēi",
+          "meaning_vi": "màu đen"
         },
         {
           "simplified": "蓝",
-          "pinyin": "",
-          "meaning_vi": "xanh lam"
+          "pinyin": "lán",
+          "meaning_vi": "màu xanh lam"
         },
         {
           "simplified": "绿",
-          "pinyin": "",
-          "meaning_vi": "xanh lá"
+          "pinyin": "lǜ",
+          "meaning_vi": "màu xanh lá"
         },
         {
           "simplified": "黄",
-          "pinyin": "",
-          "meaning_vi": "vàng"
+          "pinyin": "huáng",
+          "meaning_vi": "màu vàng"
         },
         {
           "simplified": "漂亮",
           "pinyin": "piàoliang",
-          "meaning_vi": "đẹp, xinh đẹp"
+          "meaning_vi": "xinh đẹp"
         },
         {
           "simplified": "长",
-          "pinyin": "",
+          "pinyin": "cháng",
           "meaning_vi": "dài"
         },
         {
           "simplified": "短",
-          "pinyin": "",
+          "pinyin": "duǎn",
           "meaning_vi": "ngắn"
         },
         {
@@ -111,7 +111,7 @@
         },
         {
           "simplified": "旧",
-          "pinyin": "",
+          "pinyin": "jiù",
           "meaning_vi": "cũ"
         },
         {
@@ -128,22 +128,20 @@
         {
           "id": "ex-v-17-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'quần áo, trang phục'?",
-          "pinyin_prompt": "",
+          "prompt": "Từ nào có nghĩa là: 'quần áo'?",
           "correct_answer": "衣服",
           "options": [
             "衣服",
             "穿",
-            "件",
-            "没有"
+            "对不起",
+            "再见"
           ],
-          "explanation": "衣服 (yīfu) mang nghĩa là 'quần áo, trang phục'."
+          "explanation": "衣服 (yīfu) mang nghĩa là 'quần áo'."
         },
         {
           "id": "ex-v-17-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '穿' là gì?",
-          "pinyin_prompt": "",
+          "prompt": "Pinyin chuẩn xác của từ '穿' là gì?",
           "correct_answer": "chuān",
           "options": [
             "chuān",
@@ -151,21 +149,20 @@
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 穿 phát âm chuẩn là chuān."
+          "explanation": "Từ '穿' đọc chuẩn là chuān."
         },
         {
           "id": "ex-v-17-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 17:",
           "correct_answer": "衣服",
           "options": [
             "衣服",
-            "衣服",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '衣服' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '衣服' là đáp án phù hợp nhất."
         }
       ]
     },
@@ -175,27 +172,14 @@
       "grammar_points": [
         {
           "id": "g-17-01",
-          "titleVi": "Lượng từ 件 dùng cho quần áo",
+          "titleVi": "Lượng từ 件 cho quần áo",
           "pattern": "Số từ + 件 + 衣服",
-          "explanationVi": "件 là lượng từ chuẩn dùng cho áo, áo khoác, trang phục.",
+          "explanationVi": "Lượng từ 件.",
           "examples": [
             {
-              "hanzi": "这件红衣服多少钱？",
-              "pinyin": "Zhè jiàn hóng yīfu duōshao qián?",
-              "translationVi": "Chiếc áo đỏ này bao nhiêu tiền?"
-            }
-          ]
-        },
-        {
-          "id": "g-17-02",
-          "titleVi": "Màu sắc bổ nghĩa cho danh từ",
-          "pattern": "Màu sắc + 的 + Danh từ",
-          "explanationVi": "Khi dùng màu sắc làm định ngữ miêu tả sự vật, thường kết hợp với trợ từ 的.",
-          "examples": [
-            {
-              "hanzi": "我想买一件白色的衣服。",
-              "pinyin": "Wǒ xiǎng mǎi yí jiàn báisè de yīfu.",
-              "translationVi": "Tôi muốn mua một chiếc áo màu trắng."
+              "hanzi": "我想买一件红色的新衣服。",
+              "pinyin": "Wǒ xiǎng mǎi yí jiàn hóngsè de xīn yīfu.",
+              "translationVi": "Tôi muốn mua một chiếc áo mới màu đỏ."
             }
           ]
         }
@@ -208,27 +192,25 @@
         {
           "id": "ex-g-17-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "这件红衣服多少钱？",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "我想买一件红色的新衣服。",
           "options": [
-            "这件红衣服多少钱？"
+            "我想买一件红色的新衣服。"
           ],
           "explanation": "Cấu trúc đúng: Số từ + 件 + 衣服."
         },
         {
           "id": "ex-g-17-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Số từ + 件 + 衣服",
-          "pinyin_prompt": "",
-          "correct_answer": "Lượng từ 件 dùng cho quần áo",
+          "prompt": "Chọn cấu trúc chuẩn xác: Số từ + 件 + 衣服",
+          "correct_answer": "Lượng từ 件 cho quần áo",
           "options": [
-            "Lượng từ 件 dùng cho quần áo",
+            "Lượng từ 件 cho quần áo",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Lượng từ 件 dùng cho quần áo."
+          "explanation": "Đây là cấu trúc: Lượng từ 件 cho quần áo."
         }
       ]
     },
@@ -237,31 +219,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-17",
-        "titleVi": "Chọn áo ở cửa hàng",
+        "titleVi": "Chọn áo",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "你看，这件黑色的衣服怎么样？",
-            "pinyin": "Nǐ kàn, zhè jiàn hēisè de yīfu zěnmeyàng?",
-            "vi": "Bạn xem, chiếc áo màu đen này thế nào?"
+            "hanzi": "这件蓝衣服真漂亮！",
+            "pinyin": "Zhè jiàn lán yīfu zhēn piàoliang!",
+            "vi": "Chiếc áo xanh lam này thật đẹp!"
           },
           {
             "speaker": "B",
-            "hanzi": "这件太长了，那件蓝色的很漂亮。",
-            "pinyin": "Zhè jiàn tài cháng le, nà jiàn lánsè de hěn piàoliang.",
-            "vi": "Chiếc này dài quá, chiếc màu xanh lam kia rất đẹp."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "商店里卖新衣服吗？",
-            "pinyin": "Shāngdiàn lǐ mài xīn yīfu ma?",
-            "vi": "Cửa hàng có bán quần áo mới không?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "有的，那边的红衣服也是新来的。",
-            "pinyin": "Yǒu de, nàbiān de hóng yīfu yě shì xīn lái de.",
-            "vi": "Có đấy, quần áo màu đỏ phía bên kia cũng là hàng mới về."
+            "hanzi": "我很喜欢这个颜色，也不贵。",
+            "pinyin": "Wǒ hěn xǐhuan zhè ge yánsè, yě bú guì.",
+            "vi": "Mình rất thích màu này, cũng không đắt."
           }
         ]
       },
@@ -269,16 +239,15 @@
         {
           "id": "ex-d-17-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "你看，这件黑色的衣服怎么样？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "这件蓝衣服真漂亮！",
           "options": [
-            "你看，这件黑色的衣服怎么样？",
-            "你好吗？",
+            "这件蓝衣服真漂亮！",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '你看，这件黑色的衣服怎么样？' (Bạn xem, chiếc áo màu đen này thế nào?)."
+          "explanation": "Lời thoại của A: '这件蓝衣服真漂亮！' (Chiếc áo xanh lam này thật đẹp!)."
         }
       ]
     },
@@ -289,28 +258,28 @@
         {
           "id": "ex-ls-17-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 17:",
-          "audio_target": "这件太长了，那件蓝色的很漂亮。",
-          "correct_answer": "这件太长了，那件蓝色的很漂亮。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 17:",
+          "audio_target": "我很喜欢这个颜色，也不贵。",
+          "correct_answer": "我很喜欢这个颜色，也不贵。",
           "options": [
-            "这件太长了，那件蓝色的很漂亮。",
+            "我很喜欢这个颜色，也不贵。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '这件太长了，那件蓝色的很漂亮。'."
+          "explanation": "Câu nghe được là: '我很喜欢这个颜色，也不贵。'."
         },
         {
           "id": "ex-ls-17-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你看，这件黑色的衣服怎么样？",
-          "pinyin_target": "Nǐ kàn, zhè jiàn hēisè de yīfu zěnmeyàng?",
-          "correct_answer": "你看，这件黑色的衣服怎么样？",
+          "speech_target": "这件蓝衣服真漂亮！",
+          "pinyin_target": "Zhè jiàn lán yīfu zhēn piàoliang!",
+          "correct_answer": "这件蓝衣服真漂亮！",
           "options": [
-            "你看，这件黑色的衣服怎么样？"
+            "这件蓝衣服真漂亮！"
           ],
-          "explanation": "Phát âm to rõ ràng: '你看，这件黑色的衣服怎么样？'."
+          "explanation": "Phát âm to rõ ràng: '这件蓝衣服真漂亮！'."
         }
       ]
     },
@@ -318,34 +287,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Đi mua sắm cuối tuần",
-        "text": "星期天玛丽去商店买衣服。商店里有红的、白的、黑的和黄的衣服。玛丽穿了一件蓝色的短衣服，非常漂亮。她买了这件新衣服，很高兴地回家了。",
-        "translationVi": "Chủ nhật Mary đi cửa hàng mua quần áo. Trong cửa hàng có quần áo màu đỏ, trắng, đen và vàng. Mary mặc thử một chiếc áo ngắn màu xanh lam, rất xinh đẹp. Cô ấy đã mua chiếc áo mới này và vui vẻ về nhà."
+        "title": "Mua sắm quần áo",
+        "text": "商店里卖很多漂亮的衣服，有红的、白的、黑的和黄的。玛丽穿了一件新衣服。",
+        "translationVi": "Cửa hàng bán rất nhiều quần áo đẹp."
       },
       "exercises": [
         {
           "id": "ex-r-17-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 17 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Đi mua sắm cuối tuần'."
-        },
-        {
-          "id": "ex-r-17-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Chủ nhật Mary đi cửa hàng mua quần áo. T...",
-          "options": [
-            "Chủ nhật Mary đi cửa hàng mua quần áo. T...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Chủ nhật Mary đi cửa hàng mua quần áo. Trong cửa hàng có quần áo màu đỏ, trắng, đen và vàng. Mary mặc thử một chiếc áo ngắn màu xanh lam, rất xinh đẹp. Cô ấy đã mua chiếc áo mới này và vui vẻ về nhà.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Mua sắm quần áo."
         }
       ]
     },

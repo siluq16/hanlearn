@@ -4,14 +4,14 @@
   "hsk_level": 1,
   "unit_id": "u-hsk1-04",
   "title": "Bài 19: Quán xá, Siêu thị & Nơi làm việc (去超市与在公司上班)",
-  "objective_vi": "Biết tên các địa điểm công cộng (quán ăn, khách sạn, siêu thị, công ty), các từ chỉ công việc (đi làm, tan ca, bận rộn) và cụm từ 没事.",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 19: Quán xá, Siêu thị & Nơi làm việc (去超市与在公司上班).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
           "hanzi": "店",
@@ -20,13 +20,13 @@
         },
         {
           "hanzi": "饭馆",
-          "pinyin": "",
-          "vi": "quán ăn, nhà hàng nhỏ"
+          "pinyin": "fànguǎn",
+          "vi": "quán ăn"
         },
         {
           "hanzi": "饭店",
           "pinyin": "fàndiàn",
-          "vi": "khách sạn, nhà hàng lớn"
+          "vi": "nhà hàng lớn, khách sạn"
         },
         {
           "hanzi": "超市",
@@ -46,13 +46,13 @@
         },
         {
           "simplified": "饭馆",
-          "pinyin": "",
-          "meaning_vi": "quán ăn, nhà hàng nhỏ"
+          "pinyin": "fànguǎn",
+          "meaning_vi": "quán ăn"
         },
         {
           "simplified": "饭店",
           "pinyin": "fàndiàn",
-          "meaning_vi": "khách sạn, nhà hàng lớn"
+          "meaning_vi": "nhà hàng lớn, khách sạn"
         },
         {
           "simplified": "超市",
@@ -66,8 +66,8 @@
         },
         {
           "simplified": "工作",
-          "pinyin": "",
-          "meaning_vi": "làm việc, công việc"
+          "pinyin": "gōngzuò",
+          "meaning_vi": "làm việc"
         },
         {
           "simplified": "上班",
@@ -77,22 +77,22 @@
         {
           "simplified": "下班",
           "pinyin": "xiàbān",
-          "meaning_vi": "tan ca, tan sở"
+          "meaning_vi": "tan làm"
         },
         {
           "simplified": "忙",
           "pinyin": "máng",
-          "meaning_vi": "bận, bận rộn"
+          "meaning_vi": "bận rộn"
         },
         {
           "simplified": "事",
           "pinyin": "shì",
-          "meaning_vi": "việc, sự việc"
+          "meaning_vi": "sự việc, công việc"
         },
         {
           "simplified": "没事",
           "pinyin": "méishì",
-          "meaning_vi": "không có việc gì, không sao"
+          "meaning_vi": "không sao, không có việc gì"
         }
       ]
     },
@@ -104,43 +104,40 @@
           "id": "ex-v-19-01",
           "type": "vocab_mcq",
           "prompt": "Từ nào có nghĩa là: 'cửa hàng, tiệm'?",
-          "pinyin_prompt": "",
           "correct_answer": "店",
           "options": [
             "店",
             "饭馆",
-            "饭店",
-            "没有"
+            "对不起",
+            "再见"
           ],
           "explanation": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
         },
         {
           "id": "ex-v-19-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '饭馆' là gì?",
-          "pinyin_prompt": "",
-          "correct_answer": "",
+          "prompt": "Pinyin chuẩn xác của từ '饭馆' là gì?",
+          "correct_answer": "fànguǎn",
           "options": [
-            "",
+            "fànguǎn",
             "diàn",
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 饭馆 phát âm chuẩn là ."
+          "explanation": "Từ '饭馆' đọc chuẩn là fànguǎn."
         },
         {
           "id": "ex-v-19-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 19:",
           "correct_answer": "店",
           "options": [
             "店",
-            "衣服",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '店' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '店' là đáp án phù hợp nhất."
         }
       ]
     },
@@ -150,27 +147,14 @@
       "grammar_points": [
         {
           "id": "g-19-01",
-          "titleVi": "Cách dùng 上班 và 下班",
-          "pattern": "几点 + 上班 / 下班",
-          "explanationVi": "Diễn đạt giờ bắt đầu làm việc và giờ tan làm ở cơ quan/công ty.",
+          "titleVi": "Đi làm và tan ca: 上班 / 下班",
+          "pattern": "几点 + 上班/下班？",
+          "explanationVi": "Giờ làm việc.",
           "examples": [
             {
-              "hanzi": "他在一家大公司工作，每天八点半上班。",
-              "pinyin": "Tā zài yì jiā dà gōngsī gōngzuò, měitiān bā diǎn bàn shàngbān.",
-              "translationVi": "Anh ấy làm việc ở một công ty lớn, mỗi ngày 8 rưỡi đi làm."
-            }
-          ]
-        },
-        {
-          "id": "g-19-02",
-          "titleVi": "Ý nghĩa và cách dùng 没事",
-          "pattern": "没事 / 没有事",
-          "explanationVi": "Có nghĩa là 'không có việc gì', 'không sao cả' hoặc 'đang rảnh rỗi'.",
-          "examples": [
-            {
-              "hanzi": "你今天下午有事吗？—— 没事，我很闲。",
-              "pinyin": "Nǐ jīntiān xiàwǔ yǒu shì ma? —— Méishì, wǒ hěn xián.",
-              "translationVi": "Chiều nay bạn có việc gì không? —— Không có việc gì, tôi rảnh."
+              "hanzi": "他每天八点半上班，五点下班。",
+              "pinyin": "Tā měitiān bā diǎn bàn shàngbān, wǔ diǎn xiàbān.",
+              "translationVi": "Cậu ấy 8h30 đi làm, 5h tan ca."
             }
           ]
         }
@@ -183,27 +167,25 @@
         {
           "id": "ex-g-19-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
-          "correct_answer": "他在一家大公司工作，每天八点半上班。",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "他每天八点半上班，五点下班。",
           "options": [
-            "他在一家大公司工作，每天八点半上班。"
+            "他每天八点半上班，五点下班。"
           ],
-          "explanation": "Cấu trúc đúng: 几点 + 上班 / 下班."
+          "explanation": "Cấu trúc đúng: 几点 + 上班/下班？."
         },
         {
           "id": "ex-g-19-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 几点 + 上班 / 下班",
-          "pinyin_prompt": "",
-          "correct_answer": "Cách dùng 上班 và 下班",
+          "prompt": "Chọn cấu trúc chuẩn xác: 几点 + 上班/下班？",
+          "correct_answer": "Đi làm và tan ca: 上班 / 下班",
           "options": [
-            "Cách dùng 上班 và 下班",
+            "Đi làm và tan ca: 上班 / 下班",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Cách dùng 上班 và 下班."
+          "explanation": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
         }
       ]
     },
@@ -212,31 +194,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-19",
-        "titleVi": "Hẹn bạn sau giờ làm",
+        "titleVi": "Tan ca",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "你今天工作忙不忙？",
-            "pinyin": "Nǐ jīntiān gōngzuò máng bu máng?",
+            "hanzi": "你今天工作忙吗？",
+            "pinyin": "Nǐ jīntiān gōngzuò máng ma?",
             "vi": "Hôm nay công việc của bạn có bận không?"
           },
           {
             "speaker": "B",
-            "hanzi": "有点儿忙，五点半才下班。",
-            "pinyin": "Yǒudiǎnr máng, wǔ diǎn bàn cái xiàbān.",
-            "vi": "Hơi bận một chút, 5 rưỡi mới tan ca."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "下班后有事吗？我们去超市买水果吧。",
-            "pinyin": "Xiàbān hòu yǒu shì ma? Wǒmen qù chāoshì mǎi shuǐguǒ ba.",
-            "vi": "Tan làm có việc gì không? Chúng mình đi siêu thị mua hoa quả nhé."
-          },
-          {
-            "speaker": "B",
-            "hanzi": "没事，下班后我们在饭店门口见！",
-            "pinyin": "Méishì, xiàbān hòu wǒmen zài fàndiàn ménkǒu jiàn!",
-            "vi": "Không có việc gì đâu, tan làm chúng ta gặp ở cổng nhà hàng nhé!"
+            "hanzi": "下班后没事，我们去超市买水果吧。",
+            "pinyin": "Xiàbān hòu méishì, wǒmen qù chāoshì mǎi shuǐguǒ ba.",
+            "vi": "Tan ca không có việc gì, chúng ta đi siêu thị mua hoa quả nhé."
           }
         ]
       },
@@ -244,16 +214,15 @@
         {
           "id": "ex-d-19-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "你今天工作忙不忙？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "你今天工作忙吗？",
           "options": [
-            "你今天工作忙不忙？",
-            "你好吗？",
+            "你今天工作忙吗？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '你今天工作忙不忙？' (Hôm nay công việc của bạn có bận không?)."
+          "explanation": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
         }
       ]
     },
@@ -264,28 +233,28 @@
         {
           "id": "ex-ls-19-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 19:",
-          "audio_target": "有点儿忙，五点半才下班。",
-          "correct_answer": "有点儿忙，五点半才下班。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 19:",
+          "audio_target": "下班后没事，我们去超市买水果吧。",
+          "correct_answer": "下班后没事，我们去超市买水果吧。",
           "options": [
-            "有点儿忙，五点半才下班。",
+            "下班后没事，我们去超市买水果吧。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '有点儿忙，五点半才下班。'."
+          "explanation": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
         },
         {
           "id": "ex-ls-19-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你今天工作忙不忙？",
-          "pinyin_target": "Nǐ jīntiān gōngzuò máng bu máng?",
-          "correct_answer": "你今天工作忙不忙？",
+          "speech_target": "你今天工作忙吗？",
+          "pinyin_target": "Nǐ jīntiān gōngzuò máng ma?",
+          "correct_answer": "你今天工作忙吗？",
           "options": [
-            "你今天工作忙不忙？"
+            "你今天工作忙吗？"
           ],
-          "explanation": "Phát âm to rõ ràng: '你今天工作忙不忙？'."
+          "explanation": "Phát âm to rõ ràng: '你今天工作忙吗？'."
         }
       ]
     },
@@ -293,34 +262,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Công việc của bố",
-        "text": "我爸爸在一家电脑公司工作。他工作非常认真，平时也很忙。每天下午六点下班后，他常去公司旁边的小饭馆吃晚饭，然后去超市买些水果带回家。",
-        "translationVi": "Bố tôi làm việc ở một công ty máy tính. Bố làm việc rất nghiêm túc, ngày thường cũng rất bận rộn. Mỗi ngày sau khi tan làm lúc sáu giờ chiều, bố thường đến quán ăn nhỏ bên cạnh công ty ăn tối, sau đó ghé siêu thị mua ít hoa quả mang về nhà."
+        "title": "Công việc của tôi",
+        "text": "我在一家大公司工作。平时工作很忙，下班后常去旁边的小饭馆吃饭。",
+        "translationVi": "Tôi làm việc ở một công ty lớn."
       },
       "exercises": [
         {
           "id": "ex-r-19-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 19 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Công việc của bố'."
-        },
-        {
-          "id": "ex-r-19-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Bố tôi làm việc ở một công ty máy tính. ...",
-          "options": [
-            "Bố tôi làm việc ở một công ty máy tính. ...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Bố tôi làm việc ở một công ty máy tính. Bố làm việc rất nghiêm túc, ngày thường cũng rất bận rộn. Mỗi ngày sau khi tan làm lúc sáu giờ chiều, bố thường đến quán ăn nhỏ bên cạnh công ty ăn tối, sau đó ghé siêu thị mua ít hoa quả mang về nhà.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Công việc của tôi."
         }
       ]
     },

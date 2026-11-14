@@ -1,0 +1,12 @@
+{
+  "total_official_syllabus": 300,
+  "state_1_in_content_library": 300,
+  "state_2_introduced": 300,
+  "state_3_practiced": 300,
+  "state_4_in_review_system": 300,
+  "state_5_learner_completed_tracking": "Tracked per user in learner_stage_progress and curriculum_quiz_attempts via user_id",
+  "provenance_statement": "COMMUNITY_MANDARINBEAN_HSK30_BAND1 (Third-party educational compilation referencing CTI HSK 3.0 syllabus outline; not direct official CTI electronic download).",
+  "not_introduced": [],
+  "not_practiced": [],
+  "not_reviewed": []
+}

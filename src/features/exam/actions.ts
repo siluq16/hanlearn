@@ -9,13 +9,14 @@ import type { MockExamDefinition, MockExamResult } from "./types";
 const mockExam = mockExamData as unknown as MockExamDefinition;
 
 export async function getMockExamDefinition(): Promise<MockExamDefinition> {
-  // Strip explanation_vi and correct answers from client payload
+  // Strip explanation_vi and correct answers from client payload before submission
   return {
     ...mockExam,
-    questions: mockExam.questions.map((q) => ({
-      ...q,
-      explanation_vi: undefined,
-    })),
+    questions: mockExam.questions.map((q) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { correct_index, explanation_vi, ...safeQ } = q;
+      return safeQ as unknown as typeof q;
+    }),
   };
 }
 

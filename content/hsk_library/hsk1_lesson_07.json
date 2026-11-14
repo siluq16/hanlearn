@@ -168,6 +168,19 @@
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
           }
+        },
+        {
+          "id": "ex-07-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào đồng nghĩa với '块' (đồng tiền) trong văn bản chính thức?",
+          "correct_answer": "元",
+          "options": [
+            "元",
+            "角",
+            "分",
+            "斤"
+          ],
+          "explanation": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
         }
       ]
     },

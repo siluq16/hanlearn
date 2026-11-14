@@ -4,24 +4,24 @@
   "hsk_level": 1,
   "unit_id": "u-hsk1-04",
   "title": "Bài 20: Giải trí, Phim ảnh & Ca hát (周末看电影与唱歌)",
-  "objective_vi": "Biết diễn đạt các hoạt động vui chơi giải trí cuối tuần: xem tivi, xem phim ở rạp, ca hát, khiêu vũ, nghe nhạc và các tính từ 好看, 好听, 好玩儿.",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 20: Giải trí, Phim ảnh & Ca hát (周末看电影与唱歌).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
           "hanzi": "电视",
           "pinyin": "diànshì",
-          "vi": "ti vi, truyền hình"
+          "vi": "ti vi"
         },
         {
           "hanzi": "电影",
           "pinyin": "diànyǐng",
-          "vi": "phim ảnh, bộ phim"
+          "vi": "phim ảnh"
         },
         {
           "hanzi": "电影院",
@@ -42,12 +42,12 @@
         {
           "simplified": "电视",
           "pinyin": "diànshì",
-          "meaning_vi": "ti vi, truyền hình"
+          "meaning_vi": "ti vi"
         },
         {
           "simplified": "电影",
           "pinyin": "diànyǐng",
-          "meaning_vi": "phim ảnh, bộ phim"
+          "meaning_vi": "phim ảnh"
         },
         {
           "simplified": "电影院",
@@ -66,12 +66,12 @@
         },
         {
           "simplified": "唱歌",
-          "pinyin": "",
+          "pinyin": "chànggē",
           "meaning_vi": "ca hát"
         },
         {
           "simplified": "跳舞",
-          "pinyin": "",
+          "pinyin": "tiàowǔ",
           "meaning_vi": "khiêu vũ, nhảy múa"
         },
         {
@@ -81,17 +81,17 @@
         },
         {
           "simplified": "玩儿",
-          "pinyin": "",
+          "pinyin": "wánr",
           "meaning_vi": "chơi đùa"
         },
         {
           "simplified": "听",
-          "pinyin": "",
+          "pinyin": "tīng",
           "meaning_vi": "nghe"
         },
         {
           "simplified": "音乐",
-          "pinyin": "",
+          "pinyin": "yīnyuè",
           "meaning_vi": "âm nhạc"
         },
         {
@@ -107,7 +107,7 @@
         {
           "simplified": "好玩儿",
           "pinyin": "hǎowánr",
-          "meaning_vi": "vui, thú vị (chơi)"
+          "meaning_vi": "vui, thú vị"
         }
       ]
     },
@@ -118,22 +118,20 @@
         {
           "id": "ex-v-20-01",
           "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'ti vi, truyền hình'?",
-          "pinyin_prompt": "",
+          "prompt": "Từ nào có nghĩa là: 'ti vi'?",
           "correct_answer": "电视",
           "options": [
             "电视",
             "电影",
-            "电影院",
-            "没有"
+            "对不起",
+            "再见"
           ],
-          "explanation": "电视 (diànshì) mang nghĩa là 'ti vi, truyền hình'."
+          "explanation": "电视 (diànshì) mang nghĩa là 'ti vi'."
         },
         {
           "id": "ex-v-20-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '电影' là gì?",
-          "pinyin_prompt": "",
+          "prompt": "Pinyin chuẩn xác của từ '电影' là gì?",
           "correct_answer": "diànyǐng",
           "options": [
             "diànyǐng",
@@ -141,21 +139,20 @@
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 电影 phát âm chuẩn là diànyǐng."
+          "explanation": "Từ '电影' đọc chuẩn là diànyǐng."
         },
         {
           "id": "ex-v-20-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 20:",
           "correct_answer": "电视",
           "options": [
             "电视",
-            "衣服",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '电视' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '电视' là đáp án phù hợp nhất."
         }
       ]
     },
@@ -165,27 +162,14 @@
       "grammar_points": [
         {
           "id": "g-20-01",
-          "titleVi": "Tiền tố 好 tạo tính từ cảm thụ (好看, 好听, 好玩儿)",
-          "pattern": "好 + Động từ (看 / 听 / 玩儿 / 吃 / 喝)",
-          "explanationVi": "Kết hợp với động từ để tạo thành tính từ chỉ đặc tính hấp dẫn, thú vị của sự vật.",
+          "titleVi": "Tính từ cảm thụ 好看, 好听, 好玩儿",
+          "pattern": "好 + Động từ (看/听/玩儿)",
+          "explanationVi": "Khen ngợi trải nghiệm.",
           "examples": [
             {
               "hanzi": "这部电影非常好听也好看。",
               "pinyin": "Zhè bù diànyǐng fēicháng hǎotīng yě hǎokàn.",
-              "translationVi": "Bộ phim này nhạc rất hay và hình ảnh cũng rất đẹp."
-            }
-          ]
-        },
-        {
-          "id": "g-20-02",
-          "titleVi": "Động từ ly hợp 唱歌, 跳舞",
-          "pattern": "唱 + (Số từ + Lượng từ) + 歌, 跳 + 舞",
-          "explanationVi": "Các cụm động tân có thể tách rời để chèn thêm lượng từ hoặc tính từ.",
-          "examples": [
-            {
-              "hanzi": "她唱了一首很好听的歌。",
-              "pinyin": "Tā chàng le yì shǒu hěn hǎotīng de gē.",
-              "translationVi": "Cô ấy đã hát một bài hát rất hay."
+              "translationVi": "Bộ phim này nhạc hay mà hình cũng đẹp."
             }
           ]
         }
@@ -198,27 +182,25 @@
         {
           "id": "ex-g-20-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
           "correct_answer": "这部电影非常好听也好看。",
           "options": [
             "这部电影非常好听也好看。"
           ],
-          "explanation": "Cấu trúc đúng: 好 + Động từ (看 / 听 / 玩儿 / 吃 / 喝)."
+          "explanation": "Cấu trúc đúng: 好 + Động từ (看/听/玩儿)."
         },
         {
           "id": "ex-g-20-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 好 + Động từ (看 / 听 / 玩儿 / 吃 / 喝)",
-          "pinyin_prompt": "",
-          "correct_answer": "Tiền tố 好 tạo tính từ cảm thụ (好看, 好听, 好玩儿)",
+          "prompt": "Chọn cấu trúc chuẩn xác: 好 + Động từ (看/听/玩儿)",
+          "correct_answer": "Tính từ cảm thụ 好看, 好听, 好玩儿",
           "options": [
-            "Tiền tố 好 tạo tính từ cảm thụ (好看, 好听, 好玩儿)",
+            "Tính từ cảm thụ 好看, 好听, 好玩儿",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Tiền tố 好 tạo tính từ cảm thụ (好看, 好听, 好玩儿)."
+          "explanation": "Đây là cấu trúc: Tính từ cảm thụ 好看, 好听, 好玩儿."
         }
       ]
     },
@@ -227,31 +209,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-20",
-        "titleVi": "Rủ nhau đi xem phim",
+        "titleVi": "Xem phim cuối tuần",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "周末你喜欢做什么？",
-            "pinyin": "Zhōumò nǐ xǐhuan zuò shénme?",
-            "vi": "Cuối tuần bạn thích làm gì?"
+            "hanzi": "周末去电影院看新电影吗？",
+            "pinyin": "Zhōumò qù diànyǐngyuàn kàn xīn diànyǐng ma?",
+            "vi": "Cuối tuần đi rạp xem phim mới không?"
           },
           {
             "speaker": "B",
-            "hanzi": "我喜欢在家听音乐，也喜欢去电影院看电影。",
-            "pinyin": "Wǒ xǐhuan zài jiā tīng yīnyuè, yě xǐhuan qù diànyǐngyuàn kàn diànyǐng.",
-            "vi": "Tôi thích ở nhà nghe nhạc, cũng thích đến rạp chiếu phim xem phim."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "今天晚上我们一起去唱歌吧，那里很好玩儿！",
-            "pinyin": "Jīntiān wǎnshang wǒmen yìqǐ qù chànggē ba, nàlǐ hěn hǎowánr!",
-            "vi": "Tối nay chúng mình cùng đi hát karaoke đi, ở đó vui lắm!"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "太好了，我很喜欢唱歌！",
-            "pinyin": "Tài hǎo le, wǒ hěn xǐhuan chànggē!",
-            "vi": "Tuyệt quá, tôi rất thích ca hát!"
+            "hanzi": "好啊，看完电影我们再去唱歌跳舞！",
+            "pinyin": "Hǎo a, kàn wán diànyǐng wǒmen zài qù chànggē tiàowǔ!",
+            "vi": "Được chứ, xem xong chúng ta lại đi hát nhảy múa!"
           }
         ]
       },
@@ -259,16 +229,15 @@
         {
           "id": "ex-d-20-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "周末你喜欢做什么？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "周末去电影院看新电影吗？",
           "options": [
-            "周末你喜欢做什么？",
-            "你好吗？",
+            "周末去电影院看新电影吗？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '周末你喜欢做什么？' (Cuối tuần bạn thích làm gì?)."
+          "explanation": "Lời thoại của A: '周末去电影院看新电影吗？' (Cuối tuần đi rạp xem phim mới không?)."
         }
       ]
     },
@@ -279,28 +248,28 @@
         {
           "id": "ex-ls-20-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 20:",
-          "audio_target": "我喜欢在家听音乐，也喜欢去电影院看电影。",
-          "correct_answer": "我喜欢在家听音乐，也喜欢去电影院看电影。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 20:",
+          "audio_target": "好啊，看完电影我们再去唱歌跳舞！",
+          "correct_answer": "好啊，看完电影我们再去唱歌跳舞！",
           "options": [
-            "我喜欢在家听音乐，也喜欢去电影院看电影。",
+            "好啊，看完电影我们再去唱歌跳舞！",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '我喜欢在家听音乐，也喜欢去电影院看电影。'."
+          "explanation": "Câu nghe được là: '好啊，看完电影我们再去唱歌跳舞！'."
         },
         {
           "id": "ex-ls-20-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "周末你喜欢做什么？",
-          "pinyin_target": "Zhōumò nǐ xǐhuan zuò shénme?",
-          "correct_answer": "周末你喜欢做什么？",
+          "speech_target": "周末去电影院看新电影吗？",
+          "pinyin_target": "Zhōumò qù diànyǐngyuàn kàn xīn diànyǐng ma?",
+          "correct_answer": "周末去电影院看新电影吗？",
           "options": [
-            "周末你喜欢做什么？"
+            "周末去电影院看新电影吗？"
           ],
-          "explanation": "Phát âm to rõ ràng: '周末你喜欢做什么？'."
+          "explanation": "Phát âm to rõ ràng: '周末去电影院看新电影吗？'."
         }
       ]
     },
@@ -308,34 +277,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Ngày nghỉ cuối tuần",
-        "text": "星期六晚上，王朋和朋友们一起去了电影院。他们看了一部新的中国电影，电影非常好看。看完了电影，大家去唱歌跳舞，玩得非常高兴。",
-        "translationVi": "Tối thứ Bảy, Vương Bằng và bạn bè cùng nhau đến rạp chiếu phim. Họ đã xem một bộ phim Trung Quốc mới, phim rất hay. Xem phim xong, mọi người cùng đi ca hát nhảy múa, vui chơi hết sức vui vẻ."
+        "title": "Cuối tuần vui vẻ",
+        "text": "星期六我和朋友去了电影院。电影很好看。晚上大家一起听音乐唱歌，玩儿得非常高兴。",
+        "translationVi": "Thứ Bảy tôi và bạn đến rạp chiếu phim."
       },
       "exercises": [
         {
           "id": "ex-r-20-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 20 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Ngày nghỉ cuối tuần'."
-        },
-        {
-          "id": "ex-r-20-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Tối thứ Bảy, Vương Bằng và bạn bè cùng n...",
-          "options": [
-            "Tối thứ Bảy, Vương Bằng và bạn bè cùng n...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Tối thứ Bảy, Vương Bằng và bạn bè cùng nhau đến rạp chiếu phim. Họ đã xem một bộ phim Trung Quốc mới, phim rất hay. Xem phim xong, mọi người cùng đi ca hát nhảy múa, vui chơi hết sức vui vẻ.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Cuối tuần vui vẻ."
         }
       ]
     },

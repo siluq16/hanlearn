@@ -14,12 +14,12 @@ import {
 } from "@/features/quizzes/curriculum-quizzes";
 
 describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
-  it("verifies all curriculum quizzes have exactly 8 questions with reviewed answer keys", () => {
-    expect(ALL_CURRICULUM_QUIZZES.length).toBe(27);
+  it("verifies all curriculum quizzes have at least 8 questions with reviewed answer keys", () => {
+    expect(ALL_CURRICULUM_QUIZZES.length).toBe(34);
 
     for (const quiz of ALL_CURRICULUM_QUIZZES) {
       expect(quiz).toBeDefined();
-      expect(quiz.questions.length).toBe(8);
+      expect(quiz.questions.length).toBeGreaterThanOrEqual(8);
 
       // Must be findable by both lessonId and slug
       const byId = findCurriculumQuiz(quiz.lessonId);

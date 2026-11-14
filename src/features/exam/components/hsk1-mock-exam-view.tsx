@@ -315,16 +315,18 @@ export function Hsk1MockExamView({ exam }: Hsk1MockExamViewProps) {
           </Button>
         </div>
 
-        {/* Transcript toggle for listening */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={() => setShowListeningTranscripts((prev) => !prev)}
-          className="text-xs gap-1.5 text-muted-foreground hover:text-foreground"
-        >
-          {showListeningTranscripts ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
-          {showListeningTranscripts ? "Ẩn Transcript Nghe" : "Hiện Transcript Nghe"}
-        </Button>
+        {/* Transcript toggle for listening (revealed only after submission for review) */}
+        {isSubmitted && (
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => setShowListeningTranscripts((prev) => !prev)}
+            className="text-xs gap-1.5 text-muted-foreground hover:text-foreground"
+          >
+            {showListeningTranscripts ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+            {showListeningTranscripts ? "Ẩn Transcript Nghe" : "Hiện Transcript Nghe"}
+          </Button>
+        )}
       </div>
 
       {/* QUESTIONS LIST */}

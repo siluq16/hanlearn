@@ -17,9 +17,16 @@ import {
   LESSON_24_QUIZ,
   LESSON_25_QUIZ,
   LESSON_26_QUIZ,
+  LESSON_27_QUIZ,
+  LESSON_28_QUIZ,
+  LESSON_29_QUIZ,
+  LESSON_30_QUIZ,
+  LESSON_31_QUIZ,
+  LESSON_32_QUIZ,
   CHECKPOINT_03_QUIZ,
   CHECKPOINT_04_QUIZ,
   CHECKPOINT_05_QUIZ,
+  CHECKPOINT_06_QUIZ,
 } from "./curriculum-quizzes-batch2";
 
 
@@ -1093,11 +1100,18 @@ export const ALL_CURRICULUM_QUIZZES: CurriculumQuizDefinition[] = [
   LESSON_24_QUIZ,
   LESSON_25_QUIZ,
   LESSON_26_QUIZ,
+  LESSON_27_QUIZ,
+  LESSON_28_QUIZ,
+  LESSON_29_QUIZ,
+  LESSON_30_QUIZ,
+  LESSON_31_QUIZ,
+  LESSON_32_QUIZ,
   CHECKPOINT_01_QUIZ,
   CHECKPOINT_02_QUIZ,
   CHECKPOINT_03_QUIZ,
   CHECKPOINT_04_QUIZ,
   CHECKPOINT_05_QUIZ,
+  CHECKPOINT_06_QUIZ,
 ];
 
 export const CURRICULUM_QUIZZES: Record<string, CurriculumQuizDefinition> = {
@@ -1149,12 +1163,26 @@ export const CURRICULUM_QUIZZES: Record<string, CurriculumQuizDefinition> = {
   "hsk1-lesson-25": LESSON_25_QUIZ,
   "l-hsk1-026": LESSON_26_QUIZ,
   "hsk1-lesson-26": LESSON_26_QUIZ,
+  "l-hsk1-027": LESSON_27_QUIZ,
+  "hsk1-lesson-27": LESSON_27_QUIZ,
+  "l-hsk1-028": LESSON_28_QUIZ,
+  "hsk1-lesson-28": LESSON_28_QUIZ,
+  "l-hsk1-029": LESSON_29_QUIZ,
+  "hsk1-lesson-29": LESSON_29_QUIZ,
+  "l-hsk1-030": LESSON_30_QUIZ,
+  "hsk1-lesson-30": LESSON_30_QUIZ,
+  "l-hsk1-031": LESSON_31_QUIZ,
+  "hsk1-lesson-31": LESSON_31_QUIZ,
+  "l-hsk1-032": LESSON_32_QUIZ,
+  "hsk1-lesson-32": LESSON_32_QUIZ,
   "l-hsk1-cp03": CHECKPOINT_03_QUIZ,
   "hsk1-checkpoint-03": CHECKPOINT_03_QUIZ,
   "l-hsk1-cp04": CHECKPOINT_04_QUIZ,
   "hsk1-checkpoint-04": CHECKPOINT_04_QUIZ,
   "l-hsk1-cp05": CHECKPOINT_05_QUIZ,
   "hsk1-checkpoint-05": CHECKPOINT_05_QUIZ,
+  "l-hsk1-cp06": CHECKPOINT_06_QUIZ,
+  "hsk1-checkpoint-06": CHECKPOINT_06_QUIZ,
 };
 
 export function findCurriculumQuiz(lessonIdOrSlug: string): CurriculumQuizDefinition | undefined {

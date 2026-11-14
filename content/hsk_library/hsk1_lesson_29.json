@@ -1,0 +1,307 @@
+{
+  "id": "l-hsk1-029",
+  "slug": "hsk1-lesson-29",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-06",
+  "title": "Bài 29: Khoảng thời gian & Mốc trước/sau (昨天、明天与以后)",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 29: Khoảng thời gian & Mốc trước/sau (昨天、明天与以后).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
+      "warmup_words": [
+        {
+          "hanzi": "分钟",
+          "pinyin": "fēnzhōng",
+          "vi": "phút"
+        },
+        {
+          "hanzi": "小时",
+          "pinyin": "xiǎoshí",
+          "vi": "tiếng đồng hồ"
+        },
+        {
+          "hanzi": "时间",
+          "pinyin": "shíjiān",
+          "vi": "thời gian"
+        },
+        {
+          "hanzi": "时候",
+          "pinyin": "shíhou",
+          "vi": "lúc, khi"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "分钟",
+          "pinyin": "fēnzhōng",
+          "meaning_vi": "phút"
+        },
+        {
+          "simplified": "小时",
+          "pinyin": "xiǎoshí",
+          "meaning_vi": "tiếng đồng hồ"
+        },
+        {
+          "simplified": "时间",
+          "pinyin": "shíjiān",
+          "meaning_vi": "thời gian"
+        },
+        {
+          "simplified": "时候",
+          "pinyin": "shíhou",
+          "meaning_vi": "lúc, khi"
+        },
+        {
+          "simplified": "昨天",
+          "pinyin": "zuótiān",
+          "meaning_vi": "hôm qua"
+        },
+        {
+          "simplified": "明天",
+          "pinyin": "míngtiān",
+          "meaning_vi": "ngày mai"
+        },
+        {
+          "simplified": "今年",
+          "pinyin": "jīnnián",
+          "meaning_vi": "năm nay"
+        },
+        {
+          "simplified": "明年",
+          "pinyin": "míngnián",
+          "meaning_vi": "năm sau"
+        },
+        {
+          "simplified": "去年",
+          "pinyin": "qùnián",
+          "meaning_vi": "năm ngoái"
+        },
+        {
+          "simplified": "以前",
+          "pinyin": "yǐqián",
+          "meaning_vi": "trước khi, trước đây"
+        },
+        {
+          "simplified": "以后",
+          "pinyin": "yǐhòu",
+          "meaning_vi": "sau khi, sau này"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-29-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'phút'?",
+          "correct_answer": "分钟",
+          "options": [
+            "分钟",
+            "小时",
+            "对不起",
+            "再见"
+          ],
+          "explanation": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+        },
+        {
+          "id": "ex-v-29-02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin chuẩn xác của từ '小时' là gì?",
+          "correct_answer": "xiǎoshí",
+          "options": [
+            "xiǎoshí",
+            "fēnzhōng",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ '小时' đọc chuẩn là xiǎoshí."
+        },
+        {
+          "id": "ex-v-29-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 29:",
+          "correct_answer": "分钟",
+          "options": [
+            "分钟",
+            "学校",
+            "医院",
+            "睡觉"
+          ],
+          "explanation": "Từ '分钟' là đáp án phù hợp nhất."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-29-01",
+          "titleVi": "Khoảng thời gian 分钟 và 小时",
+          "pattern": "Số + 个小时 / Số + 分钟",
+          "explanationVi": "Đo độ dài thời gian.",
+          "examples": [
+            {
+              "hanzi": "我看了两个小时的书。",
+              "pinyin": "Wǒ kàn le liǎng gè xiǎoshí de shū.",
+              "translationVi": "Tôi đã đọc sách hai tiếng đồng hồ."
+            }
+          ]
+        },
+        {
+          "id": "g-29-02",
+          "titleVi": "Mốc trước/sau 以前 và 以后",
+          "pattern": "Hành động/Mốc + 以前/以后",
+          "explanationVi": "Trước khi hoặc sau khi.",
+          "examples": [
+            {
+              "hanzi": "下课以后我想去书店。",
+              "pinyin": "Xiàkè yǐhòu wǒ xiǎng qù shūdiàn.",
+              "translationVi": "Sau khi tan học tôi muốn đi hiệu sách."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-29-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "correct_answer": "我看了两个小时的书。",
+          "options": [
+            "我看了两个小时的书。"
+          ],
+          "explanation": "Cấu trúc đúng: Số + 个小时 / Số + 分钟."
+        },
+        {
+          "id": "ex-g-29-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc chuẩn xác: Số + 个小时 / Số + 分钟",
+          "correct_answer": "Khoảng thời gian 分钟 và 小时",
+          "options": [
+            "Khoảng thời gian 分钟 và 小时",
+            "Câu chữ 把",
+            "Câu chữ 被",
+            "So sánh hơn 比"
+          ],
+          "explanation": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-29",
+        "titleVi": "Kế hoạch năm sau",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你去年去过北京吗？",
+            "pinyin": "Nǐ qùnián qù guo Běijīng ma?",
+            "vi": "Năm ngoái bạn từng đi Bắc Kinh chưa?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "去过，今年很忙没去，明年打算再去住两个星期。",
+            "pinyin": "Qù guo, jīnnián hěn máng méi qù, míngnián dǎsuan zài qù zhù liǎng gè xīngqī.",
+            "vi": "Đi rồi, năm nay bận chưa đi, năm sau dự định lại đi ở 2 tuần."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-29-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "你去年去过北京吗？",
+          "options": [
+            "你去年去过北京吗？",
+            "你好！",
+            "再见！",
+            "我是学生。"
+          ],
+          "explanation": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-29-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 29:",
+          "audio_target": "去过，今年很忙没去，明年打算再去住两个星期。",
+          "correct_answer": "去过，今年很忙没去，明年打算再去住两个星期。",
+          "options": [
+            "去过，今年很忙没去，明年打算再去住两个星期。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+        },
+        {
+          "id": "ex-ls-29-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你去年去过北京吗？",
+          "pinyin_target": "Nǐ qùnián qù guo Běijīng ma?",
+          "correct_answer": "你去年去过北京吗？",
+          "options": [
+            "你去年去过北京吗？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你去年去过北京吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Thời gian quý báu",
+        "text": "昨天兰兰学了三个小时汉语。她说：“以前我不会说中文，下课以后每天复习三十分钟，现在说得很好。”",
+        "translationVi": "Hôm qua Lan Lan học 3 tiếng tiếng Hán."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-29-01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 29 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời gian quý báu."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-29"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

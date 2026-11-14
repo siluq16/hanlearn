@@ -1,7 +1,8 @@
 {
   "id": "exam-hsk1-official-mock",
   "slug": "hsk1-official-mock-exam",
-  "title": "Đề thi thử HSK 1 Chuẩn Quốc tế CTI (40 câu / 35 phút)",
+  "title": "HanLearn HSK 1 Mock Exam (Mô phỏng Đề thi thử CTI · 40 câu / 35 phút)",
+  "disclaimer": "Đề thi mô phỏng định dạng chuẩn CTI phục vụ luyện tập và đánh giá cá nhân trên HanLearn, không đại diện cho quyền cấp chứng chỉ của CTI.",
   "syllabus": "HSK 2025 Official Exam Syllabus (300 Words)",
   "duration_minutes": 35,
   "total_questions": 40,

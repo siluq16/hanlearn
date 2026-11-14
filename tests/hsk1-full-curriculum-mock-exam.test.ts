@@ -44,11 +44,11 @@ describe("Sprint 8F - Full HSK 1 Curriculum Coverage & Official Mock Exam", () =
     expect(missingOfficial.length).toBe(0);
   });
 
-  it("verifies all 28 lessons and checkpoints are fully structured with 10 stages", () => {
-    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(28);
+  it("verifies all 35 lessons and checkpoints are fully structured with 10 stages", () => {
+    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(35);
 
-    // Lessons 1, 5 to 26 (23 lessons)
-    for (let i = 11; i <= 26; i++) {
+    // Lessons 11 to 32 (22 lessons)
+    for (let i = 11; i <= 32; i++) {
       const slug = `hsk1-lesson-${i}`;
       const lesson = findNineStageLesson(slug);
       expect(lesson).toBeDefined();
@@ -57,8 +57,8 @@ describe("Sprint 8F - Full HSK 1 Curriculum Coverage & Official Mock Exam", () =
       expect(lesson?.stages[1].vocabulary?.length).toBeGreaterThan(0);
     }
 
-    // Checkpoints 1 to 5 (5 checkpoints)
-    for (let cp = 1; cp <= 5; cp++) {
+    // Checkpoints 1 to 6 (6 checkpoints)
+    for (let cp = 1; cp <= 6; cp++) {
       const slug = `hsk1-checkpoint-0${cp}`;
       const checkpoint = findNineStageLesson(slug);
       expect(checkpoint).toBeDefined();
@@ -66,12 +66,12 @@ describe("Sprint 8F - Full HSK 1 Curriculum Coverage & Official Mock Exam", () =
     }
   });
 
-  it("verifies all 27 curriculum quizzes have 8 questions and valid answer keys", () => {
-    expect(ALL_CURRICULUM_QUIZZES.length).toBe(27);
+  it("verifies all 34 curriculum quizzes have at least 8 questions and valid answer keys", () => {
+    expect(ALL_CURRICULUM_QUIZZES.length).toBe(34);
 
     for (const quiz of ALL_CURRICULUM_QUIZZES) {
-      expect(quiz.questions.length).toBe(8);
-      expect(Object.keys(quiz.answerKeys).length).toBe(8);
+      expect(quiz.questions.length).toBeGreaterThanOrEqual(8);
+      expect(Object.keys(quiz.answerKeys).length).toBe(quiz.questions.length);
 
       for (const q of quiz.questions) {
         const key = quiz.answerKeys[q.id];

@@ -6,6 +6,7 @@ export interface MockExamQuestion {
   audio_text?: string;
   prompt: string;
   choices: string[];
+  correct_index?: number;
   explanation_vi?: string;
 }
 

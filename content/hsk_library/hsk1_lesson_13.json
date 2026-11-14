@@ -4,14 +4,14 @@
   "hsk_level": 1,
   "unit_id": "u-hsk1-03",
   "title": "Bài 13: Trường học & Giảng đường (我们在大学学中文)",
-  "objective_vi": "Mở rộng từ vựng về hệ thống giáo dục (tiểu học, trung học, đại học), học sinh, sinh viên, sách vở, bút viết.",
+  "objective_vi": "Làm chủ từ vựng và ngữ pháp trọng tâm Bài 13: Trường học & Giảng đường (我们在大学学中文).",
   "estimated_minutes": 25,
   "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
   "stages": [
     {
       "stage": "0_warmup",
       "title_vi": "Khởi động & Ngữ âm nền tảng",
-      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi học sâu.",
       "warmup_words": [
         {
           "hanzi": "大学",
@@ -86,7 +86,7 @@
         },
         {
           "simplified": "中文",
-          "pinyin": "Zhōngwén",
+          "pinyin": "zhōngwén",
           "meaning_vi": "tiếng Trung"
         },
         {
@@ -106,13 +106,13 @@
         },
         {
           "simplified": "本子",
-          "pinyin": "",
+          "pinyin": "běnzi",
           "meaning_vi": "vở, cuốn sổ"
         },
         {
           "simplified": "笔",
-          "pinyin": "",
-          "meaning_vi": "bút"
+          "pinyin": "bǐ",
+          "meaning_vi": "cây bút"
         },
         {
           "simplified": "同学",
@@ -129,21 +129,19 @@
           "id": "ex-v-13-01",
           "type": "vocab_mcq",
           "prompt": "Từ nào có nghĩa là: 'đại học'?",
-          "pinyin_prompt": "",
           "correct_answer": "大学",
           "options": [
             "大学",
             "大学生",
-            "中学",
-            "没有"
+            "对不起",
+            "再见"
           ],
           "explanation": "大学 (dàxué) mang nghĩa là 'đại học'."
         },
         {
           "id": "ex-v-13-02",
           "type": "pinyin_mcq",
-          "prompt": "Cách đọc Pinyin chính xác của từ '大学生' là gì?",
-          "pinyin_prompt": "",
+          "prompt": "Pinyin chuẩn xác của từ '大学生' là gì?",
           "correct_answer": "dàxuéshēng",
           "options": [
             "dàxuéshēng",
@@ -151,21 +149,59 @@
             "shénme",
             "hǎo"
           ],
-          "explanation": "Từ 大学生 phát âm chuẩn là dàxuéshēng."
+          "explanation": "Từ '大学生' đọc chuẩn là dàxuéshēng."
         },
         {
           "id": "ex-v-13-03",
           "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
-          "pinyin_prompt": "",
+          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 13:",
           "correct_answer": "大学",
           "options": [
             "大学",
-            "衣服",
             "学校",
+            "医院",
             "睡觉"
           ],
-          "explanation": "Từ '大学' phù hợp ngữ cảnh diễn đạt của bài học."
+          "explanation": "Từ '大学' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-13-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Hành động 'đi học' trong tiếng Trung là:",
+          "correct_answer": "上学",
+          "options": [
+            "上学",
+            "放学",
+            "下课",
+            "上班"
+          ],
+          "explanation": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+        },
+        {
+          "id": "ex-13-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Trường tiểu học và trường trung học lần lượt là:",
+          "correct_answer": "小学、中学",
+          "options": [
+            "小学、中学",
+            "大学、中学",
+            "幼儿园、小学",
+            "高中、大学"
+          ],
+          "explanation": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+        },
+        {
+          "id": "ex-13-v-extra-03",
+          "type": "vocab_mcq",
+          "prompt": "Học sinh tiểu học và học sinh trung học lần lượt là:",
+          "correct_answer": "小学生、中学生",
+          "options": [
+            "小学生、中学生",
+            "大学生、中学生",
+            "留学生、小学生",
+            "研究生、小学生"
+          ],
+          "explanation": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
         }
       ]
     },
@@ -175,27 +211,14 @@
       "grammar_points": [
         {
           "id": "g-13-01",
-          "titleVi": "Lượng từ 本 cho sách và vở",
-          "pattern": "Số từ + 本 + 书 / 本子",
-          "explanationVi": "本 là lượng từ chuyên dụng dùng cho sách, vở, tạp chí đóng thành cuốn.",
+          "titleVi": "Lượng từ 本 cho sách vở",
+          "pattern": "Số từ + 本 + 书/本子",
+          "explanationVi": "Lượng từ cho sách.",
           "examples": [
             {
               "hanzi": "我买了两本中文书。",
               "pinyin": "Wǒ mǎi le liǎng běn zhōngwén shū.",
-              "translationVi": "Tôi đã mua hai quyển sách tiếng Trung."
-            }
-          ]
-        },
-        {
-          "id": "g-13-02",
-          "titleVi": "Cách dùng từ 学, 学习 và 读书",
-          "pattern": "学 / 学习 + Đối tượng học, 去 + 读书",
-          "explanationVi": "学 và 学习 mang nghĩa tiếp thu kiến thức; 读书 có thể mang nghĩa đọc một cuốn sách hoặc đang theo học tại trường.",
-          "examples": [
-            {
-              "hanzi": "他在北京大学读书。",
-              "pinyin": "Tā zài Běijīng Dàxué dúshū.",
-              "translationVi": "Anh ấy đang theo học tại Đại học Bắc Kinh."
+              "translationVi": "Tôi mua hai cuốn sách tiếng Trung."
             }
           ]
         }
@@ -208,27 +231,25 @@
         {
           "id": "ex-g-13-01",
           "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
-          "pinyin_prompt": "",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
           "correct_answer": "我买了两本中文书。",
           "options": [
             "我买了两本中文书。"
           ],
-          "explanation": "Cấu trúc đúng: Số từ + 本 + 书 / 本子."
+          "explanation": "Cấu trúc đúng: Số từ + 本 + 书/本子."
         },
         {
           "id": "ex-g-13-02",
           "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Số từ + 本 + 书 / 本子",
-          "pinyin_prompt": "",
-          "correct_answer": "Lượng từ 本 cho sách và vở",
+          "prompt": "Chọn cấu trúc chuẩn xác: Số từ + 本 + 书/本子",
+          "correct_answer": "Lượng từ 本 cho sách vở",
           "options": [
-            "Lượng từ 本 cho sách và vở",
+            "Lượng từ 本 cho sách vở",
             "Câu chữ 把",
-            "Câu bị động 被",
-            "Cấu trúc 比 so sánh"
+            "Câu chữ 被",
+            "So sánh hơn 比"
           ],
-          "explanation": "Đây là Lượng từ 本 cho sách và vở."
+          "explanation": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
         }
       ]
     },
@@ -237,31 +258,19 @@
       "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
         "id": "d-13",
-        "titleVi": "Gặp bạn học ở hiệu sách",
+        "titleVi": "Gặp bạn ở hiệu sách",
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "王同学，你也去书店吗？",
-            "pinyin": "Wáng tóngxué, nǐ yě qù shūdiàn ma?",
-            "vi": "Bạn Vương, bạn cũng đến hiệu sách à?"
+            "hanzi": "王同学，你去书店买什么？",
+            "pinyin": "Wáng tóngxué, nǐ qù shūdiàn mǎi shénme?",
+            "vi": "Bạn Vương, bạn đi hiệu sách mua gì?"
           },
           {
             "speaker": "B",
-            "hanzi": "对，我想买三本中文书和几支笔。",
-            "pinyin": "Duì, wǒ xiǎng mǎi sān běn zhōngwén shū hé jǐ zhī bǐ.",
-            "vi": "Đúng vậy, tôi muốn mua 3 cuốn sách tiếng Trung và vài chiếc bút."
-          },
-          {
-            "speaker": "A",
-            "hanzi": "你是大学生吗？",
-            "pinyin": "Nǐ shì dàxuéshēng ma?",
-            "vi": "Bạn là sinh viên đại học à?"
-          },
-          {
-            "speaker": "B",
-            "hanzi": "是的，我和哥哥都在大学读书。",
-            "pinyin": "Shì de, wǒ hé gēge dōu zài dàxué dúshū.",
-            "vi": "Đúng thế, tôi và anh trai đều đang học đại học."
+            "hanzi": "我想买两本中文书和几支笔。",
+            "pinyin": "Wǒ xiǎng mǎi liǎng běn zhōngwén shū hé jǐ zhī bǐ.",
+            "vi": "Mình muốn mua 2 quyển sách tiếng Trung và vài cây bút."
           }
         ]
       },
@@ -269,16 +278,15 @@
         {
           "id": "ex-d-13-01",
           "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
-          "pinyin_prompt": "",
-          "correct_answer": "王同学，你也去书店吗？",
+          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
+          "correct_answer": "王同学，你去书店买什么？",
           "options": [
-            "王同学，你也去书店吗？",
-            "你好吗？",
+            "王同学，你去书店买什么？",
+            "你好！",
             "再见！",
-            "对不起。"
+            "我是学生。"
           ],
-          "explanation": "Lời thoại đầu tiên của A là: '王同学，你也去书店吗？' (Bạn Vương, bạn cũng đến hiệu sách à?)."
+          "explanation": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
         }
       ]
     },
@@ -289,28 +297,28 @@
         {
           "id": "ex-ls-13-01",
           "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 13:",
-          "audio_target": "对，我想买三本中文书和几支笔。",
-          "correct_answer": "对，我想买三本中文书和几支笔。",
+          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 13:",
+          "audio_target": "我想买两本中文书和几支笔。",
+          "correct_answer": "我想买两本中文书和几支笔。",
           "options": [
-            "对，我想买三本中文书和几支笔。",
+            "我想买两本中文书和几支笔。",
             "我不喜欢。",
             "没关系。",
             "他是医生。"
           ],
-          "explanation": "Câu nghe được là: '对，我想买三本中文书和几支笔。'."
+          "explanation": "Câu nghe được là: '我想买两本中文书和几支笔。'."
         },
         {
           "id": "ex-ls-13-02",
           "type": "speaking_shadowing",
           "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "王同学，你也去书店吗？",
-          "pinyin_target": "Wáng tóngxué, nǐ yě qù shūdiàn ma?",
-          "correct_answer": "王同学，你也去书店吗？",
+          "speech_target": "王同学，你去书店买什么？",
+          "pinyin_target": "Wáng tóngxué, nǐ qù shūdiàn mǎi shénme?",
+          "correct_answer": "王同学，你去书店买什么？",
           "options": [
-            "王同学，你也去书店吗？"
+            "王同学，你去书店买什么？"
           ],
-          "explanation": "Phát âm to rõ ràng: '王同学，你也去书店吗？'."
+          "explanation": "Phát âm to rõ ràng: '王同学，你去书店买什么？'."
         }
       ]
     },
@@ -318,34 +326,21 @@
       "stage": "7_reading_comprehension",
       "title_vi": "Đọc hiểu đoạn văn",
       "passage": {
-        "title": "Ngôi trường thân yêu",
-        "text": "我们学校是一所很好的大学。这里有许多大学生在认真学中文。教室里有桌子和椅子，大家都在看书写字。",
-        "translationVi": "Trường chúng tôi là một trường đại học rất tốt. Ở đây có nhiều sinh viên đang chăm chỉ học tiếng Trung. Trong phòng học có bàn ghế, mọi người đều đang đọc sách viết chữ."
+        "title": "Trường học của tôi",
+        "text": "我们大学有很多大学生。大家在这里认真学中文，读汉语书。",
+        "translationVi": "Trường đại học của chúng tôi có nhiều sinh viên."
       },
       "exercises": [
         {
           "id": "ex-r-13-01",
           "type": "reading_true_false",
-          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 13 không?",
           "correct_answer": "Đúng",
           "options": [
             "Đúng",
             "Sai"
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Ngôi trường thân yêu'."
-        },
-        {
-          "id": "ex-r-13-02",
-          "type": "vocab_mcq",
-          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
-          "correct_answer": "Trường chúng tôi là một trường đại học r...",
-          "options": [
-            "Trường chúng tôi là một trường đại học r...",
-            "Nói về việc đi mua xe máy.",
-            "Nói về thời tiết bão táp nguy hiểm.",
-            "Nói về kỳ nghỉ hè năm ngoái."
-          ],
-          "explanation": "Đoạn văn diễn tả chính xác: Trường chúng tôi là một trường đại học rất tốt. Ở đây có nhiều sinh viên đang chăm chỉ học tiếng Trung. Trong phòng học có bàn ghế, mọi người đều đang đọc sách viết chữ.."
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Trường học của tôi."
         }
       ]
     },

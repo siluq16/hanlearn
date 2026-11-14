@@ -21,11 +21,18 @@ import lesson23 from "../../../content/hsk_library/hsk1_lesson_23.json";
 import lesson24 from "../../../content/hsk_library/hsk1_lesson_24.json";
 import lesson25 from "../../../content/hsk_library/hsk1_lesson_25.json";
 import lesson26 from "../../../content/hsk_library/hsk1_lesson_26.json";
+import lesson27 from "../../../content/hsk_library/hsk1_lesson_27.json";
+import lesson28 from "../../../content/hsk_library/hsk1_lesson_28.json";
+import lesson29 from "../../../content/hsk_library/hsk1_lesson_29.json";
+import lesson30 from "../../../content/hsk_library/hsk1_lesson_30.json";
+import lesson31 from "../../../content/hsk_library/hsk1_lesson_31.json";
+import lesson32 from "../../../content/hsk_library/hsk1_lesson_32.json";
 import checkpoint1 from "../../../content/hsk_library/hsk1_checkpoint_01.json";
 import checkpoint2 from "../../../content/hsk_library/hsk1_checkpoint_02.json";
 import checkpoint3 from "../../../content/hsk_library/hsk1_checkpoint_03.json";
 import checkpoint4 from "../../../content/hsk_library/hsk1_checkpoint_04.json";
 import checkpoint5 from "../../../content/hsk_library/hsk1_checkpoint_05.json";
+import checkpoint6 from "../../../content/hsk_library/hsk1_checkpoint_06.json";
 import type { LibraryExercise } from "./types";
 
 export interface StageWarmupWord {
@@ -121,8 +128,15 @@ export const HSK1_NINE_STAGE_LESSONS: NineStageLessonData[] = [
   lesson23 as unknown as NineStageLessonData,
   lesson24 as unknown as NineStageLessonData,
   lesson25 as unknown as NineStageLessonData,
-  lesson26 as unknown as NineStageLessonData,
   checkpoint5 as unknown as NineStageLessonData,
+  lesson26 as unknown as NineStageLessonData,
+  lesson27 as unknown as NineStageLessonData,
+  lesson28 as unknown as NineStageLessonData,
+  lesson29 as unknown as NineStageLessonData,
+  lesson30 as unknown as NineStageLessonData,
+  lesson31 as unknown as NineStageLessonData,
+  lesson32 as unknown as NineStageLessonData,
+  checkpoint6 as unknown as NineStageLessonData,
 ];
 
 export function findNineStageLesson(idOrSlug: string): NineStageLessonData | undefined {
