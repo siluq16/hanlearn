@@ -4,6 +4,7 @@ import { getCurriculum } from "@/features/roadmap/queries";
 import { nextLesson } from "@/features/roadmap/model";
 import { getSettings } from "@/features/settings/queries";
 import { dataOrThrow, readAll } from "@/lib/data";
+import { LESSON_05_QUIZ, LESSON_06_QUIZ } from "@/features/quizzes/curriculum-quizzes";
 export async function getDashboard() {
   const { user, supabase } = await requireLearner();
   const [
@@ -100,13 +101,43 @@ export async function getDashboard() {
     };
   });
 
+  const curriculumAttempts: typeof quizHistory = [];
+  for (const qDef of [LESSON_05_QUIZ, LESSON_06_QUIZ]) {
+    const metaKey = `quiz_attempts_${qDef.quiz.id}`;
+    const rawList = Array.isArray(user.user_metadata?.[metaKey])
+      ? user.user_metadata[metaKey]
+      : [];
+    for (const a of rawList) {
+      if (a.submitted_at) {
+        curriculumAttempts.push({
+          id: a.id,
+          quizId: qDef.quiz.id,
+          lessonId: qDef.lessonId,
+          lessonTitle: qDef.lessonTitle,
+          correctCount: a.correct_count ?? 0,
+          questionCount: a.question_count ?? 8,
+          passed: a.passed ?? false,
+          submittedAt: a.submitted_at,
+        });
+      }
+    }
+  }
+
+  const combinedQuizHistory = [...quizHistory, ...curriculumAttempts].sort(
+    (a, b) => {
+      const ta = a.submittedAt ? new Date(a.submittedAt).getTime() : 0;
+      const tb = b.submittedAt ? new Date(b.submittedAt).getTime() : 0;
+      return tb - ta;
+    },
+  );
+
   return {
     ...settings,
     curriculum,
     totalWords: introduced.size,
     dueCount: dataOrThrow(dueResult),
     sessions: dataOrThrow(sessionsResult),
-    quizHistory,
+    quizHistory: combinedQuizHistory,
     next: nextLesson(
       curriculum.courses,
       curriculum.units,

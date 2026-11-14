@@ -136,6 +136,13 @@ type Table<Row> = {
   Update: Partial<Row>;
   Relationships: [];
 };
+export type LearnerStageProgress = {
+  user_id: string;
+  lesson_id: string;
+  current_stage: number;
+  completed_stages: number[];
+  updated_at: string;
+};
 export type Database = {
   public: {
     Tables: {
@@ -149,6 +156,7 @@ export type Database = {
       lesson_vocabulary: Table<LessonVocabulary>;
       lesson_grammar: Table<LessonGrammar>;
       grammar_points: Table<GrammarPoint>;
+      learner_stage_progress: Table<LearnerStageProgress>;
       lesson_progress: Table<Progress>;
       vocabulary: Table<Vocabulary & PublicationFields>;
       syllabus_vocabulary: Table<Membership>;

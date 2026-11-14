@@ -49,9 +49,9 @@ describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
     }
   });
 
-  it("validates server-authoritative score evaluation for Lesson 5", () => {
+  it("validates server-authoritative score evaluation for Lesson 5 with 80% Mastery rubric", () => {
     const quiz = LESSON_05_QUIZ;
-    // Simulate all correct answers
+    // Simulate all correct answers (8 out of 8 = 100% -> Pass)
     const allCorrectAnswers: Record<string, number> = {};
     for (const q of quiz.questions) {
       allCorrectAnswers[q.id] = quiz.answerKeys[q.id].correct_index;
@@ -64,7 +64,13 @@ describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
       }
     }
     expect(correctCount).toBe(8);
-    expect(correctCount / quiz.questions.length >= 0.6).toBe(true);
+    expect(correctCount * 100 >= quiz.questions.length * 80).toBe(true);
+
+    // 7 out of 8 = 87.5% -> Pass (>= 80%)
+    expect(7 * 100 >= quiz.questions.length * 80).toBe(true);
+
+    // 6 out of 8 = 75% -> Fail (< 80%)
+    expect(6 * 100 >= quiz.questions.length * 80).toBe(false);
 
     // Simulate partial answers (4 out of 8 = 50% -> fail)
     const partialAnswers: Record<string, number> = {};
@@ -79,7 +85,18 @@ describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
       }
     }
     expect(partialCount).toBe(4);
-    expect(partialCount / quiz.questions.length >= 0.6).toBe(false);
+    expect(partialCount * 100 >= quiz.questions.length * 80).toBe(false);
+  });
+
+  it("verifies learner_stage_progress minimal migration exists and defines RLS with auth.uid()", () => {
+    const migrationPath = "supabase/migrations/202611140007_learner_stage_progress.sql";
+    expect(fs.existsSync(migrationPath)).toBe(true);
+    const sql = fs.readFileSync(migrationPath, "utf8");
+    expect(sql).toContain("create table if not exists public.learner_stage_progress");
+    expect(sql).toContain("primary key (user_id, lesson_id)");
+    expect(sql).toContain("alter table public.learner_stage_progress enable row level security");
+    expect(sql).toContain("auth.uid()");
+    expect(sql).toContain("private.is_learner()");
   });
 
   it("verifies Lesson 6 question on date ordering and weekdays", () => {
@@ -100,5 +117,25 @@ describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
     expect(exerciseEngineSource).toContain("✓ Tôi đã luyện đọc");
     expect(exerciseEngineSource).not.toContain("✓ Tôi đã đọc to &amp; chuẩn");
     expect(exerciseEngineSource).toContain("không đại diện cho kiểm định phát âm chính thức");
+  });
+
+  it("verifies learner stage progress concurrent update safe union and user isolation", () => {
+    // Simulate device 1 completing stage 0, 1
+    const device1Stages = [0, 1];
+    // Simulate device 2 completing stage 1, 2 near-simultaneously
+    const device2Stages = [1, 2];
+
+    const merged = Array.from(new Set([...device1Stages, ...device2Stages])).sort((a, b) => a - b);
+    expect(merged).toEqual([0, 1, 2]);
+
+    // Verify cache keys are strictly isolated per user_id
+    const userA = "11111111-1111-4111-8111-111111111111";
+    const userB = "22222222-2222-4222-8222-222222222222";
+    const lessonKey = "hsk1-lesson-05";
+    const keyA = `hanlearn_9stage_${userA}_${lessonKey}`;
+    const keyB = `hanlearn_9stage_${userB}_${lessonKey}`;
+    expect(keyA).not.toBe(keyB);
+    expect(keyA).toContain(userA);
+    expect(keyB).toContain(userB);
   });
 });

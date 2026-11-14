@@ -134,7 +134,8 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
       }
     }
     const questionCount = curriculum.questions.length;
-    const passed = correctCount / questionCount >= 0.6;
+    // Unified 80% Mastery Threshold (consistent with PostgreSQL submit_quiz rubric in 202611120003_quiz.sql)
+    const passed = correctCount * 100 >= questionCount * 80;
     const submittedAt = new Date().toISOString();
 
     targetAttempt.submitted_at = submittedAt;
