@@ -4,6 +4,7 @@ import { z } from "zod";
 import { ArrowLeft } from "lucide-react";
 import { getVocabulary } from "@/features/vocabulary/queries";
 import { AudioPlayer } from "@/features/vocabulary/components/audio-player";
+import { MandarinAudioBar, MandarinAudioButton } from "@/components/mandarin-audio";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 export const metadata = { title: "Chi tiết từ vựng" };
@@ -29,6 +30,12 @@ export default async function VocabularyDetail({
         <ArrowLeft size={16} />
         Thư viện từ vựng
       </Link>
+      <Link
+        href="/review"
+        className="mb-6 ml-4 inline-flex min-h-11 items-center text-sm font-medium text-primary underline"
+      >
+        Ôn các thẻ đến hạn
+      </Link>
       <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
         <Card>
           <CardContent className="p-7 sm:p-10">
@@ -50,21 +57,27 @@ export default async function VocabularyDetail({
             <p className="mt-5 text-2xl text-primary">{word.pinyin_marked}</p>
             <p className="mb-7 mt-5 text-xl leading-8">{word.meaning_vi}</p>
             {word.part_of_speech && <Badge>{word.part_of_speech}</Badge>}
-            <div className="mt-7">
+            <div className="mt-7 space-y-4">
+              <MandarinAudioBar text={word.simplified} />
               {hasAudio ? (
                 <AudioPlayer vocabularyId={word.id} />
-              ) : (
-                <p className="text-sm leading-6 text-muted-foreground">
-                  Chưa có audio hợp lệ được phát hành cho từ này.
-                </p>
-              )}
+              ) : null}
             </div>
           </CardContent>
         </Card>
         <div className="space-y-6">
           <Card>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0">
               <CardTitle>Ví dụ trong ngữ cảnh</CardTitle>
+              {word.example_zh && (
+                <MandarinAudioButton
+                  text={word.example_zh}
+                  label="Nghe câu"
+                  showSlow
+                  size="sm"
+                  variant="outline"
+                />
+              )}
             </CardHeader>
             <CardContent>
               {word.example_zh ? (

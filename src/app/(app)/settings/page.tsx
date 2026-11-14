@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { AudioDiagnosticsCard } from "@/components/audio-diagnostics";
 export const metadata = { title: "Cài đặt" };
 export default async function SettingsPage() {
   const { user, profile, syllabuses } = await getSettings();
@@ -91,6 +92,7 @@ export default async function SettingsPage() {
               </form>
             </CardContent>
           </Card>
+          <AudioDiagnosticsCard />
         </div>
       </div>
     </>

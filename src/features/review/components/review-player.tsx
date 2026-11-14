@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
 import {
+  MandarinAudioBar,
+  MandarinAudioButton,
+  ListenBeforeGuessButton,
+  MandarinSpeedToggle,
+} from "@/components/mandarin-audio";
+import { stopMandarin } from "@/lib/mandarin-speech";
+import {
   reviewInput,
   type ReviewInput,
   type ReviewView,
@@ -63,7 +70,14 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
   useEffect(() => {
     if (ready) heading.current?.focus();
   }, [card?.id, ready]);
+  useEffect(() => {
+    stopMandarin();
+    return () => {
+      stopMandarin();
+    };
+  }, [card?.id]);
   async function send(input: ReviewInput) {
+    stopMandarin();
     if (busy.current || !ready || !enabled) return;
     try {
       sessionStorage.setItem(key, JSON.stringify(input));
@@ -111,6 +125,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
     }
   }
   async function reload() {
+    stopMandarin();
     if (busy.current) return;
     busy.current = true;
     setPending(true);
@@ -208,11 +223,14 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
         <>
           <Card>
             <CardContent className="space-y-6 p-5 sm:p-8">
-              <p className="text-xs font-medium text-muted-foreground">
-                {card.direction === "hanzi_to_vi"
-                  ? "Hán tự → Nghĩa tiếng Việt"
-                  : "Nghĩa tiếng Việt → Hán tự"}
-              </p>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-medium text-muted-foreground">
+                  {card.direction === "hanzi_to_vi"
+                    ? "Hán tự → Nghĩa tiếng Việt"
+                    : "Nghĩa tiếng Việt → Hán tự"}
+                </p>
+                <MandarinSpeedToggle />
+              </div>
               <h2
                 ref={heading}
                 tabIndex={-1}
@@ -222,14 +240,20 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                 {card.direction === "hanzi_to_vi" ? card.hanzi : card.meaning}
               </h2>
               {!flipped ? (
-                <Button
-                  variant="outline"
-                  className="min-h-12 w-full"
-                  disabled={pending || !ready || !!recovery}
-                  onClick={() => setFlipped(true)}
-                >
-                  Lật thẻ
-                </Button>
+                <div className="space-y-4">
+                  <ListenBeforeGuessButton hanzi={card.hanzi} />
+                  <Button
+                    variant="outline"
+                    className="min-h-12 w-full"
+                    disabled={pending || !ready || !!recovery}
+                    onClick={() => {
+                      stopMandarin();
+                      setFlipped(true);
+                    }}
+                  >
+                    Lật thẻ
+                  </Button>
+                </div>
               ) : (
                 <div
                   data-review-back
@@ -247,11 +271,22 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                   <p className="whitespace-pre-wrap text-base leading-8">
                     {card.meaning}
                   </p>
+                  <div className="flex justify-center">
+                    <MandarinAudioBar text={card.hanzi} />
+                  </div>
                   {card.example && (
                     <div className="space-y-2 rounded-xl bg-muted p-4 text-left text-sm leading-7">
-                      <p lang="zh-Hans" className="hanzi text-xl">
-                        {card.example.hanzi}
-                      </p>
+                      <div className="flex items-start justify-between gap-2">
+                        <p lang="zh-Hans" className="hanzi text-xl">
+                          {card.example.hanzi}
+                        </p>
+                        <MandarinAudioButton
+                          text={card.example.hanzi}
+                          showSlow
+                          size="sm"
+                          variant="ghost"
+                        />
+                      </div>
                       {card.example.pinyin && (
                         <p className="text-primary">{card.example.pinyin}</p>
                       )}
@@ -312,7 +347,10 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           <Button
             variant="ghost"
             disabled={pending || !!recovery}
-            onClick={() => setEnded(true)}
+            onClick={() => {
+              stopMandarin();
+              setEnded(true);
+            }}
           >
             Kết thúc phiên
           </Button>

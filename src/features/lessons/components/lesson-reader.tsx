@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
+import { MandarinAudioButton, MandarinSpeedToggle } from "@/components/mandarin-audio";
+import { stopMandarin } from "@/lib/mandarin-speech";
 import type { ReaderContent, ReaderGrammar, ReaderWord } from "./reader-types";
 import { ContentProvenance } from "./provenance";
 import { SectionNavigation } from "./section-navigation";
@@ -19,12 +21,20 @@ function Example({
       data-lesson-example
       className="max-w-prose space-y-2 rounded-r-xl border-l-2 border-primary/30 bg-secondary/40 px-4 py-3"
     >
-      <p
-        lang="zh-Hans"
-        className="hanzi whitespace-pre-wrap [overflow-wrap:anywhere] text-xl leading-loose sm:text-2xl"
-      >
-        {value.hanzi}
-      </p>
+      <div className="flex items-start justify-between gap-2">
+        <p
+          lang="zh-Hans"
+          className="hanzi whitespace-pre-wrap [overflow-wrap:anywhere] text-xl leading-loose sm:text-2xl"
+        >
+          {value.hanzi}
+        </p>
+        <MandarinAudioButton
+          text={value.hanzi}
+          showSlow
+          size="sm"
+          variant="ghost"
+        />
+      </div>
       {showPinyin && value.pinyin && (
         <p
           data-pinyin-text
@@ -51,13 +61,24 @@ function WordCard({
   return (
     <Card data-vocabulary-card className="min-w-0 self-start">
       <CardContent className="p-5 sm:p-6">
-        <p className="mb-1 text-xs font-medium text-muted-foreground">Hán tự</p>
-        <p
-          lang="zh-Hans"
-          className="hanzi [overflow-wrap:anywhere] text-4xl leading-relaxed"
-        >
-          {word.hanzi}
-        </p>
+        <div className="flex items-start justify-between gap-2">
+          <div>
+            <p className="mb-1 text-xs font-medium text-muted-foreground">Hán tự</p>
+            <p
+              lang="zh-Hans"
+              className="hanzi [overflow-wrap:anywhere] text-4xl leading-relaxed"
+            >
+              {word.hanzi}
+            </p>
+          </div>
+          <MandarinAudioButton
+            text={word.hanzi}
+            showSlow
+            label="Phát âm"
+            size="sm"
+            variant="outline"
+          />
+        </div>
         {word.traditional && (
           <p
             lang="zh-Hant"
@@ -142,6 +163,12 @@ function GrammarCard({
 }
 export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
   const [showPinyin, setShowPinyin] = useState(true);
+
+  useEffect(() => {
+    return () => {
+      stopMandarin();
+    };
+  }, []);
   const usedWords = new Set(
     content.sections.flatMap((s) =>
       s.type === "vocabulary_refs" ? s.vocabularyIds : [],
@@ -157,7 +184,10 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
   return (
     <div className="min-w-0 space-y-8">
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-muted p-4">
-        <p className="text-sm font-medium">Cách hiển thị phiên âm</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-sm font-medium">Tốc độ phát âm:</p>
+          <MandarinSpeedToggle />
+        </div>
         <Button
           type="button"
           variant="outline"

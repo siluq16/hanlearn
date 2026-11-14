@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { MandarinAudioButton, MandarinSpeedToggle } from "@/components/mandarin-audio";
 export const metadata = { title: "Từ vựng" };
 export default async function VocabularyPage({
   searchParams,
@@ -95,21 +96,26 @@ export default async function VocabularyPage({
           </p>
         )}
       </Card>
-      <div className="mb-4 flex flex-wrap justify-between gap-2 text-xs text-muted-foreground">
-        <span>
-          {result.syllabus
-            ? `${result.total} từ · ${result.syllabus.code}`
-            : "Chưa có syllabus được phát hành"}
-        </span>
-        {result.total > 0 && <span>20 từ mỗi trang</span>}
-        {(filters.q || filters.level) && result.items.length > 0 && (
-          <Link
-            href="/vocabulary"
-            className="inline-flex min-h-11 items-center text-primary underline"
-          >
-            Xóa bộ lọc
-          </Link>
-        )}
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-3">
+          <span>
+            {result.syllabus
+              ? `${result.total} từ · ${result.syllabus.code}`
+              : "Chưa có syllabus được phát hành"}
+          </span>
+          <MandarinSpeedToggle />
+        </div>
+        <div className="flex items-center gap-2">
+          {result.total > 0 && <span>20 từ mỗi trang</span>}
+          {(filters.q || filters.level) && result.items.length > 0 && (
+            <Link
+              href="/vocabulary"
+              className="inline-flex min-h-11 items-center text-primary underline"
+            >
+              Xóa bộ lọc
+            </Link>
+          )}
+        </div>
       </div>
       {result.items.length ? (
         <>
@@ -126,8 +132,16 @@ export default async function VocabularyPage({
                 key={v.id}
                 className="grid gap-3 border-b border-border px-5 py-5 last:border-0 hover:bg-muted/50 md:grid-cols-[1fr_1fr_1.5fr_1fr] md:items-center md:gap-4 md:px-6"
               >
-                <span className="hanzi flex items-center gap-3 text-2xl">
-                  {v.simplified}
+                <span className="hanzi flex items-center justify-between gap-3 text-2xl">
+                  <span className="flex items-center gap-2">
+                    {v.simplified}
+                    <MandarinAudioButton
+                      text={v.simplified}
+                      showSlow
+                      size="sm"
+                      variant="ghost"
+                    />
+                  </span>
                   <ArrowUpRight className="size-4 text-muted-foreground md:hidden" />
                 </span>
                 <span className="text-sm text-primary">{v.pinyin_marked}</span>
