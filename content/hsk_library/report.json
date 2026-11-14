@@ -1,0 +1,21 @@
+{
+  "total_unique_words": 3685,
+  "breakdown": {
+    "hsk1": 496,
+    "hsk2": 764,
+    "hsk3": 970,
+    "hsk4": 997,
+    "hsk5": 1300
+  },
+  "dialogues_summary": {
+    "total_lessons": 100,
+    "total_turns": 1629,
+    "by_suggested_level": {
+      "hsk1": 20,
+      "hsk2": 25,
+      "hsk3": 25,
+      "hsk4": 20,
+      "hsk5": 10
+    }
+  }
+}

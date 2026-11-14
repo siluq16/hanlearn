@@ -1,0 +1,183 @@
+{
+  "id": "module-0-pinyin-foundation",
+  "title": "Module 0: Ngữ âm và Phát âm Pinyin Tiếng Trung Nền tảng",
+  "description": "Hệ thống toàn diện về Thanh mẫu (Initials), Vận mẫu (Finals), 4 Thanh điệu và quy tắc biến điệu quan trọng cho người mới bắt đầu.",
+  "hsk_level": 1,
+  "sections": [
+    {
+      "id": "initials",
+      "title": "21 Thanh mẫu (Phụ âm đầu - Shengmu)",
+      "groups": [
+        {
+          "name": "Âm môi",
+          "initials": [
+            "b",
+            "p",
+            "m",
+            "f"
+          ],
+          "description": "b (pô), p (bật hơi), m (mô), f (phô)"
+        },
+        {
+          "name": "Âm đầu lưỡi",
+          "initials": [
+            "d",
+            "t",
+            "n",
+            "l"
+          ],
+          "description": "d (tơ), t (thờ bật hơi), n (nơ), l (lơ)"
+        },
+        {
+          "name": "Âm gốc lưỡi",
+          "initials": [
+            "g",
+            "k",
+            "h"
+          ],
+          "description": "g (cơ), k (khờ bật hơi), h (hơ/khờ nhẹ)"
+        },
+        {
+          "name": "Âm mặt lưỡi",
+          "initials": [
+            "j",
+            "q",
+            "x"
+          ],
+          "description": "j (chi), q (si bật hơi), x (xi nhẹ)"
+        },
+        {
+          "name": "Âm đầu lưỡi trước",
+          "initials": [
+            "z",
+            "c",
+            "s"
+          ],
+          "description": "z (chơ thẳng lưỡi), c (bật hơi xì), s (xơ)"
+        },
+        {
+          "name": "Âm uốn lưỡi (cuốn lưỡi)",
+          "initials": [
+            "zh",
+            "ch",
+            "sh",
+            "r"
+          ],
+          "description": "zh (trưa), ch (trưa bật hơi), sh (sưa), r (rơ)"
+        }
+      ]
+    },
+    {
+      "id": "finals",
+      "title": "36 Vận mẫu (Nguyên âm & Vần - Yunmu)",
+      "groups": [
+        {
+          "name": "Vận mẫu đơn",
+          "finals": [
+            "a",
+            "o",
+            "e",
+            "i",
+            "u",
+            "ü"
+          ]
+        },
+        {
+          "name": "Vận mẫu kép",
+          "finals": [
+            "ai",
+            "ei",
+            "ui",
+            "ao",
+            "ou",
+            "iu",
+            "ie",
+            "üe",
+            "er"
+          ]
+        },
+        {
+          "name": "Vận mẫu mũi trước (-n)",
+          "finals": [
+            "an",
+            "en",
+            "in",
+            "un",
+            "ün"
+          ]
+        },
+        {
+          "name": "Vận mẫu mũi sau (-ng)",
+          "finals": [
+            "ang",
+            "eng",
+            "ing",
+            "ong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tones",
+      "title": "4 Thanh điệu chuẩn & Thanh nhẹ (Shengdiao)",
+      "tones": [
+        {
+          "tone": 1,
+          "symbol": "¯ (55)",
+          "name": "Thanh 1 (Âm Bình)",
+          "description": "Độ cao 5-5, cao và ngân đều phẳng (mā)",
+          "pitch": "Cao phẳng"
+        },
+        {
+          "tone": 2,
+          "symbol": "ˊ (35)",
+          "name": "Thanh 2 (Dương Bình)",
+          "description": "Độ cao 3-5, vút lên như dấu sắc tiếng Việt (má)",
+          "pitch": "Lên cao"
+        },
+        {
+          "tone": 3,
+          "symbol": "ˇ (214)",
+          "name": "Thanh 3 (Thượng Thanh)",
+          "description": "Độ cao 2-1-4, hạ xuống thấp rồi hơi vút lên (mǎ)",
+          "pitch": "Xuống rồi lên"
+        },
+        {
+          "tone": 4,
+          "symbol": "ˋ (51)",
+          "name": "Thanh 4 (Khứ Thanh)",
+          "description": "Độ cao 5-1, dứt khoát hạ nhanh từ đỉnh xuống đáy (mà)",
+          "pitch": "Rơi mạnh"
+        },
+        {
+          "tone": 0,
+          "symbol": "Không dấu",
+          "name": "Thanh nhẹ (Khinh thanh)",
+          "description": "Phát âm nhẹ, ngắn, nhanh (ma, ba, de)",
+          "pitch": "Nhẹ, ngắn"
+        }
+      ]
+    },
+    {
+      "id": "tone_sandhi",
+      "title": "Các quy tắc biến điệu bắt buộc (Tone Sandhi)",
+      "rules": [
+        {
+          "name": "Biến điệu hai thanh 3 đi liền nhau",
+          "rule": "3 + 3 -> 2 + 3",
+          "example": "nǐ + hǎo -> ní hǎo (你好), měi + hǎo -> méi hǎo (美好)"
+        },
+        {
+          "name": "Biến điệu chữ '不' (bù)",
+          "rule": "bù + thanh 4 -> bú + thanh 4; giữ bù trước thanh 1, 2, 3",
+          "example": "bù + shì -> bú shì (不是), bù + yào -> bú yào (不要)"
+        },
+        {
+          "name": "Biến điệu chữ '一' (yī)",
+          "rule": "yī + thanh 4 -> yí + thanh 4; yī + thanh 1,2,3 -> yì + thanh 1,2,3; đứng một mình đọc yī",
+          "example": "yī + gè -> yí gè (一个), yī + tiān -> yì tiān (一天)"
+        }
+      ]
+    }
+  ]
+}
