@@ -44,8 +44,8 @@ describe("Sprint 8F - Full HSK 1 Curriculum Coverage & Official Mock Exam", () =
     expect(missingOfficial.length).toBe(0);
   });
 
-  it("verifies all 35 lessons and checkpoints are fully structured with 10 stages", () => {
-    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(35);
+  it("verifies all 38 lessons and checkpoints are fully structured with 10 stages", () => {
+    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(38);
 
     // Lessons 11 to 32 (22 lessons)
     for (let i = 11; i <= 32; i++) {
@@ -66,8 +66,8 @@ describe("Sprint 8F - Full HSK 1 Curriculum Coverage & Official Mock Exam", () =
     }
   });
 
-  it("verifies all 34 curriculum quizzes have at least 8 questions and valid answer keys", () => {
-    expect(ALL_CURRICULUM_QUIZZES.length).toBe(34);
+  it("verifies all 38 curriculum quizzes have at least 8 questions and valid answer keys", () => {
+    expect(ALL_CURRICULUM_QUIZZES.length).toBe(38);
 
     for (const quiz of ALL_CURRICULUM_QUIZZES) {
       expect(quiz.questions.length).toBeGreaterThanOrEqual(8);

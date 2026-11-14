@@ -10,20 +10,21 @@ import {
   LogOut,
   UserRound,
   Layers,
-  Headphones,
-  Mic,
+  Dumbbell,
+  FileCheck2,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
+import { CourseSelector } from "./course-selector";
 import { logout } from "@/features/auth/actions";
 const links = [
   { href: "/dashboard", label: "Tổng quan", icon: LayoutDashboard },
   { href: "/roadmap", label: "Lộ trình", icon: Route },
+  { href: "/practice", label: "Luyện tập", icon: Dumbbell },
   { href: "/vocabulary", label: "Từ vựng", icon: BookOpen },
-  { href: "/listening", label: "Luyện nghe", icon: Headphones },
-  { href: "/speaking", label: "Luyện nói", icon: Mic },
   { href: "/review", label: "Ôn tập", icon: Layers },
+  { href: "/exam", label: "Kiểm tra", icon: FileCheck2 },
   { href: "/settings", label: "Cài đặt", icon: Settings },
 ];
 export function AppShell({
@@ -97,9 +98,9 @@ export function AppShell({
             </span>
             HanLearn
           </Link>
-          <p className="hidden text-sm text-muted-foreground lg:block">
-            Không gian học tập cá nhân
-          </p>
+          <div className="flex items-center">
+            <CourseSelector />
+          </div>
           <div className="ml-auto flex items-center gap-3">
             <ThemeToggle />
             <details className="relative">

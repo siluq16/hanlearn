@@ -167,10 +167,13 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     expect(tonesSec.tones.length).toBe(5); // 4 tones + neutral
   });
 
-  it("validates 9-stage complete curriculum for all 35 lessons and checkpoints", () => {
-    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(35);
+  it("validates 9-stage complete curriculum for all 38 lessons and checkpoints", () => {
+    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(38);
 
     const l1 = findNineStageLesson("hsk1-lesson-01");
+    const l2 = findNineStageLesson("hsk1-lesson-02");
+    const l3 = findNineStageLesson("hsk1-lesson-03");
+    const l4 = findNineStageLesson("hsk1-lesson-04");
     const l5 = findNineStageLesson("hsk1-lesson-05");
     const l6 = findNineStageLesson("hsk1-lesson-06");
     const l7 = findNineStageLesson("hsk1-lesson-07");
@@ -183,6 +186,9 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     const cp6 = findNineStageLesson("hsk1-checkpoint-06");
 
     expect(l1).toBeDefined();
+    expect(l2).toBeDefined();
+    expect(l3).toBeDefined();
+    expect(l4).toBeDefined();
     expect(l5).toBeDefined();
     expect(l6).toBeDefined();
     expect(l7).toBeDefined();
@@ -190,6 +196,9 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     expect(l9).toBeDefined();
     expect(l10).toBeDefined();
     expect(l26).toBeDefined();
+    expect(l32).toBeDefined();
+    expect(cp5).toBeDefined();
+    expect(cp6).toBeDefined();
     expect(l32).toBeDefined();
     expect(cp5).toBeDefined();
     expect(cp6).toBeDefined();

@@ -150,32 +150,91 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         </CardContent>
       </Card>
 
-      {/* Stage Stepper Navigation (Horizontal scroll on mobile) */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
-        {stages.map((st, idx) => {
-          const isActive = idx === currentStageIndex;
-          const isDone = completedStages.includes(idx);
-          return (
-            <button
-              key={st.stage}
-              type="button"
-              onClick={() => {
-                markStageComplete(currentStageIndex);
-                handleSelectStage(idx);
-              }}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
-                isActive
-                  ? "bg-primary text-primary-foreground shadow-xs"
-                  : isDone
-                    ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
-              <span>GĐ {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
-            </button>
-          );
-        })}
+      {/* Progress & Skill-Group Navigation */}
+      <div className="space-y-3">
+        {/* Progress Bar */}
+        <div className="flex items-center justify-between text-xs text-muted-foreground px-1">
+          <span>Tiến độ bài học</span>
+          <span className="font-semibold text-foreground">
+            {completedStages.length} / {stages.length} giai đoạn ({Math.round((completedStages.length / stages.length) * 100)}%)
+          </span>
+        </div>
+        <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+          <div
+            className="h-full bg-primary transition-all duration-300"
+            style={{ width: `${(completedStages.length / stages.length) * 100}%` }}
+          />
+        </div>
+
+        {/* Skill Group Tabs */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 rounded-2xl bg-muted/60 border border-border">
+          {[
+            { id: "vocab", label: "1. Từ vựng", stageIndices: [0, 1, 2] },
+            { id: "grammar", label: "2. Ngữ pháp & Thoại", stageIndices: [3, 4, 5] },
+            { id: "skills", label: "3. Nghe & Đọc", stageIndices: [6, 7] },
+            { id: "evaluation", label: "4. Quiz & SRS", stageIndices: [8, 9] },
+          ].map((group) => {
+            const isGroupActive = group.stageIndices.includes(currentStageIndex);
+            const groupDoneCount = group.stageIndices.filter((idx) => completedStages.includes(idx)).length;
+            const isGroupAllDone = groupDoneCount === group.stageIndices.length;
+
+            return (
+              <button
+                key={group.id}
+                type="button"
+                onClick={() => {
+                  if (!isGroupActive) {
+                    markStageComplete(currentStageIndex);
+                    handleSelectStage(group.stageIndices[0]);
+                  }
+                }}
+                className={`flex flex-col items-center justify-center p-2 rounded-xl text-xs transition-all ${
+                  isGroupActive
+                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/30"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  {isGroupAllDone && (
+                    <span className="text-emerald-500 font-bold">✓</span>
+                  )}
+                  <span>{group.label}</span>
+                </div>
+                <span className="text-[10px] text-muted-foreground mt-0.5">
+                  {groupDoneCount}/{group.stageIndices.length} chặng
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Individual Stage Pills */}
+        <div className="flex flex-wrap gap-1.5">
+          {stages.map((st, idx) => {
+            const isActive = idx === currentStageIndex;
+            const isDone = completedStages.includes(idx);
+            return (
+              <button
+                key={st.stage}
+                type="button"
+                onClick={() => {
+                  markStageComplete(currentStageIndex);
+                  handleSelectStage(idx);
+                }}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                  isActive
+                    ? "bg-primary text-primary-foreground shadow-xs"
+                    : isDone
+                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+              >
+                <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
+                <span>GĐ {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Current Stage Card */}

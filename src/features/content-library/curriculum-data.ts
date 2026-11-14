@@ -1,4 +1,7 @@
 import lesson1 from "../../../content/hsk_library/hsk1_lesson_01.json";
+import lesson2 from "../../../content/hsk_library/hsk1_lesson_02.json";
+import lesson3 from "../../../content/hsk_library/hsk1_lesson_03.json";
+import lesson4 from "../../../content/hsk_library/hsk1_lesson_04.json";
 import lesson5 from "../../../content/hsk_library/hsk1_lesson_05.json";
 import lesson6 from "../../../content/hsk_library/hsk1_lesson_06.json";
 import lesson7 from "../../../content/hsk_library/hsk1_lesson_07.json";
@@ -103,6 +106,9 @@ export interface NineStageLessonData {
 
 export const HSK1_NINE_STAGE_LESSONS: NineStageLessonData[] = [
   lesson1 as unknown as NineStageLessonData,
+  lesson2 as unknown as NineStageLessonData,
+  lesson3 as unknown as NineStageLessonData,
+  lesson4 as unknown as NineStageLessonData,
   checkpoint1 as unknown as NineStageLessonData,
   lesson5 as unknown as NineStageLessonData,
   lesson6 as unknown as NineStageLessonData,
@@ -144,7 +150,10 @@ export function findNineStageLesson(idOrSlug: string): NineStageLessonData | und
     (l) =>
       l.id === idOrSlug ||
       l.slug === idOrSlug ||
-      // Match with Pilot Lesson 1 UUID
-      (idOrSlug === "639665c9-952d-5714-a276-537a3568b463" && l.id === "l-hsk1-001")
+      // Match with Pilot Lesson UUIDs
+      (idOrSlug === "639665c9-952d-5714-a276-537a3568b463" && l.id === "l-hsk1-001") ||
+      (idOrSlug === "022f2393-6cff-54f0-b24f-03ee7cfc3cfe" && l.id === "l-hsk1-002") ||
+      (idOrSlug === "321e1ed9-a427-57b3-817e-5acbb1b9bab8" && l.id === "l-hsk1-003") ||
+      (idOrSlug === "47097e01-9557-5f82-a84b-fba132cfca05" && l.id === "l-hsk1-004")
   );
 }

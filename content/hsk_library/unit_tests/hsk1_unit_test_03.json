@@ -1,0 +1,286 @@
+{
+  "id": "ut-hsk1-03",
+  "slug": "hsk1-unit-test-03",
+  "unit_id": "u-hsk1-03",
+  "unit_number": 3,
+  "title": "Unit Test 3: Mua sắm, Ẩm thực & Địa điểm",
+  "scope_vi": "Phạm vi: Bài 9 – Bài 14 (Vị trí, thói quen, thời tiết, giao thông, trường lớp, bài tập)",
+  "duration_minutes": 20,
+  "passing_score": 16,
+  "total_questions": 20,
+  "quality_status": "VERIFIED",
+  "lessons_covered": [
+    "hsk1-lesson-09",
+    "hsk1-lesson-10",
+    "hsk1-lesson-11",
+    "hsk1-lesson-12",
+    "hsk1-lesson-13",
+    "hsk1-lesson-14"
+  ],
+  "questions": [
+    {
+      "id": "ut3-q01",
+      "section": "listening",
+      "audioText": "请问，火车站怎么走？",
+      "prompt": "Nghe và xác định người nói muốn hỏi điều gì:",
+      "choices": [
+        "Hỏi đường đi đến ga tàu",
+        "Hỏi giờ tàu chạy",
+        "Hỏi giá vé tàu",
+        "Hỏi tìm người"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'火车站怎么走' là hỏi cách đi/đường đi đến ga tàu hỏa."
+    },
+    {
+      "id": "ut3-q02",
+      "section": "listening",
+      "audioText": "今天天气太热了，明天会下雨吗？",
+      "prompt": "Nghe và xác định thời tiết hôm nay:",
+      "choices": [
+        "Rất nóng",
+        "Rất lạnh",
+        "Đang mưa to",
+        "Có tuyết rơi"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'今天天气太热了' -> Thời tiết hôm nay rất nóng."
+    },
+    {
+      "id": "ut3-q03",
+      "section": "listening",
+      "audioText": "我每天坐公共汽车去学校。",
+      "prompt": "Nghe và xác định phương tiện di chuyển:",
+      "choices": [
+        "Xe buýt",
+        "Xe taxi",
+        "Tàu điện ngầm",
+        "Đi bộ"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'坐公共汽车' là đi xe buýt."
+    },
+    {
+      "id": "ut3-q04",
+      "section": "listening",
+      "audioText": "他在图书馆看书呢。",
+      "prompt": "Nghe và xác định vị trí nhân vật:",
+      "choices": [
+        "Thư viện",
+        "Phòng học",
+        "Bệnh viện",
+        "Ký túc xá"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在图书馆' -> Ở thư viện."
+    },
+    {
+      "id": "ut3-q05",
+      "section": "listening",
+      "audioText": "这本书里有很多生词和练习。",
+      "prompt": "Nghe và chọn nội dung của quyển sách:",
+      "choices": [
+        "Nhiều từ mới và bài tập",
+        "Nhiều tranh ảnh",
+        "Nhiều câu chuyện cổ tích",
+        "Nhiều bài hát"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'很多生词和练习' -> Nhiều từ mới và bài tập."
+    },
+    {
+      "id": "ut3-q06",
+      "section": "listening",
+      "audioText": "喂，老师，明天上午我有考试。",
+      "prompt": "Nghe đoạn thông báo và xác định lịch trình:",
+      "choices": [
+        "Sáng mai có bài thi",
+        "Chiều mai có tiết học",
+        "Ngày mai được nghỉ",
+        "Tối mai đi gặp bạn"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'明天上午我有考试' -> Sáng mai có bài thi."
+    },
+    {
+      "id": "ut3-q07",
+      "section": "vocabulary",
+      "prompt": "Từ nào sau đây có nghĩa là 'mưa' hoặc 'trời đổ mưa'?",
+      "choices": [
+        "下雨",
+        "天气",
+        "冷",
+        "热"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'下雨' (xiàyǔ) là trời mưa."
+    },
+    {
+      "id": "ut3-q08",
+      "section": "vocabulary",
+      "prompt": "Phương tiện giao thông '出租车' có nghĩa là gì?",
+      "choices": [
+        "Xe taxi",
+        "Xe đạp",
+        "Máy bay",
+        "Tàu hỏa"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'出租车' (chūzūchē) là xe taxi."
+    },
+    {
+      "id": "ut3-q09",
+      "section": "vocabulary",
+      "prompt": "Từ nào chỉ địa điểm 'trường học'?",
+      "choices": [
+        "学校",
+        "医院",
+        "饭馆",
+        "商店"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'学校' (xuéxiào) là trường học."
+    },
+    {
+      "id": "ut3-q10",
+      "section": "vocabulary",
+      "prompt": "Từ '认识' có nghĩa là:",
+      "choices": [
+        "Quen biết",
+        "Học tập",
+        "Nói chuyện",
+        "Nghe"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'认识' (rènshi) là quen biết, nhận biết."
+    },
+    {
+      "id": "ut3-q11",
+      "section": "grammar",
+      "prompt": "Để hỏi cách thức thực hiện hành động, ta dùng đại từ nghi vấn nào?",
+      "choices": [
+        "怎么",
+        "什么",
+        "哪儿",
+        "谁"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'怎么' + Động từ dùng để hỏi cách thức (ví dụ: 怎么去, 怎么写)."
+    },
+    {
+      "id": "ut3-q12",
+      "section": "grammar",
+      "prompt": "Điền giới từ chỉ nơi chốn: '我____大学学习中文。'",
+      "choices": [
+        "在",
+        "到",
+        "从",
+        "给"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Giới từ '在' + Nơi chốn + Động từ -> '在大学学习中文' (học tiếng Trung ở trường đại học)."
+    },
+    {
+      "id": "ut3-q13",
+      "section": "grammar",
+      "prompt": "Trợ từ '呢' trong câu '他在看书呢' diễn tả điều gì?",
+      "choices": [
+        "Hành động đang tiếp diễn",
+        "Quá khứ hoàn thành",
+        "Hỏi lựa chọn",
+        "Lời mời gọi"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'呢' đứng cuối câu trần thuật biểu thị hành động đang diễn ra."
+    },
+    {
+      "id": "ut3-q14",
+      "section": "grammar",
+      "prompt": "Cấu trúc hỏi thời tiết đúng ngữ pháp là:",
+      "choices": [
+        "今天天气怎么样？",
+        "今天天气什么？",
+        "今天天气谁？",
+        "今天天气在哪儿？"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Hỏi tình hình, tính chất dùng '怎么样？'."
+    },
+    {
+      "id": "ut3-q15",
+      "section": "reading",
+      "prompt": "Đọc đoạn văn:\n'北京秋天的天气最好，不冷也不热。我和同学们经常去公园跑步，或者在草地上看书。大家都喜欢秋天。'\nHỏi: Thời tiết mùa thu ở Bắc Kinh như thế nào?",
+      "choices": [
+        "Không lạnh cũng không nóng",
+        "Rất lạnh và có tuyết",
+        "Rất nóng và mưa nhiều",
+        "Gió to"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'不冷也不热' -> Không lạnh cũng không nóng."
+    },
+    {
+      "id": "ut3-q16",
+      "section": "reading",
+      "prompt": "Các bạn học sinh thường làm gì ở công viên vào mùa thu?",
+      "choices": [
+        "Chạy bộ hoặc đọc sách",
+        "Đi bơi",
+        "Học bài thi",
+        "Nấu ăn"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'经常去公园跑步，或者在草地上看书' -> Chạy bộ hoặc đọc sách."
+    },
+    {
+      "id": "ut3-q17",
+      "section": "reading",
+      "prompt": "Đọc câu: '学校在前面，离车站不远。'\nHỏi: Trường học ở đâu?",
+      "choices": [
+        "Ở phía trước, cách bến xe không xa",
+        "Ở phía sau bệnh viện",
+        "Ở bên cạnh công ty",
+        "Cách rất xa"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在前面，离车站不远' -> Phía trước, không xa bến xe."
+    },
+    {
+      "id": "ut3-q18",
+      "section": "reading",
+      "prompt": "Đọc thông báo:\n'明天上午八点在302教室上课，请大家准时到。'\nHỏi: Tiết học ngày mai bắt đầu lúc mấy giờ?",
+      "choices": [
+        "8:00 sáng",
+        "8:30 sáng",
+        "9:00 sáng",
+        "2:00 chiều"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'上午八点' -> 8 giờ sáng."
+    },
+    {
+      "id": "ut3-q19",
+      "section": "reading",
+      "prompt": "Đọc câu: '下雨了，路上车很多，我们坐地铁吧。'\nHỏi: Tại sao họ chọn đi tàu điện ngầm?",
+      "choices": [
+        "Trời mưa và đường đông xe",
+        "Họ thích ngắm cảnh",
+        "Tàu điện ngầm miễn phí",
+        "Hết xe buýt"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'下雨了，路上车很多' -> Trời mưa và đường đông xe."
+    },
+    {
+      "id": "ut3-q20",
+      "section": "reading",
+      "prompt": "Đọc câu: '大卫汉字写得很好，老师表扬了他。'\nNhận định Đúng hay Sai: Chữ Hán của David viết rất xấu.",
+      "choices": [
+        "Sai",
+        "Đúng"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Trong bài: '汉字写得很好' (chữ viết rất đẹp) -> Nhận định là Sai."
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "id": "l-hsk1-004",
+  "slug": "hsk1-lesson-04",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-01",
+  "title": "Bài 4: Hôm nay thứ mấy? (今天星期几？ — Ngày tháng & Thời gian)",
+  "objective_vi": "Hỏi và nói thứ trong tuần; biểu đạt ngày tháng năm; hỏi và nói giờ giấc cơ bản; phân biệt 星期天/星期日 và cách dùng 点/分.",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Luyện đếm số từ 1 đến 10 và các mốc thời gian: jīntiān, míngtiān, zuótiān, xīngqī, yuè, hào, diǎn.",
+      "warmup_words": [
+        {
+          "hanzi": "今天",
+          "pinyin": "jīntiān",
+          "vi": "hôm nay"
+        },
+        {
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "vi": "ngày mai"
+        },
+        {
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "vi": "hôm qua"
+        },
+        {
+          "hanzi": "星期",
+          "pinyin": "xīngqī",
+          "vi": "thứ, tuần"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "今天",
+          "pinyin": "jīntiān",
+          "meaning_vi": "Hôm nay"
+        },
+        {
+          "simplified": "明天",
+          "pinyin": "míngtiān",
+          "meaning_vi": "Ngày mai"
+        },
+        {
+          "simplified": "昨天",
+          "pinyin": "zuótiān",
+          "meaning_vi": "Hôm qua"
+        },
+        {
+          "simplified": "星期",
+          "pinyin": "xīngqī",
+          "meaning_vi": "Tuần / thứ"
+        },
+        {
+          "simplified": "星期天",
+          "pinyin": "xīngqītiān",
+          "meaning_vi": "Chủ nhật (khẩu ngữ)"
+        },
+        {
+          "simplified": "星期日",
+          "pinyin": "xīngqīrì",
+          "meaning_vi": "Chủ nhật (văn viết)"
+        },
+        {
+          "simplified": "月",
+          "pinyin": "yuè",
+          "meaning_vi": "Tháng"
+        },
+        {
+          "simplified": "号",
+          "pinyin": "hào",
+          "meaning_vi": "Ngày (trong khẩu ngữ)"
+        },
+        {
+          "simplified": "日",
+          "pinyin": "rì",
+          "meaning_vi": "Ngày (trong văn viết)"
+        },
+        {
+          "simplified": "年",
+          "pinyin": "nián",
+          "meaning_vi": "Năm"
+        },
+        {
+          "simplified": "现在",
+          "pinyin": "xiànzài",
+          "meaning_vi": "Bây giờ / hiện tại"
+        },
+        {
+          "simplified": "点",
+          "pinyin": "diǎn",
+          "meaning_vi": "Giờ (mốc thời gian)"
+        },
+        {
+          "simplified": "分",
+          "pinyin": "fēn",
+          "meaning_vi": "Phút"
+        },
+        {
+          "simplified": "半",
+          "pinyin": "bàn",
+          "meaning_vi": "Rưỡi / nửa (30 phút)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng chủ động",
+      "exercises": [
+        {
+          "id": "ex-04-v1",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Từ nào sau đây có nghĩa là 'ngày mai'?",
+          "targetContent": {
+            "hanzi": "明天",
+            "pinyin": "míngtiān"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "明天 (míngtiān)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "今天 (jīntiān)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "昨天 (zuótiān)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "现在 (xiànzài)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-04-v2",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép các mốc thời gian tương ứng:",
+          "matchingPairs": [
+            {
+              "leftId": "l1",
+              "leftLabel": "今天",
+              "rightId": "r1",
+              "rightLabel": "jīntiān — Hôm nay"
+            },
+            {
+              "leftId": "l2",
+              "leftLabel": "昨天",
+              "rightId": "r2",
+              "rightLabel": "zuótiān — Hôm qua"
+            },
+            {
+              "leftId": "l3",
+              "leftLabel": "星期",
+              "rightId": "r3",
+              "rightLabel": "xīngqī — Thứ, tuần"
+            },
+            {
+              "leftId": "l4",
+              "leftLabel": "现在",
+              "rightId": "r4",
+              "rightLabel": "xiànzài — Bây giờ"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Ngữ pháp trọng điểm",
+      "grammar_points": [
+        {
+          "id": "gp-04-1",
+          "titleVi": "Hỏi và nói thứ trong tuần: '今天星期几？'",
+          "pattern": "Thời gian + 星期 + [Số từ 1–6 / 天 / 日]",
+          "explanationVi": "Trong tiếng Trung, thứ Hai là 星期一, thứ Ba là 星期二... thứ Bảy là 星期六. Chủ nhật là 星期天 hoặc 星期日 (không dùng 星期七).",
+          "examples": [
+            {
+              "hanzi": "今天星期几？",
+              "pinyin": "Jīntiān xīngqī jǐ?",
+              "translationVi": "Hôm nay thứ mấy?"
+            },
+            {
+              "hanzi": "今天星期三。",
+              "pinyin": "Jīntiān xīngqī sān.",
+              "translationVi": "Hôm nay thứ Tư."
+            }
+          ]
+        },
+        {
+          "id": "gp-04-2",
+          "titleVi": "Quy tắc trật tự thời gian từ lớn đến nhỏ",
+          "pattern": "Năm (年) + Tháng (月) + Ngày (日/号) + Giờ (点) + Phút (分)",
+          "explanationVi": "Tiếng Trung luôn đặt đơn vị thời gian lớn phía trước, đơn vị nhỏ phía sau.",
+          "examples": [
+            {
+              "hanzi": "明天是九月十号。",
+              "pinyin": "Míngtiān shì jiǔ yuè shí hào.",
+              "translationVi": "Ngày mai là ngày 10 tháng 9."
+            },
+            {
+              "hanzi": "现在八点半。",
+              "pinyin": "Xiànzài bā diǎn bàn.",
+              "translationVi": "Bây giờ là 8 giờ rưỡi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập cấu trúc ngữ pháp",
+      "exercises": [
+        {
+          "id": "ex-04-g1",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 1,
+          "kind": "sentence_ordering",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp thành câu: 'Hôm nay là thứ mấy?'",
+          "tokens": [
+            "今天",
+            "是",
+            "星期",
+            "几",
+            "？"
+          ],
+          "targetSentence": "今天是星期几？",
+          "translationVi": "Hôm nay là thứ mấy?",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-04-g2",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 2,
+          "kind": "grammar-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn cách nói đúng cho 'Chủ nhật':",
+          "targetContent": {
+            "hanzi": "星期天",
+            "pinyin": "xīngqītiān"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "星期天 (xīngqītiān)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "星期七 (xīngqīqī)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "星期八 (xīngqībā)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "星期号 (xīngqīhào)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại giao tiếp",
+      "dialogue": {
+        "id": "d-04",
+        "titleVi": "Hỏi thời gian và lịch hẹn",
+        "turns": [
+          {
+            "speaker": "大卫",
+            "hanzi": "李明，现在几点？",
+            "pinyin": "Lǐ Míng, xiànzài jǐ diǎn?",
+            "vi": "Lý Minh, bây giờ là mấy giờ?"
+          },
+          {
+            "speaker": "李明",
+            "hanzi": "现在上午十点十分。",
+            "pinyin": "Xiànzài shàngwǔ shí diǎn shí fēn.",
+            "vi": "Bây giờ là 10 giờ 10 phút sáng."
+          },
+          {
+            "speaker": "大卫",
+            "hanzi": "明天星期几？",
+            "pinyin": "Míngtiān xīngqī jǐ?",
+            "vi": "Ngày mai thứ mấy?"
+          },
+          {
+            "speaker": "李明",
+            "hanzi": "明天星期六，我们不上课。",
+            "pinyin": "Míngtiān xīngqī liù, wǒmen bú shàngkè.",
+            "vi": "Ngày mai thứ Bảy, chúng ta không có tiết học."
+          },
+          {
+            "speaker": "大卫",
+            "hanzi": "太好了！明天下午两点去喝咖啡，好吗？",
+            "pinyin": "Tài hǎo le! Míngtiān xiàwǔ liǎng diǎn qù hē kāfēi, hǎo ma?",
+            "vi": "Tuyệt quá! Chiều mai 2 giờ đi uống cà phê nhé?"
+          },
+          {
+            "speaker": "李明",
+            "hanzi": "好啊，明天见！",
+            "pinyin": "Hǎo a, míngtiān jiàn!",
+            "vi": "Được chứ, ngày mai gặp!"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện nghe và nói phản xạ",
+      "instruction": "Nghe đoạn hội thoại hỏi giờ và chọn đáp án chính xác.",
+      "exercises": [
+        {
+          "id": "ex-04-ls1",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 1,
+          "kind": "listening-mcq",
+          "hskLevel": 1,
+          "promptVi": "Nghe câu thông báo thời gian và chọn giờ đúng:",
+          "audioText": "现在是下午三点半。",
+          "options": [
+            {
+              "id": "o1",
+              "label": "3:30 chiều",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "3:00 chiều",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "8:30 sáng",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "4:30 chiều",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu văn bản",
+      "passage": {
+        "title": "Thời gian biểu cuối tuần của Lý Minh",
+        "text": "今天是十月五号，星期五。明天是星期六，我和大卫上午去图书馆看书，下午两点去商店买东西。星期天我们在家休息。",
+        "translationVi": "Hôm nay là ngày 5 tháng 10, thứ Sáu. Ngày mai là thứ Bảy, tôi và David buổi sáng đến thư viện đọc sách, buổi chiều 2 giờ đến cửa hàng mua đồ. Chủ nhật chúng tôi nghỉ ngơi ở nhà."
+      },
+      "exercises": [
+        {
+          "id": "ex-04-r1",
+          "lessonId": "l-hsk1-004",
+          "sortOrder": 1,
+          "kind": "true-false",
+          "hskLevel": 1,
+          "promptVi": "Lý Minh và David đi mua đồ vào sáng thứ Bảy.",
+          "isTrue": false,
+          "explanationVi": "Trong bài: Buổi sáng đi thư viện (上午去图书馆), chiều 2 giờ mới đi mua đồ (下午两点去商店).",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz đánh giá năng lực",
+      "instruction": "Bài kiểm tra 8 câu về ngày tháng, thứ trong tuần và giờ giấc.",
+      "quizUrl": "/lessons/stage/hsk1-lesson-04#mini-quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Đưa từ vựng vào hệ thống SRS",
+      "instruction": "Từ vựng thời gian đã được lập lịch ôn tập cách quãng.",
+      "reviewUrl": "/review"
+    }
+  ]
+}

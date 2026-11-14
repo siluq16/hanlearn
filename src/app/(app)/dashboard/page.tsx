@@ -6,10 +6,11 @@ import {
   Target,
   Clock3,
   Route,
-  Headphones,
-  Mic,
+  Dumbbell,
+  FileCheck2,
 } from "lucide-react";
 import { getDashboard } from "@/features/dashboard/queries";
+import { getLearnerCurriculumProgress } from "@/features/courses/queries";
 import { PageHeading } from "@/components/page-heading";
 import { EmptyState } from "@/components/empty-state";
 import {
@@ -24,7 +25,10 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 export const metadata = { title: "Tổng quan" };
 export default async function Dashboard() {
-  const d = await getDashboard();
+  const [d, prog] = await Promise.all([
+    getDashboard(),
+    getLearnerCurriculumProgress(),
+  ]);
   const name = d.profile?.display_name;
   const date = new Intl.DateTimeFormat("vi-VN", {
     weekday: "long",
@@ -39,32 +43,95 @@ export default async function Dashboard() {
         title={name ? `Chào ${name}.` : `Một ngày mới để học.`}
         description={date}
       />
-      <div className="mb-3 flex flex-wrap gap-3">
+
+      {/* Course Overall Metric Card */}
+      <div className="mb-6 p-5 sm:p-6 rounded-2xl border border-primary/30 bg-card shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2">
+              <Badge className="bg-primary text-primary-foreground font-semibold">
+                KHÓA HỌC HIỆN TẠI: HSK 1
+              </Badge>
+              <span className="text-xs text-muted-foreground">Sơ cấp toàn diện</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-foreground mt-1">
+              {prog.overallPercent}% Hoàn thành lộ trình
+            </h2>
+          </div>
+          <Link
+            href={`/lessons/stage/${prog.nextLessonSlug}`}
+            className="inline-flex min-h-10 items-center px-4 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 gap-1.5 shadow-xs"
+          >
+            <span>Tiếp tục: {prog.nextLessonTitle.split(":")[0]}</span>
+            <ArrowRight className="size-3.5" />
+          </Link>
+        </div>
+
+        <Progress value={prog.overallPercent} label="Tiến độ khóa học HSK 1" />
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center pt-1">
+          <div className="p-3 rounded-xl bg-muted/60 border border-border">
+            <span className="block text-lg font-bold text-foreground">
+              {prog.completedLessonsCount} / 32
+            </span>
+            <span className="text-[10px] text-muted-foreground">Bài học xong</span>
+          </div>
+          <div className="p-3 rounded-xl bg-muted/60 border border-border">
+            <span className="block text-lg font-bold text-primary">
+              {prog.passedUnitTestsCount} / 6
+            </span>
+            <span className="text-[10px] text-muted-foreground">Unit Test đạt</span>
+          </div>
+          <div className="p-3 rounded-xl bg-muted/60 border border-border">
+            <span className="block text-lg font-bold text-emerald-600 dark:text-emerald-400">
+              {prog.vocabularyLearnedCount} / 300
+            </span>
+            <span className="text-[10px] text-muted-foreground">Từ vựng đã học</span>
+          </div>
+          <div className="p-3 rounded-xl bg-muted/60 border border-border">
+            <span className="block text-lg font-bold text-foreground">
+              {d.dueCount}
+            </span>
+            <span className="text-[10px] text-muted-foreground">Thẻ SRS đến hạn</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-6 flex flex-wrap gap-2.5">
         <Button
           asChild
           variant="outline"
-          className="min-h-12 w-full whitespace-normal sm:w-auto"
+          className="min-h-11 w-full whitespace-normal sm:w-auto text-xs"
+        >
+          <Link href="/practice">
+            <Dumbbell size={16} className="text-primary" /> Luyện tập đa kỹ năng
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="min-h-11 w-full whitespace-normal sm:w-auto text-xs"
+        >
+          <Link href="/exam">
+            <FileCheck2 size={16} className="text-primary" /> Kiểm tra &amp; Thi thử
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="min-h-11 w-full whitespace-normal sm:w-auto text-xs"
         >
           <Link href="/review">
-            <Layers size={18} /> Ôn tập · {d.dueCount} thẻ đến hạn
+            <Layers size={16} /> Ôn tập · {d.dueCount} thẻ đến hạn
           </Link>
         </Button>
         <Button
           asChild
           variant="outline"
-          className="min-h-12 w-full whitespace-normal sm:w-auto"
+          className="min-h-11 w-full whitespace-normal sm:w-auto text-xs"
         >
-          <Link href="/listening">
-            <Headphones size={18} /> Luyện nghe HSK 1
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          className="min-h-12 w-full whitespace-normal sm:w-auto"
-        >
-          <Link href="/speaking">
-            <Mic size={18} /> Luyện nói HSK 1
+          <Link href="/vocabulary">
+            <BookOpen size={16} /> Tra cứu 300 từ vựng
           </Link>
         </Button>
       </div>
@@ -83,23 +150,18 @@ export default async function Dashboard() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {d.next ? (
+            {prog.nextLessonSlug ? (
               <div className="rounded-xl bg-secondary p-5">
                 <p className="text-xs font-semibold text-primary">
-                  HSK {d.next.hsk_level} · {d.next.course_title}
+                  HSK 1 · {prog.nextLessonTitle.split(":")[0]}
                 </p>
-                <h3 className="my-3 text-xl font-semibold">{d.next.title}</h3>
-                {d.next.objective_vi && (
-                  <p className="mb-4 text-sm leading-6 text-muted-foreground">
-                    {d.next.objective_vi}
-                  </p>
-                )}
+                <h3 className="my-3 text-xl font-semibold">{prog.nextLessonTitle}</h3>
                 <Button
                   asChild
                   className="min-h-12 w-full whitespace-normal sm:w-auto"
                 >
-                  <Link href={`/lessons/${d.next.id}`}>
-                    Tiếp tục học <ArrowRight />
+                  <Link href={`/lessons/stage/${prog.nextLessonSlug}`}>
+                    Tiếp tục học 9 giai đoạn <ArrowRight />
                   </Link>
                 </Button>
               </div>

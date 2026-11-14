@@ -147,14 +147,16 @@ export type CurriculumQuizAttempt = {
   id: string;
   user_id: string;
   quiz_id: string;
-  lesson_id: string;
+  lesson_id?: string;
+  quiz_slug?: string;
   started_at: string;
   submitted_at: string | null;
   correct_count: number | null;
   question_count: number;
   passed: boolean | null;
   answers: Json | null;
-  created_at: string;
+  metadata?: Json | null;
+  created_at?: string;
 };
 export type Database = {
   public: {

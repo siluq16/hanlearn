@@ -1,6 +1,12 @@
 import "server-only";
 import type { Question } from "./contracts";
 import {
+  LESSON_01_QUIZ,
+  LESSON_02_QUIZ,
+  LESSON_03_QUIZ,
+  LESSON_04_QUIZ,
+} from "./curriculum-quizzes-batch1";
+import {
   LESSON_11_QUIZ,
   LESSON_12_QUIZ,
   LESSON_13_QUIZ,
@@ -1078,6 +1084,10 @@ export const CHECKPOINT_02_QUIZ: CurriculumQuizDefinition = {
 };
 
 export const ALL_CURRICULUM_QUIZZES: CurriculumQuizDefinition[] = [
+  LESSON_01_QUIZ,
+  LESSON_02_QUIZ,
+  LESSON_03_QUIZ,
+  LESSON_04_QUIZ,
   LESSON_05_QUIZ,
   LESSON_06_QUIZ,
   LESSON_07_QUIZ,
@@ -1115,6 +1125,18 @@ export const ALL_CURRICULUM_QUIZZES: CurriculumQuizDefinition[] = [
 ];
 
 export const CURRICULUM_QUIZZES: Record<string, CurriculumQuizDefinition> = {
+  "l-hsk1-001": LESSON_01_QUIZ,
+  "hsk1-lesson-01": LESSON_01_QUIZ,
+  "639665c9-952d-5714-a276-537a3568b463": LESSON_01_QUIZ,
+  "l-hsk1-002": LESSON_02_QUIZ,
+  "hsk1-lesson-02": LESSON_02_QUIZ,
+  "022f2393-6cff-54f0-b24f-03ee7cfc3cfe": LESSON_02_QUIZ,
+  "l-hsk1-003": LESSON_03_QUIZ,
+  "hsk1-lesson-03": LESSON_03_QUIZ,
+  "321e1ed9-a427-57b3-817e-5acbb1b9bab8": LESSON_03_QUIZ,
+  "l-hsk1-004": LESSON_04_QUIZ,
+  "hsk1-lesson-04": LESSON_04_QUIZ,
+  "47097e01-9557-5f82-a84b-fba132cfca05": LESSON_04_QUIZ,
   "l-hsk1-005": LESSON_05_QUIZ,
   "hsk1-lesson-05": LESSON_05_QUIZ,
   "l-hsk1-006": LESSON_06_QUIZ,

@@ -1,0 +1,285 @@
+{
+  "id": "ut-hsk1-05",
+  "slug": "hsk1-unit-test-05",
+  "unit_id": "u-hsk1-05",
+  "unit_number": 5,
+  "title": "Unit Test 5: Sở thích, Công việc & Giao tiếp",
+  "scope_vi": "Phạm vi: Bài 21 – Bài 25 (Điện thoại, xưng hô, đại từ nhân xưng, chỉ định, nghi vấn, vị trí không gian)",
+  "duration_minutes": 20,
+  "passing_score": 16,
+  "total_questions": 20,
+  "quality_status": "VERIFIED",
+  "lessons_covered": [
+    "hsk1-lesson-21",
+    "hsk1-lesson-22",
+    "hsk1-lesson-23",
+    "hsk1-lesson-24",
+    "hsk1-lesson-25"
+  ],
+  "questions": [
+    {
+      "id": "ut5-q01",
+      "section": "listening",
+      "audioText": "喂，请问王经理在吗？",
+      "prompt": "Nghe câu nói qua điện thoại và chọn mục đích:",
+      "choices": [
+        "Hỏi tìm giám đốc Vương",
+        "Báo tin có bưu kiện",
+        "Hẹn đi ăn tối",
+        "Gọi nhầm số"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'请问王经理在吗' là hỏi giám đốc Vương có ở đó không."
+    },
+    {
+      "id": "ut5-q02",
+      "section": "listening",
+      "audioText": "很高兴认识您！这是我的名片。",
+      "prompt": "Nghe đoạn giao tiếp lịch thiệp và cho biết nhân vật đưa cái gì:",
+      "choices": [
+        "Danh thiếp",
+        "Bức ảnh",
+        "Cuốn sách",
+        "Chiếc bút"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'名片' là danh thiếp."
+    },
+    {
+      "id": "ut5-q03",
+      "section": "listening",
+      "audioText": "我们大家都是好朋友，互相帮助。",
+      "prompt": "Nghe và xác định mối quan hệ giữa các nhân vật:",
+      "choices": [
+        "Bạn bè tốt, luôn giúp đỡ nhau",
+        "Đồng nghiệp mới quen",
+        "Người xa lạ",
+        "Đối thủ cạnh tranh"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'大家都是好朋友，互相帮助' -> Đều là bạn tốt, giúp đỡ lẫn nhau."
+    },
+    {
+      "id": "ut5-q04",
+      "section": "listening",
+      "audioText": "请问，卫生间在哪个方向？——在左边。",
+      "prompt": "Nghe và xác định vị trí nhà vệ sinh:",
+      "choices": [
+        "Ở bên trái",
+        "Ở bên phải",
+        "Ở phía trước",
+        "Ở tầng hai"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在左边' -> Ở bên trái."
+    },
+    {
+      "id": "ut5-q05",
+      "section": "listening",
+      "audioText": "这些苹果很甜，那些不大好吃。",
+      "prompt": "Nghe và so sánh chất lượng hoa quả:",
+      "choices": [
+        "Những quả này ngọt, những quả kia không ngon lắm",
+        "Những quả kia ngọt hơn",
+        "Tất cả đều rất chua",
+        "Tất cả đều rất ngon"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'这些苹果很甜，那些不大好吃' -> Những quả này ngọt, quả kia không ngon lắm."
+    },
+    {
+      "id": "ut5-q06",
+      "section": "listening",
+      "audioText": "图书馆就在学校的前面。",
+      "prompt": "Nghe và xác định vị trí thư viện:",
+      "choices": [
+        "Ở phía trước trường học",
+        "Ở phía sau trường học",
+        "Ở bên ngoài trường học",
+        "Ở bên trong bệnh viện"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在学校的前面' -> Ở phía trước trường học."
+    },
+    {
+      "id": "ut5-q07",
+      "section": "vocabulary",
+      "prompt": "Từ nào sau đây là kính ngữ của '你' (bạn)?",
+      "choices": [
+        "您",
+        "他",
+        "她",
+        "它"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'您' (nín) là đại từ nhân xưng trang trọng, kính ngữ của '你'."
+    },
+    {
+      "id": "ut5-q08",
+      "section": "vocabulary",
+      "prompt": "Từ '大家' (dàjiā) có nghĩa là gì?",
+      "choices": [
+        "Mọi người / tất cả mọi người",
+        "Gia đình lớn",
+        "Nhà của anh ấy",
+        "Chuyên gia"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'大家' (dàjiā) là mọi người."
+    },
+    {
+      "id": "ut5-q09",
+      "section": "vocabulary",
+      "prompt": "Cặp từ trái nghĩa chỉ phương hướng nào đúng?",
+      "choices": [
+        "左边 (trái) - 右边 (phải)",
+        "前边 (trên) - 后边 (dưới)",
+        "里边 (ngoài) - 外边 (trong)",
+        "上边 (trái) - 下边 (phải)"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'左边' là bên trái, '右边' là bên phải."
+    },
+    {
+      "id": "ut5-q10",
+      "section": "vocabulary",
+      "prompt": "Từ '帮助' (bāngzhù) có nghĩa là:",
+      "choices": [
+        "Giúp đỡ / tương trợ",
+        "Luyện tập",
+        "Học tập",
+        "Nghỉ ngơi"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'帮助' (bāngzhù) là giúp đỡ."
+    },
+    {
+      "id": "ut5-q11",
+      "section": "grammar",
+      "prompt": "Phân biệt đại từ chỉ định: '这' (gần) và '那' (xa). Câu nào đúng nghĩa 'Quyển sách này là của tôi'?",
+      "choices": [
+        "这本书是我的。",
+        "那本书是我的。",
+        "哪本书是我的？",
+        "什么书是我的？"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'这' chỉ vật ở gần người nói (này / đây)."
+    },
+    {
+      "id": "ut5-q12",
+      "section": "grammar",
+      "prompt": "Hậu tố '们' thêm vào sau đại từ hoặc danh từ chỉ người để biểu thị điều gì?",
+      "choices": [
+        "Số nhiều (chúng tôi, các bạn, họ)",
+        "Sở hữu",
+        "Kính trọng",
+        "Thời gian"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Hậu tố '们' (men) biểu thị số nhiều (ví dụ: 我们, 你们, 他们, 老师们)."
+    },
+    {
+      "id": "ut5-q13",
+      "section": "grammar",
+      "prompt": "Điền từ chỉ phương vị thích hợp: '书在桌子____。'",
+      "choices": [
+        "上",
+        "前",
+        "后",
+        "左"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Sách nằm ở trên bàn: 桌子上."
+    },
+    {
+      "id": "ut5-q14",
+      "section": "grammar",
+      "prompt": "Chọn câu hỏi đúng khi muốn hỏi vị trí: 'Quyển sách của tôi ở đâu?'",
+      "choices": [
+        "我的书在哪儿？",
+        "我的书怎么了？",
+        "我的书是谁？",
+        "我的书什么时候？"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Hỏi vị trí nơi chốn dùng '在哪儿？'."
+    },
+    {
+      "id": "ut5-q15",
+      "section": "reading",
+      "prompt": "Đọc đoạn văn:\n'李经理的办公室在三楼，电梯出来往右走就是。他现在正在开会，请您在会议室外边等一下。'\nHỏi: Văn phòng của giám đốc Lý ở tầng mấy?",
+      "choices": [
+        "Tầng 3",
+        "Tầng 2",
+        "Tầng 1",
+        "Tầng 4"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在三楼' -> Ở tầng 3."
+    },
+    {
+      "id": "ut5-q16",
+      "section": "reading",
+      "prompt": "Giám đốc Lý hiện đang làm gì?",
+      "choices": [
+        "Đang họp",
+        "Đang ăn cơm",
+        "Đang đi công tác",
+        "Đang ngủ"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'正在开会' -> Đang họp."
+    },
+    {
+      "id": "ut5-q17",
+      "section": "reading",
+      "prompt": "Đọc câu: '我们学校的前面是一个大公园，后面是一个超市。'\nHỏi: Địa điểm nào nằm ở phía sau trường học?",
+      "choices": [
+        "Siêu thị",
+        "Công viên lớn",
+        "Bệnh viện",
+        "Sân vận động"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'后面是一个超市' -> Phía sau là một siêu thị."
+    },
+    {
+      "id": "ut5-q18",
+      "section": "reading",
+      "prompt": "Đọc câu: '这位是张老师，她是教我们汉语的。'\nNhận định Đúng hay Sai: Cô Trương là giáo viên dạy tiếng Anh.",
+      "choices": [
+        "Sai",
+        "Đúng"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "Trong bài: '教我们汉语的' (dạy tiếng Hán) -> Nhận định là Sai."
+    },
+    {
+      "id": "ut5-q19",
+      "section": "reading",
+      "prompt": "Đọc câu: '大家在学习上遇到困难，老师都会热心帮助。'\nHỏi: Khi gặp khó khăn trong học tập, ai sẽ nhiệt tình giúp đỡ?",
+      "choices": [
+        "Thầy cô giáo",
+        "Bạn cùng phòng",
+        "Bác sĩ",
+        "Người lạ"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'老师都会热心帮助' -> Thầy cô giáo nhiệt tình giúp đỡ."
+    },
+    {
+      "id": "ut5-q20",
+      "section": "reading",
+      "prompt": "Đọc câu: '这几张照片很漂亮，是我在北京拍的。'\nHỏi: Những bức ảnh này được chụp ở đâu?",
+      "choices": [
+        "Bắc Kinh",
+        "Thượng Hải",
+        "Hà Nội",
+        "Tokyo"
+      ],
+      "correct_index": 0,
+      "explanation_vi": "'在北京拍的' -> Chụp ở Bắc Kinh."
+    }
+  ]
+}

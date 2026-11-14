@@ -48,8 +48,8 @@ export default async function NineStageLessonPage({
 
         {/* Switcher between 9-stage lessons */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs text-muted-foreground">Các bài mẫu 9 giai đoạn:</span>
-          {HSK1_NINE_STAGE_LESSONS.map((l) => (
+          <span className="text-xs text-muted-foreground">Bài học:</span>
+          {HSK1_NINE_STAGE_LESSONS.filter((l) => l.slug.startsWith("hsk1-lesson-")).map((l) => (
             <Link
               key={l.slug}
               href={`/lessons/stage/${l.slug}`}

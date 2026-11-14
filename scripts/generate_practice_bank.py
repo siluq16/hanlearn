@@ -1,0 +1,517 @@
+"""
+Generates the Complete Prebuilt Practice Bank for HanLearn (Sprint 8I-D).
+Contains fixed, verified sets across all 6 skills:
+1. Vocabulary (12 sets)
+2. Grammar (10 sets)
+3. Listening (10 sets)
+4. Speaking & Pronunciation (8 sets)
+5. Reading Comprehension (8 sets)
+6. Dialogue Practice (8 sets)
+Total: 56 prebuilt sets with 100% pre-authored questions, choices, audio, and explanations.
+"""
+
+import json
+import os
+
+practice_sets = []
+
+# ==========================================
+# SKILL 1: VOCABULARY PRACTICE (12 Sets)
+# ==========================================
+vocab_sets_meta = [
+    ("ps-vocab-01", "u-hsk1-01", "meaning_selection", "Bộ 01: Nhận diện từ vựng Chào hỏi & Xưng hô", "Luyện phản xạ chọn nghĩa tiếng Việt cho các từ xưng hô, chào hỏi cơ bản.", "easy", [
+        {"id": "pv01-1", "type": "mcq", "prompt": "Chọn nghĩa đúng của từ '您好' (nínhǎo):", "hanzi": "您好", "pinyin": "nínhǎo", "choices": ["Chào ngài / ông / bà (kính ngữ)", "Tạm biệt", "Cảm ơn", "Không có chi"], "correct_index": 0, "explanation_vi": "'您好' là lời chào lịch sự, dùng cho người lớn tuổi hoặc cấp trên."},
+        {"id": "pv01-2", "type": "mcq", "prompt": "Từ nào sau đây có nghĩa là 'tên gọi / danh xưng'?", "hanzi": "名字", "pinyin": "míngzi", "choices": ["名字", "老师", "学生", "朋友"], "correct_index": 0, "explanation_vi": "'名字' (míngzi) nghĩa là tên gọi."},
+        {"id": "pv01-3", "type": "mcq", "prompt": "Chọn nghĩa đúng của từ '认识' (rènshi):", "hanzi": "认识", "pinyin": "rènshi", "choices": ["Quen biết / nhận biết", "Học tập", "Nói chuyện", "Nghe hiểu"], "correct_index": 0, "explanation_vi": "'认识' là quen biết, nhận ra ai đó."},
+        {"id": "pv01-4", "type": "mcq", "prompt": "Từ '谁' (shéi) dùng để hỏi về đối tượng nào?", "hanzi": "谁", "pinyin": "shéi", "choices": ["Ai / người nào", "Cái gì", "Ở đâu", "Mấy giờ"], "correct_index": 0, "explanation_vi": "'谁' là đại từ nghi vấn chỉ người (Ai)."},
+        {"id": "pv01-5", "type": "mcq", "prompt": "Chọn câu đáp lại chuẩn khi người khác nói '对不起' (Xin lỗi):", "hanzi": "没关系", "pinyin": "méi guānxi", "choices": ["没关系 (Không sao đâu)", "不客气 (Đừng khách sáo)", "再见 (Tạm biệt)", "很好 (Rất tốt)"], "correct_index": 0, "explanation_vi": "Đáp lại '对不起' dùng '没关系'."}
+    ]),
+    ("ps-vocab-02", "u-hsk1-01", "pinyin_selection", "Bộ 02: Pinyin & Thanh điệu Từ vựng Gia đình", "Luyện nhận diện phiên âm Pinyin và thanh điệu các thành viên gia đình.", "easy", [
+        {"id": "pv02-1", "type": "mcq", "prompt": "Chọn Pinyin chuẩn của '爸爸' (Bố):", "hanzi": "爸爸", "choices": ["bàba", "bāba", "bǎba", "pàpa"], "correct_index": 0, "explanation_vi": "'爸爸' phiên âm là bàba (chữ sau đọc thanh nhẹ)."},
+        {"id": "pv02-2", "type": "mcq", "prompt": "Chọn Pinyin chuẩn của '妈妈' (Mẹ):", "hanzi": "妈妈", "choices": ["māma", "mǎma", "màma", "mámei"], "correct_index": 0, "explanation_vi": "'妈妈' phiên âm là māma."},
+        {"id": "pv02-3", "type": "mcq", "prompt": "Chọn Pinyin chuẩn của '姐姐' (Chị gái):", "hanzi": "姐姐", "choices": ["jiějie", "jiéjie", "jièjie", "jīejie"], "correct_index": 0, "explanation_vi": "'姐姐' phiên âm là jiějie."},
+        {"id": "pv02-4", "type": "mcq", "prompt": "Chọn Pinyin chuẩn của '弟弟' (Em trai):", "hanzi": "弟弟", "choices": ["dìdi", "dīdi", "dǐdi", "tìti"], "correct_index": 0, "explanation_vi": "'弟弟' phiên âm là dìdi."},
+        {"id": "pv02-5", "type": "mcq", "prompt": "Chọn Pinyin chuẩn của '妹妹' (Em gái):", "hanzi": "妹妹", "choices": ["mèimei", "mēimei", "měimei", "mèimie"], "correct_index": 0, "explanation_vi": "'妹妹' phiên âm là mèimei."}
+    ]),
+    ("ps-vocab-03", "u-hsk1-02", "hanzi_selection", "Bộ 03: Nhận diện Hán tự Nghề nghiệp & Nơi chốn", "Phân biệt mặt chữ Hán các từ vựng nghề nghiệp và cơ quan.", "medium", [
+        {"id": "pv03-1", "type": "mcq", "prompt": "Hán tự nào có nghĩa là 'Bác sĩ'?", "pinyin": "yīshēng", "choices": ["医生", "老师", "学生", "工人"], "correct_index": 0, "explanation_vi": "'医生' (yīshēng) là bác sĩ."},
+        {"id": "pv03-2", "type": "mcq", "prompt": "Hán tự nào có nghĩa là 'Bệnh viện'?", "pinyin": "yīyuàn", "choices": ["医院", "学校", "饭馆", "商店"], "correct_index": 0, "explanation_vi": "'医院' (yīyuàn) là bệnh viện."},
+        {"id": "pv03-3", "type": "mcq", "prompt": "Hán tự nào có nghĩa là 'Cửa hàng'?", "pinyin": "shāngdiàn", "choices": ["商店", "饭店", "学校", "车站"], "correct_index": 0, "explanation_vi": "'商店' (shāngdiàn) là cửa hàng."},
+        {"id": "pv03-4", "type": "mcq", "prompt": "Hán tự nào có nghĩa là 'Nhà hàng / quán ăn'?", "pinyin": "fànguǎn", "choices": ["饭馆", "茶馆", "图书馆", "咖啡馆"], "correct_index": 0, "explanation_vi": "'饭馆' (fànguǎn) là quán ăn."},
+        {"id": "pv03-5", "type": "mcq", "prompt": "Hán tự nào có nghĩa là 'Công ty'?", "pinyin": "gōngsī", "choices": ["公司", "学校", "医院", "银行"], "correct_index": 0, "explanation_vi": "'公司' (gōngsī) là công ty."}
+    ]),
+    ("ps-vocab-04", "u-hsk1-02", "fill_blank", "Bộ 04: Điền từ Thực phẩm & Đồ uống", "Luyện lựa chọn từ vựng thích hợp trong ngữ cảnh ăn uống.", "medium", [
+        {"id": "pv04-1", "type": "fill", "prompt": "Điền từ thích hợp: '服务员，我想喝一杯热____。' (Một ly trà nóng)", "choices": ["茶", "饭", "菜", "肉"], "correct_index": 0, "explanation_vi": "'热茶' là trà nóng."},
+        {"id": "pv04-2", "type": "fill", "prompt": "Điền từ thích hợp: '中国人喜欢吃米饭和____。' (Mì sợi)", "choices": ["面条", "苹果", "面包", "西瓜"], "correct_index": 0, "explanation_vi": "'面条' (miàntiáo) là mì sợi."},
+        {"id": "pv04-3", "type": "fill", "prompt": "Điền từ thích hợp: '天太热了，请给我一杯凉____。' (Nước lạnh)", "choices": ["水", "汤", "油", "饭"], "correct_index": 0, "explanation_vi": "'凉水' là nước mát / nước nguội."},
+        {"id": "pv04-4", "type": "fill", "prompt": "Điền từ thích hợp: '这些苹果很甜，味道很____。' (Rất ngon)", "choices": ["好吃", "好看", "好听", "好玩"], "correct_index": 0, "explanation_vi": "'好吃' nghĩa là ngon miệng (dùng cho thức ăn)."},
+        {"id": "pv04-5", "type": "fill", "prompt": "Điền từ thích hợp: '早上我吃了两个____和一杯牛奶。' (Bánh bao)", "choices": ["包子", "桌子", "椅子", "本子"], "correct_index": 0, "explanation_vi": "'包子' (bāozi) là bánh bao."}
+    ]),
+    ("ps-vocab-05", "u-hsk1-03", "matching", "Bộ 05: Ghép cặp Phương tiện & Địa điểm", "Ghép các cặp từ tương ứng giữa phương tiện di chuyển và trạm dừng.", "medium", [
+        {"id": "pv05-1", "type": "matching", "prompt": "Ghép cặp phương tiện và địa điểm tương ứng:", "pairs": [
+            {"left": "火车 (Tàu hỏa)", "right": "火车站 (Ga tàu)"},
+            {"left": "飞机 (Máy bay)", "right": "飞机场 (Sân bay)"},
+            {"left": "公共汽车 (Xe buýt)", "right": "车站 (Bến xe)"},
+            {"left": "出租车 (Taxi)", "right": "路上 (Trên đường)"}
+        ], "explanation_vi": "Các phương tiện tương ứng với ga, sân bay và bến bãi."}
+    ]),
+    ("ps-vocab-06", "u-hsk1-03", "audio_recognition", "Bộ 06: Nhận diện từ qua Âm thanh (Thời tiết & Thiên nhiên)", "Nghe phát âm từ vựng và chọn Hán tự tương ứng.", "medium", [
+        {"id": "pv06-1", "type": "audio_mcq", "audioText": "下雨", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["下雨 (Mưa)", "下雪 (Tuyết)", "刮风 (Gió)", "晴天 (Nắng)"], "correct_index": 0, "explanation_vi": "Phát âm là 'xiàyǔ' (下雨)."},
+        {"id": "pv06-2", "type": "audio_mcq", "audioText": "天气", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["天气 (Thời tiết)", "空气 (Không khí)", "生病 (Bị ốm)", "热气 (Hơi nóng)"], "correct_index": 0, "explanation_vi": "Phát âm là 'tiānqì' (天气)."},
+        {"id": "pv06-3", "type": "audio_mcq", "audioText": "冷", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["冷 (Lạnh)", "热 (Nóng)", "快 (Nhanh)", "慢 (Chậm)"], "correct_index": 0, "explanation_vi": "Phát âm là 'lěng' (冷)."},
+        {"id": "pv06-4", "type": "audio_mcq", "audioText": "热", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["热 (Nóng)", "冷 (Lạnh)", "大 (Lớn)", "小 (Nhỏ)"], "correct_index": 0, "explanation_vi": "Phát âm là 'rè' (热)."},
+        {"id": "pv06-5", "type": "audio_mcq", "audioText": "今天", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["今天 (Hôm nay)", "明天 (Ngày mai)", "昨天 (Hôm qua)", "现在 (Bây giờ)"], "correct_index": 0, "explanation_vi": "Phát âm là 'jīntiān' (今天)."}
+    ]),
+    ("ps-vocab-07", "u-hsk1-04", "meaning_selection", "Bộ 07: Quần áo, Màu sắc & Đồ dùng cá nhân", "Luyện tập từ vựng về trang phục, màu sắc và vật dụng thường ngày.", "easy", [
+        {"id": "pv07-1", "type": "mcq", "prompt": "Từ nào sau đây có nghĩa là 'quần áo'?", "choices": ["衣服", "鞋子", "帽子", "桌子"], "correct_index": 0, "explanation_vi": "'衣服' (yīfu) là quần áo."},
+        {"id": "pv07-2", "type": "mcq", "prompt": "Màu 'trắng' trong tiếng Trung là:", "choices": ["白色", "黑色", "红色", "黄色"], "correct_index": 0, "explanation_vi": "'白色' (báisè) là màu trắng."},
+        {"id": "pv07-3", "type": "mcq", "prompt": "Từ '桌子' có nghĩa là:", "choices": ["Cái bàn", "Cái ghế", "Cái giường", "Căn phòng"], "correct_index": 0, "explanation_vi": "'桌子' (zhuōzi) là cái bàn."},
+        {"id": "pv07-4", "type": "mcq", "prompt": "Từ '椅子' có nghĩa là:", "choices": ["Cái ghế", "Cái bàn", "Cái tủ", "Cánh cửa"], "correct_index": 0, "explanation_vi": "'椅子' (yǐzi) là cái ghế."},
+        {"id": "pv07-5", "type": "mcq", "prompt": "Đồ vật '手机' có nghĩa là:", "choices": ["Điện thoại di động", "Máy tính", "Đồng hồ", "Ti vi"], "correct_index": 0, "explanation_vi": "'手机' (shǒujī) là điện thoại cầm tay / di động."}
+    ]),
+    ("ps-vocab-08", "u-hsk1-04", "fill_blank", "Bộ 08: Sức khỏe, Thể thao & Hoạt động", "Luyện từ vựng về tình trạng thể chất và thể dục thể thao.", "medium", [
+        {"id": "pv08-1", "type": "fill", "prompt": "Điền từ: '他生病了，要去医院看____。'", "choices": ["医生", "老师", "学生", "朋友"], "correct_index": 0, "explanation_vi": "'看医生' hoặc '看病' là đi khám bác sĩ."},
+        {"id": "pv08-2", "type": "fill", "prompt": "Điền động từ: '周末我经常去公园____步。'", "choices": ["跑", "踢", "打", "看"], "correct_index": 0, "explanation_vi": "'跑步' (pǎobù) là chạy bộ."},
+        {"id": "pv08-3", "type": "fill", "prompt": "Điền động từ: '下午我们一起去____篮球吧。'", "choices": ["打", "踢", "跑", "坐"], "correct_index": 0, "explanation_vi": "Chơi bóng rổ dùng động từ '打' (打篮球)."},
+        {"id": "pv08-4", "type": "fill", "prompt": "Điền động từ: '男孩子们喜欢在草地上____足球。'", "choices": ["踢", "打", "走", "买"], "correct_index": 0, "explanation_vi": "Đá bóng dùng động từ '踢' (踢足球)."},
+        {"id": "pv08-5", "type": "fill", "prompt": "Điền từ: '每天喝水对____很好。' (Sức khỏe)", "choices": ["身体", "天气", "衣服", "名字"], "correct_index": 0, "explanation_vi": "'身体' (shēntǐ) là thân thể, sức khỏe."}
+    ]),
+    ("ps-vocab-09", "u-hsk1-05", "meaning_selection", "Bộ 09: Phương vị từ & Không gian", "Luyện tập các từ chỉ phương hướng và vị trí trong không gian.", "medium", [
+        {"id": "pv09-1", "type": "mcq", "prompt": "Phương vị từ '前面' (qiánmiàn) có nghĩa là:", "choices": ["Phía trước", "Phía sau", "Bên trái", "Bên phải"], "correct_index": 0, "explanation_vi": "'前面' là phía trước."},
+        {"id": "pv09-2", "type": "mcq", "prompt": "Phương vị từ '后面' (hòumiàn) có nghĩa là:", "choices": ["Phía sau", "Phía trước", "Bên trong", "Bên ngoài"], "correct_index": 0, "explanation_vi": "'后面' là phía sau."},
+        {"id": "pv09-3", "type": "mcq", "prompt": "Phương vị từ '左边' (zuǒbiān) có nghĩa là:", "choices": ["Bên trái", "Bên phải", "Phía trên", "Phía dưới"], "correct_index": 0, "explanation_vi": "'左边' là bên trái."},
+        {"id": "pv09-4", "type": "mcq", "prompt": "Phương vị từ '右边' (yòubiān) có nghĩa là:", "choices": ["Bên phải", "Bên trái", "Bên trong", "Phía trước"], "correct_index": 0, "explanation_vi": "'右边' là bên phải."},
+        {"id": "pv09-5", "type": "mcq", "prompt": "Cặp từ '里边' và '外边' có nghĩa là:", "choices": ["Bên trong và bên ngoài", "Bên trên và bên dưới", "Phía trước và phía sau", "Xa và gần"], "correct_index": 0, "explanation_vi": "'里边' là bên trong, '外边' là bên ngoài."}
+    ]),
+    ("ps-vocab-10", "u-hsk1-05", "pinyin_selection", "Bộ 10: Đại từ chỉ định & Nghi vấn", "Luyện nhận diện đại từ nhân xưng, chỉ định và nghi vấn.", "easy", [
+        {"id": "pv10-1", "type": "mcq", "prompt": "Đại từ chỉ định '这' (zhè) và '那' (nà) chỉ vị trí như thế nào?", "choices": ["'这' chỉ ở gần (đây/này), '那' chỉ ở xa (kia/đó)", "'这' chỉ ở xa, '那' chỉ ở gần", "Cả hai đều chỉ ở gần", "Cả hai đều chỉ ở xa"], "correct_index": 0, "explanation_vi": "'这' là này/đây, '那' là kia/đó."},
+        {"id": "pv10-2", "type": "mcq", "prompt": "Đại từ nghi vấn nào có nghĩa là 'Ở đâu / nơi nào'?", "choices": ["哪儿 / 哪里", "什么", "怎么", "多少"], "correct_index": 0, "explanation_vi": "'哪儿' hoặc '哪里' dùng hỏi nơi chốn (Ở đâu)."},
+        {"id": "pv10-3", "type": "mcq", "prompt": "Đại từ '哪个' (nǎ ge) dùng để hỏi:", "choices": ["Cái nào / người nào", "Ai", "Cái gì", "Bao nhiêu tiền"], "correct_index": 0, "explanation_vi": "'哪个' là cái nào trong số nhiều cái."},
+        {"id": "pv10-4", "type": "mcq", "prompt": "Đại từ '为什么' (wèishénme) dùng để hỏi:", "choices": ["Tại sao / vì sao", "Làm thế nào", "Ai làm", "Khi nào"], "correct_index": 0, "explanation_vi": "'为什么' là hỏi nguyên nhân (Tại sao)."},
+        {"id": "pv10-5", "type": "mcq", "prompt": "Từ '怎么' (zěnme) thường đi trước động từ để hỏi về:", "choices": ["Cách thức thực hiện (như thế nào)", "Thời gian diễn ra", "Địa điểm diễn ra", "Giá cả"], "correct_index": 0, "explanation_vi": "'怎么' + Động từ hỏi cách thức (ví dụ: 怎么去 - đi như thế nào)."}
+    ]),
+    ("ps-vocab-11", "u-hsk1-06", "meaning_selection", "Bộ 11: Số đếm lớn & Lượng từ Nâng cao", "Luyện số từ hàng trăm, nghìn và các lượng từ chuyên biệt.", "hard", [
+        {"id": "pv11-1", "type": "mcq", "prompt": "Hán tự nào biểu thị hàng 'nghìn' (1.000)?", "choices": ["千", "百", "万", "十"], "correct_index": 0, "explanation_vi": "'千' (qiān) là hàng nghìn."},
+        {"id": "pv11-2", "type": "mcq", "prompt": "Lượng từ phù hợp cho động vật nhỏ (như chó, mèo, chim) là:", "choices": ["只", "本", "张", "辆"], "correct_index": 0, "explanation_vi": "'只' (zhī) là lượng từ cho con vật nhỏ (ví dụ: 一只小猫)."},
+        {"id": "pv11-3", "type": "mcq", "prompt": "Lượng từ phù hợp cho sách, vở, từ điển là:", "choices": ["本", "件", "支", "个"], "correct_index": 0, "explanation_vi": "'本' (běn) là lượng từ cho sách vở (ví dụ: 一本书)."},
+        {"id": "pv11-4", "type": "mcq", "prompt": "Lượng từ phù hợp cho các vật phẳng mỏng (như vé xe, bức ảnh, tờ giấy, cái bàn) là:", "choices": ["张", "条", "本", "个"], "correct_index": 0, "explanation_vi": "'张' (zhāng) dùng cho vật có bề mặt phẳng mỏng (ví dụ: 一张桌子, 一张票)."},
+        {"id": "pv11-5", "type": "mcq", "prompt": "Số '2.500' đọc trong tiếng Trung là:", "choices": ["两千五百", "二千五百", "两千零五", "二万五千"], "correct_index": 0, "explanation_vi": "2.500 đọc là '两千五百' (liǎng qiān wǔ bǎi)."}
+    ]),
+    ("ps-vocab-12", "u-hsk1-06", "fill_blank", "Bộ 12: Động từ Năng nguyện & Trợ từ Ngữ khí", "Luyện nhận diện 想, 要, 会, 能, 可以, 吧, 呢, 了.", "hard", [
+        {"id": "pv12-1", "type": "fill", "prompt": "Điền động từ năng nguyện chỉ khả năng qua rèn luyện: '他____说三种语言。'", "choices": ["会", "想", "爱", "要"], "correct_index": 0, "explanation_vi": "'会' biểu thị kỹ năng học tập được."},
+        {"id": "pv12-2", "type": "fill", "prompt": "Điền động từ năng nguyện chỉ mong muốn: '我____去中国旅游。'", "choices": ["想", "能", "会", "可以"], "correct_index": 0, "explanation_vi": "'想' biểu thị nguyện vọng, mong muốn cá nhân."},
+        {"id": "pv12-3", "type": "fill", "prompt": "Điền trợ từ ngữ khí rủ rê: '我们一起走____！'", "choices": ["吧", "吗", "呢", "了"], "correct_index": 0, "explanation_vi": "'吧' biểu thị đề nghị, rủ rê."},
+        {"id": "pv12-4", "type": "fill", "prompt": "Điền trợ từ biến đổi trạng thái: '下雨____，快进屋吧。'", "choices": ["了", "呢", "吧", "吗"], "correct_index": 0, "explanation_vi": "'了' ở cuối câu biểu thị tình hình mới xuất hiện (trời đổ mưa rồi)."},
+        {"id": "pv12-5", "type": "fill", "prompt": "Điền phó từ mức độ: '这个电影____好看，大家都哭了。'", "choices": ["非常", "有点儿", "不要", "正在"], "correct_index": 0, "explanation_vi": "'非常' (vô cùng) nhấn mạnh mức độ cao."}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, questions in vocab_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "vocabulary",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(questions),
+        "questions": questions
+    })
+
+# ==========================================
+# SKILL 2: GRAMMAR PRACTICE (10 Sets)
+# ==========================================
+grammar_sets_meta = [
+    ("ps-gram-01", "u-hsk1-01", "sentence_ordering", "Bộ 01: Sắp xếp Câu Khẳng định & Phủ định 是/不是", "Luyện cấu trúc phán đoán danh tính và nghề nghiệp.", "easy", [
+        {"id": "pg01-1", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Tôi là học sinh Trung Quốc.'", "tokens": ["我", "是", "中国", "学生", "。"], "targetSentence": "我是中国学生。", "explanation_vi": "Cấu trúc: Chủ ngữ + 是 + Danh từ."},
+        {"id": "pg01-2", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Anh ấy không phải là bác sĩ.'", "tokens": ["他", "不是", "医生", "。"], "targetSentence": "他不是医生。", "explanation_vi": "Phủ định dùng 不是."},
+        {"id": "pg01-3", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Thầy Vương là giáo viên tiếng Trung của chúng tôi.'", "tokens": ["王老师", "是", "我们", "的", "汉语老师", "。"], "targetSentence": "王老师是我们的汉语老师。", "explanation_vi": "Định ngữ đứng trước danh từ trung tâm: 我们的汉语老师."},
+        {"id": "pg01-4", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Bạn là người nước nào?'", "tokens": ["你", "是", "哪", "国", "人", "？"], "targetSentence": "你是哪国人？", "explanation_vi": "Cấu trúc hỏi quốc tịch chuẩn."},
+        {"id": "pg01-5", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Đây không phải là sách của tôi.'", "tokens": ["这", "不是", "我", "的", "书", "。"], "targetSentence": "这不是我的书。", "explanation_vi": "这不是 + Định ngữ + 的 + Danh từ."}
+    ]),
+    ("ps-gram-02", "u-hsk1-01", "classifier_selection", "Bộ 02: Chọn Lượng từ & Số từ (个, 口, 本, 只)", "Phân biệt và sử dụng chính xác các lượng từ căn bản.", "easy", [
+        {"id": "pg02-1", "type": "mcq", "prompt": "Điền lượng từ thích hợp: '我家有三____人。'", "choices": ["口", "个", "只", "本"], "correct_index": 0, "explanation_vi": "Đếm thành viên gia đình dùng lượng từ '口'."},
+        {"id": "pg02-2", "type": "mcq", "prompt": "Điền lượng từ thích hợp: '桌子上有两____汉语书。'", "choices": ["本", "个", "只", "口"], "correct_index": 0, "explanation_vi": "Sách vở dùng lượng từ '本'."},
+        {"id": "pg02-3", "type": "mcq", "prompt": "Điền lượng từ thích hợp: '院子里有两____小狗。'", "choices": ["只", "个", "口", "张"], "correct_index": 0, "explanation_vi": "Động vật nhỏ dùng lượng từ '只'."},
+        {"id": "pg02-4", "type": "mcq", "prompt": "Điền lượng từ thích hợp: '我想买一____新衣服。'", "choices": ["件", "个", "本", "只"], "correct_index": 0, "explanation_vi": "Quần áo dùng lượng từ '件'."},
+        {"id": "pg02-5", "type": "mcq", "prompt": "Chọn số từ thích hợp trước lượng từ: '我有____个好朋友。'", "choices": ["两", "二", "几", "双"], "correct_index": 0, "explanation_vi": "Trước lượng từ dùng '两' (liǎng)."}
+    ]),
+    ("ps-gram-03", "u-hsk1-02", "question_particles", "Bộ 03: Trợ từ Nghi vấn 吗, 呢 & Đại từ 什么, 谁", "Luyện đặt và phân biệt các loại câu hỏi trong tiếng Trung.", "medium", [
+        {"id": "pg03-1", "type": "mcq", "prompt": "Câu nào sau đây dùng sai trợ từ nghi vấn?", "choices": ["你叫什么名字吗？", "你是学生吗？", "他是谁？", "我很好，你呢？"], "correct_index": 0, "explanation_vi": "Câu đã có đại từ nghi vấn 什么 thì không dùng thêm 吗 ở cuối."},
+        {"id": "pg03-2", "type": "mcq", "prompt": "Điền trợ từ thích hợp để hỏi tiếp: '我是越南人，你____？'", "choices": ["呢", "吗", "吧", "了"], "correct_index": 0, "explanation_vi": "Hỏi tiếp theo ngữ cảnh dùng '...呢？'."},
+        {"id": "pg03-3", "type": "mcq", "prompt": "Điền đại từ thích hợp: '你想买____？' (Bạn muốn mua gì?)", "choices": ["什么", "谁", "哪儿", "几"], "correct_index": 0, "explanation_vi": "Hỏi đồ vật dùng '什么'."},
+        {"id": "pg03-4", "type": "mcq", "prompt": "Điền đại từ thích hợp: '那位在讲台上的老师是____？'", "choices": ["谁", "什么", "怎么", "哪儿"], "correct_index": 0, "explanation_vi": "Hỏi danh tính người dùng '谁'."},
+        {"id": "pg03-5", "type": "mcq", "prompt": "Điền từ thích hợp: '去北京的火车票____钱一张？'", "choices": ["多少", "几", "什么", "怎么"], "correct_index": 0, "explanation_vi": "Hỏi giá tiền dùng '多少钱'."}
+    ]),
+    ("ps-gram-04", "u-hsk1-02", "sentence_ordering", "Bộ 04: Cấu trúc Thời gian (Trật tự lớn đến nhỏ)", "Rèn luyện quy tắc sắp xếp Năm, Tháng, Ngày, Giờ, Phút.", "medium", [
+        {"id": "pg04-1", "type": "sentence_ordering", "prompt": "Sắp xếp trật tự thời gian: 'Sáng mai 8 giờ tôi đi học.'", "tokens": ["明天", "上午", "八点", "我", "去", "学校", "。"], "targetSentence": "明天上午八点我去学校。", "explanation_vi": "Trật tự: Ngày (明天) -> Buổi (上午) -> Giờ (八点)."},
+        {"id": "pg04-2", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Hôm nay là ngày 10 tháng 8.'", "tokens": ["今天", "是", "八月", "十号", "。"], "targetSentence": "今天是八月十号。", "explanation_vi": "Tháng (八月) đứng trước Ngày (十号)."},
+        {"id": "pg04-3", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Bây giờ là 2 giờ rưỡi chiều.'", "tokens": ["现在", "是", "下午", "两点半", "。"], "targetSentence": "现在是下午两点半。", "explanation_vi": "Buổi chiều (下午) đứng trước giờ (两点半)."},
+        {"id": "pg04-4", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Chủ nhật chúng tôi không đi làm.'", "tokens": ["星期天", "我们", "不", "去", "上班", "。"], "targetSentence": "星期天我们不去上班。", "explanation_vi": "Trạng ngữ chỉ thời gian đặt trước chủ ngữ hoặc trước vị ngữ."},
+        {"id": "pg04-5", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Tối hôm qua bạn làm gì?'", "tokens": ["昨天", "晚上", "你", "做", "什么", "？"], "targetSentence": "昨天晚上你做什么？", "explanation_vi": "Hôm qua (昨天) -> Buổi tối (晚上)."}
+    ]),
+    ("ps-gram-05", "u-hsk1-03", "preposition_zai", "Bộ 05: Giới từ Nơi chốn '在' (Ở / tại đâu làm gì)", "Thực hành cấu trúc: Chủ ngữ + 在 + Nơi chốn + Động từ.", "medium", [
+        {"id": "pg05-1", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Tôi đọc sách ở thư viện.'", "tokens": ["我", "在", "图书馆", "看书", "。"], "targetSentence": "我在图书馆看书。", "explanation_vi": "Cấu trúc tiếng Trung: Ở đâu rồi mới làm gì (在 + Địa điểm + Động từ)."},
+        {"id": "pg05-2", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Anh ấy làm việc ở bệnh viện.'", "tokens": ["他", "在", "医院", "工作", "。"], "targetSentence": "他在医院工作。", "explanation_vi": "在医院 (ở bệnh viện) + 工作 (làm việc)."},
+        {"id": "pg05-3", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Chúng tôi ăn cơm ở nhà hàng.'", "tokens": ["我们", "在", "饭馆", "吃饭", "。"], "targetSentence": "我们在饭馆吃饭。", "explanation_vi": "在饭馆 + 吃饭."},
+        {"id": "pg05-4", "type": "mcq", "prompt": "Chọn câu đúng ngữ pháp tiếng Trung:", "choices": ["我在学校学汉语。", "我学汉语在学校。", "在学校我汉语学。", "学汉语我在学校。"], "correct_index": 0, "explanation_vi": "Trạng ngữ chỉ nơi chốn '在学校' phải đứng trước động từ '学汉语'."},
+        {"id": "pg05-5", "type": "fill", "prompt": "Điền giới từ: '爸爸妈妈____家里看电视。'", "choices": ["在", "从", "到", "对"], "correct_index": 0, "explanation_vi": "Ở tại địa điểm dùng giới từ '在'."}
+    ]),
+    ("ps-gram-06", "u-hsk1-03", "optative_verbs", "Bộ 06: Động từ Năng nguyện 想, 要, 会, 能", "Phân biệt các sắc thái mong muốn, dự định và năng lực.", "medium", [
+        {"id": "pg06-1", "type": "mcq", "prompt": "Câu nào biểu thị năng lực bẩm sinh hoặc được học mà biết?", "choices": ["我会说汉语。", "我想买新衣服。", "我要去北京。", "我喜欢喝茶。"], "correct_index": 0, "explanation_vi": "'会' biểu thị biết làm một việc qua học tập."},
+        {"id": "pg06-2", "type": "mcq", "prompt": "Điền từ thích hợp để biểu thị kế hoạch chắc chắn thực hiện: '明天我____去上海开会。'", "choices": ["要", "会", "能", "可以"], "correct_index": 0, "explanation_vi": "'要' biểu thị quyết định hoặc sắp sửa thực hiện một hành động."},
+        {"id": "pg06-3", "type": "mcq", "prompt": "Điền từ phủ định động từ năng nguyện: '今天我太累了，____去打球。'", "choices": ["不想", "没想", "不对", "不用"], "correct_index": 0, "explanation_vi": "Phủ định của 想 là 不想 (không muốn)."},
+        {"id": "pg06-4", "type": "mcq", "prompt": "Điền từ thích hợp xin phép: '老师，我____进来吗？'", "choices": ["可以", "会", "爱", "要"], "correct_index": 0, "explanation_vi": "'可以...吗？' dùng để hỏi xin phép lịch sự."},
+        {"id": "pg06-5", "type": "mcq", "prompt": "Chọn câu biểu thị khả năng điều kiện khách quan cho phép:", "choices": ["今天天气好，我们可以去公园跑步。", "我想喝咖啡。", "他要买电脑。", "我会写汉字。"], "correct_index": 0, "explanation_vi": "'可以' biểu thị điều kiện khách quan cho phép làm gì."}
+    ]),
+    ("ps-gram-07", "u-hsk1-04", "degree_adverbs", "Bộ 07: Phó từ Chỉ Mức độ 很, 太, 非常, 有点儿", "Luyện cách bổ nghĩa mức độ cho tính từ.", "medium", [
+        {"id": "pg07-1", "type": "mcq", "prompt": "Cấu trúc cảm thán khen ngợi đi với '太...了' là:", "choices": ["这件衣服太漂亮了！", "这件衣服太漂亮吗？", "这件衣服很太漂亮。", "这件衣服有点儿太漂亮。"], "correct_index": 0, "explanation_vi": "Cấu trúc chuẩn: 太 + Tính từ + 了!"},
+        {"id": "pg07-2", "type": "mcq", "prompt": "Phó từ nào thường dùng để biểu thị sự không hài lòng (hơi... một chút)?", "choices": ["有点儿", "很", "非常", "极了"], "correct_index": 0, "explanation_vi": "'有点儿' + Tính từ tiêu cực (ví dụ: 有点儿贵, 有点儿冷)."},
+        {"id": "pg07-3", "type": "fill", "prompt": "Điền từ thích hợp: '今天天气____好，天空很蓝。' (Rất tốt)", "choices": ["很", "点", "个", "了"], "correct_index": 0, "explanation_vi": "Phó từ mức độ thông dụng '很' đứng trước tính từ."},
+        {"id": "pg07-4", "type": "mcq", "prompt": "Chọn câu đúng ngữ pháp khi diễn tả mức độ cao nhất:", "choices": ["他汉语说得非常流利。", "他汉语说得有点儿非常流利。", "非常他汉语说得流利。", "他汉语非常说得流利。"], "correct_index": 0, "explanation_vi": "'非常' bổ nghĩa cho tính từ đứng sau."},
+        {"id": "pg07-5", "type": "mcq", "prompt": "Phân biệt vị trí của '一点儿' và '有点儿':", "choices": ["'有点儿' đứng trước tính từ, '一点儿' đứng sau tính từ", "'一点儿' đứng trước tính từ, '有点儿' đứng sau tính từ", "Cả hai đều đứng trước", "Cả hai đều đứng sau"], "correct_index": 0, "explanation_vi": "Ví dụ: 有点儿大 (hơi to) vs. 便宜一点儿 (rẻ một chút)."}
+    ]),
+    ("ps-gram-08", "u-hsk1-05", "continuous_aspect", "Bộ 08: Thể Tiếp diễn '正在...呢'", "Luyện diễn tả hành động đang xảy ra tại thời điểm nói.", "medium", [
+        {"id": "pg08-1", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Anh ấy đang đọc sách trong phòng.'", "tokens": ["他", "正在", "房间里", "看书", "呢", "。"], "targetSentence": "他正在房间里看书呢。", "explanation_vi": "Cấu trúc: Chủ ngữ + 正在 + (Địa điểm) + Động từ + 呢."},
+        {"id": "pg08-2", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Mẹ đang nấu cơm trong bếp.'", "tokens": ["妈妈", "正在", "做饭", "呢", "。"], "targetSentence": "妈妈正在做饭呢。", "explanation_vi": "正在 + 做饭 + 呢."},
+        {"id": "pg08-3", "type": "mcq", "prompt": "Điền từ thích hợp: '喂，你____做什么呢？'", "choices": ["正在", "已经", "就要", "曾经"], "correct_index": 0, "explanation_vi": "Hỏi hành động đang diễn ra: '正在做什么呢？'."},
+        {"id": "pg08-4", "type": "mcq", "prompt": "Phủ định của thể tiếp diễn 正在 là:", "choices": ["没在 / 没有", "不正在", "不要", "不会"], "correct_index": 0, "explanation_vi": "Phủ định hành động đang diễn ra dùng '没在' hoặc '没有正在'."},
+        {"id": "pg08-5", "type": "fill", "prompt": "Điền trợ từ cuối câu: '大家都在认真听老师讲课____。'", "choices": ["呢", "吗", "吧", "过"], "correct_index": 0, "explanation_vi": "Trợ từ '呢' phối hợp cùng 在/正在 tạo thành kết cấu tiếp diễn."}
+    ]),
+    ("ps-gram-09", "u-hsk1-06", "completed_aspect", "Bộ 09: Trợ từ Động thái '了' (Hành động hoàn thành)", "Luyện diễn đạt sự hoàn thành của hành vi hoặc tình huống mới.", "hard", [
+        {"id": "pg09-1", "type": "mcq", "prompt": "Trong câu '我吃了一碗面条', trợ từ '了' biểu thị điều gì?", "choices": ["Hành động ăn đã hoàn thành", "Lời rủ rê đề nghị", "Thời gian tương lai", "Hỏi nghi vấn"], "correct_index": 0, "explanation_vi": "'动词 + 了' biểu thị hành động đã hoàn tất."},
+        {"id": "pg09-2", "type": "sentence_ordering", "prompt": "Sắp xếp thành câu: 'Hôm qua tôi đã mua hai cuốn sách.'", "tokens": ["昨天", "我", "买", "了", "两本", "书", "。"], "targetSentence": "昨天我买了两本书。", "explanation_vi": "买了 + Số lượng từ + Danh từ."},
+        {"id": "pg09-3", "type": "mcq", "prompt": "Phủ định của câu có '了' hoàn thành dùng phó từ nào?", "choices": ["没有 (没)", "不", "别", "不要"], "correct_index": 0, "explanation_vi": "Phủ định hành động chưa xảy ra dùng '没' hoặc '没有' và bỏ '了' (ví dụ: 我没买)."},
+        {"id": "pg09-4", "type": "mcq", "prompt": "Chọn câu đúng khi diễn tả việc chưa mua đồ hôm qua:", "choices": ["我昨天没有去商店买东西。", "我昨天不去商店买了东西。", "我昨天没有去商店买了东西。", "我昨天不买东西了。"], "correct_index": 0, "explanation_vi": "Khi đã có 沒有 thì cuối câu không còn '了'."},
+        {"id": "pg09-5", "type": "fill", "prompt": "Điền từ: '春风来了，天气变暖和____。' (Biến đổi trạng thái)", "choices": ["了", "呢", "吧", "吗"], "correct_index": 0, "explanation_vi": "'了' cuối câu biểu thị sự biến đổi trạng thái mới (ấm lên rồi)."}
+    ]),
+    ("ps-gram-10", "u-hsk1-06", "error_detection", "Bộ 10: Phát hiện Lỗi sai Ngữ pháp Tổng hợp", "Phân tích và sửa các lỗi ngữ pháp kinh điển của người học HSK 1.", "hard", [
+        {"id": "pg10-1", "type": "mcq", "prompt": "Câu nào sau đây mắc lỗi ngữ pháp về trật tự từ?", "choices": ["我在学校学汉语在教室。", "我在学校的教室里学汉语。", "今天下午我和他去踢足球。", "桌子上有一本书。"], "correct_index": 0, "explanation_vi": "Lỗi lặp trạng ngữ nơi chốn sai vị trí ở cuối câu ('在教室')."},
+        {"id": "pg10-2", "type": "mcq", "prompt": "Câu nào sau đây dùng sai lượng từ?", "choices": ["他家有三个人。", "桌上有一张照片。", "我想买一件衣服。", "我有一只小狗。"], "correct_index": 0, "explanation_vi": "Đếm số người trong gia đình nên dùng '三口人'."},
+        {"id": "pg10-3", "type": "mcq", "prompt": "Câu nào sau đây mắc lỗi về phó từ phủ định?", "choices": ["我昨天不去学校上课了。", "我今天不想去上课。", "他不是医生。", "我没有哥哥。"], "correct_index": 0, "explanation_vi": "Phủ định hành vi quá khứ hôm qua phải dùng '没去', không dùng '不去...了'."},
+        {"id": "pg10-4", "type": "mcq", "prompt": "Câu nào sau đây diễn đạt trật tự thời gian sai?", "choices": ["明天八点上午我们见。", "明天上午八点我们见。", "今天晚上七点我们吃饭。", "下周一上午有考试。"], "correct_index": 0, "explanation_vi": "Phải đi từ lớn đến nhỏ: 明天 -> 上午 -> 八点."},
+        {"id": "pg10-5", "type": "mcq", "prompt": "Tìm câu đúng chuẩn nhất trong các câu sau:", "choices": ["李明比我大两岁。", "李明比大我两岁。", "李明我比大两岁。", "李明两岁比我大。"], "correct_index": 0, "explanation_vi": "Cấu trúc so sánh chữ 比: A + 比 + B + Tính từ + Mức độ chênh lệch."}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, questions in grammar_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "grammar",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(questions),
+        "questions": questions
+    })
+
+# ==========================================
+# SKILL 3: LISTENING PRACTICE (10 Sets)
+# ==========================================
+listening_sets_meta = [
+    ("ps-listen-01", "u-hsk1-01", "word_to_meaning", "Bộ 01: Nghe Từ vựng Chọn Nghĩa (Chào hỏi & Số đếm)", "Nghe phát âm từ đơn và chọn đúng nghĩa tiếng Việt tương ứng.", "easy", [
+        {"id": "pl01-1", "type": "audio_mcq", "audioText": "你好", "prompt": "Nghe và chọn nghĩa của từ:", "choices": ["Xin chào", "Tạm biệt", "Cảm ơn", "Không có gì"], "correct_index": 0, "explanation_vi": "'nǐhǎo' là Xin chào."},
+        {"id": "pl01-2", "type": "audio_mcq", "audioText": "谢谢", "prompt": "Nghe và chọn nghĩa của từ:", "choices": ["Cảm ơn", "Xin lỗi", "Đừng khách sáo", "Hẹn gặp lại"], "correct_index": 0, "explanation_vi": "'xièxie' là Cảm ơn."},
+        {"id": "pl01-3", "type": "audio_mcq", "audioText": "再见", "prompt": "Nghe và chọn nghĩa của từ:", "choices": ["Tạm biệt", "Xin chào", "Mời vào", "Rất vui"], "correct_index": 0, "explanation_vi": "'zàijiàn' là Tạm biệt."},
+        {"id": "pl01-4", "type": "audio_mcq", "audioText": "七", "prompt": "Nghe và chọn con số được đọc:", "choices": ["Số 7", "Số 1", "Số 4", "Số 10"], "correct_index": 0, "explanation_vi": "'qī' là số 7."},
+        {"id": "pl01-5", "type": "audio_mcq", "audioText": "百", "prompt": "Nghe và chọn nghĩa của từ:", "choices": ["Hàng trăm (100)", "Hàng chục (10)", "Hàng nghìn (1.000)", "Số 0"], "correct_index": 0, "explanation_vi": "'bǎi' là hàng trăm."}
+    ]),
+    ("ps-listen-02", "u-hsk1-01", "sound_to_hanzi", "Bộ 02: Nghe Âm thanh Chọn Hán tự Nền tảng", "Luyện phản xạ kết nối âm thanh với mặt chữ Hán.", "easy", [
+        {"id": "pl02-1", "type": "audio_mcq", "audioText": "我", "prompt": "Nghe âm thanh và chọn chữ Hán đúng:", "choices": ["我", "你", "他", "她"], "correct_index": 0, "explanation_vi": "Âm đọc 'wǒ' tương ứng chữ 我."},
+        {"id": "pl02-2", "type": "audio_mcq", "audioText": "人", "prompt": "Nghe âm thanh và chọn chữ Hán đúng:", "choices": ["人", "大", "入", "天"], "correct_index": 0, "explanation_vi": "Âm đọc 'rén' tương ứng chữ 人."},
+        {"id": "pl02-3", "type": "audio_mcq", "audioText": "学", "prompt": "Nghe âm thanh và chọn chữ Hán đúng:", "choices": ["学", "字", "家", "安"], "correct_index": 0, "explanation_vi": "Âm đọc 'xué' tương ứng chữ 学."},
+        {"id": "pl02-4", "type": "audio_mcq", "audioText": "月", "prompt": "Nghe âm thanh và chọn chữ Hán đúng:", "choices": ["月", "日", "目", "白"], "correct_index": 0, "explanation_vi": "Âm đọc 'yuè' tương ứng chữ 月."},
+        {"id": "pl02-5", "type": "audio_mcq", "audioText": "年", "prompt": "Nghe âm thanh và chọn chữ Hán đúng:", "choices": ["年", "午", "牛", "手"], "correct_index": 0, "explanation_vi": "Âm đọc 'nián' tương ứng chữ 年."}
+    ]),
+    ("ps-listen-03", "u-hsk1-02", "sentence_response", "Bộ 03: Nghe Câu Đối đáp & Giao tiếp Ngắn", "Nghe câu hỏi hoặc phát biểu và chọn câu đáp phù hợp.", "medium", [
+        {"id": "pl03-1", "type": "audio_mcq", "audioText": "你喝茶还是喝水？", "prompt": "Nghe câu hỏi và chọn câu đáp hợp lý:", "choices": ["我喝茶。", "我是中国人。", "太贵了。", "明天见。"], "correct_index": 0, "explanation_vi": "Hỏi lựa chọn '喝茶还是喝水' -> Trả lời '我喝茶'."},
+        {"id": "pl03-2", "type": "audio_mcq", "audioText": "这个包子多少钱一个？", "prompt": "Nghe câu hỏi và chọn câu đáp hợp lý:", "choices": ["三块钱一个。", "我有两个包子。", "很好吃。", "在桌子上。"], "correct_index": 0, "explanation_vi": "Hỏi giá tiền -> Trả lời bằng giá: '三块钱一个'."},
+        {"id": "pl03-3", "type": "audio_mcq", "audioText": "对不起，我来晚了。", "prompt": "Nghe câu xin lỗi và chọn lời đáp chuẩn:", "choices": ["没关系，请进！", "不客气。", "不用谢。", "很好。"], "correct_index": 0, "explanation_vi": "Đáp lại lời xin lỗi dùng '没关系'."},
+        {"id": "pl03-4", "type": "audio_mcq", "audioText": "李老师在办公室吗？", "prompt": "Nghe câu hỏi và chọn câu đáp phù hợp:", "choices": ["他在，请进。", "他是老师。", "他叫李明。", "他有两个孩子。"], "correct_index": 0, "explanation_vi": "Hỏi người có ở đó không -> '他在，请进'."},
+        {"id": "pl03-5", "type": "audio_mcq", "audioText": "周末你想去做什么？", "prompt": "Nghe câu hỏi và chọn câu trả lời tương ứng:", "choices": ["我想去电影院看电影。", "我不吃牛肉。", "现在八点。", "他是我的朋友。"], "correct_index": 0, "explanation_vi": "Hỏi dự định cuối tuần -> '我想去电影院看电影'."}
+    ]),
+    ("ps-listen-04", "u-hsk1-02", "dictation", "Bộ 04: Nghe Chép Chính tả & Điền khuyết (Giờ giấc & Mua bán)", "Nghe đoạn ghi âm ngắn và xác định từ bị khuyết.", "medium", [
+        {"id": "pl04-1", "type": "audio_fill", "audioText": "现在是上午九点三十分。", "prompt": "Nghe đoạn ghi âm và điền giờ: '现在是上午____。'", "choices": ["九点三十分", "八点三十分", "九点十分", "十点三十分"], "correct_index": 0, "explanation_vi": "Audio đọc: 九点三十分."},
+        {"id": "pl04-2", "type": "audio_fill", "audioText": "一斤苹果五块钱。", "prompt": "Nghe đoạn ghi âm và điền giá tiền: '一斤苹果____。'", "choices": ["五块钱", "五十块", "十五块", "两块钱"], "correct_index": 0, "explanation_vi": "Audio đọc: 五块钱."},
+        {"id": "pl04-3", "type": "audio_fill", "audioText": "我想吃一碗牛肉面。", "prompt": "Nghe đoạn ghi âm và điền món ăn: '我想吃一碗____。'", "choices": ["牛肉面", "米饭", "包子", "青菜"], "correct_index": 0, "explanation_vi": "Audio đọc: 牛肉面 (mì thịt bò)."},
+        {"id": "pl04-4", "type": "audio_fill", "audioText": "他妈妈在医院当医生。", "prompt": "Nghe đoạn ghi âm và điền nơi làm việc: '他妈妈在____当医生。'", "choices": ["医院", "学校", "公司", "商店"], "correct_index": 0, "explanation_vi": "Audio đọc: 医院."},
+        {"id": "pl04-5", "type": "audio_fill", "audioText": "太贵了，便宜两块吧！", "prompt": "Nghe đoạn ghi âm và điền số tiền xin giảm: '便宜____吧！'", "choices": ["两块", "五块", "十块", "一块"], "correct_index": 0, "explanation_vi": "Audio đọc: 两块."}
+    ]),
+    ("ps-listen-05", "u-hsk1-03", "dialogue_comprehension", "Bộ 05: Nghe Hội thoại Xác định Địa điểm & Đi lại", "Nghe mẩu hội thoại 2 lượt và trả lời câu hỏi về vị trí.", "medium", [
+        {"id": "pl05-1", "type": "audio_dialogue", "audioText": "男：请问，去火车站怎么走？\n女：一直往前走，在前面那个路口往右拐就到了。", "prompt": "Câu hỏi: Ga tàu hỏa ở đâu?", "choices": ["Đi thẳng rồi rẽ phải ở ngã tư phía trước", "Rẽ trái ngay", "Ở phía sau", "Đi xe buýt 3 trạm"], "correct_index": 0, "explanation_vi": "Nội dung: 一直往前走... 往右拐就到了."},
+        {"id": "pl05-2", "type": "audio_dialogue", "audioText": "男：今天下午下雨，我们怎么去学校？\n女：坐出租车吧，比坐公共汽车快。", "prompt": "Câu hỏi: Hai bạn chọn phương tiện gì đi học?", "choices": ["Xe taxi", "Xe buýt", "Đi bộ", "Tàu điện"], "correct_index": 0, "explanation_vi": "Nội dung: '坐出租车吧'."},
+        {"id": "pl05-3", "type": "audio_dialogue", "audioText": "女：王老师，您在哪儿呢？\n男：我在三楼302教室看书呢。", "prompt": "Câu hỏi: Thầy Vương đang ở đâu?", "choices": ["Phòng học 302 ở tầng 3", "Phòng giáo viên", "Thư viện", "Ở nhà"], "correct_index": 0, "explanation_vi": "Nội dung: '在三楼302教室'."},
+        {"id": "pl05-4", "type": "audio_dialogue", "audioText": "男：这件黑色的衣服多少钱？\n女：那件一百二十块，红色的只要九十块。", "prompt": "Câu hỏi: Chiếc áo màu đen giá bao nhiêu?", "choices": ["120 tệ", "90 tệ", "210 tệ", "100 tệ"], "correct_index": 0, "explanation_vi": "Nội dung: '黑色的... 一百二十块'."},
+        {"id": "pl05-5", "type": "audio_dialogue", "audioText": "女：明天天气怎么样？会冷吗？\n男：天气预报说不冷，晴天，二十五度。", "prompt": "Câu hỏi: Thời tiết ngày mai như thế nào?", "choices": ["Không lạnh, trời nắng, 25 độ", "Rất lạnh và mưa to", "Có tuyết rơi", "Gió rất lớn"], "correct_index": 0, "explanation_vi": "Nội dung: '不冷，晴天，二十五度'."}
+    ]),
+    ("ps-listen-06", "u-hsk1-03", "true_false", "Bộ 06: Nghe Đoạn văn Ngắn & Phán đoán Đúng/Sai", "Nghe phát biểu hoặc đoạn tin vắn và nhận xét tính chân thực.", "medium", [
+        {"id": "pl06-1", "type": "audio_tf", "audioText": "大卫是美国人，他在北京语言大学学汉语。他非常喜欢吃中国菜。", "prompt": "Nhận định: 'David học tiếng Trung ở trường Đại học Ngôn ngữ Bắc Kinh.'", "choices": ["Đúng", "Sai"], "correct_index": 0, "explanation_vi": "Trong audio: '他在北京语言大学学汉语' -> Nhận định Đúng."},
+        {"id": "pl06-2", "type": "audio_tf", "audioText": "李明今天感冒了，身体很不舒服，他在家里睡觉，没有去上课。", "prompt": "Nhận định: 'Hôm nay Lý Minh vẫn đi học bình thường.'", "choices": ["Sai", "Đúng"], "correct_index": 0, "explanation_vi": "Trong audio: '没有去上课' -> Nhận định Đúng/Sai: Nhận định là Sai."},
+        {"id": "pl06-3", "type": "audio_tf", "audioText": "我们学校的图书馆很大，里面有很多中文书和外国杂志。", "prompt": "Nhận định: 'Thư viện của trường rất nhỏ.'", "choices": ["Sai", "Đúng"], "correct_index": 0, "explanation_vi": "Trong audio: '图书馆很大' -> Nhận định là Sai."},
+        {"id": "pl06-4", "type": "audio_tf", "audioText": "张经理现在正在三号会议室开会，大概十二点结束。", "prompt": "Nhận định: 'Giám đốc Trương đang ở trong phòng họp số 3.'", "choices": ["Đúng", "Sai"], "correct_index": 0, "explanation_vi": "Trong audio: '正在三号会议室开会' -> Nhận định Đúng."},
+        {"id": "pl06-5", "type": "audio_tf", "audioText": "王小姐喜欢红色和白色，她今天穿了一件红色的漂亮衣服。", "prompt": "Nhận định: 'Hôm nay cô Vương mặc chiếc áo màu đen.'", "choices": ["Sai", "Đúng"], "correct_index": 0, "explanation_vi": "Trong audio: '穿了一件红色的漂亮衣服' -> Nhận định là Sai."}
+    ]),
+    ("ps-listen-07", "u-hsk1-04", "dialogue_comprehension", "Bộ 07: Nghe Tình huống Mua sắm & Chọn đồ", "Luyện nghe các cuộc trò chuyện mặc cả, thanh toán và chọn size.", "medium", [
+        {"id": "pl07-1", "type": "audio_dialogue", "audioText": "男：这双鞋子有点儿小，有大一点儿的吗？\n女：有，您稍等，我给您拿一双四十二号的。", "prompt": "Câu hỏi: Khách hàng yêu cầu điều gì?", "choices": ["Đổi một đôi to hơn (cỡ 42)", "Đổi sang màu đen", "Trả lại tiền", "Mua thêm một đôi nữa"], "correct_index": 0, "explanation_vi": "Khách nói: '有点儿小，有大一点儿的吗' -> Lấy đôi to hơn."},
+        {"id": "pl07-2", "type": "audio_dialogue", "audioText": "女：服务员，一共多少钱？\n男：两杯咖啡，一份蛋糕，一共六十八块。", "prompt": "Câu hỏi: Hóa đơn gồm những món gì?", "choices": ["2 ly cà phê và 1 phần bánh ngọt", "1 ly trà và 2 cái bánh", "3 bát mì", "Cơm rang"], "correct_index": 0, "explanation_vi": "Nội dung: '两杯咖啡，一份蛋糕'."},
+        {"id": "pl07-3", "type": "audio_dialogue", "audioText": "男：老板，西瓜怎么卖？\n女：两块五一斤，保甜！买一个送一个小苹果。", "prompt": "Câu hỏi: Giá dưa hấu là bao nhiêu?", "choices": ["2,5 tệ một cân", "5 tệ một cân", "2 tệ một cân", "10 tệ một quả"], "correct_index": 0, "explanation_vi": "Nội dung: '两块五一斤'."},
+        {"id": "pl07-4", "type": "audio_dialogue", "audioText": "女：这件毛衣挺好的，我可以试一下吗？\n男：当然可以，试衣间在那边。", "prompt": "Câu hỏi: Phòng thử đồ ở đâu?", "choices": ["Ở phía bên kia", "Tầng trên", "Bên ngoài cửa hàng", "Hết phòng thử"], "correct_index": 0, "explanation_vi": "Nội dung: '试衣间在那边'."},
+        {"id": "pl07-5", "type": "audio_dialogue", "audioText": "男：支持微信支付吗？\n女：支持，扫桌上的二维码就可以了。", "prompt": "Câu hỏi: Khách hàng thanh toán bằng phương thức nào?", "choices": ["Quét mã WeChat Pay", "Trả tiền mặt", "Quẹt thẻ tín dụng", "Chuyển khoản ngân hàng"], "correct_index": 0, "explanation_vi": "Nội dung: '扫桌上的二维码' (WeChat Pay)."}
+    ]),
+    ("ps-listen-08", "u-hsk1-05", "dialogue_comprehension", "Bộ 08: Nghe Cuộc gọi Điện thoại & Hẹn gặp", "Luyện nghe ngữ điệu và thông tin qua đàm thoại điện thoại.", "hard", [
+        {"id": "pl08-1", "type": "audio_dialogue", "audioText": "男：喂，请问是王老师家吗？\n女：不是，您打错了，这里是医院。", "prompt": "Câu hỏi: Chuyện gì đã xảy ra?", "choices": ["Người gọi đã bấm nhầm số điện thoại", "Thầy Vương không có nhà", "Thầy Vương đang ở bệnh viện", "Điện thoại bị hỏng"], "correct_index": 0, "explanation_vi": "Nội dung: '您打错了' (Bạn gọi nhầm số rồi)."},
+        {"id": "pl08-2", "type": "audio_dialogue", "audioText": "女：喂，大卫，晚上有空吗？我们一起去吃烤鸭吧。\n男：太好了！几点见？我在校门口等你。", "prompt": "Câu hỏi: Họ hẹn nhau đi ăn món gì?", "choices": ["Vịt quay", "Lẩu bò", "Bánh bao", "Mì sợi"], "correct_index": 0, "explanation_vi": "Nội dung: '吃烤鸭' (ăn vịt quay)."},
+        {"id": "pl08-3", "type": "audio_dialogue", "audioText": "男：李明，你到了吗？\n女：我刚坐上出租车，路上有点儿堵，大概十分钟后到。", "prompt": "Câu hỏi: Khoảng bao lâu nữa Lý Minh sẽ đến nơi?", "choices": ["Khoảng 10 phút nữa", "30 phút nữa", "Đến ngay lập tức", "1 tiếng nữa"], "correct_index": 0, "explanation_vi": "Nội dung: '大概十分钟后到'."},
+        {"id": "pl08-4", "type": "audio_dialogue", "audioText": "女：喂，妈妈，我下飞机了，正在拿行李呢。\n男：好的，爸爸在出口等你，开车接你回家。", "prompt": "Câu hỏi: Ai là người đi đón cô gái ở sân bay?", "choices": ["Người bố", "Người mẹ", "Anh trai", "Bạn thân"], "correct_index": 0, "explanation_vi": "Nội dung: '爸爸在出口等你，开车接你'."},
+        {"id": "pl08-5", "type": "audio_dialogue", "audioText": "男：请问陈经理在吗？\n女：他在开会，请您半个小时后再打过来。", "prompt": "Câu hỏi: Tại sao lúc này không gặp được giám đốc Trần?", "choices": ["Vì ông ấy đang bận họp", "Vì ông ấy đã đi về nhà", "Vì ông ấy đang đi ăn trưa", "Vì điện thoại hết pin"], "correct_index": 0, "explanation_vi": "Nội dung: '他在开会' (Ông ấy đang họp)."}
+    ]),
+    ("ps-listen-09", "u-hsk1-06", "dictation", "Bộ 09: Nghe Chép Chính tả Câu Hoàn chỉnh", "Nghe trọn vẹn câu khẩu ngữ ngắn và xác định toàn bộ văn bản.", "hard", [
+        {"id": "pl09-1", "type": "audio_mcq", "audioText": "我们大家都是好朋友。", "prompt": "Nghe đoạn ghi âm và chọn câu viết đúng chính xác:", "choices": ["我们大家都是好朋友。", "我们都是大朋友。", "他们都是好学生。", "大家一起去学校。"], "correct_index": 0, "explanation_vi": "Audio đọc: '我们大家都是好朋友。'"},
+        {"id": "pl09-2", "type": "audio_mcq", "audioText": "请问去图书馆怎么走？", "prompt": "Nghe đoạn ghi âm và chọn câu viết đúng chính xác:", "choices": ["请问去图书馆怎么走？", "请问图书馆在哪儿？", "图书馆在学校前面吗？", "你去不去图书馆？"], "correct_index": 0, "explanation_vi": "Audio đọc: '请问去图书馆怎么走？'"},
+        {"id": "pl09-3", "type": "audio_mcq", "audioText": "今天天气非常晴朗。", "prompt": "Nghe đoạn ghi âm và chọn câu viết đúng chính xác:", "choices": ["今天天气非常晴朗。", "今天天气有点儿冷。", "明天会下大雨吗？", "北京的秋天很好。"], "correct_index": 0, "explanation_vi": "Audio đọc: '今天天气非常晴朗。'"},
+        {"id": "pl09-4", "type": "audio_mcq", "audioText": "他正在操场上跑步呢。", "prompt": "Nghe đoạn ghi âm và chọn câu viết đúng chính xác:", "choices": ["他正在操场上跑步呢。", "他在房间里看书呢。", "我们在饭馆吃饭呢。", "妈妈正在做饭呢。"], "correct_index": 0, "explanation_vi": "Audio đọc: '他正在操场上跑步呢。'"},
+        {"id": "pl09-5", "type": "audio_mcq", "audioText": "时间不早了，我们走吧！", "prompt": "Nghe đoạn ghi âm và chọn câu viết đúng chính xác:", "choices": ["时间不早了，我们走吧！", "太早了，再坐一会儿吧！", "明天见，路上小心！", "我不想回家。"], "correct_index": 0, "explanation_vi": "Audio đọc: '时间不早了，我们走吧！'"}
+    ]),
+    ("ps-listen-10", "u-hsk1-06", "dialogue_comprehension", "Bộ 10: Nghe Tổng hợp Đời sống Thường nhật", "Bài luyện nghe tổng kết toàn diện các kỹ năng ngữ âm HSK 1.", "hard", [
+        {"id": "pl10-1", "type": "audio_dialogue", "audioText": "女：你明天下午有空吗？我们一起去图书馆借几本书吧。\n男：明天下午我有中文课，星期天上午去怎么样？\n女：好啊，那就星期天见！", "prompt": "Câu hỏi: Hai bạn đã thống nhất gặp nhau vào thời điểm nào?", "choices": ["Sáng Chủ nhật", "Chiều mai", "Tối thứ Bảy", "Sáng thứ Hai"], "correct_index": 0, "explanation_vi": "Nội dung: '那就星期天见' (星期天上午)."},
+        {"id": "pl10-2", "type": "audio_dialogue", "audioText": "男：这家店的苹果怎么卖？\n女：大苹果八块一斤，小苹果五块一斤，都很甜。\n男：给我称三斤大的吧。", "prompt": "Câu hỏi: Người nam mua hết bao nhiêu tiền táo?", "choices": ["24 tệ (3 cân táo to)", "15 tệ", "8 tệ", "40 tệ"], "correct_index": 0, "explanation_vi": "3 cân táo to giá 8 tệ/cân -> 3 * 8 = 24 tệ."},
+        {"id": "pl10-3", "type": "audio_dialogue", "audioText": "女：你的汉语说得真好，学了几年了？\n男：哪里哪里，我才学了一年，还要多练习呢。", "prompt": "Câu hỏi: Người nam đã học tiếng Trung được bao lâu?", "choices": ["1 năm", "2 năm", "3 năm", "Mới học 1 tháng"], "correct_index": 0, "explanation_vi": "Nội dung: '我才学了一年'."},
+        {"id": "pl10-4", "type": "audio_dialogue", "audioText": "男：服务员，我们还要加一碗米饭和一瓶水。\n女：好的先生，马上就给您送过来。", "prompt": "Câu hỏi: Khách hàng gọi thêm những món gì?", "choices": ["1 bát cơm và 1 chai nước", "2 bát mì", "Trà nóng", "Bánh ngọt"], "correct_index": 0, "explanation_vi": "Nội dung: '加一碗米饭和一瓶水'."},
+        {"id": "pl10-5", "type": "audio_dialogue", "audioText": "女：听说明天有雨，出外要记得带伞。\n男：谢谢你的提醒，我已经把雨伞放在包里了。", "prompt": "Câu hỏi: Người nam đã chuẩn bị đồ vật gì trong túi?", "choices": ["Cây ô / dù đi mưa", "Áo khoác ấm", "Chai nước", "Sách bài tập"], "correct_index": 0, "explanation_vi": "Nội dung: '把雨伞放在包里了' (ô đi mưa)."}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, questions in listening_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "listening",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(questions),
+        "questions": questions
+    })
+
+# ==========================================
+# SKILL 4: SPEAKING & PRONUNCIATION (8 Sets)
+# ==========================================
+speaking_sets_meta = [
+    ("ps-speak-01", "u-hsk1-01", "pronounce_word", "Bộ 01: Luyện Phát âm Từ đơn & Thanh điệu", "Luyện đọc chính xác từng âm tiết thanh 1, 2, 3, 4.", "easy", [
+        {"id": "ps01-1", "type": "speaking_item", "hanzi": "你好", "pinyin": "nǐhǎo", "meaning_vi": "Xin chào (chú ý biến điệu 2 thanh 3 thành ní hǎo)", "targetText": "你好"},
+        {"id": "ps01-2", "type": "speaking_item", "hanzi": "老师", "pinyin": "lǎoshī", "meaning_vi": "Thầy cô giáo", "targetText": "老师"},
+        {"id": "ps01-3", "type": "speaking_item", "hanzi": "学生", "pinyin": "xuésheng", "meaning_vi": "Học sinh (chữ sheng đọc thanh nhẹ)", "targetText": "学生"},
+        {"id": "ps01-4", "type": "speaking_item", "hanzi": "谢谢", "pinyin": "xièxie", "meaning_vi": "Cảm ơn", "targetText": "谢谢"},
+        {"id": "ps01-5", "type": "speaking_item", "hanzi": "再见", "pinyin": "zàijiàn", "meaning_vi": "Tạm biệt (hai thanh 4 dứt khoát)", "targetText": "再见"}
+    ]),
+    ("ps-speak-02", "u-hsk1-01", "sentence_reading", "Bộ 02: Đọc Câu Giới thiệu Họ tên & Quốc tịch", "Luyện đọc lưu loát câu giới thiệu bản thân.", "easy", [
+        {"id": "ps02-1", "type": "speaking_item", "hanzi": "我叫李明，我是中国人。", "pinyin": "Wǒ jiào Lǐ Míng, wǒ shì Zhōngguó rén.", "meaning_vi": "Tôi tên là Lý Minh, tôi là người Trung Quốc.", "targetText": "我叫李明我是中国人"},
+        {"id": "ps02-2", "type": "speaking_item", "hanzi": "很高兴认识你！", "pinyin": "Hěn gāoxìng rènshi nǐ!", "meaning_vi": "Rất vui được làm quen với bạn!", "targetText": "很高兴认识你"},
+        {"id": "ps02-3", "type": "speaking_item", "hanzi": "我不是老师，我是学生。", "pinyin": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.", "meaning_vi": "Tôi không phải giáo viên, tôi là học sinh.", "targetText": "我不是老师我是学生"},
+        {"id": "ps02-4", "type": "speaking_item", "hanzi": "你在哪里学习汉语？", "pinyin": "Nǐ zài nǎlǐ xuéxí Hànyǔ?", "meaning_vi": "Bạn học tiếng Trung ở đâu?", "targetText": "你在哪里学习汉语"}
+    ]),
+    ("ps-speak-03", "u-hsk1-02", "shadowing", "Bộ 03: Shadowing Mua sắm & Hỏi giá tiền", "Nghe phát âm chuẩn và nhại lại với ngữ điệu tự nhiên.", "medium", [
+        {"id": "ps03-1", "type": "speaking_item", "hanzi": "请问，这个苹果多少钱一斤？", "pinyin": "Qǐngwèn, zhè gè píngguǒ duōshao qián yì jīn?", "meaning_vi": "Xin hỏi, táo này bao nhiêu tiền một cân?", "targetText": "请问这个苹果多少钱一斤"},
+        {"id": "ps03-2", "type": "speaking_item", "hanzi": "五块钱一斤，太贵了，便宜点儿吧。", "pinyin": "Wǔ kuài qián yì jīn, tài guì le, piányi diǎnr ba.", "meaning_vi": "Năm tệ một cân, đắt quá, rẻ một chút đi.", "targetText": "五块钱一斤太贵了便宜点儿吧"},
+        {"id": "ps03-3", "type": "speaking_item", "hanzi": "一共六十八块钱，请扫码支付。", "pinyin": "Yígòng liùshíbā kuài qián, qǐng sǎomǎ zhīfù.", "meaning_vi": "Tổng cộng 68 tệ, mời quét mã thanh toán.", "targetText": "一共六十八块钱请扫码支付"}
+    ]),
+    ("ps-speak-04", "u-hsk1-02", "reaction_qa", "Bộ 04: Luyện Phản xạ Hỏi đáp Thực đơn & Ăn uống", "Nghe câu hỏi tình huống và phát âm câu trả lời tương ứng.", "medium", [
+        {"id": "ps04-1", "type": "speaking_item", "hanzi": "你想吃米饭还是面条？——我想吃一碗面条。", "pinyin": "Wǒ xiǎng chī yì wǎn miàntiáo.", "meaning_vi": "Tôi muốn ăn một bát mì.", "targetText": "我想吃一碗面条"},
+        {"id": "ps04-2", "type": "speaking_item", "hanzi": "服务员，请给我一杯热水。", "pinyin": "Fúwùyuán, qǐng gěi wǒ yì bēi rèshuǐ.", "meaning_vi": "Phục vụ ơi, vui lòng cho tôi một ly nước nóng.", "targetText": "服务员请给我一杯热水"},
+        {"id": "ps04-3", "type": "speaking_item", "hanzi": "这里的菜很好吃，我很喜欢。", "pinyin": "Zhèlǐ de cài hěn hǎochī, wǒ hěn xǐhuan.", "meaning_vi": "Món ăn ở đây rất ngon, tôi rất thích.", "targetText": "这里的菜很好吃我很喜欢"}
+    ]),
+    ("ps-speak-05", "u-hsk1-03", "sentence_reading", "Bộ 05: Luyện Đọc Câu Vị trí, Phương hướng & Giao thông", "Luyện nói câu chỉ đường đi và vị trí không gian.", "medium", [
+        {"id": "ps05-1", "type": "speaking_item", "hanzi": "火车站就在学校的前面。", "pinyin": "Huǒchēzhàn jiù zài xuéxiào de qiánmiàn.", "meaning_vi": "Ga tàu hỏa ở ngay phía trước trường học.", "targetText": "火车站就在学校的前面"},
+        {"id": "ps05-2", "type": "speaking_item", "hanzi": "一直往前走，在路口往右拐。", "pinyin": "Yìzhí wǎng qián zǒu, zài lùkǒu wǎng yòu guǎi.", "meaning_vi": "Cứ đi thẳng về phía trước, ở ngã tư thì rẽ phải.", "targetText": "一直往前走在路口往右拐"},
+        {"id": "ps05-3", "type": "speaking_item", "hanzi": "今天下雨，我们坐出租车去吧。", "pinyin": "Jīntiān xiàyǔ, wǒmen zuò chūzūchē qù ba.", "meaning_vi": "Hôm nay trời mưa, chúng ta đi taxi nhé.", "targetText": "今天下雨我们坐出租车去吧"}
+    ]),
+    ("ps-speak-06", "u-hsk1-04", "shadowing", "Bộ 06: Shadowing Cuộc sống, Sức khỏe & Thể thao", "Nhại âm các đoạn giao tiếp về sức khỏe và sinh hoạt thường ngày.", "medium", [
+        {"id": "ps06-1", "type": "speaking_item", "hanzi": "你今天身体怎么样？好点儿了吗？", "pinyin": "Nǐ jīntiān shēntǐ zěnmeyàng? Hǎo diǎnr le ma?", "meaning_vi": "Hôm nay sức khỏe bạn thế nào? Đã đỡ hơn chút nào chưa?", "targetText": "你今天身体怎么样好点儿了吗"},
+        {"id": "ps06-2", "type": "speaking_item", "hanzi": "医生让我多喝水，多在家里休息。", "pinyin": "Yīshēng ràng wǒ duō hē shuǐ, duō zài jiālǐ xiūxi.", "meaning_vi": "Bác sĩ dặn tôi uống nhiều nước và nghỉ ngơi nhiều ở nhà.", "targetText": "医生让我多喝水多在家里休息"},
+        {"id": "ps06-3", "type": "speaking_item", "hanzi": "周末我和同学们一起去打篮球。", "pinyin": "Zhōumò wǒ hé tóngxuémen yìqǐ qù dǎ lánqiú.", "meaning_vi": "Cuối tuần tôi và các bạn cùng đi chơi bóng rổ.", "targetText": "周末我和同学们一起去打篮球"}
+    ]),
+    ("ps-speak-07", "u-hsk1-05", "reaction_qa", "Bộ 07: Luyện Nói Đàm thoại Điện thoại & Lịch sự", "Luyện câu khẩu ngữ điện thoại và xã giao lịch thiệp.", "hard", [
+        {"id": "ps07-1", "type": "speaking_item", "hanzi": "喂，请问王经理在办公室吗？", "pinyin": "Wéi, qǐngwèn Wáng jīnglǐ zài bàngōngshì ma?", "meaning_vi": "Alo, xin hỏi giám đốc Vương có ở văn phòng không ạ?", "targetText": "喂请问王经理在办公室吗"},
+        {"id": "ps07-2", "type": "speaking_item", "hanzi": "他正在开会，请您半小时后再打来。", "pinyin": "Tā zhèngzài kāihuì, qǐng nín bàn xiǎoshí hòu zài dǎ lái.", "meaning_vi": "Ông ấy đang họp, xin vui lòng gọi lại sau nửa tiếng nữa ạ.", "targetText": "他正在开会请您半小时后再打来"},
+        {"id": "ps07-3", "type": "speaking_item", "hanzi": "好的，谢谢您，再见！", "pinyin": "Hǎo de, xièxie nín, zàijiàn!", "meaning_vi": "Vâng, cảm ơn ngài, tạm biệt!", "targetText": "好的谢谢您再见"}
+    ]),
+    ("ps-speak-08", "u-hsk1-06", "sentence_reading", "Bộ 08: Đọc Đoạn văn Ngắn Trôi chảy & Ngữ cảm", "Luyện phát âm đoạn văn hoàn chỉnh với ngữ điệu tự nhiên.", "hard", [
+        {"id": "ps08-1", "type": "speaking_item", "hanzi": "我爱学中文，我希望明年去中国留学。", "pinyin": "Wǒ ài xué Zhōngwén, wǒ xīwàng míngnián qù Zhōngguó liúxué.", "meaning_vi": "Tôi yêu học tiếng Trung, tôi hy vọng năm sau đi Trung Quốc du học.", "targetText": "我爱学中文我希望明年去中国留学"},
+        {"id": "ps08-2", "type": "speaking_item", "hanzi": "北京有很多好玩的地方，烤鸭也非常好吃。", "pinyin": "Běijīng yǒu hěn duō hǎowán de dìfang, kǎoyā yě fēicháng hǎochī.", "meaning_vi": "Bắc Kinh có nhiều nơi vui chơi, vịt quay cũng vô cùng ngon.", "targetText": "北京有很多好玩的地方烤鸭也非常好吃"},
+        {"id": "ps08-3", "type": "speaking_item", "hanzi": "我们一起努力，天天向上！", "pinyin": "Wǒmen yìqǐ nǔlì, tiāntiān xiàngshàng!", "meaning_vi": "Chúng ta cùng nhau cố gắng, ngày ngày tiến bộ!", "targetText": "我们一起努力天天向上"}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, questions in speaking_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "speaking",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(questions),
+        "questions": questions
+    })
+
+# ==========================================
+# SKILL 5: READING COMPREHENSION (8 Sets)
+# ==========================================
+reading_sets_meta = [
+    ("ps-read-01", "u-hsk1-01", "passage_qa", "Bộ 01: Đọc hiểu Đoạn văn Tự Giới thiệu", "Đọc đoạn văn tự giới thiệu và trả lời các câu hỏi chi tiết.", "easy", [
+        {"id": "pr01-1", "type": "mcq", "passage": "你好！我叫王朋，今年二十岁。我是中国北京人。我家有三口人：爸爸、妈妈和我。我爸爸是医生，我妈妈是汉语老师。我现在在北京大学学英语。", "prompt": "Vương Bằng bao nhiêu tuổi và là người ở đâu?", "choices": ["20 tuổi, người Bắc Kinh", "22 tuổi, người Thượng Hải", "18 tuổi, người Quảng Châu", "25 tuổi, người Trùng Khánh"], "correct_index": 0, "explanation_vi": "'今年二十岁。我是中国北京人' -> 20 tuổi, người Bắc Kinh."},
+        {"id": "pr01-2", "type": "mcq", "passage": "你好！我叫王朋，今年二十岁。我是中国北京人。我家有三口人：爸爸、妈妈和我。我爸爸是医生，我妈妈是汉语老师。我现在在北京大学学英语。", "prompt": "Mẹ của Vương Bằng làm nghề gì?", "choices": ["Giáo viên tiếng Trung", "Bác sĩ bệnh viện", "Nhân viên ngân hàng", "Nội trợ"], "correct_index": 0, "explanation_vi": "'我妈妈是汉语老师' -> Giáo viên tiếng Trung."},
+        {"id": "pr01-3", "type": "mcq", "passage": "你好！我叫王朋，今年二十岁。我是中国北京人。我家有三口人：爸爸、妈妈和我。我爸爸是医生，我妈妈是汉语老师。我现在在北京大学学英语。", "prompt": "Vương Bằng đang theo học ngành gì ở trường đại học?", "choices": ["Tiếng Anh", "Tiếng Trung", "Y khoa", "Kinh tế"], "correct_index": 0, "explanation_vi": "'在大学学英语' -> Học tiếng Anh."}
+    ]),
+    ("ps-read-02", "u-hsk1-02", "true_false", "Bộ 02: Đúng/Sai - Đi Chợ Mua đồ & Nấu ăn", "Đọc mẩu nhật ký sinh hoạt gia đình và phán đoán đúng sai.", "easy", [
+        {"id": "pr02-1", "type": "tf", "passage": "今天星期六，我和妈妈早上八点去超市买菜。我们买了三斤苹果、两斤牛肉和一把青菜。苹果五块钱一斤，牛肉四十块钱一斤。中午妈妈做了一顿丰盛的午饭。", "prompt": "Hai mẹ con đi siêu thị vào sáng thứ Bảy.", "choices": ["Đúng", "Sai"], "correct_index": 0, "explanation_vi": "'今天星期六，我和妈妈早上八点去超市' -> Nhận định Đúng."},
+        {"id": "pr02-2", "type": "tf", "passage": "今天星期六，我和妈妈早上八点去超市买菜。我们买了三斤苹果、两斤牛肉和一把青菜。苹果五块钱一斤，牛肉四十块钱一斤。中午妈妈做了一顿丰盛的午饭。", "prompt": "Giá thịt bò là 5 tệ một cân.", "choices": ["Sai", "Đúng"], "correct_index": 0, "explanation_vi": "Trong bài: '牛肉四十块钱一斤' (40 tệ/cân) -> Nhận định là Sai."},
+        {"id": "pr02-3", "type": "tf", "passage": "今天星期六，我和妈妈早上八点去超市买菜。我们买了三斤苹果、两斤牛肉和一把青菜。苹果五块钱一斤，牛肉四十块钱一斤。中午妈妈做了一顿丰盛的午饭。", "prompt": "Buổi trưa cả nhà ra ngoài ăn tiệm.", "choices": ["Sai", "Đúng"], "correct_index": 0, "explanation_vi": "Trong bài: '中午妈妈做了一顿丰盛的午饭' (mẹ nấu ở nhà) -> Nhận định là Sai."}
+    ]),
+    ("ps-read-03", "u-hsk1-03", "passage_qa", "Bộ 03: Thời tiết & Hoạt động Ngoại khóa", "Đọc văn bản miêu tả khí hậu bốn mùa và hoạt động thể thao.", "medium", [
+        {"id": "pr03-1", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Thời tiết mùa thu ở Bắc Kinh như thế nào?", "choices": ["Không lạnh cũng không nóng, trời rất xanh", "Rất lạnh và có bão tuyết", "Mưa to kéo dài", "Nóng nực gay gắt"], "correct_index": 0, "explanation_vi": "'不冷也不热，天空很蓝' -> Không lạnh không nóng."},
+        {"id": "pr03-2", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Tác giả và David thích làm gì vào mùa thu?", "choices": ["Đi núi Hương Sơn ngắm lá đỏ và chụp ảnh", "Ở trong ký túc xá học bài", "Đi bơi", "Đi mua sắm ở siêu thị"], "correct_index": 0, "explanation_vi": "'去香山看红叶，拍了很多漂亮的照片' -> Đi ngắm lá đỏ và chụp ảnh."}
+    ]),
+    ("ps-read-04", "u-hsk1-03", "cloze", "Bộ 04: Điền từ vào Đoạn văn (Đời sống Đại học)", "Chọn từ thích hợp điền vào các vị trí trống trong đoạn văn ngắn.", "medium", [
+        {"id": "pr04-1", "type": "fill", "passage": "大卫是我的好朋友。他每天早上七点起床，然后在食堂____早饭。(1)", "prompt": "Chọn từ điền vào vị trí (1):", "choices": ["吃", "喝", "看", "买"], "correct_index": 0, "explanation_vi": "Ăn sáng dùng '吃早饭'."},
+        {"id": "pr04-2", "type": "fill", "passage": "上午八点半，我们一起去教室____课。(2)", "prompt": "Chọn từ điền vào vị trí (2):", "choices": ["上", "下", "跑", "坐"], "correct_index": 0, "explanation_vi": "Vào tiết học dùng '上课'."},
+        {"id": "pr04-3", "type": "fill", "passage": "下午没有课的时候，他喜欢去操场____足球。(3)", "prompt": "Chọn từ điền vào vị trí (3):", "choices": ["踢", "打", "跑", "跳"], "correct_index": 0, "explanation_vi": "Đá bóng dùng '踢足球'."}
+    ]),
+    ("ps-read-05", "u-hsk1-04", "passage_qa", "Bộ 05: Thói quen Sinh hoạt & Sức khỏe", "Đọc văn bản nói về thời gian biểu sinh hoạt lành mạnh.", "medium", [
+        {"id": "pr05-1", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Bác sĩ Trương duy trì sức khỏe bằng những thói quen nào?", "choices": ["Đi bộ buổi sáng, ngủ sớm, uống nhiều nước lọc", "Uống nhiều cà phê đậm đặc", "Ngủ nướng đến trưa", "Không bao giờ tập thể dục"], "correct_index": 0, "explanation_vi": "'早上六点在公园散步，晚上十点前睡觉... 喝很多白开水' -> Đi bộ, ngủ sớm, uống nước."},
+        {"id": "pr05-2", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Bác sĩ Trương khuyên mọi người điều gì?", "choices": ["Vận động nhiều và giữ tâm trạng vui vẻ", "Làm việc thâu đêm", "Uống thuốc bổ mỗi ngày", "Ăn thật nhiều đồ ngọt"], "correct_index": 0, "explanation_vi": "'多运动、心情好，身体就会好' -> Vận động nhiều và tâm trạng tốt."}
+    ]),
+    ("ps-read-06", "u-hsk1-05", "info_matching", "Bộ 06: Đọc Bảng Tin, Biển báo & Thông báo Ngắn", "Trích xuất thông tin thực tế từ các biển hiệu, thông báo đời sống.", "medium", [
+        {"id": "pr06-1", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Thư viện mở cửa lúc mấy giờ vào Chủ nhật?", "choices": ["9:00 sáng", "8:00 sáng", "10:00 sáng", "Đóng cửa cả ngày"], "correct_index": 0, "explanation_vi": "'星期六至星期日 9:00 - 17:00' -> Mở cửa lúc 9:00 sáng."},
+        {"id": "pr06-2", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Hành vi nào bị nghiêm cấm trong thư viện?", "choices": ["Mang thức ăn và nước uống vào bên trong", "Đọc sách tiếng nước ngoài", "Mượn quá hai cuốn sách", "Ngồi một mình"], "correct_index": 0, "explanation_vi": "'禁止带食物和饮料入内' -> Cấm mang thức ăn và nước uống."}
+    ]),
+    ("ps-read-07", "u-hsk1-06", "passage_qa", "Bộ 07: Kế hoạch Tương lai & Du học", "Đọc bài viết chia sẻ về ước mơ học tập và cơ hội du học.", "hard", [
+        {"id": "pr07-1", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Lúc mới bắt đầu học, tác giả cảm thấy điều gì khó nhất?", "choices": ["Chữ Hán khó viết và phát âm không dễ", "Ngữ pháp quá dài", "Không có giáo trình", "Không có thời gian"], "correct_index": 0, "explanation_vi": "'最初我觉得汉字很难写，发音也不容易' -> Chữ khó viết và phát âm khó."},
+        {"id": "pr07-2", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Mục tiêu năm tới của tác giả là gì?", "choices": ["Thi đỗ HSK và sang Bắc Kinh du học", "Tìm việc làm lương cao ngay", "Học thêm tiếng Pháp", "Mua một chiếc xe hơi"], "correct_index": 0, "explanation_vi": "'希望明年能通过HSK考试，去北京留学' -> Đỗ HSK và du học Bắc Kinh."}
+    ]),
+    ("ps-read-08", "u-hsk1-06", "story_ordering", "Bộ 08: Sắp xếp Trình tự Câu chuyện", "Đọc các câu rời rạc và sắp xếp lại theo diễn biến hợp lý.", "hard", [
+        {"id": "pr08-1", "type": "sentence_ordering", "prompt": "Sắp xếp 4 câu sau thành đoạn văn hợp lý:\nA. 我们一起吃了一顿丰盛的午餐。\nB. 星期天上午，李明来我家做客。\nC. 吃完饭后，我们在客厅听音乐、聊天。\nD. 他给我带来了一些新鲜的水果。", "tokens": ["B", "D", "A", "C"], "targetSentence": "B D A C", "explanation_vi": "Trình tự hợp lý: Lý Minh đến chơi (B) -> Mang hoa quả tặng (D) -> Cùng ăn trưa (A) -> Sau bữa ăn nghe nhạc trò chuyện (C)."}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, questions in reading_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "reading",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(questions),
+        "questions": questions
+    })
+
+# ==========================================
+# SKILL 6: DIALOGUE PRACTICE (8 Sets)
+# ==========================================
+dialogue_sets_meta = [
+    ("ps-dia-01", "u-hsk1-01", "roleplay", "Hội thoại 01: Lần đầu Gặp gỡ & Làm quen (Vai A / Vai B)", "Đóng vai bạn học mới trong ngày đầu nhập trường.", "easy", [
+        {"role": "A", "speaker": "李明", "hanzi": "你好！请问你叫什么名字？", "pinyin": "Nǐ hǎo! Qǐngwèn nǐ jiào shénme míngzi?", "vi": "Xin chào! Xin hỏi bạn tên là gì?"},
+        {"role": "B", "speaker": "大卫", "hanzi": "你好！我叫大卫。你呢？", "pinyin": "Nǐ hǎo! Wǒ jiào Dàwèi. Nǐ ne?", "vi": "Xin chào! Tôi tên là David. Còn bạn?"},
+        {"role": "A", "speaker": "李明", "hanzi": "我叫李明。你是哪国人？", "pinyin": "Wǒ jiào Lǐ Míng. Nǐ shì nǎ guó rén?", "vi": "Tôi tên là Lý Minh. Bạn là người nước nào?"},
+        {"role": "B", "speaker": "大卫", "hanzi": "我是美国人。很高兴认识你！", "pinyin": "Wǒ shì Měiguó rén. Hěn gāoxìng rènshi nǐ!", "vi": "Tôi là người Mỹ. Rất vui được làm quen với bạn!"},
+        {"role": "A", "speaker": "李明", "hanzi": "我也很高兴认识你！", "pinyin": "Wǒ yě hěn gāoxìng rènshi nǐ!", "vi": "Tôi cũng rất vui được làm quen với bạn!"}
+    ]),
+    ("ps-dia-02", "u-hsk1-02", "roleplay", "Hội thoại 02: Đi Chợ Mua Hoa quả & Mặc cả", "Đóng vai người mua hoặc người bán hoa quả trên phố.", "easy", [
+        {"role": "A", "speaker": "顾客 (Khách)", "hanzi": "老板，这苹果多少钱一斤？", "pinyin": "Lǎobǎn, zhè píngguǒ duōshao qián yì jīn?", "vi": "Chủ tiệm ơi, táo này bao nhiêu tiền một cân?"},
+        {"role": "B", "speaker": "老板 (Chủ quán)", "hanzi": "六块钱一斤，很甜！", "pinyin": "Liù kuài qián yì jīn, hěn tián!", "vi": "Sáu tệ một cân, ngọt lắm!"},
+        {"role": "A", "speaker": "顾客 (Khách)", "hanzi": "太贵了，五块钱一斤行不行？", "pinyin": "Tài guì le, wǔ kuài qián yì jīn xíng bu xíng?", "vi": "Đắt quá, năm tệ một cân được không?"},
+        {"role": "B", "speaker": "老板 (Chủ quán)", "hanzi": "行吧，买三斤给你算十五块。", "pinyin": "Xíng ba, mǎi sān jīn gěi nǐ suàn shíwǔ kuài.", "vi": "Được rồi, mua ba cân tính bạn mười lăm tệ."},
+        {"role": "A", "speaker": "顾客 (Khách)", "hanzi": "好的，给我称三斤，扫码付钱。", "pinyin": "Hǎo de, gěi wǒ chēng sān jīn, sǎomǎ fùqián.", "vi": "Vâng, cân cho tôi ba cân, tôi quét mã trả tiền."}
+    ]),
+    ("ps-dia-03", "u-hsk1-02", "roleplay", "Hội thoại 03: Gọi món trong Quán ăn", "Đóng vai thực khách hoặc nhân viên phục vụ bàn.", "medium", [
+        {"role": "B", "speaker": "服务员 (Phục vụ)", "hanzi": "您好，两位想吃点儿什么？", "pinyin": "Nín hǎo, liǎng wèi xiǎng chī diǎnr shénme?", "vi": "Xin chào hai vị, hai vị muốn dùng món gì ạ?"},
+        {"role": "A", "speaker": "客人 (Khách)", "hanzi": "我们要一碗牛肉面，一份米饭和一份炒菜。", "pinyin": "Wǒmen yào yì wǎn niúròumiàn, yí fèn mǐfàn hé yí fèn chǎocài.", "vi": "Cho chúng tôi một bát mì bò, một phần cơm và một đĩa rau xào."},
+        {"role": "B", "speaker": "服务员 (Phục vụ)", "hanzi": "喝点儿什么饮料吗？", "pinyin": "Hē diǎnr shénme yǐnliào ma?", "vi": "Có uống đồ uống gì không ạ?"},
+        {"role": "A", "speaker": "客人 (Khách)", "hanzi": "来一壶热茶，谢谢！", "pinyin": "Lái yì hú rèchá, xièxie!", "vi": "Cho một ấm trà nóng, cảm ơn!"},
+        {"role": "B", "speaker": "服务员 (Phục vụ)", "hanzi": "好的，请稍等，菜马上就来！", "pinyin": "Hǎo de, qǐng shāoděng, cài mǎshàng jiù lái!", "vi": "Dạ vâng, xin chờ chút, món ăn sẽ lên ngay!"}
+    ]),
+    ("ps-dia-04", "u-hsk1-03", "roleplay", "Hội thoại 04: Hỏi Đường đến Ga Tàu hỏa", "Đóng vai người hỏi đường hoặc người dân bản xứ chỉ đường.", "medium", [
+        {"role": "A", "speaker": "游客 (Du khách)", "hanzi": "请问，去北京火车站怎么走？", "pinyin": "Qǐngwèn, qù Běijīng huǒchēzhàn zěnme zǒu?", "vi": "Xin hỏi, đi đến ga tàu hỏa Bắc Kinh đi như thế nào ạ?"},
+        {"role": "B", "speaker": "路人 (Người qua đường)", "hanzi": "你一直往前走两百米，在前面的十字路口往左拐。", "pinyin": "Nǐ yìzhí wǎng qián zǒu liǎngbǎi mǐ, zài qiánmiàn de shízìlùkǒu wǎng zuǒ guǎi.", "vi": "Bạn đi thẳng 200 mét, ở ngã tư phía trước thì rẽ trái."},
+        {"role": "A", "speaker": "游客 (Du khách)", "hanzi": "离这里远不远？走路要多长时间？", "pinyin": "Lí zhèlǐ yuǎn bu yuǎn? Zǒulù yào duō cháng shíjiān?", "vi": "Cách đây có xa không ạ? Đi bộ mất bao lâu?"},
+        {"role": "B", "speaker": "路人 (Người qua đường)", "hanzi": "不远，走路大概十分钟就到了。", "pinyin": "Bù yuǎn, zǒulù dàgài shí fēnzhōng jiù dào le.", "vi": "Không xa đâu, đi bộ khoảng 10 phút là tới rồi."},
+        {"role": "A", "speaker": "游客 (Du khách)", "hanzi": "太感谢您了！", "pinyin": "Tài gǎnxiè nín le!", "vi": "Vô cùng cảm ơn bác!"}
+    ]),
+    ("ps-dia-05", "u-hsk1-04", "roleplay", "Hội thoại 05: Đi Khám bệnh ở Bệnh viện", "Đóng vai bệnh nhân hoặc bác sĩ chẩn đoán triệu chứng.", "medium", [
+        {"role": "B", "speaker": "医生 (Bác sĩ)", "hanzi": "你怎么了？哪儿不舒服？", "pinyin": "Nǐ zěnme le? Nǎr bù shūfu?", "vi": "Cháu bị sao thế? Khó chịu ở đâu?"},
+        {"role": "A", "speaker": "患者 (Bệnh nhân)", "hanzi": "医生，我感冒了，头很疼，身上也很冷。", "pinyin": "Yīshēng, wǒ gǎnmào le, tóu hěn téng, shēnshang yě hěn lěng.", "vi": "Bác sĩ ơi, cháu bị cảm rồi, đầu rất đau, người cũng rất lạnh."},
+        {"role": "B", "speaker": "医生 (Bác sĩ)", "hanzi": "发烧吗？来，量一下体温。", "pinyin": "Fāshāo ma? Lái, liáng yíxià tǐwēn.", "vi": "Có sốt không? Lại đây đo nhiệt độ một chút."},
+        {"role": "A", "speaker": "患者 (Bệnh nhân)", "hanzi": "三十八度五，要打针吗？", "pinyin": "Sānshíbā dù wǔ, yào dǎzhēn ma?", "vi": "38 độ rưỡi, có phải tiêm không bác sĩ?"},
+        {"role": "B", "speaker": "医生 (Bác sĩ)", "hanzi": "不用打针，吃点儿退烧药，多喝热水，在家休息两天就好了。", "pinyin": "Bú yòng dǎzhēn, chī diǎnr tuìshāoyào, duō hē rèshuǐ, zài jiā xiūxi liǎng tiān jiù hǎo le.", "vi": "Không cần tiêm đâu, uống chút thuốc hạ sốt, uống nhiều nước ấm, nghỉ ở nhà hai ngày là khỏi thôi."}
+    ]),
+    ("ps-dia-06", "u-hsk1-04", "roleplay", "Hội thoại 06: Mua sắm Quần áo trong Cửa hàng", "Đóng vai khách hàng chọn màu hoặc nhân viên tư vấn.", "medium", [
+        {"role": "B", "speaker": "店员 (Nhân viên)", "hanzi": "欢迎光临！您想看件什么衣服？", "pinyin": "Huānyíng guānglín! Nín xiǎng kàn jiàn shénme yīfu?", "vi": "Kính chào quý khách! Quý khách muốn xem kiểu áo nào ạ?"},
+        {"role": "A", "speaker": "顾客 (Khách)", "hanzi": "我想看一下那件红色的外套。", "pinyin": "Wǒ xiǎng kàn yíxià nà jiàn hóngsè de wàitào.", "vi": "Tôi muốn xem thử chiếc áo khoác màu đỏ đằng kia."},
+        {"role": "B", "speaker": "店员 (Nhân viên)", "hanzi": "给您，这件衣服质量很好，现在打折，只要一百八十块。", "pinyin": "Gěi nín, zhè jiàn yīfu zhìliàng hěn hǎo, xiànzài dǎzhé, zhǐ yào yībǎibāshí kuài.", "vi": "Dạ gửi quý khách, chiếc áo này chất lượng rất tốt, hiện đang giảm giá, chỉ 180 tệ thôi ạ."},
+        {"role": "A", "speaker": "顾客 (Khách)", "hanzi": "我可以试穿一下吗？", "pinyin": "Wǒ kěyǐ shìchuān yíxià ma?", "vi": "Tôi có thể mặc thử một chút được không?"},
+        {"role": "B", "speaker": "店员 (Nhân viên)", "hanzi": "当然可以，试衣间在左边第二间。", "pinyin": "Dāngrán kěyǐ, shìyījiān zài zuǒbiān dì-èr jiān.", "vi": "Dạ tất nhiên được chứ, phòng thử đồ ở phòng thứ hai bên trái ạ."}
+    ]),
+    ("ps-dia-07", "u-hsk1-05", "roleplay", "Hội thoại 07: Gọi Điện thoại Xin phép Nghỉ học", "Đóng vai học sinh gọi điện xin phép thầy cô giáo.", "hard", [
+        {"role": "A", "speaker": "学生 (Học sinh)", "hanzi": "喂，老师，您好！我是大卫。", "pinyin": "Wéi, lǎoshī, nín hǎo! Wǒ shì Dàwèi.", "vi": "Alo, em chào thầy ạ! Em là David."},
+        {"role": "B", "speaker": "老师 (Thầy giáo)", "hanzi": "大卫，你好，有什么事吗？", "pinyin": "Dàwèi, nǐ hǎo, yǒu shénme shì ma?", "vi": "Chào David, có việc gì thế em?"},
+        {"role": "A", "speaker": "学生 (Học sinh)", "hanzi": "老师，我今天身体不太舒服，有点儿发烧，想请一天假。", "pinyin": "Lǎoshī, wǒ jīntiān shēntǐ bú tài shūfu, yǒudiǎnr fāshāo, xiǎng qǐng yì tiān jià.", "vi": "Thầy ơi, hôm nay em hơi mệt trong người, bị sốt nhẹ, em muốn xin phép nghỉ một ngày ạ."},
+        {"role": "B", "speaker": "老师 (Thầy giáo)", "hanzi": "去医院看医生了吗？身体要紧，好好在宿舍休息吧。", "pinyin": "Qù yīyuàn kàn yīshēng le ma? Shēntǐ yàojǐn, hǎohāo zài sùshè xiūxi ba.", "vi": "Em đã đi viện khám chưa? Sức khỏe là quan trọng nhất, cứ yên tâm nghỉ ngơi ở ký túc xá nhé."},
+        {"role": "A", "speaker": "学生 (Học sinh)", "hanzi": "谢谢老师关心，明天我好了就去上课！", "pinyin": "Xièxie lǎoshī guānxīn, míngtiān wǒ hǎo le jiù qù shàngkè!", "vi": "Em cảm ơn thầy đã quan tâm ạ, ngày mai khỏe lại em sẽ đi học ngay!"}
+    ]),
+    ("ps-dia-08", "u-hsk1-06", "roleplay", "Hội thoại 08: Lên Kế hoạch Cuối tuần & Rủ rê Đi chơi", "Đóng vai hai người bạn lên lịch hẹn đi chơi cuối tuần.", "hard", [
+        {"role": "A", "speaker": "李明", "hanzi": "大卫，这个星期天你有什么安排？", "pinyin": "Dàwèi, zhè gè xīngqītiān nǐ yǒu shénme ānpái?", "vi": "David, Chủ nhật tuần này bạn có kế hoạch gì chưa?"},
+        {"role": "B", "speaker": "大卫", "hanzi": "我目前还没有安排呢，你有什么好主意吗？", "pinyin": "Wǒ mùqián hái méiyǒu ānpái ne, nǐ yǒu shénme hǎo zhǔyi ma?", "vi": "Mình hiện chưa có lịch gì cả, cậu có ý kiến gì hay không?"},
+        {"role": "A", "speaker": "李明", "hanzi": "天气预报说星期天晴天，二十二度，我们一起去公园骑自行车吧！", "pinyin": "Tiānqì yùbào shuō xīngqītiān qíngtiān, èrshí'èr dù, wǒmen yìqǐ qù gōngyuán qí zìxíngchē ba!", "vi": "Dự báo thời tiết bảo Chủ nhật trời nắng, 22 độ, tụi mình cùng đi công viên đạp xe đi!"},
+        {"role": "B", "speaker": "大卫", "hanzi": "太棒了！骑完车我们再去吃北京烤鸭，怎么样？", "pinyin": "Tài bàng le! Qí wán chē wǒmen zài qù chī Běijīng kǎoyā, zěnmeyàng?", "vi": "Tuyệt quá! Đạp xe xong tụi mình đi ăn vịt quay Bắc Kinh nữa, thấy sao?"},
+        {"role": "A", "speaker": "李明", "hanzi": "好啊！星期天早上九点，我在你宿舍楼下等你！", "pinyin": "Hǎo a! Xīngqītiān zǎoshang jiǔ diǎn, wǒ zài nǐ sùshè lóu xià děng nǐ!", "vi": "Nhất trí! 9 giờ sáng Chủ nhật, tớ đứng dưới chân ký túc xá đợi cậu nhé!"}
+    ])
+]
+
+for sid, uid, etype, title, desc, diff, turns in dialogue_sets_meta:
+    practice_sets.append({
+        "practice_set_id": sid,
+        "course_id": "course-hsk1",
+        "unit_id": uid,
+        "skill": "dialogue",
+        "exercise_type": etype,
+        "title": title,
+        "description": desc,
+        "difficulty": diff,
+        "question_count": len(turns),
+        "turns": turns
+    })
+
+def main():
+    bank_data = {
+        "course_id": "course-hsk1",
+        "version": "1.0",
+        "total_sets": len(practice_sets),
+        "skills": ["vocabulary", "grammar", "listening", "speaking", "reading", "dialogue"],
+        "sets": practice_sets
+    }
+    fname = "content/hsk_library/practice_bank.json"
+    with open(fname, "w", encoding="utf-8") as f:
+        json.dump(bank_data, f, ensure_ascii=False, indent=2)
+    print(f"Generated {fname} with {len(practice_sets)} prebuilt practice sets!")
+    
+    # Summary by skill
+    by_skill = {}
+    for s in practice_sets:
+        by_skill[s["skill"]] = by_skill.get(s["skill"], 0) + 1
+    for sk, count in by_skill.items():
+        print(f"  Skill '{sk}': {count} sets")
+
+if __name__ == "__main__":
+    main()
