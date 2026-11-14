@@ -1,0 +1,408 @@
+{
+  "id": "l-hsk1-022",
+  "slug": "hsk1-lesson-22",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-05",
+  "title": "Bài 22: Đại từ nhân xưng & Chỉ định (大家都是好朋友)",
+  "objective_vi": "Hệ thống hóa toàn bộ đại từ nhân xưng (anh ấy, cô ấy, nó, chúng tôi, các bạn, mọi người) và các đại từ chỉ định gần/xa (đây, kia, này, nọ, nào).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "vi": "mọi người, cả nhà"
+        },
+        {
+          "hanzi": "您",
+          "pinyin": "nín",
+          "vi": "ngài, ông (kính ngữ)"
+        },
+        {
+          "hanzi": "他",
+          "pinyin": "tā",
+          "vi": "anh ấy, ông ấy"
+        },
+        {
+          "hanzi": "她",
+          "pinyin": "tā",
+          "vi": "cô ấy, chị ấy"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "大家",
+          "pinyin": "dàjiā",
+          "meaning_vi": "mọi người, cả nhà"
+        },
+        {
+          "simplified": "您",
+          "pinyin": "nín",
+          "meaning_vi": "ngài, ông (kính ngữ)"
+        },
+        {
+          "simplified": "他",
+          "pinyin": "tā",
+          "meaning_vi": "anh ấy, ông ấy"
+        },
+        {
+          "simplified": "她",
+          "pinyin": "tā",
+          "meaning_vi": "cô ấy, chị ấy"
+        },
+        {
+          "simplified": "它",
+          "pinyin": "tā",
+          "meaning_vi": "nó (chỉ vật/động vật)"
+        },
+        {
+          "simplified": "他们",
+          "pinyin": "tāmen",
+          "meaning_vi": "họ, các anh ấy"
+        },
+        {
+          "simplified": "她们",
+          "pinyin": "tāmen",
+          "meaning_vi": "họ, các cô ấy"
+        },
+        {
+          "simplified": "它们",
+          "pinyin": "tāmen",
+          "meaning_vi": "chúng nó"
+        },
+        {
+          "simplified": "我们",
+          "pinyin": "wǒmen",
+          "meaning_vi": "chúng tôi, chúng ta"
+        },
+        {
+          "simplified": "你们",
+          "pinyin": "nǐmen",
+          "meaning_vi": "các bạn, các anh"
+        },
+        {
+          "simplified": "们",
+          "pinyin": "men",
+          "meaning_vi": "các, chúng (hậu tố số nhiều)"
+        },
+        {
+          "simplified": "这",
+          "pinyin": "zhè",
+          "meaning_vi": "đây, này"
+        },
+        {
+          "simplified": "这个",
+          "pinyin": "zhège",
+          "meaning_vi": "cái này"
+        },
+        {
+          "simplified": "这些",
+          "pinyin": "zhèxiē",
+          "meaning_vi": "những cái này"
+        },
+        {
+          "simplified": "这儿",
+          "pinyin": "zhèr",
+          "meaning_vi": "ở đây, chỗ này"
+        },
+        {
+          "simplified": "这里",
+          "pinyin": "zhèlǐ",
+          "meaning_vi": "ở đây, nơi này"
+        },
+        {
+          "simplified": "那",
+          "pinyin": "nà",
+          "meaning_vi": "kia, đó"
+        },
+        {
+          "simplified": "那个",
+          "pinyin": "nàge",
+          "meaning_vi": "cái kia, cái đó"
+        },
+        {
+          "simplified": "那些",
+          "pinyin": "nàxiē",
+          "meaning_vi": "những cái kia"
+        },
+        {
+          "simplified": "那儿",
+          "pinyin": "nàr",
+          "meaning_vi": "chỗ kia, đằng kia"
+        },
+        {
+          "simplified": "那里",
+          "pinyin": "nàlǐ",
+          "meaning_vi": "ở đó, nơi đó"
+        },
+        {
+          "simplified": "哪",
+          "pinyin": "nǎ",
+          "meaning_vi": "nào"
+        },
+        {
+          "simplified": "哪个",
+          "pinyin": "nǎge",
+          "meaning_vi": "cái nào"
+        },
+        {
+          "simplified": "哪里",
+          "pinyin": "nǎlǐ",
+          "meaning_vi": "ở đâu, đâu có"
+        },
+        {
+          "simplified": "哪些",
+          "pinyin": "nǎxiē",
+          "meaning_vi": "những cái nào"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-22-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'mọi người, cả nhà'?",
+          "pinyin_prompt": "",
+          "correct_answer": "大家",
+          "options": [
+            "大家",
+            "您",
+            "他",
+            "没有"
+          ],
+          "explanation": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+        },
+        {
+          "id": "ex-v-22-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '您' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "nín",
+          "options": [
+            "nín",
+            "dàjiā",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 您 phát âm chuẩn là nín."
+        },
+        {
+          "id": "ex-v-22-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "大家",
+          "options": [
+            "大家",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '大家' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-22-01",
+          "titleVi": "Hậu tố số nhiều 们",
+          "pattern": "Đại từ / Danh từ chỉ người + 们",
+          "explanationVi": "Dùng để biểu thị số nhiều cho người (chúng tôi, các bạn, họ, các bạn học, các thầy cô).",
+          "examples": [
+            {
+              "hanzi": "我们都是北京大学的学生。",
+              "pinyin": "Wǒmen dōu shì Běijīng Dàxué de xuésheng.",
+              "translationVi": "Chúng tôi đều là sinh viên Đại học Bắc Kinh."
+            }
+          ]
+        },
+        {
+          "id": "g-22-02",
+          "titleVi": "Đại từ chỉ định 这 (gần) và 那 (xa)",
+          "pattern": "这 / 那 + (Lượng từ) + Danh từ",
+          "explanationVi": "这 dùng chỉ người hoặc vật ở cự ly gần; 那 dùng chỉ người hoặc vật ở cự ly xa.",
+          "examples": [
+            {
+              "hanzi": "这些书是我的，那些书是他的。",
+              "pinyin": "Zhèxiē shū shì wǒ de, nàxiē shū shì tā de.",
+              "translationVi": "Những cuốn sách này là của tôi, những cuốn sách kia là của anh ấy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-22-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "我们都是北京大学的学生。",
+          "options": [
+            "我们都是北京大学的学生。"
+          ],
+          "explanation": "Cấu trúc đúng: Đại từ / Danh từ chỉ người + 们."
+        },
+        {
+          "id": "ex-g-22-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Đại từ / Danh từ chỉ người + 们",
+          "pinyin_prompt": "",
+          "correct_answer": "Hậu tố số nhiều 们",
+          "options": [
+            "Hậu tố số nhiều 们",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Hậu tố số nhiều 们."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-22",
+        "titleVi": "Phân chia đồ dùng trong phòng",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这些本子是谁的？",
+            "pinyin": "Zhèxiē běnzi shì shéi de?",
+            "vi": "Những cuốn vở này là của ai?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "这个是我的，那些是他们的。",
+            "pinyin": "Zhè ge shì wǒ de, nàxiē shì tāmen de.",
+            "vi": "Cái này là của tôi, những cái kia là của họ."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "哪里有卖铅笔的？",
+            "pinyin": "Nǎlǐ yǒu mài qiānbǐ de?",
+            "vi": "Ở đâu có bán bút chì thế?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "那儿有一家小书店，里边有卖。",
+            "pinyin": "Nàr yǒu yì jiā xiǎo shūdiàn, lǐbiān yǒu mài.",
+            "vi": "Đằng kia có một hiệu sách nhỏ, bên trong có bán đấy."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-22-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "这些本子是谁的？",
+          "options": [
+            "这些本子是谁的？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '这些本子是谁的？' (Những cuốn vở này là của ai?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-22-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 22:",
+          "audio_target": "这个是我的，那些是他们的。",
+          "correct_answer": "这个是我的，那些是他们的。",
+          "options": [
+            "这个是我的，那些是他们的。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '这个是我的，那些是他们的。'."
+        },
+        {
+          "id": "ex-ls-22-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "这些本子是谁的？",
+          "pinyin_target": "Zhèxiē běnzi shì shéi de?",
+          "correct_answer": "这些本子是谁的？",
+          "options": [
+            "这些本子是谁的？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '这些本子是谁的？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Lớp học đa quốc gia",
+        "text": "我们班有十五个学生。大家来自不同的国家。有的来自越南，有的来自日本。我们在这里一起学习汉语，互相帮助。老师对我们大家都很好。",
+        "translationVi": "Lớp chúng tôi có mười lăm học sinh. Mọi người đến từ các quốc gia khác nhau. Có bạn đến từ Việt Nam, có bạn đến từ Nhật Bản. Chúng tôi ở đây cùng nhau học tiếng Hán, giúp đỡ lẫn nhau. Thầy cô đối xử với tất cả chúng tôi đều rất tốt."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-22-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Lớp học đa quốc gia'."
+        },
+        {
+          "id": "ex-r-22-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Lớp chúng tôi có mười lăm học sinh. Mọi ...",
+          "options": [
+            "Lớp chúng tôi có mười lăm học sinh. Mọi ...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Lớp chúng tôi có mười lăm học sinh. Mọi người đến từ các quốc gia khác nhau. Có bạn đến từ Việt Nam, có bạn đến từ Nhật Bản. Chúng tôi ở đây cùng nhau học tiếng Hán, giúp đỡ lẫn nhau. Thầy cô đối xử với tất cả chúng tôi đều rất tốt.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-22"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

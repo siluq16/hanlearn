@@ -1,0 +1,363 @@
+{
+  "id": "l-hsk1-016",
+  "slug": "hsk1-lesson-16",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-04",
+  "title": "Bài 16: Sức khỏe, Cơ thể & Khám bệnh (身体健康与运动)",
+  "objective_vi": "Biết diễn đạt tình trạng sức khỏe, ốm đau, đi khám bác sĩ, uống thuốc, lịch sinh hoạt (ngủ, dậy) và các môn thể thao.",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "身体",
+          "pinyin": "",
+          "vi": "thân thể, sức khỏe"
+        },
+        {
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "vi": "bệnh, ốm"
+        },
+        {
+          "hanzi": "看病",
+          "pinyin": "kànbìng",
+          "vi": "khám bệnh, đi bác sĩ"
+        },
+        {
+          "hanzi": "生病",
+          "pinyin": "shēngbìng",
+          "vi": "bị ốm, phát bệnh"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "身体",
+          "pinyin": "",
+          "meaning_vi": "thân thể, sức khỏe"
+        },
+        {
+          "simplified": "病",
+          "pinyin": "bìng",
+          "meaning_vi": "bệnh, ốm"
+        },
+        {
+          "simplified": "看病",
+          "pinyin": "kànbìng",
+          "meaning_vi": "khám bệnh, đi bác sĩ"
+        },
+        {
+          "simplified": "生病",
+          "pinyin": "shēngbìng",
+          "meaning_vi": "bị ốm, phát bệnh"
+        },
+        {
+          "simplified": "药",
+          "pinyin": "",
+          "meaning_vi": "thuốc"
+        },
+        {
+          "simplified": "休息",
+          "pinyin": "xiūxi",
+          "meaning_vi": "nghỉ ngơi"
+        },
+        {
+          "simplified": "起床",
+          "pinyin": "qǐchuáng",
+          "meaning_vi": "thức dậy"
+        },
+        {
+          "simplified": "睡",
+          "pinyin": "shuì",
+          "meaning_vi": "ngủ"
+        },
+        {
+          "simplified": "睡觉",
+          "pinyin": "shuìjiào",
+          "meaning_vi": "đi ngủ"
+        },
+        {
+          "simplified": "洗",
+          "pinyin": "",
+          "meaning_vi": "rửa, giặt"
+        },
+        {
+          "simplified": "累",
+          "pinyin": "",
+          "meaning_vi": "mệt, mệt mỏi"
+        },
+        {
+          "simplified": "跑步",
+          "pinyin": "",
+          "meaning_vi": "chạy bộ"
+        },
+        {
+          "simplified": "踢",
+          "pinyin": "",
+          "meaning_vi": "đá"
+        },
+        {
+          "simplified": "足球",
+          "pinyin": "",
+          "meaning_vi": "bóng đá"
+        },
+        {
+          "simplified": "游泳",
+          "pinyin": "",
+          "meaning_vi": "bơi lội"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-16-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'thân thể, sức khỏe'?",
+          "pinyin_prompt": "",
+          "correct_answer": "身体",
+          "options": [
+            "身体",
+            "病",
+            "看病",
+            "没有"
+          ],
+          "explanation": "身体 () mang nghĩa là 'thân thể, sức khỏe'."
+        },
+        {
+          "id": "ex-v-16-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '病' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "bìng",
+          "options": [
+            "bìng",
+            "",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 病 phát âm chuẩn là bìng."
+        },
+        {
+          "id": "ex-v-16-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "身体",
+          "options": [
+            "身体",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '身体' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-16-01",
+          "titleVi": "Miêu tả trạng thái sức khỏe với 身体",
+          "pattern": "身体 + 好 / 不好 / 怎么样",
+          "explanationVi": "Dùng để hỏi thăm hoặc diễn đạt sức khỏe cá nhân.",
+          "examples": [
+            {
+              "hanzi": "你最近身体怎么样？",
+              "pinyin": "Nǐ zuìjìn shēntǐ zěnmeyàng?",
+              "translationVi": "Dạo này sức khỏe bạn thế nào?"
+            },
+            {
+              "hanzi": "我身体很好，谢谢！",
+              "pinyin": "Wǒ shēntǐ hěn hǎo, xièxie!",
+              "translationVi": "Sức khỏe tôi rất tốt, cảm ơn bạn!"
+            }
+          ]
+        },
+        {
+          "id": "g-16-02",
+          "titleVi": "Động từ thể thao 踢, 跑, 游",
+          "pattern": "踢足球 (đá bóng) / 跑步 (chạy bộ) / 游泳 (bơi lội)",
+          "explanationVi": "Các cụm động tân chỉ các môn vận động thể chất thường gặp trong HSK 1.",
+          "examples": [
+            {
+              "hanzi": "他每天早上都跑步。",
+              "pinyin": "Tā měitiān zǎoshang dōu pǎobù.",
+              "translationVi": "Cậu ấy sáng nào cũng chạy bộ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-16-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "你最近身体怎么样？",
+          "options": [
+            "你最近身体怎么样？"
+          ],
+          "explanation": "Cấu trúc đúng: 身体 + 好 / 不好 / 怎么样."
+        },
+        {
+          "id": "ex-g-16-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 身体 + 好 / 不好 / 怎么样",
+          "pinyin_prompt": "",
+          "correct_answer": "Miêu tả trạng thái sức khỏe với 身体",
+          "options": [
+            "Miêu tả trạng thái sức khỏe với 身体",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Miêu tả trạng thái sức khỏe với 身体."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-16",
+        "titleVi": "Hỏi thăm khi bị ốm",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你怎么没去上学？生病了吗？",
+            "pinyin": "Nǐ zěnme méi qù shàngxué? Shēngbìng le ma?",
+            "vi": "Sao bạn không đi học? Bị ốm à?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，我有点儿发烧，今天去医院看病了。",
+            "pinyin": "Duì, wǒ yǒudiǎnr fāshāo, jīntiān qù yīyuàn kànbìng le.",
+            "vi": "Ừ, mình hơi sốt một chút, hôm nay đi bệnh viện khám rồi."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "医生怎么说？吃药了吗？",
+            "pinyin": "Yīshēng zěnme shuō? Chī yào le ma?",
+            "vi": "Bác sĩ nói sao? Bạn uống thuốc chưa?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "吃药了，医生叫我多喝水、多睡觉休息。",
+            "pinyin": "Chī yào le, yīshēng jiào wǒ duō hē shuǐ, duō shuìjiào xiūxi.",
+            "vi": "Uống rồi, bác sĩ dặn mình uống nhiều nước, ngủ và nghỉ ngơi nhiều."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-16-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "你怎么没去上学？生病了吗？",
+          "options": [
+            "你怎么没去上学？生病了吗？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '你怎么没去上学？生病了吗？' (Sao bạn không đi học? Bị ốm à?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-16-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 16:",
+          "audio_target": "对，我有点儿发烧，今天去医院看病了。",
+          "correct_answer": "对，我有点儿发烧，今天去医院看病了。",
+          "options": [
+            "对，我有点儿发烧，今天去医院看病了。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '对，我有点儿发烧，今天去医院看病了。'."
+        },
+        {
+          "id": "ex-ls-16-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你怎么没去上学？生病了吗？",
+          "pinyin_target": "Nǐ zěnme méi qù shàngxué? Shēngbìng le ma?",
+          "correct_answer": "你怎么没去上学？生病了吗？",
+          "options": [
+            "你怎么没去上学？生病了吗？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你怎么没去上学？生病了吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Thói quen rèn luyện sức khỏe",
+        "text": "大卫每天早上六点起床跑步。下午下课后，他经常和同学一起踢足球或者去游泳。虽然有时候觉得累，但是他的身体非常好，很少生病。",
+        "translationVi": "David thức dậy chạy bộ lúc sáu giờ mỗi sáng. Chiều sau khi tan học, anh ấy thường cùng bạn bè đá bóng hoặc đi bơi. Dù đôi khi cảm thấy mệt, nhưng sức khỏe của anh ấy rất tốt, rất ít khi bị ốm."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-16-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Thói quen rèn luyện sức khỏe'."
+        },
+        {
+          "id": "ex-r-16-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "David thức dậy chạy bộ lúc sáu giờ mỗi s...",
+          "options": [
+            "David thức dậy chạy bộ lúc sáu giờ mỗi s...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: David thức dậy chạy bộ lúc sáu giờ mỗi sáng. Chiều sau khi tan học, anh ấy thường cùng bạn bè đá bóng hoặc đi bơi. Dù đôi khi cảm thấy mệt, nhưng sức khỏe của anh ấy rất tốt, rất ít khi bị ốm.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-16"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "id": "l-hsk1-024",
+  "slug": "hsk1-lesson-24",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-05",
+  "title": "Bài 24: Số đếm lớn, Số thứ tự & Lượng từ (几只小狗与几岁)",
+  "objective_vi": "Nắm vững số đếm lớn (trăm, nghìn, vạn), số 0, phân số (một nửa), tiền tố số thứ tự 第, lượng từ chỉ số lượng (những, một ít, một lát).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "零",
+          "pinyin": "líng",
+          "vi": "số không (0)"
+        },
+        {
+          "hanzi": "八",
+          "pinyin": "bā",
+          "vi": "tám (8)"
+        },
+        {
+          "hanzi": "九",
+          "pinyin": "jiǔ",
+          "vi": "chín (9)"
+        },
+        {
+          "hanzi": "十",
+          "pinyin": "shí",
+          "vi": "mười (10)"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "零",
+          "pinyin": "líng",
+          "meaning_vi": "số không (0)"
+        },
+        {
+          "simplified": "八",
+          "pinyin": "bā",
+          "meaning_vi": "tám (8)"
+        },
+        {
+          "simplified": "九",
+          "pinyin": "jiǔ",
+          "meaning_vi": "chín (9)"
+        },
+        {
+          "simplified": "十",
+          "pinyin": "shí",
+          "meaning_vi": "mười (10)"
+        },
+        {
+          "simplified": "百",
+          "pinyin": "bǎi",
+          "meaning_vi": "trăm (100)"
+        },
+        {
+          "simplified": "千",
+          "pinyin": "qiān",
+          "meaning_vi": "nghìn (1.000)"
+        },
+        {
+          "simplified": "万",
+          "pinyin": "",
+          "meaning_vi": "mười nghìn (vạn, 10.000)"
+        },
+        {
+          "simplified": "两",
+          "pinyin": "",
+          "meaning_vi": "hai (dùng trước lượng từ)"
+        },
+        {
+          "simplified": "半",
+          "pinyin": "bàn",
+          "meaning_vi": "nửa, rưỡi"
+        },
+        {
+          "simplified": "一半",
+          "pinyin": "yíbàn",
+          "meaning_vi": "một nửa"
+        },
+        {
+          "simplified": "些",
+          "pinyin": "xiē",
+          "meaning_vi": "một vài, vài"
+        },
+        {
+          "simplified": "一些",
+          "pinyin": "yìxiē",
+          "meaning_vi": "một số, một ít"
+        },
+        {
+          "simplified": "有些",
+          "pinyin": "yǒuxiē",
+          "meaning_vi": "có một số, có phần"
+        },
+        {
+          "simplified": "有的",
+          "pinyin": "yǒude",
+          "meaning_vi": "có người, có thứ"
+        },
+        {
+          "simplified": "几",
+          "pinyin": "",
+          "meaning_vi": "mấy, vài"
+        },
+        {
+          "simplified": "只",
+          "pinyin": "zhī",
+          "meaning_vi": "con (lượng từ động vật), chỉ"
+        },
+        {
+          "simplified": "岁",
+          "pinyin": "suì",
+          "meaning_vi": "tuổi"
+        },
+        {
+          "simplified": "第",
+          "pinyin": "dì",
+          "meaning_vi": "thứ (tiền tố số thứ tự)"
+        },
+        {
+          "simplified": "多",
+          "pinyin": "duō",
+          "meaning_vi": "nhiều"
+        },
+        {
+          "simplified": "少",
+          "pinyin": "shǎo",
+          "meaning_vi": "ít"
+        },
+        {
+          "simplified": "一点儿",
+          "pinyin": "yìdiǎnr",
+          "meaning_vi": "một chút, một ít"
+        },
+        {
+          "simplified": "一下",
+          "pinyin": "yíxià",
+          "meaning_vi": "một lát, một chút (thử làm)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-24-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'số không (0)'?",
+          "pinyin_prompt": "",
+          "correct_answer": "零",
+          "options": [
+            "零",
+            "八",
+            "九",
+            "没有"
+          ],
+          "explanation": "零 (líng) mang nghĩa là 'số không (0)'."
+        },
+        {
+          "id": "ex-v-24-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '八' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "bā",
+          "options": [
+            "bā",
+            "líng",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 八 phát âm chuẩn là bā."
+        },
+        {
+          "id": "ex-v-24-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "零",
+          "options": [
+            "零",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '零' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-24-01",
+          "titleVi": "Tiền tố số thứ tự 第",
+          "pattern": "第 + Số từ (+ Lượng từ)",
+          "explanationVi": "Dùng để tạo thành số thứ tự (thứ nhất, thứ hai, bài thứ ba...).",
+          "examples": [
+            {
+              "hanzi": "这是我第一次来北京。",
+              "pinyin": "Zhè shì wǒ dì-yī cì lái Běijīng.",
+              "translationVi": "Đây là lần đầu tiên tôi đến Bắc Kinh."
+            }
+          ]
+        },
+        {
+          "id": "g-24-02",
+          "titleVi": "Phân biệt 一点儿 và 一下",
+          "pattern": "Tính từ / Động từ + 一点儿 (một chút) vs Động từ + 一下 (thử làm một lát)",
+          "explanationVi": "一点儿 chỉ số lượng ít hoặc mức độ nhẹ; 一下 đặt sau động từ chỉ hành động diễn ra nhanh chóng hoặc mang sắc thái nhẹ nhàng.",
+          "examples": [
+            {
+              "hanzi": "请你等我一下。",
+              "pinyin": "Qǐng nǐ děng wǒ yíxià.",
+              "translationVi": "Xin bạn đợi tôi một lát."
+            },
+            {
+              "hanzi": "我只想喝一点儿水。",
+              "pinyin": "Wǒ zhǐ xiǎng hē yìdiǎnr shuǐ.",
+              "translationVi": "Tôi chỉ muốn uống một chút nước."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-24-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "这是我第一次来北京。",
+          "options": [
+            "这是我第一次来北京。"
+          ],
+          "explanation": "Cấu trúc đúng: 第 + Số từ (+ Lượng từ)."
+        },
+        {
+          "id": "ex-g-24-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 第 + Số từ (+ Lượng từ)",
+          "pinyin_prompt": "",
+          "correct_answer": "Tiền tố số thứ tự 第",
+          "options": [
+            "Tiền tố số thứ tự 第",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Tiền tố số thứ tự 第."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-24",
+        "titleVi": "Hỏi giá và số lượng",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这台电脑多少钱？",
+            "pinyin": "Zhè tái diànnǎo duōshao qián?",
+            "vi": "Chiếc máy tính này bao nhiêu tiền?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "三千五百块。",
+            "pinyin": "Sānqiān wǔbǎi kuài.",
+            "vi": "Ba nghìn năm trăm tệ."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "太贵了，可以少一点儿吗？",
+            "pinyin": "Tài guì le, kěyǐ shǎo yìdiǎnr ma?",
+            "vi": "Đắt quá, có thể bớt một chút được không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你可以看这台，只要两千块。",
+            "pinyin": "Nǐ kěyǐ kàn zhè tái, zhǐ yào liǎngqiān kuài.",
+            "vi": "Bạn có thể xem chiếc này, chỉ hai nghìn tệ thôi."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-24-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "这台电脑多少钱？",
+          "options": [
+            "这台电脑多少钱？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '这台电脑多少钱？' (Chiếc máy tính này bao nhiêu tiền?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-24-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 24:",
+          "audio_target": "三千五百块。",
+          "correct_answer": "三千五百块。",
+          "options": [
+            "三千五百块。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '三千五百块。'."
+        },
+        {
+          "id": "ex-ls-24-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "这台电脑多少钱？",
+          "pinyin_target": "Zhè tái diànnǎo duōshao qián?",
+          "correct_answer": "这台电脑多少钱？",
+          "options": [
+            "这台电脑多少钱？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '这台电脑多少钱？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Đàn thú cưng đáng yêu",
+        "text": "王爷爷家里有九只小猫和两只狗。大狗已经五岁了，小狗才一岁半。有些小猫是白色的，有些是黑色的。老爷爷每天给它们很多好吃的，非常爱它们。",
+        "translationVi": "Nhà ông Vương có chín con mèo con và hai con chó. Chú chó lớn đã năm tuổi rồi, chú chó nhỏ mới một tuổi rưỡi. Có vài chú mèo con màu trắng, có vài chú màu đen. Ông cụ ngày nào cũng cho chúng nhiều đồ ăn ngon, rất yêu quý chúng."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-24-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Đàn thú cưng đáng yêu'."
+        },
+        {
+          "id": "ex-r-24-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Nhà ông Vương có chín con mèo con và hai...",
+          "options": [
+            "Nhà ông Vương có chín con mèo con và hai...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Nhà ông Vương có chín con mèo con và hai con chó. Chú chó lớn đã năm tuổi rồi, chú chó nhỏ mới một tuổi rưỡi. Có vài chú mèo con màu trắng, có vài chú màu đen. Ông cụ ngày nào cũng cho chúng nhiều đồ ăn ngon, rất yêu quý chúng.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-24"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

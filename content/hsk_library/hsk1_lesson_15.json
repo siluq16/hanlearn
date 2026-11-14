@@ -1,0 +1,338 @@
+{
+  "id": "l-hsk1-015",
+  "slug": "hsk1-lesson-15",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-04",
+  "title": "Bài 15: Gia đình, Người thân & Thú cưng (我的家人和房间)",
+  "objective_vi": "Mở rộng từ vựng về gia đình (em trai, em gái, con cái, trẻ nhỏ), nơi ở, căn phòng và thú cưng (chó, mèo).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "家人",
+          "pinyin": "jiārén",
+          "vi": "người nhà, gia đình"
+        },
+        {
+          "hanzi": "弟弟",
+          "pinyin": "dìdi",
+          "vi": "em trai"
+        },
+        {
+          "hanzi": "妹妹",
+          "pinyin": "mèimei",
+          "vi": "em gái"
+        },
+        {
+          "hanzi": "儿子",
+          "pinyin": "érzi",
+          "vi": "con trai"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "家人",
+          "pinyin": "jiārén",
+          "meaning_vi": "người nhà, gia đình"
+        },
+        {
+          "simplified": "弟弟",
+          "pinyin": "dìdi",
+          "meaning_vi": "em trai"
+        },
+        {
+          "simplified": "妹妹",
+          "pinyin": "mèimei",
+          "meaning_vi": "em gái"
+        },
+        {
+          "simplified": "儿子",
+          "pinyin": "érzi",
+          "meaning_vi": "con trai"
+        },
+        {
+          "simplified": "女儿",
+          "pinyin": "nǚ’ér",
+          "meaning_vi": "con gái"
+        },
+        {
+          "simplified": "孩子",
+          "pinyin": "háizi",
+          "meaning_vi": "con cái, đứa trẻ"
+        },
+        {
+          "simplified": "小朋友",
+          "pinyin": "xiǎopéngyǒu",
+          "meaning_vi": "em nhỏ, bạn nhỏ"
+        },
+        {
+          "simplified": "住",
+          "pinyin": "zhù",
+          "meaning_vi": "ở, cư trú"
+        },
+        {
+          "simplified": "房间",
+          "pinyin": "fángjiān",
+          "meaning_vi": "căn phòng"
+        },
+        {
+          "simplified": "猫",
+          "pinyin": "māo",
+          "meaning_vi": "con mèo"
+        },
+        {
+          "simplified": "狗",
+          "pinyin": "gǒu",
+          "meaning_vi": "con chó"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-15-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'người nhà, gia đình'?",
+          "pinyin_prompt": "",
+          "correct_answer": "家人",
+          "options": [
+            "家人",
+            "弟弟",
+            "妹妹",
+            "没有"
+          ],
+          "explanation": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+        },
+        {
+          "id": "ex-v-15-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '弟弟' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "dìdi",
+          "options": [
+            "dìdi",
+            "jiārén",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 弟弟 phát âm chuẩn là dìdi."
+        },
+        {
+          "id": "ex-v-15-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "家人",
+          "options": [
+            "家人",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '家人' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-15-01",
+          "titleVi": "Động từ 住 diễn đạt nơi cư trú",
+          "pattern": "Chủ ngữ + 住在 + Địa điểm / 房间",
+          "explanationVi": "Diễn đạt việc cư trú, sinh sống hoặc ở trọ tại một địa điểm.",
+          "examples": [
+            {
+              "hanzi": "我和家人住在北京。",
+              "pinyin": "Wǒ hé jiārén zhù zài Běijīng.",
+              "translationVi": "Tôi và người nhà sống ở Bắc Kinh."
+            }
+          ]
+        },
+        {
+          "id": "g-15-02",
+          "titleVi": "Lượng từ 只 cho động vật",
+          "pattern": "Số từ + 只 + 猫 / 狗",
+          "explanationVi": "只 là lượng từ thông dụng cho gia súc, thú nuôi nhỏ như mèo, chó.",
+          "examples": [
+            {
+              "hanzi": "我妹妹有一只白猫和一只小狗。",
+              "pinyin": "Wǒ mèimei yǒu yì zhī bái māo hé yì zhī xiǎo gǒu.",
+              "translationVi": "Em gái tôi có một con mèo trắng và một con chó nhỏ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-15-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "我和家人住在北京。",
+          "options": [
+            "我和家人住在北京。"
+          ],
+          "explanation": "Cấu trúc đúng: Chủ ngữ + 住在 + Địa điểm / 房间."
+        },
+        {
+          "id": "ex-g-15-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Chủ ngữ + 住在 + Địa điểm / 房间",
+          "pinyin_prompt": "",
+          "correct_answer": "Động từ 住 diễn đạt nơi cư trú",
+          "options": [
+            "Động từ 住 diễn đạt nơi cư trú",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Động từ 住 diễn đạt nơi cư trú."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-15",
+        "titleVi": "Giới thiệu căn nhà",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你的房间真漂亮！",
+            "pinyin": "Nǐ de fángjiān zhēn piàoliang!",
+            "vi": "Phòng của bạn thật là đẹp!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "谢谢！这是我和弟弟的房间。",
+            "pinyin": "Xièxie! Zhè shì wǒ hé dìdi de fángjiān.",
+            "vi": "Cảm ơn bạn! Đây là phòng của tôi và em trai."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那只可爱的小狗是谁的？",
+            "pinyin": "Nà zhī kě'ài de xiǎo gǒu shì shéi de?",
+            "vi": "Chú chó nhỏ đáng yêu kia là của ai?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是我女儿的小狗，她非常喜欢动物。",
+            "pinyin": "Shì wǒ nǚ'ér de xiǎo gǒu, tā fēicháng xǐhuan dòngwù.",
+            "vi": "Là chó con của con gái tôi, bé rất thích động vật."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-15-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "你的房间真漂亮！",
+          "options": [
+            "你的房间真漂亮！",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '你的房间真漂亮！' (Phòng của bạn thật là đẹp!)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-15-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 15:",
+          "audio_target": "谢谢！这是我和弟弟的房间。",
+          "correct_answer": "谢谢！这是我和弟弟的房间。",
+          "options": [
+            "谢谢！这是我和弟弟的房间。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '谢谢！这是我和弟弟的房间。'."
+        },
+        {
+          "id": "ex-ls-15-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你的房间真漂亮！",
+          "pinyin_target": "Nǐ de fángjiān zhēn piàoliang!",
+          "correct_answer": "你的房间真漂亮！",
+          "options": [
+            "你的房间真漂亮！"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你的房间真漂亮！'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Gia đình hạnh phúc",
+        "text": "李老师家有五口人：李老师、妻子、一个儿子和一个女儿。他们住在一个很大的房子里。家里还有两只小猫，孩子们每天都和小猫一起玩儿。",
+        "translationVi": "Gia đình thầy Lý có năm người: thầy Lý, vợ, một con trai và một con gái. Họ sống trong một căn nhà lớn. Trong nhà còn có hai chú mèo nhỏ, bọn trẻ ngày nào cũng chơi đùa cùng mèo."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-15-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Gia đình hạnh phúc'."
+        },
+        {
+          "id": "ex-r-15-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Gia đình thầy Lý có năm người: thầy Lý, ...",
+          "options": [
+            "Gia đình thầy Lý có năm người: thầy Lý, ...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Gia đình thầy Lý có năm người: thầy Lý, vợ, một con trai và một con gái. Họ sống trong một căn nhà lớn. Trong nhà còn có hai chú mèo nhỏ, bọn trẻ ngày nào cũng chơi đùa cùng mèo.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-15"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

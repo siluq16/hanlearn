@@ -1,0 +1,353 @@
+{
+  "id": "l-hsk1-014",
+  "slug": "hsk1-lesson-14",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Bài 14: Lớp học & Bài tập (上课与做练习)",
+  "objective_vi": "Nắm vững các hoạt động lớp học (lên lớp, tan học, thi cử), đồ dùng lớp học (máy tính, bàn ghế, cặp sách) và giải đáp vấn đề.",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "课",
+          "pinyin": "kè",
+          "vi": "tiết học, bài học"
+        },
+        {
+          "hanzi": "上课",
+          "pinyin": "shàngkè",
+          "vi": "vào lớp, lên lớp"
+        },
+        {
+          "hanzi": "下课",
+          "pinyin": "xiàkè",
+          "vi": "tan học"
+        },
+        {
+          "hanzi": "教室",
+          "pinyin": "",
+          "vi": "phòng học, lớp học"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "课",
+          "pinyin": "kè",
+          "meaning_vi": "tiết học, bài học"
+        },
+        {
+          "simplified": "上课",
+          "pinyin": "shàngkè",
+          "meaning_vi": "vào lớp, lên lớp"
+        },
+        {
+          "simplified": "下课",
+          "pinyin": "xiàkè",
+          "meaning_vi": "tan học"
+        },
+        {
+          "simplified": "教室",
+          "pinyin": "",
+          "meaning_vi": "phòng học, lớp học"
+        },
+        {
+          "simplified": "桌子",
+          "pinyin": "zhuōzi",
+          "meaning_vi": "cái bàn"
+        },
+        {
+          "simplified": "椅子",
+          "pinyin": "yǐzi",
+          "meaning_vi": "cái ghế"
+        },
+        {
+          "simplified": "书包",
+          "pinyin": "",
+          "meaning_vi": "cặp sách"
+        },
+        {
+          "simplified": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning_vi": "máy vi tính"
+        },
+        {
+          "simplified": "题",
+          "pinyin": "",
+          "meaning_vi": "đề bài, câu hỏi"
+        },
+        {
+          "simplified": "问题",
+          "pinyin": "wèntí",
+          "meaning_vi": "vấn đề, câu hỏi"
+        },
+        {
+          "simplified": "学习",
+          "pinyin": "",
+          "meaning_vi": "học tập, học"
+        },
+        {
+          "simplified": "考",
+          "pinyin": "",
+          "meaning_vi": "thi"
+        },
+        {
+          "simplified": "考试",
+          "pinyin": "",
+          "meaning_vi": "kỳ thi, thi cử"
+        },
+        {
+          "simplified": "字",
+          "pinyin": "zì",
+          "meaning_vi": "chữ, chữ Hán"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-14-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'tiết học, bài học'?",
+          "pinyin_prompt": "",
+          "correct_answer": "课",
+          "options": [
+            "课",
+            "上课",
+            "下课",
+            "没有"
+          ],
+          "explanation": "课 (kè) mang nghĩa là 'tiết học, bài học'."
+        },
+        {
+          "id": "ex-v-14-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '上课' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "shàngkè",
+          "options": [
+            "shàngkè",
+            "kè",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 上课 phát âm chuẩn là shàngkè."
+        },
+        {
+          "id": "ex-v-14-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "课",
+          "options": [
+            "课",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '课' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-14-01",
+          "titleVi": "Cụm động tân 上课 và 下课",
+          "pattern": "几点 + 上课 / 下课？",
+          "explanationVi": "Diễn đạt thời gian bắt đầu buổi học (上课) và kết thúc buổi học (下课).",
+          "examples": [
+            {
+              "hanzi": "我们上午八点上课，十二点下课。",
+              "pinyin": "Wǒmen shàngwǔ bā diǎn shàngkè, shí'èr diǎn xiàkè.",
+              "translationVi": "Chúng tôi 8 giờ sáng vào lớp, 12 giờ trưa tan học."
+            }
+          ]
+        },
+        {
+          "id": "g-14-02",
+          "titleVi": "Cách hỏi và đặt câu hỏi với 问题",
+          "pattern": "有没有 + 问题？ / 问 + 一个问题",
+          "explanationVi": "问题 có thể là câu hỏi thắc mắc hoặc bài tập trong sách.",
+          "examples": [
+            {
+              "hanzi": "老师，我有一个问题。",
+              "pinyin": "Lǎoshī, wǒ yǒu yí gè wèntí.",
+              "translationVi": "Thưa thầy, em có một câu hỏi ạ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-14-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "我们上午八点上课，十二点下课。",
+          "options": [
+            "我们上午八点上课，十二点下课。"
+          ],
+          "explanation": "Cấu trúc đúng: 几点 + 上课 / 下课？."
+        },
+        {
+          "id": "ex-g-14-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 几点 + 上课 / 下课？",
+          "pinyin_prompt": "",
+          "correct_answer": "Cụm động tân 上课 và 下课",
+          "options": [
+            "Cụm động tân 上课 và 下课",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Cụm động tân 上课 và 下课."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-14",
+        "titleVi": "Trước giờ thi",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天下午有中文考试吗？",
+            "pinyin": "Jīntiān xiàwǔ yǒu zhōngwén kǎoshì ma?",
+            "vi": "Chiều nay có bài thi tiếng Trung không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，两点在第三教室考试。",
+            "pinyin": "Duì, liǎng diǎn zài dì-sān jiàoshì kǎoshì.",
+            "vi": "Đúng vậy, 2 giờ thi ở phòng học số 3."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你带电脑和笔了吗？",
+            "pinyin": "Nǐ dài diànnǎo hé bǐ le ma?",
+            "vi": "Bạn mang máy tính và bút chưa?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "都在我的书包里呢。",
+            "pinyin": "Dōu zài wǒ de shūbāo lǐ ne.",
+            "vi": "Đều nằm trong cặp sách của tôi rồi."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-14-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "今天下午有中文考试吗？",
+          "options": [
+            "今天下午有中文考试吗？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '今天下午有中文考试吗？' (Chiều nay có bài thi tiếng Trung không?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-14-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 14:",
+          "audio_target": "对，两点在第三教室考试。",
+          "correct_answer": "对，两点在第三教室考试。",
+          "options": [
+            "对，两点在第三教室考试。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '对，两点在第三教室考试。'."
+        },
+        {
+          "id": "ex-ls-14-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "今天下午有中文考试吗？",
+          "pinyin_target": "Jīntiān xiàwǔ yǒu zhōngwén kǎoshì ma?",
+          "correct_answer": "今天下午有中文考试吗？",
+          "options": [
+            "今天下午有中文考试吗？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '今天下午有中文考试吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Một ngày trên lớp",
+        "text": "今天上午我们在教室上课。桌子上有一台电脑和几本汉语书。老师提出了三个问题，同学们都积极回答。下课后大家都去复习准备明天的考试。",
+        "translationVi": "Sáng nay chúng tôi học bài trong phòng học. Trên bàn có một chiếc máy tính và vài cuốn sách Hán ngữ. Thầy giáo đưa ra 3 câu hỏi, các bạn đều hăng hái trả lời. Sau khi tan học, mọi người đều đi ôn tập chuẩn bị cho kỳ thi ngày mai."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-14-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Một ngày trên lớp'."
+        },
+        {
+          "id": "ex-r-14-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Sáng nay chúng tôi học bài trong phòng h...",
+          "options": [
+            "Sáng nay chúng tôi học bài trong phòng h...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Sáng nay chúng tôi học bài trong phòng học. Trên bàn có một chiếc máy tính và vài cuốn sách Hán ngữ. Thầy giáo đưa ra 3 câu hỏi, các bạn đều hăng hái trả lời. Sau khi tan học, mọi người đều đi ôn tập chuẩn bị cho kỳ thi ngày mai.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-14"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "id": "l-hsk1-011",
+  "slug": "hsk1-lesson-11",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Bài 11: Thời tiết & Khí hậu (今天天气怎么样)",
+  "objective_vi": "Học cách hỏi và miêu tả thời tiết (nóng, lạnh, mưa, tuyết, âm u, nắng), sử dụng phó từ chỉ mức độ.",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "天气",
+          "pinyin": "tiānqì",
+          "vi": "thời tiết"
+        },
+        {
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "vi": "lạnh"
+        },
+        {
+          "hanzi": "热",
+          "pinyin": "rè",
+          "vi": "nóng"
+        },
+        {
+          "hanzi": "雨",
+          "pinyin": "yǔ",
+          "vi": "mưa"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "天气",
+          "pinyin": "tiānqì",
+          "meaning_vi": "thời tiết"
+        },
+        {
+          "simplified": "冷",
+          "pinyin": "lěng",
+          "meaning_vi": "lạnh"
+        },
+        {
+          "simplified": "热",
+          "pinyin": "rè",
+          "meaning_vi": "nóng"
+        },
+        {
+          "simplified": "雨",
+          "pinyin": "yǔ",
+          "meaning_vi": "mưa"
+        },
+        {
+          "simplified": "下雨",
+          "pinyin": "xià yǔ",
+          "meaning_vi": "mưa rơi, trời mưa"
+        },
+        {
+          "simplified": "雪",
+          "pinyin": "xuě",
+          "meaning_vi": "tuyết"
+        },
+        {
+          "simplified": "阴",
+          "pinyin": "",
+          "meaning_vi": "âm u, râm"
+        },
+        {
+          "simplified": "晴",
+          "pinyin": "",
+          "meaning_vi": "nắng, trời quang"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-11-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'thời tiết'?",
+          "pinyin_prompt": "",
+          "correct_answer": "天气",
+          "options": [
+            "天气",
+            "冷",
+            "热",
+            "没有"
+          ],
+          "explanation": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+        },
+        {
+          "id": "ex-v-11-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '冷' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "lěng",
+          "options": [
+            "lěng",
+            "tiānqì",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 冷 phát âm chuẩn là lěng."
+        },
+        {
+          "id": "ex-v-11-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "天气",
+          "options": [
+            "天气",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '天气' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-11-01",
+          "titleVi": "Câu hỏi thời tiết với 怎么样",
+          "pattern": "Thời gian / Địa điểm + 天气怎么样？",
+          "explanationVi": "Dùng để hỏi tình hình thời tiết tại một thời điểm hoặc một địa điểm cụ thể.",
+          "examples": [
+            {
+              "hanzi": "今天北京天气怎么样？",
+              "pinyin": "Jīntiān Běijīng tiānqì zěnmeyàng?",
+              "translationVi": "Hôm nay thời tiết Bắc Kinh thế nào?"
+            },
+            {
+              "hanzi": "今天很冷，下雨了。",
+              "pinyin": "Jīntiān hěn lěng, xiàyǔ le.",
+              "translationVi": "Hôm nay rất lạnh, trời mưa rồi."
+            }
+          ]
+        },
+        {
+          "id": "g-11-02",
+          "titleVi": "Miêu tả hiện tượng thời tiết với 下",
+          "pattern": "下 + 雨 / 雪",
+          "explanationVi": "Động từ 下 kết hợp với danh từ 雨 (mưa) hoặc 雪 (tuyết) để tạo thành cụm động tân chỉ hiện tượng mưa rơi, tuyết rơi.",
+          "examples": [
+            {
+              "hanzi": "明天不下雨，是晴天。",
+              "pinyin": "Míngtiān bú xiàyǔ, shì qíngtiān.",
+              "translationVi": "Ngày mai không mưa, là ngày nắng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-11-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "今天北京天气怎么样？",
+          "options": [
+            "今天北京天气怎么样？"
+          ],
+          "explanation": "Cấu trúc đúng: Thời gian / Địa điểm + 天气怎么样？."
+        },
+        {
+          "id": "ex-g-11-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Thời gian / Địa điểm + 天气怎么样？",
+          "pinyin_prompt": "",
+          "correct_answer": "Câu hỏi thời tiết với 怎么样",
+          "options": [
+            "Câu hỏi thời tiết với 怎么样",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Câu hỏi thời tiết với 怎么样."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-11",
+        "titleVi": "Hỏi thăm thời tiết cuối tuần",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天天气真冷！",
+            "pinyin": "Jīntiān tiānqì zhēn lěng!",
+            "vi": "Hôm nay thời tiết thật là lạnh!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对啊，下雪了，明天会更冷。",
+            "pinyin": "Duì a, xiàxuě le, míngtiān huì gèng lěng.",
+            "vi": "Đúng vậy, có tuyết rơi rồi, ngày mai sẽ còn lạnh hơn."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "北京冬天经常下雪吗？",
+            "pinyin": "Běijīng dōngtiān jīngcháng xiàxuě ma?",
+            "vi": "Mùa đông ở Bắc Kinh có thường có tuyết không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "经常下雪，天气也很晴朗。",
+            "pinyin": "Jīngcháng xiàxuě, tiānqì yě hěn qínglǎng.",
+            "vi": "Thường có tuyết, thời tiết cũng rất quang đãng."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-11-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "今天天气真冷！",
+          "options": [
+            "今天天气真冷！",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-11-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 11:",
+          "audio_target": "对啊，下雪了，明天会更冷。",
+          "correct_answer": "对啊，下雪了，明天会更冷。",
+          "options": [
+            "对啊，下雪了，明天会更冷。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '对啊，下雪了，明天会更冷。'."
+        },
+        {
+          "id": "ex-ls-11-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "今天天气真冷！",
+          "pinyin_target": "Jīntiān tiānqì zhēn lěng!",
+          "correct_answer": "今天天气真冷！",
+          "options": [
+            "今天天气真冷！"
+          ],
+          "explanation": "Phát âm to rõ ràng: '今天天气真冷！'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Thời tiết hôm nay",
+        "text": "今天的天气很好，不冷也不热。早上有点儿阴，但是下午是晴天。我和朋友一起去公园散步，大家都很高兴。",
+        "translationVi": "Thời tiết hôm nay rất đẹp, không lạnh cũng không nóng. Buổi sáng hơi âm u một chút, nhưng buổi chiều là ngày nắng. Tôi và bạn cùng đi dạo công viên, mọi người đều rất vui vẻ."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-11-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Thời tiết hôm nay'."
+        },
+        {
+          "id": "ex-r-11-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Thời tiết hôm nay rất đẹp, không lạnh cũ...",
+          "options": [
+            "Thời tiết hôm nay rất đẹp, không lạnh cũ...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Thời tiết hôm nay rất đẹp, không lạnh cũng không nóng. Buổi sáng hơi âm u một chút, nhưng buổi chiều là ngày nắng. Tôi và bạn cùng đi dạo công viên, mọi người đều rất vui vẻ.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-11"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

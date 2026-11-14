@@ -1,0 +1,368 @@
+{
+  "id": "l-hsk1-012",
+  "slug": "hsk1-lesson-12",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Bài 12: Phương tiện & Đi lại (你怎么去车站)",
+  "objective_vi": "Biết gọi tên các phương tiện giao thông, diễn đạt phương thức đi lại (坐, 开, 走路) và hỏi đường xa gần.",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "车",
+          "pinyin": "chē",
+          "vi": "xe, xe cộ"
+        },
+        {
+          "hanzi": "坐",
+          "pinyin": "zuò",
+          "vi": "ngồi, đi (xe, tàu)"
+        },
+        {
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "vi": "xe taxi"
+        },
+        {
+          "hanzi": "开",
+          "pinyin": "kāi",
+          "vi": "mở, lái"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "车",
+          "pinyin": "chē",
+          "meaning_vi": "xe, xe cộ"
+        },
+        {
+          "simplified": "坐",
+          "pinyin": "zuò",
+          "meaning_vi": "ngồi, đi (xe, tàu)"
+        },
+        {
+          "simplified": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning_vi": "xe taxi"
+        },
+        {
+          "simplified": "开",
+          "pinyin": "kāi",
+          "meaning_vi": "mở, lái"
+        },
+        {
+          "simplified": "开车",
+          "pinyin": "kāichē",
+          "meaning_vi": "lái xe"
+        },
+        {
+          "simplified": "飞机",
+          "pinyin": "fēijī",
+          "meaning_vi": "máy bay"
+        },
+        {
+          "simplified": "火车",
+          "pinyin": "huǒchē",
+          "meaning_vi": "tàu hỏa"
+        },
+        {
+          "simplified": "站",
+          "pinyin": "",
+          "meaning_vi": "trạm, bến, đứng"
+        },
+        {
+          "simplified": "车站",
+          "pinyin": "",
+          "meaning_vi": "bến xe, ga tàu"
+        },
+        {
+          "simplified": "路",
+          "pinyin": "",
+          "meaning_vi": "đường, tuyến đường"
+        },
+        {
+          "simplified": "远",
+          "pinyin": "",
+          "meaning_vi": "xa"
+        },
+        {
+          "simplified": "近",
+          "pinyin": "",
+          "meaning_vi": "gần"
+        },
+        {
+          "simplified": "走路",
+          "pinyin": "",
+          "meaning_vi": "đi bộ"
+        },
+        {
+          "simplified": "来",
+          "pinyin": "lái",
+          "meaning_vi": "đến, lại"
+        },
+        {
+          "simplified": "到",
+          "pinyin": "dào",
+          "meaning_vi": "đến, tới"
+        },
+        {
+          "simplified": "回",
+          "pinyin": "huí",
+          "meaning_vi": "về, quay lại"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-12-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'xe, xe cộ'?",
+          "pinyin_prompt": "",
+          "correct_answer": "车",
+          "options": [
+            "车",
+            "坐",
+            "出租车",
+            "没有"
+          ],
+          "explanation": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+        },
+        {
+          "id": "ex-v-12-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '坐' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "zuò",
+          "options": [
+            "zuò",
+            "chē",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 坐 phát âm chuẩn là zuò."
+        },
+        {
+          "id": "ex-v-12-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "车",
+          "options": [
+            "车",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '车' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-12-01",
+          "titleVi": "Phương thức di chuyển với 坐 / 开 / 走路",
+          "pattern": "Chủ ngữ + 坐 / 开 + Phương tiện (+ 去 / 到 + Địa điểm)",
+          "explanationVi": "Diễn đạt cách thức đi lại bằng phương tiện giao thông hoặc đi bộ.",
+          "examples": [
+            {
+              "hanzi": "我坐出租车去火车站。",
+              "pinyin": "Wǒ zuò chūzūchē qù huǒchēzhàn.",
+              "translationVi": "Tôi đi taxi đến ga tàu hỏa."
+            },
+            {
+              "hanzi": "学校很近，我走路去。",
+              "pinyin": "Xuéxiào hěn jìn, wǒ zǒulù qù.",
+              "translationVi": "Trường rất gần, tôi đi bộ đi."
+            }
+          ]
+        },
+        {
+          "id": "g-12-02",
+          "titleVi": "Động từ phương hướng 来, 去, 到, 回",
+          "pattern": "来 / 去 / 回 + Địa điểm, 到 + Địa điểm",
+          "explanationVi": "来 chỉ hướng về phía người nói, 去 chỉ hướng rời xa người nói, 回 chỉ quay trở lại nơi chốn quen thuộc, 到 chỉ đích đến.",
+          "examples": [
+            {
+              "hanzi": "他下午回北京。",
+              "pinyin": "Tā xiàwǔ huí Běijīng.",
+              "translationVi": "Chiều nay anh ấy quay về Bắc Kinh."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-12-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "我坐出租车去火车站。",
+          "options": [
+            "我坐出租车去火车站。"
+          ],
+          "explanation": "Cấu trúc đúng: Chủ ngữ + 坐 / 开 + Phương tiện (+ 去 / 到 + Địa điểm)."
+        },
+        {
+          "id": "ex-g-12-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: Chủ ngữ + 坐 / 开 + Phương tiện (+ 去 / 到 + Địa điểm)",
+          "pinyin_prompt": "",
+          "correct_answer": "Phương thức di chuyển với 坐 / 开 / 走路",
+          "options": [
+            "Phương thức di chuyển với 坐 / 开 / 走路",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Phương thức di chuyển với 坐 / 开 / 走路."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-12",
+        "titleVi": "Đi xe ra sân bay",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，去飞机场怎么走？",
+            "pinyin": "Qǐngwèn, qù fēijīchǎng zěnme zǒu?",
+            "vi": "Xin hỏi, đi sân bay đi đường nào?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "飞机场很远，你坐出租车去吧。",
+            "pinyin": "Fēijīchǎng hěn yuǎn, nǐ zuò chūzūchē qù ba.",
+            "vi": "Sân bay rất xa, bạn đi taxi đi nhé."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "火车站近吗？",
+            "pinyin": "Huǒchēzhàn jìn ma?",
+            "vi": "Ga tàu hỏa có gần không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "火车站不远，前面就是。",
+            "pinyin": "Huǒchēzhàn bù yuǎn, qiánmiàn jiù shì.",
+            "vi": "Ga tàu hỏa không xa, phía trước là tới rồi."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-12-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "请问，去飞机场怎么走？",
+          "options": [
+            "请问，去飞机场怎么走？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '请问，去飞机场怎么走？' (Xin hỏi, đi sân bay đi đường nào?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-12-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 12:",
+          "audio_target": "飞机场很远，你坐出租车去吧。",
+          "correct_answer": "飞机场很远，你坐出租车去吧。",
+          "options": [
+            "飞机场很远，你坐出租车去吧。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '飞机场很远，你坐出租车去吧。'."
+        },
+        {
+          "id": "ex-ls-12-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "请问，去飞机场怎么走？",
+          "pinyin_target": "Qǐngwèn, qù fēijīchǎng zěnme zǒu?",
+          "correct_answer": "请问，去飞机场怎么走？",
+          "options": [
+            "请问，去飞机场怎么走？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '请问，去飞机场怎么走？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Chuyến đi của Minh",
+        "text": "大卫是北京大学的学生。今天他坐火车去上海看朋友。火车站离他的学校不太远，他开车去车站。下午两点他到了上海。",
+        "translationVi": "David là sinh viên Đại học Bắc Kinh. Hôm nay anh ấy đi tàu hỏa đến Thượng Hải thăm bạn. Ga tàu không quá xa trường anh ấy, anh ấy lái xe đến ga. Hai giờ chiều anh ấy đã đến Thượng Hải."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-12-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Chuyến đi của Minh'."
+        },
+        {
+          "id": "ex-r-12-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "David là sinh viên Đại học Bắc Kinh. Hôm...",
+          "options": [
+            "David là sinh viên Đại học Bắc Kinh. Hôm...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: David là sinh viên Đại học Bắc Kinh. Hôm nay anh ấy đi tàu hỏa đến Thượng Hải thăm bạn. Ga tàu không quá xa trường anh ấy, anh ấy lái xe đến ga. Hai giờ chiều anh ấy đã đến Thượng Hải.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-12"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

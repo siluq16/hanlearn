@@ -1,0 +1,269 @@
+{
+  "id": "l-hsk1-cp03",
+  "slug": "hsk1-checkpoint-03",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Chặng 3: Tổng ôn & Đánh giá Năng lực Chặng 3 (Bài 9–14)",
+  "objective_vi": "Cột mốc đánh giá năng lực Chặng 3 (Bài 9–14). Kiểm tra phản xạ từ vựng, ngữ pháp và đối thoại.",
+  "estimated_minutes": 30,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động Cột mốc Chặng 3",
+      "instruction": "Tổng ôn toàn diện các chủ đề từ 9–14.",
+      "warmup_words": [
+        {
+          "hanzi": "天气",
+          "pinyin": "tiānqì",
+          "vi": "thời tiết"
+        },
+        {
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "vi": "xe taxi"
+        },
+        {
+          "hanzi": "大学",
+          "pinyin": "dàxué",
+          "vi": "đại học"
+        },
+        {
+          "hanzi": "教室",
+          "pinyin": "jiàoshì",
+          "vi": "phòng học"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Từ vựng trọng điểm Chặng",
+      "vocabulary": [
+        {
+          "simplified": "天气",
+          "pinyin": "tiānqì",
+          "meaning_vi": "thời tiết"
+        },
+        {
+          "simplified": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning_vi": "xe taxi"
+        },
+        {
+          "simplified": "大学",
+          "pinyin": "dàxué",
+          "meaning_vi": "đại học"
+        },
+        {
+          "simplified": "教室",
+          "pinyin": "jiàoshì",
+          "meaning_vi": "phòng học"
+        },
+        {
+          "simplified": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning_vi": "máy vi tính"
+        },
+        {
+          "simplified": "考试",
+          "pinyin": "kǎoshì",
+          "meaning_vi": "kỳ thi"
+        },
+        {
+          "simplified": "车站",
+          "pinyin": "chēzhàn",
+          "meaning_vi": "bến xe"
+        },
+        {
+          "simplified": "冷",
+          "pinyin": "lěng",
+          "meaning_vi": "lạnh"
+        },
+        {
+          "simplified": "热",
+          "pinyin": "rè",
+          "meaning_vi": "nóng"
+        },
+        {
+          "simplified": "远",
+          "pinyin": "yuǎn",
+          "meaning_vi": "xa"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tổng hợp",
+      "exercises": [
+        {
+          "id": "ex-cp3-v01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đợt ôn tập Chặng 3, từ nào có nghĩa là: 'thời tiết'?",
+          "correct_answer": "天气",
+          "options": [
+            "天气",
+            "出租车",
+            "不是",
+            "再见"
+          ],
+          "explanation": "天气 (tiānqì) là 'thời tiết'."
+        },
+        {
+          "id": "ex-cp3-v02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin đúng của từ '出租车' là gì?",
+          "correct_answer": "chūzūchē",
+          "options": [
+            "chūzūchē",
+            "tiānqì",
+            "shénme",
+            "xièxie"
+          ],
+          "explanation": "出租车 đọc là chūzūchē."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Hệ thống hóa ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-cp3-01",
+          "titleVi": "Tổng ôn: Hỏi cách đi lại (怎么去) và Vị trí (在)",
+          "pattern": "怎么 + 去 / 走 + Địa điểm？",
+          "explanationVi": "Dùng để hỏi phương tiện hoặc đường đi.",
+          "examples": [
+            {
+              "hanzi": "你怎么去学校？—— 我坐车去。",
+              "pinyin": "Nǐ zěnme qù xuéxiào? —— Wǒ zuòchē qù.",
+              "translationVi": "Bạn đến trường thế nào? —— Tôi đi xe đến."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tổng hợp",
+      "exercises": [
+        {
+          "id": "ex-cp3-g01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp câu chuẩn theo ngữ pháp ôn tập:",
+          "correct_answer": "你怎么去学校？—— 我坐车去。",
+          "options": [
+            "你怎么去学校？—— 我坐车去。"
+          ],
+          "explanation": "Cấu trúc: 怎么 + 去 / 走 + Địa điểm？."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp tổng hợp",
+      "dialogue": {
+        "id": "d-cp3",
+        "titleVi": "Hẹn bạn đi thi đại học",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天北京天气怎么样？冷不冷？",
+            "pinyin": "Jīntiān Běijīng tiānqì zěnmeyàng? Lěng bu lěng?",
+            "vi": "Thời tiết Bắc Kinh hôm nay thế nào? Lạnh không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "今天不冷，很晴朗。你怎么去大学考试？",
+            "pinyin": "Jīntiān bù lěng, hěn qínglǎng. Nǐ zěnme qù dàxué kǎoshì?",
+            "vi": "Hôm nay không lạnh, rất nắng ráo. Bạn đi thi đại học bằng gì?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "学校不远，我走路去第三教室。",
+            "pinyin": "Xuéxiào bù yuǎn, wǒ zǒulù qù dì-sān jiàoshì.",
+            "vi": "Trường không xa, mình đi bộ đến phòng học số ba."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-cp3-d01",
+          "type": "vocab_mcq",
+          "prompt": "Nhân vật A trong đoạn hội thoại ôn tập nói câu gì?",
+          "correct_answer": "今天北京天气怎么样？冷不冷？",
+          "options": [
+            "今天北京天气怎么样？冷不冷？",
+            "你好吗？",
+            "对不起。",
+            "我是学生。"
+          ],
+          "explanation": "A nói: '今天北京天气怎么样？冷不冷？' (Thời tiết Bắc Kinh hôm nay thế nào? Lạnh không?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói Chặng",
+      "exercises": [
+        {
+          "id": "ex-cp3-ls01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp đúng trong Chặng 3:",
+          "audio_target": "今天不冷，很晴朗。你怎么去大学考试？",
+          "correct_answer": "今天不冷，很晴朗。你怎么去大学考试？",
+          "options": [
+            "今天不冷，很晴朗。你怎么去大学考试？",
+            "我不知道。",
+            "明天见。",
+            "很高兴。"
+          ],
+          "explanation": "Câu nghe được là: '今天不冷，很晴朗。你怎么去大学考试？'."
+        },
+        {
+          "id": "ex-cp3-ls02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm câu tổng ôn:",
+          "speech_target": "今天北京天气怎么样？冷不冷？",
+          "pinyin_target": "Jīntiān Běijīng tiānqì zěnmeyàng? Lěng bu lěng?",
+          "correct_answer": "今天北京天气怎么样？冷不冷？",
+          "options": [
+            "今天北京天气怎么样？冷不冷？"
+          ],
+          "explanation": "Luyện nói to rõ: '今天北京天气怎么样？冷不冷？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn tổng hợp",
+      "passage": {
+        "title": "Một ngày tổng ôn Chặng 3",
+        "text": "今天的天气很好，晴天。大卫早上坐出租车去大学。教室里有许多大学生在准备汉语考试。大家都在认真看书写字，希望考试能考得很好。",
+        "translationVi": "Thời tiết hôm nay rất đẹp, trời nắng. David buổi sáng đi taxi đến trường đại học. Trong phòng học có rất nhiều sinh viên đang chuẩn bị cho kỳ thi tiếng Hán. Mọi người đều chăm chỉ đọc sách viết chữ, hy vọng thi đạt kết quả tốt."
+      },
+      "exercises": [
+        {
+          "id": "ex-cp3-r01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với kiến thức tổng ôn Chặng 3 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin chính xác theo đoạn văn: Một ngày tổng ôn Chặng 3."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Đánh giá năng lực Chặng 3",
+      "quizUrl": "/quizzes/hsk1-checkpoint-03"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "id": "l-hsk1-cp04",
+  "slug": "hsk1-checkpoint-04",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-04",
+  "title": "Chặng 4: Tổng ôn & Đánh giá Năng lực Chặng 4 (Bài 15–20)",
+  "objective_vi": "Cột mốc đánh giá năng lực Chặng 4 (Bài 15–20). Kiểm tra phản xạ từ vựng, ngữ pháp và đối thoại.",
+  "estimated_minutes": 30,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động Cột mốc Chặng 4",
+      "instruction": "Tổng ôn toàn diện các chủ đề từ 15–20.",
+      "warmup_words": [
+        {
+          "hanzi": "家人",
+          "pinyin": "jiārén",
+          "vi": "người nhà"
+        },
+        {
+          "hanzi": "身体",
+          "pinyin": "shēntǐ",
+          "vi": "sức khỏe, cơ thể"
+        },
+        {
+          "hanzi": "衣服",
+          "pinyin": "yīfu",
+          "vi": "quần áo"
+        },
+        {
+          "hanzi": "饺子",
+          "pinyin": "jiǎozi",
+          "vi": "bánh sủi cảo"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Từ vựng trọng điểm Chặng",
+      "vocabulary": [
+        {
+          "simplified": "家人",
+          "pinyin": "jiārén",
+          "meaning_vi": "người nhà"
+        },
+        {
+          "simplified": "身体",
+          "pinyin": "shēntǐ",
+          "meaning_vi": "sức khỏe, cơ thể"
+        },
+        {
+          "simplified": "衣服",
+          "pinyin": "yīfu",
+          "meaning_vi": "quần áo"
+        },
+        {
+          "simplified": "饺子",
+          "pinyin": "jiǎozi",
+          "meaning_vi": "bánh sủi cảo"
+        },
+        {
+          "simplified": "超市",
+          "pinyin": "chāoshì",
+          "meaning_vi": "siêu thị"
+        },
+        {
+          "simplified": "电影院",
+          "pinyin": "diànyǐngyuàn",
+          "meaning_vi": "rạp chiếu phim"
+        },
+        {
+          "simplified": "公司",
+          "pinyin": "gōngsī",
+          "meaning_vi": "công ty"
+        },
+        {
+          "simplified": "漂亮",
+          "pinyin": "piàoliang",
+          "meaning_vi": "xinh đẹp"
+        },
+        {
+          "simplified": "好吃",
+          "pinyin": "hǎochī",
+          "meaning_vi": "ngon (ăn)"
+        },
+        {
+          "simplified": "唱歌",
+          "pinyin": "chànggē",
+          "meaning_vi": "ca hát"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tổng hợp",
+      "exercises": [
+        {
+          "id": "ex-cp4-v01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đợt ôn tập Chặng 4, từ nào có nghĩa là: 'người nhà'?",
+          "correct_answer": "家人",
+          "options": [
+            "家人",
+            "身体",
+            "不是",
+            "再见"
+          ],
+          "explanation": "家人 (jiārén) là 'người nhà'."
+        },
+        {
+          "id": "ex-cp4-v02",
+          "type": "pinyin_mcq",
+          "prompt": "Pinyin đúng của từ '身体' là gì?",
+          "correct_answer": "shēntǐ",
+          "options": [
+            "shēntǐ",
+            "jiārén",
+            "shénme",
+            "xièxie"
+          ],
+          "explanation": "身体 đọc là shēntǐ."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Hệ thống hóa ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-cp4-01",
+          "titleVi": "Tổng ôn: Sinh hoạt hàng ngày, Trang phục và Món ăn",
+          "pattern": "Lượng từ: 件 (áo), 只 (thú cưng), 杯 (đồ uống)",
+          "explanationVi": "Sử dụng đúng các lượng từ căn bản trong giao tiếp mua sắm và ăn uống.",
+          "examples": [
+            {
+              "hanzi": "我买了一件漂亮的衣服和一杯咖啡。",
+              "pinyin": "Wǒ mǎi le yí jiàn piàoliang de yīfu hé yì bēi kāfēi.",
+              "translationVi": "Tôi đã mua một chiếc áo đẹp và một ly cà phê."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tổng hợp",
+      "exercises": [
+        {
+          "id": "ex-cp4-g01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp câu chuẩn theo ngữ pháp ôn tập:",
+          "correct_answer": "我买了一件漂亮的衣服和一杯咖啡。",
+          "options": [
+            "我买了一件漂亮的衣服和一杯咖啡。"
+          ],
+          "explanation": "Cấu trúc: Lượng từ: 件 (áo), 只 (thú cưng), 杯 (đồ uống)."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp tổng hợp",
+      "dialogue": {
+        "id": "d-cp4",
+        "titleVi": "Cuối tuần cùng gia đình",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你今天下班后有事吗？",
+            "pinyin": "Nǐ jīntiān xiàbān hòu yǒu shì ma?",
+            "vi": "Hôm nay sau khi tan ca bạn có việc gì không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没事，我和家人一起去饭馆吃饺子。",
+            "pinyin": "Méishì, wǒ hé jiārén yìqǐ qù fànguǎn chī jiǎozi.",
+            "vi": "Không có việc gì, tôi cùng người nhà đến nhà hàng ăn sủi cảo."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "吃完饭再去电影院看新电影吧！",
+            "pinyin": "Chī wán fàn zài qù diànyǐngyuàn kàn xīn diànyǐng ba!",
+            "vi": "Ăn cơm xong lại đến rạp chiếu phim xem phim mới nhé!"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-cp4-d01",
+          "type": "vocab_mcq",
+          "prompt": "Nhân vật A trong đoạn hội thoại ôn tập nói câu gì?",
+          "correct_answer": "你今天下班后有事吗？",
+          "options": [
+            "你今天下班后有事吗？",
+            "你好吗？",
+            "对不起。",
+            "我是学生。"
+          ],
+          "explanation": "A nói: '你今天下班后有事吗？' (Hôm nay sau khi tan ca bạn có việc gì không?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói Chặng",
+      "exercises": [
+        {
+          "id": "ex-cp4-ls01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp đúng trong Chặng 4:",
+          "audio_target": "没事，我和家人一起去饭馆吃饺子。",
+          "correct_answer": "没事，我和家人一起去饭馆吃饺子。",
+          "options": [
+            "没事，我和家人一起去饭馆吃饺子。",
+            "我不知道。",
+            "明天见。",
+            "很高兴。"
+          ],
+          "explanation": "Câu nghe được là: '没事，我和家人一起去饭馆吃饺子。'."
+        },
+        {
+          "id": "ex-cp4-ls02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm câu tổng ôn:",
+          "speech_target": "你今天下班后有事吗？",
+          "pinyin_target": "Nǐ jīntiān xiàbān hòu yǒu shì ma?",
+          "correct_answer": "你今天下班后有事吗？",
+          "options": [
+            "你今天下班后有事吗？"
+          ],
+          "explanation": "Luyện nói to rõ: '你今天下班后有事吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn tổng hợp",
+      "passage": {
+        "title": "Cuối tuần ấm áp",
+        "text": "星期六，我和弟弟去超市买了水果和面包。晚上妈妈在家做饭，做了热腾腾的包子和饺子，非常好吃。吃完饭后，我们全家人一起看电视、听音乐，大家都觉得很幸福。",
+        "translationVi": "Thứ Bảy, tôi và em trai đến siêu thị mua hoa quả và bánh mì. Buổi tối mẹ nấu cơm ở nhà, làm món bánh bao và sủi cảo nóng hổi, rất ngon. Sau khi ăn xong, cả nhà chúng tôi cùng nhau xem tivi, nghe nhạc, ai cũng cảm thấy rất hạnh phúc."
+      },
+      "exercises": [
+        {
+          "id": "ex-cp4-r01",
+          "type": "reading_true_false",
+          "prompt": "Nội dung đoạn văn có đúng với kiến thức tổng ôn Chặng 4 không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin chính xác theo đoạn văn: Cuối tuần ấm áp."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Đánh giá năng lực Chặng 4",
+      "quizUrl": "/quizzes/hsk1-checkpoint-04"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "id": "l-hsk1-021",
+  "slug": "hsk1-lesson-21",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-05",
+  "title": "Bài 21: Giao tiếp, Trò chuyện & Điện thoại (喂，请问您找谁)",
+  "objective_vi": "Nắm vững kỹ năng nghe gọi điện thoại, xưng hô lịch sự (ông/bà, bạn trai/bạn gái), nhờ giúp đỡ và các động từ tri giác (thấy, nghe thấy).",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "电话",
+          "pinyin": "diànhuà",
+          "vi": "điện thoại"
+        },
+        {
+          "hanzi": "打电话",
+          "pinyin": "dǎ diànhuà",
+          "vi": "gọi điện thoại"
+        },
+        {
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "vi": "điện thoại di động"
+        },
+        {
+          "hanzi": "喂",
+          "pinyin": "wèi",
+          "vi": "alo (nghe máy)"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "电话",
+          "pinyin": "diànhuà",
+          "meaning_vi": "điện thoại"
+        },
+        {
+          "simplified": "打电话",
+          "pinyin": "dǎ diànhuà",
+          "meaning_vi": "gọi điện thoại"
+        },
+        {
+          "simplified": "手机",
+          "pinyin": "shǒujī",
+          "meaning_vi": "điện thoại di động"
+        },
+        {
+          "simplified": "喂",
+          "pinyin": "wèi",
+          "meaning_vi": "alo (nghe máy)"
+        },
+        {
+          "simplified": "说",
+          "pinyin": "shuō",
+          "meaning_vi": "nói"
+        },
+        {
+          "simplified": "说话",
+          "pinyin": "shuōhuà",
+          "meaning_vi": "nói chuyện"
+        },
+        {
+          "simplified": "听见",
+          "pinyin": "tīngjiàn",
+          "meaning_vi": "nghe thấy"
+        },
+        {
+          "simplified": "看见",
+          "pinyin": "kànjiàn",
+          "meaning_vi": "nhìn thấy"
+        },
+        {
+          "simplified": "见",
+          "pinyin": "jiàn",
+          "meaning_vi": "gặp, thấy"
+        },
+        {
+          "simplified": "请",
+          "pinyin": "qǐng",
+          "meaning_vi": "mời, xin"
+        },
+        {
+          "simplified": "请问",
+          "pinyin": "qǐngwèn",
+          "meaning_vi": "xin hỏi"
+        },
+        {
+          "simplified": "问",
+          "pinyin": "wèn",
+          "meaning_vi": "hỏi"
+        },
+        {
+          "simplified": "帮",
+          "pinyin": "",
+          "meaning_vi": "giúp"
+        },
+        {
+          "simplified": "帮助",
+          "pinyin": "",
+          "meaning_vi": "giúp đỡ, sự trợ giúp"
+        },
+        {
+          "simplified": "朋友",
+          "pinyin": "péngyou",
+          "meaning_vi": "bạn bè"
+        },
+        {
+          "simplified": "男朋友",
+          "pinyin": "nánpéngyou",
+          "meaning_vi": "bạn trai"
+        },
+        {
+          "simplified": "女朋友",
+          "pinyin": "nǚpéngyou",
+          "meaning_vi": "bạn gái"
+        },
+        {
+          "simplified": "认识",
+          "pinyin": "",
+          "meaning_vi": "quen biết"
+        },
+        {
+          "simplified": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning_vi": "vui vẻ"
+        },
+        {
+          "simplified": "先生",
+          "pinyin": "xiānsheng",
+          "meaning_vi": "ông, ngài, thầy"
+        },
+        {
+          "simplified": "女士",
+          "pinyin": "nǚshì",
+          "meaning_vi": "bà, cô, quý cô"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-21-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'điện thoại'?",
+          "pinyin_prompt": "",
+          "correct_answer": "电话",
+          "options": [
+            "电话",
+            "打电话",
+            "手机",
+            "没有"
+          ],
+          "explanation": "电话 (diànhuà) mang nghĩa là 'điện thoại'."
+        },
+        {
+          "id": "ex-v-21-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '打电话' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "dǎ diànhuà",
+          "options": [
+            "dǎ diànhuà",
+            "diànhuà",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 打电话 phát âm chuẩn là dǎ diànhuà."
+        },
+        {
+          "id": "ex-v-21-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "电话",
+          "options": [
+            "电话",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '电话' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-21-01",
+          "titleVi": "Mẫu câu gọi điện thoại với 给 và 打电话",
+          "pattern": "给 + Ai + 打电话",
+          "explanationVi": "Diễn đạt việc gọi điện thoại cho ai đó.",
+          "examples": [
+            {
+              "hanzi": "我想给我妈妈打电话。",
+              "pinyin": "Wǒ xiǎng gěi wǒ māma dǎ diànhuà.",
+              "translationVi": "Tôi muốn gọi điện thoại cho mẹ tôi."
+            }
+          ]
+        },
+        {
+          "id": "g-21-02",
+          "titleVi": "Bổ ngữ kết quả 见 (看见, 听见)",
+          "pattern": "看 / 听 + 见",
+          "explanationVi": "Biểu thị kết quả của hành động nhìn (thấy được) hoặc nghe (nghe thấy được).",
+          "examples": [
+            {
+              "hanzi": "你听见我说话了吗？",
+              "pinyin": "Nǐ tīngjiàn wǒ shuōhuà le ma?",
+              "translationVi": "Bạn có nghe thấy tôi nói không?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-21-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "我想给我妈妈打电话。",
+          "options": [
+            "我想给我妈妈打电话。"
+          ],
+          "explanation": "Cấu trúc đúng: 给 + Ai + 打电话."
+        },
+        {
+          "id": "ex-g-21-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 给 + Ai + 打电话",
+          "pinyin_prompt": "",
+          "correct_answer": "Mẫu câu gọi điện thoại với 给 và 打电话",
+          "options": [
+            "Mẫu câu gọi điện thoại với 给 và 打电话",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Mẫu câu gọi điện thoại với 给 và 打电话."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-21",
+        "titleVi": "Cuộc gọi hỏi thăm",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "喂，请问张先生在吗？",
+            "pinyin": "Wèi, qǐngwèn Zhāng xiānsheng zài ma?",
+            "vi": "Alo, xin hỏi ông Trương có ở đó không ạ?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我就是。请问您是哪位？",
+            "pinyin": "Wǒ jiù shì. Qǐngwèn nín shì nǎ wèi?",
+            "vi": "Tôi đây. Xin hỏi quý vị là ai ạ?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "张先生您好，我是王朋。很高兴认识您！",
+            "pinyin": "Zhāng xiānsheng nín hǎo, wǒ shì Wáng Péng. Hěn gāoxìng rènshi nín!",
+            "vi": "Chào ông Trương, tôi là Vương Bằng. Rất vui được quen biết ông!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你好王先生，你能帮我一个忙吗？",
+            "pinyin": "Nǐ hǎo Wáng xiānsheng, nǐ néng bāng wǒ yí gè máng ma?",
+            "vi": "Chào anh Vương, anh có thể giúp tôi một việc được không?"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-21-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "喂，请问张先生在吗？",
+          "options": [
+            "喂，请问张先生在吗？",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '喂，请问张先生在吗？' (Alo, xin hỏi ông Trương có ở đó không ạ?)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-21-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 21:",
+          "audio_target": "我就是。请问您是哪位？",
+          "correct_answer": "我就是。请问您是哪位？",
+          "options": [
+            "我就是。请问您是哪位？",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '我就是。请问您是哪位？'."
+        },
+        {
+          "id": "ex-ls-21-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "喂，请问张先生在吗？",
+          "pinyin_target": "Wèi, qǐngwèn Zhāng xiānsheng zài ma?",
+          "correct_answer": "喂，请问张先生在吗？",
+          "options": [
+            "喂，请问张先生在吗？"
+          ],
+          "explanation": "Phát âm to rõ ràng: '喂，请问张先生在吗？'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Người bạn mới quen",
+        "text": "昨天李月在大学认识了一个新朋友。他是从美国来的留学生。他们互相交换了手机电话号码。李月说：“很高兴认识你，有什么问题我可以帮助你！”",
+        "translationVi": "Hôm qua Lý Nguyệt làm quen với một người bạn mới ở trường đại học. Cậu ấy là du học sinh đến từ Mỹ. Họ đã đổi số điện thoại di động cho nhau. Lý Nguyệt nói: “Rất vui được quen bạn, có vấn đề gì tôi có thể giúp bạn!”"
+      },
+      "exercises": [
+        {
+          "id": "ex-r-21-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Người bạn mới quen'."
+        },
+        {
+          "id": "ex-r-21-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "Hôm qua Lý Nguyệt làm quen với một người...",
+          "options": [
+            "Hôm qua Lý Nguyệt làm quen với một người...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: Hôm qua Lý Nguyệt làm quen với một người bạn mới ở trường đại học. Cậu ấy là du học sinh đến từ Mỹ. Họ đã đổi số điện thoại di động cho nhau. Lý Nguyệt nói: “Rất vui được quen bạn, có vấn đề gì tôi có thể giúp bạn!”."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-21"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ import {
 
 describe("Curriculum Quizzes & 9-Stage Progress Architecture", () => {
   it("verifies all curriculum quizzes have exactly 8 questions with reviewed answer keys", () => {
-    expect(ALL_CURRICULUM_QUIZZES.length).toBe(8);
+    expect(ALL_CURRICULUM_QUIZZES.length).toBe(27);
 
     for (const quiz of ALL_CURRICULUM_QUIZZES) {
       expect(quiz).toBeDefined();

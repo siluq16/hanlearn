@@ -1,0 +1,464 @@
+"""
+Generates the Official HSK 1 Mock Exam (40 questions, 35 minutes, Listening + Reading)
+conforming to the Chinese Testing International (CTI) exam specification.
+"""
+
+import json
+
+def generate_mock_exam():
+    questions = []
+
+    # ==========================================
+    # PART 1: LISTENING (听力) - 20 QUESTIONS
+    # ==========================================
+
+    # Section 1: Questions 1-5 (Judgment True/False based on audio phrase)
+    s1_data = [
+        {
+            "audio": "喝茶", "py": "hē chá", "meaning": "uống trà",
+            "prompt_display": "Hình ảnh: Một người đang cầm chén uống trà nóng.",
+            "correct": 0, "exp": "Audio phát '喝茶' (uống trà), khớp với hình ảnh."
+        },
+        {
+            "audio": "看书", "py": "kàn shū", "meaning": "đọc sách",
+            "prompt_display": "Hình ảnh: Một cậu bé đang đá bóng trên sân cỏ.",
+            "correct": 1, "exp": "Audio phát '看书' (đọc sách), nhưng hình ảnh là đá bóng (踢足球), nên câu này Sai."
+        },
+        {
+            "audio": "打电话", "py": "dǎ diànhuà", "meaning": "gọi điện thoại",
+            "prompt_display": "Hình ảnh: Một cô gái đang áp điện thoại vào tai nghe gọi.",
+            "correct": 0, "exp": "Audio phát '打电话' (gọi điện thoại), hoàn toàn khớp với hình ảnh."
+        },
+        {
+            "audio": "坐飞机", "py": "zuò fēijī", "meaning": "đi máy bay",
+            "prompt_display": "Hình ảnh: Một chiếc máy bay lớn đang bay trên bầu trời.",
+            "correct": 0, "exp": "Audio phát '坐飞机' (đi máy bay), khớp với hình ảnh máy bay."
+        },
+        {
+            "audio": "吃米饭", "py": "chī mǐfàn", "meaning": "ăn cơm",
+            "prompt_display": "Hình ảnh: Một người đang nằm ngủ trên giường.",
+            "correct": 1, "exp": "Audio phát '吃米饭' (ăn cơm), nhưng hình ảnh là ngủ (睡觉), nên câu này Sai."
+        }
+    ]
+
+    for i, item in enumerate(s1_data, 1):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "listening",
+            "part": 1,
+            "audio_text": item["audio"],
+            "prompt": f"Câu {i}: Nghe băng và phán đoán Đúng (√) hay Sai (×) theo ngữ cảnh:\n{item['prompt_display']}",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 2: Questions 6-10 (Sentence audio + Choose picture A, B, C)
+    s2_data = [
+        {
+            "audio": "今天天气很冷，下雪了。",
+            "prompt": "Câu 6: Nghe câu miêu tả và chọn hình ảnh phù hợp nhất:",
+            "choices": ["A. Trời đổ tuyết trắng xóa và mọi người mặc áo ấm", "B. Bãi biển đầy nắng vàng rực rỡ", "C. Cửa hàng bán hoa quả tấp nập"],
+            "correct": 0,
+            "exp": "Audio phát: '今天天气很冷，下雪了' (Hôm nay trời rất lạnh, tuyết rơi rồi) -> Chọn A."
+        },
+        {
+            "audio": "他正在医院看病呢。",
+            "prompt": "Câu 7: Nghe câu miêu tả và chọn hình ảnh phù hợp nhất:",
+            "choices": ["A. Thầy giáo đang giảng bài trên lớp", "B. Bác sĩ đang khám bệnh cho bệnh nhân ở bệnh viện", "C. Bạn học đang ca hát nhảy múa"],
+            "correct": 1,
+            "exp": "Audio: '他正在医院看病呢' (Anh ấy đang khám bệnh ở bệnh viện) -> Chọn B."
+        },
+        {
+            "audio": "桌子上有一台新电脑和三本书。",
+            "prompt": "Câu 8: Nghe câu miêu tả và chọn hình ảnh phù hợp nhất:",
+            "choices": ["A. Trên bàn có một chiếc máy tính mới và 3 quyển sách", "B. Dưới đất có một chú mèo con đang ngủ", "C. Trong tủ quần áo có nhiều áo sơ mi"],
+            "correct": 0,
+            "exp": "Audio: '桌子上有一台新电脑和三本书' (Trên bàn có máy tính mới và 3 cuốn sách) -> Chọn A."
+        },
+        {
+            "audio": "我妈妈做饭做得非常好吃。",
+            "prompt": "Câu 9: Nghe câu miêu tả và chọn hình ảnh phù hợp nhất:",
+            "choices": ["A. Người mẹ đang nấu ăn trong bếp với món ăn thơm ngon", "B. Cô gái đang lái xe taxi trên đường", "C. Bố đang ngồi đọc báo xem tivi"],
+            "correct": 0,
+            "exp": "Audio: '我妈妈做饭做得非常好吃' (Mẹ tôi nấu ăn rất ngon) -> Chọn A."
+        },
+        {
+            "audio": "火车站离这里很远，我们要坐出租车去。",
+            "prompt": "Câu 10: Nghe câu miêu tả và chọn hình ảnh phù hợp nhất:",
+            "choices": ["A. Đi bộ trong sân trường học", "B. Hai người đang bắt xe taxi ra ga tàu hỏa xa xôi", "C. Đang bơi lội dưới bể bơi"],
+            "correct": 1,
+            "exp": "Audio: '火车站离这里很远，我们要坐出租车去' (Ga tàu rất xa, chúng tôi phải đi taxi) -> Chọn B."
+        }
+    ]
+
+    for i, item in enumerate(s2_data, 6):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "listening",
+            "part": 2,
+            "audio_text": item["audio"],
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 3: Questions 11-15 (Dialogue between Man & Woman + Matching)
+    s3_data = [
+        {
+            "audio": "女：你看见我的小猫了吗？ 男：在椅子下面睡着呢。",
+            "prompt": "Câu 11: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNữ: 你看见我的小猫了吗？\nNam: 在椅子下面睡着呢。",
+            "choices": ["A. Chú mèo con đang ngủ dưới gầm ghế", "B. Chú chó chạy trong sân", "C. Con chim trên cành cây"],
+            "correct": 0,
+            "exp": "Lời thoại: Mèo con đang ngủ dưới ghế (在椅子下面睡着呢) -> Chọn A."
+        },
+        {
+            "audio": "男：这件黑衣服多少钱？ 女：八十块钱。",
+            "prompt": "Câu 12: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNam: 这件黑衣服多少钱？\nNữ: 八十块钱。",
+            "choices": ["A. Quầy bán hoa quả tươi", "B. Cửa hàng quần áo với chiếc áo đen ghi giá 80 tệ", "C. Hiệu sách bán từ điển"],
+            "correct": 1,
+            "exp": "Lời thoại: Áo đen giá 80 đồng (这件黑衣服多少钱？八十块钱) -> Chọn B."
+        },
+        {
+            "audio": "女：你什么时候去北京？ 男：下星期三坐飞机去。",
+            "prompt": "Câu 13: Nghe đoạn đối thoại và chọn đáp án tương ứng:\nNữ: 你什么时候去北京？\nNam: 下星期三坐飞机去。",
+            "choices": ["A. Thứ Tư tuần sau đi máy bay đến Bắc Kinh", "B. Ngày mai đi tàu hỏa", "C. Chiều nay đi xe buýt"],
+            "correct": 0,
+            "exp": "Nam nói: '下星期三坐飞机去' (Thứ Tư tuần sau đi máy bay) -> Chọn A."
+        },
+        {
+            "audio": "男：你想喝茶还是喝咖啡？ 女：给我一杯热茶吧，谢谢！",
+            "prompt": "Câu 14: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNam: 你想喝茶还是喝咖啡？\nNữ: 给我一杯热茶吧，谢谢！",
+            "choices": ["A. Một ly bia mát", "B. Một chén trà nóng thơm nghi ngút khói", "C. Một chai nước ngọt có ga"],
+            "correct": 1,
+            "exp": "Nữ yêu cầu: '给我一杯热茶吧' (Cho tôi một ly trà nóng nhé) -> Chọn B."
+        },
+        {
+            "audio": "女：喂，张老师在学校吗？ 男：他去医院看病了，下午才回来。",
+            "prompt": "Câu 15: Nghe đoạn đối thoại và trả lời người nam nói gì:\nNữ: 喂，张老师在学校吗？\nNam: 他去医院看病了，下午才回来。",
+            "choices": ["A. Thầy Trương đã đi bệnh viện khám bệnh, chiều mới về", "B. Thầy Trương đang giảng bài ở phòng học", "C. Thầy Trương đang ở thư viện"],
+            "correct": 0,
+            "exp": "Người nam trả lời: '他去医院看病了，下午才回来' -> Chọn A."
+        }
+    ]
+
+    for i, item in enumerate(s3_data, 11):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "listening",
+            "part": 3,
+            "audio_text": item["audio"],
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 4: Questions 16-20 (Dialogue + Question + 3 Choices)
+    s4_data = [
+        {
+            "audio": "男：现在几点了？ 女：差五分两点，我们要上课了。 问：他们几点上课？",
+            "prompt": "Câu 16: Nghe hội thoại và câu hỏi, chọn đáp án đúng:\nNam: 现在几点了？\nNữ: 差五分两点，我们要上课了。\nHỏi: 他们几点上课？",
+            "choices": ["A. 1:55 (两点差五分)", "B. 3:00 (三点整)", "C. 12:30 (十二点半)"],
+            "correct": 0,
+            "exp": "Nữ nói hiện tại là 2 giờ kém 5 và sắp vào lớp -> Giờ vào lớp là khoảng 2 giờ kém 5 (1:55) -> Chọn A."
+        },
+        {
+            "audio": "女：你认识李小姐吗？ 男：认识，我们是大学同学。 问：他们是什么关系？",
+            "prompt": "Câu 17: Nghe hội thoại và chọn câu trả lời đúng:\nNữ: 你认识李小姐吗？\nNam: 认识，我们是大学同学。\nHỏi: 他们是什么关系？",
+            "choices": ["A. 老师和学生 (Thầy trò)", "B. 大学同学 (Bạn học đại học)", "C. 医生和病人 (Bác sĩ và bệnh nhân)"],
+            "correct": 1,
+            "exp": "Người nam xác nhận: '我们是大学同学' (Chúng tôi là bạn cùng học đại học) -> Chọn B."
+        },
+        {
+            "audio": "男：这个西瓜真甜！多少钱一斤？ 女：三块钱一斤。 问：西瓜多少钱一斤？",
+            "prompt": "Câu 18: Nghe hội thoại và chọn đáp án đúng:\nNam: 这个西瓜真甜！多少钱一斤？\nNữ: 三块钱一斤。\nHỏi: 西瓜多少钱一斤？",
+            "choices": ["A. 3 块 (3 đồng)", "B. 5 块 (5 đồng)", "C. 10 块 (10 đồng)"],
+            "correct": 0,
+            "exp": "Người bán hàng trả lời rõ ràng: '三块钱一斤' -> 3 đồng một cân -> Chọn A."
+        },
+        {
+            "audio": "女：你明天下午有时间吗？一起去看电影吧。 男：对不起，明天下午我要去公司加班。 问：男的明天下午做什么？",
+            "prompt": "Câu 19: Nghe hội thoại và chọn đáp án đúng:\nNữ: 你明天下午有时间吗？一起去看电影吧。\nNam: 对不起，明天下午我要去公司加班。\nHỏi: 男的明天下午做什么？",
+            "choices": ["A. 去看电影 (Đi xem phim)", "B. 去公司工作 (Đến công ty làm việc)", "C. 在家睡觉 (Ở nhà ngủ)"],
+            "correct": 1,
+            "exp": "Người nam từ chối vì phải đến công ty tăng ca (去公司加班) -> Chọn B."
+        },
+        {
+            "audio": "男：喂，请问王经理在吗？ 女：他不在，他开车去机场接朋友了。 问：王经理去哪儿了？",
+            "prompt": "Câu 20: Nghe hội thoại và chọn đáp án đúng:\nNam: 喂，请问王经理在吗？\nNữ: 他不在，他开车去机场接朋友了。\nHỏi: 王经理去哪儿了？",
+            "choices": ["A. 机场 (Sân bay)", "B. 饭店 (Nhà hàng)", "C. 超市 (Siêu thị)"],
+            "correct": 0,
+            "exp": "Giám đốc Vương đã lái xe ra sân bay đón bạn (去机场) -> Chọn A."
+        }
+    ]
+
+    for i, item in enumerate(s4_data, 16):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "listening",
+            "part": 4,
+            "audio_text": item["audio"],
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # ==========================================
+    # PART 2: READING (阅读) - 20 QUESTIONS
+    # ==========================================
+
+    # Section 1: Questions 21-25 (Sentence + Picture True/False judgment)
+    r1_data = [
+        {
+            "prompt": "Câu 21: Phán đoán câu dưới đây có phù hợp với ngữ nghĩa miêu tả không:\n'他正在跑步锻炼身体。' (Hình ảnh: Một chàng trai đang chạy bộ thể dục buổi sáng trong công viên).",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct": 0,
+            "exp": "'跑步锻炼身体' nghĩa là chạy bộ rèn luyện thân thể, đúng với hình ảnh."
+        },
+        {
+            "prompt": "Câu 22: Phán đoán câu dưới đây có phù hợp với ngữ nghĩa miêu tả không:\n'教室里有很多桌子和椅子。' (Hình ảnh: Một khu rừng cây rậm rạp không có người hay đồ đạc).",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct": 1,
+            "exp": "Câu nói về bàn ghế trong phòng học (教室里的桌子和椅子), nhưng hình là khu rừng nên Sai."
+        },
+        {
+            "prompt": "Câu 23: Phán đoán câu dưới đây có phù hợp với ngữ nghĩa miêu tả không:\n'我想买两本汉字书。' (Hình ảnh: Một người đang lật xem hai cuốn sách Hán tự tại hiệu sách).",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct": 0,
+            "exp": "'两本汉字书' (hai cuốn sách chữ Hán), hoàn toàn phù hợp với hình ảnh."
+        },
+        {
+            "prompt": "Câu 24: Phán đoán câu dưới đây có phù hợp với ngữ nghĩa miêu tả không:\n'女儿很喜欢那只白色的小狗。' (Hình ảnh: Bé gái đang ôm một chú cún con lông trắng xinh xắn).",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct": 0,
+            "exp": "'白色的小狗' (chó con màu trắng), đúng với hình ảnh bé gái ôm cún con."
+        },
+        {
+            "prompt": "Câu 25: Phán đoán câu dưới đây có phù hợp với ngữ nghĩa miêu tả không:\n'外面下大雨了，天很冷。' (Hình ảnh: Trời nắng chói chang, nhiệt độ 38 độ C).",
+            "choices": ["Đúng (√)", "Sai (×)"],
+            "correct": 1,
+            "exp": "Câu nói ngoài trời mưa to rất lạnh (下大雨，天很冷), hình lại là nắng gắt nóng bức nên Sai."
+        }
+    ]
+
+    for i, item in enumerate(r1_data, 21):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "reading",
+            "part": 1,
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 2: Questions 26-30 (Fill in the blanks from word bank)
+    # Word bank: A. 漂亮 (đẹp)  B. 说话 (nói chuyện)  C. 岁 (tuổi)  D. 什么时候 (khi nào)  E. 喜欢 (thích)
+    r2_data = [
+        {
+            "prompt": "Câu 26: Chọn từ thích hợp điền vào chỗ trống:\n'妹妹今年只有五_____。'",
+            "choices": ["A. 岁 (suì)", "B. 漂亮 (piàoliang)", "C. 喜欢 (xǐhuan)", "D. 说话 (shuōhuà)"],
+            "correct": 0,
+            "exp": "Chỉ tuổi tác của em gái (五岁 - 5 tuổi) -> Chọn A (岁)."
+        },
+        {
+            "prompt": "Câu 27: Chọn từ thích hợp điền vào chỗ trống:\n'这件红色的衣服真_____！'",
+            "choices": ["A. 漂亮 (piàoliang)", "B. 岁 (suì)", "C. 什么时候 (shénme shíhou)", "D. 说话 (shuōhuà)"],
+            "correct": 0,
+            "exp": "Khen ngợi áo quần (真漂亮 - thật là đẹp) -> Chọn A (漂亮)."
+        },
+        {
+            "prompt": "Câu 28: Chọn từ thích hợp điền vào chỗ trống:\n'你_____去火车站？—— 明天上午八点。'",
+            "choices": ["A. 喜欢 (xǐhuan)", "B. 漂亮 (piàoliang)", "C. 什么时候 (shénme shíhou)", "D. 岁 (suì)"],
+            "correct": 2,
+            "exp": "Câu trả lời là mốc thời gian ('Ngày mai 8 giờ') nên câu hỏi phải dùng '什么时候' (Khi nào) -> Chọn C."
+        },
+        {
+            "prompt": "Câu 29: Chọn từ thích hợp điền vào chỗ trống:\n'大家在图书馆看书，请不要大声_____。'",
+            "choices": ["A. 喜欢 (xǐhuan)", "B. 说话 (shuōhuà)", "C. 漂亮 (piàoliang)", "D. 岁 (suì)"],
+            "correct": 1,
+            "exp": "Trong thư viện nhắc nhở 'không được nói chuyện lớn tiếng' (不要大声说话) -> Chọn B."
+        },
+        {
+            "prompt": "Câu 30: Chọn từ thích hợp điền vào chỗ trống:\n'我很_____吃中国菜，特别是饺子和米饭。'",
+            "choices": ["A. 什么时候 (shénme shíhou)", "B. 岁 (suì)", "C. 喜欢 (xǐhuan)", "D. 漂亮 (piàoliang)"],
+            "correct": 2,
+            "exp": "Diễn đạt sở thích ăn uống: '我很喜欢吃中国菜' (Tôi rất thích ăn món Trung) -> Chọn C."
+        }
+    ]
+
+    for i, item in enumerate(r2_data, 26):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "reading",
+            "part": 2,
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 3: Questions 31-35 (Question and Answer Dialogue Matching)
+    r3_data = [
+        {
+            "prompt": "Câu 31: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'请问，去第三教室怎么走？'",
+            "choices": [
+                "A. 直走，在前边左拐就是。(Đi thẳng, rẽ trái phía trước là tới)",
+                "B. 今天天气很冷。(Hôm nay trời rất lạnh)",
+                "C. 我今年二十岁。(Năm nay tôi hai mươi tuổi)"
+            ],
+            "correct": 0,
+            "exp": "Hỏi đường đi phòng học thì hồi đáp phải chỉ đường hướng -> Chọn A."
+        },
+        {
+            "prompt": "Câu 32: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'昨天晚上的电影好看吗？'",
+            "choices": [
+                "A. 我吃饱了。(Tôi ăn no rồi)",
+                "B. 非常好看，大家都非常喜欢。(Rất hay, ai cũng thích cả)",
+                "C. 是出租车。(Là xe taxi)"
+            ],
+            "correct": 1,
+            "exp": "Hỏi phim xem có hay không (好看吗) thì trả lời '非常好看' -> Chọn B."
+        },
+        {
+            "prompt": "Câu 33: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'你认识前面的那位先生吗？'",
+            "choices": [
+                "A. 认识，他是我们的大学老师。(Quen chứ, thầy ấy là giảng viên đại học của chúng tôi)",
+                "B. 一共三十块钱。(Tổng cộng ba mươi đồng)",
+                "C. 下午两点三十分。(2 giờ 30 phút chiều)"
+            ],
+            "correct": 0,
+            "exp": "Hỏi có quen người phía trước không (认识...吗) thì trả lời '认识，他是...' -> Chọn A."
+        },
+        {
+            "prompt": "Câu 34: Chọn câu hồi đáp phù hợp nhất cho lời nói:\n'谢谢你帮我找到我的电脑！'",
+            "choices": [
+                "A. 不客气，没事！(Không có gì, chuyện nhỏ thôi!)",
+                "B. 再见，明天见！(Tạm biệt, mai gặp!)",
+                "C. 我不爱吃包子。(Tôi không thích ăn bánh bao)"
+            ],
+            "correct": 0,
+            "exp": "Đáp lại lời cảm ơn (谢谢) chuẩn mực trong tiếng Trung là '不客气' -> Chọn A."
+        },
+        {
+            "prompt": "Câu 35: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'你今天身体好些了吗？'",
+            "choices": [
+                "A. 好多了，吃了药已经不发烧了。(Đỡ nhiều rồi, uống thuốc xong đã hết sốt)",
+                "B. 商店在学校旁边。(Cửa hàng ở cạnh trường học)",
+                "C. 这是我的新衣服。(Đây là áo mới của tôi)"
+            ],
+            "correct": 0,
+            "exp": "Hỏi thăm sức khỏe (身体好些了吗) thì trả lời tình trạng bệnh (好多了...) -> Chọn A."
+        }
+    ]
+
+    for i, item in enumerate(r3_data, 31):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "reading",
+            "part": 3,
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    # Section 4: Questions 36-40 (Short Reading Comprehension & Sentence Order)
+    r4_data = [
+        {
+            "prompt": "Câu 36: Đọc đoạn văn ngắn và chọn đáp án đúng:\n'大卫是美国人，他在北京学习汉语。他每天早上七点起床，八点去大学上课。下午他常去图书馆看书。'\n-> 大卫每天早上几点去大学？",
+            "choices": ["A. 六点 (6 giờ)", "B. 七点 (7 giờ)", "C. 八点 (8 giờ)"],
+            "correct": 2,
+            "exp": "Đoạn văn nêu rõ: '八点去大学上课' (8 giờ đi học đại học) -> Chọn C."
+        },
+        {
+            "prompt": "Câu 37: Đọc đoạn văn ngắn và chọn đáp án đúng:\n'王先生家有一只白色的小猫和两只黑色的狗。小猫很喜欢在桌子下面睡觉，小狗喜欢在外面跑。'\n-> 王先生家有几只狗？",
+            "choices": ["A. 一只 (1 con)", "B. 两只 (2 con)", "C. 三只 (3 con)"],
+            "correct": 1,
+            "exp": "Đoạn văn ghi: '两只黑色的狗' (hai con chó màu đen) -> Chọn B."
+        },
+        {
+            "prompt": "Câu 38: Đọc câu sau và chọn trật tự ngữ pháp đúng:\n'①我 ②想 ③两本 ④买 ⑤中文书'",
+            "choices": ["A. ①②④③⑤ (我想买两本中文书)", "B. ①④③②⑤ (我买两本想中文书)", "C. ③⑤①②④ (两本中文书我想买)"],
+            "correct": 0,
+            "exp": "Trật tự câu chuẩn: Chủ ngữ (我) + Năng nguyện (想) + Động từ (买) + Số lượng định ngữ (两本) + Danh từ (中文书) -> Chọn A."
+        },
+        {
+            "prompt": "Câu 39: Đọc đoạn hội thoại và xác định thông tin đúng:\n'兰兰：明天是星期六，我们一起去超市买水果吧。\n明明：好的，几点见？\n兰兰：上午九点半在超市门口见。'\n-> 他们打算什么时候在哪儿见？",
+            "choices": [
+                "A. 星期六上午九点半在超市门口 (Thứ Bảy, 9h30 sáng tại cửa siêu thị)",
+                "B. 星期五下午两点在学校 (Thứ Sáu, 2h chiều ở trường)",
+                "C. 星期日晚上在电影院 (Chủ nhật tối ở rạp chiếu phim)"
+            ],
+            "correct": 0,
+            "exp": "Lan Lan hẹn: '明天是星期六... 上午九点半在超市门口见' -> Chọn A."
+        },
+        {
+            "prompt": "Câu 40: Đọc đoạn tổng kết và chọn kết luận chuẩn xác nhất:\n'学好汉语需要多听、多说、多读、多写。只要每天坚持复习三十个词汇和语法，通过 HSK 1 考试就会非常轻松！'\n-> Để học tốt tiếng Trung cần chú ý điều gì?",
+            "choices": [
+                "A. Đa dạng hóa 4 kỹ năng nghe, nói, đọc, viết và kiên trì ôn tập mỗi ngày",
+                "B. Chỉ cần học nghe không cần học viết chữ Hán",
+                "C. Mỗi tuần chỉ cần học 15 phút là đủ"
+            ],
+            "correct": 0,
+            "exp": "Lời khuyên: đa dạng 4 kỹ năng (多听、多说、多读、多写) và kiên trì luyện tập hằng ngày -> Chọn A."
+        }
+    ]
+
+    for i, item in enumerate(r4_data, 36):
+        questions.append({
+            "id": f"q-hsk1-mock-{i:02d}",
+            "sort_order": i,
+            "section": "reading",
+            "part": 4,
+            "prompt": item["prompt"],
+            "choices": item["choices"],
+            "correct_index": item["correct"],
+            "explanation_vi": item["exp"]
+        })
+
+    mock_exam_doc = {
+        "id": "exam-hsk1-official-mock",
+        "slug": "hsk1-official-mock-exam",
+        "title": "Đề thi thử HSK 1 Chuẩn Quốc tế CTI (40 câu / 35 phút)",
+        "syllabus": "HSK 2025 Official Exam Syllabus (300 Words)",
+        "duration_minutes": 35,
+        "total_questions": 40,
+        "listening_questions": 20,
+        "reading_questions": 20,
+        "max_score": 200,
+        "pass_score": 120,
+        "sections": [
+            {
+                "id": "listening",
+                "title": "Phần I: Nghe hiểu (听力) — 20 câu (100 điểm)",
+                "questions_range": "Câu 1 – 20",
+                "description": "Bao gồm 4 dạng bài: Phán đoán Đúng/Sai qua hình ảnh, Chọn tranh khớp câu đơn, Ghép tranh với hội thoại 2 nhân vật, và Nghe đối thoại trả lời câu hỏi 3 lựa chọn."
+            },
+            {
+                "id": "reading",
+                "title": "Phần II: Đọc hiểu (阅读) — 20 câu (100 điểm)",
+                "questions_range": "Câu 21 – 40",
+                "description": "Bao gồm 4 dạng bài: Phán đoán câu Đúng/Sai, Điền từ vào chỗ trống từ ngân hàng từ vựng, Nối câu hỏi và lời đáp, và Đọc hiểu đoạn văn ngữ cảnh ngắn."
+            }
+        ],
+        "questions": questions
+    }
+
+    with open("content/hsk_library/hsk1_mock_exam_official.json", "w", encoding="utf-8") as f:
+        json.dump(mock_exam_doc, f, ensure_ascii=False, indent=2)
+
+    print(f"Generated Official HSK 1 Mock Exam successfully with {len(questions)} questions.")
+
+if __name__ == "__main__":
+    generate_mock_exam()

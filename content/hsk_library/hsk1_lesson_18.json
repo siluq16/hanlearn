@@ -1,0 +1,378 @@
+{
+  "id": "l-hsk1-018",
+  "slug": "hsk1-lesson-18",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-04",
+  "title": "Bài 18: Ăn uống, Bữa ăn & Nấu nướng (今天吃什么饭)",
+  "objective_vi": "Học từ vựng các bữa ăn (sáng, trưa, tối), món ăn truyền thống (bánh bao, bánh chẻo, trứng gà, bánh mì, hoa quả, dưa hấu) và cảm giác vị giác.",
+  "estimated_minutes": 25,
+  "quality_status": "COMMUNITY_AUTHORED_EXPANDED_CURRICULUM",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Làm quen với các từ vựng và ngữ cảnh bài học trước khi đi sâu vào chi tiết.",
+      "warmup_words": [
+        {
+          "hanzi": "饭",
+          "pinyin": "fàn",
+          "vi": "cơm, bữa ăn"
+        },
+        {
+          "hanzi": "早饭",
+          "pinyin": "zǎofàn",
+          "vi": "bữa sáng"
+        },
+        {
+          "hanzi": "午饭",
+          "pinyin": "wǔfàn",
+          "vi": "bữa trưa"
+        },
+        {
+          "hanzi": "晚饭",
+          "pinyin": "wǎnfàn",
+          "vi": "bữa tối"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "饭",
+          "pinyin": "fàn",
+          "meaning_vi": "cơm, bữa ăn"
+        },
+        {
+          "simplified": "早饭",
+          "pinyin": "zǎofàn",
+          "meaning_vi": "bữa sáng"
+        },
+        {
+          "simplified": "午饭",
+          "pinyin": "wǔfàn",
+          "meaning_vi": "bữa trưa"
+        },
+        {
+          "simplified": "晚饭",
+          "pinyin": "wǎnfàn",
+          "meaning_vi": "bữa tối"
+        },
+        {
+          "simplified": "做饭",
+          "pinyin": "zuò fàn",
+          "meaning_vi": "nấu cơm, làm bếp"
+        },
+        {
+          "simplified": "包子",
+          "pinyin": "bāozi",
+          "meaning_vi": "bánh bao"
+        },
+        {
+          "simplified": "面包",
+          "pinyin": "miànbāo",
+          "meaning_vi": "bánh mì"
+        },
+        {
+          "simplified": "饺子",
+          "pinyin": "jiǎozi",
+          "meaning_vi": "bánh chẻo, sủi cảo"
+        },
+        {
+          "simplified": "鸡蛋",
+          "pinyin": "jīdàn",
+          "meaning_vi": "trứng gà"
+        },
+        {
+          "simplified": "苹果",
+          "pinyin": "",
+          "meaning_vi": "quả táo"
+        },
+        {
+          "simplified": "水果",
+          "pinyin": "shuǐguǒ",
+          "meaning_vi": "hoa quả, trái cây"
+        },
+        {
+          "simplified": "西瓜",
+          "pinyin": "",
+          "meaning_vi": "dưa hấu"
+        },
+        {
+          "simplified": "牛奶",
+          "pinyin": "niúnǎi",
+          "meaning_vi": "sữa bò"
+        },
+        {
+          "simplified": "咖啡",
+          "pinyin": "",
+          "meaning_vi": "cà phê"
+        },
+        {
+          "simplified": "杯子",
+          "pinyin": "bēizi",
+          "meaning_vi": "cái cốc, cái ly"
+        },
+        {
+          "simplified": "好吃",
+          "pinyin": "hǎochī",
+          "meaning_vi": "ngon (ăn)"
+        },
+        {
+          "simplified": "好喝",
+          "pinyin": "",
+          "meaning_vi": "ngon (uống)"
+        },
+        {
+          "simplified": "甜",
+          "pinyin": "",
+          "meaning_vi": "ngọt"
+        },
+        {
+          "simplified": "饿",
+          "pinyin": "",
+          "meaning_vi": "đói"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-v-18-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào có nghĩa là: 'cơm, bữa ăn'?",
+          "pinyin_prompt": "",
+          "correct_answer": "饭",
+          "options": [
+            "饭",
+            "早饭",
+            "午饭",
+            "没有"
+          ],
+          "explanation": "饭 (fàn) mang nghĩa là 'cơm, bữa ăn'."
+        },
+        {
+          "id": "ex-v-18-02",
+          "type": "pinyin_mcq",
+          "prompt": "Cách đọc Pinyin chính xác của từ '早饭' là gì?",
+          "pinyin_prompt": "",
+          "correct_answer": "zǎofàn",
+          "options": [
+            "zǎofàn",
+            "fàn",
+            "shénme",
+            "hǎo"
+          ],
+          "explanation": "Từ 早饭 phát âm chuẩn là zǎofàn."
+        },
+        {
+          "id": "ex-v-18-03",
+          "type": "vocab_mcq",
+          "prompt": "Chọn từ thích hợp điền vào câu: '今天_____真好。' (Thời tiết / tình trạng)?",
+          "pinyin_prompt": "",
+          "correct_answer": "饭",
+          "options": [
+            "饭",
+            "衣服",
+            "学校",
+            "睡觉"
+          ],
+          "explanation": "Từ '饭' phù hợp ngữ cảnh diễn đạt của bài học."
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-18-01",
+          "titleVi": "Từ chỉ bữa ăn 早饭, 午饭, 晚饭",
+          "pattern": "吃 + 早饭 / 午饭 / 晚饭",
+          "explanationVi": "Diễn đạt việc dùng các bữa sáng, bữa trưa, bữa tối trong ngày.",
+          "examples": [
+            {
+              "hanzi": "你今天早上吃早饭了吗？",
+              "pinyin": "Nǐ jīntiān zǎoshang chī zǎofàn le ma?",
+              "translationVi": "Sáng nay bạn đã ăn bữa sáng chưa?"
+            }
+          ]
+        },
+        {
+          "id": "g-18-02",
+          "titleVi": "Tính từ chỉ cảm nhận 好吃, 好喝, 甜",
+          "pattern": "Món ăn + 很 + 好吃 / 好喝 / 甜",
+          "explanationVi": "Dùng để khen ngợi mùi vị món ăn hoặc đồ uống.",
+          "examples": [
+            {
+              "hanzi": "中国的饺子非常好吃！",
+              "pinyin": "Zhōngguó de jiǎozi fēicháng hǎochī!",
+              "translationVi": "Bánh chẻo của Trung Quốc vô cùng ngon!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-g-18-01",
+          "type": "sentence_scramble",
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo cấu trúc ngữ pháp vừa học:",
+          "pinyin_prompt": "",
+          "correct_answer": "你今天早上吃早饭了吗？",
+          "options": [
+            "你今天早上吃早饭了吗？"
+          ],
+          "explanation": "Cấu trúc đúng: 吃 + 早饭 / 午饭 / 晚饭."
+        },
+        {
+          "id": "ex-g-18-02",
+          "type": "fill_in_blank",
+          "prompt": "Chọn cấu trúc ngữ pháp thích hợp cho mẫu câu: 吃 + 早饭 / 午饭 / 晚饭",
+          "pinyin_prompt": "",
+          "correct_answer": "Từ chỉ bữa ăn 早饭, 午饭, 晚饭",
+          "options": [
+            "Từ chỉ bữa ăn 早饭, 午饭, 晚饭",
+            "Câu chữ 把",
+            "Câu bị động 被",
+            "Cấu trúc 比 so sánh"
+          ],
+          "explanation": "Đây là Từ chỉ bữa ăn 早饭, 午饭, 晚饭."
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "d-18",
+        "titleVi": "Bữa tối cùng bạn bè",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你饿不饿？我们去吃晚饭吧。",
+            "pinyin": "Nǐ è bu è? Wǒmen qù chī wǎnfàn ba.",
+            "vi": "Bạn có đói không? Chúng ta đi ăn tối đi."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊，我想吃饺子和包子。",
+            "pinyin": "Hǎo a, wǒ xiǎng chī jiǎozi hé bāozi.",
+            "vi": "Được chứ, mình muốn ăn sủi cảo và bánh bao."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想喝点儿什么？",
+            "pinyin": "Nǐ xiǎng hē diǎnr shénme?",
+            "vi": "Bạn muốn uống chút gì không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "一杯热咖啡或者牛奶都可以。",
+            "pinyin": "Yì bēi rè kāfēi huòzhě niúnǎi dōu kěyǐ.",
+            "vi": "Một cốc cà phê nóng hoặc sữa bò đều được."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-d-18-01",
+          "type": "vocab_mcq",
+          "prompt": "Trong đoạn hội thoại, nhân vật A đã nói điều gì đầu tiên?",
+          "pinyin_prompt": "",
+          "correct_answer": "你饿不饿？我们去吃晚饭吧。",
+          "options": [
+            "你饿不饿？我们去吃晚饭吧。",
+            "你好吗？",
+            "再见！",
+            "对不起。"
+          ],
+          "explanation": "Lời thoại đầu tiên của A là: '你饿不饿？我们去吃晚饭吧。' (Bạn có đói không? Chúng ta đi ăn tối đi.)."
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-ls-18-01",
+          "type": "listening_hidden_transcript",
+          "prompt": "Nghe và chọn câu đối đáp phù hợp với ngữ cảnh bài học 18:",
+          "audio_target": "好啊，我想吃饺子和包子。",
+          "correct_answer": "好啊，我想吃饺子和包子。",
+          "options": [
+            "好啊，我想吃饺子和包子。",
+            "我不喜欢。",
+            "没关系。",
+            "他是医生。"
+          ],
+          "explanation": "Câu nghe được là: '好啊，我想吃饺子和包子。'."
+        },
+        {
+          "id": "ex-ls-18-02",
+          "type": "speaking_shadowing",
+          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "speech_target": "你饿不饿？我们去吃晚饭吧。",
+          "pinyin_target": "Nǐ è bu è? Wǒmen qù chī wǎnfàn ba.",
+          "correct_answer": "你饿不饿？我们去吃晚饭吧。",
+          "options": [
+            "你饿不饿？我们去吃晚饭吧。"
+          ],
+          "explanation": "Phát âm to rõ ràng: '你饿不饿？我们去吃晚饭吧。'."
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "Món ăn yêu thích",
+        "text": "大卫很喜欢中国菜。每天早上他吃鸡蛋和面包，喝一杯牛奶。中午他在大学食堂吃米饭和热菜。晚上妈妈在家里做饭，今天妈妈做了美味的饺子，饺子又热又好吃。",
+        "translationVi": "David rất thích món ăn Trung Quốc. Mỗi buổi sáng anh ấy ăn trứng gà và bánh mì, uống một ly sữa. Buổi trưa anh ấy ăn cơm và món nóng ở căng tin đại học. Buổi tối mẹ nấu cơm ở nhà, hôm nay mẹ làm món sủi cảo thơm ngon, sủi cảo vừa nóng vừa ngon miệng."
+      },
+      "exercises": [
+        {
+          "id": "ex-r-18-01",
+          "type": "reading_true_false",
+          "prompt": "Đoạn văn trên có nhắc đến nội dung liên quan đến bài học không?",
+          "correct_answer": "Đúng",
+          "options": [
+            "Đúng",
+            "Sai"
+          ],
+          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: 'Món ăn yêu thích'."
+        },
+        {
+          "id": "ex-r-18-02",
+          "type": "vocab_mcq",
+          "prompt": "Ý nghĩa bao quát của đoạn văn trên là gì?",
+          "correct_answer": "David rất thích món ăn Trung Quốc. Mỗi b...",
+          "options": [
+            "David rất thích món ăn Trung Quốc. Mỗi b...",
+            "Nói về việc đi mua xe máy.",
+            "Nói về thời tiết bão táp nguy hiểm.",
+            "Nói về kỳ nghỉ hè năm ngoái."
+          ],
+          "explanation": "Đoạn văn diễn tả chính xác: David rất thích món ăn Trung Quốc. Mỗi buổi sáng anh ấy ăn trứng gà và bánh mì, uống một ly sữa. Buổi trưa anh ấy ăn cơm và món nóng ở căng tin đại học. Buổi tối mẹ nấu cơm ở nhà, hôm nay mẹ làm món sủi cảo thơm ngon, sủi cảo vừa nóng vừa ngon miệng.."
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/quizzes/hsk1-lesson-18"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/srs"
+    }
+  ]
+}
