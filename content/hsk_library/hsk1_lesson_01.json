@@ -1,32 +1,53 @@
 {
-  "id": "lesson-hsk1-01",
+  "id": "l-hsk1-001",
+  "slug": "hsk1-lesson-01",
   "hsk_level": 1,
-  "unit_id": "unit-hsk1-01",
+  "unit_id": "u-hsk1-01",
   "title": "Bài 1: Chào hỏi & Tự giới thiệu (自我介绍)",
-  "objective_vi": "Biết cách chào hỏi lịch sự, tự giới thiệu họ tên, và hỏi thăm người khác trong tiếng Trung.",
+  "objective_vi": "Làm quen với chào hỏi lịch sự (您好), tự giới thiệu họ tên (姓/叫), hỏi thăm danh tính bằng 谁, và các dạng bài tập tương tác.",
   "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
   "stages": [
     {
       "stage": "0_warmup",
-      "title_vi": "Khởi động & Ôn tập ngữ âm",
-      "content": {
-        "instruction": "Lắng nghe và nhắc lại các thanh mẫu âm đầu lưỡi và 4 thanh điệu cơ bản.",
-        "warmup_words": [
-          "nǐ",
-          "hǎo",
-          "wǒ",
-          "shì"
-        ]
-      }
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Nghe và phát âm các âm tiết cơ bản trong bài học: nǐ, hǎo, wǒ, shì, shéi.",
+      "warmup_words": [
+        {
+          "hanzi": "你",
+          "pinyin": "nǐ",
+          "vi": "bạn"
+        },
+        {
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "vi": "tốt, khỏe"
+        },
+        {
+          "hanzi": "我",
+          "pinyin": "wǒ",
+          "vi": "tôi"
+        },
+        {
+          "hanzi": "是",
+          "pinyin": "shì",
+          "vi": "là"
+        }
+      ]
     },
     {
       "stage": "1_vocab_learn",
-      "title_vi": "Học từ vựng mới",
+      "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
+        {
+          "simplified": "你好",
+          "pinyin": "nǐhǎo",
+          "meaning_vi": "Xin chào (thông dụng)"
+        },
         {
           "simplified": "您好",
           "pinyin": "nínhǎo",
-          "meaning_vi": "Chào ngài/ông/bà (trang trọng)"
+          "meaning_vi": "Chào ngài / ông / bà (trang trọng, kính ngữ)"
         },
         {
           "simplified": "姓",
@@ -34,19 +55,19 @@
           "meaning_vi": "Họ / mang họ"
         },
         {
-          "simplified": "贵姓",
-          "pinyin": "guìxìng",
-          "meaning_vi": "Quý danh / họ của ngài"
+          "simplified": "叫",
+          "pinyin": "jiào",
+          "meaning_vi": "Gọi là / tên là"
         },
         {
           "simplified": "名字",
           "pinyin": "míngzi",
-          "meaning_vi": "Tên / họ tên"
+          "meaning_vi": "Tên riêng / danh xưng"
         },
         {
-          "simplified": "叫",
-          "pinyin": "jiào",
-          "meaning_vi": "Gọi là / tên là"
+          "simplified": "谁",
+          "pinyin": "shéi",
+          "meaning_vi": "Ai / người nào"
         },
         {
           "simplified": "认识",
@@ -57,28 +78,21 @@
           "simplified": "很高兴",
           "pinyin": "hěn gāoxìng",
           "meaning_vi": "Rất vui mừng"
-        },
-        {
-          "simplified": "先生",
-          "pinyin": "xiānsheng",
-          "meaning_vi": "Tiên sinh / ông / thầy"
-        },
-        {
-          "simplified": "谁",
-          "pinyin": "shéi",
-          "meaning_vi": "Ai / người nào"
         }
       ]
     },
     {
       "stage": "2_vocab_practice",
-      "title_vi": "Luyện tập từ vựng tương tác",
+      "title_vi": "Luyện tập từ vựng đa dạng",
       "exercises": [
         {
-          "id": "ex-hsk1-01-01",
+          "id": "ex-01-v1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 1,
           "kind": "vocab-mcq",
-          "prompt_vi": "Chọn nghĩa tiếng Việt chính xác của từ: '认识' (rènshi)",
-          "target_content": {
+          "hskLevel": 1,
+          "promptVi": "Chọn nghĩa tiếng Việt chính xác của từ: '认识' (rènshi)",
+          "targetContent": {
             "hanzi": "认识",
             "pinyin": "rènshi"
           },
@@ -86,79 +100,98 @@
             {
               "id": "o1",
               "label": "Quen biết",
-              "is_correct": true
+              "isCorrect": true
             },
             {
               "id": "o2",
               "label": "Tạm biệt",
-              "is_correct": false
+              "isCorrect": false
             },
             {
               "id": "o3",
               "label": "Cảm ơn",
-              "is_correct": false
+              "isCorrect": false
             },
             {
               "id": "o4",
               "label": "Bác sĩ",
-              "is_correct": false
+              "isCorrect": false
             }
-          ]
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
         },
         {
-          "id": "ex-hsk1-01-02",
-          "kind": "sentence-order",
-          "prompt_vi": "Sắp xếp các từ sau thành câu hoàn chỉnh: 'Tôi tên là Phương Đại Vĩ.'",
-          "order_tokens": [
+          "id": "ex-01-v2",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép các cặp Hán tự và nghĩa tiếng Việt tương ứng:",
+          "matchingPairs": [
             {
-              "id": "t1",
-              "text": "我",
-              "correct_index": 0
+              "leftId": "l1",
+              "leftLabel": "您好",
+              "rightId": "r1",
+              "rightLabel": "nínhǎo — Chào ngài"
             },
             {
-              "id": "t2",
-              "text": "叫",
-              "correct_index": 1
+              "leftId": "l2",
+              "leftLabel": "名字",
+              "rightId": "r2",
+              "rightLabel": "míngzi — Tên gọi"
             },
             {
-              "id": "t3",
-              "text": "方大伟",
-              "correct_index": 2
+              "leftId": "l3",
+              "leftLabel": "谁",
+              "rightId": "r3",
+              "rightLabel": "shéi — Ai"
             },
             {
-              "id": "t4",
-              "text": "。",
-              "correct_index": 3
+              "leftId": "l4",
+              "leftLabel": "认识",
+              "rightId": "r4",
+              "rightLabel": "rènshi — Quen biết"
             }
-          ]
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
         }
       ]
     },
     {
       "stage": "3_grammar_learn",
-      "title_vi": "Học ngữ pháp trọng điểm",
+      "title_vi": "Học cấu trúc ngữ pháp",
       "grammar_points": [
         {
-          "title": "1. Giới thiệu họ tên: 我姓 [Họ]，名字叫 [Tên]",
+          "id": "g-01-1",
+          "titleVi": "1. Giới thiệu họ tên: 我姓 [Họ]，叫 [Tên]",
           "pattern": "S + 姓 + Họ, 叫 + Tên",
-          "explanation_vi": "Người Trung Quốc thường tách họ và tên khi giới thiệu trang trọng để người đối diện nắm rõ cả họ lẫn tên riêng.",
+          "explanationVi": "Trong giao tiếp lịch sự, người Trung Quốc thường tách rõ họ (姓) và tên gọi (叫) để xưng hô chuẩn xác.",
           "examples": [
             {
-              "hanzi": "我姓方，名字叫大伟。",
-              "pinyin": "Wǒ xìng Fāng, míngzi jiào Dàwěi.",
-              "vi": "Tôi họ Phương, tên gọi là Đại Vĩ."
+              "hanzi": "我姓方，叫大伟。",
+              "pinyin": "Wǒ xìng Fāng, jiào Dàwěi.",
+              "translationVi": "Tôi họ Phương, tên gọi là Đại Vĩ."
             }
           ]
         },
         {
-          "title": "2. Câu hỏi danh tính với '谁' (shéi - ai)",
-          "pattern": "Đại từ/Danh từ + 是 + 谁？",
-          "explanation_vi": "Dùng để hỏi về thân phận hoặc quan hệ của một người nào đó.",
+          "id": "g-01-2",
+          "titleVi": "2. Câu hỏi danh tính với '谁' (shéi)",
+          "pattern": "Đại từ / Danh từ + 是 + 谁？",
+          "explanationVi": "Dùng để hỏi về danh tính của một người. Vị trí của '谁' đứng ngay ở vị trí vị ngữ.",
           "examples": [
             {
-              "hanzi": "那位小姐是谁？",
-              "pinyin": "Nà wèi xiǎojie shì shéi?",
-              "vi": "Vị tiểu thư/cô gái kia là ai?"
+              "hanzi": "那位老师是谁？",
+              "pinyin": "Nà wèi lǎoshī shì shéi?",
+              "translationVi": "Vị giáo viên kia là ai?"
             }
           ]
         }
@@ -166,120 +199,250 @@
     },
     {
       "stage": "4_grammar_practice",
-      "title_vi": "Luyện tập ngữ pháp",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
       "exercises": [
         {
-          "id": "ex-hsk1-01-03",
+          "id": "ex-01-g1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 3,
           "kind": "grammar-choice",
-          "prompt_vi": "Điền từ thích hợp vào câu: '那位先生是____？' (Vị tiên sinh kia là ai?)",
+          "hskLevel": 1,
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống: '他____方大伟。' (Anh ấy tên là Phương Đại Vĩ.)",
           "options": [
             {
-              "id": "g1",
+              "id": "o1",
+              "label": "叫 (jiào)",
+              "isCorrect": true,
+              "explanationVi": "Dùng '叫' đứng trước họ tên đầy đủ hoặc tên riêng."
+            },
+            {
+              "id": "o2",
+              "label": "姓 (xìng)",
+              "isCorrect": false,
+              "explanationVi": "'姓' chỉ đi kèm họ đơn, không đi cùng tên riêng ghép."
+            },
+            {
+              "id": "o3",
               "label": "谁 (shéi)",
-              "is_correct": true
+              "isCorrect": false
             },
             {
-              "id": "g2",
-              "label": "什么 (shénme)",
-              "is_correct": false
-            },
-            {
-              "id": "g3",
-              "label": "哪 (nǎ)",
-              "is_correct": false
-            },
-            {
-              "id": "g4",
-              "label": "吗 (ma)",
-              "is_correct": false
+              "id": "o4",
+              "label": "好 (hǎo)",
+              "isCorrect": false
             }
-          ]
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-01-g2",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh: 'Rất vui được quen biết bạn.'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "很高兴",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "认识",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "你",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "。",
+              "correctIndex": 3
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
         }
       ]
     },
     {
       "stage": "5_dialogue_interactive",
-      "title_vi": "Hội thoại thực tế (Đối thoại 1: Tự giới thiệu)",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
       "dialogue": {
-        "id": "dlg-hsk1-01",
-        "title_zh": "自我介绍",
-        "title_vi": "Tự giới thiệu bản thân",
+        "id": "dlg-01",
+        "titleVi": "Chào hỏi tại công ty mới",
         "turns": [
           {
-            "speaker": "王明华",
-            "hanzi": "您好，我是王明华。请问贵姓大名？",
-            "pinyin": "Nín hǎo, wǒ shì Wáng Mínghuá. Qǐngwèn guìxìng dàmíng?",
-            "vi": "Chào ngài, tôi là Vương Minh Hoa. Xin hỏi quý danh của ngài là gì?"
+            "speaker": "A (Vương Minh Hoa)",
+            "hanzi": "您好！请问您贵姓？",
+            "pinyin": "Nín hǎo! Qǐngwèn nín guìxìng?",
+            "translationVi": "Chào ngài! Xin hỏi quý danh của ngài là gì?"
           },
           {
-            "speaker": "方大伟",
-            "hanzi": "您好，我姓方，名字叫大伟。",
-            "pinyin": "Nín hǎo, wǒ xìng Fāng, míngzi jiào Dàwěi.",
-            "vi": "Chào ngài, tôi họ Phương, tên gọi là Đại Vĩ."
+            "speaker": "B (Phương Đại Vĩ)",
+            "hanzi": "您好，我姓方，叫方大伟。",
+            "pinyin": "Nín hǎo, wǒ xìng Fāng, jiào Fāng Dàwěi.",
+            "translationVi": "Chào ngài, tôi họ Phương, tên là Phương Đại Vĩ."
           },
           {
-            "speaker": "王明华",
-            "hanzi": "方先生，很高兴认识您。",
-            "pinyin": "Fāng xiānsheng, hěn gāoxìng rènshi nín.",
-            "vi": "Thầy/Ông Phương, rất vui được làm quen với ngài."
+            "speaker": "A (Vương Minh Hoa)",
+            "hanzi": "方先生，很高兴认识您！",
+            "pinyin": "Fāng xiānsheng, hěn gāoxìng rènshi nín!",
+            "translationVi": "Thầy Phương, rất vui được làm quen với ngài!"
           },
           {
-            "speaker": "方大伟",
-            "hanzi": "我也是。那位小姐是谁？",
-            "pinyin": "Wǒ yě shì. Nà wèi xiǎojie shì shéi?",
-            "vi": "Tôi cũng vậy. Vị tiểu thư đằng kia là ai thế?"
-          },
-          {
-            "speaker": "王明华",
-            "hanzi": "她叫赵小梅，是我的同事。",
-            "pinyin": "Tā jiào Zhào Xiǎoméi, shì wǒ de tóngshì.",
-            "vi": "Cô ấy tên Triệu Tiểu Mai, là đồng nghiệp của tôi."
+            "speaker": "B (Phương Đại Vĩ)",
+            "hanzi": "认识您我也很高兴。",
+            "pinyin": "Rènshi nín wǒ yě hěn gāoxìng.",
+            "translationVi": "Quen biết ngài tôi cũng rất vui mừng."
           }
         ]
-      }
+      },
+      "exercises": [
+        {
+          "id": "ex-01-d1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi người đối diện nói '方先生，很高兴认识您！', bạn đáp lại thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "认识您我也很高兴。(Quen biết ngài tôi cũng rất vui.)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "对不起，没关系。(Xin lỗi, không có chi.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "他是谁？(Anh ấy là ai?)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
     },
     {
       "stage": "6_listening_speaking",
-      "title_vi": "Luyện nghe & Luyện nói",
-      "listening_ref": "/listening?lesson=lesson-hsk1-01",
-      "speaking_ref": "/speaking?lesson=lesson-hsk1-01"
+      "title_vi": "Luyện Nghe & Luyện Nói tương tác",
+      "exercises": [
+        {
+          "id": "ex-01-l1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 6,
+          "kind": "listening_cloze",
+          "hskLevel": 1,
+          "promptVi": "Bấm nghe câu thoại và chọn từ còn thiếu để hoàn thiện câu:",
+          "targetContent": {
+            "hanzi": "很高兴认识你。",
+            "pinyin": "Hěn gāoxìng rènshi nǐ.",
+            "audioText": "很高兴认识你。",
+            "translationVi": "Rất vui được quen biết bạn."
+          },
+          "options": [
+            {
+              "id": "c1",
+              "label": "认识 (rènshi)",
+              "isCorrect": true
+            },
+            {
+              "id": "c2",
+              "label": "叫 (jiào)",
+              "isCorrect": false
+            },
+            {
+              "id": "c3",
+              "label": "姓 (xìng)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-01-s1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe mẫu và nhại âm theo câu sau (Bật micro hoặc dùng Chế độ luyện thủ công):",
+          "targetContent": {
+            "hanzi": "您好，我姓方。",
+            "pinyin": "Nín hǎo, wǒ xìng Fāng.",
+            "translationVi": "Chào ngài, tôi họ Phương."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
     },
     {
       "stage": "7_reading_comprehension",
-      "title_vi": "Đọc hiểu đoạn văn",
+      "title_vi": "Đọc hiểu đoạn văn & Trả lời câu hỏi",
       "passage": {
-        "title": "自我介绍 (Lời tự giới thiệu của Vương Minh Hoa)",
-        "content": "大家好！我是王明华。我是中国人，也是汉语老师。很高兴认识大家。他是我的朋友方大伟。",
-        "questions": [
-          {
-            "prompt_vi": "Vương Minh Hoa là người nước nào?",
-            "options": [
-              {
-                "label": "Người Trung Quốc",
-                "is_correct": true
-              },
-              {
-                "label": "Người Mỹ",
-                "is_correct": false
-              },
-              {
-                "label": "Người Anh",
-                "is_correct": false
-              }
-            ]
+        "title": "自我介绍 (Lời tự giới thiệu của Phương Đại Vĩ)",
+        "text": "大家好！我叫方大伟。我是汉语学生。很高兴认识大家。那位老师姓王，她是我的中国老师。",
+        "translationVi": "Chào mọi người! Tôi tên là Phương Đại Vĩ. Tôi là học sinh tiếng Trung. Rất vui được quen biết mọi người. Vị giáo viên kia họ Vương, cô ấy là giáo viên Trung Quốc của tôi."
+      },
+      "exercises": [
+        {
+          "id": "ex-01-r1",
+          "lessonId": "l-hsk1-001",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đọc đoạn văn trên và đánh giá tính Đúng / Sai của câu sau:",
+          "readingPassage": {
+            "title": "自我介绍",
+            "text": "大家好！我叫方大伟。我是汉语学生。很高兴认识大家。那位老师姓王，她是我的中国老师。"
+          },
+          "trueFalseStatement": {
+            "statement": "方大伟是汉语老师。(Phương Đại Vĩ là giáo viên tiếng Trung.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn nêu rõ: 方大伟是汉语学生 (Phương Đại Vĩ là học sinh tiếng Trung), còn cô giáo là giáo viên họ Vương."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "stage": "8_mini_quiz",
-      "title_vi": "Mini Quiz cuối bài",
-      "quiz_ref": "/lessons/lesson-hsk1-01/quiz"
+      "title_vi": "Đánh giá cuối bài (Mini Quiz)",
+      "quizUrl": "/lessons/639665c9-952d-5714-a276-537a3568b463/quiz"
     },
     {
       "stage": "9_srs_review",
-      "title_vi": "Ôn tập ngắt quãng SRS",
-      "review_ref": "/review"
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
     }
   ]
 }

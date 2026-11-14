@@ -1,0 +1,431 @@
+{
+  "id": "l-hsk1-005",
+  "slug": "hsk1-lesson-05",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-02",
+  "title": "Bài 5: Gia đình & Nghề nghiệp của tôi (我的家与职业)",
+  "objective_vi": "Học từ vựng về thành viên gia đình (爸爸, 妈妈, 哥哥...), nghề nghiệp (老师, 医生), mẫu câu sở hữu 的 và cấu trúc hỏi số lượng 口/个.",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Nhận diện âm thanh",
+      "instruction": "Luyện nghe phát âm thanh nhẹ (轻声) trong các danh từ xưng hô gia đình lặp lại: bàba, māma, gēge, jiějie.",
+      "warmup_words": [
+        {
+          "hanzi": "爸爸",
+          "pinyin": "bàba",
+          "vi": "bố/cha"
+        },
+        {
+          "hanzi": "妈妈",
+          "pinyin": "māma",
+          "vi": "mẹ"
+        },
+        {
+          "hanzi": "家",
+          "pinyin": "jiā",
+          "vi": "nhà/gia đình"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng mới",
+      "vocabulary": [
+        {
+          "simplified": "家",
+          "pinyin": "jiā",
+          "meaning_vi": "Gia đình / nhà"
+        },
+        {
+          "simplified": "爸爸",
+          "pinyin": "bàba",
+          "meaning_vi": "Bố / ba"
+        },
+        {
+          "simplified": "妈妈",
+          "pinyin": "māma",
+          "meaning_vi": "Mẹ / má"
+        },
+        {
+          "simplified": "哥哥",
+          "pinyin": "gēge",
+          "meaning_vi": "Anh trai"
+        },
+        {
+          "simplified": "姐姐",
+          "pinyin": "jiějie",
+          "meaning_vi": "Chị gái"
+        },
+        {
+          "simplified": "老师",
+          "pinyin": "lǎoshī",
+          "meaning_vi": "Thầy giáo / cô giáo"
+        },
+        {
+          "simplified": "医生",
+          "pinyin": "yīshēng",
+          "meaning_vi": "Bác sĩ / thầy thuốc"
+        },
+        {
+          "simplified": "工作",
+          "pinyin": "gōngzuò",
+          "meaning_vi": "Làm việc / công tác"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-05-v1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn nghĩa tiếng Việt của từ: '医生' (yīshēng)",
+          "targetContent": {
+            "hanzi": "医生",
+            "pinyin": "yīshēng"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "Bác sĩ",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "Giáo viên",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "Học sinh",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "Anh trai",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-05-v2",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép các từ vựng gia đình với nghĩa tương ứng:",
+          "matchingPairs": [
+            {
+              "leftId": "l1",
+              "leftLabel": "爸爸",
+              "rightId": "r1",
+              "rightLabel": "bàba — Bố"
+            },
+            {
+              "leftId": "l2",
+              "leftLabel": "妈妈",
+              "rightId": "r2",
+              "rightLabel": "māma — Mẹ"
+            },
+            {
+              "leftId": "l3",
+              "leftLabel": "老师",
+              "rightId": "r3",
+              "rightLabel": "lǎoshī — Giáo viên"
+            },
+            {
+              "leftId": "l4",
+              "leftLabel": "工作",
+              "rightId": "r4",
+              "rightLabel": "gōngzuò — Làm việc"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-05-1",
+          "titleVi": "1. Trợ từ kết cấu biểu thị sở hữu: 的 (de)",
+          "pattern": "Định ngữ + 的 + Trung tâm ngữ",
+          "explanationVi": "'的' kết nối chủ sở hữu với người hoặc vật được sở hữu. Khi quan hệ thân thuộc gia đình gần gũi, '的' có thể lược bỏ (ví dụ: 我妈妈).",
+          "examples": [
+            {
+              "hanzi": "我爸爸是医生。",
+              "pinyin": "Wǒ bàba shì yīshēng.",
+              "translationVi": "Bố tôi là bác sĩ."
+            }
+          ]
+        },
+        {
+          "id": "g-05-2",
+          "titleVi": "2. Hỏi số lượng thành viên trong gia đình: 几口人",
+          "pattern": "你家有几口人？",
+          "explanationVi": "'口' (kǒu) là lượng từ chuyên dụng khi đếm nhân khẩu trong gia đình.",
+          "examples": [
+            {
+              "hanzi": "我家有四口人。",
+              "pinyin": "Wǒ jiā yǒu sì kǒu rén.",
+              "translationVi": "Nhà tôi có bốn người."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-05-g1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 3,
+          "kind": "grammar-choice",
+          "hskLevel": 1,
+          "promptVi": "Chọn lượng từ thích hợp: '你家有几____人？' (Nhà bạn có mấy người?)",
+          "options": [
+            {
+              "id": "o1",
+              "label": "口 (kǒu)",
+              "isCorrect": true,
+              "explanationVi": "Dùng '口' khi đếm thành viên trong một gia đình."
+            },
+            {
+              "id": "o2",
+              "label": "个 (gè)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "本 (běn)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "只 (zhī)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-05-g2",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp câu: 'Mẹ tôi là giáo viên tiếng Trung.'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "我妈妈",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "是",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "汉语",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "老师",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "。",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "dlg-05",
+        "titleVi": "Hỏi về gia đình và nghề nghiệp",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你家有几口人？",
+            "pinyin": "Nǐ jiā yǒu jǐ kǒu rén?",
+            "translationVi": "Nhà bạn có mấy người?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我家有三口人：爸爸、妈妈和我。",
+            "pinyin": "Wǒ jiā yǒu sān kǒu rén: bàba, māma hé wǒ.",
+            "translationVi": "Nhà tôi có 3 người: bố, mẹ và tôi."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你爸爸做什​​么工作？",
+            "pinyin": "Nǐ bàba zuò shénme gōngzuò?",
+            "translationVi": "Bố bạn làm công việc gì?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我爸爸是医生，他在医院工作。",
+            "pinyin": "Wǒ bàba shì yīshēng, tā zài yīyuàn gōngzuò.",
+            "translationVi": "Bố tôi là bác sĩ, ông làm việc ở bệnh viện."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-05-d1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi bạn A hỏi '你家有几口人？', bạn đáp thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "我家有三口人：爸爸、妈妈和我。(Nhà tôi có 3 người: bố, mẹ và tôi.)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "我是汉语老师。(Tôi là giáo viên tiếng Trung.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "我很好，谢谢。(Tôi khỏe, cảm ơn.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-05-l1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 6,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Nghe đoạn âm thanh và nhập chữ Hán hoặc Pinyin bạn nghe được:",
+          "targetContent": {
+            "hanzi": "我爸爸是医生",
+            "pinyin": "wǒ bàba shì yīshēng",
+            "audioText": "我爸爸是医生",
+            "translationVi": "Bố tôi là bác sĩ"
+          },
+          "expectedAnswer": "我爸爸是医生",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-05-s1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe và phát âm theo câu: '我家有四口人。'",
+          "targetContent": {
+            "hanzi": "我家有四口人。",
+            "pinyin": "Wǒ jiā yǒu sì kǒu rén.",
+            "translationVi": "Nhà tôi có 4 người."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "我的家 (Gia đình tôi)",
+        "text": "我家在北京。我家有四口人：爸爸、妈妈、哥哥和我。我爸爸是医生，妈妈是老师。我哥哥也是学生。我们都很爱我们的家。",
+        "translationVi": "Nhà tôi ở Bắc Kinh. Nhà tôi có 4 người: bố, mẹ, anh trai và tôi. Bố tôi là bác sĩ, mẹ là giáo viên. Anh trai tôi cũng là học sinh. Chúng tôi đều rất yêu gia đình mình."
+      },
+      "exercises": [
+        {
+          "id": "ex-05-r1",
+          "lessonId": "l-hsk1-005",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá tính Đúng / Sai của câu sau dựa vào đoạn văn:",
+          "readingPassage": {
+            "title": "我的家",
+            "text": "我家在北京。我家有四口人：爸爸、妈妈、哥哥和我。我爸爸是医生，妈妈是老师。我哥哥也是学生。我们都很爱我们的家。"
+          },
+          "trueFalseStatement": {
+            "statement": "妈妈是医生，爸爸是老师。(Mẹ là bác sĩ, bố là giáo viên.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn ghi rõ: 我爸爸是医生，妈妈是老师 (Bố là bác sĩ, mẹ là giáo viên)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/lessons/l-hsk1-005/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
+    }
+  ]
+}

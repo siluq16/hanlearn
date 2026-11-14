@@ -9,12 +9,17 @@ import {
   ArrowRight,
   Sparkles,
   Award,
+  Mic,
+  MicOff,
+  Eye,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
+import { useMandarinRecognition } from "@/hooks/use-mandarin-recognition";
 import type { LibraryExercise, ExerciseOption } from "@/features/content-library/types";
 
 interface ExerciseEngineProps {
@@ -37,8 +42,24 @@ export function ExerciseEngine({
   // For sentence ordering
   const [selectedTokenIds, setSelectedTokenIds] = useState<string[]>([]);
 
+  // For matching pairs
+  const [selectedLeftId, setSelectedLeftId] = useState<string | null>(null);
+  const [matchedPairs, setMatchedPairs] = useState<string[]>([]);
+
+  // For listening dictation / text input
+  const [textInput, setTextInput] = useState("");
+
   // Audio speech hook
   const { speak, preferredRate } = useMandarinSpeech();
+
+  // Speech recognition hook
+  const {
+    isListening,
+    transcript: spokenTranscript,
+    startListening,
+    stopListening,
+    isSupported: isSpeechSupported,
+  } = useMandarinRecognition();
 
   const currentExercise = exercises[currentIndex];
   const progressPercent = exercises.length
@@ -80,6 +101,9 @@ export function ExerciseEngine({
               setIsCorrect(false);
               setScore(0);
               setSelectedTokenIds([]);
+              setSelectedLeftId(null);
+              setMatchedPairs([]);
+              setTextInput("");
               setIsCompleted(false);
             }}
             className="w-full sm:w-auto"
@@ -117,7 +141,6 @@ export function ExerciseEngine({
   function handleCheckSentenceOrder() {
     if (!currentExercise.orderTokens || isAnswered) return;
     setIsAnswered(true);
-    // Check if the order matches correctIndex
     const sortedTokens = [...currentExercise.orderTokens].sort((a, b) => a.correctIndex - b.correctIndex);
     const correctIds = sortedTokens.map((t) => t.id);
     const isMatch =
@@ -128,11 +151,70 @@ export function ExerciseEngine({
     if (isMatch) setScore((prev) => prev + 1);
   }
 
+  // Handle matching pairs click
+  function handleSelectLeft(leftId: string) {
+    if (isAnswered || matchedPairs.includes(leftId)) return;
+    setSelectedLeftId(leftId);
+  }
+
+  function handleSelectRight(rightId: string) {
+    if (isAnswered || !selectedLeftId) return;
+    const pair = currentExercise.matchingPairs?.find(
+      (p) => p.leftId === selectedLeftId && p.rightId === rightId
+    );
+    if (pair) {
+      const newMatched = [...matchedPairs, selectedLeftId];
+      setMatchedPairs(newMatched);
+      setSelectedLeftId(null);
+      if (newMatched.length === (currentExercise.matchingPairs?.length || 0)) {
+        setIsAnswered(true);
+        setIsCorrect(true);
+        setScore((prev) => prev + 1);
+      }
+    } else {
+      setSelectedLeftId(null);
+    }
+  }
+
+  // Handle dictation check
+  function handleCheckDictation() {
+    if (isAnswered || !textInput.trim()) return;
+    setIsAnswered(true);
+    const cleanInput = textInput.trim().toLowerCase().replace(/[\s\.\,\!\?，。！？]/g, "");
+    const cleanExpected = (currentExercise.expectedAnswer || currentExercise.targetContent?.hanzi || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[\s\.\,\!\?，。！？]/g, "");
+    const isMatch = cleanInput === cleanExpected;
+    setIsCorrect(isMatch);
+    if (isMatch) setScore((prev) => prev + 1);
+  }
+
+  // Handle true/false choice
+  function handleTrueFalse(choice: boolean) {
+    if (isAnswered || !currentExercise.trueFalseStatement) return;
+    setIsAnswered(true);
+    const isMatch = choice === currentExercise.trueFalseStatement.isTrue;
+    setIsCorrect(isMatch);
+    if (isMatch) setScore((prev) => prev + 1);
+  }
+
+  // Handle sentence shadowing self-evaluation
+  function handleShadowingComplete(success: boolean) {
+    if (isAnswered) return;
+    setIsAnswered(true);
+    setIsCorrect(success);
+    if (success) setScore((prev) => prev + 1);
+  }
+
   function handleNext() {
     setSelectedOptionId(null);
     setIsAnswered(false);
     setIsCorrect(false);
     setSelectedTokenIds([]);
+    setSelectedLeftId(null);
+    setMatchedPairs([]);
+    setTextInput("");
 
     if (currentIndex + 1 < exercises.length) {
       setCurrentIndex((prev) => prev + 1);
@@ -141,6 +223,11 @@ export function ExerciseEngine({
       onComplete?.({ total: exercises.length, correct: score + (isCorrect ? 0 : 0) });
     }
   }
+
+  const isListeningType =
+    currentExercise.kind === "listening_cloze" ||
+    currentExercise.kind === "listening_dictation" ||
+    currentExercise.kind === "listen-fill";
 
   return (
     <Card className="border-border shadow-xs max-w-2xl mx-auto">
@@ -154,13 +241,23 @@ export function ExerciseEngine({
               ? "Trắc nghiệm từ vựng"
               : currentExercise.kind === "sentence-order"
                 ? "Sắp xếp câu"
-                : currentExercise.kind === "grammar-choice"
+                : currentExercise.kind === "grammar-choice" || currentExercise.kind === "grammar_fill_blank" || currentExercise.kind === "fill-blank"
                   ? "Ngữ pháp"
-                  : currentExercise.kind === "dialogue-response"
-                    ? "Hội thoại"
-                    : currentExercise.kind === "reading-mcq"
-                      ? "Đọc hiểu"
-                      : "Luyện tập"}
+                  : currentExercise.kind === "matching" || currentExercise.kind === "matching_pairs"
+                    ? "Ghép cặp từ - nghĩa"
+                    : currentExercise.kind === "listening_cloze" || currentExercise.kind === "listen-fill"
+                      ? "Nghe điền từ"
+                      : currentExercise.kind === "listening_dictation"
+                        ? "Nghe chính tả"
+                        : currentExercise.kind === "dialogue_roleplay" || currentExercise.kind === "dialogue-response"
+                          ? "Hội thoại"
+                          : currentExercise.kind === "reading_true_false"
+                            ? "Đọc hiểu Đúng/Sai"
+                            : currentExercise.kind === "sentence_shadowing"
+                              ? "Luyện nhại âm (Shadowing)"
+                              : currentExercise.kind === "reading-mcq"
+                                ? "Đọc hiểu trắc nghiệm"
+                                : "Luyện tập"}
           </span>
         </div>
         <Progress value={progressPercent} label={`Tiến độ câu ${currentIndex + 1}`} />
@@ -170,8 +267,73 @@ export function ExerciseEngine({
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Target Content Display (Hanzi, Audio) */}
-        {currentExercise.targetContent?.hanzi && (
+        {/* 1. Listening Exercises: AUDIO PLAYER (Transcript HIDDEN before answering) */}
+        {isListeningType && (
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center space-y-3">
+            <p className="text-xs font-semibold text-primary uppercase tracking-wider">
+              Bài nghe tương tác
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              <Button
+                type="button"
+                onClick={() =>
+                  speak(
+                    currentExercise.targetContent?.audioText ||
+                      currentExercise.targetContent?.hanzi ||
+                      currentExercise.expectedAnswer ||
+                      "",
+                    preferredRate
+                  )
+                }
+                className="gap-2"
+              >
+                <Volume2 className="size-4" />
+                Nghe câu nói
+              </Button>
+            </div>
+            {/* Secret transcript: ONLY revealed after answered! */}
+            {!isAnswered ? (
+              <p className="text-xs text-muted-foreground italic flex items-center justify-center gap-1">
+                <Eye className="size-3.5" />
+                Văn bản phát âm đang được ẩn để kiểm tra thính lực của bạn.
+              </p>
+            ) : (
+              <div className="mt-3 p-3 rounded-xl bg-card border border-border text-left">
+                <p className="text-xs font-medium text-muted-foreground">Văn bản gốc:</p>
+                <p className="hanzi text-lg font-bold text-foreground">
+                  {currentExercise.targetContent?.hanzi || currentExercise.expectedAnswer}
+                </p>
+                {currentExercise.targetContent?.pinyin && (
+                  <p className="text-xs text-primary">{currentExercise.targetContent.pinyin}</p>
+                )}
+                {currentExercise.targetContent?.translationVi && (
+                  <p className="text-xs text-muted-foreground">{currentExercise.targetContent.translationVi}</p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 2. Reading Passage (For reading_true_false or reading-mcq) */}
+        {currentExercise.readingPassage && (
+          <div className="rounded-2xl border border-border bg-muted/40 p-5 space-y-2">
+            <div className="flex items-center gap-2 text-xs font-semibold text-primary">
+              <BookOpen className="size-4" />
+              <span>Đoạn văn đọc hiểu: {currentExercise.readingPassage.title}</span>
+            </div>
+            <p className="hanzi text-base leading-relaxed text-foreground whitespace-pre-wrap">
+              {currentExercise.readingPassage.text}
+            </p>
+            {isAnswered && currentExercise.readingPassage.translationVi && (
+              <p className="text-xs text-muted-foreground border-t border-border pt-2 mt-2">
+                Dịch: {currentExercise.readingPassage.translationVi}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* 3. Non-listening Target Content (Hanzi, Pinyin, Audio) */}
+        {!isListeningType && currentExercise.targetContent?.hanzi && currentExercise.kind !== "sentence_shadowing" && (
           <div className="rounded-2xl border border-border bg-secondary/50 p-6 text-center space-y-2">
             <h3 className="hanzi font-serif text-3xl sm:text-4xl font-bold text-foreground">
               {currentExercise.targetContent.hanzi}
@@ -194,10 +356,9 @@ export function ExerciseEngine({
           </div>
         )}
 
-        {/* 1. Sentence Ordering Mode */}
+        {/* 4. Sentence Ordering Mode */}
         {currentExercise.kind === "sentence-order" && currentExercise.orderTokens && (
           <div className="space-y-4">
-            {/* Selected tokens display area */}
             <div className="min-h-16 rounded-xl border-2 border-dashed border-border bg-card p-3 flex flex-wrap gap-2 items-center">
               {selectedTokenIds.length === 0 ? (
                 <span className="text-xs text-muted-foreground italic">
@@ -221,7 +382,6 @@ export function ExerciseEngine({
               )}
             </div>
 
-            {/* Available tokens pool */}
             <div className="flex flex-wrap gap-2">
               {currentExercise.orderTokens.map((token) => {
                 const isPicked = selectedTokenIds.includes(token.id);
@@ -248,7 +408,7 @@ export function ExerciseEngine({
                 <Button
                   type="button"
                   onClick={handleCheckSentenceOrder}
-                  disabled={selectedTokenIds.length === 0}
+                  disabled={selectedTokenIds.length !== currentExercise.orderTokens.length}
                 >
                   Kiểm tra câu
                 </Button>
@@ -257,72 +417,290 @@ export function ExerciseEngine({
           </div>
         )}
 
-        {/* 2. Standard Multiple Choice Options */}
-        {currentExercise.options && currentExercise.options.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {currentExercise.options.map((opt) => {
-              const isSelected = selectedOptionId === opt.id;
-              let btnClass = "border-border hover:bg-muted text-foreground";
-              if (isAnswered) {
-                if (opt.isCorrect) {
-                  btnClass = "border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-semibold";
-                } else if (isSelected && !opt.isCorrect) {
-                  btnClass = "border-destructive bg-destructive/15 text-destructive font-semibold";
-                } else {
-                  btnClass = "border-border opacity-50";
-                }
-              }
+        {/* 5. Matching Pairs Mode */}
+        {(currentExercise.kind === "matching" || currentExercise.kind === "matching_pairs") &&
+          currentExercise.matchingPairs && (
+            <div className="space-y-4">
+              <p className="text-xs text-muted-foreground">
+                Bấm vào 1 mục ở cột trái, sau đó bấm vào mục tương ứng ở cột phải để ghép cặp.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {/* Left Column */}
+                <div className="space-y-2">
+                  <span className="text-xs font-semibold text-muted-foreground">Hán tự</span>
+                  {currentExercise.matchingPairs.map((pair) => {
+                    const isMatched = matchedPairs.includes(pair.leftId);
+                    const isSelected = selectedLeftId === pair.leftId;
+                    return (
+                      <button
+                        key={pair.leftId}
+                        type="button"
+                        disabled={isMatched || isAnswered}
+                        onClick={() => handleSelectLeft(pair.leftId)}
+                        className={`w-full text-left p-3 rounded-xl border text-base font-bold transition-all ${
+                          isMatched
+                            ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
+                            : isSelected
+                              ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                              : "bg-card border-border hover:bg-muted text-foreground"
+                        }`}
+                      >
+                        {pair.leftLabel}
+                      </button>
+                    );
+                  })}
+                </div>
 
-              return (
-                <button
-                  key={opt.id}
-                  type="button"
-                  disabled={isAnswered}
-                  onClick={() => handleSelectOption(opt)}
-                  className={`flex items-center justify-between min-h-14 p-4 rounded-xl border text-left text-sm transition-all shadow-xs ${btnClass}`}
-                >
-                  <span className="font-medium">{opt.label}</span>
-                  {isAnswered && opt.isCorrect && (
-                    <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
-                  )}
-                  {isAnswered && isSelected && !opt.isCorrect && (
-                    <XCircle className="size-4 text-destructive shrink-0" />
-                  )}
-                </button>
-              );
-            })}
+                {/* Right Column */}
+                <div className="space-y-2">
+                  <span className="text-xs font-semibold text-muted-foreground">Pinyin & Nghĩa</span>
+                  {currentExercise.matchingPairs.map((pair) => {
+                    const isMatched = matchedPairs.includes(pair.leftId);
+                    return (
+                      <button
+                        key={pair.rightId}
+                        type="button"
+                        disabled={isMatched || isAnswered}
+                        onClick={() => handleSelectRight(pair.rightId)}
+                        className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${
+                          isMatched
+                            ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
+                            : "bg-card border-border hover:bg-muted text-foreground"
+                        }`}
+                      >
+                        {pair.rightLabel}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
+        {/* 6. Listening Dictation Mode (Text Input) */}
+        {currentExercise.kind === "listening_dictation" && (
+          <div className="space-y-3">
+            <label className="text-xs font-medium text-muted-foreground block">
+              Nhập Hán tự hoặc Pinyin bạn nghe được:
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                disabled={isAnswered}
+                value={textInput}
+                onChange={(e) => setTextInput(e.target.value)}
+                placeholder="Ví dụ: 你好 hoặc nǐ hǎo..."
+                className="flex-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              {!isAnswered && (
+                <Button type="button" onClick={handleCheckDictation} disabled={!textInput.trim()}>
+                  Kiểm tra
+                </Button>
+              )}
+            </div>
           </div>
         )}
 
-        {/* Feedback Section after answering */}
-        {isAnswered && (
-          <div
-            className={`rounded-xl border p-4 text-sm space-y-1.5 animate-in fade-in-50 ${
-              isCorrect
-                ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300"
-                : "border-destructive/30 bg-destructive/10 text-destructive"
-            }`}
-          >
-            <div className="flex items-center gap-2 font-semibold">
-              {isCorrect ? (
-                <>
-                  <CheckCircle2 className="size-4" />
-                  <span>Chính xác! Làm rất tốt.</span>
-                </>
-              ) : (
-                <>
-                  <XCircle className="size-4" />
-                  <span>Chưa chính xác. Hãy quan sát lại câu hỏi và ghi nhớ nhé.</span>
-                </>
+        {/* 7. Reading True / False Mode */}
+        {currentExercise.kind === "reading_true_false" && currentExercise.trueFalseStatement && (
+          <div className="space-y-4">
+            <div className="p-4 rounded-xl border border-border bg-card">
+              <p className="text-xs font-medium text-muted-foreground mb-1">Nhận định cần đánh giá:</p>
+              <p className="hanzi text-lg font-bold text-foreground">
+                {currentExercise.trueFalseStatement.statement}
+              </p>
+            </div>
+            {!isAnswered && (
+              <div className="grid grid-cols-2 gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => handleTrueFalse(true)}
+                  className="py-6 text-base font-semibold hover:border-emerald-500 hover:text-emerald-600"
+                >
+                  ✓ Đúng (对 - duì)
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => handleTrueFalse(false)}
+                  className="py-6 text-base font-semibold hover:border-rose-500 hover:text-rose-600"
+                >
+                  ✕ Sai (错 - cuò)
+                </Button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 8. Sentence Shadowing Mode (Microphone + Manual Fallback) */}
+        {currentExercise.kind === "sentence_shadowing" && currentExercise.targetContent && (
+          <div className="space-y-5">
+            <div className="rounded-2xl border border-border bg-card p-6 text-center space-y-2">
+              <h3 className="hanzi font-serif text-3xl font-bold text-foreground">
+                {currentExercise.targetContent.hanzi}
+              </h3>
+              {currentExercise.targetContent.pinyin && (
+                <p className="text-primary font-medium text-base">
+                  {currentExercise.targetContent.pinyin}
+                </p>
               )}
+              {currentExercise.targetContent.translationVi && (
+                <p className="text-xs text-muted-foreground">{currentExercise.targetContent.translationVi}</p>
+              )}
+              <div className="pt-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => speak(currentExercise.targetContent?.hanzi || "", preferredRate)}
+                >
+                  <Volume2 className="size-4 mr-2" />
+                  Nghe câu mẫu
+                </Button>
+              </div>
             </div>
 
-            <div className="flex justify-end pt-3">
-              <Button type="button" onClick={handleNext} className="font-semibold">
-                <span>{currentIndex + 1 < exercises.length ? "Câu tiếp theo" : "Xem tổng kết"}</span>
-                <ArrowRight className="size-4 ml-1.5" />
-              </Button>
+            {/* Speaking Controls with Recognition & Manual Fallback */}
+            {!isAnswered && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {isSpeechSupported ? (
+                    <Button
+                      type="button"
+                      variant={isListening ? "destructive" : "default"}
+                      onClick={isListening ? stopListening : () => void startListening()}
+                      className="gap-2"
+                    >
+                      {isListening ? <MicOff className="size-4" /> : <Mic className="size-4" />}
+                      {isListening ? "Đang lắng nghe... Bấm dừng" : "Bật micro luyện nói"}
+                    </Button>
+                  ) : (
+                    <span className="text-xs text-muted-foreground">
+                      Trình duyệt chưa bật nhận dạng giọng nói tự động.
+                    </span>
+                  )}
+                </div>
+
+                {isListening && spokenTranscript && (
+                  <p className="text-center text-sm text-primary font-medium">
+                    Nhận diện: &ldquo;{spokenTranscript}&rdquo;
+                  </p>
+                )}
+
+                {/* Manual Fallback Option (Always available!) */}
+                <div className="p-4 rounded-xl border border-dashed border-border bg-muted/30 text-center space-y-2">
+                  <p className="text-xs text-muted-foreground font-medium">
+                    Hoặc tự đánh giá độ trôi chảy (Chế độ luyện thủ công):
+                  </p>
+                  <div className="flex justify-center gap-2">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleShadowingComplete(true)}
+                      className="text-xs text-emerald-600 hover:text-emerald-700"
+                    >
+                      ✓ Tôi đã đọc to &amp; chuẩn
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleShadowingComplete(false)}
+                      className="text-xs text-rose-600 hover:text-rose-700"
+                    >
+                      ✕ Cần luyện tập thêm
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 9. Standard Options Grid (Vocab MCQ, Grammar Choice, Dialogue, Reading MCQ, Fill Blank) */}
+        {currentExercise.options &&
+          currentExercise.options.length > 0 &&
+          currentExercise.kind !== "sentence-order" &&
+          currentExercise.kind !== "matching" &&
+          currentExercise.kind !== "matching_pairs" &&
+          currentExercise.kind !== "listening_dictation" &&
+          currentExercise.kind !== "reading_true_false" &&
+          currentExercise.kind !== "sentence_shadowing" && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {currentExercise.options.map((opt) => {
+                const isSelected = selectedOptionId === opt.id;
+                let btnStyle = "border-border bg-card hover:bg-muted text-foreground";
+
+                if (isAnswered) {
+                  if (opt.isCorrect) {
+                    btnStyle = "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400";
+                  } else if (isSelected) {
+                    btnStyle = "border-rose-500 bg-rose-500/10 text-rose-600 dark:text-rose-400";
+                  } else {
+                    btnStyle = "opacity-40 border-border bg-muted/30";
+                  }
+                }
+
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    disabled={isAnswered}
+                    onClick={() => handleSelectOption(opt)}
+                    className={`flex items-center justify-between p-4 rounded-xl border text-left text-sm font-medium transition-all ${btnStyle}`}
+                  >
+                    <span>{opt.label}</span>
+                    {isAnswered && opt.isCorrect && (
+                      <CheckCircle2 className="size-4 shrink-0 text-emerald-500 ml-2" />
+                    )}
+                    {isAnswered && isSelected && !opt.isCorrect && (
+                      <XCircle className="size-4 shrink-0 text-rose-500 ml-2" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
+          )}
+
+        {/* Answer Feedback Banner */}
+        {isAnswered && (
+          <div
+            className={`p-4 rounded-xl border flex items-start gap-3 transition-all ${
+              isCorrect
+                ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300"
+                : "bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-300"
+            }`}
+          >
+            {isCorrect ? (
+              <CheckCircle2 className="size-5 shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5" />
+            ) : (
+              <XCircle className="size-5 shrink-0 text-rose-600 dark:text-rose-400 mt-0.5" />
+            )}
+            <div className="space-y-1 text-sm">
+              <p className="font-semibold">
+                {isCorrect ? "Chính xác! Làm rất tốt." : "Chưa chính xác!"}
+              </p>
+              {currentExercise.options?.find((o) => o.id === selectedOptionId)?.explanationVi && (
+                <p className="text-xs opacity-90">
+                  {currentExercise.options.find((o) => o.id === selectedOptionId)?.explanationVi}
+                </p>
+              )}
+              {currentExercise.trueFalseStatement?.explanationVi && (
+                <p className="text-xs opacity-90">{currentExercise.trueFalseStatement.explanationVi}</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Next / Continue Button */}
+        {isAnswered && (
+          <div className="flex justify-end pt-2">
+            <Button type="button" onClick={handleNext} className="gap-2">
+              <span>{currentIndex + 1 < exercises.length ? "Câu tiếp theo" : "Xem kết quả"}</span>
+              <ArrowRight className="size-4" />
+            </Button>
           </div>
         )}
       </CardContent>

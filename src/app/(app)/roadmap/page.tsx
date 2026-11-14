@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, CheckCircle2, ChevronDown, Clock3 } from "lucide-react";
+import { BookOpen, CheckCircle2, ChevronDown, Clock3, Sparkles } from "lucide-react";
 import { getCurriculum } from "@/features/roadmap/queries";
 import { buildRoadmap } from "@/features/roadmap/model";
 import { PageHeading } from "@/components/page-heading";
@@ -26,6 +26,39 @@ export default async function Roadmap() {
           · {c.syllabus.code}
         </p>
       )}
+
+      {/* 9-Stage Interactive Lessons Banner */}
+      <div className="mb-8 p-5 sm:p-6 rounded-2xl border border-primary/30 bg-primary/5 shadow-xs space-y-3">
+        <div className="flex items-center gap-2">
+          <Sparkles className="size-5 text-primary" />
+          <h2 className="text-base font-bold text-foreground">
+            Lộ trình Tương tác 9 Giai đoạn (HSK 1 Chuẩn 2025)
+          </h2>
+        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Trải nghiệm mô hình học 9 bước toàn diện: Khởi động ngữ âm → Từ vựng → Bài tập nối từ → Ngữ pháp → Hội thoại đóng vai → Luyện nghe ẩn transcript → Luyện nhại âm shadowing (kèm chế độ thủ công) → Đọc hiểu Đúng/Sai → Mini Quiz → Thẻ ôn tập SRS.
+        </p>
+        <div className="flex flex-wrap gap-2 pt-1">
+          <Link
+            href="/lessons/stage/hsk1-lesson-01"
+            className="inline-flex items-center px-3.5 py-2 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 shadow-xs"
+          >
+            Bài 1: Chào hỏi &amp; Tự giới thiệu
+          </Link>
+          <Link
+            href="/lessons/stage/hsk1-lesson-05"
+            className="inline-flex items-center px-3.5 py-2 rounded-xl border border-border bg-card text-xs font-semibold text-foreground hover:bg-muted shadow-xs"
+          >
+            Bài 5: Gia đình &amp; Nghề nghiệp
+          </Link>
+          <Link
+            href="/lessons/stage/hsk1-lesson-06"
+            className="inline-flex items-center px-3.5 py-2 rounded-xl border border-border bg-card text-xs font-semibold text-foreground hover:bg-muted shadow-xs"
+          >
+            Bài 6: Bây giờ là mấy giờ?
+          </Link>
+        </div>
+      </div>
       <div className="space-y-5">
         {levels.map((l) => (
           <Card key={l.level}>

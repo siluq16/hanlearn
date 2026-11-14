@@ -1,12 +1,18 @@
 {
-  "total_unique_words": 3685,
+  "total_unique_words": 3682,
   "breakdown": {
-    "hsk1": 496,
-    "hsk2": 764,
-    "hsk3": 970,
-    "hsk4": 997,
+    "hsk1": 500,
+    "hsk2": 769,
+    "hsk3": 972,
+    "hsk4": 999,
     "hsk5": 1300
   },
+  "hsk1_curriculum_breakdown": {
+    "hsk_2025_exam_core": 300,
+    "gf0025_2021_extended": 200,
+    "total": 500
+  },
+  "cross_level_duplicates_count": 842,
   "dialogues_summary": {
     "total_lessons": 100,
     "total_turns": 1629,
@@ -16,6 +22,7 @@
       "hsk3": 25,
       "hsk4": 20,
       "hsk5": 10
-    }
+    },
+    "policy_status": "DRAFT_RESTRICTED_SERVER_ONLY"
   }
 }

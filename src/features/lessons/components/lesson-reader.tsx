@@ -8,6 +8,9 @@ import { stopMandarin } from "@/lib/mandarin-speech";
 import type { ReaderContent, ReaderGrammar, ReaderWord } from "./reader-types";
 import { ContentProvenance } from "./provenance";
 import { SectionNavigation } from "./section-navigation";
+import { findNineStageLesson } from "@/features/content-library/curriculum-data";
+import { NineStageReader } from "./nine-stage-reader";
+import { Sparkles, BookOpen } from "lucide-react";
 
 function Example({
   value,
@@ -161,8 +164,11 @@ function GrammarCard({
     </Card>
   );
 }
-export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
+export function LessonReader({ content, vocabulary, grammar, lessonId }: ReaderContent) {
   const [showPinyin, setShowPinyin] = useState(true);
+  const [learningMode, setLearningMode] = useState<"standard" | "interactive">("standard");
+
+  const nineStage = lessonId ? findNineStageLesson(lessonId) : null;
 
   useEffect(() => {
     return () => {
@@ -181,22 +187,66 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
   );
   const remainingWords = vocabulary.filter((w) => !usedWords.has(w.id)),
     remainingGrammar = grammar.filter((g) => !usedGrammar.has(g.id));
+
   return (
     <div className="min-w-0 space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-muted p-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="text-sm font-medium">Tốc độ phát âm:</p>
-          <MandarinSpeedToggle />
+      {/* 9-Stage Interactive Curriculum Mode Switcher */}
+      {nineStage && (
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl border border-primary/30 bg-primary/5 shadow-xs">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <Sparkles className="size-4 text-primary" />
+              <p className="text-sm font-bold text-foreground">
+                Đã có Lộ trình Tương tác 9 Giai đoạn (Interactive Curriculum)
+              </p>
+            </div>
+            <p className="text-xs text-muted-foreground max-w-xl">
+              Học toàn diện: Khởi động ngữ âm → Từ vựng → Bài tập → Ngữ pháp → Hội thoại đóng vai → Nghe &amp; Nói → Đọc hiểu → Quiz → Thẻ SRS.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              size="sm"
+              variant={learningMode === "standard" ? "default" : "outline"}
+              onClick={() => setLearningMode("standard")}
+              className="text-xs"
+            >
+              <BookOpen className="size-3.5 mr-1.5" />
+              Đọc tiêu chuẩn
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              variant={learningMode === "interactive" ? "default" : "outline"}
+              onClick={() => setLearningMode("interactive")}
+              className="text-xs"
+            >
+              <Sparkles className="size-3.5 mr-1.5" />
+              Luyện 9 giai đoạn
+            </Button>
+          </div>
         </div>
-        <Button
-          type="button"
-          variant="outline"
-          aria-pressed={showPinyin}
-          onClick={() => setShowPinyin((v) => !v)}
-        >
-          Hiển thị pinyin
-        </Button>
-      </div>
+      )}
+
+      {learningMode === "interactive" && nineStage ? (
+        <NineStageReader lesson={nineStage} />
+      ) : (
+        <>
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-muted p-4">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-sm font-medium">Tốc độ phát âm:</p>
+              <MandarinSpeedToggle />
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              aria-pressed={showPinyin}
+              onClick={() => setShowPinyin((v) => !v)}
+            >
+              Hiển thị pinyin
+            </Button>
+          </div>
       {vocabulary.length > 0 && (
         <p
           data-vocabulary-audio-notice
@@ -295,6 +345,8 @@ export function LessonReader({ content, vocabulary, grammar }: ReaderContent) {
             <GrammarCard key={g.id} grammar={g} showPinyin={showPinyin} />
           ))}
         </section>
+      )}
+        </>
       )}
     </div>
   );

@@ -17,4 +17,5 @@ export type ReaderContent = {
   content: LessonBundle["content"];
   vocabulary: ReaderWord[];
   grammar: ReaderGrammar[];
+  lessonId?: string;
 };

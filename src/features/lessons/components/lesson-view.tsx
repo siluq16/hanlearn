@@ -95,6 +95,7 @@ export function LessonView({
           content={bundle.content}
           vocabulary={bundle.vocabulary}
           grammar={bundle.grammar}
+          lessonId={lesson.id}
         />
         <aside
           id="lesson-progress"

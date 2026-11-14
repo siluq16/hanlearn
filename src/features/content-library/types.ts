@@ -5,8 +5,13 @@
  */
 
 export type HskLevel = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-export type QualityStatus = "VERIFIED" | "NEEDS_REVIEW" | "DRAFT" | "REJECTED";
-export type CurriculumVersion = "hsk2.0" | "hsk3.0" | "pilot_r3";
+export type QualityStatus = "VERIFIED" | "NEEDS_REVIEW" | "DRAFT" | "REJECTED" | "UNVERIFIED_AUTOMATED";
+export type CurriculumVersion =
+  | "hsk2.0"
+  | "hsk3.0"
+  | "pilot_r3"
+  | "GF0025_2021"
+  | "HSK_EXAM_2025";
 
 export interface SourceReference {
   document: string;
@@ -30,6 +35,7 @@ export interface LibraryVocabulary {
   curriculumVersion: CurriculumVersion;
   isOfficialHsk: boolean;
   isSupplemental: boolean;
+  isHsk2025Core?: boolean;
   exampleSentence?: {
     hanzi: string;
     pinyin: string;
@@ -81,6 +87,7 @@ export interface LibraryDialogue {
   difficultyScore: number; // 1 to 5
   turns: DialogueTurn[];
   qualityStatus: QualityStatus;
+  clientBundling?: "SERVER_DRAFT_ONLY" | "APPROVED_CLIENT";
   sourceRef: SourceReference;
 }
 
@@ -100,17 +107,23 @@ export interface LibraryReadingPassage {
   sourceRef: SourceReference;
 }
 
-// 5. Interactive Exercise Types
+// 5. Interactive Exercise Types (Extended Sprint 8B)
 export type ExerciseKind =
-  | "vocab-mcq"          // Trắc nghiệm từ vựng
-  | "matching"           // Ghép cặp (Hanzi - Pinyin - Nghĩa)
-  | "fill-blank"          // Điền từ vào chỗ trống
-  | "sentence-order"      // Sắp xếp các khối từ thành câu hoàn chỉnh
-  | "grammar-choice"      // Chọn cấu trúc ngữ pháp đúng
-  | "listen-fill"         // Nghe âm thanh và điền từ
-  | "dialogue-response"   // Chọn câu đáp thích hợp trong ngữ cảnh hội thoại
-  | "reading-mcq"         // Đọc hiểu trắc nghiệm
-  | "reading-true-false"; // Đúng/Sai theo đoạn văn
+  | "vocab-mcq"
+  | "matching"
+  | "matching_pairs"
+  | "fill-blank"
+  | "sentence-order"
+  | "grammar-choice"
+  | "grammar_fill_blank"
+  | "listen-fill"
+  | "listening_cloze"
+  | "listening_dictation"
+  | "dialogue-response"
+  | "dialogue_roleplay"
+  | "reading-mcq"
+  | "reading_true_false"
+  | "sentence_shadowing";
 
 export interface ExerciseOption {
   id: string;
@@ -130,6 +143,8 @@ export interface LibraryExercise {
     hanzi?: string;
     pinyin?: string;
     audioText?: string;
+    translationVi?: string;
+    speaker?: string;
   };
   options?: ExerciseOption[];
   // For matching exercises:
@@ -145,9 +160,21 @@ export interface LibraryExercise {
     text: string;
     correctIndex: number;
   }[];
-  // For fill-in-the-blank:
+  // For fill-in-the-blank & cloze:
   blankTemplate?: string; // e.g. "我叫王明华，是你的新____。"
   expectedAnswer?: string;
+  // For reading comprehension questions:
+  readingPassage?: {
+    title: string;
+    text: string;
+    translationVi?: string;
+  };
+  // For true/false evaluation:
+  trueFalseStatement?: {
+    statement: string;
+    isTrue: boolean;
+    explanationVi: string;
+  };
   qualityStatus: QualityStatus;
   sourceRef: SourceReference;
 }

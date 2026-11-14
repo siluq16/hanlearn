@@ -8,8 +8,11 @@
     "example_zh_py": "我爱我的家人。Wǒ ài wǒ de jiārén.",
     "example_vi": "Tôi yêu gia đình của mình.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 2,
@@ -20,8 +23,11 @@
     "example_zh_py": "唱歌是我的爱好。Chàngg ē shì wǒ de àihào.",
     "example_vi": "Ca hát là sở thích của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 3,
@@ -32,8 +38,11 @@
     "example_zh_py": "他八岁了。Tā bā suì le.",
     "example_vi": "Cậu ấy tám tuổi rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 4,
@@ -44,8 +53,11 @@
     "example_zh_py": "我爸爸是医生。Wǒ bàba shì yīshēng.",
     "example_vi": "Bố tôi là bác sĩ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 5,
@@ -56,8 +68,11 @@
     "example_zh_py": "我们走吧。Wǒmen zǒu ba.",
     "example_vi": "Chúng ta đi thôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 6,
@@ -68,8 +83,11 @@
     "example_zh_py": "雪是白色的。Xuě shì báisè de.",
     "example_vi": "Tuyết có màu trắng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 7,
@@ -80,8 +98,11 @@
     "example_zh_py": "我白天上班。Wǒ báitiān shàngbān.",
     "example_vi": "Tôi đi làm ban ngày.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 8,
@@ -92,8 +113,11 @@
     "example_zh_py": "我有一百块钱。Wǒ yǒu yì bǎi kuài qián.",
     "example_vi": "Tôi có một trăm tệ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 9,
@@ -104,8 +128,11 @@
     "example_zh_py": "我们是一个班的。Wǒmen shì yí gè bān de.",
     "example_vi": "Chúng tôi học cùng lớp.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 10,
@@ -116,8 +143,11 @@
     "example_zh_py": "现在是三点半。Xiànzài shì sān diǎn bàn.",
     "example_vi": "Bây giờ là ba rưỡi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 11,
@@ -128,8 +158,11 @@
     "example_zh_py": "我已经学了半年。Wǒ yǐjīng xué le bàn nián.",
     "example_vi": "Tôi đã học được nửa năm. TỪ VỰNG TIẾNG TRUNG THEO CHƯƠNG TRÌNH HSK 9 CẤP ( 3.0) TỪ VỰNG HSK 1 - KÈM CÂU VÍ DỤ ( SOẠN BỞI TIKTOK : THÍCH HỌC TIẾNG TRUNG ĐÀI )",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 12,
@@ -140,8 +173,11 @@
     "example_zh_py": "我只休息了半天。Wǒ zhǐ xiūxi le bàn tiān.",
     "example_vi": "Tôi chỉ nghỉ nửa ngày.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 13,
@@ -152,8 +188,11 @@
     "example_zh_py": "请帮我一下。Qǐng bāng wǒ yíxià.",
     "example_vi": "Làm ơn giúp tôi một chút.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 14,
@@ -164,8 +203,11 @@
     "example_zh_py": "他正在帮忙。Tā zhèngzài bāngmáng.",
     "example_vi": "Anh ấy đang giúp đỡ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 15,
@@ -176,8 +218,11 @@
     "example_zh_py": "我买了一个包。Wǒ mǎi le yí gè bāo.",
     "example_vi": "Tôi đã mua một cái túi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 16,
@@ -188,8 +233,11 @@
     "example_zh_py": "我喜欢吃包子。Wǒ xǐhuan chī bāozi.",
     "example_vi": "Tôi thích ăn bánh bao.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 17,
@@ -200,8 +248,11 @@
     "example_zh_py": "请给我一杯水。Qǐng gěi wǒ yì bēi shuǐ.",
     "example_vi": "Làm ơn cho tôi một cốc nước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 18,
@@ -212,8 +263,11 @@
     "example_zh_py": "杯子在桌子上。Bēizi zài zhuōzi shàng.",
     "example_vi": "Cái cốc ở trên bàn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 19,
@@ -224,8 +278,11 @@
     "example_zh_py": "中国在北边。Zhōngguó zài běibiān.",
     "example_vi": "Trung Quốc nằm ở phía bắc.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 20,
@@ -236,8 +293,11 @@
     "example_zh_py": "他住在学校北边。Tā zhù zài xuéxiào běibiān.",
     "example_vi": "Anh ấy sống ở phía bắc trường học.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 21,
@@ -248,8 +308,11 @@
     "example_zh_py": "我想去北京旅行。Wǒ xiǎng qù Běijīng lǚxíng.",
     "example_vi": "Tôi muốn đi du lịch Bắc Kinh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 22,
@@ -260,8 +323,11 @@
     "example_zh_py": "我买了三本书。Wǒ mǎi le sān běn shū.",
     "example_vi": "Tôi đã mua ba quyển sách.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 23,
@@ -272,8 +338,11 @@
     "example_zh_py": "这个本子很漂亮。Zhè ge běnzi hěn piàoliang.",
     "example_vi": "Quyển vở này rất đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 24,
@@ -284,8 +353,11 @@
     "example_zh_py": "他比我高。Tā bǐ wǒ gāo.",
     "example_vi": "Anh ấy cao hơn tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 25,
@@ -296,8 +368,11 @@
     "example_zh_py": "别说话。Bié shuōhuà.",
     "example_vi": "Đừng nói chuyện.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 26,
@@ -308,8 +383,11 @@
     "example_zh_py": "你有别的颜色吗？Nǐ yǒu bié de yánsè ma?",
     "example_vi": "Bạn có màu khác không?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 27,
@@ -320,8 +398,11 @@
     "example_zh_py": "他们是别人家的孩子。Tā men shì biérén jiā de háizi.",
     "example_vi": "Họ là con của người khác.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 28,
@@ -332,8 +413,11 @@
     "example_zh_py": "我生病了。Wǒ shēngbìng le.",
     "example_vi": "Tôi bị ốm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 29,
@@ -344,8 +428,11 @@
     "example_zh_py": "医生正在看病人。Yīshēn g zhèngzài kànbìngrén.",
     "example_vi": "Bác sĩ đang khám cho bệnh nhân.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 30,
@@ -356,8 +443,11 @@
     "example_zh_py": "这个房间不大。Zhège fángjiān bú dà.",
     "example_vi": "Căn phòng này không lớn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 31,
@@ -368,8 +458,11 @@
     "example_zh_py": "这不对。Zhè bú duì.",
     "example_vi": "Điều đó không đúng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 32,
@@ -380,8 +473,11 @@
     "example_zh_py": "不客气。Bú kèqi.",
     "example_vi": "Không có gì.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 33,
@@ -392,8 +488,11 @@
     "example_zh_py": "你不用来了。Nǐ bú yòng lái le.",
     "example_vi": "Bạn không cần đến nữa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 34,
@@ -404,8 +503,11 @@
     "example_zh_py": "我不去。Wǒ bù qù.",
     "example_vi": "Tôi không đi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 35,
@@ -416,8 +518,11 @@
     "example_zh_py": "这道菜很好吃。Zhè dào cài hěn hǎochī.",
     "example_vi": "Món ăn này rất ngon.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 36,
@@ -428,8 +533,11 @@
     "example_zh_py": "我想喝茶。Wǒ xiǎng hē chá.",
     "example_vi": "Tôi muốn uống trà.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 37,
@@ -440,8 +548,11 @@
     "example_zh_py": "成绩差了一点。Chéngjì chà le yìdiǎn.",
     "example_vi": "Thành tích kém một chút.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 38,
@@ -452,8 +563,11 @@
     "example_zh_py": "他常来看我。Tā cháng lái kàn wǒ.",
     "example_vi": "Anh ấy thường đến thăm tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 39,
@@ -464,8 +578,11 @@
     "example_zh_py": "她常常锻炼身体。Tā chángcháng duànliàn shēntǐ.",
     "example_vi": "Cô ấy thường xuyên tập thể dục.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 40,
@@ -476,8 +593,11 @@
     "example_zh_py": "我喜欢唱歌。Wǒ xǐhuan chànggē.",
     "example_vi": "Tôi thích hát.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 41,
@@ -488,8 +608,11 @@
     "example_zh_py": "她在唱一首歌。Tā zài chàng yì shǒu gē.",
     "example_vi": "Cô ấy đang hát một bài hát.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 42,
@@ -500,8 +623,11 @@
     "example_zh_py": "我有一辆车。Wǒ yǒu yí liàng chē.",
     "example_vi": "Tôi có một chiếc xe.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 43,
@@ -512,8 +638,11 @@
     "example_zh_py": "我买了车票。Wǒ mǎi le chēpiào.",
     "example_vi": "Tôi đã mua vé xe.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 44,
@@ -524,8 +653,11 @@
     "example_zh_py": "他在车上睡觉。Tā zài chē shàng shuìjiào.",
     "example_vi": "Anh ấy đang ngủ trên xe.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 45,
@@ -536,8 +668,11 @@
     "example_zh_py": "我们到了车站。Wǒmen dào le chēzhàn.",
     "example_vi": "Chúng tôi đã đến bến xe.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 46,
@@ -548,8 +683,11 @@
     "example_zh_py": "我想吃苹果。Wǒ xiǎng chī píngguǒ.",
     "example_vi": "Tôi muốn ăn táo.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 47,
@@ -560,8 +698,11 @@
     "example_zh_py": "我们一起吃饭吧。Wǒmen yìqǐ chīfàn ba.",
     "example_vi": "Chúng ta cùng ăn cơm nhé.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 48,
@@ -572,8 +713,11 @@
     "example_zh_py": "他出去了。Tā chūqù le.",
     "example_vi": "Anh ấy đã ra ngoài.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 49,
@@ -584,8 +728,11 @@
     "example_zh_py": "她出来买东西。Tā chūlái mǎi dōngxi.",
     "example_vi": "Cô ấy ra ngoài mua đồ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 50,
@@ -596,8 +743,11 @@
     "example_zh_py": "我们明天出去玩。Wǒmen míngtiān chūqù wán.",
     "example_vi": "Ngày mai chúng tôi đi chơi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 51,
@@ -608,8 +758,11 @@
     "example_zh_py": "他每天穿校服。Wǒ měitiān chuān xiàofú.",
     "example_vi": "Hàng ngày anh ấy mặc đồng phục.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 52,
@@ -620,8 +773,11 @@
     "example_zh_py": "我有一张床。Wǒ yǒu yì zhāng chuáng.",
     "example_vi": "Tôi có một cái giường.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 53,
@@ -632,8 +788,11 @@
     "example_zh_py": "我去过两次中国。Wǒ qù guò liǎng cì Zhōngguó.",
     "example_vi": "Tôi đã đến Trung Quốc hai lần.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 54,
@@ -644,8 +803,11 @@
     "example_zh_py": "我从越南来。Wǒ cóng Yuènán lái.",
     "example_vi": "Tôi đến từ Việt Nam.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 55,
@@ -656,8 +818,11 @@
     "example_zh_py": "对不起，我错了。Duìbuq ǐ, wǒ cuò le.",
     "example_vi": "Xin lỗi, tôi sai rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 56,
@@ -668,8 +833,11 @@
     "example_zh_py": "他用手打了球。Tā yòng shǒu dǎ le qiú.",
     "example_vi": "Anh ấy dùng tay đánh bóng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 57,
@@ -680,8 +848,11 @@
     "example_zh_py": "我们打车去机场。Wǒmen dǎchē qù jīchǎng.",
     "example_vi": "Chúng tôi bắt taxi đến sân bay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 58,
@@ -692,8 +863,11 @@
     "example_zh_py": "我在打电话。Wǒ zài dǎ diànhuà.",
     "example_vi": "Tôi đang gọi điện thoại.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 59,
@@ -704,8 +878,11 @@
     "example_zh_py": "请把门打开。Qǐng bǎ mén dǎkāi.",
     "example_vi": "Làm ơn mở cửa ra.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 60,
@@ -716,8 +893,11 @@
     "example_zh_py": "他喜欢打球。Tā xǐhuan dǎqiú.",
     "example_vi": "Anh ấy thích chơi bóng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 61,
@@ -728,8 +908,11 @@
     "example_zh_py": "这只狗很大。Zhè zhī gǒu hěn dà.",
     "example_vi": "Con chó này rất to.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 62,
@@ -740,8 +923,11 @@
     "example_zh_py": "他在大学学习。Tā zài dàxué xuéxí.",
     "example_vi": "Anh ấy học ở đại học.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 63,
@@ -752,8 +938,11 @@
     "example_zh_py": "我哥哥是大学生。Wǒ gēge shì dàxuéshēng.",
     "example_vi": "Anh tôi là sinh viên.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 64,
@@ -764,8 +953,11 @@
     "example_zh_py": "我到家了。Wǒ dào jiā le.",
     "example_vi": "Tôi đã về đến nhà.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 65,
@@ -776,8 +968,11 @@
     "example_zh_py": "我得到了第一名。Wǒ dédào le dì yī míng.",
     "example_vi": "Tôi đã giành được hạng nhất.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 66,
@@ -788,8 +983,11 @@
     "example_zh_py": "他说话很快地讲完了。Tā shuōhuà hěn kuài de jiǎng wán le.",
     "example_vi": "Anh ấy nói xong rất nhanh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 67,
@@ -800,8 +998,11 @@
     "example_zh_py": "这是我的书。Zhè shì wǒ de shū.",
     "example_vi": "Đây là sách của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 68,
@@ -812,8 +1013,11 @@
     "example_zh_py": "请等一下。Qǐng děng yíxià.",
     "example_vi": "Làm ơn đợi một chút.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 69,
@@ -824,8 +1028,11 @@
     "example_zh_py": "地上有很多水。Dìshàng yǒu hěn duō shuǐ.",
     "example_vi": "Trên mặt đất có rất nhiều nước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 70,
@@ -836,8 +1043,11 @@
     "example_zh_py": "我们在这个地点见面。W ǒmen zài zhège dìdiǎn jiànmiàn.",
     "example_vi": "Chúng tôi gặp nhau ở địa điểm này.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 71,
@@ -848,8 +1058,11 @@
     "example_zh_py": "这个地方很漂亮。Zhège dìfang hěn piàoliang.",
     "example_vi": "Nơi này rất đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 72,
@@ -860,8 +1073,11 @@
     "example_zh_py": "钱包掉在地上了。Qiánbā o diào zài dìshàng le.",
     "example_vi": "Ví rơi trên mặt đất.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 73,
@@ -872,8 +1088,11 @@
     "example_zh_py": "我有一张中国地图。Wǒ yǒu yì zhāng Zhōngguó dìtú.",
     "example_vi": "Tôi có một bản đồ Trung Quốc.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 74,
@@ -884,20 +1103,26 @@
     "example_zh_py": "我有两个弟弟。Wǒ yǒu liǎng gè dìdi.",
     "example_vi": "Tôi có hai em trai.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 75,
     "raw_hanzi": "第（第二",
-    "simplified": "第（第二",
+    "simplified": "第",
     "pinyin": "",
     "raw_definition": "） dì （ dì èr ） auxiliary word for ordinal numbers (second ) thứ tự (thứ hai)",
     "example_zh_py": "今天是第二天。Jīntiān shì dì èr tiān.",
     "example_vi": "Hôm nay là ngày thứ hai.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 76,
@@ -908,8 +1133,11 @@
     "example_zh_py": "现在是五点。Xiànzài shì wǔ diǎn.",
     "example_vi": "Bây giờ là 5 giờ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 77,
@@ -920,8 +1148,11 @@
     "example_zh_py": "这台电脑没有电了。Zhè tái diànnǎo méiyǒu diàn le.",
     "example_vi": "Máy tính này hết điện rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 78,
@@ -932,8 +1163,11 @@
     "example_zh_py": "我在打电话给妈妈。Wǒ zài dǎ diànhuà gěi māma.",
     "example_vi": "Tôi đang gọi điện cho mẹ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 79,
@@ -944,8 +1178,11 @@
     "example_zh_py": "他每天用电脑工作。Tā měitiān yòng diànnǎo gōngzuò.",
     "example_vi": "Anh ấy làm việc bằng máy tính.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 80,
@@ -956,8 +1193,11 @@
     "example_zh_py": "我在看电视。Wǒ zài kàn diànshì.",
     "example_vi": "Tôi đang xem",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 81,
@@ -968,8 +1208,11 @@
     "example_zh_py": "这台电视机很大。Zhè tái diànshìjī hěn dà.",
     "example_vi": "Chiếc tivi này rất to.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 82,
@@ -980,8 +1223,11 @@
     "example_zh_py": "我喜欢看电影。Wǒ xǐhuan kàn diànyǐng.",
     "example_vi": "Tôi thích xem phim.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 83,
@@ -992,8 +1238,11 @@
     "example_zh_py": "我们去电影院吧。Wǒmen qù diànyǐngyuàn ba.",
     "example_vi": "Chúng ta đi rạp phim nhé.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 84,
@@ -1004,8 +1253,11 @@
     "example_zh_py": "太阳从东边升起。Tàiyáng cóng dōngbian shēng qǐ.",
     "example_vi": "Mặt trời mọc từ phía đông.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 85,
@@ -1016,8 +1268,11 @@
     "example_zh_py": "我家在东边。Wǒ jiā zài dōngbian.",
     "example_vi": "Nhà tôi ở phía đông.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 86,
@@ -1028,8 +1283,11 @@
     "example_zh_py": "我买了一些东西。Wǒ mǎi le yìxiē dōngxi.",
     "example_vi": "Tôi đã mua vài món đồ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 87,
@@ -1040,8 +1298,11 @@
     "example_zh_py": "他动了一下。Tā dòng le yíxià.",
     "example_vi": "Anh ấy đã di chuyển một chút.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 88,
@@ -1052,8 +1313,11 @@
     "example_zh_py": "这个动作很难。Zhège dòngzuò hěn nán.",
     "example_vi": "Động tác này rất khó.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 89,
@@ -1064,8 +1328,11 @@
     "example_zh_py": "我们都来了。Wǒmen dōu lái le.",
     "example_vi": "Chúng tôi đều đã đến.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 90,
@@ -1076,8 +1343,11 @@
     "example_zh_py": "我每天读书。Wǒ měitiān dúshū.",
     "example_vi": "Tôi đọc sách mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 91,
@@ -1088,8 +1358,11 @@
     "example_zh_py": "他在图书馆读书。Tā zài túshūguǎn dúshū.",
     "example_vi": "Anh ấy đọc sách trong thư viện.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 92,
@@ -1100,8 +1373,11 @@
     "example_zh_py": "你说得对。Nǐ shuō de duì.",
     "example_vi": "Bạn nói đúng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 93,
@@ -1112,8 +1388,26 @@
     "example_zh_py": "对不起，我来晚了。Duìb uqǐ, wǒ lái wǎn le.",
     "example_vi": "Xin lỗi, tôi đến muộn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
+  },
+  {
+    "stt": 94,
+    "raw_hanzi": "多（形、",
+    "simplified": "多",
+    "pinyin": "",
+    "raw_definition": "",
+    "example_zh_py": "代） duō many; much; more nhiều 这里人很多。Zhèlǐ rén hěn duō.",
+    "example_vi": "Ở đây có rất nhiều người.",
+    "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
+    "source": "NEW HSK1 3.0.pdf",
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 95,
@@ -1124,8 +1418,11 @@
     "example_zh_py": "这个多少钱？Zhège duōshao qián?",
     "example_vi": "Cái này bao nhiêu tiền?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 96,
@@ -1136,8 +1433,11 @@
     "example_zh_py": "我很饿。Wǒ hěn è.",
     "example_vi": "Tôi rất đói.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 97,
@@ -1148,8 +1448,11 @@
     "example_zh_py": "他是我儿子。Tā shì wǒ érzi.",
     "example_vi": "Nó là con trai tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 98,
@@ -1160,8 +1463,11 @@
     "example_zh_py": "我有二十块钱。Wǒ yǒu èrshí kuài qián.",
     "example_vi": "Tôi có 20 tệ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 99,
@@ -1172,8 +1478,11 @@
     "example_zh_py": "我吃了很多饭。Wǒ chī le hěn duō fàn.",
     "example_vi": "Tôi đã ăn rất nhiều cơm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 100,
@@ -1184,8 +1493,11 @@
     "example_zh_py": "我们去饭店吃饭吧。Wǒm en qù fàndiàn chīfàn ba.",
     "example_vi": "Chúng ta đi ăn ở nhà hàng nhé.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 101,
@@ -1196,8 +1508,11 @@
     "example_zh_py": "我的房间很大。Wǒ de fángjiān hěn dà.",
     "example_vi": "Phòng của tôi rất rộng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 102,
@@ -1208,8 +1523,11 @@
     "example_zh_py": "这是一栋新房子。Zhè shì yí dòng xīn fángzi.",
     "example_vi": "Đây là một căn nhà mới.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 103,
@@ -1220,8 +1538,11 @@
     "example_zh_py": "请把书放在桌子上。Qǐng bǎ shū fàng zài zhuōzi shàng.",
     "example_vi": "Xin đặt sách lên bàn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 104,
@@ -1232,8 +1553,11 @@
     "example_zh_py": "我们下周放假。Wǒmen xià zhōu fàngjià.",
     "example_vi": "Tuần sau chúng tôi nghỉ lễ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 105,
@@ -1244,8 +1568,11 @@
     "example_zh_py": "孩子们下午四点放学。Há izimen xiàwǔ sì diǎn fàngxué.",
     "example_vi": "Trẻ em tan học lúc 4h chiều.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 106,
@@ -1256,8 +1583,11 @@
     "example_zh_py": "鸟在天上飞。Niǎo zài tiānshàng fēi.",
     "example_vi": "Con chim đang bay trên trời.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 107,
@@ -1268,8 +1598,11 @@
     "example_zh_py": "我坐飞机去北京。Wǒ zuò fēijī qù Běijīng.",
     "example_vi": "Tôi đi Bắc Kinh bằng máy bay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 108,
@@ -1280,8 +1613,26 @@
     "example_zh_py": "我非常喜欢吃苹果。Wǒ fēicháng xǐhuan chī píngguǒ.",
     "example_vi": "Tôi rất thích ăn táo.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
+  },
+  {
+    "stt": 109,
+    "raw_hanzi": "分（名、",
+    "simplified": "分",
+    "pinyin": "",
+    "raw_definition": "",
+    "example_zh_py": "量） fēn minute; point; part; (measure word) phút 我们十点十分见面。Wǒm en shí diǎn shí fēn jiànmiàn.",
+    "example_vi": "Chúng ta gặp nhau lúc 10 giờ 10.",
+    "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
+    "source": "NEW HSK1 3.0.pdf",
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 110,
@@ -1292,8 +1643,11 @@
     "example_zh_py": "今天有风。Jīntiān yǒu fēng.",
     "example_vi": "Hôm nay có gió.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 111,
@@ -1304,8 +1658,11 @@
     "example_zh_py": "我的衣服干了。Wǒ de yīfu gān le.",
     "example_vi": "Quần áo của tôi đã khô rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 112,
@@ -1316,8 +1673,11 @@
     "example_zh_py": "房间很干净。Fángjiān hěn gānjìng.",
     "example_vi": "Phòng rất sạch sẽ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 113,
@@ -1328,8 +1688,11 @@
     "example_zh_py": "你在干什么？Nǐ zài gàn shénme?",
     "example_vi": "Bạn đang làm gì thế?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 114,
@@ -1340,8 +1703,11 @@
     "example_zh_py": "周末你想干什么？Zhōum ò nǐ xiǎng gàn shénme?",
     "example_vi": "Cuối tuần bạn muốn làm gì?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 115,
@@ -1352,8 +1718,11 @@
     "example_zh_py": "他个子很高。Tā gèzi hěn gāo.",
     "example_vi": "Anh ấy rất cao.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 116,
@@ -1364,8 +1733,11 @@
     "example_zh_py": "我今天很高兴。Wǒ jīntiān hěn gāoxìng.",
     "example_vi": "Hôm nay tôi rất vui.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 117,
@@ -1376,8 +1748,11 @@
     "example_zh_py": "请告诉我你的名字。Qǐng gàosu wǒ nǐ de míngzì.",
     "example_vi": "Hãy nói cho tôi biết tên bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 118,
@@ -1388,8 +1763,11 @@
     "example_zh_py": "我有一个哥哥。Wǒ yǒu yí gè gēge.",
     "example_vi": "Tôi có một người anh trai.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 119,
@@ -1400,8 +1778,11 @@
     "example_zh_py": "我喜欢听歌。Wǒ xǐhuan tīng gē.",
     "example_vi": "Tôi thích nghe nhạc.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 120,
@@ -1412,8 +1793,11 @@
     "example_zh_py": "我买了一个苹果。Wǒ mǎile yí gè píngguǒ.",
     "example_vi": "Tôi đã mua một quả táo.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 121,
@@ -1424,8 +1808,11 @@
     "example_zh_py": "请给我一杯水。Qǐng gěi wǒ yì bēi shuǐ.",
     "example_vi": "Làm ơn cho tôi một cốc nước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 122,
@@ -1436,8 +1823,11 @@
     "example_zh_py": "我跟他一起去。Wǒ gēn tā yìqǐ qù.",
     "example_vi": "Tôi đi cùng anh ấy.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 123,
@@ -1448,8 +1838,11 @@
     "example_zh_py": "他是工人。Tā shì gōngrén.",
     "example_vi": "Anh ấy là công nhân.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 124,
@@ -1460,8 +1853,11 @@
     "example_zh_py": "我喜欢我的工作。Wǒ xǐhuan wǒ de gōngzuò.",
     "example_vi": "Tôi thích công việc của mình.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 125,
@@ -1472,8 +1868,11 @@
     "example_zh_py": "请关门。Qǐng guān mén.",
     "example_vi": "Xin hãy đóng cửa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 126,
@@ -1484,8 +1883,11 @@
     "example_zh_py": "请把窗户关上。Qǐng bǎ chuānghu guān shàng.",
     "example_vi": "Hãy đóng cửa sổ lại.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 127,
@@ -1496,8 +1898,11 @@
     "example_zh_py": "这个太贵了。Zhège tài guì le.",
     "example_vi": "Cái này đắt quá.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 128,
@@ -1508,8 +1913,11 @@
     "example_zh_py": "我爱我的国家。Wǒ ài wǒ de guójiā.",
     "example_vi": "Tôi yêu đất nước của mình.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 129,
@@ -1520,8 +1928,11 @@
     "example_zh_py": "中国是一个大国家。Zhōn gguó shì yí gè dà guójiā.",
     "example_vi": "Trung Quốc là một quốc gia lớn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 130,
@@ -1532,8 +1943,11 @@
     "example_zh_py": "他在国外工作。Tā zài guówài gōngzuò.",
     "example_vi": "Anh ấy làm việc ở nước ngoài.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 131,
@@ -1544,8 +1958,11 @@
     "example_zh_py": "火车过来了。Huǒchē guò lái le.",
     "example_vi": "Tàu hỏa đã chạy qua.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 132,
@@ -1556,8 +1973,11 @@
     "example_zh_py": "他还没来。Tā hái méi lái.",
     "example_vi": "Anh ấy vẫn chưa đến.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 133,
@@ -1568,8 +1988,11 @@
     "example_zh_py": "你喝茶还是咖啡？Nǐ hē chá háishi kāfēi?",
     "example_vi": "Bạn uống trà hay cà phê?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 134,
@@ -1580,8 +2003,11 @@
     "example_zh_py": "我还有两个问题。Wǒ hái yǒu liǎng gè wèntí.",
     "example_vi": "Tôi còn hai câu hỏi nữa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 135,
@@ -1592,8 +2018,11 @@
     "example_zh_py": "孩子们在玩。Háizimen zài wán.",
     "example_vi": "Lũ trẻ đang chơi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 136,
@@ -1604,8 +2033,11 @@
     "example_zh_py": "我在学汉语。Wǒ zài xué Hànyǔ.",
     "example_vi": "Tôi đang học tiếng Trung.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 137,
@@ -1616,8 +2048,11 @@
     "example_zh_py": "我会写很多汉字。Wǒ huì xiě hěn duō hànzì.",
     "example_vi": "Tôi viết được nhiều chữ Hán.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 138,
@@ -1628,8 +2063,11 @@
     "example_zh_py": "他是个好人。Tā shì gè hǎo rén.",
     "example_vi": "Anh ấy là người tốt.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 139,
@@ -1640,8 +2078,11 @@
     "example_zh_py": "这个菜很好吃。Zhège cài hěn hǎochī.",
     "example_vi": "Món này rất ngon.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 140,
@@ -1652,8 +2093,11 @@
     "example_zh_py": "这本书很好看。Zhè běn shū hěn hǎokàn.",
     "example_vi": "Cuốn sách này rất hay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 141,
@@ -1664,8 +2108,11 @@
     "example_zh_py": "这首歌很好听。Zhè shǒu gē hěn hǎotīng.",
     "example_vi": "Bài hát này rất hay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 142,
@@ -1676,8 +2123,11 @@
     "example_zh_py": "动物园很好玩儿。Dòngw ùyuán hěn hǎowánr.",
     "example_vi": "Vườn thú rất thú vị.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 143,
@@ -1688,8 +2138,11 @@
     "example_zh_py": "今天是几号？Jīntiān shì jǐ hào?",
     "example_vi": "Hôm nay là ngày mấy?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 144,
@@ -1700,8 +2153,11 @@
     "example_zh_py": "我想喝水。Wǒ xiǎng hē shuǐ.",
     "example_vi": "Tôi muốn uống nước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 145,
@@ -1712,8 +2168,11 @@
     "example_zh_py": "我和朋友一起吃饭。Wǒ hé péngyou yìqǐ chīfàn.",
     "example_vi": "Tôi ăn cùng bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 146,
@@ -1724,8 +2183,11 @@
     "example_zh_py": "他很高兴。Tā hěn gāoxìng.",
     "example_vi": "Anh ấy rất vui.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 147,
@@ -1736,8 +2198,11 @@
     "example_zh_py": "吃饭后我们去公园。Chīfà n hòu wǒmen qù gōngyuán.",
     "example_vi": "Sau khi ăn, chúng tôi đi công viên.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 148,
@@ -1748,8 +2213,11 @@
     "example_zh_py": "车在楼后边。Chē zài lóu hòubian.",
     "example_vi": "Xe ở phía sau tòa nhà.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 149,
@@ -1760,8 +2228,11 @@
     "example_zh_py": "我后天去旅行。Wǒ hòutiān qù lǚxíng.",
     "example_vi": "Tôi sẽ đi du lịch vào ngày kia.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 150,
@@ -1772,8 +2243,11 @@
     "example_zh_py": "花很漂亮。Huā hěn piàoliang.",
     "example_vi": "Hoa rất đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 151,
@@ -1784,8 +2258,11 @@
     "example_zh_py": "他说了一句话。Tā shuō le yí jù huà.",
     "example_vi": "Anh ấy nói một câu.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 152,
@@ -1796,8 +2273,11 @@
     "example_zh_py": "我的手机坏了。Wǒ de shǒujī huài le.",
     "example_vi": "Điện thoại của tôi bị hỏng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 153,
@@ -1808,8 +2288,11 @@
     "example_zh_py": "请把书还给我。Qǐng bǎ shū huán gěi wǒ.",
     "example_vi": "Xin hãy trả sách cho tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 154,
@@ -1820,8 +2303,11 @@
     "example_zh_py": "他回家了。Tā huí jiā le.",
     "example_vi": "Anh ấy đã về nhà.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 155,
@@ -1832,8 +2318,11 @@
     "example_zh_py": "请你回答我的问题。Qǐng nǐ huídá wǒ de wèntí.",
     "example_vi": "Hãy trả lời câu hỏi của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 156,
@@ -1844,8 +2333,11 @@
     "example_zh_py": "我回到了北京。Wǒ huí dào le Běijīng.",
     "example_vi": "Tôi đã quay lại Bắc Kinh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 157,
@@ -1856,8 +2348,11 @@
     "example_zh_py": "我每天六点回家。Wǒ měitiān liù diǎn huí jiā.",
     "example_vi": "Tôi về nhà lúc 6 giờ mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 158,
@@ -1868,8 +2363,11 @@
     "example_zh_py": "他刚回来。Tā gāng huí lái.",
     "example_vi": "Anh ấy vừa mới về.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 159,
@@ -1880,8 +2378,11 @@
     "example_zh_py": "我得回去了。Wǒ děi huí qù le.",
     "example_vi": "Tôi phải về rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 160,
@@ -1892,8 +2393,11 @@
     "example_zh_py": "我会说汉语。Wǒ huì shuō Hànyǔ.",
     "example_vi": "Tôi biết nói tiếng Trung.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 161,
@@ -1904,8 +2408,11 @@
     "example_zh_py": "火车来了。Huǒchē lái le.",
     "example_vi": "Tàu đã đến.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 162,
@@ -1916,8 +2423,11 @@
     "example_zh_py": "我在机场等你。Wǒ zài jīchǎng děng nǐ.",
     "example_vi": "Tôi đợi bạn ở sân bay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 163,
@@ -1928,8 +2438,11 @@
     "example_zh_py": "我买了机票。Wǒ mǎile jīpiào.",
     "example_vi": "Tôi đã mua vé máy bay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 164,
@@ -1940,8 +2453,11 @@
     "example_zh_py": "我吃了两个鸡蛋。Wǒ chī le liǎng gè jīdàn.",
     "example_vi": "Tôi ăn hai quả trứng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 165,
@@ -1952,8 +2468,11 @@
     "example_zh_py": "你有几个孩子？Nǐ yǒu jǐ gè háizi?",
     "example_vi": "Bạn có mấy đứa con?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 166,
@@ -1964,8 +2483,11 @@
     "example_zh_py": "请记下来。Qǐng jì xiàlái.",
     "example_vi": "Hãy ghi lại.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 167,
@@ -1976,8 +2498,11 @@
     "example_zh_py": "我记得他。Wǒ jìdé tā.",
     "example_vi": "Tôi nhớ anh ấy.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 168,
@@ -1988,8 +2513,11 @@
     "example_zh_py": "请记住这个号码。Qǐng jì zhù zhège hàomǎ.",
     "example_vi": "Hãy nhớ kỹ số này.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 169,
@@ -2000,8 +2528,11 @@
     "example_zh_py": "我家在上海。Wǒ jiā zài Shànghǎi.",
     "example_vi": "Nhà tôi ở Thượng Hải.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 170,
@@ -2012,8 +2543,11 @@
     "example_zh_py": "他在家里看电视。Tā zài jiālǐ kàn diànshì.",
     "example_vi": "Anh ấy xem tivi ở nhà.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 171,
@@ -2024,8 +2558,11 @@
     "example_zh_py": "我的家人都很亲。Wǒ de jiārén dōu hěn qīn.",
     "example_vi": "Gia đình tôi rất thân thiết.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 172,
@@ -2036,8 +2573,11 @@
     "example_zh_py": "这是一间教室。Zhè shì yì jiān jiàoshì.",
     "example_vi": "Đây là một phòng học.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 173,
@@ -2048,8 +2588,11 @@
     "example_zh_py": "我昨天见了他。Wǒ zuótiān jiàn le tā.",
     "example_vi": "Tôi đã gặp anh ấy hôm qua.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 174,
@@ -2060,8 +2603,11 @@
     "example_zh_py": "我们明天见面。Wǒmen míngtiān jiànmiàn.",
     "example_vi": "Chúng ta gặp nhau ngày mai nhé.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 175,
@@ -2072,8 +2618,11 @@
     "example_zh_py": "他教我们英语。Tā jiāo wǒmen Yīngyǔ.",
     "example_vi": "Anh ấy dạy chúng tôi tiếng Anh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 176,
@@ -2084,8 +2633,11 @@
     "example_zh_py": "我叫李华。Wǒ jiào Lǐ Huá.",
     "example_vi": "Tôi tên là Lý Hoa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 177,
@@ -2096,8 +2648,11 @@
     "example_zh_py": "教学楼在前边。Jiàoxuéló u zài qiánbian.",
     "example_vi": "Tòa nhà giảng dạy ở phía trước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 178,
@@ -2108,8 +2663,11 @@
     "example_zh_py": "我有两个姐姐。Wǒ yǒu liǎng gè jiějie.",
     "example_vi": "Tôi có hai chị gái.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 179,
@@ -2120,8 +2678,11 @@
     "example_zh_py": "请介绍一下你自己。Qǐng jièshào yíxià nǐ zìjǐ.",
     "example_vi": "Hãy giới thiệu về bản thân bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 180,
@@ -2132,8 +2693,11 @@
     "example_zh_py": "今年我上大学。Jīnnián wǒ shàng dàxué.",
     "example_vi": "Năm nay tôi vào đại học.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 181,
@@ -2144,8 +2708,11 @@
     "example_zh_py": "今天是星期三。Jīntiān shì xīngqīsān.",
     "example_vi": "Hôm nay là thứ Tư.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 182,
@@ -2156,8 +2723,11 @@
     "example_zh_py": "请进来！Qǐng jìnlái!",
     "example_vi": "Mời vào!",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 183,
@@ -2168,8 +2738,11 @@
     "example_zh_py": "他刚进来了。Tā gāng jìnlái le.",
     "example_vi": "Anh ấy vừa bước vào.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 184,
@@ -2180,8 +2753,11 @@
     "example_zh_py": "请进去看看。Qǐng jìn qù kànkan.",
     "example_vi": "Mời vào xem.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 185,
@@ -2192,8 +2768,11 @@
     "example_zh_py": "我有九本书。Wǒ yǒu jiǔ běn shū.",
     "example_vi": "Tôi có chín quyển sách.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 186,
@@ -2204,8 +2783,11 @@
     "example_zh_py": "他到了就打电话。Tā dàole jiù dǎ diànhuà.",
     "example_vi": "Anh ấy đến là gọi điện ngay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 187,
@@ -2216,8 +2798,11 @@
     "example_zh_py": "我觉得很开心。Wǒ juéde hěn kāixīn.",
     "example_vi": "Tôi cảm thấy rất vui.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 188,
@@ -2228,8 +2813,11 @@
     "example_zh_py": "请开门。Qǐng kāimén.",
     "example_vi": "Làm ơn mở cửa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 189,
@@ -2240,8 +2828,11 @@
     "example_zh_py": "爸爸会开车。Bàba huì kāi chē.",
     "example_vi": "Bố biết lái xe.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 190,
@@ -2252,8 +2843,11 @@
     "example_zh_py": "我们九点开会。Wǒmen jiǔ diǎn kāi huì.",
     "example_vi": "Chúng tôi họp lúc 9 giờ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 191,
@@ -2264,8 +2858,11 @@
     "example_zh_py": "他喜欢开玩笑。Tā xǐhuan kāiwánxiào.",
     "example_vi": "Anh ấy thích đùa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 192,
@@ -2276,8 +2873,11 @@
     "example_zh_py": "我在看书。Wǒ zài kàn shū.",
     "example_vi": "Tôi đang đọc sách.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 193,
@@ -2288,8 +2888,11 @@
     "example_zh_py": "妈妈去看病了。Māma qù kàn bìng le.",
     "example_vi": "Mẹ đi khám bệnh rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 194,
@@ -2300,8 +2903,11 @@
     "example_zh_py": "我看到他了。Wǒ kàn dào tā le.",
     "example_vi": "Tôi đã thấy anh ấy rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 195,
@@ -2312,8 +2918,11 @@
     "example_zh_py": "你看见我的书了吗？Nǐ kànjiàn wǒ de shū le ma?",
     "example_vi": "Bạn thấy quyển sách của tôi chưa?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 196,
@@ -2324,8 +2933,11 @@
     "example_zh_py": "明天我们考试。Míngtiān wǒmen kǎoshì.",
     "example_vi": "Ngày mai chúng tôi thi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 197,
@@ -2336,8 +2948,11 @@
     "example_zh_py": "汉语考试很难。Hànyǔ kǎoshì hěn nán.",
     "example_vi": "Bài thi tiếng Trung rất khó.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 198,
@@ -2348,8 +2963,11 @@
     "example_zh_py": "我很渴，想喝水。Wǒ hěn kě, xiǎng hē shuǐ.",
     "example_vi": "Tôi rất khát, muốn uống nước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 199,
@@ -2360,8 +2978,11 @@
     "example_zh_py": "我们现在上课。Wǒmen xiànzài shàngkè.",
     "example_vi": "Chúng tôi đang học.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 200,
@@ -2372,8 +2993,11 @@
     "example_zh_py": "请打开课本。Qǐng dǎkāi kèběn.",
     "example_vi": "Hãy mở sách giáo khoa ra.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 201,
@@ -2384,8 +3008,11 @@
     "example_zh_py": "请读课文。Qǐng dú kèwén.",
     "example_vi": "Hãy đọc bài khóa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 202,
@@ -2396,8 +3023,11 @@
     "example_zh_py": "他张开了嘴巴。Tā zhāngkāi le zuǐba.",
     "example_vi": "Anh ấy há miệng ra.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 203,
@@ -2408,8 +3038,11 @@
     "example_zh_py": "给你一块蛋糕。Gěi nǐ yí kuài dàngāo.",
     "example_vi": "Cho bạn một miếng bánh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 204,
@@ -2420,8 +3053,11 @@
     "example_zh_py": "他跑得很快。Tā pǎo de hěn kuài.",
     "example_vi": "Anh ấy chạy rất nhanh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 205,
@@ -2432,8 +3068,11 @@
     "example_zh_py": "他来了。Tā lái le.",
     "example_vi": "Anh ấy đến rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 206,
@@ -2444,8 +3083,11 @@
     "example_zh_py": "我刚来到北京。Wǒ gāng lái dào Běijīng.",
     "example_vi": "Tôi vừa đến Bắc Kinh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 207,
@@ -2456,8 +3098,11 @@
     "example_zh_py": "他是个老人。Tā shì gè lǎorén.",
     "example_vi": "Ông ấy là người già.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 208,
@@ -2468,8 +3113,11 @@
     "example_zh_py": "公园里有很多老人。Gōng yuán lǐ yǒu hěn duō lǎorén.",
     "example_vi": "Trong công viên có nhiều người già.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 209,
@@ -2480,8 +3128,11 @@
     "example_zh_py": "她是我们的老师。Tā shì wǒmen de lǎoshī.",
     "example_vi": "Cô ấy là giáo viên của chúng tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 210,
@@ -2492,8 +3143,11 @@
     "example_zh_py": "我吃了饭。Wǒ chī le fàn.",
     "example_vi": "Tôi đã ăn cơm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 211,
@@ -2504,8 +3158,11 @@
     "example_zh_py": "我今天很累。Wǒ jīntiān hěn lèi.",
     "example_vi": "Hôm nay tôi rất mệt.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 212,
@@ -2516,8 +3173,11 @@
     "example_zh_py": "今天很冷。Jīntiān hěn lěng.",
     "example_vi": "Hôm nay rất lạnh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 213,
@@ -2528,8 +3188,11 @@
     "example_zh_py": "书包里有书。Shūbāo lǐ yǒu shū.",
     "example_vi": "Trong cặp có sách.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 214,
@@ -2540,8 +3203,11 @@
     "example_zh_py": "房间里边有人。Fángjiān lǐbiān yǒu rén.",
     "example_vi": "Trong phòng có người.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 215,
@@ -2552,8 +3218,26 @@
     "example_zh_py": "我有两个苹果。Wǒ yǒu liǎng gè píngguǒ.",
     "example_vi": "Tôi có hai quả táo.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
+  },
+  {
+    "stt": 216,
+    "raw_hanzi": "零｜〇",
+    "simplified": "零",
+    "pinyin": "líng ｜ líng",
+    "raw_definition": "zero số không",
+    "example_zh_py": "我电话号码是零一零。W ǒ diànhuà hàomǎ shì líng yī líng.",
+    "example_vi": "Số điện thoại của tôi là 010.",
+    "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
+    "source": "NEW HSK1 3.0.pdf",
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 217,
@@ -2564,8 +3248,11 @@
     "example_zh_py": "今天是六月一号。Jīntiān shì liù yuè yī hào.",
     "example_vi": "Hôm nay là ngày 1 tháng 6.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 218,
@@ -2576,8 +3263,11 @@
     "example_zh_py": "我家在五楼。Wǒ jiā zài wǔ lóu.",
     "example_vi": "Nhà tôi ở tầng năm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 219,
@@ -2588,8 +3278,11 @@
     "example_zh_py": "姐姐在楼上。Jiějie zài lóushàng.",
     "example_vi": "Chị tôi ở trên lầu.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 220,
@@ -2600,8 +3293,11 @@
     "example_zh_py": "我下楼去了。Wǒ xià lóu qù le.",
     "example_vi": "Tôi đã xuống lầu.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 221,
@@ -2612,8 +3308,11 @@
     "example_zh_py": "这是一条大路。Zhè shì yì tiáo dà lù.",
     "example_vi": "Đây là con đường lớn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 222,
@@ -2624,8 +3323,11 @@
     "example_zh_py": "在路口右转。Zài lùkǒu yòuzhuǎn.",
     "example_vi": "Rẽ phải ở ngã tư.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 223,
@@ -2636,8 +3338,11 @@
     "example_zh_py": "我在路上遇见了他。Wǒ zài lùshàng yùjiàn le tā.",
     "example_vi": "Tôi gặp anh ấy trên đường.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 224,
@@ -2648,8 +3353,11 @@
     "example_zh_py": "我妈妈做饭很好吃。Wǒ māma zuòfàn hěn hǎochī.",
     "example_vi": "Mẹ tôi nấu ăn rất ngon.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 225,
@@ -2660,8 +3368,11 @@
     "example_zh_py": "小心过马路。Xiǎoxīn guò mǎlù.",
     "example_vi": "Cẩn thận khi qua đường.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 226,
@@ -2672,8 +3383,11 @@
     "example_zh_py": "我马上回来。Wǒ mǎshàng huílái.",
     "example_vi": "Tôi quay lại ngay.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 227,
@@ -2684,8 +3398,11 @@
     "example_zh_py": "你好吗？Nǐ hǎo ma?",
     "example_vi": "Bạn khỏe không?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 228,
@@ -2696,8 +3413,11 @@
     "example_zh_py": "我买了一个面包。Wǒ mǎi le yí gè miànbāo.",
     "example_vi": "Tôi đã mua một cái bánh mì.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 229,
@@ -2708,8 +3428,11 @@
     "example_zh_py": "他说话很慢。Tā shuōhuà hěn màn.",
     "example_vi": "Anh ấy nói rất chậm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 230,
@@ -2720,8 +3443,11 @@
     "example_zh_py": "我今天很忙。Wǒ jīntiān hěn máng.",
     "example_vi": "Hôm nay tôi rất bận.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 231,
@@ -2732,8 +3458,11 @@
     "example_zh_py": "苹果五毛钱。Píngguǒ wǔ máo qián.",
     "example_vi": "Táo năm hào một quả.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 232,
@@ -2744,8 +3473,11 @@
     "example_zh_py": "我没时间。Wǒ méi shíjiān.",
     "example_vi": "Tôi không có thời gian.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 233,
@@ -2756,8 +3488,11 @@
     "example_zh_py": "没关系，我帮你。Méi guānxi, wǒ bāng nǐ.",
     "example_vi": "Không sao, tôi giúp bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 234,
@@ -2768,8 +3503,11 @@
     "example_zh_py": "没什么大不了。Méi shénme dà bù liǎo.",
     "example_vi": "Không có gì nghiêm trọng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 235,
@@ -2780,8 +3518,11 @@
     "example_zh_py": "他摔倒了但没事儿。Tā shuāidǎo le dàn méi shìr.",
     "example_vi": "Anh ấy ngã nhưng không sao.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 236,
@@ -2792,8 +3533,11 @@
     "example_zh_py": "我没有手机。Wǒ méiyǒu shǒujī.",
     "example_vi": "Tôi không có điện thoại.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 237,
@@ -2804,8 +3548,11 @@
     "example_zh_py": "我有一个妹妹。Wǒ yǒu yí gè mèimei.",
     "example_vi": "Tôi có một em gái.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 238,
@@ -2816,8 +3563,11 @@
     "example_zh_py": "请关门。Qǐng guānmén.",
     "example_vi": "Xin đóng cửa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 239,
@@ -2828,8 +3578,11 @@
     "example_zh_py": "他站在门口等我。Tā zhàn zài ménkǒu děng wǒ.",
     "example_vi": "Anh ấy đứng trước cửa đợi tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 240,
@@ -2840,20 +3593,26 @@
     "example_zh_py": "动物园的门票十块钱。Dò ngwùyuán de ménpiào shí kuài qián.",
     "example_vi": "Vé vào sở thú 10 tệ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 241,
     "raw_hanzi": "们（朋友",
-    "simplified": "们（朋友",
+    "simplified": "们",
     "pinyin": "",
     "raw_definition": "",
     "example_zh_py": "们） men （ péng yǒu men ） plural marker for pronouns and a few animate nouns (friends) hậu tố số nhiều 我们是学生。Wǒmen shì xuéshēng.",
     "example_vi": "Chúng tôi là học sinh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 242,
@@ -2864,8 +3623,11 @@
     "example_zh_py": "我喜欢吃米饭。Wǒ xǐhuan chī mǐfàn.",
     "example_vi": "Tôi thích ăn cơm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 243,
@@ -2876,8 +3638,11 @@
     "example_zh_py": "她吃了面包。Tā chī le miànbāo.",
     "example_vi": "Cô ấy ăn bánh mì.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 244,
@@ -2888,8 +3653,11 @@
     "example_zh_py": "他正在吃面条儿。Tā zhèngzài chī miàntiáor.",
     "example_vi": "Anh ấy đang ăn mì.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 245,
@@ -2900,8 +3668,11 @@
     "example_zh_py": "你的名字是什么？Nǐ de míngzi shì shénme?",
     "example_vi": "Tên bạn là gì?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 246,
@@ -2912,8 +3683,11 @@
     "example_zh_py": "我明白了你的意思。Wǒ míngbai le nǐ de yìsi.",
     "example_vi": "Tôi đã hiểu ý bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 247,
@@ -2924,8 +3698,11 @@
     "example_zh_py": "明年我去中国。Míngnián wǒ qù Zhōngguó.",
     "example_vi": "Năm sau tôi sẽ đi Trung Quốc.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 248,
@@ -2936,8 +3713,11 @@
     "example_zh_py": "明天见！Míngtiān jiàn!",
     "example_vi": "Hẹn gặp ngày mai!",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 249,
@@ -2948,8 +3728,11 @@
     "example_zh_py": "请拿你的东西。Qǐng ná nǐ de dōngxi.",
     "example_vi": "Hãy cầm lấy đồ của bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 250,
@@ -2960,8 +3743,11 @@
     "example_zh_py": "你要哪个？Nǐ yào nǎ gè?",
     "example_vi": "Bạn muốn cái nào?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 251,
@@ -2972,8 +3758,11 @@
     "example_zh_py": "你住在哪里？Nǐ zhù zài nǎlǐ?",
     "example_vi": "Bạn sống ở đâu?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 252,
@@ -2984,8 +3773,11 @@
     "example_zh_py": "书包在哪儿？Shūbāo zài nǎr?",
     "example_vi": "Cặp sách ở đâu?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 253,
@@ -2996,8 +3788,11 @@
     "example_zh_py": "哪些是你的？Nǎxiē shì nǐ de?",
     "example_vi": "Những cái nào là của bạn?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 254,
@@ -3008,8 +3803,11 @@
     "example_zh_py": "那是我的朋友。Nà shì wǒ de péngyǒu.",
     "example_vi": "Đó là bạn của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 255,
@@ -3020,8 +3818,11 @@
     "example_zh_py": "他走到那边去了。Tā zǒu dào nàbiān qù le.",
     "example_vi": "Anh ấy đã đi về phía đó.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 256,
@@ -3032,8 +3833,11 @@
     "example_zh_py": "我的家在那里。Wǒ de jiā zài nàlǐ.",
     "example_vi": "Nhà tôi ở đó.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 257,
@@ -3044,8 +3848,11 @@
     "example_zh_py": "医院在那儿。Yīyuàn zài nàr.",
     "example_vi": "Bệnh viện ở kia.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 258,
@@ -3056,8 +3863,11 @@
     "example_zh_py": "那些书很有意思。Nàxiē shū hěn yǒuyìsi.",
     "example_vi": "Những cuốn sách đó rất thú vị.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 259,
@@ -3068,8 +3878,11 @@
     "example_zh_py": "我每天喝牛奶。Wǒ měitiān hē niúnǎi.",
     "example_vi": "Tôi uống sữa mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 260,
@@ -3080,8 +3893,11 @@
     "example_zh_py": "奶奶做的饭很好吃。Nǎin ai zuò de fàn hěn hǎochī.",
     "example_vi": "Cơm bà nấu rất ngon.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 261,
@@ -3092,8 +3908,11 @@
     "example_zh_py": "他是一个男老师。Tā shì yí gè nán lǎoshī.",
     "example_vi": "Anh ấy là một giáo viên nam.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 262,
@@ -3104,8 +3923,11 @@
     "example_zh_py": "男孩儿在踢球。Nánháir zài tīqiú.",
     "example_vi": "Cậu bé đang đá bóng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 263,
@@ -3116,8 +3938,11 @@
     "example_zh_py": "她的男朋友很帅。Tā de nán péngyǒu hěn shuài.",
     "example_vi": "Bạn trai cô ấy rất đẹp trai.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 264,
@@ -3128,8 +3953,11 @@
     "example_zh_py": "男人们都到了。Nánrén men dōu dào le.",
     "example_vi": "Tất cả đàn ông đều đã đến.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 265,
@@ -3140,8 +3968,11 @@
     "example_zh_py": "他是我们班的男生。Tā shì wǒmen bān de nánshēng.",
     "example_vi": "Cậu ấy là nam sinh lớp tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 266,
@@ -3152,8 +3983,11 @@
     "example_zh_py": "我们去南方旅行。Wǒmen qù nánfāng lǚxíng.",
     "example_vi": "Chúng tôi đi du lịch phía Nam.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 267,
@@ -3164,8 +3998,11 @@
     "example_zh_py": "图书馆在南边。Túshūguǎ n zài nánbiān.",
     "example_vi": "Thư viện ở phía nam.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 268,
@@ -3176,8 +4013,11 @@
     "example_zh_py": "这个问题很难。Zhège wèntí hěn nán.",
     "example_vi": "Câu hỏi này rất khó.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 269,
@@ -3188,8 +4028,11 @@
     "example_zh_py": "你呢？Nǐ ne?",
     "example_vi": "Còn bạn thì sao?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 270,
@@ -3200,8 +4043,11 @@
     "example_zh_py": "我能帮你吗？Wǒ néng bāng nǐ ma?",
     "example_vi": "Tôi có thể giúp bạn không?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 271,
@@ -3212,8 +4058,11 @@
     "example_zh_py": "你好吗？Nǐ hǎo ma?",
     "example_vi": "Bạn khỏe không?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 272,
@@ -3224,8 +4073,11 @@
     "example_zh_py": "你们去哪儿？Nǐmen qù nǎr?",
     "example_vi": "Các bạn đi đâu vậy?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 273,
@@ -3236,8 +4088,11 @@
     "example_zh_py": "今年是兔年。Jīnnián shì Tù nián.",
     "example_vi": "Năm nay là năm con thỏ.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 274,
@@ -3248,8 +4103,11 @@
     "example_zh_py": "您贵姓？Nín guìxìng?",
     "example_vi": "Quý danh của ngài là gì?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 275,
@@ -3260,8 +4118,11 @@
     "example_zh_py": "孩子们喜欢喝牛奶。Háizi men xǐhuan hē niúnǎi.",
     "example_vi": "Trẻ em thích uống sữa.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 276,
@@ -3272,8 +4133,11 @@
     "example_zh_py": "她是一个漂亮的女人。Tā shì yí gè piàoliang de nǚrén.",
     "example_vi": "Cô ấy là một người phụ nữ xinh đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 277,
@@ -3284,8 +4148,11 @@
     "example_zh_py": "我有一个女儿。Wǒ yǒu yí gè nǚ’ér.",
     "example_vi": "Tôi có một đứa con gái.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 278,
@@ -3296,8 +4163,11 @@
     "example_zh_py": "这个女孩儿很聪明。Zhèg e nǚháir hěn cōngmíng.",
     "example_vi": "Cô bé này rất thông minh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 279,
@@ -3308,8 +4178,11 @@
     "example_zh_py": "他有一个女朋友。Tā yǒu yí gè nǚ péngyǒu.",
     "example_vi": "Anh ấy có một bạn gái.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 280,
@@ -3320,8 +4193,11 @@
     "example_zh_py": "女人喜欢逛街。Nǚrén xǐhuan guàngjiē.",
     "example_vi": "Phụ nữ thích đi mua sắm.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 281,
@@ -3332,8 +4208,11 @@
     "example_zh_py": "她是一个女生。Tā shì yí gè nǚshēng.",
     "example_vi": "Cô ấy là một nữ sinh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 282,
@@ -3344,8 +4223,11 @@
     "example_zh_py": "我坐在你旁边。Wǒ zuò zài nǐ pángbiān.",
     "example_vi": "Tôi ngồi bên cạnh bạn.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 283,
@@ -3356,8 +4238,11 @@
     "example_zh_py": "他跑得很快。Tā pǎo de hěn kuài.",
     "example_vi": "Anh ấy chạy rất nhanh.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 284,
@@ -3368,8 +4253,11 @@
     "example_zh_py": "她是我最好的朋友。Tā shì wǒ zuì hǎo de péngyou.",
     "example_vi": "Cô ấy là bạn thân nhất của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 285,
@@ -3380,8 +4268,11 @@
     "example_zh_py": "我买了两张电影票。Wǒ mǎi le liǎng zhāng diànyǐng piào.",
     "example_vi": "Tôi mua hai vé xem phim.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 286,
@@ -3392,8 +4283,11 @@
     "example_zh_py": "他有七个苹果。Tā yǒu qī gè píngguǒ.",
     "example_vi": "Anh ấy có bảy quả táo.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 287,
@@ -3404,8 +4298,11 @@
     "example_zh_py": "他早上六点起床。Tā zǎoshang liù diǎn qǐchuáng.",
     "example_vi": "Anh ấy dậy lúc 6 giờ sáng.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 288,
@@ -3416,8 +4313,11 @@
     "example_zh_py": "孩子已经起床了。Háizi yǐjīng qǐchuáng le.",
     "example_vi": "Đứa trẻ đã thức dậy rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 289,
@@ -3428,8 +4328,11 @@
     "example_zh_py": "请站起来。Qǐng zhàn qǐlái.",
     "example_vi": "Mời đứng lên.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 290,
@@ -3440,8 +4343,11 @@
     "example_zh_py": "我坐汽车去上班。Wǒ zuò qìchē qù shàngbān.",
     "example_vi": "Tôi đi làm bằng ô tô.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 291,
@@ -3452,8 +4358,11 @@
     "example_zh_py": "他站在我前面。Tā zhàn zài wǒ qiánmiàn.",
     "example_vi": "Anh ấy đứng trước mặt tôi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 292,
@@ -3464,8 +4373,11 @@
     "example_zh_py": "学校在前边。Xuéxiào zài qiánbiān.",
     "example_vi": "Trường học ở phía trước.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 293,
@@ -3476,8 +4388,11 @@
     "example_zh_py": "前天我去超市了。Qiántiā n wǒ qù chāoshì le.",
     "example_vi": "Hôm kia tôi đã đi siêu thị.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 294,
@@ -3488,8 +4403,11 @@
     "example_zh_py": "我没有钱了。Wǒ méiyǒu qián le.",
     "example_vi": "Tôi hết tiền rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 295,
@@ -3500,8 +4418,11 @@
     "example_zh_py": "我的钱包丢了。Wǒ de qiánbāo diū le.",
     "example_vi": "Tôi làm mất ví rồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 296,
@@ -3512,8 +4433,11 @@
     "example_zh_py": "请进来。Qǐng jìnlái.",
     "example_vi": "Mời vào.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 297,
@@ -3524,8 +4448,11 @@
     "example_zh_py": "他请假去医院。Tā qǐngjià qù yīyuàn.",
     "example_vi": "Anh ấy xin nghỉ đi bệnh viện.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 298,
@@ -3536,8 +4463,11 @@
     "example_zh_py": "请进，请坐。Qǐng jìn, qǐng zuò.",
     "example_vi": "Mời vào, mời ngồi.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 299,
@@ -3548,8 +4478,11 @@
     "example_zh_py": "请问，厕所在哪儿？Qǐng wèn, cèsuǒ zài nǎr?",
     "example_vi": "Xin hỏi, nhà vệ sinh ở đâu vậy?",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 300,
@@ -3560,8 +4493,11 @@
     "example_zh_py": "请坐在这儿。Qǐng zuò zài zhèr.",
     "example_vi": "Mời ngồi ở đây.",
     "hsk_level": 1,
+    "curriculum_version": "HSK_EXAM_2025",
+    "is_hsk_2025_core": true,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 301,
@@ -3572,8 +4508,11 @@
     "example_zh_py": "他喜欢打球。Tā xǐhuān dǎqiú.",
     "example_vi": "Anh ấy thích chơi bóng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 302,
@@ -3584,8 +4523,11 @@
     "example_zh_py": "我们明天去北京。Wǒmen míngtiān qù Běijīng.",
     "example_vi": "Ngày mai chúng ta đi Bắc Kinh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 303,
@@ -3596,8 +4538,11 @@
     "example_zh_py": "我去年去中国了。Wǒ qùnián qù Zhōngguó le.",
     "example_vi": "Năm ngoái tôi đã đi Trung Quốc.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 304,
@@ -3608,8 +4553,11 @@
     "example_zh_py": "今天很热。Jīntiān hěn rè.",
     "example_vi": "Hôm nay rất nóng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 305,
@@ -3620,8 +4568,11 @@
     "example_zh_py": "他是个好人。Tā shì gè hǎorén.",
     "example_vi": "Anh ấy là người tốt.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 306,
@@ -3632,8 +4583,11 @@
     "example_zh_py": "我认识他。Wǒ rènshi tā.",
     "example_vi": "Tôi quen anh ấy.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 307,
@@ -3644,8 +4598,11 @@
     "example_zh_py": "他学习很认真。Tā xuéxí hěn rènzhēn.",
     "example_vi": "Anh ấy học rất chăm chỉ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 308,
@@ -3656,8 +4613,11 @@
     "example_zh_py": "今天是几月几日？Jīntiān shì jǐ yuè jǐ rì?",
     "example_vi": "Hôm nay là ngày mấy?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 309,
@@ -3668,8 +4628,11 @@
     "example_zh_py": "请填写你的出生日期。Qǐ ng tiánxiě nǐ de chūshēng rìqī.",
     "example_vi": "Vui lòng điền ngày sinh của bạn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 310,
@@ -3680,8 +4643,11 @@
     "example_zh_py": "我不吃肉。Wǒ bù chī ròu.",
     "example_vi": "Tôi không ăn thịt.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 311,
@@ -3692,8 +4658,11 @@
     "example_zh_py": "我有三个苹果。Wǒ yǒu sān gè píngguǒ.",
     "example_vi": "Tôi có ba quả táo.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 312,
@@ -3704,8 +4673,11 @@
     "example_zh_py": "我们去爬山吧。Wǒmen qù pá shān ba.",
     "example_vi": "Chúng ta đi leo núi nhé.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 313,
@@ -3716,8 +4688,11 @@
     "example_zh_py": "我去商场买衣服。Wǒ qù shāngchǎng mǎi yīfu.",
     "example_vi": "Tôi đi trung tâm mua quần áo.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 314,
@@ -3728,8 +4703,11 @@
     "example_zh_py": "这家商店很大。Zhè jiā shāngdiàn hěn dà.",
     "example_vi": "Cửa hàng này rất lớn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 315,
@@ -3740,8 +4718,11 @@
     "example_zh_py": "他上楼去了。Tā shàng lóu qù le.",
     "example_vi": "Anh ấy lên lầu rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 316,
@@ -3752,8 +4733,11 @@
     "example_zh_py": "我每天八点上班。Wǒ měitiān bā diǎn shàngbān.",
     "example_vi": "Tôi đi làm lúc 8 giờ mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 317,
@@ -3764,8 +4748,11 @@
     "example_zh_py": "书在桌子上边。Shū zài zhuōzi shàngbiān.",
     "example_vi": "Quyển sách ở trên bàn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 318,
@@ -3776,8 +4763,11 @@
     "example_zh_py": "请在这里上车。Qǐng zài zhèlǐ shàng chē.",
     "example_vi": "Mời lên xe ở đây.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 319,
@@ -3788,8 +4778,11 @@
     "example_zh_py": "上次我们去看电影了。Sh àng cì wǒmen qù kàn diànyǐng le.",
     "example_vi": "Lần trước chúng tôi đi xem phim.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 320,
@@ -3800,8 +4793,11 @@
     "example_zh_py": "我八点上课。Wǒ bā diǎn shàngkè.",
     "example_vi": "Tôi vào học lúc 8 giờ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 321,
@@ -3812,8 +4808,11 @@
     "example_zh_py": "我每天上网学习。Wǒ měitiān shàngwǎng xuéxí.",
     "example_vi": "Tôi lên mạng học mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 322,
@@ -3824,8 +4823,11 @@
     "example_zh_py": "我上午去图书馆。Wǒ shàngwǔ qù túshūguǎn.",
     "example_vi": "Buổi sáng tôi đi thư viện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 323,
@@ -3836,8 +4838,11 @@
     "example_zh_py": "妹妹七点上学。Mèimei qī diǎn shàngxué.",
     "example_vi": "Em gái tôi đi học lúc 7 giờ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 324,
@@ -3848,8 +4853,11 @@
     "example_zh_py": "今天来的人很少。Jīntiān lái de rén hěn shǎo.",
     "example_vi": "Hôm nay ít người đến.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 325,
@@ -3860,8 +4868,11 @@
     "example_zh_py": "谁是你的老师？Shéi shì nǐ de lǎoshī?",
     "example_vi": "Ai là giáo viên của bạn?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 326,
@@ -3872,8 +4883,11 @@
     "example_zh_py": "他身上没有钱。Tā shēnshàng méiyǒu qián.",
     "example_vi": "Trên người anh ấy không có tiền.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 327,
@@ -3884,8 +4898,11 @@
     "example_zh_py": "你身体好吗？Nǐ shēntǐ hǎo ma?",
     "example_vi": "Sức khỏe bạn ổn chứ?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 328,
@@ -3896,8 +4913,11 @@
     "example_zh_py": "你在说什么？Nǐ zài shuō shénme?",
     "example_vi": "Bạn đang nói gì vậy?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 329,
@@ -3908,8 +4928,11 @@
     "example_zh_py": "他昨天生病了。Tā zuótiān shēngbìng le.",
     "example_vi": "Hôm qua anh ấy bị ốm.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 330,
@@ -3920,8 +4943,11 @@
     "example_zh_py": "她生气了。Tā shēngqì le.",
     "example_vi": "Cô ấy nổi giận rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 331,
@@ -3932,8 +4958,11 @@
     "example_zh_py": "祝你生日快乐！Zhù nǐ shēngrì kuàilè!",
     "example_vi": "Chúc bạn sinh nhật vui vẻ!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 332,
@@ -3944,8 +4973,11 @@
     "example_zh_py": "我有十块钱。Wǒ yǒu shí kuài qián.",
     "example_vi": "Tôi có mười đồng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 333,
@@ -3956,8 +4988,11 @@
     "example_zh_py": "你什么时候来？Nǐ shénme shíhou lái?",
     "example_vi": "Khi nào bạn đến?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 334,
@@ -3968,8 +5003,11 @@
     "example_zh_py": "我没有时间。Wǒ méiyǒu shíjiān.",
     "example_vi": "Tôi không có thời gian.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 335,
@@ -3980,8 +5018,11 @@
     "example_zh_py": "这不是我的事。Zhè bú shì wǒ de shì.",
     "example_vi": "Đây không phải việc của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 336,
@@ -3992,8 +5033,11 @@
     "example_zh_py": "你试一下这个。Nǐ shì yīxià zhège.",
     "example_vi": "Bạn thử cái này xem.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 337,
@@ -4004,8 +5048,11 @@
     "example_zh_py": "他是我哥哥。Tā shì wǒ gēge.",
     "example_vi": "Anh ấy là anh tôi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 338,
@@ -4016,8 +5063,11 @@
     "example_zh_py": "你是不是学生？Nǐ shì bù shì xuéshēng?",
     "example_vi": "Bạn có phải là học sinh không?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 339,
@@ -4028,8 +5078,11 @@
     "example_zh_py": "我的手受伤了。Wǒ de shǒu shòushāng le.",
     "example_vi": "Tay tôi bị thương rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 340,
@@ -4040,8 +5093,11 @@
     "example_zh_py": "你的手机在哪儿？Nǐ de shǒujī zài nǎr?",
     "example_vi": "Điện thoại của bạn ở đâu?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 341,
@@ -4052,8 +5108,11 @@
     "example_zh_py": "我喜欢看书。Wǒ xǐhuān kàn shū.",
     "example_vi": "Tôi thích đọc sách.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 342,
@@ -4064,8 +5123,11 @@
     "example_zh_py": "我的书包很重。Wǒ de shūbāo hěn zhòng.",
     "example_vi": "Cặp của tôi rất nặng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 343,
@@ -4076,8 +5138,11 @@
     "example_zh_py": "我们去书店买书。Wǒmen qù shūdiàn mǎi shū.",
     "example_vi": "Chúng tôi đi hiệu sách mua sách.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 344,
@@ -4088,8 +5153,11 @@
     "example_zh_py": "公园里有很多树。Gōngyu án lǐ yǒu hěn duō shù.",
     "example_vi": "Trong công viên có nhiều cây.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 345,
@@ -4100,8 +5168,11 @@
     "example_zh_py": "请给我一杯水。Qǐng gěi wǒ yì bēi shuǐ.",
     "example_vi": "Cho tôi một cốc nước.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 346,
@@ -4112,8 +5183,11 @@
     "example_zh_py": "我想买一些水果。Wǒ xiǎng mǎi yìxiē shuǐguǒ.",
     "example_vi": "Tôi muốn mua ít trái cây.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 347,
@@ -4124,8 +5198,11 @@
     "example_zh_py": "我想睡觉了。Wǒ xiǎng shuìjiào le.",
     "example_vi": "Tôi muốn ngủ rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 348,
@@ -4136,8 +5213,11 @@
     "example_zh_py": "你几点睡觉？Nǐ jǐ diǎn shuìjiào?",
     "example_vi": "Bạn đi ngủ lúc mấy giờ?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 349,
@@ -4148,8 +5228,11 @@
     "example_zh_py": "他说他不知道。Tā shuō tā bù zhīdào.",
     "example_vi": "Anh ấy nói anh không biết.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 350,
@@ -4160,8 +5243,11 @@
     "example_zh_py": "请不要说话。Qǐng bú yào shuōhuà.",
     "example_vi": "Xin đừng nói chuyện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 351,
@@ -4172,8 +5258,11 @@
     "example_zh_py": "我有四个姐姐。Wǒ yǒu sì gè jiějie.",
     "example_vi": "Tôi có bốn chị gái.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 352,
@@ -4184,8 +5273,11 @@
     "example_zh_py": "我送你回家。Wǒ sòng nǐ huí jiā.",
     "example_vi": "Tôi đưa bạn về nhà.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 353,
@@ -4196,8 +5288,11 @@
     "example_zh_py": "我今年二十岁。Wǒ jīnnián èrshí suì.",
     "example_vi": "Năm nay tôi hai mươi tuổi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 354,
@@ -4208,8 +5303,11 @@
     "example_zh_py": "他是我的老师。Tā shì wǒ de lǎoshī.",
     "example_vi": "Anh ấy là giáo viên của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 355,
@@ -4220,8 +5318,11 @@
     "example_zh_py": "他们是学生。Tāmen shì xuéshēng.",
     "example_vi": "Họ là học sinh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 356,
@@ -4232,8 +5333,11 @@
     "example_zh_py": "她很漂亮。Tā hěn piàoliang.",
     "example_vi": "Cô ấy rất xinh đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 357,
@@ -4244,8 +5348,11 @@
     "example_zh_py": "她们在教室。Tāmen zài jiàoshì.",
     "example_vi": "Họ đang ở trong lớp học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 358,
@@ -4256,8 +5363,11 @@
     "example_zh_py": "太贵了！Tài guì le!",
     "example_vi": "Quá đắt rồi!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 359,
@@ -4268,8 +5378,11 @@
     "example_zh_py": "今天是星期几？Jīntiān shì xīngqī jǐ?",
     "example_vi": "Hôm nay là thứ mấy?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 360,
@@ -4280,8 +5393,11 @@
     "example_zh_py": "今天天气很好。Jīntiān tiānqì hěn hǎo.",
     "example_vi": "Hôm nay thời tiết rất đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 361,
@@ -4292,8 +5408,11 @@
     "example_zh_py": "我喜欢听音乐。Wǒ xǐhuān tīng yīnyuè.",
     "example_vi": "Tôi thích nghe nhạc.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 362,
@@ -4304,8 +5423,11 @@
     "example_zh_py": "我听到了声音。Wǒ tīngdào le shēngyīn.",
     "example_vi": "Tôi nghe thấy âm thanh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 363,
@@ -4316,8 +5438,11 @@
     "example_zh_py": "你听见了吗？Nǐ tīngjiàn le ma?",
     "example_vi": "Bạn có nghe thấy không?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 364,
@@ -4328,8 +5453,11 @@
     "example_zh_py": "老师让我们做听写。Lǎos hī ràng wǒmen zuò tīngxiě.",
     "example_vi": "Giáo viên yêu cầu chúng tôi làm chính tả.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 365,
@@ -4340,8 +5468,11 @@
     "example_zh_py": "他是我的同学。Tā shì wǒ de tóngxué.",
     "example_vi": "Anh ấy là bạn học của tôi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 366,
@@ -4352,8 +5483,11 @@
     "example_zh_py": "我在图书馆看书。Wǒ zài túshūguǎn kàn shū.",
     "example_vi": "Tôi đọc sách ở thư viện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 367,
@@ -4364,8 +5498,11 @@
     "example_zh_py": "他在外面等你。Tā zài wàimiàn děng nǐ.",
     "example_vi": "Anh ấy đang đợi bạn ở ngoài.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 368,
@@ -4376,8 +5513,11 @@
     "example_zh_py": "狗在外边跑。Gǒu zài wàibiān pǎo.",
     "example_vi": "Con chó đang chạy bên ngoài.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 369,
@@ -4388,8 +5528,11 @@
     "example_zh_py": "他是外国人。Tā shì wàiguó rén.",
     "example_vi": "Anh ấy là người nước ngoài.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 370,
@@ -4400,8 +5543,11 @@
     "example_zh_py": "我正在学外语。Wǒ zhèngzài xué wàiyǔ.",
     "example_vi": "Tôi đang học ngoại ngữ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 371,
@@ -4412,8 +5558,11 @@
     "example_zh_py": "小朋友在公园玩儿。Xiǎo péngyǒu zài gōngyuán wánr.",
     "example_vi": "Trẻ con đang chơi trong công viên.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 372,
@@ -4424,8 +5573,11 @@
     "example_zh_py": "他来得很晚。Tā lái de hěn wǎn.",
     "example_vi": "Anh ấy đến rất muộn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 373,
@@ -4436,8 +5588,11 @@
     "example_zh_py": "我们一起吃晚饭吧。Wǒm en yīqǐ chī wǎnfàn ba.",
     "example_vi": "Chúng ta ăn tối cùng nhau nhé.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 374,
@@ -4448,8 +5603,11 @@
     "example_zh_py": "我晚上去跑步。Wǒ wǎnshang qù pǎobù.",
     "example_vi": "Tôi đi chạy bộ buổi tối.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 375,
@@ -4460,8 +5618,11 @@
     "example_zh_py": "我在网上买了这件衣服。 Wǒ zài wǎngshàng mǎi le zhè jiàn yīfu.",
     "example_vi": "Tôi đã mua chiếc áo này trên mạng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 376,
@@ -4472,8 +5633,11 @@
     "example_zh_py": "我有很多网友。Wǒ yǒu hěn duō wǎngyǒu.",
     "example_vi": "Tôi có nhiều bạn trên mạng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 377,
@@ -4484,8 +5648,11 @@
     "example_zh_py": "我忘带钥匙了。Wǒ wàng dài yàoshi le.",
     "example_vi": "Tôi quên mang chìa khóa rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 378,
@@ -4496,8 +5663,11 @@
     "example_zh_py": "我忘记你的名字了。Wǒ wàngjì nǐ de míngzi le.",
     "example_vi": "Tôi quên tên bạn rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 379,
@@ -4508,8 +5678,11 @@
     "example_zh_py": "我可以问你一个问题吗？ Wǒ kěyǐ wèn nǐ yí gè wèntí ma?",
     "example_vi": "Tôi có thể hỏi bạn một câu không?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 380,
@@ -4520,8 +5693,11 @@
     "example_zh_py": "我喜欢看书。Wǒ xǐhuān kàn shū.",
     "example_vi": "Tôi thích đọc sách.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 381,
@@ -4532,8 +5708,11 @@
     "example_zh_py": "我们是同学。Wǒmen shì tóngxué.",
     "example_vi": "Chúng tôi là bạn học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 382,
@@ -4544,8 +5723,11 @@
     "example_zh_py": "他有五本书。Tā yǒu wǔ běn shū.",
     "example_vi": "Anh ấy có năm quyển sách.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 383,
@@ -4556,8 +5738,11 @@
     "example_zh_py": "我们一起吃午饭吧。Wǒm en yīqǐ chī wǔfàn ba.",
     "example_vi": "Chúng ta ăn trưa cùng nhau nhé.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 384,
@@ -4568,8 +5753,11 @@
     "example_zh_py": "学校在城市的西边。Xuéx iào zài chéngshì de xībiān.",
     "example_vi": "Trường học ở phía tây thành phố.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 385,
@@ -4580,8 +5768,11 @@
     "example_zh_py": "公园在超市的西边。Gōng yuán zài chāoshì de xībiān.",
     "example_vi": "Công viên ở phía tây siêu thị.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 386,
@@ -4592,8 +5783,11 @@
     "example_zh_py": "请洗手。Qǐng xǐshǒu.",
     "example_vi": "Hãy rửa tay.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 387,
@@ -4604,8 +5798,11 @@
     "example_zh_py": "洗手间在哪里？Xǐshǒujiā n zài nǎlǐ?",
     "example_vi": "Nhà vệ sinh ở đâu vậy?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 388,
@@ -4616,8 +5813,26 @@
     "example_zh_py": "我喜欢吃苹果。Wǒ xǐhuān chī píngguǒ.",
     "example_vi": "Tôi thích ăn táo.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
+  },
+  {
+    "stt": 389,
+    "raw_hanzi": "下（名、",
+    "simplified": "下",
+    "pinyin": "",
+    "raw_definition": "",
+    "example_zh_py": "动） xià below; under; next; go down; get off dưới, sau 桌子下有只猫。Zhuōzi xià yǒu zhī māo.",
+    "example_vi": "Có một con mèo dưới bàn.",
+    "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
+    "source": "NEW HSK1 3.0.pdf",
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 390,
@@ -4628,8 +5843,11 @@
     "example_zh_py": "我五点下班。Wǒ wǔ diǎn xiàbān.",
     "example_vi": "Tôi tan làm lúc 5 giờ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 391,
@@ -4640,8 +5858,11 @@
     "example_zh_py": "椅子下边有书。Yǐzi xiàbiān yǒu shū.",
     "example_vi": "Có sách dưới ghế.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 392,
@@ -4652,8 +5873,11 @@
     "example_zh_py": "我们下车吧。Wǒmen xiàchē ba.",
     "example_vi": "Chúng ta xuống xe đi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 393,
@@ -4664,8 +5888,11 @@
     "example_zh_py": "下次我请你吃饭。Xiàcì wǒ qǐng nǐ chīfàn.",
     "example_vi": "Lần sau tôi mời bạn ăn cơm.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 394,
@@ -4676,8 +5903,11 @@
     "example_zh_py": "老师说：“下课！”Lǎoshī shuō: “Xiàkè!”",
     "example_vi": "Thầy giáo nói: “Tan học!”",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 395,
@@ -4688,8 +5918,11 @@
     "example_zh_py": "我下午要去超市。Wǒ xiàwǔ yào qù chāoshì.",
     "example_vi": "Chiều nay tôi phải đi siêu thị.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 396,
@@ -4700,8 +5933,11 @@
     "example_zh_py": "今天下雨了。Jīntiān xiàyǔ le.",
     "example_vi": "Hôm nay trời mưa rồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 397,
@@ -4712,8 +5948,11 @@
     "example_zh_py": "你先说。Nǐ xiān shuō.",
     "example_vi": "Bạn nói trước đi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 398,
@@ -4724,8 +5963,11 @@
     "example_zh_py": "王先生在家吗？Wáng xiānsheng zài jiā ma?",
     "example_vi": "Ông Vương có ở nhà không?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 399,
@@ -4736,8 +5978,11 @@
     "example_zh_py": "现在几点？Xiànzài jǐ diǎn?",
     "example_vi": "Bây giờ là mấy giờ?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 400,
@@ -4748,8 +5993,11 @@
     "example_zh_py": "我想去旅行。Wǒ xiǎng qù lǚxíng.",
     "example_vi": "Tôi muốn đi du lịch.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 401,
@@ -4760,8 +6008,11 @@
     "example_zh_py": "这只狗很小。Zhè zhī gǒu hěn xiǎo.",
     "example_vi": "Con chó này rất nhỏ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 402,
@@ -4772,8 +6023,11 @@
     "example_zh_py": "小孩儿在玩游戏。Xiǎo háir zài wán yóuxì.",
     "example_vi": "Trẻ con đang chơi trò chơi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 403,
@@ -4784,8 +6038,11 @@
     "example_zh_py": "李小姐是老师。Lǐ xiǎojiě shì lǎoshī.",
     "example_vi": "Cô Lý là giáo viên.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 404,
@@ -4796,8 +6053,11 @@
     "example_zh_py": "小朋友们在唱歌。Xiǎo péngyǒumen zài chànggē.",
     "example_vi": "Các bạn nhỏ đang hát.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 405,
@@ -4808,8 +6068,11 @@
     "example_zh_py": "我等了两个小时。Wǒ děng le liǎng gè xiǎoshí.",
     "example_vi": "Tôi đã đợi hai tiếng đồng hồ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 406,
@@ -4820,8 +6083,11 @@
     "example_zh_py": "他在小学教书。Tā zài xiǎoxué jiāoshū.",
     "example_vi": "Anh ấy dạy học ở trường tiểu học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 407,
@@ -4832,8 +6098,11 @@
     "example_zh_py": "小学生正在写作业。Xiǎo xuéshēng zhèngzài xiě zuòyè.",
     "example_vi": "Học sinh tiểu học đang làm bài tập.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 408,
@@ -4844,8 +6113,11 @@
     "example_zh_py": "妹妹笑得很开心。Mèimei xiào de hěn kāixīn.",
     "example_vi": "Em gái cười rất vui.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 409,
@@ -4856,8 +6128,11 @@
     "example_zh_py": "请写你的名字。Qǐng xiě nǐ de míngzì.",
     "example_vi": "Hãy viết tên của bạn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 410,
@@ -4868,8 +6143,11 @@
     "example_zh_py": "谢谢你的帮助。Xièxie nǐ de bāngzhù.",
     "example_vi": "Cảm ơn sự giúp đỡ của bạn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 411,
@@ -4880,8 +6158,11 @@
     "example_zh_py": "我买了一件新衣服。Wǒ mǎi le yí jiàn xīn yīfu.",
     "example_vi": "Tôi đã mua một bộ quần áo mới.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 412,
@@ -4892,8 +6173,11 @@
     "example_zh_py": "新年快乐！Xīnnián kuàilè!",
     "example_vi": "Chúc mừng năm mới!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 413,
@@ -4904,8 +6188,11 @@
     "example_zh_py": "这个星期我很忙。Zhè gè xīngqī wǒ hěn máng.",
     "example_vi": "Tuần này tôi rất bận.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 414,
@@ -4916,8 +6203,11 @@
     "example_zh_py": "星期日我们去看电影。Xī ngqī rì wǒmen qù kàn diànyǐng.",
     "example_vi": "Chủ nhật chúng tôi đi xem phim.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 415,
@@ -4928,8 +6218,11 @@
     "example_zh_py": "星期天你有空吗？Xīngqī tiān nǐ yǒu kòng ma?",
     "example_vi": "Chủ nhật bạn rảnh không?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 416,
@@ -4940,8 +6233,11 @@
     "example_zh_py": "好的，行！Hǎo de, xíng!",
     "example_vi": "Được thôi!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 417,
@@ -4952,8 +6248,11 @@
     "example_zh_py": "我们休息一下吧。Wǒmen xiūxi yíxià ba.",
     "example_vi": "Chúng ta nghỉ một chút nhé.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 418,
@@ -4964,8 +6263,11 @@
     "example_zh_py": "我学汉语。Wǒ xué Hànyǔ.",
     "example_vi": "Tôi học tiếng Trung.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 419,
@@ -4976,8 +6278,11 @@
     "example_zh_py": "他是个好学生。Tā shì gè hǎo xuéshēng.",
     "example_vi": "Cậu ấy là học sinh giỏi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 420,
@@ -4988,8 +6293,11 @@
     "example_zh_py": "我喜欢学习中文。Wǒ xǐhuān xuéxí Zhōngwén.",
     "example_vi": "Tôi thích học tiếng Trung.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 421,
@@ -5000,8 +6308,11 @@
     "example_zh_py": "学校很大。Xuéxiào hěn dà.",
     "example_vi": "Trường học rất lớn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 422,
@@ -5012,8 +6323,11 @@
     "example_zh_py": "他在语言学院学习。Tā zài yǔyán xuéyuàn xuéxí.",
     "example_vi": "Anh ấy học ở học viện ngôn ngữ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 423,
@@ -5024,8 +6338,11 @@
     "example_zh_py": "我不要这个。Wǒ bú yào zhè ge.",
     "example_vi": "Tôi không muốn cái này.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 424,
@@ -5036,8 +6353,11 @@
     "example_zh_py": "爷爷每天早上锻炼。Yéye měitiān zǎoshang duànliàn.",
     "example_vi": "Ông nội tập thể dục mỗi sáng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 425,
@@ -5048,8 +6368,11 @@
     "example_zh_py": "我也是学生。Wǒ yě shì xuéshēng.",
     "example_vi": "Tôi cũng là học sinh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 426,
@@ -5060,8 +6383,11 @@
     "example_zh_py": "请看第三页。Qǐng kàn dì sān yè.",
     "example_vi": "Hãy xem trang thứ ba.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 427,
@@ -5072,8 +6398,11 @@
     "example_zh_py": "我有一个问题。Wǒ yǒu yí gè wèntí.",
     "example_vi": "Tôi có một câu hỏi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 428,
@@ -5084,8 +6413,11 @@
     "example_zh_py": "她的衣服很漂亮。Tā de yīfu hěn piàoliang.",
     "example_vi": "Quần áo của cô ấy rất đẹp.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 429,
@@ -5096,8 +6428,11 @@
     "example_zh_py": "医生在医院里。Yīshēng zài yīyuàn lǐ.",
     "example_vi": "Bác sĩ ở trong bệnh viện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 430,
@@ -5108,8 +6443,11 @@
     "example_zh_py": "我去医院看病。Wǒ qù yīyuàn kànbìng.",
     "example_vi": "Tôi đến bệnh viện khám bệnh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 431,
@@ -5120,8 +6458,11 @@
     "example_zh_py": "我只吃了一半。Wǒ zhǐ chī le yí bàn.",
     "example_vi": "Tôi chỉ ăn một nửa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 432,
@@ -5132,8 +6473,11 @@
     "example_zh_py": "等我一会儿。Děng wǒ yíhuìr.",
     "example_vi": "Đợi tôi một lát.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 433,
@@ -5144,8 +6488,11 @@
     "example_zh_py": "我们一块儿去公园。Wǒm en yíkuàir qù gōngyuán.",
     "example_vi": "Chúng ta cùng đi công viên.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 434,
@@ -5156,8 +6503,11 @@
     "example_zh_py": "我试一下儿。Wǒ shì yí xiàr.",
     "example_vi": "Tôi thử một chút.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 435,
@@ -5168,8 +6518,11 @@
     "example_zh_py": "我们穿的一样。Wǒmen chuān de yíyàng.",
     "example_vi": "Chúng tôi mặc giống nhau.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 436,
@@ -5180,8 +6533,11 @@
     "example_zh_py": "他一边吃饭一边看电视。 Tā yìbiān chīfàn yìbiān kàn diànshì.",
     "example_vi": "Anh ấy vừa ăn vừa xem tivi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 437,
@@ -5192,8 +6548,11 @@
     "example_zh_py": "给我一点儿水。Gěi wǒ yìdiǎnr shuǐ.",
     "example_vi": "Cho tôi một chút nước.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 438,
@@ -5204,8 +6563,11 @@
     "example_zh_py": "我们一起去旅行吧。Wǒm en yìqǐ qù lǚxíng ba.",
     "example_vi": "Chúng ta cùng đi du lịch nhé.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 439,
@@ -5216,8 +6578,11 @@
     "example_zh_py": "我买了一些水果。Wǒ mǎi le yìxiē shuǐguǒ.",
     "example_vi": "Tôi đã mua một ít trái cây.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 440,
@@ -5228,8 +6593,11 @@
     "example_zh_py": "这个怎么用？Zhège zěnme yòng?",
     "example_vi": "Cái này dùng thế nào?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 441,
@@ -5240,8 +6608,11 @@
     "example_zh_py": "我有一个姐姐。Wǒ yǒu yí gè jiějie.",
     "example_vi": "Tôi có một chị gái.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 442,
@@ -5252,8 +6623,11 @@
     "example_zh_py": "有的人喜欢喝茶。Yǒude rén xǐhuān hē chá.",
     "example_vi": "Một số người thích uống trà.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 443,
@@ -5264,8 +6638,11 @@
     "example_zh_py": "他是一个有名的演员。Tā shì yí gè yǒumíng de yǎnyuán.",
     "example_vi": "Anh ấy là diễn viên nổi tiếng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 444,
@@ -5276,8 +6653,11 @@
     "example_zh_py": "有时 yǒu shí hòu ｜ yǒu shí sometimes thỉnh thoảng 我有时候晚上学习。Wǒ yǒu shíhou wǎnshang xuéxí.",
     "example_vi": "Thỉnh thoảng tôi học vào buổi tối.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 445,
@@ -5288,8 +6668,11 @@
     "example_zh_py": "些 yǒu （ yì ） xiē some có một số 这里有一些问题。Zhèlǐ yǒu yìxiē wèntí.",
     "example_vi": "Ở đây có một vài vấn đề.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 446,
@@ -5300,8 +6683,11 @@
     "example_zh_py": "这个词很有用。Zhè gè cí hěn yǒuyòng.",
     "example_vi": "Từ này rất hữu ích.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 447,
@@ -5312,8 +6698,11 @@
     "example_zh_py": "请往右转。Qǐng wǎng yòu zhuǎn.",
     "example_vi": "Xin rẽ phải.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 448,
@@ -5324,8 +6713,11 @@
     "example_zh_py": "学校在图书馆的右边。Xu éxiào zài túshūguǎn de yòubiān.",
     "example_vi": "Trường học ở bên phải thư viện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 449,
@@ -5336,8 +6728,11 @@
     "example_zh_py": "外面下雨了。Wàimiàn xiàyǔ le.",
     "example_vi": "Bên ngoài đang mưa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 450,
@@ -5348,8 +6743,11 @@
     "example_zh_py": "一杯咖啡五元。Yì bēi kāfēi wǔ yuán.",
     "example_vi": "Một cốc cà phê năm tệ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 451,
@@ -5360,8 +6758,11 @@
     "example_zh_py": "学校离我家很远。Xuéxià o lí wǒ jiā hěn yuǎn.",
     "example_vi": "Trường học cách nhà tôi rất xa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 452,
@@ -5372,8 +6773,11 @@
     "example_zh_py": "这个月有三十天。Zhè gè yuè yǒu sānshí tiān.",
     "example_vi": "Tháng này có 30 ngày.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 453,
@@ -5384,8 +6788,11 @@
     "example_zh_py": "请再说一遍。Qǐng zài shuō yí biàn.",
     "example_vi": "Làm ơn nói lại lần nữa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 454,
@@ -5396,8 +6803,11 @@
     "example_zh_py": "明天见，再见！Míngtiān jiàn, zàijiàn!",
     "example_vi": "Ngày mai gặp lại, tạm biệt!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 455,
@@ -5408,8 +6818,11 @@
     "example_zh_py": "我在学校。Wǒ zài xuéxiào.",
     "example_vi": "Tôi ở trường học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 456,
@@ -5420,8 +6833,11 @@
     "example_zh_py": "今天我在家。Jīntiān wǒ zài jiā.",
     "example_vi": "Hôm nay tôi ở",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 457,
@@ -5432,8 +6848,11 @@
     "example_zh_py": "他每天起得很早。Tā měitiān qǐ de hěn zǎo.",
     "example_vi": "Mỗi ngày anh ấy dậy rất sớm.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 458,
@@ -5444,8 +6863,11 @@
     "example_zh_py": "我吃了早饭。Wǒ chī le zǎofàn.",
     "example_vi": "Tôi đã ăn sáng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 459,
@@ -5456,8 +6878,11 @@
     "example_zh_py": "早上好！Zǎoshang hǎo!",
     "example_vi": "Chào buổi sáng!",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 460,
@@ -5468,8 +6893,11 @@
     "example_zh_py": "你怎么去学校？Nǐ zěnme qù xuéxiào?",
     "example_vi": "Bạn đến trường bằng cách nào?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 461,
@@ -5480,8 +6908,11 @@
     "example_zh_py": "火车站在哪儿？Huǒchē zhàn zài nǎr?",
     "example_vi": "Ga tàu ở đâu vậy?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 462,
@@ -5492,8 +6923,11 @@
     "example_zh_py": "我在找我的手机。Wǒ zài zhǎo wǒ de shǒujī.",
     "example_vi": "Tôi đang tìm điện thoại.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 463,
@@ -5504,8 +6938,11 @@
     "example_zh_py": "我找到钥匙了。Wǒ zhǎo dào yàoshi le.",
     "example_vi": "Tôi đã tìm thấy chìa khóa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 464,
@@ -5516,8 +6953,11 @@
     "example_zh_py": "这个多少钱？Zhè gè duōshao qián?",
     "example_vi": "Cái này bao nhiêu tiền?",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 465,
@@ -5528,8 +6968,11 @@
     "example_zh_py": "请到这边来。Qǐng dào zhè biān lái.",
     "example_vi": "Mời đến phía này.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 466,
@@ -5540,8 +6983,11 @@
     "example_zh_py": "这里很安静。Zhèlǐ hěn ānjìng.",
     "example_vi": "Ở đây rất yên tĩnh.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 467,
@@ -5552,8 +6998,11 @@
     "example_zh_py": "他在这儿。Tā zài zhèr.",
     "example_vi": "Anh ấy ở đây.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 468,
@@ -5564,8 +7013,11 @@
     "example_zh_py": "这些书很有用。Zhè xiē shū hěn yǒuyòng.",
     "example_vi": "Những quyển sách này rất hữu ích.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 469,
@@ -5576,8 +7028,11 @@
     "example_zh_py": "他笑着说话。Tā xiàozhe shuōhuà.",
     "example_vi": "Anh ấy đang cười khi nói chuyện.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 470,
@@ -5588,8 +7043,11 @@
     "example_zh_py": "这本书真好。Zhè běn shū zhēn hǎo.",
     "example_vi": "Cuốn sách này thật hay.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 471,
@@ -5600,8 +7058,11 @@
     "example_zh_py": "我真的喜欢你。Wǒ zhēn de xǐhuān nǐ.",
     "example_vi": "Tôi thật sự thích bạn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 472,
@@ -5612,8 +7073,11 @@
     "example_zh_py": "我正吃饭呢。Wǒ zhèng chīfàn ne.",
     "example_vi": "Tôi đang ăn cơm.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 473,
@@ -5624,8 +7088,11 @@
     "example_zh_py": "他正在看书。Tā zhèngzài kànshū.",
     "example_vi": "Anh ấy đang đọc sách.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 474,
@@ -5636,8 +7103,11 @@
     "example_zh_py": "我不知道。Wǒ bù zhīdào.",
     "example_vi": "Tôi không biết.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 475,
@@ -5648,8 +7118,11 @@
     "example_zh_py": "这些知识很重要。Zhèxiē zhīshi hěn zhòngyào.",
     "example_vi": "Những kiến thức này rất quan trọng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 476,
@@ -5660,8 +7133,11 @@
     "example_zh_py": "我坐在中间。Wǒ zuò zài zhōngjiān.",
     "example_vi": "Tôi ngồi ở",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 477,
@@ -5672,8 +7148,11 @@
     "example_zh_py": "我想去中国。Wǒ xiǎng qù Zhōngguó.",
     "example_vi": "Tôi muốn đi Trung Quốc.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 478,
@@ -5684,8 +7163,11 @@
     "example_zh_py": "他坐在我和你中间。Tā zuò zài wǒ hé nǐ zhōngjiān.",
     "example_vi": "Anh ấy ngồi giữa tôi và bạn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 479,
@@ -5696,8 +7178,11 @@
     "example_zh_py": "我会说中文。Wǒ huì shuō Zhōngwén.",
     "example_vi": "Tôi biết nói tiếng Trung.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 480,
@@ -5708,8 +7193,11 @@
     "example_zh_py": "我们中午吃饭。Wǒmen zhōngwǔ chīfàn.",
     "example_vi": "Chúng tôi ăn cơm trưa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 481,
@@ -5720,8 +7208,11 @@
     "example_zh_py": "她在中学教书。Tā zài zhōngxué jiāoshū.",
     "example_vi": "Cô ấy dạy ở trường trung học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 482,
@@ -5732,8 +7223,11 @@
     "example_zh_py": "他是中学生。Tā shì zhōngxuéshēng.",
     "example_vi": "Anh ấy là học sinh trung học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 483,
@@ -5744,8 +7238,11 @@
     "example_zh_py": "这个箱子太重了。Zhè gè xiāngzi tài zhòng le.",
     "example_vi": "Cái vali này nặng quá.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 484,
@@ -5756,8 +7253,11 @@
     "example_zh_py": "学习很重要。Xuéxí hěn zhòngyào.",
     "example_vi": "Việc học rất quan trọng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 485,
@@ -5768,8 +7268,11 @@
     "example_zh_py": "我住在河内。Wǒ zhù zài Hénèi.",
     "example_vi": "Tôi sống ở Hà Nội.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 486,
@@ -5780,8 +7283,11 @@
     "example_zh_py": "我准备好了。Wǒ zhǔnbèi hǎo le.",
     "example_vi": "Tôi đã chuẩn bị xong.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 487,
@@ -5792,8 +7298,11 @@
     "example_zh_py": "书在桌子上。Shū zài zhuōzi shàng.",
     "example_vi": "Sách ở trên bàn.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 488,
@@ -5804,20 +7313,26 @@
     "example_zh_py": "他写了很多字。Tā xiě le hěn duō zì.",
     "example_vi": "Anh ấy viết rất nhiều chữ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 489,
     "raw_hanzi": "子（桌子",
-    "simplified": "子（桌子",
+    "simplified": "子",
     "pinyin": "",
     "raw_definition": "） zi （ zhuō zi ） noun suffix (table) hậu tố (bàn)",
     "example_zh_py": "桌子在房间里。Zhuōzi zài fángjiān lǐ.",
     "example_vi": "Cái bàn ở trong phòng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 490,
@@ -5828,8 +7343,11 @@
     "example_zh_py": "我走路回家。Wǒ zǒulù huíjiā.",
     "example_vi": "Tôi đi bộ về nhà.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 491,
@@ -5840,8 +7358,11 @@
     "example_zh_py": "他每天走路上学。Tā měitiān zǒulù shàngxué.",
     "example_vi": "Cậu ấy đi bộ đến trường mỗi ngày.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 492,
@@ -5852,8 +7373,11 @@
     "example_zh_py": "她是最好的学生。Tā shì zuì hǎo de xuéshēng.",
     "example_vi": "Cô ấy là học sinh giỏi nhất.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 493,
@@ -5864,8 +7388,11 @@
     "example_zh_py": "你最好现在去。Nǐ zuì hǎo xiànzài qù.",
     "example_vi": "Tốt nhất bạn nên đi ngay bây giờ.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 494,
@@ -5876,8 +7403,11 @@
     "example_zh_py": "他最后一个到。Tā zuìhòu yí gè dào.",
     "example_vi": "Anh ấy đến cuối cùng.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 495,
@@ -5888,8 +7418,11 @@
     "example_zh_py": "昨天下雨了。Zuótiān xiàyǔ le.",
     "example_vi": "Hôm qua trời mưa.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 496,
@@ -5900,8 +7433,11 @@
     "example_zh_py": "请往左转。Qǐng wǎng zuǒ zhuǎn.",
     "example_vi": "Xin rẽ trái.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 497,
@@ -5912,8 +7448,11 @@
     "example_zh_py": "商店在学校左边。Shāngd iàn zài xuéxiào zuǒbiān.",
     "example_vi": "Cửa hàng ở bên trái trường học.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 498,
@@ -5924,8 +7463,11 @@
     "example_zh_py": "请坐。Qǐng zuò.",
     "example_vi": "Mời ngồi.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 499,
@@ -5936,8 +7478,11 @@
     "example_zh_py": "孩子们坐下了。Háizimen zuòxià le.",
     "example_vi": "Bọn trẻ đã ngồi xuống.",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   },
   {
     "stt": 500,
@@ -5948,7 +7493,10 @@
     "example_zh_py": "我会做饭。Wǒ huì zuò fàn.",
     "example_vi": "Tôi biết nấu ăn. CÁC BẠN CẦN TÀI LIỆU HỌC TIẾNG TRUNG MIỄN PHÍ LIÊN HỆ : 1. ZALO : 0329797625 (阮文俊英） 2. TIKTOK : THÍCH HỌC TIẾNG TRUNG - ĐÀI VÌ LÀ TÀI LIỆU MÌNH TỰ SOẠN NÊN KHÔNG THỂ TRÁNH ĐƯỢC SAI SÓT. RẤT MONG CÁC BẠN HỌC GIẢ GÓP Ý .谢谢大家 !",
     "hsk_level": 1,
+    "curriculum_version": "GF0025_2021",
+    "is_hsk_2025_core": false,
     "source": "NEW HSK1 3.0.pdf",
-    "status": "APPROVED_DRAFT"
+    "status": "APPROVED_DRAFT",
+    "verification_status": "UNVERIFIED_AUTOMATED"
   }
 ]

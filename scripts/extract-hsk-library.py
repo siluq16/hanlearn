@@ -18,23 +18,23 @@ def parse_hsk_pdf(level):
     for page in reader.pages:
         full_text += (page.extract_text() or '') + '\n'
 
-    # Split by item starts: number followed by Hanzi
-    splits = re.split(r'\n(?=\d+\s+[\u4e00-\u9fff])', full_text)
+    # Split by item starts: number followed by Hanzi or CJK zero / punctuation
+    splits = re.split(r'\n(?=\d+\s+[\u4e00-\u9fff\u3007])', full_text)
     items = []
     
     for raw in splits[1:]:
         raw_str = ' '.join([l.strip() for l in raw.strip().split('\n') if l.strip()])
-        # Match STT and Hanzi
-        m = re.match(r'^(\d+)\s+([\u4e00-\u9fff\s\|｜（）\(\)\.]+?)\s+(.*)', raw_str)
+        # Match STT and Hanzi (including Chinese comma U+3001 and zero U+3007)
+        m = re.match(r'^(\d+)\s+([\u4e00-\u9fff\u3007\s\|｜（）\(\)\.\u3001]+?)\s+(.*)', raw_str)
         if not m:
             continue
         stt = int(m.group(1))
         raw_hanzi = m.group(2).strip()
         rest = m.group(3).strip()
 
-        # Clean simplified hanzi (e.g. 爸爸｜爸 -> 爸爸, 白（形） -> 白)
-        clean_hanzi = re.sub(r'（[^）]+）|\([^\)]+\)', '', raw_hanzi).strip()
-        clean_hanzi = clean_hanzi.split('｜')[0].split('|')[0].strip()
+        # Clean simplified hanzi (e.g. 爸爸｜爸 -> 爸爸, 白（形） -> 白, 多（形、 代） -> 多)
+        clean_hanzi = re.split(r'[（\(]', raw_hanzi)[0].strip()
+        clean_hanzi = re.split(r'[\|｜]', clean_hanzi)[0].strip()
 
         # Split rest into defs and example
         ex_m = re.search(r'([\u4e00-\u9fff].*)', rest)
@@ -46,7 +46,6 @@ def parse_hsk_pdf(level):
             raw_example = ''
 
         # Split example into Hanzi+Pinyin and Vietnamese translation
-        # Usually format: <Hanzi><Pinyin> – <Translation>
         ex_parts = re.split(r'\s+[–\-—]\s+', raw_example, maxsplit=1)
         if len(ex_parts) == 2:
             ex_zh_py = ex_parts[0].strip()
@@ -56,7 +55,6 @@ def parse_hsk_pdf(level):
             ex_vi = ''
 
         # Extract Pinyin from defs_part (letters with tones)
-        # Match pinyin chunk at the start of defs_part
         py_match = re.match(r'^([a-zA-ZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙÜ\s\(\)\,\:\;\-\'’\|｜\/\.]+?)(?=\s+[a-z]{2,}|\s+[A-Z]|\s+[\(]|\s+[\u00C0-\u1EF9]|\Z)', defs_part)
         
         pinyin = ''
@@ -65,9 +63,11 @@ def parse_hsk_pdf(level):
             pinyin = py_match.group(1).strip()
             meanings_part = defs_part[py_match.end():].strip()
 
-        # Split meanings_part into English and Vietnamese
-        # Vietnamese words have distinct diacritics or common Vietnamese words
-        # Let's clean up definition
+        # Curriculum tiering for HSK 1:
+        # Top 300 words align with HSK_EXAM_2025 syllabus; remaining 200 belong to GF0025_2021 standard
+        curriculum_version = "HSK_EXAM_2025" if (level == 1 and stt <= 300) else "GF0025_2021"
+        is_hsk_2025_core = bool(level == 1 and stt <= 300)
+
         items.append({
             "stt": stt,
             "raw_hanzi": raw_hanzi,
@@ -77,8 +77,11 @@ def parse_hsk_pdf(level):
             "example_zh_py": ex_zh_py,
             "example_vi": ex_vi,
             "hsk_level": level,
+            "curriculum_version": curriculum_version,
+            "is_hsk_2025_core": is_hsk_2025_core,
             "source": f"NEW HSK{level} 3.0.pdf",
-            "status": "APPROVED_DRAFT"
+            "status": "APPROVED_DRAFT",
+            "verification_status": "UNVERIFIED_AUTOMATED"
         })
 
     return items
@@ -174,7 +177,10 @@ for p_idx in range(4, 104):
         "suggested_hsk_level": suggested_level,
         "source": "1000 CAU GIAO TIEP TIENG HOA- PHON THE.pdf (OCAC 2009)",
         "license": "RESTRICTED_EDUCATIONAL_NEEDS_REVIEW",
-        "verification_status": "NEEDS_REVIEW"
+        "quality_status": "DRAFT_RESTRICTED",
+        "client_bundling": "SERVER_DRAFT_ONLY",
+        "verification_status": "UNVERIFIED_AUTOMATED",
+        "notes": "Chưa có bản dịch tiếng Việt được kiểm định bởi con người. Giữ ở trạng thái draft nội bộ, không đưa vào client bundle hoặc website công khai."
     })
 
 with open('content/hsk_library/dialogues.json', 'w', encoding='utf-8') as f:
@@ -265,6 +271,12 @@ report = {
         "hsk4": len(vocab_by_level[4]),
         "hsk5": len(vocab_by_level[5])
     },
+    "hsk1_curriculum_breakdown": {
+        "hsk_2025_exam_core": len([w for w in vocab_by_level[1] if w.get("is_hsk_2025_core")]),
+        "gf0025_2021_extended": len([w for w in vocab_by_level[1] if not w.get("is_hsk_2025_core")]),
+        "total": len(vocab_by_level[1])
+    },
+    "cross_level_duplicates_count": len([w for w, lvls in all_words_seen.items() if len(lvls) > 1]),
     "dialogues_summary": {
         "total_lessons": len(dialogues),
         "total_turns": sum(d['turns_count'] for d in dialogues),
@@ -274,7 +286,8 @@ report = {
             "hsk3": len([d for d in dialogues if d['suggested_hsk_level'] == 3]),
             "hsk4": len([d for d in dialogues if d['suggested_hsk_level'] == 4]),
             "hsk5": len([d for d in dialogues if d['suggested_hsk_level'] == 5])
-        }
+        },
+        "policy_status": "DRAFT_RESTRICTED_SERVER_ONLY"
     }
 }
 

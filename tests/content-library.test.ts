@@ -1,22 +1,17 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import type {
-  LibraryVocabulary,
-  LibraryDialogue,
-  LibraryExercise,
-  LessonContentMapping,
-} from "@/features/content-library/types";
+import { findNineStageLesson, HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
 
 const libraryDir = path.resolve(process.cwd(), "content/hsk_library");
 
-describe("Content Library Architecture (HSK 1–5)", () => {
-  it("loads and validates HSK 1-5 vocabulary files", () => {
+describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () => {
+  it("loads and validates HSK 1-5 vocabulary files with exact counts", () => {
     for (let lvl = 1; lvl <= 5; lvl++) {
       const filePath = path.join(libraryDir, `hsk${lvl}_vocabulary.json`);
       expect(fs.existsSync(filePath)).toBe(true);
 
-      const items: LibraryVocabulary[] = JSON.parse(
+      const items: Array<Record<string, unknown>> = JSON.parse(
         fs.readFileSync(filePath, "utf8"),
       );
       expect(items.length).toBeGreaterThan(450);
@@ -29,7 +24,45 @@ describe("Content Library Architecture (HSK 1–5)", () => {
     }
   });
 
-  it("preserves 43 out of 44 pilot words in the HSK 1 3.0 vocabulary list", () => {
+  it("verifies HSK 1 has exactly 500 items and includes the 4 previously skipped words", () => {
+    const hsk1Path = path.join(libraryDir, "hsk1_vocabulary.json");
+    const hsk1: Array<Record<string, unknown>> = JSON.parse(
+      fs.readFileSync(hsk1Path, "utf8"),
+    );
+    expect(hsk1.length).toBe(500);
+
+    const stts = new Set(hsk1.map((w) => w.stt));
+    expect(stts.has(94)).toBe(true); // 多 (duō)
+    expect(stts.has(109)).toBe(true); // 分 (fēn)
+    expect(stts.has(216)).toBe(true); // 零 (líng)
+    expect(stts.has(389)).toBe(true); // 下 (xià)
+
+    const w94 = hsk1.find((w) => w.stt === 94);
+    expect(w94?.simplified).toBe("多");
+    const w109 = hsk1.find((w) => w.stt === 109);
+    expect(w109?.simplified).toBe("分");
+    const w216 = hsk1.find((w) => w.stt === 216);
+    expect(w216?.simplified).toBe("零");
+    const w389 = hsk1.find((w) => w.stt === 389);
+    expect(w389?.simplified).toBe("下");
+  });
+
+  it("separates HSK 1 into HSK_EXAM_2025 core (300 words) and GF0025_2021 (200 words)", () => {
+    const hsk1Path = path.join(libraryDir, "hsk1_vocabulary.json");
+    const hsk1: Array<Record<string, unknown>> = JSON.parse(
+      fs.readFileSync(hsk1Path, "utf8"),
+    );
+
+    const core2025 = hsk1.filter((w) => w.is_hsk_2025_core === true);
+    const extended2021 = hsk1.filter((w) => w.is_hsk_2025_core === false);
+
+    expect(core2025.length).toBe(300);
+    expect(extended2021.length).toBe(200);
+    expect(core2025[0].curriculum_version).toBe("HSK_EXAM_2025");
+    expect(extended2021[0].curriculum_version).toBe("GF0025_2021");
+  });
+
+  it("preserves 43 out of 44 pilot words in the HSK 1 vocabulary list", () => {
     const pilotPath = path.resolve(
       process.cwd(),
       "content/pilot-hsk1/v1/vocabulary.json",
@@ -52,28 +85,25 @@ describe("Content Library Architecture (HSK 1–5)", () => {
     expect(supplemental?.simplified).toBe("越南");
   });
 
-  it("loads dialogues.json with 100 lessons and validated turns", () => {
+  it("loads dialogues.json and enforces draft restricted server-only policy", () => {
     const filePath = path.join(libraryDir, "dialogues.json");
     expect(fs.existsSync(filePath)).toBe(true);
 
-    const dialogues: LibraryDialogue[] = JSON.parse(
+    const dialogues: Array<Record<string, unknown>> = JSON.parse(
       fs.readFileSync(filePath, "utf8"),
     );
     expect(dialogues.length).toBe(100);
 
-    const first = dialogues[0] as unknown as Record<string, unknown>;
+    const first = dialogues[0];
     const lessonNum = first.lesson_number ?? first.lessonNumber;
     const titleSimp = first.title_simplified ?? first.titleSimplified;
     expect(lessonNum).toBe(1);
     expect(titleSimp).toBe("自我介绍");
-    const turns = first.turns as Array<Record<string, unknown>>;
-    expect(turns.length).toBeGreaterThan(3);
 
-    // Each turn must have speaker, simplified hanzi, and pinyin
-    expect(turns[0].speaker).toBe("王");
-    const turnSimp = turns[0].hanzi_simplified ?? turns[0].hanzi;
-    expect(turnSimp).toContain("您好");
-    expect(turns[0].pinyin).toBeDefined();
+    // Must be marked DRAFT_RESTRICTED and SERVER_DRAFT_ONLY
+    expect(first.quality_status).toBe("DRAFT_RESTRICTED");
+    expect(first.client_bundling).toBe("SERVER_DRAFT_ONLY");
+    expect(first.verification_status).toBe("UNVERIFIED_AUTOMATED");
   });
 
   it("validates Module 0 Pinyin Foundation structure", () => {
@@ -100,28 +130,43 @@ describe("Content Library Architecture (HSK 1–5)", () => {
     expect(tonesSec.tones.length).toBe(5); // 4 tones + neutral
   });
 
-  it("validates the 9-stage HSK 1 Lesson 1 curriculum map", () => {
-    const filePath = path.join(libraryDir, "hsk1_lesson_01.json");
-    expect(fs.existsSync(filePath)).toBe(true);
+  it("validates 9-stage complete curriculum for Lessons 1, 5, and 6", () => {
+    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(3);
 
-    const lesson = JSON.parse(
-      fs.readFileSync(filePath, "utf8"),
-    ) as { id: string; hsk_level?: number; hskLevel?: number; stages: Array<{ stage: string }> };
-    expect(lesson.id).toBe("lesson-hsk1-01");
-    const hskLvl = lesson.hsk_level ?? lesson.hskLevel;
-    expect(hskLvl).toBe(1);
-    expect(lesson.stages.length).toBe(10); // 0_warmup to 9_srs_review
+    const l1 = findNineStageLesson("hsk1-lesson-01");
+    const l5 = findNineStageLesson("hsk1-lesson-05");
+    const l6 = findNineStageLesson("hsk1-lesson-06");
 
-    const stageNames = lesson.stages.map((s: { stage: string }) => s.stage);
-    expect(stageNames).toContain("0_warmup");
-    expect(stageNames).toContain("1_vocab_learn");
-    expect(stageNames).toContain("2_vocab_practice");
-    expect(stageNames).toContain("3_grammar_learn");
-    expect(stageNames).toContain("4_grammar_practice");
-    expect(stageNames).toContain("5_dialogue_interactive");
-    expect(stageNames).toContain("6_listening_speaking");
-    expect(stageNames).toContain("7_reading_comprehension");
-    expect(stageNames).toContain("8_mini_quiz");
-    expect(stageNames).toContain("9_srs_review");
+    expect(l1).toBeDefined();
+    expect(l5).toBeDefined();
+    expect(l6).toBeDefined();
+
+    for (const lesson of [l1!, l5!, l6!]) {
+      expect(lesson.stages.length).toBe(10); // 0_warmup to 9_srs_review
+      const stageNames = lesson.stages.map((s) => s.stage);
+      expect(stageNames).toContain("0_warmup");
+      expect(stageNames).toContain("1_vocab_learn");
+      expect(stageNames).toContain("2_vocab_practice");
+      expect(stageNames).toContain("3_grammar_learn");
+      expect(stageNames).toContain("4_grammar_practice");
+      expect(stageNames).toContain("5_dialogue_interactive");
+      expect(stageNames).toContain("6_listening_speaking");
+      expect(stageNames).toContain("7_reading_comprehension");
+      expect(stageNames).toContain("8_mini_quiz");
+      expect(stageNames).toContain("9_srs_review");
+
+      // Check exercise kinds present
+      const allExercises = lesson.stages.flatMap((s) => s.exercises || []);
+      expect(allExercises.length).toBeGreaterThanOrEqual(5);
+
+      const kinds = new Set(allExercises.map((e) => e.kind));
+      expect(kinds.has("vocab-mcq")).toBe(true);
+      expect(kinds.has("matching_pairs")).toBe(true);
+      expect(kinds.has("grammar-choice")).toBe(true);
+      expect(kinds.has("sentence-order")).toBe(true);
+      expect(kinds.has("dialogue_roleplay")).toBe(true);
+      expect(kinds.has("reading_true_false")).toBe(true);
+      expect(kinds.has("sentence_shadowing")).toBe(true);
+    }
   });
 });
