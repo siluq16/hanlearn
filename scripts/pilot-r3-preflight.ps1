@@ -1,7 +1,7 @@
 #requires -Version 5.1
 # Fixed Development target; SELECT-only capture. Password only in transient child environment.
 [CmdletBinding()]
-param([Security.SecureString]$DatabasePassword,[switch]$NoPrompt,[switch]$SecurityPosture,
+param([Security.SecureString]$DatabasePassword,[Security.SecureString]$OwnerAuthEmail,[switch]$NoPrompt,[switch]$SecurityPosture,[switch]$ResolveImportBlockers,
  [string]$PsqlPath='C:\Program Files\PostgreSQL\18\bin\psql.exe',
  [string]$SslRootCert='.local/cloud-preflight/prod-supabase.cer')
 $ErrorActionPreference='Stop'
@@ -12,6 +12,11 @@ $PoolerHost='aws-1-ap-southeast-2.pooler.supabase.com'
 $postureFile=Join-Path $repo 'supabase/verification/pilot_r3_security_posture.sql'
 $postureSha='78f8989ddf71d672c9a23d694d1405e0232c144e55d6ce8298b6af067550b828'
 $reportDir=Join-Path $repo '.local/pilot-r3-preflight'
+if($ResolveImportBlockers){$reportDir=Join-Path $repo '.local/pilot-r3-blockers'}
+$sessionProbe=Join-Path $repo 'supabase/verification/pilot_import_session_probe.sql'
+$sessionProbeSha='534b3db397ddab518d6bff48e6772a48bb5d2af4f15be899be7d970c954613e5'
+$thresholdProbe=Join-Path $repo 'supabase/verification/pilot_import_threshold_probe.sql'
+$thresholdProbeSha='3d4dd47bdad8e92b1467a36abbb8ac8b6416b1c1d3584d638be7822ec45be565'
 $report=[ordered]@{projectRef=$ProjectRef;checkedAt=[DateTime]::UtcNow.ToString('o');status='BLOCKED';reason=$null}
 function ConvertTo-NativeArgument([string]$Value) {
     # Windows CommandLineToArgvW quoting; no shell, expansion, or credential args.
@@ -24,7 +29,7 @@ function ConvertTo-NativeArgument([string]$Value) {
     }
     return $quoted+('\' * (2*$slashes))+'"'
 }
-function Invoke-Captured([string]$Executable, [string[]]$Arguments, [string]$InputSql = '') {
+function Invoke-Captured([string]$Executable, [string[]]$Arguments, [string]$InputSql = '',[switch]$SyntheticProbe) {
     $start = [Diagnostics.ProcessStartInfo]::new()
     $start.FileName=$Executable; $start.WorkingDirectory=$repo; $start.UseShellExecute=$false
     $start.RedirectStandardInput=$true; $start.RedirectStandardOutput=$true; $start.RedirectStandardError=$true
@@ -55,6 +60,10 @@ function Invoke-Captured([string]$Executable, [string[]]$Arguments, [string]$Inp
         $process.StandardInput.Close()
         if(-not $process.WaitForExit(60000)) { $process.Kill(); throw 'Connection/command timeout; raw output suppressed.' }
         $output=$stdout.GetAwaiter().GetResult(); $errorText=$stderr.GetAwaiter().GetResult()
+        if($SyntheticProbe){
+            $state=if($errorText -match '(?:ERROR|FATAL):\s+([A-Z0-9]{5})'){$Matches[1]}else{$null}
+            return [pscustomobject]@{Out=$output;ExitCode=$process.ExitCode;SqlState=$state}
+        }
         if($process.ExitCode -ne 0) {
             $kind = if($errorText -match 'certificate|SSL|TLS|root.crt') {'TLS verification failed; provide the trusted CA with -SslRootCert. No downgrade attempted.'}
                 elseif($errorText -match 'password authentication|28P01|no password') {'Database authentication failed. Re-enter the password only at the secure local prompt.'}
@@ -86,7 +95,23 @@ try {
  if(-not [IO.Path]::IsPathRooted($SslRootCert)) { $SslRootCert=Join-Path $repo $SslRootCert }
  if(-not (Test-Path -LiteralPath $SslRootCert) -or -not (Test-Path -LiteralPath $PsqlPath)) { throw 'Trusted project CA or psql missing. No TLS downgrade.' }
  if($SecurityPosture -and (Get-FileHash -LiteralPath $postureFile -Algorithm SHA256).Hash.ToLowerInvariant() -cne $postureSha) { throw 'Read-only security posture SQL hash mismatch. No connection attempted.' }
+ if($ResolveImportBlockers -and (Get-FileHash -LiteralPath $sessionProbe -Algorithm SHA256).Hash.ToLowerInvariant() -cne $sessionProbeSha){throw 'Session probe hash mismatch. No connection attempted.'}
+ if($ResolveImportBlockers -and (Get-FileHash -LiteralPath $thresholdProbe -Algorithm SHA256).Hash.ToLowerInvariant() -cne $thresholdProbeSha){throw 'Session threshold probe hash mismatch. No connection attempted.'}
  New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
+ if($ResolveImportBlockers){
+  $sid=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value
+  $null=& icacls.exe $reportDir '/inheritance:r' '/grant:r' ('*'+$sid+':(OI)(CI)F') '*S-1-5-18:(OI)(CI)F'
+  if($LASTEXITCODE -ne 0){throw 'Private capture ACL setup failed.'}
+  foreach($rule in (Get-Acl -LiteralPath $reportDir).Access){if($rule.IdentityReference.Translate([Security.Principal.SecurityIdentifier]).Value -notin @($sid,'S-1-5-18')){throw 'Private capture ACL rejected.'}}
+  $auth=Get-Content -Raw -LiteralPath (Join-Path $repo '.local/acceptance/auth-owner.json') | ConvertFrom-Json
+  if($auth.status -ne 'PASS' -or $auth.projectRef -cne $ProjectRef -or $auth.role -ne 'Owner' -or -not @($auth.checks | Where-Object {$_.name -eq 'real-auth-identity' -and $_.status -eq 'PASS'}).Count){throw 'Existing owner Auth evidence missing.'}
+  if(-not $OwnerAuthEmail -and (Test-Path -LiteralPath (Join-Path $reportDir 'capture.json'))){
+   $old=Get-Content -Raw -LiteralPath (Join-Path $reportDir 'capture.json') | ConvertFrom-Json
+   $known=@($old.ownerIdentity.allowlist | Where-Object {$_.owner_reference_match -and $_.confirmed})
+   if($old.projectRef -ceq $ProjectRef -and $old.tlsMode -eq 'verify-full' -and $old.ownerIdentified -eq $true -and $known.Count -eq 1){$OwnerAuthEmail=ConvertTo-SecureString -String $known[0].email -AsPlainText -Force}
+  }
+  if(-not $OwnerAuthEmail){if($NoPrompt){throw 'Owner identity reference required.'};$OwnerAuthEmail=Read-Host 'Email of the previously Auth-verified owner (hidden)' -AsSecureString}
+ }
  if(-not $DatabasePassword) {
   if($NoPrompt) { throw 'Secure local database credential required. No Cloud connection attempted.' }
   $DatabasePassword=Read-Host 'Development DB password (secure local input only)' -AsSecureString
@@ -96,6 +121,58 @@ try {
  if(-not $script:ipv4) { throw 'IPv4 Session Pooler resolution failed.' }
  foreach($property in $audit.sqlHashes.PSObject.Properties) {
   if((Get-FileHash -LiteralPath (Join-Path $repo $property.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $property.Value) { throw 'Audited SQL changed before connection.' }
+ }
+ if($ResolveImportBlockers){
+  $emailPtr=[IntPtr]::Zero
+  try{
+   $emailPtr=[Runtime.InteropServices.Marshal]::SecureStringToBSTR($OwnerAuthEmail)
+   $email=[Runtime.InteropServices.Marshal]::PtrToStringBSTR($emailPtr).Trim()
+   if($email.Length -gt 254 -or $email -notmatch '^[^\s@]+@[^\s@]+\.[^\s@]+$'){throw 'Owner email reference invalid.'}
+   $encodedEmail=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($email))
+  }finally{if($emailPtr -ne [IntPtr]::Zero){[Runtime.InteropServices.Marshal]::ZeroFreeBSTR($emailPtr)};$email=$null}
+  $identitySql=@"
+BEGIN READ ONLY;
+SET LOCAL statement_timeout='15s';
+SELECT jsonb_build_object('identity',jsonb_build_object('database',current_database(),'role',current_user,'read_only',current_setting('transaction_read_only')),
+ 'owner_matches',(SELECT count(*) FROM auth.users WHERE lower(email)=lower(convert_from(decode('$encodedEmail','base64'),'UTF8'))),
+ 'allowlist',(SELECT coalesce(jsonb_agg(jsonb_build_object('id',u.id,'email',u.email,'confirmed',u.email_confirmed_at IS NOT NULL,
+ 'owner_reference_match',lower(u.email)=lower(convert_from(decode('$encodedEmail','base64'),'UTF8')),
+ 'created_at',u.created_at,'provider',u.raw_app_meta_data->>'provider',
+ 'has_profile',EXISTS(SELECT 1 FROM public.profiles p WHERE p.id=u.id),
+ 'progress_rows',(SELECT count(*) FROM public.lesson_progress p WHERE p.user_id=u.id),
+ 'quiz_attempt_rows',(SELECT count(*) FROM public.quiz_attempts a WHERE a.user_id=u.id),
+ 'srs_card_rows',(SELECT count(*) FROM public.review_cards c WHERE c.user_id=u.id)) ORDER BY u.created_at),'[]'::jsonb)
+ FROM private.allowed_learners a JOIN auth.users u ON u.id=a.user_id));
+ROLLBACK;
+"@
+  $result=Invoke-Captured $PsqlPath @('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f','-') $identitySql
+  $identity=$result.Out.Trim() | ConvertFrom-Json
+  if($identity.identity.database -ne 'postgres' -or $identity.identity.role -ne 'postgres' -or $identity.identity.read_only -ne 'on'){throw 'Owner capture identity mismatch.'}
+  $report['ownerIdentity']=$identity
+  $report['ownerReferenceBasis']='Owner-supplied reference email for previously verified Auth account; auth summary intentionally has no persisted UUID/email. No new login performed.'
+  $report['ownerIdentified']=($identity.owner_matches -eq 1 -and @($identity.allowlist | Where-Object {$_.owner_reference_match -and $_.confirmed}).Count -eq 1)
+  $probe=Invoke-Captured $PsqlPath @('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f',$sessionProbe) '' -SyntheticProbe
+  $stages=@($probe.Out.Trim() -split '\r?\n' | Where-Object {$_ -match '^\{'} | ForEach-Object {$_ | ConvertFrom-Json})
+  $strictAttempt=[ordered]@{sqlState=$probe.SqlState;exitCode=$probe.ExitCode;stages=$stages}
+  $probeKind='STRICT_SETTINGS';$selectedProbe=$sessionProbe;$selectedSha=$sessionProbeSha
+  if($probe.SqlState -ceq '42501'){
+   # Supported session-only alternative: PostgreSQL LOG/ERROR/FATAL are below PANIC.
+   # No permission failure is hidden; the strict attempt is retained in private capture.
+   $probeKind='SESSION_MESSAGE_THRESHOLD';$selectedProbe=$thresholdProbe;$selectedSha=$thresholdProbeSha
+   $probe=Invoke-Captured $PsqlPath @('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f',$thresholdProbe) '' -SyntheticProbe
+   $stages=@($probe.Out.Trim() -split '\r?\n' | Where-Object {$_ -match '^\{'} | ForEach-Object {$_ | ConvertFrom-Json})
+  }
+  $guard=@($stages | Where-Object {$_.stage -eq 'guard_verified'})
+  $bind=@($stages | Where-Object {$_.stage -eq 'bind_canary'})
+  $safe=($probe.ExitCode -eq 3 -and $probe.SqlState -ceq '22P02' -and $guard.Count -eq 1 -and $guard[0].logging_guard_pass -eq $true -and $guard[0].read_only -eq 'on' -and $bind.Count -eq 1 -and $bind[0].bound_text -eq $true -and $bind[0].pid -eq $guard[0].pid -and $guard[0].pid -eq $stages[0].pid)
+  if((Get-FileHash -LiteralPath $sessionProbe -Algorithm SHA256).Hash.ToLowerInvariant() -cne $sessionProbeSha){throw 'Session probe changed during execution.'}
+  if((Get-FileHash -LiteralPath $selectedProbe -Algorithm SHA256).Hash.ToLowerInvariant() -cne $selectedSha){throw 'Selected probe changed during execution.'}
+  $report['tlsMode']='verify-full';$report['sessionProbeSha256']=$selectedSha;$report['sessionProbeKind']=$probeKind
+  $report['sessionProbe']=[ordered]@{status=$(if($safe){'SAFE_SESSION_GUARD_VERIFIED'}else{'BLOCKED'});exitCode=$probe.ExitCode;sqlState=$probe.SqlState;stages=$stages;strictAttempt=$strictAttempt;lastStage=$(if($stages.Count){$stages[-1].stage}else{'NONE'});limits=@('Synthetic only; no real keys or writes.','No provider/pooler log search performed.','Import must run identical safeguards before keys on its own physical connection.')}
+  $report['status']='BLOCKERS_CAPTURED'
+  Write-Host ('Owner identified: '+$report.ownerIdentified+'; allowlist count: '+@($identity.allowlist).Count+'; session logging: '+$report.sessionProbe.status)
+  Write-Host 'Private identities saved only in ignored restricted .local/pilot-r3-blockers/capture.json. No allowlist change or import executed.'
+  return
  }
  $readArguments=@('-X','-w','-A','-t','-q','-v','ON_ERROR_STOP=1','-P','pager=off','-f',(Join-Path $repo 'supabase/verification/pilot_r3_readonly_preflight.sql'))
  if($SecurityPosture){$readArguments+=@('-f',$postureFile)}
@@ -144,6 +221,7 @@ try {
  Write-Host ('BLOCKED: '+$report.reason)
 } finally {
  if($DatabasePassword) { $DatabasePassword.Dispose() }
+ if($OwnerAuthEmail) { $OwnerAuthEmail.Dispose() }
  New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
  $report | ConvertTo-Json -Depth 30 | Set-Content -Encoding utf8 -LiteralPath (Join-Path $reportDir 'capture.json')
 }

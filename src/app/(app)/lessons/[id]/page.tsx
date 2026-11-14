@@ -4,7 +4,7 @@ import { LessonView } from "@/features/lessons/components/lesson-view";
 import { InvalidLessonContent } from "@/features/lessons/components/lesson-states";
 import { StudyConfirmation } from "@/features/lessons/components/study-confirmation";
 import { confirmLessonStudy } from "@/features/lessons/actions";
-import { localStudyTarget } from "@/features/lessons/study-contract";
+import { learningEnabled } from "@/lib/learning";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Bài học" };
 export default async function LessonPage({
@@ -23,10 +23,7 @@ export default async function LessonPage({
           key={id}
           lessonId={id}
           progress={result.bundle.progress}
-          enabled={localStudyTarget(
-            process.env.NEXT_PUBLIC_SUPABASE_URL,
-            process.env.HANLEARN_LOCAL_STUDY_CONFIRMATION,
-          )}
+          enabled={learningEnabled("study")}
           confirm={confirmLessonStudy}
         />
       }

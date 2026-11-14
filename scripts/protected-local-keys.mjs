@@ -1,4 +1,4 @@
-// Trusted Windows checkout only. Local reads need no signature; no real DB mode exists.
+// Trusted Windows checkout only. Real DB delivery requires the explicit approved operator entry.
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -22,14 +22,14 @@ const realPath = ".local/pilot-hsk1/v1/private/answers.json";
 const repoRoot = fileURLToPath(new URL("../", import.meta.url));
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const sha = (b) => createHash("sha256").update(b).digest("hex");
-function handle(store, mode) {
+function handle(store, mode, sourceHash = null) {
   const safe = () => ({
     kind: "protected-local-key-handle",
     records: store.keys.length,
     mode,
   });
   const token = Object.freeze({ toJSON: safe, [inspect.custom]: safe });
-  handles.set(token, { store, mode });
+  handles.set(token, { store, mode, sourceHash });
   return token;
 }
 function validateStore(pkg, store) {
@@ -89,7 +89,11 @@ export function trustedLocalRuntime({
     platform === "win32" &&
     !browser &&
     path.resolve(cwd).toLowerCase() === path.resolve(repoRoot).toLowerCase() &&
-    ["scripts/validate-pilot.mjs", "scripts/protected-local-keys.mjs"].some(
+    [
+      "scripts/validate-pilot.mjs",
+      "scripts/protected-local-keys.mjs",
+      "scripts/pilot-development-import.mjs",
+    ].some(
       (p) =>
         path.resolve(repoRoot, p).toLowerCase() ===
         path.resolve(entry).toLowerCase(),
@@ -164,13 +168,118 @@ export function readLocalRealStore(pkg) {
     const store = JSON.parse(bytes.toString("utf8").replace(/^\uFEFF/, ""));
     validateStore(pkg, store);
     if (sha(bytes) !== sha(fs.readFileSync(realPath))) throw Error("changed");
-    return handle(store, "real-read-only");
+    return handle(store, "real-read-only", sha(bytes));
   } catch {
     throw Error("REAL_LOCAL_VALIDATION_REJECTED");
   }
 }
 // Compatibility only; old authorization records are historical and never read.
 export const readApprovedRealStore = readLocalRealStore;
+export function deliverApprovedDevelopment(pkg, token, connection, operation) {
+  // Explicit local operator invocation, never application/CI/browser. No implicit real DB permission.
+  if (
+    !trustedLocalRuntime() ||
+    path.resolve(process.argv[1] ?? "") !==
+      path.resolve("scripts/pilot-development-import.mjs") ||
+    process.argv[2] !== "--apply-approved-invite"
+  )
+    return {
+      status: "BLOCKED",
+      code: "EXPLICIT_DEVELOPMENT_APPROVAL_REQUIRED",
+    };
+  const entry = handles.get(token);
+  if (!entry || entry.mode !== "real-read-only")
+    return { status: "BLOCKED", code: "TRUSTED_REAL_HANDLE_REQUIRED" };
+  let workerStarted = false;
+  try {
+    validateStore(pkg, entry.store);
+    if (sha(fs.readFileSync(realPath)) !== entry.sourceHash)
+      throw Error("changed");
+    if (!["draft_import", "promote_approved"].includes(operation))
+      throw Error("operation");
+    const overlayPath =
+      "content/proposals/pilot-hsk1-r3/publication-overlay.v6.json";
+    const overlayBytes = fs.readFileSync(overlayPath),
+      overlay = JSON.parse(overlayBytes);
+    if (sha(overlayBytes) !== connection.overlaySha)
+      throw Error("overlay_changed");
+    if (
+      validatePublicationMapping(overlay).status !== "PASS" ||
+      overlay.content_policy.level !== "PRIVATE_INVITE_ONLY"
+    )
+      throw Error("policy");
+    const input = JSON.stringify({
+      mode: "APPROVED_DEVELOPMENT_INVITE",
+      project_ref: "hhgxrjqkuwdgurphopok",
+      operation,
+      password: connection.password,
+      ipv4: connection.ipv4,
+      expected_invitees: connection.invitees,
+      overlay_sha256: sha(overlayBytes),
+      public: { batches: publicDraftParts(pkg).batches },
+      rows: entry.store.keys,
+      quiz_bindings: entry.store.quiz_bindings,
+    });
+    const env = Object.fromEntries(
+      Object.entries(process.env).filter(
+        ([k]) => !/^PG|^SUPABASE_|^PYTHON|^DEBUG$|^NODE_DEBUG$/.test(k),
+      ),
+    );
+    workerStarted = true;
+    const child = spawnSync(
+      "python",
+      [
+        "-I",
+        "-B",
+        path.resolve("scripts/protected-key-worker.py"),
+        "--apply-approved-invite",
+      ],
+      {
+        input,
+        encoding: "utf8",
+        env,
+        timeout: 120000,
+        maxBuffer: 65536,
+        windowsHide: true,
+      },
+    );
+    const r = JSON.parse(child.stdout);
+    if (
+      ![
+        "DEVELOPMENT_COMMITTED",
+        "BLOCKED",
+        "COMMIT_OUTCOME_UNKNOWN",
+        "COMMITTED_VERIFICATION_FAILED",
+      ].includes(r.status) ||
+      (r.code && !/^[A-Z0-9_]{1,100}$/.test(r.code))
+    )
+      throw Error("response");
+    if (
+      r.status === "DEVELOPMENT_COMMITTED" &&
+      (child.status !== 0 ||
+        r.committedKeys !== (operation === "draft_import" ? 24 : 0) ||
+        r.parameterizedPublicRows !==
+          (operation === "draft_import" ? 224 : 0) ||
+        r.promotedEntities !== (operation === "promote_approved" ? 91 : 0) ||
+        r.verifiedRlsReaders !==
+          (operation === "promote_approved" ? connection.invitees.length : 0))
+    )
+      throw Error("counts");
+    return {
+      status: r.status,
+      code: r.code ?? null,
+      committedKeys: r.committedKeys ?? 0,
+      publicRows: r.parameterizedPublicRows ?? 0,
+      promotedEntities: r.promotedEntities ?? 0,
+      verifiedRlsReaders: r.verifiedRlsReaders ?? 0,
+    };
+  } catch {
+    return {
+      status: workerStarted ? "COMMIT_OUTCOME_UNKNOWN" : "BLOCKED",
+      code: "PROTECTED_DEVELOPMENT_TRANSPORT_FAILED_OR_OUTCOME_UNKNOWN",
+    };
+  }
+}
 export function deliverLocalSynthetic(
   pkg,
   token,

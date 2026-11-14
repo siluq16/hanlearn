@@ -9,9 +9,9 @@ import {
   startReceipt,
   submitReceipt,
   validAnswers,
-  localQuizTarget,
   type QuizResult,
 } from "./contracts";
+import { learningEnabled } from "@/lib/learning";
 function failure(
   code: string,
   retryable = false,
@@ -47,13 +47,7 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
   const { supabase } = await requireLearner();
   const parsed = startInput.safeParse(input);
   if (!parsed.success) return failure("INVALID_INPUT");
-  if (
-    !localQuizTarget(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.HANLEARN_LOCAL_MINI_QUIZ,
-    )
-  )
-    return failure("LOCAL_ONLY");
+  if (!learningEnabled("quiz")) return failure("LOCAL_ONLY");
   let attempted = false;
   try {
     const view = await getQuizView(parsed.data.lessonId);
@@ -79,13 +73,7 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
   const { supabase } = await requireLearner();
   const parsed = submitInput.safeParse(input);
   if (!parsed.success) return failure("INVALID_INPUT");
-  if (
-    !localQuizTarget(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.HANLEARN_LOCAL_MINI_QUIZ,
-    )
-  )
-    return failure("LOCAL_ONLY");
+  if (!learningEnabled("quiz")) return failure("LOCAL_ONLY");
   let attempted = false;
   try {
     const p = parsed.data;

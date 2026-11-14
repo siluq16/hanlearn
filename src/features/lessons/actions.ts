@@ -5,11 +5,8 @@ import { requireLearner } from "@/features/auth/session";
 import { getLessonBundle } from "./queries";
 import { PROGRESS_COLUMNS } from "./columns";
 import { progressRowSchema } from "./schemas";
-import {
-  localStudyTarget,
-  studyInputSchema,
-  type StudyResult,
-} from "./study-contract";
+import { studyInputSchema, type StudyResult } from "./study-contract";
+import { learningEnabled } from "@/lib/learning";
 
 export async function confirmLessonStudy(input: unknown): Promise<StudyResult> {
   // Keep redirects/control-flow outside the mutation error handler.
@@ -26,12 +23,7 @@ export async function confirmLessonStudy(input: unknown): Promise<StudyResult> {
   const parsed = studyInputSchema.safeParse(input);
   if (!parsed.success)
     return error("INVALID_INPUT", "Yêu cầu xác nhận bài học không hợp lệ.");
-  if (
-    !localStudyTarget(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.HANLEARN_LOCAL_STUDY_CONFIRMATION,
-    )
-  )
+  if (!learningEnabled("study"))
     return error(
       "LOCAL_ONLY",
       "Chức năng xác nhận học chưa được mở trong môi trường này.",

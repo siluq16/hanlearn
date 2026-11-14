@@ -1,16 +1,8 @@
 import { execFileSync } from "node:child_process";
 import { writeFileSync, mkdirSync } from "node:fs";
-import assert from "node:assert/strict";
-assert.equal(
-  process.env.HANLEARN_CLOUD_READ_TESTS,
-  "approved",
-  "BLOCKED: Development read access must be explicitly approved",
-);
-const ref = process.env.HANLEARN_APPROVED_DEV_PROJECT_REF;
-assert(
-  /^[a-z0-9]{20}$/.test(ref ?? ""),
-  "Set the exact approved Development project ref locally",
-);
+import { developmentConfig, projectRef } from "./development.mjs";
+developmentConfig();
+const ref = projectRef;
 // No passwords/tokens in args; CLI manages its own authenticated profile.
 let result;
 try {

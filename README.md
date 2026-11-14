@@ -22,45 +22,43 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=YOUR_DEVELOPMENT_PUBLISHABLE_KEY
 
 Both are public configuration. App uses no database password/service-role key. Never send secrets to chat or commit .env.local. Keep Development separate from Production.
 
-## Personal local workflow
+## Development workflow
 
-Run these from the owner-controlled Windows checkout. Local reads no longer need authorization JSON, signatures, dates, TTY prompts or a new Markdown report. Earlier local-read authorization templates/reports are historical; they are not consumed by current commands. Existing signed records are retained without modification.
+Request a feature → implement → run relevant tests → report the result. Routine non-destructive Development work needs no approval JSON, signatures, repeated content certification or full preflight. Production, destructive/data-loss operations and security/permission changes still require confirmation. Frozen r3, the 159 pending review rows and historical records remain unchanged.
 
-| Command                       | Purpose                                                                                                                           |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run content`             | Validate frozen r3 public content and all 24 real private bindings; status/counts only, no report writes                          |
-| `npm run test:local`          | Unit tests plus synthetic Lesson Detail, preview and mini-quiz browser suites; no Cloud or real-key DB delivery                   |
-| `npm run preview:hsk1`        | Loopback-only HSK 1 reader at http://127.0.0.1:3114; no private answers or progress writes                                        |
-| `npm run backup:status`       | Inspect recorded core/rights restore evidence and archive presence; **does not decrypt, retest restore or certify current bytes** |
-| `npm run content:import:plan` | Public draft import order/counts with synthetic keys only; no database connection                                                 |
-| `npm run check:local`         | Content, typecheck, lint, contracts, security and all local tests in one fail-fast command                                        |
+The published HSK 1 r3 package is already imported: 4 lessons, 44 words (43 syllabus words + supplemental 越南), 24 quiz questions. Both invited accounts passed real login/catalog reading. Historical Sprint 1 acceptance remains PARTIAL.
 
-Stop a manually running preview before browser tests, since tests own port 3114. `npm run test` remains the fast unit-only command. Native disposable database suites remain separate opt-in commands and use synthetic keys. Encrypted restore verification is `npm run backup:verify`; its password prompt is required by encryption, not an approval ritual. It retains the source and archives.
+`HANLEARN_DEVELOPMENT_LEARNING=1` in `.env.local` enables Study/Quiz/SRS on **hhgxrjqkuwdgurphopok only**. Server Actions repeat target/Auth/allowlist/input/ownership checks; PostgreSQL owns grading, completion, card creation and review scheduling. Other Cloud projects and production deployments remain denied. No schema/RLS/role changes are needed.
 
-Trusted local reads require Windows, the matching Git checkout, known operator command entry points, restricted owner/SYSTEM ACL, no reparse paths, Git-ignored/untracked private store, exact frozen public hashes, stable private bytes and valid IDs/revisions/bindings. CI/Vitest, browser/Next, production/deployment and other working directories/entry points are rejected. No environment flag can enable real-key DB delivery. This protects accidental use outside local tooling; a malicious process already running as the owner is outside the OS trust boundary.
+| Command                                                         | Use                                                               |
+| --------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `npm run dev`                                                   | Run HanLearn locally and use Study/Quiz with your own account     |
+| `npm run test`                                                  | Fast unit regression; select test files for small changes         |
+| `npm run test:lessons:browser` / `npm run test:quizzes:browser` | Relevant synthetic UI checks                                      |
+| `npm run dev:setup-test`                                        | One-time dedicated automation account setup, then live tests      |
+| `npm run test:development`                                      | Build and run live Study/Quiz using the reusable test session     |
+| `npm run test:cloud`                                            | Read-only API checks with the same test session                   |
+| `npm run db:types`                                              | Read public types using existing CLI authentication               |
+| `npm run content` / `npm run preview:hsk1`                      | Offline content/bindings validation and preview                   |
+| `npm run check:local`                                           | Full local regression when changes justify it                     |
+| `npm run backup:status`                                         | Check existing backup status; restore verification stays separate |
 
-Minimal product flow:
+Run `npm run dev:setup-test` once. Hidden prompts take the Development secret API key and DB password, create exactly one confirmed automation user and add only its UUID to the allowlist with verify-full TLS. Existing users/data and public signup are unchanged. Admin credentials are not retained. Generated test credentials/session are encrypted using Windows DPAPI, restricted to current user/SYSTEM and Git ignored. Owner/friend credentials are never cached. Subsequent tests reuse/refresh this session or log in with its encrypted generated credentials without prompts. Tests retain only their own rows; no automatic reset or cleanup of learner data.
 
-1. Author/preview locally. Revision 3 stays frozen; future content edits use a new reviewed revision with hashes/bindings updated together.
-2. Run `npm run check:local`, inspect content and record actual rights/review decisions where needed; do not turn the 159 PENDING records into fictional approval.
-3. Prepare the import plan and honest metadata/rights scope. When requested, run Development read-only preflight with verified target/TLS/credentials to refresh schema/history/collisions/effective allowlist. Reading needs no extra signature record and never imports; no Cloud check was run in this workflow change.
-4. Approve **one exact Cloud write plan** (target, rows, revisions/hash/overlay, private delivery/logging, transaction and rollback). Real-key DB delivery is still unsupported/blocked until separately implemented and reviewed. Publication, security changes and real learner mutations require their own explicit scope.
-5. After approved import/promotion, verify the real catalog/read permissions in HanLearn. The Sprint 2.2 Cloud mutation guard stays in place until live study/quiz mutations are separately approved.
+Use focused tests for ordinary changes, browser tests for UI/SSR, build for application changes and native disposable SQL tests for database/transaction changes. A routine success needs only a short result. Missing credentials are a setup issue, not another approval gate.
 
-Database/RLS requirements are real: published ancestry/approved provenance, valid constraints/FKs, private answer isolation and server-authoritative completion. Truthful rights/reviewer evidence remains necessary; SQL CHECKs cannot certify its truth. Per-read signature JSON, TTY gating and repeated long verification reports were process rules and have been removed. Local success does not grant Cloud write, publication, Auth/RLS/migration changes, deletion/overwrite, push or deploy permission. Owner-only published access still depends on the effective allowlist; no RLS was widened.
-
-Quiz checks: `npm run test:quizzes:browser`; native database regression: `npm run test:db:native` (synthetic disposable/Auth shim only). The main quiz route requires real published catalog data. Writes need `HANLEARN_LOCAL_MINI_QUIZ=1` and a verified literal HTTPS loopback API target; setting the flag with a Cloud URL never enables writes. No such API/credentials or Cloud writes were provisioned by this sprint.
-
-Publication preparation: `npm run content:publication:plan` inspects the grouped v2 proposal without writing; `npm run content:publication:check` validates it and exits nonzero while actual metadata/evidence is missing. Both keep execution disabled. V1 and signed owner records remain historical evidence. Exact 91 IDs, source classifications and missing fields are in `content/proposals/pilot-hsk1-r3/publication-overlay.v2.json`; [current readiness](docs/PILOT_R3_REAL_IMPORT_READINESS.md) describes the remaining decisions, separate draft/promotion transactions and future read-only preflight. No new local authorization/signature files are required.
+Future content imports/schema changes use checks relevant to that change (target, constraints, collisions, atomicity and key protection). Do not rerun the historical r3 importer or baseline migrations. PRIVATE_INVITE_ONLY is not PUBLIC_RELEASE or a third-party distribution license; content rights remain honest without becoming repeated engineering approval steps.
 
 ## Implemented features
+
+- `/review`: due flashcards, Hanzi/Vietnamese recall in both existing directions, flip for Pinyin/meaning/example, Quên / Khó / Đã nhớ, saved daily count and session summary. Uses the existing `hl-sm2-v1` RPC; no browser scheduling or direct writes. Completion creates cards once. A lost response keeps the original per-account retry envelope in session storage; reload does not submit automatically. Audio cards are reported separately until an audio review UI exists. `npm run test:review:browser` uses synthetic fixtures; `npm run test:development` checks real scheduling, retry, reload/relogin and isolation using only the dedicated test account. It may complete lesson 3 on that account using its own post-submission quiz feedback to obtain cards; no private answer store is read and no owner/friend state is changed.
 
 - Next.js 16 App Router, strict TypeScript, Tailwind 4, locally owned shadcn/ui primitives, Lucide, self-hosted Inter/Noto Sans SC.
 - Feature-based modular monolith: auth, dashboard, roadmap, vocabulary, settings.
 - Email/password login/logout, separate Supabase browser/server clients, SSR cookies and Proxy refresh; Auth revalidation and DB allowlist at every private server boundary.
 - Dashboard/HSK 1–5 roadmap, literal vocabulary search + HSK filter + pagination/detail; Settings profile persistence, fixed 60m/day and Vietnam timezone.
 - Sprint 2.1: `/lessons/[id]` read-only published lesson reader, strict Content V1, vocabulary/grammar joins, pinyin toggle, credits and saved progress. No learning writes or section audio signing. [Contract](docs/LESSON_CONTENT_V1.md) · [verification and blockers](docs/SPRINT2_1_VERIFICATION.md).
-- Sprint 2.3: `/lessons/[id]/quiz` implements explicit start, single-question radios, submission confirmation, backend grading/readback, own recent history, retakes and immutable retry envelopes. **LOCAL_PASS only**; start/submit Server Actions reject Cloud even when called directly. Explanations remain unavailable because Q4 is not deployed. [Verification](docs/SPRINT2_3_VERIFICATION.md).
+- Sprint 2.3: `/lessons/[id]/quiz` implements explicit start, single-question radios, submission confirmation, backend grading/readback, own recent history, retakes and immutable retry envelopes. The fixed Development target can be opted into writes; other Cloud projects and production deployments are denied. Explanations remain unavailable because Q4 is not deployed. [Verification](docs/SPRINT2_3_VERIFICATION.md).
 - Responsive desktop sidebar/mobile nav, light/dark theme persisted on this browser, skeleton/empty/error states, safe short-lived audio endpoint.
 - Published content only through RLS. No curriculum was imported or invented; no full lesson/quiz/SRS UI in Sprint 1.
 
@@ -88,7 +86,7 @@ npm run test:e2e
 
 The normal browser suite checks public/anonymous flows (missing-config cases skip in a configured build). Real owner acceptance uses `powershell -NoProfile -File .\scripts\acceptance-auth.ps1` after a production build, with hidden local email/password input and an isolated localhost:3101 server. It reads existing profile/learning data, tests login/refresh/logout and never clicks Settings save or records tokens/screenshots/traces. Do not send credentials to chat. Its safe result is ignored under .local/acceptance/. It does not prove outsider/A/B isolation. Optional native regression: npm run test:db:native (PostgreSQL 18 binaries), disposable Auth shim only, never Cloud.
 
-npm run test:cloud and npm run db:types require explicit local approval/ref and appropriate Cloud setup. Read [Cloud Development](docs/CLOUD_DEVELOPMENT.md) first. No remote migration is automatic.
+npm run test:cloud and npm run db:types enforce the fixed Development target without per-run approval flags. Read [Cloud Development](docs/CLOUD_DEVELOPMENT.md) first. No remote migration is automatic.
 
 ## Database and cloud
 
@@ -110,3 +108,5 @@ Follow [Windows Cloud Development setup and approval gates](docs/CLOUD_DEVELOPME
 Read-only lesson UI tests: `npm run test:lessons:browser` uses actual components on a separate loopback-only synthetic harness, not an Auth shim or Cloud fixture route. `npm run test:lessons:catalog` compares exact selected fields against an existing trusted ignored Cloud catalog capture; it does not generate complete database types.
 
 No official HSK syllabus edition, content license, audio object or HelloChinese API has been verified. Synthetic test fixtures must never become published curriculum.
+
+Private invite import: `npm run content:import:development` prints the bounded 224+24 / separate 91-entity promotion plan only. Both existing allowlist memberships remain. The operator helper `scripts/pilot-development-import.ps1` defaults to the same preview; its explicit apply switch is reserved for separately approved Cloud writes. No real-key DB delivery, import/promotion or Study/Quiz guard opening has been executed.

@@ -27,6 +27,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://127.0.0.1:54321");
   vi.stubEnv("HANLEARN_LOCAL_MINI_QUIZ", "1");
+  vi.stubEnv("HANLEARN_DEVELOPMENT_LEARNING", "0");
+  vi.stubEnv("VERCEL_ENV", "");
   rpc = vi.fn();
   mocks.auth.mockResolvedValue({ supabase: { rpc } });
   mocks.view.mockResolvedValue(activeQuiz());
@@ -37,6 +39,33 @@ const start = () =>
 const submit = (answers = {}) =>
   submitQuiz({ lessonId: quizFixture().lessonId, attemptId, answers });
 describe("quiz guarded Server Actions (mocked RPC transport)", () => {
+  it("permits Development start/submit but still denies production deployment", async () => {
+    vi.stubEnv(
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "https://hhgxrjqkuwdgurphopok.supabase.co",
+    );
+    vi.stubEnv("HANLEARN_DEVELOPMENT_LEARNING", "1");
+    rpc.mockResolvedValue({ data: { attemptId, quizId }, error: null });
+    expect(await start()).toMatchObject({ ok: true });
+    const view = submittedQuiz();
+    mocks.view.mockResolvedValueOnce(activeQuiz()).mockResolvedValueOnce(view);
+    rpc.mockResolvedValue({
+      data: {
+        attemptId,
+        correctCount: view.attempt!.correctCount,
+        questionCount: view.attempt!.questionCount,
+        scorePercent: 100,
+        passed: view.attempt!.passed,
+      },
+      error: null,
+    });
+    expect(await submit()).toMatchObject({ ok: true });
+    vi.stubEnv("VERCEL_ENV", "production");
+    rpc.mockClear();
+    expect((await start()).ok).toBe(false);
+    expect((await submit()).ok).toBe(false);
+    expect(rpc).not.toHaveBeenCalled();
+  });
   it.each(["unauthenticated", "outsider"])(
     "rejects %s before RPC",
     async (reason) => {

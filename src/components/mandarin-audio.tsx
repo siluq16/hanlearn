@@ -28,11 +28,10 @@ export function MandarinSpeedToggle({
       <button
         type="button"
         onClick={() => setPreferredRate(MANDARIN_RATES.NORMAL)}
-        className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${
-          !isSlowMode
-            ? "bg-primary text-primary-foreground shadow-xs"
-            : "text-muted-foreground hover:text-foreground"
-        }`}
+        className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${!isSlowMode
+          ? "bg-primary text-primary-foreground shadow-xs"
+          : "text-muted-foreground hover:text-foreground"
+          }`}
         aria-pressed={!isSlowMode}
         data-active={!isSlowMode ? "true" : "false"}
         title="Nghe ở tốc độ chuẩn (1.0x)"
@@ -44,11 +43,10 @@ export function MandarinSpeedToggle({
       <button
         type="button"
         onClick={() => setPreferredRate(MANDARIN_RATES.SLOW)}
-        className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${
-          isSlowMode
-            ? "bg-primary text-primary-foreground shadow-xs"
-            : "text-muted-foreground hover:text-foreground"
-        }`}
+        className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${isSlowMode
+          ? "bg-primary text-primary-foreground shadow-xs"
+          : "text-muted-foreground hover:text-foreground"
+          }`}
         aria-pressed={isSlowMode}
         data-active={isSlowMode ? "true" : "false"}
         title="Nghe chậm rõ từng âm (0.55x - kéo dài ~1.5x thời lượng, giữ nguyên thanh điệu)"
@@ -127,13 +125,12 @@ export function MandarinAudioButton({
           data-mandarin-audio-btn="true"
           variant={variant}
           size={size}
-          className={`${
-            isPlayingAny
-              ? "border-primary bg-primary/10 text-primary animate-pulse"
-              : isSlowMode && !showSlow
-                ? "border-primary/40 text-primary"
-                : ""
-          }`}
+          className={`${isPlayingAny
+            ? "border-primary bg-primary/10 text-primary animate-pulse"
+            : isSlowMode && !showSlow
+              ? "border-primary/40 text-primary"
+              : ""
+            }`}
           onClick={(e) => handleClick(e)}
           title={
             unavailable
@@ -151,15 +148,13 @@ export function MandarinAudioButton({
             <VolumeX className="size-4 text-muted-foreground" />
           ) : isSlowMode && !showSlow ? (
             <Snail
-              className={`size-4 ${
-                isPlayingAny ? "text-primary" : ""
-              }`}
+              className={`size-4 ${isPlayingAny ? "text-primary" : ""
+                }`}
             />
           ) : (
             <Volume2
-              className={`size-4 ${
-                isPlayingAny ? "text-primary" : ""
-              }`}
+              className={`size-4 ${isPlayingAny ? "text-primary" : ""
+                }`}
             />
           )}
           {label && <span>{label}</span>}
@@ -173,13 +168,12 @@ export function MandarinAudioButton({
             type="button"
             variant="outline"
             size={size}
-            className={`text-xs ${
-              isCurrentSlowPlaying
-                ? "border-primary bg-primary/10 text-primary animate-pulse"
-                : isSlowMode
-                  ? "border-primary/50 bg-primary/5 text-primary"
-                  : "text-muted-foreground"
-            }`}
+            className={`text-xs ${isCurrentSlowPlaying
+              ? "border-primary bg-primary/10 text-primary animate-pulse"
+              : isSlowMode
+                ? "border-primary/50 bg-primary/5 text-primary"
+                : "text-muted-foreground"
+              }`}
             onClick={(e) => {
               handleClick(e, MANDARIN_RATES.SLOW);
               setPreferredRate(MANDARIN_RATES.SLOW);
@@ -266,11 +260,10 @@ export function MandarinAudioBar({
         <Button
           type="button"
           variant="outline"
-          className={`min-h-11 ${
-            isNormalPlaying
-              ? "border-primary bg-primary/10 text-primary animate-pulse"
-              : ""
-          }`}
+          className={`min-h-11 ${isNormalPlaying
+            ? "border-primary bg-primary/10 text-primary animate-pulse"
+            : ""
+            }`}
           onClick={() => handlePlay(MANDARIN_RATES.NORMAL)}
           aria-pressed={isNormalPlaying}
           title="Phát âm tiếng Trung ở tốc độ chuẩn (1.0x)"
@@ -286,11 +279,10 @@ export function MandarinAudioBar({
         <Button
           type="button"
           variant="outline"
-          className={`min-h-11 ${
-            isSlowPlaying
-              ? "border-primary bg-primary/10 text-primary animate-pulse"
-              : ""
-          }`}
+          className={`min-h-11 ${isSlowPlaying
+            ? "border-primary bg-primary/10 text-primary animate-pulse"
+            : ""
+            }`}
           onClick={() => handlePlay(MANDARIN_RATES.SLOW)}
           aria-pressed={isSlowPlaying}
           title="Phát âm tiếng Trung chậm (0.55x - kéo dài thời lượng ~1.5x, giữ nguyên thanh điệu)"
@@ -301,11 +293,10 @@ export function MandarinAudioBar({
 
         {hasVoice && voiceRegion && (
           <span
-            className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
-              voiceRegion === "zh-CN"
-                ? "bg-primary/10 text-primary"
-                : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
-            }`}
+            className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${voiceRegion === "zh-CN"
+              ? "bg-primary/10 text-primary"
+              : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
+              }`}
             title={`Giọng đang dùng: ${voiceName || ""}`}
           >
             {voiceRegion === "zh-CN" ? "zh-CN (Đại lục)" : "zh-TW (Đài Loan dự phòng)"}
@@ -380,11 +371,10 @@ export function ListenBeforeGuessButton({
           data-listen-guess-btn="true"
           variant="outline"
           size="sm"
-          className={`${
-            isPlaying && currentRate === preferredRate
-              ? "border-primary bg-primary/10 text-primary animate-pulse"
-              : ""
-          }`}
+          className={`${isPlaying && currentRate === preferredRate
+            ? "border-primary bg-primary/10 text-primary animate-pulse"
+            : ""
+            }`}
           onClick={() => handlePlay()}
           title={`Nghe phát âm trước khi lật thẻ (${isSlowMode ? "0.55x" : "1.0x"})`}
         >
@@ -397,11 +387,10 @@ export function ListenBeforeGuessButton({
           data-listen-guess-alt="true"
           variant="outline"
           size="sm"
-          className={`text-xs ${
-            isPlaying && currentRate === (isSlowMode ? MANDARIN_RATES.NORMAL : MANDARIN_RATES.SLOW)
-              ? "border-primary bg-primary/10 text-primary animate-pulse"
-              : "text-muted-foreground"
-          }`}
+          className={`text-xs ${isPlaying && currentRate === (isSlowMode ? MANDARIN_RATES.NORMAL : MANDARIN_RATES.SLOW)
+            ? "border-primary bg-primary/10 text-primary animate-pulse"
+            : "text-muted-foreground"
+            }`}
           onClick={() => handlePlay(isSlowMode ? MANDARIN_RATES.NORMAL : MANDARIN_RATES.SLOW)}
           title={`Nghe trước ở tốc độ ${isSlowMode ? "1.0x" : "0.55x"}`}
         >

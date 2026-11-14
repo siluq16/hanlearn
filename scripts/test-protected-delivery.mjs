@@ -140,6 +140,188 @@ assert.equal(
   "DRAFT_SNAPSHOT_MISMATCH",
 );
 pass("promotion_rejects_non_draft_or_drift_no_blind_overwrite");
+// PRIVATE_INVITE_ONLY: real SQL RLS/ownership checks on synthetic A/B only.
+const firstUser = "a0000000-0000-4000-8000-000000000001";
+const outsider = "a0000000-0000-4000-8000-000000000003";
+query(
+  `INSERT INTO auth.users VALUES('${outsider}','outsider@example.invalid',now());`,
+);
+const asUser = (user, sql) =>
+  query(
+    `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${user}';${sql};COMMIT;`,
+  );
+for (const user of [firstUser, second]) {
+  assert.equal(asUser(user, "SELECT count(*) FROM public.lessons"), "4");
+  assert.equal(asUser(user, "SELECT count(*) FROM public.vocabulary"), "44");
+  assert.equal(
+    asUser(user, "SELECT count(*) FROM public.quiz_questions"),
+    "24",
+  );
+}
+pass("invitees_A_B_share_published_catalog");
+query(
+  `INSERT INTO public.profiles(id) VALUES('${firstUser}'),('${second}') ON CONFLICT(id) DO NOTHING;`,
+);
+for (const user of [firstUser, second]) {
+  assert.equal(asUser(user, "SELECT count(*) FROM public.profiles"), "1");
+  assert.equal(
+    asUser(user, "SELECT count(*) FROM public.profiles WHERE id<>auth.uid()"),
+    "0",
+  );
+}
+assert.equal(
+  asUser(
+    firstUser,
+    `WITH changed AS (UPDATE public.profiles SET target_hsk_level=4 WHERE id='${second}' RETURNING id) SELECT count(*) FROM changed`,
+  ),
+  "0",
+);
+assert.equal(
+  query(`SELECT target_hsk_level FROM public.profiles WHERE id='${second}'`),
+  "5",
+);
+pass("invitee_profiles_read_and_update_are_user_scoped");
+assert.equal(asUser(outsider, "SELECT count(*) FROM public.lessons"), "0");
+assert.equal(
+  session.query(
+    "BEGIN;SET LOCAL ROLE anon;SELECT count(*) FROM public.lessons;ROLLBACK;",
+  ).sqlState,
+  "42501",
+);
+assert.equal(
+  session.query(
+    `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${outsider}';SELECT public.mark_lesson_studied('${pkg.lessons[0].id}');ROLLBACK;`,
+  ).sqlState,
+  "42501",
+);
+pass("anonymous_and_nonallowlisted_denied_catalog_or_mutation");
+asUser(firstUser, `SELECT public.mark_lesson_studied('${pkg.lessons[0].id}')`);
+asUser(second, `SELECT public.mark_lesson_studied('${pkg.lessons[1].id}')`);
+const quiz = pkg.quizzes[0],
+  correct = Object.fromEntries(
+    quiz.questions.map((q, i) => [q.id, (i + 1) % q.choices.length]),
+  );
+const wrong = Object.fromEntries(
+  quiz.questions.map((q, i) => [q.id, (i + 2) % q.choices.length]),
+);
+const attemptA = JSON.parse(
+  asUser(
+    firstUser,
+    `SELECT public.start_quiz('${quiz.quiz.id}','b0000000-0000-4000-8000-000000000001')`,
+  ),
+);
+const attemptB = JSON.parse(
+  asUser(
+    second,
+    `SELECT public.start_quiz('${quiz.quiz.id}','b0000000-0000-4000-8000-000000000002')`,
+  ),
+);
+const resultA = JSON.parse(
+  asUser(
+    firstUser,
+    `SELECT public.submit_quiz('${attemptA.attemptId}','${JSON.stringify(correct)}'::jsonb)`,
+  ),
+);
+const resultB = JSON.parse(
+  asUser(
+    second,
+    `SELECT public.submit_quiz('${attemptB.attemptId}','${JSON.stringify(wrong)}'::jsonb)`,
+  ),
+);
+assert.equal(resultA.passed, true);
+assert.equal(resultB.passed, false);
+assert.equal(
+  asUser(
+    firstUser,
+    "SELECT count(*) FROM public.lesson_progress WHERE completed_at IS NOT NULL",
+  ),
+  "1",
+);
+assert.equal(
+  asUser(
+    second,
+    "SELECT count(*) FROM public.lesson_progress WHERE studied_at IS NOT NULL",
+  ),
+  "1",
+);
+assert(
+  Number(asUser(firstUser, "SELECT count(*) FROM public.review_cards")) > 0,
+);
+assert.equal(
+  asUser(firstUser, "SELECT count(*) FROM public.quiz_responses"),
+  "6",
+);
+assert.equal(asUser(second, "SELECT count(*) FROM public.quiz_responses"), "6");
+assert.equal(
+  asUser(firstUser, "SELECT count(*) FROM public.quiz_attempts"),
+  "1",
+);
+assert.equal(asUser(second, "SELECT count(*) FROM public.quiz_attempts"), "1");
+assert.equal(
+  asUser(
+    firstUser,
+    `SELECT count(*) FROM public.quiz_attempts WHERE id='${attemptB.attemptId}'`,
+  ),
+  "0",
+);
+assert.equal(
+  asUser(
+    second,
+    `SELECT count(*) FROM public.quiz_attempts WHERE id='${attemptA.attemptId}'`,
+  ),
+  "0",
+);
+for (const user of [firstUser, second]) {
+  for (const table of ["lesson_progress", "quiz_responses", "review_cards"])
+    assert.equal(
+      asUser(
+        user,
+        `SELECT count(*) FROM public.${table} WHERE user_id<>auth.uid()`,
+      ),
+      "0",
+    );
+}
+pass("invitee_progress_quiz_results_responses_and_cards_are_user_scoped");
+for (const [i, user] of [firstUser, second].entries()) {
+  query(
+    `INSERT INTO public.study_sessions(user_id,source,evidence,started_at,ended_at,idempotency_key,request_payload) VALUES('${user}','other_manual','self_reported','2026-01-01T00:00:00Z','2026-01-01T00:05:00Z','c0000000-0000-4000-8000-00000000000${i + 1}','{}');`,
+  );
+  assert.equal(asUser(user, "SELECT count(*) FROM public.study_sessions"), "1");
+  assert.equal(
+    asUser(
+      user,
+      "SELECT count(*) FROM public.study_sessions WHERE user_id<>auth.uid()",
+    ),
+    "0",
+  );
+  for (const table of [
+    "lesson_progress",
+    "quiz_attempts",
+    "study_sessions",
+    "review_cards",
+  ])
+    assert.equal(
+      session.query(
+        `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${user}';UPDATE public.${table} SET user_id='${user}';ROLLBACK;`,
+      ).sqlState,
+      "42501",
+    );
+  assert.equal(
+    session.query(
+      `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${user}';SELECT correct_index FROM private.quiz_answer_keys;ROLLBACK;`,
+    ).sqlState,
+    "42501",
+  );
+}
+assert.equal(
+  session.query(
+    `BEGIN;SET LOCAL ROLE authenticated;SET LOCAL request.jwt.claim.sub='${second}';SELECT public.submit_quiz('${attemptA.attemptId}','{}');ROLLBACK;`,
+  ).sqlState,
+  "PT404",
+);
+pass(
+  "invitee_learning_history_isolated_direct_edits_and_cross_user_submission_denied",
+);
 const posture = JSON.parse(
   query(
     fs.readFileSync(

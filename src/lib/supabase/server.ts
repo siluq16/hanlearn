@@ -3,6 +3,7 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { getPublicConfig } from "@/lib/env";
 import type { Database } from "@/types/database";
+import { uncachedFetch } from "./fetch";
 
 export async function createClient() {
   const config = getPublicConfig();
@@ -10,6 +11,7 @@ export async function createClient() {
     throw new Error("Supabase public configuration is missing or invalid.");
   const store = await cookies();
   return createServerClient<Database>(config.url, config.publishableKey, {
+    global: { fetch: uncachedFetch },
     cookies: {
       getAll: () => store.getAll(),
       setAll(values) {

@@ -4,7 +4,7 @@ Version 2 — technical foundation, 2026-11-12. Replaces version 1 ambiguous sco
 
 ## Product and contracts
 
-Private mobile-first single learner. Roadmap HSK 1–5, data capacity through 9, 60 minutes daily. HelloChinese is external, manually logged; no scraping, redistribution or unverified integration.
+Private invite-only, mobile-first learning for the owner and invited learners; shared catalog and strictly user-owned learning state. Roadmap HSK 1–5, data capacity through 9, 60 minutes daily. HelloChinese is external, manually logged; no scraping, redistribution or unverified integration.
 
 Authoritative details: [MVP_SCOPE](MVP_SCOPE.md), [DOMAIN_CONTRACTS](DOMAIN_CONTRACTS.md), [SRS_SPEC](SRS_SPEC.md), [SECURITY_MODEL](SECURITY_MODEL.md), [TEST_PLAN](TEST_PLAN.md).
 
@@ -32,7 +32,7 @@ Keep blue #2563EB, success #10B981, review #F59E0B, error #EF4444, surface #F8FA
 
 Ordered supabase/migrations/*.sql authoritative. docs/postgres_schema.sql is concatenated fresh-install snapshot. Old SQL was unapplied; do not apply new baseline over an existing deployment without a data-preserving upgrade plan.
 
-Syllabus membership separate from vocabulary/course. Publication requires reviewed provenance and rights across ancestry. Quiz keys private. Cards unique by learner/word/direction, explicit state/version, archived rather than deleted. Mastery derived independently. Task lineage and interval-based study sessions preserve evidence.
+Syllabus membership separate from vocabulary/course. Published ancestry follows the scoped PRIVATE_INVITE_ONLY/PUBLIC_RELEASE contracts; private experimental sharing does not assert third-party distribution rights. Quiz keys private. Cards unique by learner/word/direction, explicit state/version, archived rather than deleted. Mastery derived independently. Task lineage and interval-based study sessions preserve evidence.
 
 No official vocabulary totals or calendar-to-proficiency promises asserted. Verify exact official syllabus and exam edition before import. No content or licenses supplied by this repo.
 
@@ -56,4 +56,3 @@ Sprint 1 execution is foundation/Auth/catalog/settings only. Lesson, mini-quiz a
 - https://supabase.com/docs/guides/auth/server-side/creating-a-client
 - https://nextjs.org/docs/app
 - https://www.chinesetest.cn/ (verify syllabus before import)
-

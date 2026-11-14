@@ -7,9 +7,134 @@ import {
   validatePublicationMapping,
   syntheticPublicationMapping,
   mappingPath,
+  ownerViewedMappingPath,
+  previousMappingPath,
+  viewingNotesPath,
+  buildOwnerViewedMapping,
+  parseOwnerViewingNotes,
   // @ts-expect-error Operator-only ESM module.
 } from "../scripts/pilot-r3-publication-validator.mjs";
 describe("grouped promotion mapping validation, no execution", () => {
+  it("records actual owner uncertainty without upgrading acceptance to review", () => {
+    const m = JSON.parse(fs.readFileSync(previousMappingPath, "utf8"));
+    expect(m.proposal_version).toBe(3);
+    expect(m.owner_confirmation.syllabus_check).toBe(
+      "EXISTING_AUTOMATED_EVIDENCE_ONLY",
+    );
+    expect(m.owner_confirmation.direct_external_text_use).toBe(
+      "UNKNOWN_NO_SPECIFIC_COPY_IDENTIFIED",
+    );
+    expect(validatePublicationMapping(m)).toMatchObject({
+      status: "BLOCKED",
+      entities: 91,
+      applyAllowed: false,
+    });
+    expect(
+      m.groups.every(
+        (g: {
+          metadata: Record<string, unknown>;
+          owner_review: { actually_reviewed: boolean };
+        }) =>
+          Object.values(g.metadata).every((v) => v === null) &&
+          !g.owner_review.actually_reviewed,
+      ),
+    ).toBe(true);
+    for (const fault of ["review", "time", "syllabus", "scope", "rights"]) {
+      const changed = structuredClone(m);
+      if (fault === "rights")
+        changed.groups[0].rights.actual_inputs_confirmed = true;
+      if (fault === "review")
+        changed.groups[0].owner_review.actually_reviewed = true;
+      if (fault === "time")
+        changed.groups[0].metadata.reviewed_at = "2026-01-01T00:00:00Z";
+      if (fault === "syllabus")
+        changed.syllabus_verification.verified_at = "2026-01-01T00:00:00Z";
+      if (fault === "scope")
+        changed.owner_confirmation.group_scope[1].id = "curriculum";
+      expect(validatePublicationMapping(changed).status).toBe("FAIL");
+    }
+  });
+  it("records six actual full-group viewing declarations with exact supplied times, not publication approval", () => {
+    const m = buildOwnerViewedMapping();
+    expect(m).toEqual(
+      JSON.parse(fs.readFileSync(ownerViewedMappingPath, "utf8")),
+    );
+    expect(m.owner_viewing_notes.records).toHaveLength(6);
+    expect(
+      m.groups.map(
+        (g: { metadata: { reviewed_at: string } }) => g.metadata.reviewed_at,
+      ),
+    ).toEqual([
+      "2026-11-13T15:19:54.420Z",
+      "2026-11-13T15:20:34.160Z",
+      "2026-11-13T15:20:47.464Z",
+      "2026-11-13T15:20:54.616Z",
+      "2026-11-13T15:21:02.358Z",
+      "2026-11-13T15:21:10.200Z",
+    ]);
+    const result = validatePublicationMapping(m);
+    expect(result.status).toBe("BLOCKED");
+    expect(result.entities).toBe(91);
+    expect(JSON.stringify(result.issues)).not.toContain(
+      "actual_owner_review_scope_metadata",
+    );
+    expect(JSON.stringify(result.issues)).toContain(
+      "owner_publication_approval_not_given",
+    );
+    expect(
+      m.groups.every(
+        (g: {
+          rights: { actual_inputs_confirmed: boolean };
+          metadata: { content_license: unknown };
+        }) =>
+          !g.rights.actual_inputs_confirmed &&
+          g.metadata.content_license === null,
+      ),
+    ).toBe(true);
+    expect(m.syllabus_verification.verified_at).toBeNull();
+  });
+  it("does not interpret overview/partial scope as full-group review or accept changed package bindings", () => {
+    const notes = fs.readFileSync(viewingNotesPath, "utf8");
+    const records = parseOwnerViewingNotes(
+      notes.replaceAll("đã xem toàn bộ", "chỉ xem tổng quan"),
+    );
+    expect(
+      records.every(
+        (r: { coverage: string }) => r.coverage === "NOT_CONFIRMED_FULL_GROUP",
+      ),
+    ).toBe(true);
+    expect(() =>
+      parseOwnerViewingNotes(notes.replace("| r3 |", "| r4 |")),
+    ).toThrow();
+    expect(() =>
+      parseOwnerViewingNotes(notes.replace("VIEWED_NOT_APPROVED", "APPROVED")),
+    ).toThrow();
+    expect(() =>
+      parseOwnerViewingNotes(notes + "\n" + notes.trim().split(/\r?\n/)[2]),
+    ).toThrow();
+    expect(() =>
+      parseOwnerViewingNotes(
+        notes.replace("2026-11-13T15:19:54.420Z", "2999-01-01T00:00:00Z"),
+      ),
+    ).toThrow();
+  });
+  it.each(["time", "license", "rights", "syllabus", "scope", "digest"])(
+    "rejects unsupported %s upgrades to viewing evidence",
+    (fault) => {
+      const m = buildOwnerViewedMapping();
+      if (fault === "time")
+        m.groups[0].metadata.reviewed_at = "2026-01-01T00:00:00Z";
+      if (fault === "license")
+        m.groups[0].metadata.content_license = "Made-up clearance";
+      if (fault === "rights") m.groups[0].rights.actual_inputs_confirmed = true;
+      if (fault === "syllabus")
+        m.syllabus_verification.verified_at = m.groups[0].metadata.reviewed_at;
+      if (fault === "scope")
+        m.owner_viewing_notes.records[0].scope_text = "approved";
+      if (fault === "digest") m.owner_viewing_notes.sha256 = "0".repeat(64);
+      expect(validatePublicationMapping(m).status).toBe("FAIL");
+    },
+  );
   it("binds exact 91 IDs in six groups with no fabricated metadata", () => {
     const m = buildPublicationMapping();
     expect(

@@ -74,9 +74,10 @@ export function reviewSecurityPosture(p) {
       p?.database === "postgres" &&
       p?.role === "postgres" &&
       p?.read_only === "on",
-    singleConfirmedLearner:
-      p?.allowlisted_count === 1 &&
-      p?.confirmed_allowlisted_count === 1 &&
+    confirmedInvitees:
+      Number.isSafeInteger(p?.allowlisted_count) &&
+      p.allowlisted_count >= 1 &&
+      p?.confirmed_allowlisted_count === p.allowlisted_count &&
       p?.missing_or_unconfirmed_allowlisted_count === 0,
     noPrivateTableGrants:
       p?.authenticated_private_keys_select === false &&
@@ -176,6 +177,97 @@ export function reviewFrames(
     ],
   };
 }
+export function reviewImportBlockers(capture) {
+  if (
+    capture?.projectRef !== "hhgxrjqkuwdgurphopok" ||
+    capture.tlsMode !== "verify-full" ||
+    capture.status !== "BLOCKERS_CAPTURED" ||
+    capture.ownerIdentity?.identity?.database !== "postgres" ||
+    capture.ownerIdentity.identity.role !== "postgres" ||
+    capture.ownerIdentity.identity.read_only !== "on"
+  )
+    throw Error("Blocker capture target mismatch");
+  const rows = capture.ownerIdentity.allowlist;
+  if (
+    !Array.isArray(rows) ||
+    rows.some(
+      (r) => !/^[a-f0-9-]{36}$/i.test(r.id) || typeof r.email !== "string",
+    ) ||
+    new Set(rows.map((r) => r.id)).size !== rows.length
+  )
+    throw Error("Blocker capture identity shape mismatch");
+  const owners = rows.filter(
+    (r) => r.owner_reference_match === true && r.confirmed === true,
+  );
+  const ownerKnown =
+    capture.ownerIdentity.owner_matches === 1 && owners.length === 1;
+  const others = rows.filter((r) => !r.owner_reference_match);
+  const mask = (email) => {
+    const [name, domain] = email.split("@");
+    return name.slice(0, 1) + "***@" + (domain?.slice(0, 1) ?? "?") + "***";
+  };
+  const p = capture.sessionProbe,
+    stages = p?.stages ?? [];
+  const baseline = stages.filter((s) => s.stage === "baseline"),
+    guard = stages.filter((s) => s.stage === "guard_verified"),
+    bind = stages.filter((s) => s.stage === "bind_canary");
+  const safe =
+    p?.status === "SAFE_SESSION_GUARD_VERIFIED" &&
+    p.exitCode === 3 &&
+    p.sqlState === "22P02" &&
+    baseline.length === 1 &&
+    guard.length === 1 &&
+    bind.length === 1 &&
+    guard[0].logging_guard_pass === true &&
+    guard[0].read_only === "on" &&
+    bind[0].bound_text === true &&
+    Number.isSafeInteger(guard[0].pid) &&
+    guard[0].pid > 0 &&
+    guard[0].pid === bind[0].pid &&
+    guard[0].pid === baseline[0].pid;
+  return {
+    projectRef: capture.projectRef,
+    ownerIdentified: ownerKnown,
+    identities: rows.map((r) => ({
+      id: r.id,
+      role: r.owner_reference_match ? "OWNER_REFERENCE" : "OTHER_ALLOWLISTED",
+      emailMasked: mask(r.email),
+      confirmed: r.confirmed,
+      createdAt: r.created_at,
+      provider: r.provider,
+      hasProfile: r.has_profile,
+      progressRows: r.progress_rows,
+      quizAttemptRows: r.quiz_attempt_rows,
+      srsCardRows: r.srs_card_rows,
+    })),
+    accessBasis:
+      "Confirmed Auth identity plus private.allowed_learners membership; insertion actor/reason is not stored in this table",
+    allowlistProposal:
+      ownerKnown && rows.length >= 1 && rows.every((r) => r.confirmed === true)
+        ? {
+            operation: "KEEP_ALL_CONFIRMED_INVITEES",
+            keepUserId: owners[0].id,
+            keepInviteeIds: others.map((r) => r.id),
+            expectedBefore: rows.length,
+            expectedAfter: rows.length,
+            approvalRequired: false,
+            deleteAuthUser: false,
+            deleteProfile: false,
+            deleteLearningData: false,
+          }
+        : null,
+    logging: safe ? "SAFE_SESSION_GUARD_VERIFIED" : "BLOCKED",
+    loggingProtection: capture.sessionProbeKind ?? "STRICT_SETTINGS",
+    loggingFailureStage: safe ? null : p?.lastStage,
+    sqlState: p?.sqlState,
+    limits: [
+      "Owner reference was supplied locally; previous Auth report intentionally does not retain subject/email.",
+      "No provider/pooler log search performed; no claim of observed log absence.",
+      "Import must reapply and verify the guard on its physical connection before real keys.",
+    ],
+    cloudWritesExecuted: false,
+  };
+}
 if (
   process.argv[1] &&
   pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url
@@ -183,7 +275,22 @@ if (
   try {
     const audit = auditPilot();
     if (process.argv[2] === "--audit") console.log(JSON.stringify(audit));
-    else if (process.argv[2] === "--review") {
+    else if (process.argv[2] === "--review-blockers") {
+      const capture = read(".local/pilot-r3-blockers/capture.json");
+      const probeFile =
+        capture.sessionProbeKind === "SESSION_MESSAGE_THRESHOLD"
+          ? "supabase/verification/pilot_import_threshold_probe.sql"
+          : "supabase/verification/pilot_import_session_probe.sql";
+      if (hash(fs.readFileSync(probeFile)) !== capture.sessionProbeSha256)
+        throw Error("Session probe source drift");
+      const result = reviewImportBlockers(capture);
+      console.log(JSON.stringify(result));
+      if (
+        !result.ownerIdentified ||
+        result.logging !== "SAFE_SESSION_GUARD_VERIFIED"
+      )
+        process.exitCode = 2;
+    } else if (process.argv[2] === "--review") {
       const dir = ".local/pilot-r3-preflight/";
       const capture = read(dir + "capture.json");
       if (

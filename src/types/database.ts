@@ -84,6 +84,8 @@ export type Card = {
   state: string;
   due_at: string;
   last_reviewed_at: string | null;
+  version: number;
+  algorithm_version: string;
 };
 export type Session = {
   id: string;
@@ -151,6 +153,15 @@ export type Database = {
       vocabulary: Table<Vocabulary & PublicationFields>;
       syllabus_vocabulary: Table<Membership>;
       review_cards: Table<Card>;
+      review_events: Table<{
+        id: string;
+        user_id: string;
+        card_id: string;
+        idempotency_key: string;
+        rating: number;
+        reviewed_at: string;
+        result: Json;
+      }>;
       study_sessions: Table<Session>;
       audio_assets: Table<AudioAsset>;
       lesson_quizzes: Table<
@@ -198,6 +209,16 @@ export type Database = {
       };
     };
     Functions: {
+      submit_review: {
+        Args: {
+          p_card_id: string;
+          p_rating: number;
+          p_response_ms: number | null;
+          p_expected_version: number;
+          p_idempotency_key: string;
+        };
+        Returns: Json;
+      };
       mark_lesson_studied: { Args: { p_lesson_id: string }; Returns: Json };
       start_quiz: {
         Args: { p_quiz_id: string; p_idempotency_key: string };

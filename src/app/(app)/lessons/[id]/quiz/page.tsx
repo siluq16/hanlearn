@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { z } from "zod";
 import { getQuizView } from "@/features/quizzes/queries";
 import { startQuiz, submitQuiz, refreshQuiz } from "@/features/quizzes/actions";
-import { localQuizTarget } from "@/features/quizzes/contracts";
+import { learningEnabled } from "@/lib/learning";
 import { QuizPlayer } from "@/features/quizzes/components/quiz-player";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Mini quiz" };
@@ -22,10 +22,7 @@ export default async function QuizPage({
     <QuizPlayer
       key={`${view.quiz.id}:${view.attempt?.id ?? "new"}`}
       initial={view}
-      enabled={localQuizTarget(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.HANLEARN_LOCAL_MINI_QUIZ,
-      )}
+      enabled={learningEnabled("quiz")}
       start={startQuiz}
       submit={submitQuiz}
       refresh={refreshQuiz}

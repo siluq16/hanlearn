@@ -69,6 +69,11 @@ for (const file of sourceFiles) {
     `Quiz write outside guarded Server Actions: ${file}`,
   );
   assert(
+    !/\.rpc\(["']submit_review["']/.test(source) ||
+      file === "src/features/review/actions.ts",
+    `Review mutation outside guarded Server Action: ${file}`,
+  );
+  assert(
     !/\.from\(["'](?:quiz_attempts|quiz_responses)["']\)\.(insert|update|upsert|delete)/.test(
       source,
     ),

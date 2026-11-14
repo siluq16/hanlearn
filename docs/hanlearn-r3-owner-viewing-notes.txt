@@ -1,0 +1,8 @@
+hanlearn-pilot-hsk1-v1 | r3 | manifest dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b | snapshot 2cb3e0d7a667dd6faba633c4df1e87e6dbaee539e19d0cb394e9dcc769c91deb
+Owner viewing notes only; not publication approval or independent language certification.
+curriculum | đã xem toàn bộ | 2026-11-13T15:19:54.420Z | VIEWED_NOT_APPROVED
+vocabulary | đã xem toàn bộ | 2026-11-13T15:20:34.160Z | VIEWED_NOT_APPROVED
+grammar | đã xem toàn bộ | 2026-11-13T15:20:47.464Z | VIEWED_NOT_APPROVED
+lessons | đã xem toàn bộ | 2026-11-13T15:20:54.616Z | VIEWED_NOT_APPROVED
+quizzes | đã xem toàn bộ | 2026-11-13T15:21:02.358Z | VIEWED_NOT_APPROVED
+questions | đã xem toàn bộ | 2026-11-13T15:21:10.200Z | VIEWED_NOT_APPROVED

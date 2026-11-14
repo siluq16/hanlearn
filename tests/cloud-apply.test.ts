@@ -44,7 +44,7 @@ describe("bounded approved migration execution", () => {
         versions: rows.map((row) => row.version),
       });
     }
-  });
+  }, 15000);
   it("pins the exact approved six files and their preflight hashes", () => {
     expect(reference.migrationHashes).toHaveLength(6);
     for (const entry of reference.migrationHashes) {

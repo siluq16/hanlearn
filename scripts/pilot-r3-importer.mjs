@@ -128,7 +128,8 @@ export function preview(plan) {
       localProtectedAdapter:
         "SYNTHETIC_PARAMETERIZED_PATH_TRUSTED_LOCAL_READ_REAL_DB_BLOCKED",
     },
-    publication: "BLOCKED_RIGHTS_AND_POLICY_DECISION_REQUIRED",
+    publication:
+      "NOT_EXECUTED_SEPARATE_POLICY_VALIDATION_AND_CLOUD_WRITE_APPROVAL",
     cloudExecution: "UNSUPPORTED",
   };
 }

@@ -37,10 +37,39 @@ beforeEach(() => {
   vi.clearAllMocks();
   vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://127.0.0.1:54321");
   vi.stubEnv("HANLEARN_LOCAL_STUDY_CONFIRMATION", "1");
+  vi.stubEnv("HANLEARN_DEVELOPMENT_LEARNING", "0");
+  vi.stubEnv("VERCEL_ENV", "");
   mocks.bundle.mockResolvedValue({ kind: "ready" });
 });
 afterEach(() => vi.unstubAllEnvs());
 describe("explicit study Server Action (mocked transport)", () => {
+  it("allows the authorized Development RPC and uses database readback", async () => {
+    const db = database();
+    mocks.auth.mockResolvedValue({
+      user: { id: lessonIds.user },
+      supabase: db,
+    });
+    vi.stubEnv(
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "https://hhgxrjqkuwdgurphopok.supabase.co",
+    );
+    vi.stubEnv("HANLEARN_DEVELOPMENT_LEARNING", "1");
+    expect(
+      await confirmLessonStudy({ lessonId: lessonIds.lesson }),
+    ).toMatchObject({
+      ok: true,
+      progress: { studiedAt: studied, completedAt: null },
+    });
+    expect(db.rpc).toHaveBeenCalledWith("mark_lesson_studied", {
+      p_lesson_id: lessonIds.lesson,
+    });
+    vi.stubEnv("VERCEL_ENV", "production");
+    db.rpc.mockClear();
+    expect(
+      await confirmLessonStudy({ lessonId: lessonIds.lesson }),
+    ).toMatchObject({ ok: false });
+    expect(db.rpc).not.toHaveBeenCalled();
+  });
   it.each(["unauthenticated", "outsider"])(
     "rechecks %s and never mutates on denial",
     async (reason) => {

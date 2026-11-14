@@ -66,6 +66,8 @@ Public SECURITY INVOKER wrapper, narrowly granted private SECURITY DEFINER with 
 
 ### S2 — existing RPC submit_review
 
+Implemented Review UI uses owned RLS reads rather than adding S1: PostgREST `due_at=lte.now` is cast by PostgreSQL to a timestamptz using database time. The server filters suspended/archived cards, joins readable published vocabulary, orders by due time/id and returns at most 20 cards, with a separate full eligible text count. No app/browser clock determines eligibility. Daily event counts use Vietnam day boundaries. The UI exposes ratings 1/2/3 only; `response_ms=null` is stable on retries. Audio cards remain outside this text review queue and are counted separately. Server Actions validate the immutable owned event receipt after each accepted write.
+
 Exact input `{p_card_id:uuid,p_rating:1|2|3|4,p_response_ms:null|integer,p_expected_version:bigint,p_idempotency_key:uuid}`. response_ms 0..3,600,000; expectedVersion >=0. Again=1, Hard=2, Good=3, Easy=4. No due date, clock, EF or state supplied by client.
 
 Exact receipt `{status:"ok",cardId,version,nextDueAt,intervalDays,newState,reviewedAt,algorithmVersion}`. DB uses hl-sm2-v1 with old EF, locks (user,key) then owned card, checks version/due/content and updates state+one immutable event in one transaction. Replay lookup happens before due/version/archive validation; identical accepted retry must retain its original receipt even after archive. Different semantic payload/key reuse ->PT409. Other user's card ->PT404. New key cannot bypass stale/due rules.

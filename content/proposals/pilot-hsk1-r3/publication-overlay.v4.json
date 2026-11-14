@@ -1,0 +1,731 @@
+{
+  "format": "hanlearn.publication-overlay.grouped",
+  "proposal_version": 4,
+  "base_package_id": "hanlearn-pilot-hsk1-v1",
+  "base_draft_revision": 3,
+  "base_manifest_sha256": "dee2d01f275db3c213d654f35b938374699062c28d471ba9fe7a412920fd531b",
+  "base_public_snapshot_sha256": "2cb3e0d7a667dd6faba633c4df1e87e6dbaee539e19d0cb394e9dcc769c91deb",
+  "scope": "OWNER_PERSONAL_USE_ONLY",
+  "apply_authorized": false,
+  "execution_supported": false,
+  "public_release_authorized": false,
+  "activation_proposed": false,
+  "independent_language_review": "PENDING",
+  "groups": [
+    {
+      "id": "curriculum",
+      "origin": "AI-assisted curriculum labels; syllabus facts reference HSK edition",
+      "entities": [
+        {
+          "table": "public.syllabus_versions",
+          "id": "8b8b06ff-5563-5a67-9197-9ffc9b25a8f9",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:syllabus"
+        },
+        {
+          "table": "public.courses",
+          "id": "2c99d2ff-db03-5ef5-ace1-0a8669d4ac28",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:course"
+        },
+        {
+          "table": "public.units",
+          "id": "0bf24f9c-503d-54ce-a6f0-bea9312d6d4c",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:unit"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:19:54.420Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: curriculum; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    },
+    {
+      "id": "vocabulary",
+      "origin": "AI-assisted Vietnamese senses/examples; selected lexical facts/readings referenced separately",
+      "entities": [
+        {
+          "table": "public.vocabulary",
+          "id": "04c5a876-74d3-5b7d-9cde-416352dcd276",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:你"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "897e5fd5-e644-5a70-ac8c-07c42afbbc8f",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:好"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "cce00807-ca0f-59fe-acbe-81d6744583c0",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:吗"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "fb146dc3-9976-50a8-93dd-b0789c7256e1",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:很"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "8ae98d4e-69f1-54c1-ba0b-bc28c69f903b",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:我"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "29771f36-43ad-5f67-bf22-a8fc61f82896",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:谢谢"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "4b0c6509-4af7-53e6-92bb-51b68cc8285b",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:再见"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "bccefc87-a163-5bde-b48a-438de4aa4986",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:呢"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "169b7623-b96a-5447-940b-f54efd6e2547",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:叫"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "f49235d6-fdb0-58cf-89cf-b7af56a5a44b",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:什么"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "eb4ddeb1-4d84-52d7-a951-9837dea7bb44",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:名字"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "ce52e655-b0aa-5915-b790-63712a3180bd",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:是"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "ce2949af-3761-5a54-8a8b-8dbf2275bbd4",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:人"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "d610982b-750e-5c68-b58e-4ae39f8badaf",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:中国"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "aa4a8f04-c772-54ef-a296-a7fd0a6d37c3",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:越南"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "d3550460-986b-55cf-8138-fe4a18985944",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:汉语"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "3c264a8e-b7c4-5840-a799-f465fcd4fa6f",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:学习"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "df6876e3-e013-584d-b584-64c5d6f29048",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:不"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "81ce53a0-5394-5278-81fe-c67961c8c34d",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:家"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "a6c5e400-0154-5884-9810-f8245adfce8e",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:的"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "8d613286-431b-5f14-8ed7-e45ca0178168",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:有"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "a5b9ce23-a21a-59e7-9975-0a9c973d63ad",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:几"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "7dec5724-9256-5404-8938-647c52f6f504",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:口"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "a1c65d77-b773-5f55-a5ed-c44dc908e6c0",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:爸爸"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "29784008-ba30-53e7-9f9d-04c98583dc51",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:妈妈"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "ed41c330-70ca-5535-8bdb-8b19b661bd11",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:哥哥"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "09dc1b31-fa1c-5727-8eb5-79cbd86b5a89",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:姐姐"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "2aa17a86-f44e-5af2-87e3-32eb104bf7f5",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:和"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "0ed1f027-db68-53f8-b6db-53bb833bdbbb",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:一"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "ed5ea8de-bd9e-5674-adfe-03c941ac6326",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:二"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "a925741e-b594-59dc-8a10-ee8600a4caad",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:三"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "cdf09665-aaf2-5aad-8697-073a91f5ddaa",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:个"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "30dd26d7-593c-5002-b3de-e1fd35b87562",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:两"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "14303981-2984-5515-8609-95898457dd7c",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:今天"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "0f23d9ef-ed12-5186-a65a-8bc3a350f4b0",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:星期"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "ad545a62-ac16-5d78-ac42-377f56bc4716",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:四"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "0253f3c8-fe61-55ac-9cb1-16fc9666484a",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:五"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "92bb88c4-2ec0-5692-8c10-cfd92fdd7236",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:六"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "1c06f13a-f7a7-578d-97fe-fa27691960e3",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:七"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "d2e5ae40-9d1c-5436-99a4-0403d8a7a4fc",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:月"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "e1833506-f5f1-50bd-9fd2-db12b5116daf",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:号"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "868d7848-c3ba-5927-bd3b-d2e5a9cca96e",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:现在"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "a0c51256-1682-5c09-9736-7996bd8293f2",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:点"
+        },
+        {
+          "table": "public.vocabulary",
+          "id": "c390f103-ab57-531b-808b-e1c734509c22",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:word:天"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:20:34.160Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: vocabulary; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    },
+    {
+      "id": "grammar",
+      "origin": "AI-assisted explanations/examples; HSK category comparison, not verified originality",
+      "entities": [
+        {
+          "table": "public.grammar_points",
+          "id": "2822b103-89dd-5819-b360-7315aef042b6",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:1"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:2"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "af6b2bab-c806-53a3-b16a-4f637741fd39",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:3"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "453bae52-e01b-587a-a6ad-d2d440a51feb",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:4"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "c3e33cc3-8d71-5af2-a7f4-efaf0c5ee6eb",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:5"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "13c4ee54-4c69-5838-9b1b-ef6ef4f3098f",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:6"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "c58bb0c0-dd84-525e-adc3-fb8e438b7651",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:7"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "8c80e333-e978-5244-806c-26ecc3e80d4a",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:8"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "df9491e4-ab8a-5fa6-abce-4e4e00eeb928",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:9"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "dfd72859-fe60-5806-b445-6b49db3e4c00",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:10"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "60b5e5ee-5f4e-5675-bd7d-4ed4238721a1",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:11"
+        },
+        {
+          "table": "public.grammar_points",
+          "id": "a4cb6f03-db4b-5659-b9fc-7181e37ce472",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:grammar:12"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:20:47.464Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: grammar; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    },
+    {
+      "id": "lessons",
+      "origin": "AI-assisted original-drafting declaration: objectives, dialogue and transcripts",
+      "entities": [
+        {
+          "table": "public.lessons",
+          "id": "639665c9-952d-5714-a276-537a3568b463",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-01"
+        },
+        {
+          "table": "public.lessons",
+          "id": "022f2393-6cff-54f0-b24f-03ee7cfc3cfe",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-02"
+        },
+        {
+          "table": "public.lessons",
+          "id": "321e1ed9-a427-57b3-817e-5acbb1b9bab8",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-03"
+        },
+        {
+          "table": "public.lessons",
+          "id": "47097e01-9557-5f82-a84b-fba132cfca05",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:lesson-04"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:20:54.616Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: lessons; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    },
+    {
+      "id": "quizzes",
+      "origin": "AI-assisted quiz metadata; no official exam claim",
+      "entities": [
+        {
+          "table": "public.lesson_quizzes",
+          "id": "08f2e3a1-e171-5aa6-93b9-ac777b053a41",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:1"
+        },
+        {
+          "table": "public.lesson_quizzes",
+          "id": "cde1e935-e66b-5553-a4b6-fffe1e6e1d42",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:2"
+        },
+        {
+          "table": "public.lesson_quizzes",
+          "id": "1149a0b7-b545-5838-91e2-14f2a152d260",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:3"
+        },
+        {
+          "table": "public.lesson_quizzes",
+          "id": "f72be185-ee36-5a6b-9046-4190e5ad2196",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:quiz:4"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:21:02.358Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: quizzes; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    },
+    {
+      "id": "questions",
+      "origin": "AI-assisted prompts/distractors; protected feedback is excluded from this public overlay",
+      "entities": [
+        {
+          "table": "public.quiz_questions",
+          "id": "9083a912-73c2-5e44-9168-895e45874b44",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:1"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "2f062e7a-9319-5503-bdb1-4c1978af128d",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:2"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "609acd8b-6358-51c5-bc21-b41f8dc2d82f",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:3"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "76015916-80bf-52c2-bd11-a9a9812b0408",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:4"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "af8cab1c-15a1-56e9-bb6f-099be1abd140",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:5"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "b7c8e3aa-0ccc-5fa4-bd42-24fe182a0225",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:1:6"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "00dd5cdb-560f-5f5f-8090-5958308f30b4",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:1"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "377cb504-b54a-51a9-8559-64f2d3037870",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:2"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "df3aa84d-ad70-577a-a1e4-73d7a980459f",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:3"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "359886c6-b796-5943-ab65-89baccd14cc8",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:4"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "35cb53f7-ff50-5605-b5e5-95d217b133c3",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:5"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "c208de2b-95d5-5afd-b9cc-002fa90dfe25",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:2:6"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "e80b9bac-ded5-5899-95a5-034d60d17dec",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:1"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "c46b5ddf-12d7-549d-96e8-ed1bfb6d1e56",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:2"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "a88919fb-4ac3-55c6-b4e3-5bf038e2e94e",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:3"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "7dca8e38-6482-5716-87f8-0086c6f02b93",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:4"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "a9210b85-32ff-5ad7-bf21-ea9afe62171e",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:5"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "cf4e0131-8a8d-5e76-a5d0-caac94400e89",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:3:6"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "0a2c1d0a-1a1c-5584-8059-2fcc75ed8c95",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:1"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "2552f8cb-f9b0-5cea-ab30-71937c8544b8",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:2"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "eff3d559-eb5d-5d65-aea6-750f85b970a2",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:3"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "48b4204d-18c7-52ac-9b2b-010f9cb011e6",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:4"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "9be0f982-ab43-5113-bc16-b025f778a83b",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:5"
+        },
+        {
+          "table": "public.quiz_questions",
+          "id": "a5bd22ed-b611-54c8-b3c7-d29c3f1f9419",
+          "source_uri": "urn:hanlearn:pilot-hsk1:v1:question:4:6"
+        }
+      ],
+      "metadata": {
+        "content_license": null,
+        "reviewed_by": "Owner — personal-use content viewing; not independent language certification or publication approval",
+        "reviewed_at": "2026-11-13T15:21:10.200Z"
+      },
+      "owner_review": {
+        "method": "owner_reviewed_personal_use_not_independent_language_review",
+        "actually_reviewed": true,
+        "evidence_reference": "docs/hanlearn-r3-owner-viewing-notes.txt: questions; đã xem toàn bộ; VIEWED_NOT_APPROVED. Identity evidence: .local/pilot-hsk1/v1/private/owner-acceptance-r3.md. Supersedes earlier viewing scope only; not rights or publication approval."
+      },
+      "rights": {
+        "basis": null,
+        "actual_inputs_confirmed": false,
+        "unresolved_copied_entity_ids": null,
+        "attribution": null,
+        "evidence_reference": ".local/pilot-hsk1/v1/rights/owner-rights-decision-r3.md; owner chat confirms original declaration remains, direct website/dictionary/pinyin.info text use unknown; no specific copied entity identified."
+      }
+    }
+  ],
+  "syllabus_verification": {
+    "verified_at": null,
+    "evidence_reference": null
+  },
+  "source_classification": [
+    {
+      "id": "AI-assisted-drafting",
+      "use": "Vietnamese teaching text, examples, dialogue, questions and protected explanations declared newly drafted; not an originality or license guarantee",
+      "evidence": "content/pilot-hsk1/v1/rights-manifest.json; existing owner rights decision and acceptance (private)",
+      "permission_asserted": false
+    },
+    {
+      "id": "HSK-2025-11",
+      "use": "43 headword/readings and 12 grammar-category evidence records; membership does not verify senses or redistribution rights",
+      "evidence": "content/pilot-hsk1/v1/manifest.json; cached primary syllabus evidence",
+      "permission_asserted": false
+    },
+    {
+      "id": "GBT-16159-2012",
+      "use": "Pinyin orthography reference; no full-text/pages in learning payload; source-use attribution still to specify",
+      "evidence": "docs/PILOT_R3_RIGHTS_AUDIT.md RA-07; owner rights decision C",
+      "permission_asserted": false
+    },
+    {
+      "id": "pinyin-info-review-citations",
+      "use": "Mentioned in AI review only; direct copying/dependency not established. Do not label all content third-party-derived on citation alone",
+      "evidence": "docs/PILOT_R3_RIGHTS_AUDIT.md RA-09; owner rights decision D",
+      "permission_asserted": false
+    },
+    {
+      "id": "other-third-party-inputs",
+      "use": "Owner reports no recalled commercial app/book/exam-bank input. Any actually copied website/dictionary/paid material must be scoped to affected IDs and cleared or excluded",
+      "evidence": "existing owner rights decision E; self-declaration, not independent corpus comparison",
+      "permission_asserted": false
+    }
+  ],
+  "trace_warnings": [
+    {
+      "id": "fa09d24a-1c47-51aa-91fa-143b3877e98a",
+      "reason": "Grammar 很 explanation traces to remediation history, not an exact whole-string match in earlier author scripts; this is a trace gap, not evidence of copying"
+    }
+  ],
+  "owner_confirmation": {
+    "evidence_reference": "Owner chat confirmation: Xác nhận phạm vi Owner Review – HanLearn HSK 1 r3; existing private acceptance and rights decision retained unchanged; docs/hanlearn-r3-owner-viewing-notes.txt supersedes earlier viewing scope only",
+    "accepted_metadata_description": "Owner-reviewed cho mục đích tự học cá nhân; nội dung được AI hỗ trợ, tham khảo HSK/GB-T; không cấp quyền phân phối hoặc bảo đảm quyền bên thứ ba.",
+    "direct_external_text_use": "UNKNOWN_NO_SPECIFIC_COPY_IDENTIFIED",
+    "syllabus_check": "EXISTING_AUTOMATED_EVIDENCE_ONLY",
+    "group_scope": [
+      {
+        "id": "curriculum",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      },
+      {
+        "id": "vocabulary",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      },
+      {
+        "id": "grammar",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      },
+      {
+        "id": "lessons",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      },
+      {
+        "id": "quizzes",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      },
+      {
+        "id": "questions",
+        "scope": "FULL_GROUP_VIEWED_NOT_APPROVED"
+      }
+    ]
+  },
+  "owner_viewing_notes": {
+    "source": "docs/hanlearn-r3-owner-viewing-notes.txt",
+    "sha256": "b78e48fe65d749c59dfff1a6e685160997cd7e2b2615993c07a93691c28e2739",
+    "records": [
+      {
+        "group": "curriculum",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:19:54.420Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      },
+      {
+        "group": "vocabulary",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:20:34.160Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      },
+      {
+        "group": "grammar",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:20:47.464Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      },
+      {
+        "group": "lessons",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:20:54.616Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      },
+      {
+        "group": "quizzes",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:21:02.358Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      },
+      {
+        "group": "questions",
+        "scope_text": "đã xem toàn bộ",
+        "coverage": "FULL_GROUP_VIEWED",
+        "viewed_at": "2026-11-13T15:21:10.200Z",
+        "decision": "VIEWED_NOT_APPROVED"
+      }
+    ]
+  }
+}
