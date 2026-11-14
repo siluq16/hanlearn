@@ -72,7 +72,10 @@ describe("Speaking Matcher & Recognizer", () => {
     expect(getRecognitionErrorMessage("not-allowed")).toContain("Quyền truy cập micro");
     expect(getRecognitionErrorMessage("no-speech")).toContain("Không phát hiện giọng nói");
     expect(getRecognitionErrorMessage("audio-capture")).toContain("Không tìm thấy thiết bị micro");
-    expect(getRecognitionErrorMessage("unsupported")).toContain("chưa hỗ trợ nhận dạng giọng nói");
+    expect(getRecognitionErrorMessage("unsupported")).toContain("chưa hỗ trợ Web Speech API");
+    expect(getRecognitionErrorMessage("insecure-context")).toContain("kết nối bảo mật");
+    expect(getRecognitionErrorMessage("service-not-allowed")).toContain("Dịch vụ nhận dạng");
+    expect(getRecognitionErrorMessage("network")).toContain("kết nối mạng Internet");
   });
 
   it("generates speaking items session filtered by type and lesson", () => {

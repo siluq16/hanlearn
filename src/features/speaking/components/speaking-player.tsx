@@ -15,6 +15,7 @@ import {
   Sparkles,
   Award,
   ShieldCheck,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -73,6 +74,8 @@ export function SpeakingPlayer({
   // Speech Recognition STT hook
   const {
     isSupported: isRecognitionSupported,
+    isSecureContext,
+    isRequestingPermission,
     isListening,
     transcript,
     error: recognitionError,
@@ -606,13 +609,23 @@ export function SpeakingPlayer({
             </p>
 
             <div className="flex flex-col items-center justify-center gap-3">
-              {!isListening ? (
+              {isRequestingPermission ? (
+                <Button
+                  type="button"
+                  size="default"
+                  disabled
+                  className="min-h-16 px-8 rounded-2xl bg-primary/70 text-primary-foreground text-base font-semibold shadow-xs transition-all"
+                >
+                  <Loader2 className="size-6 mr-2.5 animate-spin" />
+                  <span>Đang yêu cầu quyền micro...</span>
+                </Button>
+              ) : !isListening ? (
                 <Button
                   type="button"
                   size="default"
                   data-testid="record-btn"
                   onClick={handleStartRecording}
-                  disabled={!isRecognitionSupported}
+                  disabled={!isRecognitionSupported || !isSecureContext}
                   className="min-h-16 px-8 rounded-2xl bg-primary text-primary-foreground text-base font-semibold shadow-xs hover:opacity-90 transition-all"
                 >
                   <Mic className="size-6 mr-2.5" />
@@ -632,7 +645,9 @@ export function SpeakingPlayer({
               )}
 
               <p className="text-xs text-muted-foreground">
-                {isListening
+                {isRequestingPermission
+                  ? "Vui lòng bấm 'Allow' (Cho phép) trên hộp thoại của trình duyệt để cấp quyền micro..."
+                  : isListening
                   ? "Hãy phát âm to và rõ ràng bằng tiếng Trung zh-CN..."
                   : "Có thể nghe lại mẫu và thử nói lại nhiều lần."}
               </p>
@@ -642,17 +657,36 @@ export function SpeakingPlayer({
             {recognitionError && (
               <div
                 role="alert"
-                className="rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-xs text-destructive text-left"
+                className="rounded-xl border border-destructive/30 bg-destructive/10 p-3.5 text-xs text-destructive text-left space-y-1.5"
                 data-testid="recognition-error"
               >
                 <div className="flex items-start gap-2">
                   <AlertCircle className="size-4 shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold">Lỗi nhận dạng:</p>
-                    <p className="mt-0.5">{recognitionError}</p>
+                  <div className="space-y-1">
+                    <p className="font-semibold">
+                      {recognitionErrorCode === "not-allowed"
+                        ? "Chưa cấp quyền micro:"
+                        : recognitionErrorCode === "audio-capture"
+                        ? "Không tìm thấy thiết bị micro:"
+                        : recognitionErrorCode === "insecure-context"
+                        ? "Kết nối không bảo mật:"
+                        : recognitionErrorCode === "network"
+                        ? "Lỗi kết nối dịch vụ nhận dạng:"
+                        : recognitionErrorCode === "service-not-allowed"
+                        ? "Dịch vụ nhận dạng bị chặn:"
+                        : recognitionErrorCode === "unsupported"
+                        ? "Trình duyệt không hỗ trợ:"
+                        : "Lỗi nhận dạng giọng nói:"}
+                    </p>
+                    <p className="text-foreground/90 leading-relaxed">{recognitionError}</p>
                     {recognitionErrorCode === "not-allowed" && (
-                      <p className="mt-1 opacity-90">
-                        Gợi ý: Nhấn vào biểu tượng khóa hoặc micro trên thanh địa chỉ URL của trình duyệt và chọn &ldquo;Cho phép&rdquo; (Allow).
+                      <p className="text-muted-foreground pt-1 border-t border-destructive/20 leading-relaxed">
+                        👉 <strong>Cách xử lý:</strong> Nhấn vào biểu tượng khóa hoặc micro trên thanh địa chỉ URL của trình duyệt $\rightarrow$ Chọn <em>Cho phép (Allow)</em> cho Micro $\rightarrow$ Tải lại trang.
+                      </p>
+                    )}
+                    {recognitionErrorCode === "insecure-context" && (
+                      <p className="text-muted-foreground pt-1 border-t border-destructive/20 leading-relaxed">
+                        👉 <strong>Cách xử lý:</strong> Trình duyệt chặn quyền truy cập micro trên giao thức HTTP thường. Vui lòng truy cập qua <code>http://localhost:3000</code> hoặc kết nối HTTPS an toàn.
                       </p>
                     )}
                   </div>

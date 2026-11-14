@@ -39,15 +39,35 @@ async function run() {
       channel: "chrome",
     }).catch(() => chromium.launch({ headless: true }));
 
-    const context = await browser.newContext();
+    const context = await browser.newContext({ permissions: ["microphone"] });
     const page = await context.newPage();
 
     page.on("console", (msg) => console.log(`[Browser Console] ${msg.type()}: ${msg.text()}`));
     page.on("pageerror", (err) => console.error(`[Browser PageError]`, err));
 
-    // Instrument Web Speech API (Synthesis & Recognition)
+    // Instrument Web Speech API (Synthesis & Recognition) and getUserMedia
     await page.addInitScript(() => {
       window.__speechCalls = [];
+      window.__getUserMediaCalled = false;
+      window.__audioTrackStopped = false;
+
+      if (!navigator.mediaDevices) {
+        navigator.mediaDevices = {};
+      }
+      navigator.mediaDevices.getUserMedia = async () => {
+        window.__getUserMediaCalled = true;
+        return {
+          getTracks: () => [
+            {
+              kind: "audio",
+              stop: () => {
+                window.__audioTrackStopped = true;
+              },
+            },
+          ],
+        };
+      };
+
       const synth = window.speechSynthesis;
       if (synth) {
         const origSpeak = synth.speak.bind(synth);
@@ -164,6 +184,7 @@ async function run() {
       throw new Error("LỖI: Phát âm mẫu không gọi speechSynthesis.speak!");
     }
 
+    let micCheck;
     // --- BƯỚC 3: Thử nghiệm phát âm khớp chính xác (Exact match) ---
     console.log("\n[Bước 3] Thử nghiệm phát âm khớp chính xác (Exact match)...");
     await page.evaluate((targetText) => {
@@ -172,6 +193,15 @@ async function run() {
 
     await page.click('[data-testid="record-btn"]');
     await page.waitForSelector('[data-testid="speaking-result-card"]');
+
+    // Xác nhận getUserMedia được gọi để kích hoạt hộp thoại xin quyền và đã giải phóng track
+    micCheck = await page.evaluate(() => ({
+      called: window.__getUserMediaCalled,
+      released: window.__audioTrackStopped,
+    }));
+    if (!micCheck.called || !micCheck.released) {
+      throw new Error("LỖI: getUserMedia không được gọi hoặc track chưa được giải phóng!");
+    }
 
     const badgeText1 = await page.textContent('[data-testid="match-status-badge"]');
     const feedbackText1 = await page.textContent('[data-testid="match-feedback-text"]');
@@ -197,6 +227,15 @@ async function run() {
     await page.click('[data-testid="record-btn"]');
     await page.waitForSelector('[data-testid="speaking-result-card"]');
 
+    // Xác nhận getUserMedia được gọi để kích hoạt hộp thoại xin quyền và đã giải phóng track
+    micCheck = await page.evaluate(() => ({
+      called: window.__getUserMediaCalled,
+      released: window.__audioTrackStopped,
+    }));
+    if (!micCheck.called || !micCheck.released) {
+      throw new Error("LỖI: getUserMedia không được gọi hoặc track chưa được giải phóng!");
+    }
+
     const badgeText2 = await page.textContent('[data-testid="match-status-badge"]');
     console.log(`  -> Trạng thái câu 2: "${badgeText2}"`);
     if (!badgeText2?.includes("Gần khớp")) {
@@ -218,6 +257,15 @@ async function run() {
 
     await page.click('[data-testid="record-btn"]');
     await page.waitForSelector('[data-testid="speaking-result-card"]');
+
+    // Xác nhận getUserMedia được gọi để kích hoạt hộp thoại xin quyền và đã giải phóng track
+    micCheck = await page.evaluate(() => ({
+      called: window.__getUserMediaCalled,
+      released: window.__audioTrackStopped,
+    }));
+    if (!micCheck.called || !micCheck.released) {
+      throw new Error("LỖI: getUserMedia không được gọi hoặc track chưa được giải phóng!");
+    }
 
     const badgeText3 = await page.textContent('[data-testid="match-status-badge"]');
     console.log(`  -> Trạng thái câu 3: "${badgeText3}"`);
