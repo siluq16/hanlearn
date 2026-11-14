@@ -138,6 +138,32 @@
             "睡觉"
           ],
           "explanation": "Từ '店' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-19-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Nơi làm việc 'công ty' trong tiếng Trung là:",
+          "correct_answer": "公司",
+          "options": [
+            "公司",
+            "学校",
+            "医院",
+            "银行"
+          ],
+          "explanation": "'公司' (gōngsī) nghĩa là công ty."
+        },
+        {
+          "id": "ex-19-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Địa điểm ăn uống 'nhà hàng / tiệm ăn' là:",
+          "correct_answer": "饭店",
+          "options": [
+            "饭店",
+            "商店",
+            "书店",
+            "超市"
+          ],
+          "explanation": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
         }
       ]
     },

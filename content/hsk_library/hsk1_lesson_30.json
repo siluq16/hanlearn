@@ -143,6 +143,19 @@
             "睡觉"
           ],
           "explanation": "Từ '爱' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-30-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Động từ 'tìm kiếm (người hoặc đồ vật)' là:",
+          "correct_answer": "找",
+          "options": [
+            "找",
+            "给",
+            "看",
+            "听"
+          ],
+          "explanation": "'找' (zhǎo) nghĩa là tìm kiếm."
         }
       ]
     },

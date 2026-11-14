@@ -158,6 +158,19 @@
             "睡觉"
           ],
           "explanation": "Từ '上' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-25-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Phương vị từ 'phía bên ngoài / ngoài trời' là:",
+          "correct_answer": "外边",
+          "options": [
+            "外边",
+            "里边",
+            "前边",
+            "后边"
+          ],
+          "explanation": "'外边' (wàibian) nghĩa là phía ngoài, bên ngoài."
         }
       ]
     },

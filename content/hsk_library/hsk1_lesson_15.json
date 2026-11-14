@@ -177,6 +177,19 @@
             "好朋友"
           ],
           "explanation": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+        },
+        {
+          "id": "ex-15-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ chỉ 'em gái' trong gia đình là:",
+          "correct_answer": "妹妹",
+          "options": [
+            "妹妹",
+            "姐姐",
+            "弟弟",
+            "哥哥"
+          ],
+          "explanation": "'妹妹' (mèimei) là em gái."
         }
       ]
     },

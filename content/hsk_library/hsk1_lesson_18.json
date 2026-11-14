@@ -204,6 +204,45 @@
             "包子"
           ],
           "explanation": "'鸡蛋' (jīdàn) là trứng gà."
+        },
+        {
+          "id": "ex-18-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Hoạt động 'nấu cơm / nấu nướng' là:",
+          "correct_answer": "做饭",
+          "options": [
+            "做饭",
+            "吃饭",
+            "买菜",
+            "喝水"
+          ],
+          "explanation": "'做饭' (zuòfàn) nghĩa là nấu cơm, làm đồ ăn."
+        },
+        {
+          "id": "ex-18-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Món ăn 'bánh mì' trong tiếng Trung là:",
+          "correct_answer": "面包",
+          "options": [
+            "面包",
+            "包子",
+            "米饭",
+            "面条"
+          ],
+          "explanation": "'面包' (miànbāo) nghĩa là bánh mì."
+        },
+        {
+          "id": "ex-18-v-extra-03",
+          "type": "vocab_mcq",
+          "prompt": "Tính từ khen món ăn 'ngon miệng' là:",
+          "correct_answer": "好吃",
+          "options": [
+            "好吃",
+            "好喝",
+            "好看",
+            "好听"
+          ],
+          "explanation": "'好吃' (hǎochī) nghĩa là ăn ngon."
         }
       ]
     },

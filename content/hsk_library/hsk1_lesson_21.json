@@ -138,6 +138,32 @@
             "睡觉"
           ],
           "explanation": "Từ '电话' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-21-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Cụm từ biểu thị kết quả 'nghe thấy' qua điện thoại là:",
+          "correct_answer": "听见",
+          "options": [
+            "听见",
+            "看见",
+            "说话",
+            "打电话"
+          ],
+          "explanation": "'听见' (tīngjiàn) là bổ ngữ kết quả: nghe thấy."
+        },
+        {
+          "id": "ex-21-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Thiết bị liên lạc di động 'điện thoại di động' là:",
+          "correct_answer": "手机",
+          "options": [
+            "手机",
+            "电脑",
+            "电视",
+            "收音机"
+          ],
+          "explanation": "'手机' (shǒujī) nghĩa là điện thoại di động."
         }
       ]
     },

@@ -148,6 +148,45 @@
             "睡觉"
           ],
           "explanation": "Từ '年' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-28-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Một cách gọi khác trang trọng của 'Chủ nhật' (bên cạnh 星期天) là:",
+          "correct_answer": "星期日",
+          "options": [
+            "星期日",
+            "星期六",
+            "星期七",
+            "星期八"
+          ],
+          "explanation": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+        },
+        {
+          "id": "ex-28-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Khoảng thời gian 'buổi tối' trong ngày là:",
+          "correct_answer": "晚上",
+          "options": [
+            "晚上",
+            "早上",
+            "中午",
+            "下午"
+          ],
+          "explanation": "'晚上' (wǎnshang) là buổi tối."
+        },
+        {
+          "id": "ex-28-v-extra-03",
+          "type": "vocab_mcq",
+          "prompt": "Từ chỉ 'ban ngày' (ngược với ban đêm) là:",
+          "correct_answer": "白天",
+          "options": [
+            "白天",
+            "晚上",
+            "早晨",
+            "深夜"
+          ],
+          "explanation": "'白天' (báitiān) nghĩa là ban ngày."
         }
       ]
     },

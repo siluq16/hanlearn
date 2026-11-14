@@ -153,6 +153,19 @@
             "睡觉"
           ],
           "explanation": "Từ '课' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-14-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Đồ vật dùng để ngồi (cái ghế) là gì?",
+          "correct_answer": "椅子",
+          "options": [
+            "椅子",
+            "桌子",
+            "床",
+            "门"
+          ],
+          "explanation": "'椅子' (yǐzi) nghĩa là cái ghế."
         }
       ]
     },

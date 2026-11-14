@@ -158,6 +158,32 @@
             "睡觉"
           ],
           "explanation": "Từ '身体' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-16-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Hành động 'thức dậy / rời khỏi giường' vào buổi sáng là:",
+          "correct_answer": "起床",
+          "options": [
+            "起床",
+            "睡觉",
+            "洗澡",
+            "刷牙"
+          ],
+          "explanation": "'起床' (qǐchuáng) nghĩa là thức dậy."
+        },
+        {
+          "id": "ex-16-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Cụm từ chỉ việc 'đi khám bệnh / khám bác sĩ' là:",
+          "correct_answer": "看病",
+          "options": [
+            "看病",
+            "吃药",
+            "打针",
+            "休息"
+          ],
+          "explanation": "'看病' (kànbìng) nghĩa là đi khám bệnh."
         }
       ]
     },

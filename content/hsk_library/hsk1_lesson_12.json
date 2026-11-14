@@ -163,6 +163,45 @@
             "睡觉"
           ],
           "explanation": "Từ '车' là đáp án phù hợp nhất."
+        },
+        {
+          "id": "ex-12-v-extra-01",
+          "type": "vocab_mcq",
+          "prompt": "Từ nào chỉ phương tiện hàng không 'máy bay'?",
+          "correct_answer": "飞机",
+          "options": [
+            "飞机",
+            "出租车",
+            "公共汽车",
+            "火车"
+          ],
+          "explanation": "'飞机' (fēijī) nghĩa là máy bay."
+        },
+        {
+          "id": "ex-12-v-extra-02",
+          "type": "vocab_mcq",
+          "prompt": "Hành động 'lái xe' trong tiếng Trung là gì?",
+          "correct_answer": "开车",
+          "options": [
+            "开车",
+            "坐车",
+            "骑车",
+            "走路"
+          ],
+          "explanation": "'开车' (kāichē) nghĩa là lái xe hơi."
+        },
+        {
+          "id": "ex-12-v-extra-03",
+          "type": "vocab_mcq",
+          "prompt": "Động từ 'trở về / về (nhà, nước)' là:",
+          "correct_answer": "回",
+          "options": [
+            "回",
+            "去",
+            "来",
+            "走"
+          ],
+          "explanation": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
         }
       ]
     },
