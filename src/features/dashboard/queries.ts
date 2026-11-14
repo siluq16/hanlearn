@@ -4,7 +4,7 @@ import { getCurriculum } from "@/features/roadmap/queries";
 import { nextLesson } from "@/features/roadmap/model";
 import { getSettings } from "@/features/settings/queries";
 import { dataOrThrow, readAll } from "@/lib/data";
-import { LESSON_05_QUIZ, LESSON_06_QUIZ } from "@/features/quizzes/curriculum-quizzes";
+import { ALL_CURRICULUM_QUIZZES } from "@/features/quizzes/curriculum-quizzes";
 export async function getDashboard() {
   const { user, supabase } = await requireLearner();
   const [
@@ -102,7 +102,7 @@ export async function getDashboard() {
   });
 
   const curriculumAttempts: typeof quizHistory = [];
-  for (const qDef of [LESSON_05_QUIZ, LESSON_06_QUIZ]) {
+  for (const qDef of ALL_CURRICULUM_QUIZZES) {
     const metaKey = `quiz_attempts_${qDef.quiz.id}`;
     const rawList = Array.isArray(user.user_metadata?.[metaKey])
       ? user.user_metadata[metaKey]

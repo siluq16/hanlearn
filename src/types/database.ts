@@ -143,6 +143,19 @@ export type LearnerStageProgress = {
   completed_stages: number[];
   updated_at: string;
 };
+export type CurriculumQuizAttempt = {
+  id: string;
+  user_id: string;
+  quiz_id: string;
+  lesson_id: string;
+  started_at: string;
+  submitted_at: string | null;
+  correct_count: number | null;
+  question_count: number;
+  passed: boolean | null;
+  answers: Json | null;
+  created_at: string;
+};
 export type Database = {
   public: {
     Tables: {
@@ -157,6 +170,7 @@ export type Database = {
       lesson_grammar: Table<LessonGrammar>;
       grammar_points: Table<GrammarPoint>;
       learner_stage_progress: Table<LearnerStageProgress>;
+      curriculum_quiz_attempts: Table<CurriculumQuizAttempt>;
       lesson_progress: Table<Progress>;
       vocabulary: Table<Vocabulary & PublicationFields>;
       syllabus_vocabulary: Table<Membership>;
@@ -226,6 +240,14 @@ export type Database = {
           p_idempotency_key: string;
         };
         Returns: Json;
+      };
+      upsert_learner_stage_progress: {
+        Args: {
+          p_lesson_id: string;
+          p_completed_stages: number[];
+          p_current_stage?: number;
+        };
+        Returns: LearnerStageProgress;
       };
       mark_lesson_studied: { Args: { p_lesson_id: string }; Returns: Json };
       start_quiz: {

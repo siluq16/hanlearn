@@ -37,8 +37,15 @@ export async function getQuizView(
   // Handle curriculum quizzes (Lesson 5, 6, etc.)
   const curriculum = findCurriculumQuiz(lessonId);
   if (curriculum) {
+    // 1. Try reading from curriculum_quiz_attempts table first
+    const { data: dbRows } = await supabase
+      .from("curriculum_quiz_attempts")
+      .select("id, started_at, submitted_at, correct_count, question_count, passed, answers")
+      .eq("quiz_id", curriculum.quiz.id)
+      .order("started_at", { ascending: false });
+
     const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
-    const rawAttempts: Array<{
+    const metaAttempts: Array<{
       id: string;
       started_at: string;
       submitted_at: string | null;
@@ -47,6 +54,21 @@ export async function getQuizView(
       passed: boolean | null;
       answers?: Record<string, number>;
     }> = Array.isArray(user.user_metadata?.[metaKey]) ? user.user_metadata[metaKey] : [];
+
+    // Use DB rows if present; otherwise fallback to user_metadata
+    type RawCurriculumAttempt = {
+      id: string;
+      started_at: string;
+      submitted_at: string | null;
+      correct_count: number | null;
+      question_count: number | null;
+      passed: boolean | null;
+      answers?: Record<string, number>;
+    };
+    const rawAttempts: RawCurriculumAttempt[] =
+      dbRows && dbRows.length > 0
+        ? (dbRows as unknown as RawCurriculumAttempt[])
+        : metaAttempts;
 
     const history: Attempt[] = rawAttempts.map((a) => ({
       id: a.id,

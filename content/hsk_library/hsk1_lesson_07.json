@@ -1,0 +1,458 @@
+{
+  "id": "l-hsk1-007",
+  "slug": "hsk1-lesson-07",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-02",
+  "title": "Bài 7: Mua sắm & Giá cả (买东西与多少钱)",
+  "objective_vi": "Biết cách hỏi giá cả (...多少钱), diễn đạt số tiền với 块 / 元, và sử dụng mẫu câu cảm thán 太...了.",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Nghe và phát âm các âm tiết trọng tâm: mǎi, qián, duō, shao, kuài, tài, guì.",
+      "warmup_words": [
+        {
+          "hanzi": "买",
+          "pinyin": "mǎi",
+          "vi": "mua"
+        },
+        {
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "vi": "tiền"
+        },
+        {
+          "hanzi": "多少",
+          "pinyin": "duōshao",
+          "vi": "bao nhiêu"
+        },
+        {
+          "hanzi": "太",
+          "pinyin": "tài",
+          "vi": "quá, lắm"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "买",
+          "pinyin": "mǎi",
+          "meaning_vi": "Mua (động từ)"
+        },
+        {
+          "simplified": "多少",
+          "pinyin": "duōshao",
+          "meaning_vi": "Bao nhiêu (đại từ nghi vấn)"
+        },
+        {
+          "simplified": "钱",
+          "pinyin": "qián",
+          "meaning_vi": "Tiền (danh từ)"
+        },
+        {
+          "simplified": "块",
+          "pinyin": "kuài",
+          "meaning_vi": "Đồng / tệ (lượng từ tiền tệ, khẩu ngữ)"
+        },
+        {
+          "simplified": "元",
+          "pinyin": "yuán",
+          "meaning_vi": "Đồng / tệ (đơn vị tiền tệ chính thức, văn viết)"
+        },
+        {
+          "simplified": "太",
+          "pinyin": "tài",
+          "meaning_vi": "Quá / lắm (phó từ mức độ)"
+        },
+        {
+          "simplified": "贵",
+          "pinyin": "guì",
+          "meaning_vi": "Đắt / quý giá (tính từ)"
+        },
+        {
+          "simplified": "便宜",
+          "pinyin": "piányi",
+          "meaning_vi": "Rẻ / giá mềm (tính từ)"
+        },
+        {
+          "simplified": "苹果",
+          "pinyin": "píngguǒ",
+          "meaning_vi": "Quả táo (danh từ)"
+        },
+        {
+          "simplified": "东西",
+          "pinyin": "dōngxi",
+          "meaning_vi": "Đồ vật / thứ / hàng hóa (danh từ)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-07-v1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn nghĩa tiếng Việt đúng của từ '多少钱' (duōshao qián):",
+          "targetContent": {
+            "hanzi": "多少钱",
+            "pinyin": "duōshao qián"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "Bao nhiêu tiền",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "Mấy giờ rồi",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "Bao nhiêu người",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "Đắt quá rồi",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-07-v2",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép cặp từ tiếng Trung và nghĩa tiếng Việt tương ứng:",
+          "pairs": [
+            {
+              "id": "p1",
+              "left": "买 (mǎi)",
+              "right": "Mua"
+            },
+            {
+              "id": "p2",
+              "left": "贵 (guì)",
+              "right": "Đắt"
+            },
+            {
+              "id": "p3",
+              "left": "便宜 (piányi)",
+              "right": "Rẻ"
+            },
+            {
+              "id": "p4",
+              "left": "苹果 (píngguǒ)",
+              "right": "Quả táo"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-07-1",
+          "titleVi": "1. Mẫu câu hỏi giá: [Đồ vật] + 多少钱？",
+          "pattern": "Danh từ + 多少钱？",
+          "explanationVi": "Dùng để hỏi giá của đồ vật hoặc dịch vụ. Khi trả lời, nêu trực tiếp số lượng + 块 (hoặc 元).",
+          "examples": [
+            {
+              "hanzi": "这个苹果多少钱？",
+              "pinyin": "Zhège píngguǒ duōshao qián?",
+              "translationVi": "Quả táo này bao nhiêu tiền?"
+            },
+            {
+              "hanzi": "五块钱一斤。",
+              "pinyin": "Wǔ kuài qián yī jīn.",
+              "translationVi": "Năm đồng một cân."
+            }
+          ]
+        },
+        {
+          "id": "g-07-2",
+          "titleVi": "2. Cấu trúc cảm thán / mức độ cao: 太 + Tính từ + 了",
+          "pattern": "太 + Adj + 了",
+          "explanationVi": "Biểu thị mức độ rất cao hoặc vượt quá mức bình thường. Thường dùng trong mặc cả hoặc khen ngợi.",
+          "examples": [
+            {
+              "hanzi": "太贵了，便宜一点儿吧！",
+              "pinyin": "Tài guì le, piányi yīdiǎnr ba!",
+              "translationVi": "Đắt quá, rẻ một chút đi!"
+            },
+            {
+              "hanzi": "太好了！",
+              "pinyin": "Tài hǎo le!",
+              "translationVi": "Tốt quá rồi!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-07-g1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 3,
+          "kind": "grammar-choice",
+          "hskLevel": 1,
+          "promptVi": "Điền từ thích hợp vào chỗ trống: '这个东西____贵了！' (Đồ này đắt quá rồi!)",
+          "options": [
+            {
+              "id": "o1",
+              "label": "太 (tài)",
+              "isCorrect": true,
+              "explanationVi": "Cấu trúc cảm thán: 太 + Tính từ + 了."
+            },
+            {
+              "id": "o2",
+              "label": "很 (hěn)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "不 (bù)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "几 (jǐ)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-07-g2",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp các từ thành câu: 'Quả táo này bao nhiêu tiền một cân?'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "这个",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "苹果",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "一斤",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "多少钱",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "？",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "dlg-07",
+        "titleVi": "Mua táo ở chợ hoa quả",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你好，你想买什么？",
+            "pinyin": "Nǐ hǎo, nǐ xiǎng mǎi shénme?",
+            "translationVi": "Xin chào, bạn muốn mua gì?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想买苹果。这个苹果多少钱一斤？",
+            "pinyin": "Wǒ xiǎng mǎi píngguǒ. Zhège píngguǒ duōshao qián yī jīn?",
+            "translationVi": "Tôi muốn mua táo. Táo này bao nhiêu tiền một cân?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "六块钱一斤。",
+            "pinyin": "Liù kuài qián yī jīn.",
+            "translationVi": "Sáu đồng một cân."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "太贵了，五块钱可以吗？",
+            "pinyin": "Tài guì le, wǔ kuài qián kěyǐ ma?",
+            "translationVi": "Đắt quá, năm đồng được không?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "可以，给你。",
+            "pinyin": "Kěyǐ, gěi nǐ.",
+            "translationVi": "Được, đưa cho bạn này."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-07-d1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi người bán hàng báo giá '六块钱一斤', bạn muốn mặc cả thì nói câu nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "太贵了，五块钱可以吗？ (Đắt quá, năm đồng được không?)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "我很喜欢吃米饭。 (Tôi rất thích ăn cơm.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "明天星期几？ (Ngày mai thứ mấy?)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-07-l1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 6,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Nghe đoạn âm thanh và nhập chữ Hán hoặc Pinyin bạn nghe được:",
+          "targetContent": {
+            "hanzi": "苹果太贵了",
+            "pinyin": "píngguǒ tài guì le",
+            "audioText": "苹果太贵了",
+            "translationVi": "Táo đắt quá rồi"
+          },
+          "expectedAnswer": "苹果太贵了",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-07-s1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe và luyện đọc theo câu: '这个多少钱？'",
+          "targetContent": {
+            "hanzi": "这个多少钱？",
+            "pinyin": "Zhège duōshao qián?",
+            "translationVi": "Cái này bao nhiêu tiền?"
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "去商店买水果 (Đi cửa hàng mua hoa quả)",
+        "text": "今天下午我去商店买东西。商店里的苹果很便宜，三块钱一斤。我买了三斤苹果，一共九块钱。我很喜欢吃苹果。",
+        "translationVi": "Chiều hôm nay tôi đến cửa hàng mua đồ. Táo ở trong cửa hàng rất rẻ, 3 đồng một cân. Tôi đã mua 3 cân táo, tổng cộng 9 đồng. Tôi rất thích ăn táo."
+      },
+      "exercises": [
+        {
+          "id": "ex-07-r1",
+          "lessonId": "l-hsk1-007",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá tính Đúng / Sai của nhận định sau dựa vào đoạn văn:",
+          "readingPassage": {
+            "title": "去商店买水果",
+            "text": "今天下午我去商店买东西。商店里的苹果很便宜，三块钱一斤。我买了三斤苹果，一共九块钱。我很喜欢吃苹果。"
+          },
+          "trueFalseStatement": {
+            "statement": "商店里的苹果很贵，十块钱一斤。(Táo trong cửa hàng rất đắt, 10 đồng 1 cân.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn viết: 商店里的苹果很便宜，三块钱一斤 (Táo rất rẻ, 3 đồng 1 cân)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/lessons/l-hsk1-007/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
+    }
+  ]
+}

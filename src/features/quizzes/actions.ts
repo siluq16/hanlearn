@@ -54,26 +54,44 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
   const curriculum = findCurriculumQuiz(parsed.data.lessonId);
   if (curriculum) {
     const attemptId = randomUUID();
+    const startedAt = new Date().toISOString();
     const newAttempt = {
       id: attemptId,
-      started_at: new Date().toISOString(),
+      started_at: startedAt,
       submitted_at: null,
       correct_count: null,
       question_count: curriculum.questions.length,
       passed: null,
     };
-    const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
-    const prevAttempts = Array.isArray(user.user_metadata?.[metaKey])
-      ? user.user_metadata[metaKey]
-      : [];
-    const nextAttempts = [newAttempt, ...prevAttempts].slice(0, 20);
-    const { error } = await supabase.auth.updateUser({
-      data: {
-        ...user.user_metadata,
-        [metaKey]: nextAttempts,
-      },
-    });
-    if (error) return failure("RETRY", true, true);
+
+    // 1. Persist to authoritative curriculum_quiz_attempts table
+    const { error: insertError } = await supabase
+      .from("curriculum_quiz_attempts")
+      .insert({
+        id: attemptId,
+        user_id: user.id,
+        quiz_id: curriculum.quiz.id,
+        lesson_id: curriculum.lessonId,
+        started_at: startedAt,
+        question_count: curriculum.questions.length,
+      });
+
+    // 2. Migration fallback: If table is not created yet, mirror to user_metadata
+    if (insertError) {
+      const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
+      const prevAttempts = Array.isArray(user.user_metadata?.[metaKey])
+        ? user.user_metadata[metaKey]
+        : [];
+      const nextAttempts = [newAttempt, ...prevAttempts].slice(0, 20);
+      const { error } = await supabase.auth.updateUser({
+        data: {
+          ...user.user_metadata,
+          [metaKey]: nextAttempts,
+        },
+      });
+      if (error) return failure("RETRY", true, true);
+    }
+
     const readback = await getQuizView(curriculum.lessonId, attemptId);
     if (!readback) return failure("RETRY", true, true);
     revalidatePath(`/lessons/${curriculum.lessonId}/quiz`);
@@ -144,13 +162,29 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
     targetAttempt.passed = passed;
     targetAttempt.answers = p.answers;
 
-    const { error } = await supabase.auth.updateUser({
-      data: {
-        ...user.user_metadata,
-        [metaKey]: prevAttempts,
-      },
-    });
-    if (error) return failure("RETRY", true, true);
+    // 1. Update curriculum_quiz_attempts table
+    const { error: updateError } = await supabase
+      .from("curriculum_quiz_attempts")
+      .update({
+        submitted_at: submittedAt,
+        correct_count: correctCount,
+        question_count: questionCount,
+        passed,
+        answers: p.answers,
+      })
+      .eq("id", p.attemptId)
+      .eq("user_id", user.id);
+
+    // 2. Migration fallback: If table update failed or table absent, write to user_metadata
+    if (updateError) {
+      const { error } = await supabase.auth.updateUser({
+        data: {
+          ...user.user_metadata,
+          [metaKey]: prevAttempts,
+        },
+      });
+      if (error) return failure("RETRY", true, true);
+    }
 
     const readback = await getQuizView(curriculum.lessonId, p.attemptId);
     if (!readback) return failure("RETRY", true, true);

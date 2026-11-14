@@ -167,18 +167,26 @@ describe("Content Library Architecture & Curriculum Validation (HSK 1–5)", () 
     expect(tonesSec.tones.length).toBe(5); // 4 tones + neutral
   });
 
-  it("validates 9-stage complete curriculum for Lessons 1, 5, and 6", () => {
-    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(3);
+  it("validates 9-stage complete curriculum for Lessons 1, 5, 6, 7, 8, 9, 10 and checkpoints", () => {
+    expect(HSK1_NINE_STAGE_LESSONS.length).toBe(9);
 
     const l1 = findNineStageLesson("hsk1-lesson-01");
     const l5 = findNineStageLesson("hsk1-lesson-05");
     const l6 = findNineStageLesson("hsk1-lesson-06");
+    const l7 = findNineStageLesson("hsk1-lesson-07");
+    const l8 = findNineStageLesson("hsk1-lesson-08");
+    const l9 = findNineStageLesson("hsk1-lesson-09");
+    const l10 = findNineStageLesson("hsk1-lesson-10");
 
     expect(l1).toBeDefined();
     expect(l5).toBeDefined();
     expect(l6).toBeDefined();
+    expect(l7).toBeDefined();
+    expect(l8).toBeDefined();
+    expect(l9).toBeDefined();
+    expect(l10).toBeDefined();
 
-    for (const lesson of [l1!, l5!, l6!]) {
+    for (const lesson of [l1!, l5!, l6!, l7!, l8!, l9!, l10!]) {
       expect(lesson.stages.length).toBe(10); // 0_warmup to 9_srs_review
       const stageNames = lesson.stages.map((s) => s.stage);
       expect(stageNames).toContain("0_warmup");

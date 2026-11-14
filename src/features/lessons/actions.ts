@@ -134,7 +134,28 @@ export async function saveStageProgress(input: unknown): Promise<{
     const { lessonId, completedStages, currentStage } = parsed.data;
     const updatedAt = new Date().toISOString();
 
-    // 1. Read existing row from learner_stage_progress table
+    // 1. Try atomic PostgreSQL RPC first to prevent lost updates under concurrent modifications
+    const rpcRes = await supabase.rpc("upsert_learner_stage_progress", {
+      p_lesson_id: lessonId,
+      p_completed_stages: completedStages,
+      p_current_stage: currentStage,
+    });
+
+    if (!rpcRes.error && rpcRes.data) {
+      const data = rpcRes.data;
+      return {
+        ok: true,
+        progress: {
+          lessonId: data.lesson_id,
+          userId: user.id,
+          completedStages: data.completed_stages,
+          currentStage: data.current_stage,
+          updatedAt: data.updated_at,
+        },
+      };
+    }
+
+    // 2. Read existing row from learner_stage_progress table as graceful fallback
     const { data: existingRow } = await supabase
       .from("learner_stage_progress")
       .select("current_stage, completed_stages, updated_at")

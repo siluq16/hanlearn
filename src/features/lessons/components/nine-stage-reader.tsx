@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Volume2,
   BookOpen,
@@ -47,23 +47,43 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
   });
 
   const [completedStages, setCompletedStages] = useState<number[]>(() => {
-    if (
+    const serverStages =
       initialProgress &&
       Array.isArray(initialProgress.completedStages) &&
       initialProgress.completedStages.length > 0
-    ) {
-      return initialProgress.completedStages;
-    }
-    if (typeof window === "undefined") return [];
+        ? initialProgress.completedStages
+        : [];
+
+    if (typeof window === "undefined") return serverStages;
     try {
       const saved = localStorage.getItem(storageKey);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed)) return parsed;
+      const legacy = localStorage.getItem(`hanlearn_9stage_${lessonKey}`);
+      const rawSaved = saved ? JSON.parse(saved) : [];
+      const rawLegacy = legacy ? JSON.parse(legacy) : [];
+      const localList: number[] = [
+        ...(Array.isArray(rawSaved) ? rawSaved : []),
+        ...(Array.isArray(rawLegacy) ? rawLegacy : []),
+      ];
+      return Array.from(new Set([...serverStages, ...localList])).sort((a, b) => a - b);
+    } catch {}
+    return serverStages;
+  });
+
+  // Client mount sync: If local storage contained offline stages missing on server, sync to server
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const serverCount = initialProgress?.completedStages?.length ?? 0;
+      if (completedStages.length > serverCount) {
+        saveStageProgress({
+          lessonId: lesson.slug || lesson.id,
+          completedStages,
+          currentStage: currentStageIndex,
+        }).catch(() => {});
       }
     } catch {}
-    return [];
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function markStageComplete(idx: number) {
     setCompletedStages((prev) => {

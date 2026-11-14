@@ -1,0 +1,448 @@
+{
+  "id": "l-hsk1-010",
+  "slug": "hsk1-lesson-10",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Bài 10: Thói quen & Kỹ năng hàng ngày (日常与做事情)",
+  "objective_vi": "Nắm vững năng nguyện động từ 会 (huì) và 能 (néng), diễn đạt kỹ năng nói tiếng Trung, viết chữ Hán và các thói quen học tập hàng ngày.",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Luyện các động từ chỉ giác quan và kỹ năng ngôn ngữ: zuò, kàn, xiě, dú, tīng, huì, néng.",
+      "warmup_words": [
+        {
+          "hanzi": "看",
+          "pinyin": "kàn",
+          "vi": "nhìn, xem"
+        },
+        {
+          "hanzi": "写",
+          "pinyin": "xiě",
+          "vi": "viết"
+        },
+        {
+          "hanzi": "会",
+          "pinyin": "huì",
+          "vi": "biết (kỹ năng)"
+        },
+        {
+          "hanzi": "能",
+          "pinyin": "néng",
+          "vi": "có thể"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "做",
+          "pinyin": "zuò",
+          "meaning_vi": "Làm (động từ)"
+        },
+        {
+          "simplified": "看",
+          "pinyin": "kàn",
+          "meaning_vi": "Xem / nhìn / đọc sách (động từ)"
+        },
+        {
+          "simplified": "写",
+          "pinyin": "xiě",
+          "meaning_vi": "Viết (động từ)"
+        },
+        {
+          "simplified": "汉字",
+          "pinyin": "Hànzì",
+          "meaning_vi": "Chữ Hán (danh từ)"
+        },
+        {
+          "simplified": "读",
+          "pinyin": "dú",
+          "meaning_vi": "Đọc (động từ)"
+        },
+        {
+          "simplified": "听",
+          "pinyin": "tīng",
+          "meaning_vi": "Nghe (động từ)"
+        },
+        {
+          "simplified": "会",
+          "pinyin": "huì",
+          "meaning_vi": "Biết (làm được nhờ học tập rèn luyện)"
+        },
+        {
+          "simplified": "能",
+          "pinyin": "néng",
+          "meaning_vi": "Có thể (có năng lực / điều kiện cho phép)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-10-v1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn từ đúng với nghĩa 'viết chữ Hán':",
+          "targetContent": {
+            "hanzi": "写汉字",
+            "pinyin": "xiě Hànzì"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "写汉字 (xiě Hànzì)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "读汉字 (dú Hànzì)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "听汉字 (tīng Hànzì)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "做汉字 (zuò Hànzì)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-10-v2",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép các động từ kỹ năng với nghĩa tương ứng:",
+          "pairs": [
+            {
+              "id": "p1",
+              "left": "听 (tīng)",
+              "right": "Nghe"
+            },
+            {
+              "id": "p2",
+              "left": "读 (dú)",
+              "right": "Đọc"
+            },
+            {
+              "id": "p3",
+              "left": "写 (xiě)",
+              "right": "Viết"
+            },
+            {
+              "id": "p4",
+              "left": "看 (kàn)",
+              "right": "Xem / Nhìn"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-10-1",
+          "titleVi": "1. Năng nguyện động từ: 会 (huì) + V",
+          "pattern": "Chủ ngữ + 会 + Động từ + Tân ngữ",
+          "explanationVi": "'会' biểu thị khả năng làm được một việc gì đó thông qua học tập, rèn luyện (như biết nói tiếng Trung, biết bơi, biết nấu ăn). Phủ định là '不会'.",
+          "examples": [
+            {
+              "hanzi": "我会说汉语。",
+              "pinyin": "Wǒ huì shuō Hànyǔ.",
+              "translationVi": "Tôi biết nói tiếng Trung."
+            },
+            {
+              "hanzi": "你会写汉字吗？",
+              "pinyin": "Nǐ huì xiě Hànzì ma?",
+              "translationVi": "Bạn biết viết chữ Hán không?"
+            }
+          ]
+        },
+        {
+          "id": "g-10-2",
+          "titleVi": "2. Phân biệt 会 (huì) và 能 (néng)",
+          "pattern": "会 (học mà biết) vs 能 (điều kiện/thời cơ cho phép)",
+          "explanationVi": "'会' nhấn mạnh kỹ năng có được do học tập. '能' nhấn mạnh năng lực tự nhiên hoặc điều kiện khách quan cho phép thực hiện hành động.",
+          "examples": [
+            {
+              "hanzi": "我今天生病了，不能去上学。",
+              "pinyin": "Wǒ jīntiān shēngbìng le, bù néng qù shàngxué.",
+              "translationVi": "Hôm nay tôi ốm rồi, không thể đi học được."
+            },
+            {
+              "hanzi": "你能来我家吗？",
+              "pinyin": "Nǐ néng lái wǒ jiā ma?",
+              "translationVi": "Bạn có thể đến nhà tôi không?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-10-g1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 3,
+          "kind": "grammar-choice",
+          "hskLevel": 1,
+          "promptVi": "Điền từ thích hợp: '我学习了一年，我____说汉语。' (Tôi học 1 năm rồi, tôi biết nói tiếng Trung.)",
+          "options": [
+            {
+              "id": "o1",
+              "label": "会 (huì)",
+              "isCorrect": true,
+              "explanationVi": "Kỹ năng ngôn ngữ có được qua học tập dùng '会'."
+            },
+            {
+              "id": "o2",
+              "label": "想 (xiǎng)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "在 (zài)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "很 (hěn)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-10-g2",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp thành câu hoàn chỉnh: 'Bạn biết viết chữ Hán này không?'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "你会",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "写",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "这个",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "汉字",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "吗？",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "dlg-10",
+        "titleVi": "Nói chuyện về học tiếng Trung",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你会说汉语吗？",
+            "pinyin": "Nǐ huì shuō Hànyǔ ma?",
+            "translationVi": "Bạn biết nói tiếng Trung không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会说一点儿汉语。",
+            "pinyin": "Wǒ huì shuō yīdiǎnr Hànyǔ.",
+            "translationVi": "Tôi biết nói một chút tiếng Trung."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你会写汉字吗？",
+            "pinyin": "Nǐ huì xiě Hànzì ma?",
+            "translationVi": "Bạn biết viết chữ Hán không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会读，但不会写。汉字太难了！",
+            "pinyin": "Wǒ huì dú, dàn bù huì xiě. Hànzì tài nán le!",
+            "translationVi": "Tôi biết đọc, nhưng không biết viết. Chữ Hán khó quá!"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "没关系，我能教你。",
+            "pinyin": "Méi guānxi, wǒ néng jiāo nǐ.",
+            "translationVi": "Không sao đâu, tôi có thể dạy bạn."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-10-d1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi bạn A hỏi '你会说汉语吗？', bạn khiêm tốn trả lời thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "我会说一点儿汉语。(Tôi biết nói một chút tiếng Trung.)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "我不喜欢吃米饭。(Tôi không thích ăn cơm.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "我在医院工作。(Tôi làm việc ở bệnh viện.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-10-l1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 6,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Nghe đoạn âm thanh và nhập chữ Hán hoặc Pinyin bạn nghe được:",
+          "targetContent": {
+            "hanzi": "我会写汉字",
+            "pinyin": "wǒ huì xiě Hànzì",
+            "audioText": "我会写汉字",
+            "translationVi": "Tôi biết viết chữ Hán"
+          },
+          "expectedAnswer": "我会写汉字",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-10-s1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe và phát âm theo câu: '我会说汉语。'",
+          "targetContent": {
+            "hanzi": "我会说汉语。",
+            "pinyin": "Wǒ huì shuō Hànyǔ.",
+            "translationVi": "Tôi biết nói tiếng Trung."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "学习汉语 (Học tiếng Trung)",
+        "text": "大卫是美国人。他在北京学习汉语。他的老师是中国人，非常好。大卫每天看书、写汉字、听中文歌。现在他会说汉语，也会写很多汉字。",
+        "translationVi": "Đại Vĩ là người Mỹ. Cậu ấy học tiếng Trung ở Bắc Kinh. Thầy giáo của cậu ấy là người Trung Quốc, rất tốt. Đại Vĩ mỗi ngày đều đọc sách, viết chữ Hán, nghe bài hát tiếng Trung. Bây giờ cậu ấy biết nói tiếng Trung, cũng biết viết rất nhiều chữ Hán."
+      },
+      "exercises": [
+        {
+          "id": "ex-10-r1",
+          "lessonId": "l-hsk1-010",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá Đúng / Sai theo đoạn văn:",
+          "readingPassage": {
+            "title": "学习汉语",
+            "text": "大卫是美国人。他在北京学习汉语。他的老师是中国人，非常好。大卫每天看书、写汉字、听中文歌。现在他会说汉语，也会写很多汉字。"
+          },
+          "trueFalseStatement": {
+            "statement": "大卫不会说汉语，也不会写汉字。(Đại Vĩ không biết nói tiếng Trung cũng không biết viết chữ Hán.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn viết rõ: 现在他会说汉语，也会写很多汉字 (Bây giờ cậu ấy biết nói tiếng Trung và cũng biết viết rất nhiều chữ Hán)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/lessons/l-hsk1-010/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
+    }
+  ]
+}

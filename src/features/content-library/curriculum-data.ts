@@ -1,6 +1,12 @@
 import lesson1 from "../../../content/hsk_library/hsk1_lesson_01.json";
 import lesson5 from "../../../content/hsk_library/hsk1_lesson_05.json";
 import lesson6 from "../../../content/hsk_library/hsk1_lesson_06.json";
+import lesson7 from "../../../content/hsk_library/hsk1_lesson_07.json";
+import lesson8 from "../../../content/hsk_library/hsk1_lesson_08.json";
+import lesson9 from "../../../content/hsk_library/hsk1_lesson_09.json";
+import lesson10 from "../../../content/hsk_library/hsk1_lesson_10.json";
+import checkpoint1 from "../../../content/hsk_library/hsk1_checkpoint_01.json";
+import checkpoint2 from "../../../content/hsk_library/hsk1_checkpoint_02.json";
 import type { LibraryExercise } from "./types";
 
 export interface StageWarmupWord {
@@ -72,6 +78,12 @@ export const HSK1_NINE_STAGE_LESSONS: NineStageLessonData[] = [
   lesson1 as NineStageLessonData,
   lesson5 as NineStageLessonData,
   lesson6 as NineStageLessonData,
+  lesson7 as NineStageLessonData,
+  lesson8 as NineStageLessonData,
+  lesson9 as NineStageLessonData,
+  lesson10 as NineStageLessonData,
+  checkpoint1 as NineStageLessonData,
+  checkpoint2 as NineStageLessonData,
 ];
 
 export function findNineStageLesson(idOrSlug: string): NineStageLessonData | undefined {

@@ -1,0 +1,457 @@
+{
+  "id": "l-hsk1-009",
+  "slug": "hsk1-lesson-09",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-03",
+  "title": "Bài 9: Vị trí, Phương hướng & Nơi chốn (在哪儿与怎么去)",
+  "objective_vi": "Biết hỏi và chỉ phương hướng, vị trí với giới từ 在 (zài), đại từ nghi vấn 哪儿 (nǎr), và các từ chỉ nơi chốn (学校, 商店, 医院).",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Nghe và phát âm âm uốn lưỡi '哪儿' (nǎr) và các âm tiết chỉ phương vị: zài, qián, hòu, qù.",
+      "warmup_words": [
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "vi": "ở, tại"
+        },
+        {
+          "hanzi": "哪儿",
+          "pinyin": "nǎr",
+          "vi": "ở đâu"
+        },
+        {
+          "hanzi": "前",
+          "pinyin": "qián",
+          "vi": "trước"
+        },
+        {
+          "hanzi": "去",
+          "pinyin": "qù",
+          "vi": "đi"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "在",
+          "pinyin": "zài",
+          "meaning_vi": "Ở / tại (giới từ / động từ)"
+        },
+        {
+          "simplified": "哪儿",
+          "pinyin": "nǎr",
+          "meaning_vi": "Ở đâu (đại từ nghi vấn địa điểm)"
+        },
+        {
+          "simplified": "前",
+          "pinyin": "qián",
+          "meaning_vi": "Phía trước / trước (phương vị từ)"
+        },
+        {
+          "simplified": "后",
+          "pinyin": "hòu",
+          "meaning_vi": "Phía sau / sau (phương vị từ)"
+        },
+        {
+          "simplified": "这边",
+          "pinyin": "zhèbiān",
+          "meaning_vi": "Bên này / phía này (đại từ chỉ vị trí)"
+        },
+        {
+          "simplified": "那边",
+          "pinyin": "nàbiān",
+          "meaning_vi": "Bên kia / phía kia (đại từ chỉ vị trí)"
+        },
+        {
+          "simplified": "学校",
+          "pinyin": "xuéxiào",
+          "meaning_vi": "Trường học (danh từ)"
+        },
+        {
+          "simplified": "商店",
+          "pinyin": "shāngdiàn",
+          "meaning_vi": "Cửa hàng (danh từ)"
+        },
+        {
+          "simplified": "医院",
+          "pinyin": "yīyuàn",
+          "meaning_vi": "Bệnh viện (danh từ)"
+        },
+        {
+          "simplified": "去",
+          "pinyin": "qù",
+          "meaning_vi": "Đi đến (động từ)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-09-v1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn từ có nghĩa là 'trường học':",
+          "targetContent": {
+            "hanzi": "学校",
+            "pinyin": "xuéxiào"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "学校 (xuéxiào)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "商店 (shāngdiàn)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "医院 (yīyuàn)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "北京 (Běijīng)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-09-v2",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép các địa điểm và phương vị với nghĩa tiếng Việt:",
+          "pairs": [
+            {
+              "id": "p1",
+              "left": "医院 (yīyuàn)",
+              "right": "Bệnh viện"
+            },
+            {
+              "id": "p2",
+              "left": "商店 (shāngdiàn)",
+              "right": "Cửa hàng"
+            },
+            {
+              "id": "p3",
+              "left": "前 (qián)",
+              "right": "Phía trước"
+            },
+            {
+              "id": "p4",
+              "left": "后 (hòu)",
+              "right": "Phía sau"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-09-1",
+          "titleVi": "1. Mẫu câu hỏi địa điểm: [Đối tượng] + 在哪儿？",
+          "pattern": "Chủ ngữ + 在哪儿？",
+          "explanationVi": "Dùng để hỏi vị trí của người hoặc địa điểm cụ thể.",
+          "examples": [
+            {
+              "hanzi": "请问，李老师在哪儿？",
+              "pinyin": "Qǐngwèn, Lǐ lǎoshī zài nǎr?",
+              "translationVi": "Xin hỏi, cô Lý ở đâu?"
+            },
+            {
+              "hanzi": "他在学校。",
+              "pinyin": "Tā zài xuéxiào.",
+              "translationVi": "Cô ấy ở trường học."
+            }
+          ]
+        },
+        {
+          "id": "g-09-2",
+          "titleVi": "2. Cấu trúc vị trí kết hợp phương vị: [Nơi chốn] + 前 / 后",
+          "pattern": "Nơi chốn / Vật thể + 前 / 后",
+          "explanationVi": "Trong tiếng Trung, phương vị từ đứng sau danh từ chỉ nơi chốn (ví dụ: 学校前 = trước trường học).",
+          "examples": [
+            {
+              "hanzi": "医院在商店后面。",
+              "pinyin": "Yīyuàn zài shāngdiàn hòumian.",
+              "translationVi": "Bệnh viện ở phía sau cửa hàng."
+            },
+            {
+              "hanzi": "他在学校前等你。",
+              "pinyin": "Tā zài xuéxiào qián děng nǐ.",
+              "translationVi": "Anh ấy ở phía trước trường đợi bạn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-09-g1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 3,
+          "kind": "grammar-choice",
+          "hskLevel": 1,
+          "promptVi": "Chọn câu hỏi địa điểm chính xác: 'Cửa hàng ở đâu?'",
+          "options": [
+            {
+              "id": "o1",
+              "label": "商店在哪儿？(Shāngdiàn zài nǎr?)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "商店在什么？(Shāngdiàn zài shénme?)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "在哪儿商店？(Zài nǎr shāngdiàn?)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "商店几点？(Shāngdiàn jǐ diǎn?)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-09-g2",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp thành câu: 'Bệnh viện ở phía sau trường học.'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "医院",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "在",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "学校",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "后",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "。",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "dlg-09",
+        "titleVi": "Hỏi đường đi bệnh viện",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，医院在哪儿？",
+            "pinyin": "Qǐngwèn, yīyuàn zài nǎr?",
+            "translationVi": "Xin hỏi, bệnh viện ở đâu vậy?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "医院在那边，在学校后面。",
+            "pinyin": "Yīyuàn zài nàbiān, zài xuéxiào hòumian.",
+            "translationVi": "Bệnh viện ở phía bên kia, ở đằng sau trường học."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我也想去商店，商店远吗？",
+            "pinyin": "Wǒ yě xiǎng qù shāngdiàn, shāngdiàn yuǎn ma?",
+            "translationVi": "Tôi cũng muốn đến cửa hàng, cửa hàng có xa không?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不远，商店就在学校前。",
+            "pinyin": "Bù yuǎn, shāngdiàn jiù zài xuéxiào qián.",
+            "translationVi": "Không xa, cửa hàng ở ngay phía trước trường học."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "太好了，谢谢你！",
+            "pinyin": "Tài hǎo le, xièxie nǐ!",
+            "translationVi": "Tốt quá rồi, cảm ơn bạn!"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-09-d1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi người hỏi đường hỏi '医院在哪儿？', bạn chỉ đường thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "医院在那边，在学校后面。(Bệnh viện ở bên kia, sau trường học.)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "我不去医院。(Tôi không đi bệnh viện.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "苹果三块钱一斤。(Táo 3 đồng 1 cân.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-09-l1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 6,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Lắng nghe câu thoại và nhập lại bằng tiếng Trung:",
+          "targetContent": {
+            "hanzi": "李老师在学校",
+            "pinyin": "lǐ lǎoshī zài xuéxiào",
+            "audioText": "李老师在学校",
+            "translationVi": "Cô Lý ở trường học"
+          },
+          "expectedAnswer": "李老师在学校",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-09-s1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe và phát âm theo câu hỏi đường: '请问，医院在哪儿？'",
+          "targetContent": {
+            "hanzi": "请问，医院在哪儿？",
+            "pinyin": "Qǐngwèn, yīyuàn zài nǎr?",
+            "translationVi": "Xin hỏi, bệnh viện ở đâu?"
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "我的学校 (Trường học của tôi)",
+        "text": "这是我的学校。学校很大，也很漂亮。学校前有一个大商店，我们在那儿买东西。学校后是一家大医院。我爸爸在那家医院工作。",
+        "translationVi": "Đây là trường học của tôi. Trường rất to và cũng rất đẹp. Phía trước trường có một cửa hàng lớn, chúng tôi mua đồ ở đó. Phía sau trường là một bệnh viện lớn. Bố tôi làm việc ở bệnh viện đó."
+      },
+      "exercises": [
+        {
+          "id": "ex-09-r1",
+          "lessonId": "l-hsk1-009",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá Đúng / Sai theo đoạn văn:",
+          "readingPassage": {
+            "title": "我的学校",
+            "text": "这是我的学校。学校很大，也很漂亮。学校前有一个大商店，我们在那儿买东西。学校后是一家大医院。我爸爸在那家医院工作。"
+          },
+          "trueFalseStatement": {
+            "statement": "学校后面是商店，学校前面是医院。(Phía sau trường là cửa hàng, phía trước là bệnh viện.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn ghi: 学校前有一个大商店 (Trước trường có cửa hàng), 学校后是一家大医院 (Sau trường là bệnh viện)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/lessons/l-hsk1-009/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
+    }
+  ]
+}

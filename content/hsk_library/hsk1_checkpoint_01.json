@@ -1,0 +1,367 @@
+{
+  "id": "l-hsk1-cp01",
+  "slug": "hsk1-checkpoint-01",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-01",
+  "title": "Chặng 1: Tổng ôn & Đánh giá Nền tảng (Bài 1–4)",
+  "objective_vi": "Củng cố toàn bộ kiến thức Chặng 1: Chào hỏi, xưng hô họ tên, quốc tịch, con số 0–100, tuổi tác và các mẫu câu 是/不是, 吗, 谁.",
+  "estimated_minutes": 30,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ôn tập Ngữ âm Chặng 1",
+      "instruction": "Ôn tập quy tắc biến điệu hai thanh 3 (你好 -> ní hǎo) và biến điệu của chữ '不' (不是 -> bú shì).",
+      "warmup_words": [
+        {
+          "hanzi": "你好",
+          "pinyin": "nǐhǎo",
+          "vi": "xin chào (đọc ní hǎo)"
+        },
+        {
+          "hanzi": "不是",
+          "pinyin": "bùshì",
+          "vi": "không phải (đọc bú shì)"
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xièxie",
+          "vi": "cảm ơn"
+        },
+        {
+          "hanzi": "再见",
+          "pinyin": "zàijiàn",
+          "vi": "tạm biệt"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Tổng kết từ vựng trọng điểm Chặng 1",
+      "vocabulary": [
+        {
+          "simplified": "你好",
+          "pinyin": "nǐhǎo",
+          "meaning_vi": "Xin chào"
+        },
+        {
+          "simplified": "谢谢",
+          "pinyin": "xièxie",
+          "meaning_vi": "Cảm ơn"
+        },
+        {
+          "simplified": "不客气",
+          "pinyin": "bù kèqi",
+          "meaning_vi": "Đừng khách sáo / không có chi"
+        },
+        {
+          "simplified": "对不起",
+          "pinyin": "duìbuqǐ",
+          "meaning_vi": "Xin lỗi"
+        },
+        {
+          "simplified": "没关系",
+          "pinyin": "méi guānxi",
+          "meaning_vi": "Không sao đâu"
+        },
+        {
+          "simplified": "再见",
+          "pinyin": "zàijiàn",
+          "meaning_vi": "Tạm biệt"
+        },
+        {
+          "simplified": "中国",
+          "pinyin": "Zhōngguó",
+          "meaning_vi": "Trung Quốc"
+        },
+        {
+          "simplified": "美国",
+          "pinyin": "Měiguó",
+          "meaning_vi": "Mỹ"
+        },
+        {
+          "simplified": "老师",
+          "pinyin": "lǎoshī",
+          "meaning_vi": "Thầy cô giáo"
+        },
+        {
+          "simplified": "学生",
+          "pinyin": "xuésheng",
+          "meaning_vi": "Học sinh / sinh viên"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập nối cặp tổng hợp Chặng 1",
+      "exercises": [
+        {
+          "id": "ex-cp1-v1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 1,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Ghép cặp câu chào / đáp lễ tương ứng:",
+          "pairs": [
+            {
+              "id": "p1",
+              "left": "谢谢 (xièxie)",
+              "right": "不客气 (bù kèqi)"
+            },
+            {
+              "id": "p2",
+              "left": "对不起 (duìbuqǐ)",
+              "right": "没关系 (méi guānxi)"
+            },
+            {
+              "id": "p3",
+              "left": "你好 (nǐhǎo)",
+              "right": "你好 (nǐhǎo)"
+            },
+            {
+              "id": "p4",
+              "left": "再见 (zàijiàn)",
+              "right": "再见 (zàijiàn)"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Hệ thống hóa ngữ pháp cốt lõi Chặng 1",
+      "grammar_points": [
+        {
+          "id": "g-cp1-1",
+          "titleVi": "1. Mẫu câu phán đoán: S + 是 / 不是 + O",
+          "pattern": "Chủ ngữ + 是/不是 + Danh từ",
+          "explanationVi": "Dùng '是' khẳng định danh tính hoặc quốc tịch, phủ định bằng '不是'.",
+          "examples": [
+            {
+              "hanzi": "我是学生，不是老师。",
+              "pinyin": "Wǒ shì xuésheng, bú shì lǎoshī.",
+              "translationVi": "Tôi là học sinh, không phải giáo viên."
+            }
+          ]
+        },
+        {
+          "id": "g-cp1-2",
+          "titleVi": "2. Câu hỏi nghi vấn có / không với '吗' (ma)",
+          "pattern": "Câu khẳng định + 吗？",
+          "explanationVi": "Thêm trợ từ '吗' vào cuối câu trần thuật để biến thành câu hỏi Đúng / Sai.",
+          "examples": [
+            {
+              "hanzi": "你是中国人吗？",
+              "pinyin": "Nǐ shì Zhōngguó rén ma?",
+              "translationVi": "Bạn là người Trung Quốc phải không?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp Chặng 1",
+      "exercises": [
+        {
+          "id": "ex-cp1-g1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 2,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp thành câu hỏi: 'Bạn có phải là giáo viên tiếng Trung không?'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "你是",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "汉语",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "老师",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "吗",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "？",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp tổng hợp",
+      "dialogue": {
+        "id": "dlg-cp01",
+        "titleVi": "Gặp gỡ và làm quen tại lớp học",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你好！请问你叫什么名字？",
+            "pinyin": "Nǐ hǎo! Qǐngwèn nǐ jiào shénme míngzi?",
+            "translationVi": "Xin chào! Xin hỏi bạn tên là gì?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你好！我叫大卫。你是中国人吗？",
+            "pinyin": "Nǐ hǎo! Wǒ jiào Dàwěi. Nǐ shì Zhōngguó rén ma?",
+            "translationVi": "Xin chào! Tôi tên là Đại Vĩ. Bạn là người Trung Quốc phải không?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "不是，我是越南人。我是学生，你呢？",
+            "pinyin": "Bú shì, wǒ shì Yuènán rén. Wǒ shì xuésheng, nǐ ne?",
+            "translationVi": "Không phải, tôi là người Việt Nam. Tôi là học sinh, còn bạn?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我也是学生。很高兴认识你！",
+            "pinyin": "Wǒ yě shì xuésheng. Hěn gāoxìng rènshi nǐ!",
+            "translationVi": "Tôi cũng là học sinh. Rất vui được quen biết bạn!"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-cp1-d1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 3,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi nghe '很高兴认识你！', bạn đáp lại thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "我也很高兴认识你！(Tôi cũng rất vui được quen bạn!)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "对不起！(Xin lỗi!)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "五块钱一斤。(Năm đồng 1 cân.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Nói Chặng 1",
+      "exercises": [
+        {
+          "id": "ex-cp1-l1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 4,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Nghe và nhập câu chào quen thuộc:",
+          "targetContent": {
+            "hanzi": "很高兴认识你",
+            "pinyin": "hěn gāoxìng rènshi nǐ",
+            "audioText": "很高兴认识你",
+            "translationVi": "Rất vui được quen biết bạn"
+          },
+          "expectedAnswer": "很高兴认识你",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-cp1-s1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 5,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Luyện phát âm câu: '我是学生。'",
+          "targetContent": {
+            "hanzi": "我是学生。",
+            "pinyin": "Wǒ shì xuésheng.",
+            "translationVi": "Tôi là học sinh."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu Chặng 1",
+      "passage": {
+        "title": "自我介绍 (Tự giới thiệu bản thân)",
+        "text": "大家好！我叫王朋，我是中国人。我是汉语老师。我今年二十八岁。很高兴在学校认识大家。",
+        "translationVi": "Chào mọi người! Tôi tên là Vương Bằng, tôi là người Trung Quốc. Tôi là giáo viên tiếng Trung. Năm nay tôi 28 tuổi. Rất vui được gặp gỡ mọi người tại trường học."
+      },
+      "exercises": [
+        {
+          "id": "ex-cp1-r1",
+          "lessonId": "l-hsk1-cp01",
+          "sortOrder": 6,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá Đúng / Sai theo đoạn văn:",
+          "readingPassage": {
+            "title": "自我介绍",
+            "text": "大家好！我叫王朋，我是中国人。我是汉语老师。我今年二十八岁。很高兴在学校认识大家。"
+          },
+          "trueFalseStatement": {
+            "statement": "王朋是学生，不是老师。(Vương Bằng là học sinh, không phải giáo viên.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn ghi rõ: 我是汉语老师 (Tôi là giáo viên tiếng Trung)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Đánh giá Năng lực Chặng 1",
+      "quizUrl": "/lessons/l-hsk1-cp01/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập SRS Chặng 1",
+      "reviewUrl": "/review"
+    }
+  ]
+}

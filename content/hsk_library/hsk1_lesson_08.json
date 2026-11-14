@@ -1,0 +1,452 @@
+{
+  "id": "l-hsk1-008",
+  "slug": "hsk1-lesson-08",
+  "hsk_level": 1,
+  "unit_id": "u-hsk1-02",
+  "title": "Bài 8: Ăn uống & Gọi món (吃饭与喝水)",
+  "objective_vi": "Học cách bày tỏ mong muốn với trợ động từ 想 (xiǎng), diễn đạt sở thích với 喜欢 (xǐhuan), và gọi món ăn thức uống cơ bản.",
+  "estimated_minutes": 25,
+  "quality_status": "VERIFIED",
+  "stages": [
+    {
+      "stage": "0_warmup",
+      "title_vi": "Khởi động & Ngữ âm nền tảng",
+      "instruction": "Luyện phát âm các từ chỉ hành động ăn uống: chī, hē, cài, fàn, shuǐ, chá, xiǎng.",
+      "warmup_words": [
+        {
+          "hanzi": "吃",
+          "pinyin": "chī",
+          "vi": "ăn"
+        },
+        {
+          "hanzi": "喝",
+          "pinyin": "hē",
+          "vi": "uống"
+        },
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "vi": "nước"
+        },
+        {
+          "hanzi": "想",
+          "pinyin": "xiǎng",
+          "vi": "muốn"
+        }
+      ]
+    },
+    {
+      "stage": "1_vocab_learn",
+      "title_vi": "Học từ vựng trọng tâm",
+      "vocabulary": [
+        {
+          "simplified": "吃",
+          "pinyin": "chī",
+          "meaning_vi": "Ăn (động từ)"
+        },
+        {
+          "simplified": "喝",
+          "pinyin": "hē",
+          "meaning_vi": "Uống (động từ)"
+        },
+        {
+          "simplified": "菜",
+          "pinyin": "cài",
+          "meaning_vi": "Món ăn / thức ăn / rau (danh từ)"
+        },
+        {
+          "simplified": "米饭",
+          "pinyin": "mǐfàn",
+          "meaning_vi": "Cơm trắng (danh từ)"
+        },
+        {
+          "simplified": "面条儿",
+          "pinyin": "miàntiáor",
+          "meaning_vi": "Mì sợi (danh từ)"
+        },
+        {
+          "simplified": "水",
+          "pinyin": "shuǐ",
+          "meaning_vi": "Nước (danh từ)"
+        },
+        {
+          "simplified": "茶",
+          "pinyin": "chá",
+          "meaning_vi": "Trà (danh từ)"
+        },
+        {
+          "simplified": "想",
+          "pinyin": "xiǎng",
+          "meaning_vi": "Muốn / nhớ / nghĩ (trợ động từ)"
+        },
+        {
+          "simplified": "喜欢",
+          "pinyin": "xǐhuan",
+          "meaning_vi": "Thích (động từ tâm lý)"
+        }
+      ]
+    },
+    {
+      "stage": "2_vocab_practice",
+      "title_vi": "Luyện tập từ vựng tương tác",
+      "exercises": [
+        {
+          "id": "ex-08-v1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 1,
+          "kind": "vocab-mcq",
+          "hskLevel": 1,
+          "promptVi": "Chọn từ tiếng Trung có nghĩa là 'uống trà':",
+          "targetContent": {
+            "hanzi": "喝茶",
+            "pinyin": "hē chá"
+          },
+          "options": [
+            {
+              "id": "o1",
+              "label": "喝茶 (hē chá)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "吃菜 (chī cài)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "买米饭 (mǎi mǐfàn)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "喝水 (hē shuǐ)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-08-v2",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 2,
+          "kind": "matching_pairs",
+          "hskLevel": 1,
+          "promptVi": "Nối cặp từ đồ ăn đồ uống với nghĩa tiếng Việt:",
+          "pairs": [
+            {
+              "id": "p1",
+              "left": "米饭 (mǐfàn)",
+              "right": "Cơm trắng"
+            },
+            {
+              "id": "p2",
+              "left": "面条儿 (miàntiáor)",
+              "right": "Mì sợi"
+            },
+            {
+              "id": "p3",
+              "left": "茶 (chá)",
+              "right": "Trà"
+            },
+            {
+              "id": "p4",
+              "left": "中国菜 (Zhōngguó cài)",
+              "right": "Món ăn Trung Quốc"
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "3_grammar_learn",
+      "title_vi": "Học cấu trúc ngữ pháp",
+      "grammar_points": [
+        {
+          "id": "g-08-1",
+          "titleVi": "1. Trợ động từ biểu thị ý muốn: 想 (xiǎng) + Động từ",
+          "pattern": "Chủ ngữ + 想 + V + Tân ngữ",
+          "explanationVi": "'想' đặt trước động từ biểu thị ý định, mong muốn làm việc gì. Thể phủ định là '不想'.",
+          "examples": [
+            {
+              "hanzi": "我想吃中国菜。",
+              "pinyin": "Wǒ xiǎng chī Zhōngguó cài.",
+              "translationVi": "Tôi muốn ăn món Trung Quốc."
+            },
+            {
+              "hanzi": "你想要喝什么？",
+              "pinyin": "Nǐ xiǎng yào hē shénme?",
+              "translationVi": "Bạn muốn uống cái gì?"
+            }
+          ]
+        },
+        {
+          "id": "g-08-2",
+          "titleVi": "2. Cấu trúc diễn đạt sở thích: 喜欢 (xǐhuan) + N / V",
+          "pattern": "Chủ ngữ + 喜欢 + Danh từ / Động từ",
+          "explanationVi": "Dùng để diễn tả sự yêu thích đối với đồ vật, món ăn hoặc hành động cụ thể. Phủ định là '不喜欢'.",
+          "examples": [
+            {
+              "hanzi": "我喜欢喝中国茶。",
+              "pinyin": "Wǒ xǐhuan hē Zhōngguó chá.",
+              "translationVi": "Tôi thích uống trà Trung Quốc."
+            },
+            {
+              "hanzi": "他不喜欢吃面条儿。",
+              "pinyin": "Tā bù xǐhuan chī miàntiáor.",
+              "translationVi": "Anh ấy không thích ăn mì sợi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "4_grammar_practice",
+      "title_vi": "Luyện tập ngữ pháp tương tác",
+      "exercises": [
+        {
+          "id": "ex-08-g1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 3,
+          "kind": "grammar-choice",
+          "hskLevel": 1,
+          "promptVi": "Chọn câu đúng biểu thị 'Tôi muốn uống nước':",
+          "options": [
+            {
+              "id": "o1",
+              "label": "我想喝水。(Wǒ xiǎng hē shuǐ.)",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "label": "我想吃水。(Wǒ xiǎng chī shuǐ.)",
+              "isCorrect": false
+            },
+            {
+              "id": "o3",
+              "label": "我喜欢水喝。(Wǒ xǐhuan shuǐ hē.)",
+              "isCorrect": false
+            },
+            {
+              "id": "o4",
+              "label": "我水想喝。(Wǒ shuǐ xiǎng hē.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-08-g2",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 4,
+          "kind": "sentence-order",
+          "hskLevel": 1,
+          "promptVi": "Sắp xếp các từ thành câu: 'Trưa nay bạn muốn ăn gì?'",
+          "orderTokens": [
+            {
+              "id": "t1",
+              "text": "中午",
+              "correctIndex": 0
+            },
+            {
+              "id": "t2",
+              "text": "你想",
+              "correctIndex": 1
+            },
+            {
+              "id": "t3",
+              "text": "吃",
+              "correctIndex": 2
+            },
+            {
+              "id": "t4",
+              "text": "什么",
+              "correctIndex": 3
+            },
+            {
+              "id": "t5",
+              "text": "？",
+              "correctIndex": 4
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "5_dialogue_interactive",
+      "title_vi": "Hội thoại đối đáp & Đóng vai",
+      "dialogue": {
+        "id": "dlg-08",
+        "titleVi": "Gọi món trong quán ăn",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "中午你想吃什么？",
+            "pinyin": "Zhōngwǔ nǐ xiǎng chī shénme?",
+            "translationVi": "Buổi trưa bạn muốn ăn gì?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想吃米饭和中国菜。",
+            "pinyin": "Wǒ xiǎng chī mǐfàn hé Zhōngguó cài.",
+            "translationVi": "Tôi muốn ăn cơm trắng và món Trung Quốc."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想喝什么？",
+            "pinyin": "Nǐ xiǎng hē shénme?",
+            "translationVi": "Bạn muốn uống gì?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想喝茶，你呢？",
+            "pinyin": "Wǒ xiǎng hē chá, nǐ ne?",
+            "translationVi": "Tôi muốn uống trà, còn bạn?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我也喜欢喝茶。",
+            "pinyin": "Wǒ yě xǐhuan hē chá.",
+            "translationVi": "Tôi cũng thích uống trà."
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-08-d1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 5,
+          "kind": "dialogue_roleplay",
+          "hskLevel": 1,
+          "promptVi": "Đóng vai B: Khi bạn A hỏi '你想喝什么？' (Bạn muốn uống gì?), bạn đáp thế nào?",
+          "options": [
+            {
+              "id": "r1",
+              "label": "我想喝茶。(Tôi muốn uống trà.)",
+              "isCorrect": true
+            },
+            {
+              "id": "r2",
+              "label": "我想买衣服。(Tôi muốn mua quần áo.)",
+              "isCorrect": false
+            },
+            {
+              "id": "r3",
+              "label": "我是学生。(Tôi là học sinh.)",
+              "isCorrect": false
+            }
+          ],
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "6_listening_speaking",
+      "title_vi": "Luyện Nghe & Luyện Nói",
+      "exercises": [
+        {
+          "id": "ex-08-l1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 6,
+          "kind": "listening_dictation",
+          "hskLevel": 1,
+          "promptVi": "Nghe âm thanh và viết lại câu bạn nghe được:",
+          "targetContent": {
+            "hanzi": "我想吃米饭",
+            "pinyin": "wǒ xiǎng chī mǐfàn",
+            "audioText": "我想吃米饭",
+            "translationVi": "Tôi muốn ăn cơm"
+          },
+          "expectedAnswer": "我想吃米饭",
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        },
+        {
+          "id": "ex-08-s1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 7,
+          "kind": "sentence_shadowing",
+          "hskLevel": 1,
+          "promptVi": "Nghe và phát âm theo câu: '我很喜欢吃中国菜。'",
+          "targetContent": {
+            "hanzi": "我很喜欢吃中国菜。",
+            "pinyin": "Wǒ hěn xǐhuan chī Zhōngguó cài.",
+            "translationVi": "Tôi rất thích ăn món Trung Quốc."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "7_reading_comprehension",
+      "title_vi": "Đọc hiểu đoạn văn",
+      "passage": {
+        "title": "大卫的午饭 (Bữa trưa của Đại Vĩ)",
+        "text": "今天中午大卫去中国朋友家吃饭。朋友做了很多中国菜。大卫很喜欢吃米饭和中国菜。大卫不喝茶，他喜欢喝水。他们都很高兴。",
+        "translationVi": "Trưa hôm nay Đại Vĩ đến nhà một người bạn Trung Quốc ăn cơm. Người bạn đã nấu rất nhiều món ăn Trung Quốc. Đại Vĩ rất thích ăn cơm và món Trung Quốc. Đại Vĩ không uống trà, cậu ấy thích uống nước. Họ đều rất vui mừng."
+      },
+      "exercises": [
+        {
+          "id": "ex-08-r1",
+          "lessonId": "l-hsk1-008",
+          "sortOrder": 8,
+          "kind": "reading_true_false",
+          "hskLevel": 1,
+          "promptVi": "Đánh giá Đúng / Sai theo nội dung đoạn văn:",
+          "readingPassage": {
+            "title": "大卫的午饭",
+            "text": "今天中午大卫去中国朋友家吃饭。朋友做了很多中国菜。大卫很喜欢吃米饭和中国菜。大卫不喝茶，他喜欢喝水。他们都很高兴。"
+          },
+          "trueFalseStatement": {
+            "statement": "大卫喜欢喝茶，不喜欢喝水。(Đại Vĩ thích uống trà, không thích uống nước.)",
+            "isTrue": false,
+            "explanationVi": "Sai! Đoạn văn viết rõ: 大卫不喝茶，他喜欢喝水 (Đại Vĩ không uống trà, cậu ấy thích uống nước)."
+          },
+          "qualityStatus": "VERIFIED",
+          "sourceRef": {
+            "document": "HanLearn Standard Curriculum",
+            "license": "CC-BY-NC-4.0"
+          }
+        }
+      ]
+    },
+    {
+      "stage": "8_mini_quiz",
+      "title_vi": "Mini Quiz cuối bài",
+      "quizUrl": "/lessons/l-hsk1-008/quiz"
+    },
+    {
+      "stage": "9_srs_review",
+      "title_vi": "Ôn tập củng cố (SRS Review)",
+      "reviewUrl": "/review"
+    }
+  ]
+}

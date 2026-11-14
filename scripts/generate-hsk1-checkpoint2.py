@@ -1,0 +1,223 @@
+import json
+
+cp02 = {
+    "id": "l-hsk1-cp02",
+    "slug": "hsk1-checkpoint-02",
+    "hsk_level": 1,
+    "unit_id": "u-hsk1-02",
+    "title": "Chặng 2: Tổng ôn & Đánh giá Đời sống & Mua sắm (Bài 5–8)",
+    "objective_vi": "Đánh giá tổng hợp Chặng 2: Gia đình, nghề nghiệp, thời gian, ngày tháng, mua sắm hoa quả và gọi món ăn đồ uống.",
+    "estimated_minutes": 30,
+    "quality_status": "VERIFIED",
+    "stages": [
+        {
+            "stage": "0_warmup",
+            "title_vi": "Khởi động & Ngữ âm Chặng 2",
+            "instruction": "Luyện các âm tiết trọng tâm: diǎn, fēn, jǐ, kuài, qián, chī, hē.",
+            "warmup_words": [
+                {"hanzi": "点", "pinyin": "diǎn", "vi": "giờ"},
+                {"hanzi": "分", "pinyin": "fēn", "vi": "phút"},
+                {"hanzi": "钱", "pinyin": "qián", "vi": "tiền"},
+                {"hanzi": "吃", "pinyin": "chī", "vi": "ăn"}
+            ]
+        },
+        {
+            "stage": "1_vocab_learn",
+            "title_vi": "Từ vựng trọng tâm Chặng 2",
+            "vocabulary": [
+                {"simplified": "爸爸", "pinyin": "bàba", "meaning_vi": "Bố"},
+                {"simplified": "妈妈", "pinyin": "māma", "meaning_vi": "Mẹ"},
+                {"simplified": "医生", "pinyin": "yīshēng", "meaning_vi": "Bác sĩ"},
+                {"simplified": "现在", "pinyin": "xiànzài", "meaning_vi": "Bây giờ"},
+                {"simplified": "点", "pinyin": "diǎn", "meaning_vi": "Giờ"},
+                {"simplified": "买", "pinyin": "mǎi", "meaning_vi": "Mua"},
+                {"simplified": "多少", "pinyin": "duōshao", "meaning_vi": "Bao nhiêu"},
+                {"simplified": "吃", "pinyin": "chī", "meaning_vi": "Ăn"},
+                {"simplified": "喝", "pinyin": "hē", "meaning_vi": "Uống"},
+                {"simplified": "茶", "pinyin": "chá", "meaning_vi": "Trà"}
+            ]
+        },
+        {
+            "stage": "2_vocab_practice",
+            "title_vi": "Luyện tập nối cặp Chặng 2",
+            "exercises": [
+                {
+                    "id": "ex-cp2-v1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 1,
+                    "kind": "matching_pairs",
+                    "hskLevel": 1,
+                    "promptVi": "Ghép các từ Chặng 2 với nghĩa tương ứng:",
+                    "pairs": [
+                        {"id": "p1", "left": "现在 (xiànzài)", "right": "Bây giờ"},
+                        {"id": "p2", "left": "多少钱 (duōshao qián)", "right": "Bao nhiêu tiền"},
+                        {"id": "p3", "left": "医生 (yīshēng)", "right": "Bác sĩ"},
+                        {"id": "p4", "left": "中国菜 (Zhōngguó cài)", "right": "Món ăn Trung Quốc"}
+                    ],
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                }
+            ]
+        },
+        {
+            "stage": "3_grammar_learn",
+            "title_vi": "Tổng kết ngữ pháp Chặng 2",
+            "grammar_points": [
+                {
+                    "id": "g-cp2-1",
+                    "titleVi": "1. Diễn đạt thời gian: Bây giờ là mấy giờ? (现在几点？)",
+                    "pattern": "现在 + Giờ + 点 + Phút + 分",
+                    "explanationVi": "Nêu thời gian cụ thể: ví dụ 现在八点三十分 (Bây giờ 8 giờ 30 phút).",
+                    "examples": [
+                        {"hanzi": "现在九点十分。", "pinyin": "Xiànzài jiǔ diǎn shí fēn.", "translationVi": "Bây giờ 9 giờ 10 phút."}
+                    ]
+                },
+                {
+                    "id": "g-cp2-2",
+                    "titleVi": "2. Mẫu câu hỏi ý muốn và hỏi giá: 想 + V / 多少钱",
+                    "pattern": "你想买什么？ / 这个多少钱？",
+                    "explanationVi": "Kết hợp muốn làm gì (想) và hỏi giá (多少钱) trong giao tiếp hàng ngày.",
+                    "examples": [
+                        {"hanzi": "我想买苹果，这个苹果多少钱？", "pinyin": "Wǒ xiǎng mǎi píngguǒ, zhège píngguǒ duōshao qián?", "translationVi": "Tôi muốn mua táo, táo này bao nhiêu tiền?"}
+                    ]
+                }
+            ]
+        },
+        {
+            "stage": "4_grammar_practice",
+            "title_vi": "Luyện tập ngữ pháp Chặng 2",
+            "exercises": [
+                {
+                    "id": "ex-cp2-g1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 2,
+                    "kind": "sentence-order",
+                    "hskLevel": 1,
+                    "promptVi": "Sắp xếp thành câu: 'Trưa nay tôi muốn đi ăn món Trung Quốc.'",
+                    "orderTokens": [
+                        {"id": "t1", "text": "中午", "correctIndex": 0},
+                        {"id": "t2", "text": "我想", "correctIndex": 1},
+                        {"id": "t3", "text": "去吃", "correctIndex": 2},
+                        {"id": "t4", "text": "中国菜", "correctIndex": 3},
+                        {"id": "t5", "text": "。", "correctIndex": 4}
+                    ],
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                }
+            ]
+        },
+        {
+            "stage": "5_dialogue_interactive",
+            "title_vi": "Hội thoại đối đáp Chặng 2",
+            "dialogue": {
+                "id": "dlg-cp02",
+                "titleVi": "Lên kế hoạch ăn trưa và mua sắm",
+                "turns": [
+                    {"speaker": "A", "hanzi": "现在几点？", "pinyin": "Xiànzài jǐ diǎn?", "translationVi": "Bây giờ là mấy giờ rồi?"},
+                    {"speaker": "B", "hanzi": "现在十一点半。你想去吃什么？", "pinyin": "Xiànzài shíyī diǎn bàn. Nǐ xiǎng qù chī shénme?", "translationVi": "Bây giờ 11 rưỡi. Bạn muốn đi ăn gì?"},
+                    {"speaker": "A", "hanzi": "我想吃米饭和中国菜。吃完饭我们去买苹果吧！", "pinyin": "Wǒ xiǎng chī mǐfàn hé Zhōngguó cài. Chī wán fàn wǒmen qù mǎi píngguǒ ba!", "translationVi": "Tôi muốn ăn cơm và món Trung Quốc. Ăn xong chúng ta đi mua táo nhé!"},
+                    {"speaker": "B", "hanzi": "太好了！我也想买水果。", "pinyin": "Tài hǎo le! Wǒ yě xiǎng mǎi shuǐguǒ.", "translationVi": "Tốt quá rồi! Tôi cũng muốn mua hoa quả."}
+                ]
+            },
+            "exercises": [
+                {
+                    "id": "ex-cp2-d1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 3,
+                    "kind": "dialogue_roleplay",
+                    "hskLevel": 1,
+                    "promptVi": "Đóng vai B: Khi bạn A rủ đi mua táo sau bữa ăn, bạn tán thành câu nào?",
+                    "options": [
+                        {"id": "r1", "label": "太好了！我也想买水果。(Tốt quá rồi! Tôi cũng muốn mua hoa quả.)", "isCorrect": True},
+                        {"id": "r2", "label": "我是医生。(Tôi là bác sĩ.)", "isCorrect": False},
+                        {"id": "r3", "label": "对不起，没关系。(Xin lỗi, không có chi.)", "isCorrect": False}
+                    ],
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                }
+            ]
+        },
+        {
+            "stage": "6_listening_speaking",
+            "title_vi": "Luyện Nghe & Nói Chặng 2",
+            "exercises": [
+                {
+                    "id": "ex-cp2-l1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 4,
+                    "kind": "listening_dictation",
+                    "hskLevel": 1,
+                    "promptVi": "Nghe và chép lại câu thoại:",
+                    "targetContent": {
+                        "hanzi": "现在十二点了",
+                        "pinyin": "xiànzài shí'èr diǎn le",
+                        "audioText": "现在十二点了",
+                        "translationVi": "Bây giờ mười hai giờ rồi"
+                    },
+                    "expectedAnswer": "现在十二点了",
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                },
+                {
+                    "id": "ex-cp2-s1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 5,
+                    "kind": "sentence_shadowing",
+                    "hskLevel": 1,
+                    "promptVi": "Luyện đọc theo câu: '我想买苹果。'",
+                    "targetContent": {
+                        "hanzi": "我想买苹果。",
+                        "pinyin": "Wǒ xiǎng mǎi píngguǒ.",
+                        "translationVi": "Tôi muốn mua táo."
+                    },
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                }
+            ]
+        },
+        {
+            "stage": "7_reading_comprehension",
+            "title_vi": "Đọc hiểu Chặng 2",
+            "passage": {
+                "title": "星期天的一天 (Một ngày Chủ nhật)",
+                "text": "今天是星期天。上午十点我和妈妈去商店买东西。我们买了三斤苹果，一共九块钱。中午我们在一家中国饭馆吃米饭和中国菜。我们都很开心。",
+                "translationVi": "Hôm nay là Chủ nhật. 10 giờ sáng tôi và mẹ đến cửa hàng mua đồ. Chúng tôi mua 3 cân táo, tổng cộng 9 đồng. Buổi trưa chúng tôi ăn cơm và món Trung Quốc tại một quán ăn Trung Quốc. Chúng tôi đều rất vui vẻ."
+            },
+            "exercises": [
+                {
+                    "id": "ex-cp2-r1",
+                    "lessonId": "l-hsk1-cp02",
+                    "sortOrder": 6,
+                    "kind": "reading_true_false",
+                    "hskLevel": 1,
+                    "promptVi": "Đánh giá tính Đúng / Sai theo đoạn văn:",
+                    "readingPassage": {
+                        "title": "星期天的一天",
+                        "text": "今天是星期天。上午十点我和妈妈去商店买东西。我们买了三斤苹果，一共九块钱。中午我们在一家中国饭馆吃米饭和中国菜。我们都很开心。"
+                    },
+                    "trueFalseStatement": {
+                        "statement": "中午他们在家吃饭，没有去饭馆。(Buổi trưa họ ăn ở nhà, không đi quán ăn.)",
+                        "isTrue": False,
+                        "explanationVi": "Sai! Đoạn văn ghi rõ: 中午我们在一家中国饭馆吃米饭和中国菜 (Buổi trưa chúng tôi ăn cơm tại quán ăn Trung Quốc)."
+                    },
+                    "qualityStatus": "VERIFIED",
+                    "sourceRef": {"document": "HanLearn Standard Curriculum", "license": "CC-BY-NC-4.0"}
+                }
+            ]
+        },
+        {
+            "stage": "8_mini_quiz",
+            "title_vi": "Đánh giá Năng lực Chặng 2",
+            "quizUrl": "/lessons/l-hsk1-cp02/quiz"
+        },
+        {
+            "stage": "9_srs_review",
+            "title_vi": "Ôn tập SRS Chặng 2",
+            "reviewUrl": "/review"
+        }
+    ]
+}
+
+with open("content/hsk_library/hsk1_checkpoint_02.json", "w", encoding="utf-8") as f:
+    json.dump(cp02, f, ensure_ascii=False, indent=2)
+print("Wrote content/hsk_library/hsk1_checkpoint_02.json")
