@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Volume2,
   BookOpen,
@@ -13,6 +14,9 @@ import {
   Sparkles,
   Clock,
   Award,
+  CheckCircle2,
+  ArrowRight,
+  RotateCcw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -29,7 +33,7 @@ interface NineStageReaderProps {
   userId?: string;
 }
 
-const LESSON_SKILL_GROUPS = [
+export const LESSON_SKILL_GROUPS = [
   { id: "warmup", label: "1. Khởi động", stageIndices: [0], description: "Khởi động phát âm & từ mở đầu" },
   { id: "vocab", label: "2. Từ vựng", stageIndices: [1, 2], description: "Học từ mới & bài tập nhận diện" },
   { id: "grammar", label: "3. Ngữ pháp & Thoại", stageIndices: [3, 4, 5], description: "Cấu trúc ngữ pháp & hội thoại tình huống" },
@@ -78,7 +82,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
     return serverStages;
   });
 
-  // Client mount sync: If local storage contained offline stages missing on server, sync to server
+  // Client mount sync
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
@@ -101,7 +105,6 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
       try {
         localStorage.setItem(storageKey, JSON.stringify(next));
       } catch {}
-      // Persist stage progress to Supabase
       saveStageProgress({
         lessonId: lesson.slug || lesson.id,
         completedStages: next,
@@ -136,51 +139,64 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
     <Brain key="9" className="size-4" />,
   ];
 
+  const isCurrentStageCompleted = completedStages.includes(currentStageIndex);
+  const isAllStagesCompleted = completedStages.length === stages.length;
+
+  // Active skill group computed from current stage index
+  const activeGroup =
+    LESSON_SKILL_GROUPS.find((g) => g.stageIndices.includes(currentStageIndex)) ||
+    LESSON_SKILL_GROUPS[0];
+
+  // Extract unit number for recommendations
+  const unitNum = lesson.unit_id ? lesson.unit_id.replace(/[^0-9]/g, "").slice(-1) || "1" : "1";
+
   return (
     <div className="space-y-6">
-      {/* Header Info */}
-      <Card className="border-primary/20 bg-primary/5">
+      {/* Lesson Header Banner */}
+      <Card className="border-primary/20 bg-primary/5 shadow-2xs">
         <CardContent className="p-5 sm:p-6 space-y-2">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <Badge className="border border-primary bg-primary/10 text-primary font-medium">
-              HSK {lesson.hsk_level} · 9 Giai đoạn Tương tác
+            <Badge className="border border-primary/40 bg-primary/10 text-primary font-medium">
+              HSK {lesson.hsk_level} · 10 Chặng Học tập
             </Badge>
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
               <Clock className="size-3.5" />
-              {lesson.estimated_minutes} phút
+              {lesson.estimated_minutes} phút học
             </span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+          <h1 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
             {lesson.title}
-          </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             {lesson.objective_vi}
           </p>
         </CardContent>
       </Card>
 
-      {/* Progress & Skill-Group Navigation */}
-      <div className="space-y-3">
-        {/* Progress Bar */}
-        <div className="flex items-center justify-between text-xs text-muted-foreground px-1">
-          <span>Tiến độ bài học</span>
-          <span className="font-semibold text-foreground">
-            {completedStages.length} / {stages.length} giai đoạn ({Math.round((completedStages.length / stages.length) * 100)}%)
+      {/* 4.3 Single Consolidated Progress Bar */}
+      <div className="space-y-1.5">
+        <div className="flex items-center justify-between text-xs text-muted-foreground px-0.5">
+          <span className="font-medium">Tiến độ bài học</span>
+          <span className="font-bold text-foreground">
+            {completedStages.length} / {stages.length} chặng hoàn thành ({Math.round((completedStages.length / stages.length) * 100)}%)
           </span>
         </div>
-        <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+        <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
           <div
             className="h-full bg-primary transition-all duration-300"
             style={{ width: `${(completedStages.length / stages.length) * 100}%` }}
           />
         </div>
+      </div>
 
-        {/* 6 Skill Group Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 p-1.5 rounded-2xl bg-muted/60 border border-border">
+      {/* 4. TẦNG 1: SÁU NHÓM KỸ NĂNG (Primary Layer) */}
+      <div className="space-y-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 p-1.5 rounded-2xl bg-muted/60 border border-border">
           {LESSON_SKILL_GROUPS.map((group) => {
             const isGroupActive = group.stageIndices.includes(currentStageIndex);
             const groupDoneCount = group.stageIndices.filter((idx) => completedStages.includes(idx)).length;
             const isGroupAllDone = groupDoneCount === group.stageIndices.length;
+            const isGroupInProgress = groupDoneCount > 0 && !isGroupAllDone;
 
             return (
               <button
@@ -188,132 +204,107 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                 type="button"
                 onClick={() => {
                   if (!isGroupActive) {
-                    markStageComplete(currentStageIndex);
                     handleSelectStage(group.stageIndices[0]);
                   }
                 }}
-                className={`flex flex-col items-center justify-center p-2 rounded-xl text-xs transition-all ${
+                className={`flex flex-col items-center justify-center p-2.5 rounded-xl text-xs transition-all relative ${
                   isGroupActive
-                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/40 ring-1 ring-primary/30"
-                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/50 ring-2 ring-primary/30"
+                    : isGroupAllDone
+                      ? "text-emerald-700 dark:text-emerald-300 hover:bg-card/60 font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-card/50"
                 }`}
               >
-                <div className="flex items-center gap-1">
-                  {isGroupAllDone && (
-                    <span className="text-emerald-500 font-bold">✓</span>
-                  )}
+                <div className="flex items-center gap-1.5 w-full justify-center">
+                  {isGroupAllDone ? (
+                    <CheckCircle2 className="size-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  ) : null}
                   <span className="truncate">{group.label}</span>
                 </div>
-                <span className="text-[10px] text-muted-foreground mt-0.5">
-                  {groupDoneCount}/{group.stageIndices.length} chặng
-                </span>
+                <div className="flex items-center gap-1 text-[10px] text-muted-foreground mt-1">
+                  <span>
+                    {isGroupAllDone ? "Đã xong" : isGroupInProgress ? "Đang học" : "Chưa học"}
+                  </span>
+                  <span>·</span>
+                  <span>{groupDoneCount}/{group.stageIndices.length}</span>
+                </div>
               </button>
             );
           })}
         </div>
 
-        {/* Active Group Context & Sub-stage Navigation */}
-        {(() => {
-          const activeGroup =
-            LESSON_SKILL_GROUPS.find((g) => g.stageIndices.includes(currentStageIndex)) ||
-            LESSON_SKILL_GROUPS[0];
-
-          return (
-            <div className="p-3.5 rounded-2xl bg-card border border-border space-y-2.5 shadow-xs">
-              <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-                <div className="flex items-center gap-2">
-                  <Badge className="bg-primary/10 text-primary border-primary/20 font-bold">
-                    {activeGroup.label}
-                  </Badge>
-                  <span className="text-muted-foreground hidden sm:inline">
-                    {activeGroup.description}
-                  </span>
-                </div>
-                <span className="text-muted-foreground text-[11px]">
-                  Giai đoạn {currentStageIndex + 1} / {stages.length}
-                </span>
-              </div>
-
-              {/* Sub-stages of Active Group */}
-              <div className="flex flex-wrap gap-1.5">
-                {activeGroup.stageIndices.map((idx) => {
-                  const st = stages[idx];
-                  if (!st) return null;
-                  const isActive = idx === currentStageIndex;
-                  const isDone = completedStages.includes(idx);
-
-                  return (
-                    <button
-                      key={st.stage}
-                      type="button"
-                      onClick={() => {
-                        markStageComplete(currentStageIndex);
-                        handleSelectStage(idx);
-                      }}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
-                        isActive
-                          ? "bg-primary text-primary-foreground shadow-xs"
-                          : isDone
-                            ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30"
-                            : "bg-muted text-muted-foreground hover:bg-muted/80"
-                      }`}
-                    >
-                      <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
-                      <span>Chặng {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Compact Overall 10-Stage Dot Bar */}
-              <div className="pt-2 border-t border-border/50 flex items-center justify-between">
-                <span className="text-[11px] text-muted-foreground">Toàn bộ 10 chặng:</span>
-                <div className="flex items-center gap-1.5">
-                  {stages.map((_, idx) => {
-                    const isActive = idx === currentStageIndex;
-                    const isDone = completedStages.includes(idx);
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => {
-                          markStageComplete(currentStageIndex);
-                          handleSelectStage(idx);
-                        }}
-                        title={`Giai đoạn ${idx}`}
-                        className={`size-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all ${
-                          isActive
-                            ? "bg-primary text-primary-foreground ring-2 ring-primary/40 ring-offset-1"
-                            : isDone
-                              ? "bg-emerald-500 text-white"
-                              : "bg-muted text-muted-foreground hover:bg-muted/80"
-                        }`}
-                      >
-                        {idx}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+        {/* 4. TẦNG 2: CÁC CHẶNG THUỘC NHÓM ĐƯỢC CHỌN (Sub-stages Layer Only - No redundant 10 dots) */}
+        <div className="p-3.5 sm:p-4 rounded-2xl bg-card border border-border space-y-3 shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="flex items-center gap-2">
+              <Badge className="bg-primary/10 text-primary border-primary/20 font-bold">
+                {activeGroup.label}
+              </Badge>
+              <span className="text-muted-foreground hidden sm:inline">
+                {activeGroup.description}
+              </span>
             </div>
-          );
-        })()}
+            <span className="text-muted-foreground text-[11px] font-medium">
+              Chặng {currentStageIndex + 1} / {stages.length}
+            </span>
+          </div>
+
+          {/* Sub-stages buttons of selected group */}
+          <div className="flex flex-wrap gap-2">
+            {activeGroup.stageIndices.map((idx) => {
+              const st = stages[idx];
+              if (!st) return null;
+              const isActive = idx === currentStageIndex;
+              const isDone = completedStages.includes(idx);
+
+              return (
+                <button
+                  key={st.stage}
+                  type="button"
+                  onClick={() => handleSelectStage(idx)}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    isActive
+                      ? "bg-primary text-primary-foreground shadow-xs font-bold"
+                      : isDone
+                        ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
+                >
+                  <span className="shrink-0">{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
+                  <span>Chặng {idx + 1}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
+                  {isActive && (
+                    <span className="size-1.5 rounded-full bg-primary-foreground animate-pulse ml-0.5" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Current Stage Card */}
+      {/* Current Stage Content Card */}
       <Card className="border-border shadow-xs">
         <CardHeader className="space-y-1 pb-4 border-b border-border">
-          <div className="flex items-center justify-between">
-            <Badge className="text-xs bg-muted text-muted-foreground">
-              Giai đoạn {currentStageIndex + 1} / {stages.length}
-            </Badge>
-            <div className="flex gap-2">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Badge className="text-xs bg-muted text-muted-foreground font-semibold">
+                Chặng {currentStageIndex + 1} / {stages.length}
+              </Badge>
+              {isCurrentStageCompleted && (
+                <Badge className="bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 text-[10px] gap-1 font-semibold">
+                  <CheckCircle2 className="size-3" />
+                  Đã hoàn thành
+                </Badge>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
               <Button
                 type="button"
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowPinyin((v) => !v)}
-                className="text-xs h-8"
+                className="text-xs h-8 px-2.5"
               >
                 {showPinyin ? "Ẩn Pinyin" : "Hiện Pinyin"}
               </Button>
@@ -322,12 +313,13 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowTranslation((v) => !v)}
-                className="text-xs h-8"
+                className="text-xs h-8 px-2.5"
               >
-                {showTranslation ? "Ẩn nghĩa" : "Hiện nghĩa"}
+                {showTranslation ? "Ẩn Dịch" : "Hiện Dịch"}
               </Button>
             </div>
           </div>
+
           <CardTitle className="text-lg font-bold text-foreground pt-1">
             {currentStage.title_vi}
           </CardTitle>
@@ -339,43 +331,28 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         </CardHeader>
 
         <CardContent className="p-5 sm:p-6 space-y-6">
-          {/* Defensive fallback when stage content is missing */}
-          {!((currentStage.stage === "0_warmup" && currentStage.warmup_words?.length) ||
-            (currentStage.stage === "1_vocab_learn" && currentStage.vocabulary?.length) ||
-            (currentStage.exercises && currentStage.exercises.length > 0) ||
-            (currentStage.stage === "3_grammar_learn" && currentStage.grammar_points?.length) ||
-            (currentStage.stage === "5_dialogue_interactive" && currentStage.dialogue?.turns?.length) ||
-            (currentStage.stage === "7_reading_comprehension" && currentStage.passage?.text) ||
-            currentStage.stage === "8_mini_quiz" ||
-            currentStage.stage === "9_srs_review") && (
-            <div className="p-6 rounded-2xl border border-dashed border-amber-500/40 bg-amber-500/5 text-center space-y-2">
-              <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
-                Nội dung giai đoạn này đang được biên soạn
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Giai đoạn này chưa có bài tập hoàn chỉnh. Vui lòng chọn giai đoạn khác để tiếp tục bài học.
-              </p>
-            </div>
-          )}
-
           {/* GIAI ĐOẠN 0: Khởi động (Warmup) */}
           {currentStage.stage === "0_warmup" && currentStage.warmup_words && (
             <div className="space-y-4">
-              <p className="text-sm text-muted-foreground">
-                Bấm vào biểu tượng loa để nghe phát âm mẫu, sau đó đọc to lại để làm nóng phát âm:
+              <p className="text-xs text-muted-foreground font-medium">
+                Nghe và lặp lại các âm thanh/từ vựng nền tảng của bài học:
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {currentStage.warmup_words.map((w, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {currentStage.warmup_words.map((w, i) => (
                   <div
-                    key={idx}
-                    className="p-4 rounded-xl border border-border bg-card text-center space-y-1.5 shadow-xs"
+                    key={i}
+                    className="p-4 rounded-xl border border-border bg-card flex items-center justify-between gap-2 shadow-2xs hover:border-primary/40 transition-colors"
                   >
-                    <p className="hanzi text-3xl font-bold text-foreground">{w.hanzi}</p>
-                    {showPinyin && <p className="text-sm font-semibold text-primary">{w.pinyin}</p>}
-                    {showTranslation && <p className="text-xs text-muted-foreground">{w.vi}</p>}
-                    <div className="pt-1 flex justify-center">
-                      <MandarinAudioButton text={w.hanzi} size="sm" variant="outline" />
+                    <div>
+                      <p className="hanzi text-2xl font-bold text-foreground">{w.hanzi}</p>
+                      {showPinyin && (
+                        <p className="text-xs font-mono font-medium text-primary">{w.pinyin}</p>
+                      )}
+                      {showTranslation && (
+                        <p className="text-xs text-muted-foreground mt-0.5">{w.vi}</p>
+                      )}
                     </div>
+                    <MandarinAudioButton text={w.hanzi} size="sm" />
                   </div>
                 ))}
               </div>
@@ -385,30 +362,25 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           {/* GIAI ĐOẠN 1: Học từ vựng (Vocab Learn) */}
           {currentStage.stage === "1_vocab_learn" && currentStage.vocabulary && (
             <div className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                {currentStage.vocabulary.map((w, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {currentStage.vocabulary.map((w, i) => (
                   <div
-                    key={idx}
-                    className="p-4 rounded-xl border border-border bg-card flex items-start justify-between gap-3 shadow-xs"
+                    key={i}
+                    className="p-4 rounded-xl border border-border bg-card flex items-center justify-between gap-3 shadow-2xs hover:border-primary/40 transition-colors"
                   >
-                    <div className="space-y-1">
+                    <div className="space-y-0.5">
                       <p className="hanzi text-2xl font-bold text-foreground">{w.simplified}</p>
-                      {showPinyin && <p className="text-sm font-medium text-primary">{w.pinyin}</p>}
+                      {showPinyin && (
+                        <p className="text-xs font-mono font-medium text-primary">{w.pinyin}</p>
+                      )}
                       {showTranslation && (
                         <p className="text-xs text-muted-foreground">{w.meaning_vi}</p>
                       )}
                     </div>
-                    <MandarinAudioButton text={w.simplified} size="sm" variant="ghost" />
+                    <MandarinAudioButton text={w.simplified} size="sm" />
                   </div>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* GIAI ĐOẠN 2, 4, 6: Bài tập tương tác (Exercise Engine) */}
-          {currentStage.exercises && currentStage.exercises.length > 0 && (
-            <div className="space-y-4">
-              <ExerciseEngine exercises={currentStage.exercises} />
             </div>
           )}
 
@@ -432,16 +404,18 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                     {gp.examples.map((ex, exIdx) => (
                       <div
                         key={exIdx}
-                        className="p-3 rounded-xl bg-secondary/30 flex items-center justify-between gap-3"
+                        className="p-3 rounded-xl bg-muted/40 border border-border/60 flex items-start justify-between gap-2"
                       >
                         <div className="space-y-0.5">
-                          <p className="hanzi text-base font-semibold text-foreground">{ex.hanzi}</p>
-                          {showPinyin && <p className="text-xs text-primary">{ex.pinyin}</p>}
+                          <p className="hanzi text-base font-bold text-foreground">{ex.hanzi}</p>
+                          {showPinyin && (
+                            <p className="text-xs font-mono text-primary">{ex.pinyin}</p>
+                          )}
                           {showTranslation && (
                             <p className="text-xs text-muted-foreground">{ex.translationVi}</p>
                           )}
                         </div>
-                        <MandarinAudioButton text={ex.hanzi} size="sm" variant="ghost" />
+                        <MandarinAudioButton text={ex.hanzi} size="sm" />
                       </div>
                     ))}
                   </div>
@@ -453,128 +427,161 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           {/* GIAI ĐOẠN 5: Hội thoại đối đáp (Dialogue) */}
           {currentStage.stage === "5_dialogue_interactive" && currentStage.dialogue && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-foreground">
-                  {currentStage.dialogue.titleVi}
-                </span>
-                <Button
-                  type="button"
-                  variant="outline"
+              <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-between">
+                <div>
+                  <h3 className="text-sm font-bold text-foreground">{currentStage.dialogue.titleVi}</h3>
+                  <p className="text-xs text-muted-foreground">Luyện nghe và đọc theo từng lượt đối thoại</p>
+                </div>
+                <MandarinAudioButton
+                  text={currentStage.dialogue.turns.map((t) => t.hanzi).join("。")}
                   size="sm"
-                  onClick={() =>
-                    speak(
-                      currentStage.dialogue?.turns.map((t) => t.hanzi).join("。") || "",
-                      preferredRate
-                    )
-                  }
-                  className="text-xs gap-1.5"
-                >
-                  <Volume2 className="size-3.5" />
-                  Nghe toàn bộ đoạn thoại
-                </Button>
+                />
               </div>
 
               <div className="space-y-3">
-                {currentStage.dialogue.turns.map((turn, tIdx) => (
+                {currentStage.dialogue.turns.map((t, tIdx) => (
                   <div
                     key={tIdx}
-                    className={`p-4 rounded-xl border flex items-start justify-between gap-3 ${
-                      turn.speaker.startsWith("A")
-                        ? "bg-primary/5 border-primary/20"
-                        : "bg-secondary/40 border-border"
+                    className={`p-4 rounded-2xl border transition-all space-y-1.5 ${
+                      t.speaker.toLowerCase().includes("a")
+                        ? "border-primary/30 bg-primary/5 mr-6 sm:mr-12"
+                        : "border-border bg-card ml-6 sm:ml-12"
                     }`}
                   >
-                    <div className="space-y-1">
-                      <span className="text-xs font-bold text-primary block">
-                        {turn.speaker}
-                      </span>
-                      <p className="hanzi text-lg font-bold text-foreground">{turn.hanzi}</p>
-                      {showPinyin && <p className="text-xs text-primary">{turn.pinyin}</p>}
-                      {showTranslation && (
-                        <p className="text-xs text-muted-foreground">{turn.translationVi}</p>
-                      )}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-primary">{t.speaker}</span>
+                      <MandarinAudioButton text={t.hanzi} size="sm" />
                     </div>
-                    <MandarinAudioButton text={turn.hanzi} size="sm" variant="ghost" />
+                    <p className="hanzi text-lg font-bold text-foreground">{t.hanzi}</p>
+                    {showPinyin && (
+                      <p className="text-xs font-mono text-primary/90">{t.pinyin}</p>
+                    )}
+                    {showTranslation && (
+                      <p className="text-xs text-muted-foreground">{t.translationVi || t.vi}</p>
+                    )}
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* GIAI ĐOẠN 7: Đọc hiểu đoạn văn (Reading) */}
+          {/* GIAI ĐOẠN 7: Đọc hiểu văn bản (Reading Passage) */}
           {currentStage.stage === "7_reading_comprehension" && currentStage.passage && (
             <div className="space-y-4">
-              <div className="p-5 rounded-2xl border border-border bg-card space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-primary">
-                    {currentStage.passage.title}
-                  </h3>
-                  <MandarinAudioButton
-                    text={currentStage.passage.text}
-                    size="sm"
-                    variant="outline"
-                  />
+              <div className="p-5 rounded-2xl border border-border bg-card space-y-3 shadow-xs">
+                <div className="flex items-center justify-between border-b border-border pb-3">
+                  <h3 className="text-base font-bold text-foreground">{currentStage.passage.title}</h3>
+                  <MandarinAudioButton text={currentStage.passage.text} size="sm" />
                 </div>
-                <p className="hanzi text-lg leading-relaxed text-foreground whitespace-pre-wrap">
+                <p className="hanzi text-lg sm:text-xl font-bold leading-relaxed text-foreground whitespace-pre-line">
                   {currentStage.passage.text}
                 </p>
                 {showTranslation && currentStage.passage.translationVi && (
-                  <p className="text-xs text-muted-foreground pt-2 border-t border-border">
-                    Dịch: {currentStage.passage.translationVi}
+                  <p className="text-xs text-muted-foreground pt-2 border-t border-border leading-relaxed">
+                    {currentStage.passage.translationVi}
                   </p>
                 )}
               </div>
             </div>
           )}
 
-          {/* GIAI ĐOẠN 8: Mini Quiz (Assessment) */}
+          {/* CÁC CHẶNG TƯƠNG TÁC (Chặng 2, 4, 6, 7, 8) */}
+          {currentStage.exercises && currentStage.exercises.length > 0 && (
+            <div className="space-y-4 pt-2">
+              <ExerciseEngine
+                exercises={currentStage.exercises}
+                onComplete={() => markStageComplete(currentStageIndex)}
+              />
+            </div>
+          )}
+
+          {/* GIAI ĐOẠN 8: Mini Quiz */}
           {currentStage.stage === "8_mini_quiz" && (
-            <div className="text-center p-8 space-y-4 rounded-2xl border border-primary/20 bg-primary/5">
-              <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground">
+            <div className="text-center p-8 space-y-4 rounded-2xl border border-border bg-card shadow-xs">
+              <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-primary/10 text-primary">
                 <Award className="size-6" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-xl font-bold text-foreground">Đánh giá cuối bài học</h3>
+                <h3 className="text-xl font-bold text-foreground">Mini Quiz Đánh giá Cuối bài</h3>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto">
-                  Kiểm tra khả năng ghi nhớ từ vựng và vận dụng ngữ pháp thông qua Mini Quiz có chấm điểm máy chủ.
+                  Kiểm tra nhanh mức độ tiếp thu toàn bộ kiến thức của bài học qua bài thi ngắn tự động chấm điểm.
                 </p>
               </div>
               <div className="pt-2">
-                <a
+                <Link
                   href={currentStage.quizUrl || `/lessons/${lesson.id}/quiz`}
-                  className="inline-flex min-h-11 items-center px-6 rounded-xl bg-primary text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-sm"
+                  className="inline-flex min-h-11 items-center px-6 rounded-xl bg-primary text-sm font-semibold text-primary-foreground hover:bg-primary/90 shadow-xs"
                 >
-                  Bắt đầu làm Mini Quiz
-                </a>
+                  Làm Mini Quiz ngay
+                </Link>
               </div>
             </div>
           )}
 
           {/* GIAI ĐOẠN 9: Ôn tập ngắt quãng (SRS Review) */}
           {currentStage.stage === "9_srs_review" && (
-            <div className="text-center p-8 space-y-4 rounded-2xl border border-border bg-card">
+            <div className="text-center p-8 space-y-4 rounded-2xl border border-border bg-card shadow-xs">
               <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                 <Brain className="size-6" />
               </div>
               <div className="space-y-1">
                 <h3 className="text-xl font-bold text-foreground">Ôn tập ngắt quãng SRS</h3>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto">
-                  Các từ vựng trong bài đã được đưa vào kho thẻ ghi nhớ SRS. Thuật toán sẽ nhắc bạn ôn lại đúng thời điểm để ghi nhớ vĩnh viễn.
+                  Các từ vựng trong bài đã được đưa vào chu kỳ nhớ ngắt quãng SRS. Thuật toán sẽ nhắc bạn ôn lại đúng thời điểm để ghi nhớ dài hạn.
                 </p>
               </div>
-              <div className="pt-2">
-                <a
+              <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                <Link
                   href={currentStage.reviewUrl || "/review"}
-                  className="inline-flex min-h-11 items-center px-6 rounded-xl bg-emerald-600 text-sm font-semibold text-white hover:bg-emerald-700 shadow-sm"
+                  className="inline-flex min-h-11 items-center px-6 rounded-xl bg-emerald-600 text-sm font-semibold text-white hover:bg-emerald-700 shadow-xs"
                 >
                   Mở trang ôn tập SRS
-                </a>
+                </Link>
+              </div>
+
+              {/* Lesson Completion Recommendations */}
+              <div className="mt-8 pt-6 border-t border-border space-y-3 text-left">
+                <div className="flex items-center gap-2 text-xs font-bold text-foreground">
+                  <Sparkles className="size-4 text-amber-500" />
+                  <span>Bước tiếp theo được đề xuất:</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Link
+                    href={`/practice?unit=${unitNum}`}
+                    className="p-3.5 rounded-xl border border-border bg-muted/40 hover:bg-muted/70 flex items-center justify-between gap-2 group transition-all"
+                  >
+                    <div>
+                      <p className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">
+                        Luyện tập Unit {unitNum}
+                      </p>
+                      <p className="text-[11px] text-muted-foreground">
+                        Củng cố từ vựng & ngữ pháp tại Practice Center
+                      </p>
+                    </div>
+                    <ArrowRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </Link>
+
+                  <Link
+                    href={`/exam/unit/u-hsk1-0${unitNum}`}
+                    className="p-3.5 rounded-xl border border-border bg-muted/40 hover:bg-muted/70 flex items-center justify-between gap-2 group transition-all"
+                  >
+                    <div>
+                      <p className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">
+                        Làm Unit Test {unitNum}
+                      </p>
+                      <p className="text-[11px] text-muted-foreground">
+                        Đánh giá 4 kỹ năng với cơ chế chấm điểm server
+                      </p>
+                    </div>
+                    <ArrowRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </Link>
+                </div>
               </div>
             </div>
           )}
         </CardContent>
 
-        {/* Navigation buttons */}
+        {/* 5. FOOTER NAVIGATION (Sticky / Bottom Bar) */}
         <div className="p-4 border-t border-border flex items-center justify-between gap-3 bg-muted/20">
           <Button
             type="button"
@@ -582,15 +589,23 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             size="sm"
             disabled={currentStageIndex === 0}
             onClick={() => handleSelectStage(Math.max(0, currentStageIndex - 1))}
-            className="gap-1.5"
+            className="gap-1.5 text-xs font-semibold"
           >
             <ChevronLeft className="size-4" />
-            Giai đoạn trước
+            <span>Chặng trước</span>
           </Button>
 
-          <span className="text-xs text-muted-foreground font-medium hidden sm:inline">
-            Giai đoạn {currentStageIndex + 1} / {stages.length}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-muted-foreground font-medium hidden sm:inline">
+              Chặng {currentStageIndex + 1} / {stages.length}
+            </span>
+            {isCurrentStageCompleted && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                <CheckCircle2 className="size-3" />
+                Đã học
+              </span>
+            )}
+          </div>
 
           <Button
             type="button"
@@ -601,9 +616,15 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                 handleSelectStage(currentStageIndex + 1);
               }
             }}
-            className="gap-1.5"
+            className="gap-1.5 text-xs font-semibold px-4"
           >
-            <span>{currentStageIndex === stages.length - 1 ? "Hoàn thành bài học ✓" : "Giai đoạn tiếp theo"}</span>
+            <span>
+              {currentStageIndex === stages.length - 1
+                ? "Hoàn thành bài học ✓"
+                : isCurrentStageCompleted
+                  ? "Chặng tiếp theo"
+                  : "Hoàn thành & Tiếp tục"}
+            </span>
             <ChevronRight className="size-4" />
           </Button>
         </div>
