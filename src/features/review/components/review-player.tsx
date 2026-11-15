@@ -224,6 +224,32 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       setSaveStatus({ state: "saving", text: "Đang hoàn tất phiên ôn..." });
       try {
         await saveQueue.current;
+
+        // Verify no pending items remain in sessionStorage before finalizing session
+        try {
+          const raw = sessionStorage.getItem(key);
+          if (raw) {
+            const map = JSON.parse(raw);
+            if (typeof map === "object" && map !== null && Object.keys(map).length > 0) {
+              const firstPending = Object.values(map)
+                .map((v) => reviewInput.safeParse(v))
+                .find((p) => p.success)?.data;
+              if (firstPending) {
+                setRecovery(firstPending);
+                setError({
+                  code: "RECOVERY",
+                  message:
+                    "Vẫn còn đánh giá chưa được máy chủ xác nhận. Hãy nhấn 'Thử lại đánh giá cũ' trước khi kết thúc phiên.",
+                  retryable: true,
+                  outcomeUnknown: true,
+                });
+                setSaveStatus({ state: "error", text: "Chưa hoàn tất các thẻ trước" });
+                return;
+              }
+            }
+          }
+        } catch {}
+
         const result = await submit(input);
         if (result.ok) {
           removePendingInput(input.cardId);
@@ -256,60 +282,52 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       }
     }
   }
-  async function retryRecovery(recoveryInput: ReviewInput) {
+  async function retryRecovery() {
     stopMandarin();
     if (busy.current || pending || !ready || !enabled) return;
     busy.current = true;
     setPending(true);
-    setSaveStatus({ state: "saving", text: "Đang thử lại đánh giá chưa xác nhận..." });
+    setSaveStatus({ state: "saving", text: "Đang thử lại các đánh giá chưa xác nhận..." });
 
     try {
-      const result = await submit(recoveryInput);
-      if (result.ok) {
-        removePendingInput(recoveryInput.cardId);
-        setNextDue(result.receipt.nextDueAt);
-        // Check if there are remaining pending items in sessionStorage
+      while (true) {
+        let candidate: ReviewInput | null = null;
         try {
           const raw = sessionStorage.getItem(key);
           const map = raw ? JSON.parse(raw) : null;
-          const next =
+          candidate =
             typeof map === "object" && map !== null
               ? Object.values(map)
                   .map((v) => reviewInput.safeParse(v))
-                  .find((p) => p.success)?.data
+                  .find((p) => p.success)?.data ?? null
               : null;
-          if (next) {
-            setRecovery(next);
-            setSaveStatus({
-              state: "error",
-              text: "Còn đánh giá khác cần xác nhận",
-            });
-            setError({
-              code: "RECOVERY",
-              message:
-                "Đã lưu 1 đánh giá. Vẫn còn đánh giá chưa xác nhận khác; hãy nhấn Thử lại tiếp tục.",
-              retryable: true,
-              outcomeUnknown: true,
-            });
-          } else {
-            setRecovery(null);
-            setError(null);
-            setSaveStatus({ state: "saved", text: "Đã xác nhận đánh giá cũ" });
-            setTimeout(() => {
-              setSaveStatus({ state: "idle" });
-            }, 2500);
-          }
         } catch {
+          candidate = null;
+        }
+
+        if (!candidate) {
           setRecovery(null);
           setError(null);
-          setSaveStatus({ state: "saved", text: "Đã xác nhận đánh giá cũ" });
+          setSaveStatus({ state: "saved", text: "Đã xác nhận toàn bộ đánh giá cũ" });
+          setTimeout(() => {
+            setSaveStatus({ state: "idle" });
+          }, 2500);
+          break;
         }
-      } else {
-        setError(result.error);
-        setSaveStatus({ state: "error", text: "Lỗi lưu đánh giá", cardId: recoveryInput.cardId });
-        if (!result.error.outcomeUnknown) {
-          removePendingInput(recoveryInput.cardId);
-          setRecovery(null);
+
+        const result = await submit(candidate);
+        if (result.ok) {
+          removePendingInput(candidate.cardId);
+          setNextDue(result.receipt.nextDueAt);
+        } else {
+          setRecovery(candidate);
+          setError(result.error);
+          setSaveStatus({ state: "error", text: "Lỗi lưu đánh giá", cardId: candidate.cardId });
+          if (!result.error.outcomeUnknown) {
+            removePendingInput(candidate.cardId);
+            setRecovery(null);
+          }
+          break;
         }
       }
     } catch {
@@ -319,7 +337,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
         retryable: true,
         outcomeUnknown: true,
       });
-      setSaveStatus({ state: "error", text: "Mất kết nối", cardId: recoveryInput.cardId });
+      setSaveStatus({ state: "error", text: "Mất kết nối" });
     } finally {
       busy.current = false;
       setPending(false);
@@ -416,7 +434,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       {recovery && (
         <Button
           disabled={pending || !enabled || !error?.retryable}
-          onClick={() => void retryRecovery(recovery)}
+          onClick={() => void retryRecovery()}
         >
           Thử lại đánh giá cũ
         </Button>

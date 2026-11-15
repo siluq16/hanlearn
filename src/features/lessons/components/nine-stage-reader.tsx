@@ -40,14 +40,73 @@ export const LESSON_SKILL_GROUPS = [
   { id: "review", label: "Ôn tập", stageIndices: [9], description: "Đưa từ vựng vào chu kỳ nhớ ngắt quãng SRS" },
 ];
 
+interface ScopedLessonProgress {
+  version: 1;
+  userId: string;
+  lessonId: string;
+  confirmedStages: number[];
+  pendingStages: number[];
+}
+
+function getScopedStorageKey(userId: string | undefined, lessonKey: string): string {
+  return userId
+    ? `hanlearn_prog_v1_${userId}_${lessonKey}`
+    : `hanlearn_prog_v1_guest_${lessonKey}`;
+}
+
+function loadScopedProgress(
+  key: string,
+  userId: string | undefined,
+  lessonKey: string
+): { confirmed: number[]; pending: number[] } {
+  if (typeof window === "undefined") return { confirmed: [], pending: [] };
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return { confirmed: [], pending: [] };
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === "object" && parsed.version === 1) {
+      if (parsed.userId === (userId || "guest") && parsed.lessonId === lessonKey) {
+        return {
+          confirmed: Array.isArray(parsed.confirmedStages) ? parsed.confirmedStages : [],
+          pending: Array.isArray(parsed.pendingStages) ? parsed.pendingStages : [],
+        };
+      }
+      return { confirmed: [], pending: [] };
+    }
+    // Backward compatibility for raw array stored under exact user key
+    if (Array.isArray(parsed) && userId) {
+      return { confirmed: parsed, pending: [] };
+    }
+  } catch { }
+  return { confirmed: [], pending: [] };
+}
+
+function persistScopedProgress(
+  key: string,
+  userId: string | undefined,
+  lessonKey: string,
+  confirmed: number[],
+  pending: number[]
+) {
+  if (typeof window === "undefined") return;
+  try {
+    const data: ScopedLessonProgress = {
+      version: 1,
+      userId: userId || "guest",
+      lessonId: lessonKey,
+      confirmedStages: confirmed,
+      pendingStages: pending,
+    };
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch { }
+}
+
 export function NineStageReader({ lesson, initialProgress, userId }: NineStageReaderProps) {
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
 
   const lessonKey = lesson.slug || lesson.id;
-  const storageKey = userId
-    ? `hanlearn_9stage_${userId}_${lessonKey}`
-    : `hanlearn_9stage_${lessonKey}`;
+  const storageKey = getScopedStorageKey(userId, lessonKey);
 
   const [currentStageIndex, setCurrentStageIndex] = useState<number>(() => {
     if (initialProgress && typeof initialProgress.currentStage === "number") {
@@ -65,34 +124,48 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         : [];
 
     if (typeof window === "undefined") return serverStages;
-    try {
-      const saved = localStorage.getItem(storageKey);
-      const legacy = localStorage.getItem(`hanlearn_9stage_${lessonKey}`);
-      const rawSaved = saved ? JSON.parse(saved) : [];
-      const rawLegacy = legacy ? JSON.parse(legacy) : [];
-      const localList: number[] = [
-        ...(Array.isArray(rawSaved) ? rawSaved : []),
-        ...(Array.isArray(rawLegacy) ? rawLegacy : []),
-      ];
-      return Array.from(new Set([...serverStages, ...localList])).sort((a, b) => a - b);
-    } catch { }
-    return serverStages;
+    const { confirmed: localConfirmed, pending: localPending } = loadScopedProgress(
+      storageKey,
+      userId,
+      lessonKey
+    );
+    // Monotonic Non-Decreasing Union: Server + Local Confirmed + Local Pending
+    // Guarantees that progress NEVER regresses even if local has fewer stages than server!
+    return Array.from(new Set([...serverStages, ...localConfirmed, ...localPending])).sort(
+      (a, b) => a - b
+    );
   });
 
   const [syncStatus, setSyncStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [syncError, setSyncError] = useState<string | null>(null);
 
   const saveProgressWithStatus = useCallback(
-    async (completed: number[], current: number) => {
+    async (targetCompleted: number[], current: number, newlyAddedStage?: number) => {
       setSyncStatus("saving");
       setSyncError(null);
+
+      // Read current storage state to track pending
+      const { confirmed, pending } = loadScopedProgress(storageKey, userId, lessonKey);
+      const updatedPending =
+        newlyAddedStage !== undefined
+          ? Array.from(new Set([...pending, newlyAddedStage]))
+          : pending;
+
+      persistScopedProgress(storageKey, userId, lessonKey, confirmed, updatedPending);
+
       try {
         const res = await saveStageProgress({
           lessonId: lesson.slug || lesson.id,
-          completedStages: completed,
+          completedStages: targetCompleted,
           currentStage: current,
         });
-        if (res.ok) {
+
+        if (res.ok && res.progress) {
+          const ackCompleted = res.progress.completedStages;
+          // Remove acknowledged stages from pending
+          const remainingPending = updatedPending.filter((p) => !ackCompleted.includes(p));
+          persistScopedProgress(storageKey, userId, lessonKey, ackCompleted, remainingPending);
+
           setSyncStatus("saved");
           setTimeout(() => {
             setSyncStatus((s) => (s === "saved" ? "idle" : s));
@@ -106,7 +179,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         setSyncError("Lỗi kết nối máy chủ");
       }
     },
-    [lesson.slug, lesson.id]
+    [lesson.slug, lesson.id, storageKey, userId, lessonKey]
   );
 
   // Client mount sync
@@ -114,14 +187,16 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
     if (typeof window === "undefined") return;
     try {
       const serverCount = initialProgress?.completedStages?.length ?? 0;
-      if (completedStages.length > serverCount) {
+      const { pending } = loadScopedProgress(storageKey, userId, lessonKey);
+      if (pending.length > 0 || completedStages.length > serverCount) {
         saveStageProgress({
           lessonId: lesson.slug || lesson.id,
           completedStages,
           currentStage: currentStageIndex,
         })
           .then((res) => {
-            if (res.ok) {
+            if (res.ok && res.progress) {
+              persistScopedProgress(storageKey, userId, lessonKey, res.progress.completedStages, []);
               setSyncStatus("saved");
               setTimeout(() => {
                 setSyncStatus((s) => (s === "saved" ? "idle" : s));
@@ -146,11 +221,8 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         saveProgressWithStatus(prev, currentStageIndex);
         return prev;
       }
-      const next = [...prev, idx];
-      try {
-        localStorage.setItem(storageKey, JSON.stringify(next));
-      } catch { }
-      saveProgressWithStatus(next, currentStageIndex);
+      const next = Array.from(new Set([...prev, idx])).sort((a, b) => a - b);
+      saveProgressWithStatus(next, currentStageIndex, idx);
       return next;
     });
   }
