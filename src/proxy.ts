@@ -14,6 +14,8 @@ export const config = {
     "/listening/:path*",
     "/speaking/:path*",
     "/settings/:path*",
+    "/practice/:path*",
+    "/exam/:path*",
     "/api/:path*",
   ],
 };
