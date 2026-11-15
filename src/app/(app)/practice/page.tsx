@@ -8,10 +8,10 @@ export const metadata = { title: "Trung tâm Luyện tập Đa Kỹ năng" };
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ skill?: string; unit?: string; diff?: string }>;
+  searchParams: Promise<{ skill?: string; unit?: string; diff?: string; q?: string }>;
 }) {
   await requireLearner();
-  const [{ skill, unit, diff }, practiceSets, learnerHistory] = await Promise.all([
+  const [{ skill, unit, diff, q }, practiceSets, learnerHistory] = await Promise.all([
     searchParams,
     getAllPracticeSets(),
     getLearnerPracticeHistory(),
@@ -22,6 +22,7 @@ export default async function PracticePage({
       initialSkill={skill}
       initialUnit={unit}
       initialDiff={diff}
+      initialQuery={q}
       practiceSets={practiceSets}
       learnerHistory={learnerHistory}
     />

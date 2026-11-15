@@ -304,7 +304,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
             href={`/practice?skill=dialogue&unit=${practiceSet.unit_id}`}
-            prefetch={true}
+            prefetch={false}
             className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
           >
             <ArrowLeft className="size-4" />
@@ -502,7 +502,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href={`/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`}
-          prefetch={true}
+          prefetch={false}
           className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
         >
           <ArrowLeft className="size-4" />

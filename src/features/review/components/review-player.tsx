@@ -44,24 +44,83 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
 
   const busy = useRef(false),
     saveQueue = useRef<Promise<void>>(Promise.resolve()),
-    heading = useRef<HTMLHeadingElement>(null);
+    heading = useRef<HTMLHeadingElement>(null),
+    pendingCountRef = useRef(0);
   const key = `hanlearn-review:${initial.scope}`;
   const card = view.cards[0];
+
+  const savePendingInput = (input: ReviewInput) => {
+    try {
+      const raw = sessionStorage.getItem(key);
+      const map = raw ? JSON.parse(raw) : {};
+      map[input.cardId] = input;
+      sessionStorage.setItem(key, JSON.stringify(map));
+    } catch {
+      // Fallback: direct set
+      try {
+        sessionStorage.setItem(key, JSON.stringify(input));
+      } catch {}
+    }
+  };
+
+  const removePendingInput = (cardId: string) => {
+    try {
+      const raw = sessionStorage.getItem(key);
+      if (!raw) return;
+      const map = JSON.parse(raw);
+      if (typeof map === "object" && map !== null) {
+        delete map[cardId];
+        if (Object.keys(map).length === 0) {
+          sessionStorage.removeItem(key);
+        } else {
+          sessionStorage.setItem(key, JSON.stringify(map));
+        }
+      } else {
+        sessionStorage.removeItem(key);
+      }
+    } catch {
+      sessionStorage.removeItem(key);
+    }
+  };
+
+  // Warn if leaving page with unconfirmed background saves
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (pendingCountRef.current > 0) {
+        e.preventDefault();
+        e.returnValue =
+          "Đánh giá SRS đang được lưu lên hệ thống. Đóng trang lúc này có thể làm gián đoạn quá trình lưu.";
+        return e.returnValue;
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
+
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
       try {
         const raw = sessionStorage.getItem(key);
         if (raw) {
-          const parsed = reviewInput.safeParse(JSON.parse(raw));
-          if (!parsed.success) throw Error();
-          setRecovery(parsed.data);
-          setError({
-            code: "RECOVERY",
-            message:
-              "Có đánh giá chưa xác nhận. Thử lại đúng yêu cầu cũ để kiểm tra kết quả đã lưu.",
-            retryable: true,
-            outcomeUnknown: true,
-          });
+          const parsedRaw = JSON.parse(raw);
+          const single = reviewInput.safeParse(parsedRaw);
+          const candidate = single.success
+            ? single.data
+            : typeof parsedRaw === "object" && parsedRaw !== null
+              ? Object.values(parsedRaw)
+                  .map((v) => reviewInput.safeParse(v))
+                  .find((p) => p.success)?.data
+              : null;
+          if (candidate) {
+            setRecovery(candidate);
+            setError({
+              code: "RECOVERY",
+              message:
+                "Có đánh giá chưa xác nhận từ phiên trước. Thử lại đúng yêu cầu cũ để kiểm tra kết quả đã lưu.",
+              retryable: true,
+              outcomeUnknown: true,
+            });
+          }
         }
       } catch {
         setError({
@@ -93,7 +152,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
     setError(null);
 
     try {
-      sessionStorage.setItem(key, JSON.stringify(input));
+      savePendingInput(input);
     } catch {
       busy.current = false;
       setError({
@@ -110,6 +169,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
     if (hasNextCard) {
       // 1. OPTIMISTIC INSTANT TRANSITION (< 15ms): Advance to next card in current batch
       const currentInput = input;
+      pendingCountRef.current++;
       setView((prev) => ({
         ...prev,
         cards: prev.cards.slice(1),
@@ -125,26 +185,28 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       saveQueue.current = saveQueue.current
         .then(async () => {
           const result = await submit(currentInput);
+          pendingCountRef.current = Math.max(0, pendingCountRef.current - 1);
           if (result.ok) {
-            sessionStorage.removeItem(key);
+            removePendingInput(currentInput.cardId);
             setSaveStatus({ state: "saved", text: "Đã lưu", cardId: currentInput.cardId });
             setNextDue(result.receipt.nextDueAt);
             setTimeout(() => {
               setSaveStatus((s) => (s.cardId === currentInput.cardId && s.state === "saved" ? { state: "idle" } : s));
             }, 2000);
           } else {
-            sessionStorage.setItem(key, JSON.stringify(currentInput));
+            savePendingInput(currentInput);
             setRecovery(currentInput);
             setError(result.error);
             setSaveStatus({ state: "error", text: "Lỗi lưu", cardId: currentInput.cardId });
             if (!result.error.outcomeUnknown) {
-              sessionStorage.removeItem(key);
+              removePendingInput(currentInput.cardId);
               setRecovery(null);
             }
           }
         })
         .catch(() => {
-          sessionStorage.setItem(key, JSON.stringify(currentInput));
+          pendingCountRef.current = Math.max(0, pendingCountRef.current - 1);
+          savePendingInput(currentInput);
           setRecovery(currentInput);
           setSaveStatus({ state: "error", text: "Mất kết nối", cardId: currentInput.cardId });
           setError({
@@ -158,12 +220,13 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
     } else {
       // Final card of the session: Await queue to complete and finalize session with server view
       setPending(true);
+      pendingCountRef.current++;
       setSaveStatus({ state: "saving", text: "Đang hoàn tất phiên ôn..." });
       try {
         await saveQueue.current;
         const result = await submit(input);
         if (result.ok) {
-          sessionStorage.removeItem(key);
+          removePendingInput(input.cardId);
           setRecovery(null);
           setView(result.view);
           setFlipped(false);
@@ -174,7 +237,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           setError(result.error);
           setSaveStatus({ state: "error", text: "Lỗi lưu", cardId: input.cardId });
           if (!result.error.outcomeUnknown) {
-            sessionStorage.removeItem(key);
+            removePendingInput(input.cardId);
             setRecovery(null);
           }
         }
@@ -187,6 +250,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           outcomeUnknown: true,
         });
       } finally {
+        pendingCountRef.current = Math.max(0, pendingCountRef.current - 1);
         busy.current = false;
         setPending(false);
       }

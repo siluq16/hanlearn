@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   BookOpen,
@@ -13,6 +13,8 @@ import {
   Layers,
   ChevronDown,
   ChevronUp,
+  Search,
+  X,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +26,7 @@ interface PracticeCenterProps {
   initialSkill?: string;
   initialUnit?: string;
   initialDiff?: string;
+  initialQuery?: string;
   practiceSets: PracticeSet[];
   learnerHistory: Record<string, { bestScore: number; total: number; completedAt: string }>;
 }
@@ -76,6 +79,7 @@ export function PracticeCenter({
   initialSkill,
   initialUnit,
   initialDiff,
+  initialQuery,
   practiceSets,
   learnerHistory,
 }: PracticeCenterProps) {
@@ -94,32 +98,97 @@ export function PracticeCenter({
     resolveUnitId(initialUnit)
   );
   const [selectedDiff, setSelectedDiff] = useState<string>(initialDiff || "all");
+  const [searchQuery, setSearchQuery] = useState<string>(initialQuery || "");
   const [collapsedUnits, setCollapsedUnits] = useState<Record<string, boolean>>({});
 
-  const updateUrlState = (skill: PracticeSkill, unit: string, diff: string) => {
+  // Sync with browser Back/Forward (popstate)
+  useEffect(() => {
+    const handlePopState = () => {
+      if (typeof window === "undefined") return;
+      const sp = new URLSearchParams(window.location.search);
+      const sk = (sp.get("skill") as PracticeSkill) || "vocabulary";
+      const u = resolveUnitId(sp.get("unit") || undefined);
+      const df = sp.get("diff") || "all";
+      const q = sp.get("q") || "";
+      setSelectedSkill(sk);
+      setSelectedUnit(u);
+      setSelectedDiff(df);
+      setSearchQuery(q);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Restore scroll position when returning from practice set
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const savedScroll = sessionStorage.getItem("hanlearn-practice-scroll");
+    if (savedScroll !== null) {
+      sessionStorage.removeItem("hanlearn-practice-scroll");
+      const y = parseInt(savedScroll, 10);
+      if (!isNaN(y)) {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: y, behavior: "instant" });
+        });
+      }
+    }
+  }, []);
+
+  const updateUrlState = (
+    skill: PracticeSkill,
+    unit: string,
+    diff: string,
+    q: string,
+    pushHistory = true
+  ) => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams();
     if (skill !== "vocabulary") params.set("skill", skill);
     if (unit !== "all") params.set("unit", unit);
     if (diff !== "all") params.set("diff", diff);
+    if (q.trim()) params.set("q", q.trim());
     const qs = params.toString();
     const newUrl = qs ? `/practice?${qs}` : "/practice";
-    window.history.replaceState(null, "", newUrl);
+    if (pushHistory) {
+      window.history.pushState(null, "", newUrl);
+    } else {
+      window.history.replaceState(null, "", newUrl);
+    }
   };
 
   const handleSelectSkill = (skill: PracticeSkill) => {
     setSelectedSkill(skill);
-    updateUrlState(skill, selectedUnit, selectedDiff);
+    updateUrlState(skill, selectedUnit, selectedDiff, searchQuery, true);
   };
 
   const handleSelectUnit = (unit: string) => {
     setSelectedUnit(unit);
-    updateUrlState(selectedSkill, unit, selectedDiff);
+    if (unit !== "all") {
+      setCollapsedUnits((prev) => ({ ...prev, [unit]: false }));
+    }
+    updateUrlState(selectedSkill, unit, selectedDiff, searchQuery, true);
   };
 
   const handleSelectDiff = (diff: string) => {
     setSelectedDiff(diff);
-    updateUrlState(selectedSkill, selectedUnit, diff);
+    updateUrlState(selectedSkill, selectedUnit, diff, searchQuery, true);
+  };
+
+  const handleSearchChange = (q: string) => {
+    setSearchQuery(q);
+    updateUrlState(selectedSkill, selectedUnit, selectedDiff, q, false);
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery("");
+    updateUrlState(selectedSkill, selectedUnit, selectedDiff, "", true);
+  };
+
+  const handleRecordScroll = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("hanlearn-practice-scroll", window.scrollY.toString());
+    }
   };
 
   const toggleUnit = (unitId: string) => {
@@ -130,6 +199,15 @@ export function PracticeCenter({
     if (s.skill !== selectedSkill) return false;
     if (selectedUnit !== "all" && s.unit_id !== selectedUnit) return false;
     if (selectedDiff !== "all" && s.difficulty !== selectedDiff) return false;
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      const meta = getPracticeSetMeta(s.practice_set_id);
+      const matchTitle = meta.shortTitle.toLowerCase().includes(q);
+      const matchCode = meta.setCode.toLowerCase().includes(q);
+      const matchDesc = meta.description.toLowerCase().includes(q);
+      const matchId = s.practice_set_id.toLowerCase().includes(q);
+      if (!matchTitle && !matchCode && !matchDesc && !matchId) return false;
+    }
     return true;
   });
 
@@ -177,46 +255,69 @@ export function PracticeCenter({
       </div>
 
       {/* Active Skill Info & Filters */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-muted/40 border border-border">
-        <div className="space-y-0.5">
-          <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
-            <span>Kỹ năng: {currentSkillInfo.label}</span>
-            <Badge className="border border-border bg-transparent text-[10px] font-semibold">
-              {filteredSets.length} bộ bài có sẵn
-            </Badge>
-          </h3>
-          <p className="text-xs text-muted-foreground max-w-lg">
-            {currentSkillInfo.description}
-          </p>
+      <div className="flex flex-col gap-4 p-4 rounded-2xl bg-muted/40 border border-border">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-0.5">
+            <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+              <span>Kỹ năng: {currentSkillInfo.label}</span>
+              <Badge className="border border-border bg-transparent text-[10px] font-semibold">
+                {filteredSets.length} bộ bài có sẵn
+              </Badge>
+            </h3>
+            <p className="text-xs text-muted-foreground max-w-lg">
+              {currentSkillInfo.description}
+            </p>
+          </div>
+
+          {/* Filters */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Unit Filter */}
+            <select
+              value={selectedUnit}
+              onChange={(e) => handleSelectUnit(e.target.value)}
+              className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
+            >
+              <option value="all">Tất cả các Unit</option>
+              {UNIFIED_UNITS.map((u) => (
+                <option key={u.id} value={u.id}>
+                  {u.fullTitle}
+                </option>
+              ))}
+            </select>
+
+            {/* Difficulty Filter */}
+            <select
+              value={selectedDiff}
+              onChange={(e) => handleSelectDiff(e.target.value)}
+              className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
+            >
+              <option value="all">Tất cả độ khó</option>
+              <option value="easy">Dễ (Cơ bản)</option>
+              <option value="medium">Trung bình</option>
+              <option value="hard">Nâng cao</option>
+            </select>
+          </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap items-center gap-2">
-          {/* Unit Filter */}
-          <select
-            value={selectedUnit}
-            onChange={(e) => handleSelectUnit(e.target.value)}
-            className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
-          >
-            <option value="all">Tất cả các Unit</option>
-            {UNIFIED_UNITS.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.fullTitle}
-              </option>
-            ))}
-          </select>
-
-          {/* Difficulty Filter */}
-          <select
-            value={selectedDiff}
-            onChange={(e) => handleSelectDiff(e.target.value)}
-            className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
-          >
-            <option value="all">Tất cả độ khó</option>
-            <option value="easy">Dễ (Cơ bản)</option>
-            <option value="medium">Trung bình</option>
-            <option value="hard">Nâng cao</option>
-          </select>
+        {/* Search input */}
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground pointer-events-none" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => handleSearchChange(e.target.value)}
+            placeholder="Tìm kiếm bộ bài tập theo tên hoặc nội dung..."
+            className="w-full h-8 pl-9 pr-8 rounded-lg border border-border bg-card text-xs placeholder:text-muted-foreground text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={handleClearSearch}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            >
+              <X className="size-3.5" />
+            </button>
+          )}
         </div>
       </div>
 
@@ -355,7 +456,8 @@ export function PracticeCenter({
 
                                 <Link
                                   href={`/practice/${set.practice_set_id}`}
-                                  prefetch={true}
+                                  prefetch={false}
+                                  onClick={handleRecordScroll}
                                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
                                 >
                                   <span>{isDone ? "Luyện lại" : "Bắt đầu"}</span>
