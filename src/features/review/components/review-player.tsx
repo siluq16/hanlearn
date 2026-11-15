@@ -79,10 +79,16 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
   }, [card?.id]);
   async function send(input: ReviewInput) {
     stopMandarin();
-    if (busy.current || !ready || !enabled) return;
+    if (busy.current || pending || !ready || !enabled) return;
+    busy.current = true;
+    setPending(true);
+    setRecovery(input);
+    setError(null);
     try {
       sessionStorage.setItem(key, JSON.stringify(input));
     } catch {
+      busy.current = false;
+      setPending(false);
       setError({
         code: "STORAGE",
         message: "Không lưu được yêu cầu retry. Chưa gửi đánh giá.",
@@ -91,10 +97,6 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       });
       return;
     }
-    busy.current = true;
-    setPending(true);
-    setRecovery(input);
-    setError(null);
     try {
       const result = await submit(input);
       if (result.ok) {
@@ -269,15 +271,17 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                       : card.hanzi.length <= 4
                         ? "hanzi text-3xl sm:text-5xl text-foreground"
                         : "hanzi text-2xl sm:text-4xl text-foreground"
-                    : card.meaning.length <= 25
+                    : (card.prompt || card.meaning).length <= 25
                       ? "text-xl sm:text-2xl font-bold text-foreground"
-                      : card.meaning.length <= 60
+                      : (card.prompt || card.meaning).length <= 60
                         ? "text-base sm:text-xl font-semibold text-foreground"
                         : "text-sm sm:text-base font-medium text-foreground"
                 }`}
                 lang={card.direction === "hanzi_to_vi" ? "zh-Hans" : "vi"}
               >
-                {card.direction === "hanzi_to_vi" ? card.hanzi : card.meaning}
+                {card.direction === "hanzi_to_vi"
+                  ? card.hanzi
+                  : (card.prompt || card.meaning)}
               </h2>
 
               {!flipped ? (
@@ -335,6 +339,18 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                   <div className="flex justify-center pt-1">
                     <MandarinAudioBar text={card.hanzi} />
                   </div>
+
+                  {card.notes && (
+                    <div
+                      data-review-notes
+                      className="space-y-1 rounded-xl bg-muted/40 border border-border/50 p-3 sm:p-4 text-left text-xs sm:text-sm leading-relaxed"
+                    >
+                      <span className="font-semibold text-primary block">
+                        Ghi chú &amp; cách dùng:
+                      </span>
+                      <p className="text-muted-foreground">{card.notes}</p>
+                    </div>
+                  )}
 
                   {card.example && (
                     <div className="space-y-1.5 rounded-xl bg-muted/40 border border-border/50 p-3 sm:p-4 text-left text-xs sm:text-sm leading-relaxed">

@@ -33,6 +33,8 @@ export type ReviewCard = {
   hanzi: string;
   pinyin: string;
   meaning: string;
+  prompt?: string;
+  notes?: string | null;
   example: {
     hanzi: string;
     pinyin: string | null;

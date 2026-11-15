@@ -4,6 +4,7 @@ import { z } from "zod";
 import { requireLearner } from "@/features/auth/session";
 import { DataError, readAll } from "@/lib/data";
 import { vietnamDayBounds, type ReviewView } from "./contracts";
+import { sanitizeCardPrompt } from "./hint-sanitizer";
 const cardSchema = z
   .object({
     id: z.uuid(),
@@ -103,6 +104,7 @@ export async function getReviewView(): Promise<ReviewView> {
       .digest("hex"),
     cards: textCards.slice(0, 20).map((c) => {
       const w = readable.get(c.vocabulary_id)!;
+      const sanitized = sanitizeCardPrompt(w.meaning_vi);
       return {
         id: c.id,
         vocabularyId: w.id,
@@ -111,6 +113,8 @@ export async function getReviewView(): Promise<ReviewView> {
         hanzi: w.simplified,
         pinyin: w.pinyin_marked,
         meaning: w.meaning_vi,
+        prompt: sanitized.prompt,
+        notes: sanitized.notes,
         example: w.example_zh
           ? {
               hanzi: w.example_zh,

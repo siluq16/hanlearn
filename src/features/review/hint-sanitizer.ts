@@ -1,0 +1,47 @@
+/**
+ * Sanitizes the front prompt for Việt → Hán SRS Flashcards to prevent answer leaks.
+ * - Extracts clean core meaning for the front prompt (no Hanzi, no pronunciation hints).
+ * - Preserves grammar, usage, and pronunciation notes for display on the card back.
+ */
+export function sanitizeCardPrompt(
+  meaningVi: string
+): { prompt: string; notes: string | null } {
+  if (!meaningVi) return { prompt: "", notes: null };
+
+  const parts = meaningVi.split(";").map((p) => p.trim()).filter(Boolean);
+  const promptParts: string[] = [];
+  const noteParts: string[] = [];
+
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    const hasHanzi = /[\u4e00-\u9fa5]/.test(part);
+    const hasNoteKeywords =
+      /^(thường đọc|trong bài|dùng trong|phân biệt|còn có nghĩa|ở cách dùng|đơn vị chỉ|trong cách nói|không dùng|khi đếm)/i.test(
+        part
+      );
+    const hasPronunciationNote = /đọc\s+(nhẹ|biến điệu|thành)/i.test(part);
+
+    if (i > 0 && (hasHanzi || hasNoteKeywords || hasPronunciationNote)) {
+      noteParts.push(part);
+    } else if (i === 0 && (hasHanzi || hasPronunciationNote)) {
+      const clean = part
+        .replace(/[\u4e00-\u9fa5]+/g, "…")
+        .replace(/đọc\s+(nhẹ|biến điệu)\s+\w+/gi, "")
+        .trim();
+      promptParts.push(clean);
+      noteParts.push(part);
+    } else {
+      promptParts.push(part);
+    }
+  }
+
+  let prompt = promptParts.join("; ").trim();
+  if (/[\u4e00-\u9fa5]/.test(prompt)) {
+    prompt = prompt.replace(/[\u4e00-\u9fa5]+/g, "…").trim();
+  }
+
+  return {
+    prompt: prompt || meaningVi,
+    notes: noteParts.length > 0 ? noteParts.join("; ") : null,
+  };
+}
