@@ -319,9 +319,14 @@ async function main() {
         await navPills.nth(3).click();
         await page.waitForTimeout(300);
 
-        // Answer question 4
+        // Answer question 4: select choice, verify it's selected, then click "Kiểm tra"
         const choice = page.locator("div.space-y-2\\.5 button").first();
         await choice.click();
+        await page.waitForTimeout(300);
+
+        // Click "Kiểm tra" to check answer
+        const checkBtn = page.getByRole("button", { name: /^Kiểm tra/i }).first();
+        await checkBtn.click();
         await page.waitForTimeout(300);
 
         // While active, pill 4 shows the green indicator dot
@@ -340,12 +345,19 @@ async function main() {
         // Verify answer 没关系 is NOT leaked as an obvious standalone card before answering
         const hasLeakedStimulus = (await page.locator("div.text-center.py-3 p.hanzi:has-text('没关系')").count()) > 0;
         record("practice_no_answer_leakage", !hasLeakedStimulus, "Target answer 没关系 is NOT leaked in stimulus before answer selection");
-        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_before_answer.png") });
 
         // Select Choice A on Question 5
         const choice5 = page.locator("div.space-y-2\\.5 button").first();
         await choice5.click();
         await page.waitForTimeout(300);
+        // Before clicking check: take practice_before_answer.png
+        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_before_answer.png") });
+
+        // Click "Kiểm tra" to evaluate answer
+        const checkBtn5 = page.getByRole("button", { name: /^Kiểm tra/i }).first();
+        await checkBtn5.click();
+        await page.waitForTimeout(300);
+        // After clicking check: take practice_after_answer.png
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_after_answer.png") });
 
         // Screenshot Question Navigator showing active, completed, and skipped states
@@ -379,8 +391,10 @@ async function main() {
         // Open mobile passage modal
         await mobileDrawerBtn.click();
         await page.waitForTimeout(300);
-        const modalHeading = await page.locator(".fixed.inset-0 h3").first().isVisible();
-        record("reading_mobile_drawer_open", modalHeading, "Mobile reading modal opens cleanly");
+        const hasFullScreenSheet = await page.locator("div.fixed.inset-0.z-50").first().isVisible();
+        const hasAudioBtn = await page.locator("div.fixed.inset-0.z-50 button[data-mandarin-audio-btn='true']").isVisible();
+        const hasToggleTransBtn = (await page.locator("div.fixed.inset-0.z-50 button:has-text('Bản dịch'), div.fixed.inset-0.z-50 button:has-text('Ẩn Dịch')").count()) > 0;
+        record("reading_mobile_drawer_open", hasFullScreenSheet && hasAudioBtn && hasToggleTransBtn, "Mobile reading full-screen sheet opens cleanly with audio and translation controls");
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_reading_drawer_mobile.png") });
 
         // Close mobile passage modal

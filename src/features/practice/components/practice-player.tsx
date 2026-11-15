@@ -137,13 +137,18 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   const cleanForComparison = (str?: string) =>
     (str || "").toLowerCase().replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
 
-  // Multiple Choice Selection
+  // Multiple Choice Selection (allows changing selection before checking)
   const handleSelectChoice = (cIdx: number) => {
     if (isCurrentChecked) return;
     setUserAnswers((prev) => ({ ...prev, [currentIndex]: cIdx }));
+  };
+
+  // Multiple Choice Check (explicit "Kiểm tra" button)
+  const handleCheckChoice = () => {
+    if (currentSelectedChoice === null || isCurrentChecked) return;
     setIsAnswerCheckedMap((prev) => ({ ...prev, [currentIndex]: true }));
 
-    const isCorrect = currentQ && currentQ.correct_index === cIdx;
+    const isCorrect = currentQ && currentQ.correct_index === currentSelectedChoice;
     setScoreMap((prev) => ({ ...prev, [currentIndex]: !!isCorrect }));
     setQuestionStatuses((prev) => ({ ...prev, [currentIndex]: "completed" }));
   };
@@ -205,10 +210,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       cleanUser === cleanTarget ||
       Boolean(
         currentQ.acceptedAnswers &&
-          Array.isArray(currentQ.acceptedAnswers) &&
-          currentQ.acceptedAnswers.some(
-            (alt: string) => cleanUser === cleanForComparison(alt)
-          )
+        Array.isArray(currentQ.acceptedAnswers) &&
+        currentQ.acceptedAnswers.some(
+          (alt: string) => cleanUser === cleanForComparison(alt)
+        )
       );
 
     setScoreMap((prev) => ({ ...prev, [currentIndex]: isCorrect }));
@@ -248,7 +253,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       const finalScore = isDialogue || isSpeaking ? totalCount : totalCorrect;
       setIsFinished(true);
       savePracticeAttempt(practiceSet.practice_set_id, finalScore, totalCount, practiceSet.skill).catch(
-        () => {}
+        () => { }
       );
     }
   };
@@ -318,11 +323,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   key={r}
                   type="button"
                   onClick={() => setSelectedRole(r)}
-                  className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                    selectedRole === r
-                      ? "bg-primary text-primary-foreground shadow-xs"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
-                  }`}
+                  className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${selectedRole === r
+                    ? "bg-primary text-primary-foreground shadow-xs"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
                 >
                   {r === "A" ? "Đóng vai A" : r === "B" ? "Đóng vai B" : "Tất cả các vai"}
                 </button>
@@ -337,11 +341,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
               return (
                 <div
                   key={tIdx}
-                  className={`p-4 rounded-2xl border transition-all space-y-2 ${
-                    isMyTurn
-                      ? "border-primary/40 bg-primary/5 ml-4 sm:ml-8 ring-1 ring-primary/20"
-                      : "border-border bg-card mr-4 sm:mr-8"
-                  }`}
+                  className={`p-4 rounded-2xl border transition-all space-y-2 ${isMyTurn
+                    ? "border-primary/40 bg-primary/5 ml-4 sm:ml-8 ring-1 ring-primary/20"
+                    : "border-border bg-card mr-4 sm:mr-8"
+                    }`}
                 >
                   <div className="flex items-center justify-between gap-2">
                     <span className={`text-xs font-bold ${isMyTurn ? "text-primary" : "text-muted-foreground"}`}>
@@ -373,7 +376,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
               <Button
                 type="button"
                 onClick={() => {
-                  savePracticeAttempt(practiceSet.practice_set_id, totalCount, totalCount, "dialogue").catch(() => {});
+                  savePracticeAttempt(practiceSet.practice_set_id, totalCount, totalCount, "dialogue").catch(() => { });
                   setIsFinished(true);
                 }}
                 className="gap-2 text-xs font-semibold px-6"
@@ -477,9 +480,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   setAudioSpeed(1.0);
                   setPreferredRate(1.0);
                 }}
-                className={`px-2 py-0.5 rounded font-semibold transition-all ${
-                  audioSpeed === 1.0 ? "bg-card text-foreground shadow-2xs" : "text-muted-foreground"
-                }`}
+                className={`px-2 py-0.5 rounded font-semibold transition-all ${audioSpeed === 1.0 ? "bg-card text-foreground shadow-2xs" : "text-muted-foreground"
+                  }`}
               >
                 1.0x
               </button>
@@ -489,9 +491,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   setAudioSpeed(0.55);
                   setPreferredRate(0.55);
                 }}
-                className={`px-2 py-0.5 rounded font-semibold transition-all ${
-                  audioSpeed === 0.55 ? "bg-card text-foreground shadow-2xs" : "text-muted-foreground"
-                }`}
+                className={`px-2 py-0.5 rounded font-semibold transition-all ${audioSpeed === 0.55 ? "bg-card text-foreground shadow-2xs" : "text-muted-foreground"
+                  }`}
               >
                 0.55x (Chậm)
               </button>
@@ -573,36 +574,65 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
             <Maximize2 className="size-3.5 ml-auto" />
           </Button>
 
-          {/* Mobile Reading Modal / Drawer */}
+          {/* Full-Screen Reading Sheet / Modal */}
           {isMobilePassageOpen && (
-            <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm p-4 flex items-center justify-center animate-in fade-in">
-              <div className="bg-card border border-border rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto p-5 space-y-4 shadow-2xl">
-                <div className="flex items-center justify-between pb-2 border-b border-border">
-                  <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
-                    <BookOpen className="size-4 text-primary" />
+            <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex flex-col animate-in fade-in">
+              {/* Sheet Header */}
+              <div className="p-3.5 sm:p-4 border-b border-border bg-card flex items-center justify-between gap-2 shadow-xs shrink-0">
+                <div className="flex items-center gap-2 truncate">
+                  <div className="size-8 rounded-lg bg-primary/10 text-primary grid place-items-center shrink-0">
+                    <BookOpen className="size-4" />
+                  </div>
+                  <span className="text-xs sm:text-sm font-bold text-foreground truncate">
                     {sharedPassage.title}
-                  </h3>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0">
+                  <MandarinAudioButton text={sharedPassage.text} size="sm" />
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowVi(!showVi)}
+                    className="text-[11px] h-7 px-2"
+                  >
+                    {showVi ? "Ẩn Dịch" : "Bản dịch"}
+                  </Button>
                   <button
                     type="button"
                     onClick={() => setIsMobilePassageOpen(false)}
-                    className="size-7 grid place-items-center rounded-lg hover:bg-muted text-muted-foreground"
+                    className="size-8 grid place-items-center rounded-xl bg-muted text-muted-foreground hover:text-foreground"
+                    title="Đóng bài đọc"
                   >
                     <X className="size-4" />
                   </button>
                 </div>
-                <div className="space-y-3 font-serif text-sm leading-relaxed text-foreground whitespace-pre-line">
+              </div>
+
+              {/* Sheet Scrollable Reading Content */}
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5">
+                <div className="hanzi text-lg sm:text-xl font-serif font-medium leading-loose text-foreground whitespace-pre-line bg-card/60 p-5 rounded-2xl border border-border shadow-xs">
                   {sharedPassage.text}
                 </div>
-                <div className="pt-2 border-t border-border flex justify-end">
-                  <Button
-                    type="button"
-                    size="sm"
-                    onClick={() => setIsMobilePassageOpen(false)}
-                    className="text-xs font-semibold px-4"
-                  >
-                    Đóng và làm câu hỏi
-                  </Button>
-                </div>
+
+                {showVi && sharedPassage.translationVi && (
+                  <div className="p-4 rounded-xl bg-muted/40 border border-border text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-semibold block mb-1 text-foreground">Dịch nghĩa tham khảo:</span>
+                    {sharedPassage.translationVi}
+                  </div>
+                )}
+              </div>
+
+              {/* Sheet Footer */}
+              <div className="p-3.5 border-t border-border bg-card pb-[max(0.875rem,env(safe-area-inset-bottom))] shrink-0">
+                <Button
+                  type="button"
+                  onClick={() => setIsMobilePassageOpen(false)}
+                  className="w-full min-h-11 rounded-xl text-xs sm:text-sm font-semibold"
+                >
+                  Đóng và làm câu hỏi
+                </Button>
               </div>
             </div>
           )}
@@ -723,15 +753,14 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                             type="button"
                             disabled={isMatched || isCurrentChecked}
                             onClick={() => handleSelectMatchingLeft(idx)}
-                            className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-semibold transition-all ${
-                              isMatched
-                                ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 opacity-60 cursor-not-allowed"
-                                : isMismatched
-                                  ? "border-rose-500 ring-2 ring-rose-500 bg-rose-500/15 text-rose-600 animate-shake"
-                                  : isSelected
-                                    ? "border-primary ring-2 ring-primary bg-primary/10 text-primary shadow-xs"
-                                    : "border-border bg-card text-foreground hover:bg-muted/70 shadow-2xs"
-                            }`}
+                            className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-semibold transition-all ${isMatched
+                              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 opacity-60 cursor-not-allowed"
+                              : isMismatched
+                                ? "border-rose-500 ring-2 ring-rose-500 bg-rose-500/15 text-rose-600 animate-shake"
+                                : isSelected
+                                  ? "border-primary ring-2 ring-primary bg-primary/10 text-primary shadow-xs"
+                                  : "border-border bg-card text-foreground hover:bg-muted/70 shadow-2xs"
+                              }`}
                           >
                             <span className="truncate block">{p.left}</span>
                           </button>
@@ -755,15 +784,14 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                             type="button"
                             disabled={isMatched || selectedLeftIdx === null || isCurrentChecked}
                             onClick={() => handleSelectMatchingRight(origIdx)}
-                            className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-medium transition-all ${
-                              isMatched
-                                ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 opacity-60 cursor-not-allowed"
-                                : isMismatched
-                                  ? "border-rose-500 ring-2 ring-rose-500 bg-rose-500/15 text-rose-600 animate-shake"
-                                  : selectedLeftIdx !== null
-                                    ? "border-primary/40 bg-card text-foreground hover:bg-primary/5 hover:border-primary cursor-pointer shadow-2xs"
-                                    : "border-border bg-card text-foreground cursor-default opacity-80"
-                            }`}
+                            className={`w-full p-3 rounded-xl border text-left text-xs sm:text-sm font-medium transition-all ${isMatched
+                              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 opacity-60 cursor-not-allowed"
+                              : isMismatched
+                                ? "border-rose-500 ring-2 ring-rose-500 bg-rose-500/15 text-rose-600 animate-shake"
+                                : selectedLeftIdx !== null
+                                  ? "border-primary/40 bg-card text-foreground hover:bg-primary/5 hover:border-primary cursor-pointer shadow-2xs"
+                                  : "border-border bg-card text-foreground cursor-default opacity-80"
+                              }`}
                           >
                             <span className="truncate block">{p.right}</span>
                           </button>
@@ -776,46 +804,60 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
               {/* MODE 1: MULTIPLE CHOICE */}
               {currentQ?.choices && currentQ.choices.length > 0 && (
-                <div className="space-y-2.5">
-                  {currentQ.choices.map((choice, cIdx) => {
-                    const isSelected = currentSelectedChoice === cIdx;
-                    const isCorrect = currentQ.correct_index === cIdx;
-                    const showCorrect = isCurrentChecked && isCorrect;
-                    const showWrong = isCurrentChecked && isSelected && !isCorrect;
+                <div className="space-y-3">
+                  <div className="space-y-2.5">
+                    {currentQ.choices.map((choice, cIdx) => {
+                      const isSelected = currentSelectedChoice === cIdx;
+                      const isCorrect = currentQ.correct_index === cIdx;
+                      const showCorrect = isCurrentChecked && isCorrect;
+                      const showWrong = isCurrentChecked && isSelected && !isCorrect;
 
-                    return (
-                      <button
-                        key={cIdx}
-                        type="button"
-                        disabled={isCurrentChecked}
-                        onClick={() => handleSelectChoice(cIdx)}
-                        className={`flex w-full items-center gap-3.5 p-3.5 rounded-xl border text-left text-sm transition-all ${
-                          showCorrect
+                      return (
+                        <button
+                          key={cIdx}
+                          type="button"
+                          disabled={isCurrentChecked}
+                          onClick={() => handleSelectChoice(cIdx)}
+                          className={`flex w-full items-center gap-3.5 p-3.5 rounded-xl border text-left text-sm transition-all ${showCorrect
                             ? "border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-semibold"
                             : showWrong
                               ? "border-red-500 bg-red-500/15 text-red-600 dark:text-red-400 font-semibold"
                               : isSelected
-                                ? "border-primary bg-primary/10 text-primary font-semibold"
+                                ? "border-primary bg-primary/10 text-primary font-semibold ring-2 ring-primary/20 shadow-xs"
                                 : "border-border bg-card text-foreground hover:bg-muted/70 shadow-2xs"
-                        }`}
-                      >
-                        <span
-                          className={`grid size-7 shrink-0 place-items-center rounded-lg text-xs font-bold ${
-                            showCorrect
+                            }`}
+                        >
+                          <span
+                            className={`grid size-7 shrink-0 place-items-center rounded-lg text-xs font-bold ${showCorrect
                               ? "bg-emerald-500 text-white"
                               : showWrong
                                 ? "bg-red-500 text-white"
-                                : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          {["A", "B", "C", "D"][cIdx] || `${cIdx + 1}`}
-                        </span>
-                        <span className="min-w-0 flex-1 leading-snug">{choice}</span>
-                        {showCorrect && <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />}
-                        {showWrong && <XCircle className="size-4 text-red-500 shrink-0" />}
-                      </button>
-                    );
-                  })}
+                                : isSelected
+                                  ? "bg-primary text-white"
+                                  : "bg-muted text-muted-foreground"
+                              }`}
+                          >
+                            {["A", "B", "C", "D"][cIdx] || `${cIdx + 1}`}
+                          </span>
+                          <span className="min-w-0 flex-1 leading-snug">{choice}</span>
+                          {showCorrect && <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />}
+                          {showWrong && <XCircle className="size-4 text-red-500 shrink-0" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {!isCurrentChecked && currentSelectedChoice !== null && (
+                    <div className="flex justify-end pt-1">
+                      <Button
+                        type="button"
+                        onClick={handleCheckChoice}
+                        className="text-xs font-semibold px-5"
+                      >
+                        Kiểm tra đáp án
+                      </Button>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -887,11 +929,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                                 [currentIndex]: [...orderedTokenIndices, tIdx],
                               }));
                             }}
-                            className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
-                              isPicked
-                                ? "border-dashed border-border/40 text-muted-foreground/30 bg-muted/20 cursor-not-allowed"
-                                : "border-border bg-card text-foreground hover:bg-muted shadow-xs active:scale-95"
-                            }`}
+                            className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${isPicked
+                              ? "border-dashed border-border/40 text-muted-foreground/30 bg-muted/20 cursor-not-allowed"
+                              : "border-border bg-card text-foreground hover:bg-muted shadow-xs active:scale-95"
+                              }`}
                           >
                             {tok}
                           </button>
@@ -1017,21 +1058,34 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   </Button>
                 )}
 
-                <Button
-                  type="button"
-                  size="sm"
-                  onClick={handleNextOrFinish}
-                  className="gap-1.5 text-xs font-semibold px-4"
-                >
-                  <span>
-                    {currentIndex === totalCount - 1
-                      ? isCurrentChecked
-                        ? "Xem kết quả"
-                        : "Hoàn thành"
-                      : "Câu tiếp theo"}
-                  </span>
-                  <ChevronRight className="size-4" />
-                </Button>
+                {!isCurrentChecked && currentSelectedChoice !== null && currentQ?.choices ? (
+                  <Button
+                    type="button"
+                    size="sm"
+                    onClick={handleCheckChoice}
+                    className="gap-1.5 text-xs font-semibold px-4"
+                  >
+                    <span>Kiểm tra</span>
+                    <CheckCircle2 className="size-4" />
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    size="sm"
+                    disabled={!isCurrentChecked && currentSelectedChoice === null && !currentQ?.tokens && !currentQ?.pairs}
+                    onClick={handleNextOrFinish}
+                    className="gap-1.5 text-xs font-semibold px-4"
+                  >
+                    <span>
+                      {currentIndex === totalCount - 1
+                        ? isCurrentChecked
+                          ? "Xem kết quả"
+                          : "Hoàn thành"
+                        : "Câu tiếp theo"}
+                    </span>
+                    <ChevronRight className="size-4" />
+                  </Button>
+                )}
               </div>
             </div>
           </Card>
