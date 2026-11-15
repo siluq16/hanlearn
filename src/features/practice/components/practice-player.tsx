@@ -78,6 +78,19 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   // Dialogue roleplay state
   const [selectedRole, setSelectedRole] = useState<"A" | "B" | "ALL">("A");
 
+  // Dynamic return URL preserving active filters (skill, unit, diff, search query)
+  const [returnUrl] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = sessionStorage.getItem("hanlearn-practice-return-url");
+        if (saved && saved.startsWith("/practice")) {
+          return saved;
+        }
+      } catch {}
+    }
+    return `/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`;
+  });
+
   const currentQ = questions[currentIndex];
   const isCurrentChecked = !!isAnswerCheckedMap[currentIndex];
   const currentSelectedChoice = typeof userAnswers[currentIndex] === "number" ? (userAnswers[currentIndex] as number) : null;
@@ -303,7 +316,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       <div className="max-w-2xl mx-auto space-y-6 animate-in fade-in pb-16">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
-            href={`/practice?skill=dialogue&unit=${practiceSet.unit_id}`}
+            href={returnUrl}
             prefetch={false}
             className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
           >
@@ -478,8 +491,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
               <Button asChild className="w-full gap-2 text-xs font-semibold">
                 <Link
-                  href={`/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`}
-                  prefetch={true}
+                  href={returnUrl}
+                  prefetch={false}
                 >
                   <span>Các bộ bài tiếp theo</span>
                   <ArrowRight className="size-4" />
@@ -501,7 +514,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       {/* Top Header & Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
-          href={`/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`}
+          href={returnUrl}
           prefetch={false}
           className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
         >

@@ -191,6 +191,9 @@ export function PracticeCenter({
   const handleRecordScroll = () => {
     if (typeof window !== "undefined") {
       sessionStorage.setItem("hanlearn-practice-scroll", window.scrollY.toString());
+      // Preserve active filters (skill, unit, diff, search query q) in return URL
+      const currentFullUrl = window.location.pathname + window.location.search;
+      sessionStorage.setItem("hanlearn-practice-return-url", currentFullUrl);
     }
   };
 
@@ -205,9 +208,11 @@ export function PracticeCenter({
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
       const meta = getPracticeSetMeta(s.practice_set_id);
-      const matchTitle = meta.shortTitle.toLowerCase().includes(q);
+      const matchTitle =
+        meta.shortTitle.toLowerCase().includes(q) || s.title.toLowerCase().includes(q);
       const matchCode = meta.setCode.toLowerCase().includes(q);
-      const matchDesc = meta.description.toLowerCase().includes(q);
+      const matchDesc =
+        meta.description.toLowerCase().includes(q) || s.description.toLowerCase().includes(q);
       const matchId = s.practice_set_id.toLowerCase().includes(q);
       if (!matchTitle && !matchCode && !matchDesc && !matchId) return false;
     }
