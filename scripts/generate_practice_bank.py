@@ -47,13 +47,25 @@ vocab_sets_meta = [
         {"id": "pv04-4", "type": "fill", "prompt": "Điền từ thích hợp: '这些苹果很甜，味道很____。' (Rất ngon)", "choices": ["好吃", "好看", "好听", "好玩"], "correct_index": 0, "explanation_vi": "'好吃' nghĩa là ngon miệng (dùng cho thức ăn)."},
         {"id": "pv04-5", "type": "fill", "prompt": "Điền từ thích hợp: '早上我吃了两个____和一杯牛奶。' (Bánh bao)", "choices": ["包子", "桌子", "椅子", "本子"], "correct_index": 0, "explanation_vi": "'包子' (bāozi) là bánh bao."}
     ]),
-    ("ps-vocab-05", "u-hsk1-03", "matching", "Bộ 05: Ghép cặp Phương tiện & Địa điểm", "Ghép các cặp từ tương ứng giữa phương tiện di chuyển và trạm dừng.", "medium", [
+    ("ps-vocab-05", "u-hsk1-03", "matching", "Bộ 05: Ghép cặp Phương tiện, Địa điểm & Hoạt động", "Ghép các cặp từ tương ứng giữa phương tiện di chuyển, trạm dừng và hoạt động.", "medium", [
         {"id": "pv05-1", "type": "matching", "prompt": "Ghép cặp phương tiện và địa điểm tương ứng:", "pairs": [
             {"left": "火车 (Tàu hỏa)", "right": "火车站 (Ga tàu)"},
             {"left": "飞机 (Máy bay)", "right": "飞机场 (Sân bay)"},
             {"left": "公共汽车 (Xe buýt)", "right": "车站 (Bến xe)"},
             {"left": "出租车 (Taxi)", "right": "路上 (Trên đường)"}
-        ], "explanation_vi": "Các phương tiện tương ứng với ga, sân bay và bến bãi."}
+        ], "explanation_vi": "Các phương tiện tương ứng với ga, sân bay và bến bãi."},
+        {"id": "pv05-2", "type": "matching", "prompt": "Ghép cặp nghề nghiệp và nơi làm việc:", "pairs": [
+            {"left": "医生 (Bác sĩ)", "right": "医院 (Bệnh viện)"},
+            {"left": "老师 (Giáo viên)", "right": "学校 (Trường học)"},
+            {"left": "服务员 (Phục vụ)", "right": "饭馆 (Quán ăn)"},
+            {"left": "职员 (Nhân viên)", "right": "公司 (Công ty)"}
+        ], "explanation_vi": "Mỗi ngành nghề gắn liền với nơi làm việc tương ứng."},
+        {"id": "pv05-3", "type": "matching", "prompt": "Ghép cặp động từ và tân ngữ thích hợp:", "pairs": [
+            {"left": "吃 (Ăn)", "right": "米饭 (Cơm)"},
+            {"left": "喝 (Uống)", "right": "热茶 (Trà nóng)"},
+            {"left": "看 (Xem)", "right": "电影 (Phim ảnh)"},
+            {"left": "写 (Viết)", "right": "汉字 (Chữ Hán)"}
+        ], "explanation_vi": "Cụm động tân chuẩn xác trong tiếng Trung."}
     ]),
     ("ps-vocab-06", "u-hsk1-03", "audio_recognition", "Bộ 06: Nhận diện từ qua Âm thanh (Thời tiết & Thiên nhiên)", "Nghe phát âm từ vựng và chọn Hán tự tương ứng.", "medium", [
         {"id": "pv06-1", "type": "audio_mcq", "audioText": "下雨", "prompt": "Nghe âm thanh và chọn từ đúng:", "choices": ["下雨 (Mưa)", "下雪 (Tuyết)", "刮风 (Gió)", "晴天 (Nắng)"], "correct_index": 0, "explanation_vi": "Phát âm là 'xiàyǔ' (下雨)."},
@@ -353,6 +365,8 @@ for sid, uid, etype, title, desc, diff, questions in speaking_sets_meta:
     for q in questions:
         if "prompt" not in q:
             q["prompt"] = f"Luyện phát âm chuẩn: {q['hanzi']}\n({q['meaning_vi']})"
+        if "explanation_vi" not in q:
+            q["explanation_vi"] = f"Phát âm: {q.get('pinyin', '')}. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
     practice_sets.append({
         "practice_set_id": sid,
         "course_id": "course-hsk1",
@@ -382,7 +396,8 @@ reading_sets_meta = [
     ]),
     ("ps-read-03", "u-hsk1-03", "passage_qa", "Bộ 03: Thời tiết & Hoạt động Ngoại khóa", "Đọc văn bản miêu tả khí hậu bốn mùa và hoạt động thể thao.", "medium", [
         {"id": "pr03-1", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Thời tiết mùa thu ở Bắc Kinh như thế nào?", "choices": ["Không lạnh cũng không nóng, trời rất xanh", "Rất lạnh và có bão tuyết", "Mưa to kéo dài", "Nóng nực gay gắt"], "correct_index": 0, "explanation_vi": "'不冷也不热，天空很蓝' -> Không lạnh không nóng."},
-        {"id": "pr03-2", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Tác giả và David thích làm gì vào mùa thu?", "choices": ["Đi núi Hương Sơn ngắm lá đỏ và chụp ảnh", "Ở trong ký túc xá học bài", "Đi bơi", "Đi mua sắm ở siêu thị"], "correct_index": 0, "explanation_vi": "'去香山看红叶，拍了很多漂亮的照片' -> Đi ngắm lá đỏ và chụp ảnh."}
+        {"id": "pr03-2", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Tác giả và David thích làm gì vào mùa thu?", "choices": ["Đi núi Hương Sơn ngắm lá đỏ và chụp ảnh", "Ở trong ký túc xá học bài", "Đi bơi", "Đi mua sắm ở siêu thị"], "correct_index": 0, "explanation_vi": "'去香山看红叶，拍了很多漂亮的照片' -> Đi ngắm lá đỏ và chụp ảnh."},
+        {"id": "pr03-3", "type": "mcq", "passage": "北京的秋天最美，不冷也不热，天空很蓝。九月和十月，很多外国朋友来北京旅游。我和大卫喜欢去香山看红叶，我们还拍了很多漂亮的照片。", "prompt": "Vì sao nhiều bạn bè quốc tế thích đến Bắc Kinh vào tháng 9 và tháng 10?", "choices": ["Vì mùa thu Bắc Kinh đẹp nhất trong năm", "Vì có kỳ thi lớn", "Vì chi phí rẻ nhất", "Vì trường học nghỉ hè"], "correct_index": 0, "explanation_vi": "'北京的秋天最美' -> Mùa thu Bắc Kinh đẹp nhất năm."}
     ]),
     ("ps-read-04", "u-hsk1-03", "cloze", "Bộ 04: Điền từ vào Đoạn văn (Đời sống Đại học)", "Chọn từ thích hợp điền vào các vị trí trống trong đoạn văn ngắn.", "medium", [
         {"id": "pr04-1", "type": "fill", "passage": "大卫是我的好朋友。他每天早上七点起床，然后在食堂____早饭。(1)", "prompt": "Chọn từ điền vào vị trí (1):", "choices": ["吃", "喝", "看", "买"], "correct_index": 0, "explanation_vi": "Ăn sáng dùng '吃早饭'."},
@@ -391,18 +406,23 @@ reading_sets_meta = [
     ]),
     ("ps-read-05", "u-hsk1-04", "passage_qa", "Bộ 05: Thói quen Sinh hoạt & Sức khỏe", "Đọc văn bản nói về thời gian biểu sinh hoạt lành mạnh.", "medium", [
         {"id": "pr05-1", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Bác sĩ Trương duy trì sức khỏe bằng những thói quen nào?", "choices": ["Đi bộ buổi sáng, ngủ sớm, uống nhiều nước lọc", "Uống nhiều cà phê đậm đặc", "Ngủ nướng đến trưa", "Không bao giờ tập thể dục"], "correct_index": 0, "explanation_vi": "'早上六点在公园散步，晚上十点前睡觉... 喝很多白开水' -> Đi bộ, ngủ sớm, uống nước."},
-        {"id": "pr05-2", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Bác sĩ Trương khuyên mọi người điều gì?", "choices": ["Vận động nhiều và giữ tâm trạng vui vẻ", "Làm việc thâu đêm", "Uống thuốc bổ mỗi ngày", "Ăn thật nhiều đồ ngọt"], "correct_index": 0, "explanation_vi": "'多运动、心情好，身体就会好' -> Vận động nhiều và tâm trạng tốt."}
+        {"id": "pr05-2", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Bác sĩ Trương khuyên mọi người điều gì?", "choices": ["Vận động nhiều và giữ tâm trạng vui vẻ", "Làm việc thâu đêm", "Uống thuốc bổ mỗi ngày", "Ăn thật nhiều đồ ngọt"], "correct_index": 0, "explanation_vi": "'多运动、心情好，身体就会好' -> Vận động nhiều và tâm trạng tốt."},
+        {"id": "pr05-3", "type": "mcq", "passage": "张医生今年六十岁了，但身体非常健康。他每天早上六点在公园散步，晚上十点前睡觉。他不喝浓茶，也不吸烟，每天都喝很多白开水。他说：多运动、心情好，身体就会好。", "prompt": "Thói quen uống nước của bác sĩ Trương là gì?", "choices": ["Không uống trà đặc, chỉ uống nhiều nước đun sôi để nguội", "Uống rượu mỗi bữa", "Uống nước ngọt có ga", "Chỉ uống nước khi thấy khát"], "correct_index": 0, "explanation_vi": "'不喝浓茶... 每天都喝很多白开水' -> Không uống trà đặc, uống nước lọc."}
     ]),
     ("ps-read-06", "u-hsk1-05", "info_matching", "Bộ 06: Đọc Bảng Tin, Biển báo & Thông báo Ngắn", "Trích xuất thông tin thực tế từ các biển hiệu, thông báo đời sống.", "medium", [
         {"id": "pr06-1", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Thư viện mở cửa lúc mấy giờ vào Chủ nhật?", "choices": ["9:00 sáng", "8:00 sáng", "10:00 sáng", "Đóng cửa cả ngày"], "correct_index": 0, "explanation_vi": "'星期六至星期日 9:00 - 17:00' -> Mở cửa lúc 9:00 sáng."},
-        {"id": "pr06-2", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Hành vi nào bị nghiêm cấm trong thư viện?", "choices": ["Mang thức ăn và nước uống vào bên trong", "Đọc sách tiếng nước ngoài", "Mượn quá hai cuốn sách", "Ngồi một mình"], "correct_index": 0, "explanation_vi": "'禁止带食物和饮料入内' -> Cấm mang thức ăn và nước uống."}
+        {"id": "pr06-2", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Hành vi nào bị nghiêm cấm trong thư viện?", "choices": ["Mang thức ăn và nước uống vào bên trong", "Đọc sách tiếng nước ngoài", "Mượn quá hai cuốn sách", "Ngồi một mình"], "correct_index": 0, "explanation_vi": "'禁止带食物和饮料入内' -> Cấm mang thức ăn và nước uống."},
+        {"id": "pr06-3", "type": "mcq", "passage": "【图书馆通知】\n开放时间：星期一至星期五 8:00 - 21:30；星期六至星期日 9:00 - 17:00。\n注意：馆内请保持安静，禁止带食物和饮料入内。", "prompt": "Yêu cầu chung đối với tất cả độc giả trong phòng đọc là gì?", "choices": ["Giữ trật tự yên tĩnh (保持安静)", "Không được dùng máy tính", "Phải mặc áo khoác", "Phải ngồi đúng vị trí quy định"], "correct_index": 0, "explanation_vi": "'馆内请保持安静' -> Giữ trật tự yên tĩnh."}
     ]),
     ("ps-read-07", "u-hsk1-06", "passage_qa", "Bộ 07: Kế hoạch Tương lai & Du học", "Đọc bài viết chia sẻ về ước mơ học tập và cơ hội du học.", "hard", [
         {"id": "pr07-1", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Lúc mới bắt đầu học, tác giả cảm thấy điều gì khó nhất?", "choices": ["Chữ Hán khó viết và phát âm không dễ", "Ngữ pháp quá dài", "Không có giáo trình", "Không có thời gian"], "correct_index": 0, "explanation_vi": "'最初我觉得汉字很难写，发音也不容易' -> Chữ khó viết và phát âm khó."},
-        {"id": "pr07-2", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Mục tiêu năm tới của tác giả là gì?", "choices": ["Thi đỗ HSK và sang Bắc Kinh du học", "Tìm việc làm lương cao ngay", "Học thêm tiếng Pháp", "Mua một chiếc xe hơi"], "correct_index": 0, "explanation_vi": "'希望明年能通过HSK考试，去北京留学' -> Đỗ HSK và du học Bắc Kinh."}
+        {"id": "pr07-2", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Mục tiêu năm tới của tác giả là gì?", "choices": ["Thi đỗ HSK và sang Bắc Kinh du học", "Tìm việc làm lương cao ngay", "Học thêm tiếng Pháp", "Mua một chiếc xe hơi"], "correct_index": 0, "explanation_vi": "'希望明年能通过HSK考试，去北京留学' -> Đỗ HSK và du học Bắc Kinh."},
+        {"id": "pr07-3", "type": "mcq", "passage": "我学中文已经一年多了。最初我觉得汉字很难写，发音也不容易。但是我的老师非常有耐心，每天帮我纠正发音。现在我已经能看懂简单的中文故事了。我希望明年能通过HSK考试，去北京留学，认识更多中国朋友！", "prompt": "Ai đã hỗ trợ tác giả vượt qua khó khăn về phát âm?", "choices": ["Thầy cô giáo dạy tiếng Trung tận tâm", "Bạn cùng phòng", "Một người họ hàng", "Tự học qua video"], "correct_index": 0, "explanation_vi": "'我的老师非常有耐心，每天帮我纠正发音' -> Thầy cô giáo tận tâm."}
     ]),
     ("ps-read-08", "u-hsk1-06", "story_ordering", "Bộ 08: Sắp xếp Trình tự Câu chuyện", "Đọc các câu rời rạc và sắp xếp lại theo diễn biến hợp lý.", "hard", [
-        {"id": "pr08-1", "type": "sentence_ordering", "prompt": "Sắp xếp 4 câu sau thành đoạn văn hợp lý:\nA. 我们一起吃了一顿丰盛的午餐。\nB. 星期天上午，李明来我家做客。\nC. 吃完饭后，我们在客厅听音乐、聊天。\nD. 他给我带来了一些新鲜的水果。", "tokens": ["B", "D", "A", "C"], "targetSentence": "B D A C", "explanation_vi": "Trình tự hợp lý: Lý Minh đến chơi (B) -> Mang hoa quả tặng (D) -> Cùng ăn trưa (A) -> Sau bữa ăn nghe nhạc trò chuyện (C)."}
+        {"id": "pr08-1", "type": "sentence_ordering", "prompt": "Sắp xếp 4 câu sau thành đoạn văn hợp lý:\nA. 我们一起吃了一顿丰盛的午餐。\nB. 星期天上午，李明来我家做客。\nC. 吃完饭后，我们在客厅听音乐、聊天。\nD. 他给我带来了一些新鲜的水果。", "tokens": ["B", "D", "A", "C"], "targetSentence": "B D A C", "explanation_vi": "Trình tự hợp lý: Lý Minh đến chơi (B) -> Mang hoa quả tặng (D) -> Cùng ăn trưa (A) -> Sau bữa ăn nghe nhạc trò chuyện (C)."},
+        {"id": "pr08-2", "type": "sentence_ordering", "prompt": "Sắp xếp 4 câu sau thành diễn biến đi khám bệnh:\nA. 医生给我开了一些药。\nB. 昨天我身体很不舒服。\nC. 回家吃药后，今天我好多了。\nD. 妈妈带我去了附近的医院。", "tokens": ["B", "D", "A", "C"], "targetSentence": "B D A C", "explanation_vi": "Trình tự: Người khó chịu (B) -> Đến bệnh viện (D) -> Bác sĩ kê thuốc (A) -> Uống thuốc đã đỡ (C)."},
+        {"id": "pr08-3", "type": "sentence_ordering", "prompt": "Sắp xếp 4 câu sau thành diễn biến đi siêu thị mua sắm:\nA. 我们选了新鲜的水果和面包。\nB. 下午我和同学一起去超市。\nC. 结账后，我们高高兴兴地走回学校。\nD. 超市里有很多打折的东西。", "tokens": ["B", "D", "A", "C"], "targetSentence": "B D A C", "explanation_vi": "Trình tự: Đến siêu thị (B) -> Thấy nhiều hàng giảm giá (D) -> Chọn hoa quả bánh mì (A) -> Thanh toán về trường (C)."}
     ])
 ]
 
