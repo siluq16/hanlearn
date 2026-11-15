@@ -56,7 +56,7 @@ async function waitForServer(url, timeoutMs = 30000) {
   while (Date.now() - start < timeoutMs) {
     try {
       const res = await fetch(`${url}/api/health`, { redirect: "manual" });
-      if (res.status === 200 || res.status === 401 || res.status === 307) return true;
+      if (res.status > 0) return true;
     } catch { }
     await new Promise((r) => setTimeout(r, 400));
   }
@@ -113,6 +113,10 @@ async function main() {
     if (s.includes("Ready") || s.includes("started")) {
       console.log("[Server]", s.trim());
     }
+  });
+
+  server.stderr?.on("data", (d) => {
+    console.error("[Server Err]", d.toString().trim());
   });
 
   const ready = await waitForServer(ORIGIN, 30000);
@@ -301,9 +305,19 @@ async function main() {
         const navCount = await navPills.count();
         record("practice_question_navigator_pills", navCount === 8, `Found ${navCount} question pills for 8 questions`);
 
-        // 2. Active pill is highlighted
+        // 2. Active pill is highlighted & verify single check CTA before selection
         const pill1Class = await navPills.first().getAttribute("class");
         record("practice_nav_active_highlight", pill1Class.includes("bg-primary"), "Pill 1 is actively highlighted");
+
+        // Verify only 1 primary Check CTA at footer, and it is disabled before answering
+        const initialCheckBtn = page.getByRole("button", { name: /^Kiểm tra$/i });
+        const checkBtnCount = await page.getByRole("button", { name: /^Kiểm tra/i }).count();
+        const isCheckDisabled = await initialCheckBtn.isDisabled();
+        record(
+          "practice_single_check_cta",
+          checkBtnCount === 1 && isCheckDisabled,
+          `Found ${checkBtnCount} check CTA button; disabled before selection: ${isCheckDisabled}`
+        );
 
         // 3. Test Skip Question
         const skipBtn = page.getByRole("button", { name: "Bỏ qua" });
@@ -319,21 +333,39 @@ async function main() {
         await navPills.nth(3).click();
         await page.waitForTimeout(300);
 
-        // Answer question 4: select choice, verify it's selected, then click "Kiểm tra"
+        // Select choice on question 4
         const choice = page.locator("div.space-y-2\\.5 button").first();
         await choice.click();
         await page.waitForTimeout(300);
 
+        // Verify selection did NOT auto-grade (no score checkmarks yet), and check button is now enabled
+        const autoCheckmarks = await page.locator("div.space-y-2\\.5 button svg").count();
+        const checkBtnQ4 = page.getByRole("button", { name: /^Kiểm tra$/i });
+        const isCheckEnabled = !(await checkBtnQ4.isDisabled());
+        record(
+          "practice_selection_no_auto_grade",
+          autoCheckmarks === 0 && isCheckEnabled,
+          "Selection does not auto-grade and enables single footer Check button"
+        );
+
         // Click "Kiểm tra" to check answer
-        const checkBtn = page.getByRole("button", { name: /^Kiểm tra/i }).first();
-        await checkBtn.click();
+        await checkBtnQ4.click();
         await page.waitForTimeout(300);
+
+        // Verify graded and transitioned to "Câu tiếp theo"
+        const nextQBtn = page.getByRole("button", { name: "Câu tiếp theo" });
+        const hasNextBtn = await nextQBtn.isVisible();
+        const checkBtnGone = (await page.getByRole("button", { name: /^Kiểm tra$/i }).count()) === 0;
+        record(
+          "practice_check_transitions_to_next",
+          hasNextBtn && checkBtnGone,
+          "Checking answer grades score and transitions footer CTA to 'Câu tiếp theo'"
+        );
 
         // While active, pill 4 shows the green indicator dot
         const hasActiveIndicator = (await navPills.nth(3).locator("span.bg-emerald-500").count()) > 0;
 
         // Advance to Question 5
-        const nextQBtn = page.getByRole("button", { name: "Câu tiếp theo" });
         await nextQBtn.click();
         await page.waitForTimeout(300);
 
@@ -350,11 +382,11 @@ async function main() {
         const choice5 = page.locator("div.space-y-2\\.5 button").first();
         await choice5.click();
         await page.waitForTimeout(300);
-        // Before clicking check: take practice_before_answer.png
+        // Before clicking check: take practice_before_answer.png (showing only 1 footer Check CTA)
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_before_answer.png") });
 
         // Click "Kiểm tra" to evaluate answer
-        const checkBtn5 = page.getByRole("button", { name: /^Kiểm tra/i }).first();
+        const checkBtn5 = page.getByRole("button", { name: /^Kiểm tra$/i });
         await checkBtn5.click();
         await page.waitForTimeout(300);
         // After clicking check: take practice_after_answer.png
@@ -362,6 +394,29 @@ async function main() {
 
         // Screenshot Question Navigator showing active, completed, and skipped states
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_question_navigator.png") });
+
+        // 6. Test Last Question transitions to "Xem kết quả"
+        await navPills.nth(7).click(); // Question 8 (last question)
+        await page.waitForTimeout(300);
+
+        const choice8 = page.locator("div.space-y-2\\.5 button").first();
+        await choice8.click();
+        await page.waitForTimeout(200);
+
+        const checkBtn8 = page.getByRole("button", { name: /^Kiểm tra$/i });
+        await checkBtn8.click();
+        await page.waitForTimeout(300);
+
+        const finishBtn = page.getByRole("button", { name: "Xem kết quả" });
+        const hasFinishBtn = await finishBtn.isVisible();
+        record("practice_last_question_xem_ket_qua", hasFinishBtn, "Last question checked CTA displays 'Xem kết quả'");
+
+        // Click "Xem kết quả" to view summary
+        await finishBtn.click();
+        await page.waitForTimeout(500);
+        const hasSummary = (await page.getByText(/KẾT QUẢ BỘ BÀI TẬP|HOÀN THÀNH PHIÊN LUYỆN TẬP/i).count()) > 0;
+        record("practice_summary_results_view", hasSummary, "Finishing practice displays summary results card");
+        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_summary_results.png") });
       });
     }
 
@@ -393,9 +448,20 @@ async function main() {
         await page.waitForTimeout(300);
         const hasFullScreenSheet = await page.locator("div.fixed.inset-0.z-50").first().isVisible();
         const hasAudioBtn = await page.locator("div.fixed.inset-0.z-50 button[data-mandarin-audio-btn='true']").isVisible();
-        const hasToggleTransBtn = (await page.locator("div.fixed.inset-0.z-50 button:has-text('Bản dịch'), div.fixed.inset-0.z-50 button:has-text('Ẩn Dịch')").count()) > 0;
+        const transToggleBtn = page.locator("div.fixed.inset-0.z-50 button:has-text('Hiện Dịch'), div.fixed.inset-0.z-50 button:has-text('Ẩn Dịch')").first();
+        const hasToggleTransBtn = await transToggleBtn.isVisible();
         record("reading_mobile_drawer_open", hasFullScreenSheet && hasAudioBtn && hasToggleTransBtn, "Mobile reading full-screen sheet opens cleanly with audio and translation controls");
+
+        // Test toggle translation
+        await transToggleBtn.click();
+        await page.waitForTimeout(200);
+        const hasTransText = (await page.locator("div.fixed.inset-0.z-50 :has-text('Dịch nghĩa tham khảo')").count()) > 0;
+        record("reading_mobile_translation_toggle", hasTransText, "Toggling translation displays reference Vietnamese translation");
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_reading_drawer_mobile.png") });
+
+        // Toggle back off
+        await transToggleBtn.click();
+        await page.waitForTimeout(200);
 
         // Close mobile passage modal
         const closeBtn = page.getByRole("button", { name: "Đóng và làm câu hỏi" });

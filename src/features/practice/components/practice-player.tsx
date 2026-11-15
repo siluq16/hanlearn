@@ -66,7 +66,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
   // Global display toggles
   const [showPinyin, setShowPinyin] = useState(true);
-  const [showVi, setShowVi] = useState(true);
+  const [showVi, setShowVi] = useState(false);
 
   // Mobile passage drawer for Reading Mode
   const [isMobilePassageOpen, setIsMobilePassageOpen] = useState(false);
@@ -183,12 +183,6 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       setSelectedLeftIdx(null);
       setMismatchPair(null);
       setUserAnswers((prev) => ({ ...prev, [currentIndex]: nextMatched }));
-
-      if (nextMatched.length === (currentQ.pairs?.length || 0)) {
-        setIsAnswerCheckedMap((prev) => ({ ...prev, [currentIndex]: true }));
-        setScoreMap((prev) => ({ ...prev, [currentIndex]: true }));
-        setQuestionStatuses((prev) => ({ ...prev, [currentIndex]: "completed" }));
-      }
     } else {
       setMismatchPair({ leftIdx: selectedLeftIdx, rightIdx });
       setTimeout(() => {
@@ -196,6 +190,15 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
         setSelectedLeftIdx(null);
       }, 600);
     }
+  };
+
+  // Matching Check (explicit "Kiểm tra" button)
+  const handleCheckMatching = () => {
+    if (!currentQ?.pairs || isCurrentChecked) return;
+    if (matchedPairIndices.length !== currentQ.pairs.length) return;
+    setIsAnswerCheckedMap((prev) => ({ ...prev, [currentIndex]: true }));
+    setScoreMap((prev) => ({ ...prev, [currentIndex]: true }));
+    setQuestionStatuses((prev) => ({ ...prev, [currentIndex]: "completed" }));
   };
 
   // Typed Answer Check
@@ -218,6 +221,37 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
     setScoreMap((prev) => ({ ...prev, [currentIndex]: isCorrect }));
     setQuestionStatuses((prev) => ({ ...prev, [currentIndex]: "completed" }));
+  };
+
+  // Check if current question has an answer supplied
+  const hasCurrentAnswer = useMemo(() => {
+    if (currentQ?.choices && currentQ.choices.length > 0) {
+      return currentSelectedChoice !== null;
+    }
+    if (currentQ?.tokens && currentQ.tokens.length > 0) {
+      return orderedTokenIndices.length === currentQ.tokens.length && orderedTokenIndices.length > 0;
+    }
+    if (currentQ?.pairs && currentQ.pairs.length > 0) {
+      return matchedPairIndices.length === currentQ.pairs.length && matchedPairIndices.length > 0;
+    }
+    if (!currentQ?.choices && !currentQ?.tokens && !currentQ?.pairs) {
+      return typedAnswer.trim().length > 0;
+    }
+    return false;
+  }, [currentQ, currentSelectedChoice, orderedTokenIndices, matchedPairIndices, typedAnswer]);
+
+  // Unified Check Handler for current question
+  const handleCheckCurrent = () => {
+    if (isCurrentChecked || !hasCurrentAnswer) return;
+    if (currentQ?.choices && currentQ.choices.length > 0) {
+      handleCheckChoice();
+    } else if (currentQ?.tokens && currentQ.tokens.length > 0) {
+      handleCheckSentenceOrder();
+    } else if (currentQ?.pairs && currentQ.pairs.length > 0) {
+      handleCheckMatching();
+    } else {
+      handleCheckTypedAnswer();
+    }
   };
 
   // Navigation: Jump to Question
@@ -590,15 +624,18 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
                 <div className="flex items-center gap-2 shrink-0">
                   <MandarinAudioButton text={sharedPassage.text} size="sm" />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setShowVi(!showVi)}
-                    className="text-[11px] h-7 px-2"
-                  >
-                    {showVi ? "Ẩn Dịch" : "Bản dịch"}
-                  </Button>
+                  {sharedPassage.translationVi && (
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setShowVi(!showVi)}
+                      className="text-[11px] h-7 px-2 gap-1 text-muted-foreground hover:text-foreground"
+                    >
+                      {showVi ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+                      <span>{showVi ? "Ẩn Dịch" : "Hiện Dịch"}</span>
+                    </Button>
+                  )}
                   <button
                     type="button"
                     onClick={() => setIsMobilePassageOpen(false)}
@@ -650,7 +687,21 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   <Badge className="bg-primary/10 text-primary text-[10px] font-bold">
                     Bài đọc hiểu HSK 1
                   </Badge>
-                  <MandarinAudioButton text={sharedPassage.text} size="sm" />
+                  <div className="flex items-center gap-1.5">
+                    {sharedPassage.translationVi && (
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setShowVi(!showVi)}
+                        className="text-[11px] h-7 px-2 gap-1 text-muted-foreground hover:text-foreground"
+                      >
+                        {showVi ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+                        <span>{showVi ? "Ẩn Dịch" : "Hiện Dịch"}</span>
+                      </Button>
+                    )}
+                    <MandarinAudioButton text={sharedPassage.text} size="sm" />
+                  </div>
                 </div>
                 <CardTitle className="text-base font-bold text-foreground">
                   {sharedPassage.title}
@@ -660,9 +711,9 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                 <div className="hanzi text-base leading-relaxed text-foreground font-serif whitespace-pre-line">
                   {sharedPassage.text}
                 </div>
-                {sharedPassage.translationVi && (
-                  <div className="pt-3 border-t border-border/60 text-xs text-muted-foreground leading-relaxed">
-                    <span className="font-semibold block mb-1">Dịch nghĩa tham khảo:</span>
+                {showVi && sharedPassage.translationVi && (
+                  <div className="pt-3 border-t border-border/60 text-xs text-muted-foreground leading-relaxed animate-in fade-in duration-150">
+                    <span className="font-semibold block mb-1 text-foreground">Dịch nghĩa tham khảo:</span>
                     {sharedPassage.translationVi}
                   </div>
                 )}
@@ -731,9 +782,24 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                 <div className="space-y-4 py-2">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>Bấm vào 1 mục ở cột trái, sau đó bấm mục tương ứng ở cột phải:</span>
-                    <span>
-                      Đã ghép: {matchedPairIndices.length}/{currentQ.pairs.length}
-                    </span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span>
+                        Đã ghép: {matchedPairIndices.length}/{currentQ.pairs.length}
+                      </span>
+                      {!isCurrentChecked && matchedPairIndices.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setUserAnswers((prev) => ({ ...prev, [currentIndex]: [] }));
+                            setSelectedLeftIdx(null);
+                            setMismatchPair(null);
+                          }}
+                          className="text-xs text-muted-foreground hover:text-foreground underline ml-1"
+                        >
+                          Xóa làm lại
+                        </button>
+                      )}
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -846,18 +912,6 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                       );
                     })}
                   </div>
-
-                  {!isCurrentChecked && currentSelectedChoice !== null && (
-                    <div className="flex justify-end pt-1">
-                      <Button
-                        type="button"
-                        onClick={handleCheckChoice}
-                        className="text-xs font-semibold px-5"
-                      >
-                        Kiểm tra đáp án
-                      </Button>
-                    </div>
-                  )}
                 </div>
               )}
 
@@ -941,19 +995,6 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                     </div>
                   </div>
 
-                  {!isCurrentChecked && (
-                    <div className="flex justify-end pt-2">
-                      <Button
-                        type="button"
-                        disabled={orderedTokenIndices.length !== currentQ.tokens.length}
-                        onClick={handleCheckSentenceOrder}
-                        className="text-xs font-semibold px-5"
-                      >
-                        Kiểm tra câu
-                      </Button>
-                    </div>
-                  )}
-
                   {isCurrentChecked && currentQ.targetSentence && (
                     <div className="p-3.5 rounded-xl bg-muted/40 border border-border text-xs space-y-1">
                       <span className="font-semibold text-muted-foreground">Câu chuẩn:</span>
@@ -993,19 +1034,6 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                       className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-primary shadow-xs"
                     />
                   </div>
-
-                  {!isCurrentChecked && (
-                    <div className="flex justify-end">
-                      <Button
-                        type="button"
-                        disabled={!typedAnswer.trim()}
-                        onClick={handleCheckTypedAnswer}
-                        className="text-xs font-semibold px-5"
-                      >
-                        Kiểm tra
-                      </Button>
-                    </div>
-                  )}
 
                   {isCurrentChecked && (
                     <div className="p-3.5 rounded-xl bg-muted/40 border border-border text-xs space-y-1">
@@ -1058,12 +1086,13 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   </Button>
                 )}
 
-                {!isCurrentChecked && currentSelectedChoice !== null && currentQ?.choices ? (
+                {!isCurrentChecked ? (
                   <Button
                     type="button"
                     size="sm"
-                    onClick={handleCheckChoice}
-                    className="gap-1.5 text-xs font-semibold px-4"
+                    disabled={!hasCurrentAnswer}
+                    onClick={handleCheckCurrent}
+                    className="gap-1.5 text-xs font-semibold px-5 min-w-[100px]"
                   >
                     <span>Kiểm tra</span>
                     <CheckCircle2 className="size-4" />
@@ -1072,16 +1101,11 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   <Button
                     type="button"
                     size="sm"
-                    disabled={!isCurrentChecked && currentSelectedChoice === null && !currentQ?.tokens && !currentQ?.pairs}
                     onClick={handleNextOrFinish}
-                    className="gap-1.5 text-xs font-semibold px-4"
+                    className="gap-1.5 text-xs font-semibold px-5 min-w-[120px]"
                   >
                     <span>
-                      {currentIndex === totalCount - 1
-                        ? isCurrentChecked
-                          ? "Xem kết quả"
-                          : "Hoàn thành"
-                        : "Câu tiếp theo"}
+                      {currentIndex === totalCount - 1 ? "Xem kết quả" : "Câu tiếp theo"}
                     </span>
                     <ChevronRight className="size-4" />
                   </Button>

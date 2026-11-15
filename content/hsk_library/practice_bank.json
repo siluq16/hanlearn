@@ -4253,6 +4253,12 @@
       "description": "Đọc đoạn văn tự giới thiệu và trả lời các câu hỏi chi tiết.",
       "difficulty": "easy",
       "question_count": 6,
+      "stimulus": {
+        "type": "text_passage",
+        "title": "Đoạn văn: Tự giới thiệu bản thân",
+        "content": "你好！我叫王朋，今年二十岁。我是中国北京人。我家有三口人：爸爸、妈妈和我。我爸爸是医生，我妈妈是汉语老师。我现在在北京大学学英语。",
+        "translationVi": "Xin chào! Tôi tên là Vương Bằng, năm nay 20 tuổi. Tôi là người Bắc Kinh, Trung Quốc. Nhà tôi có 3 người: bố, mẹ và tôi. Bố tôi là bác sĩ, mẹ tôi là giáo viên tiếng Trung. Hiện tại tôi đang học tiếng Anh tại Đại học Bắc Kinh."
+      },
       "questions": [
         {
           "id": "pr01-1",
