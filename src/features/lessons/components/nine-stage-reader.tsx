@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   BookOpen,
@@ -15,6 +15,7 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -78,6 +79,36 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
     return serverStages;
   });
 
+  const [syncStatus, setSyncStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [syncError, setSyncError] = useState<string | null>(null);
+
+  const saveProgressWithStatus = useCallback(
+    async (completed: number[], current: number) => {
+      setSyncStatus("saving");
+      setSyncError(null);
+      try {
+        const res = await saveStageProgress({
+          lessonId: lesson.slug || lesson.id,
+          completedStages: completed,
+          currentStage: current,
+        });
+        if (res.ok) {
+          setSyncStatus("saved");
+          setTimeout(() => {
+            setSyncStatus((s) => (s === "saved" ? "idle" : s));
+          }, 2500);
+        } else {
+          setSyncStatus("error");
+          setSyncError(res.error || "Chưa đồng bộ máy chủ");
+        }
+      } catch {
+        setSyncStatus("error");
+        setSyncError("Lỗi kết nối máy chủ");
+      }
+    },
+    [lesson.slug, lesson.id]
+  );
+
   // Client mount sync
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -88,7 +119,22 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           lessonId: lesson.slug || lesson.id,
           completedStages,
           currentStage: currentStageIndex,
-        }).catch(() => { });
+        })
+          .then((res) => {
+            if (res.ok) {
+              setSyncStatus("saved");
+              setTimeout(() => {
+                setSyncStatus((s) => (s === "saved" ? "idle" : s));
+              }, 2500);
+            } else {
+              setSyncStatus("error");
+              setSyncError(res.error || "Chưa đồng bộ máy chủ");
+            }
+          })
+          .catch(() => {
+            setSyncStatus("error");
+            setSyncError("Lỗi kết nối máy chủ");
+          });
       }
     } catch { }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -96,27 +142,22 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
 
   function markStageComplete(idx: number) {
     setCompletedStages((prev) => {
-      if (prev.includes(idx)) return prev;
+      if (prev.includes(idx)) {
+        saveProgressWithStatus(prev, currentStageIndex);
+        return prev;
+      }
       const next = [...prev, idx];
       try {
         localStorage.setItem(storageKey, JSON.stringify(next));
       } catch { }
-      saveStageProgress({
-        lessonId: lesson.slug || lesson.id,
-        completedStages: next,
-        currentStage: currentStageIndex,
-      }).catch(() => { });
+      saveProgressWithStatus(next, currentStageIndex);
       return next;
     });
   }
 
   function handleSelectStage(idx: number) {
     setCurrentStageIndex(idx);
-    saveStageProgress({
-      lessonId: lesson.slug || lesson.id,
-      completedStages,
-      currentStage: idx,
-    }).catch(() => { });
+    saveProgressWithStatus(completedStages, idx);
   }
 
   const stages = lesson.stages;
@@ -171,7 +212,33 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
       {/* 4.3 Single Consolidated Progress Bar */}
       <div className="space-y-1.5">
         <div className="flex items-center justify-between text-xs text-muted-foreground px-0.5">
-          <span className="font-medium">Tiến độ bài học</span>
+          <div className="flex items-center gap-2">
+            <span className="font-medium">Tiến độ bài học</span>
+            {syncStatus === "saving" && (
+              <span className="text-[10px] text-muted-foreground flex items-center gap-1">
+                <Loader2 className="size-2.5 animate-spin" />
+                Đang lưu...
+              </span>
+            )}
+            {syncStatus === "saved" && (
+              <span className="text-[10px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-medium">
+                <CheckCircle2 className="size-2.5" />
+                Đã lưu
+              </span>
+            )}
+            {syncStatus === "error" && (
+              <span className="inline-flex items-center gap-1.5 text-[10px] text-amber-600 bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200">
+                <span>{syncError || "Chưa lưu"}</span>
+                <button
+                  type="button"
+                  className="underline font-bold hover:text-amber-800"
+                  onClick={() => void saveProgressWithStatus(completedStages, currentStageIndex)}
+                >
+                  Thử lại
+                </button>
+              </span>
+            )}
+          </div>
           <span className="font-bold text-foreground">
             {completedStages.length} / {stages.length} chặng hoàn thành ({Math.round((completedStages.length / stages.length) * 100)}%)
           </span>

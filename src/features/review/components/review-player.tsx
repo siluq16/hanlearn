@@ -256,6 +256,76 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       }
     }
   }
+  async function retryRecovery(recoveryInput: ReviewInput) {
+    stopMandarin();
+    if (busy.current || pending || !ready || !enabled) return;
+    busy.current = true;
+    setPending(true);
+    setSaveStatus({ state: "saving", text: "Đang thử lại đánh giá chưa xác nhận..." });
+
+    try {
+      const result = await submit(recoveryInput);
+      if (result.ok) {
+        removePendingInput(recoveryInput.cardId);
+        setNextDue(result.receipt.nextDueAt);
+        // Check if there are remaining pending items in sessionStorage
+        try {
+          const raw = sessionStorage.getItem(key);
+          const map = raw ? JSON.parse(raw) : null;
+          const next =
+            typeof map === "object" && map !== null
+              ? Object.values(map)
+                  .map((v) => reviewInput.safeParse(v))
+                  .find((p) => p.success)?.data
+              : null;
+          if (next) {
+            setRecovery(next);
+            setSaveStatus({
+              state: "error",
+              text: "Còn đánh giá khác cần xác nhận",
+            });
+            setError({
+              code: "RECOVERY",
+              message:
+                "Đã lưu 1 đánh giá. Vẫn còn đánh giá chưa xác nhận khác; hãy nhấn Thử lại tiếp tục.",
+              retryable: true,
+              outcomeUnknown: true,
+            });
+          } else {
+            setRecovery(null);
+            setError(null);
+            setSaveStatus({ state: "saved", text: "Đã xác nhận đánh giá cũ" });
+            setTimeout(() => {
+              setSaveStatus({ state: "idle" });
+            }, 2500);
+          }
+        } catch {
+          setRecovery(null);
+          setError(null);
+          setSaveStatus({ state: "saved", text: "Đã xác nhận đánh giá cũ" });
+        }
+      } else {
+        setError(result.error);
+        setSaveStatus({ state: "error", text: "Lỗi lưu đánh giá", cardId: recoveryInput.cardId });
+        if (!result.error.outcomeUnknown) {
+          removePendingInput(recoveryInput.cardId);
+          setRecovery(null);
+        }
+      }
+    } catch {
+      setError({
+        code: "NETWORK",
+        message: "Mất kết nối khi thử lại. Hãy kiểm tra đường truyền và thử lại.",
+        retryable: true,
+        outcomeUnknown: true,
+      });
+      setSaveStatus({ state: "error", text: "Mất kết nối", cardId: recoveryInput.cardId });
+    } finally {
+      busy.current = false;
+      setPending(false);
+    }
+  }
+
   async function reload() {
     stopMandarin();
     if (busy.current) return;
@@ -346,7 +416,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       {recovery && (
         <Button
           disabled={pending || !enabled || !error?.retryable}
-          onClick={() => void send(recovery)}
+          onClick={() => void retryRecovery(recovery)}
         >
           Thử lại đánh giá cũ
         </Button>

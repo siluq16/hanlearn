@@ -114,6 +114,9 @@ export function PracticeCenter({
       setSelectedUnit(u);
       setSelectedDiff(df);
       setSearchQuery(q);
+      if (u !== "all") {
+        setCollapsedUnits((prev) => ({ ...prev, [u]: false }));
+      }
     };
 
     window.addEventListener("popstate", handlePopState);
