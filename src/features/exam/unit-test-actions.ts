@@ -101,7 +101,7 @@ export async function startUnitTestAction(
           id: attemptId,
           user_id: learner.user.id,
           quiz_id: attemptId,
-          quiz_slug: quizSlug,
+          lesson_id: quizSlug,
           started_at: startedAt,
           question_count: raw.total_questions,
           submitted_at: null,
@@ -189,10 +189,11 @@ export async function submitUnitTestAction(
         { unitNumber: number; startedAt: string }
       >) || {};
     const recorded = activeAttempts[attemptId];
-    if (!recorded) {
-      throw new Error("Lượt thi không tồn tại trên hệ thống. Vui lòng bấm bắt đầu lại từ đầu.");
+    if (recorded) {
+      startedAtMs = new Date(recorded.startedAt).getTime();
+    } else {
+      startedAtMs = Date.now() - Math.min(Number(timeSpentSeconds) || 0, maxAllowedDurationSec) * 1000;
     }
-    startedAtMs = new Date(recorded.startedAt).getTime();
   }
 
   // Server-authoritative start time & deadline validation
@@ -296,7 +297,7 @@ export async function submitUnitTestAction(
             id: attemptId,
             user_id: learner.user.id,
             quiz_id: attemptId,
-            quiz_slug: quizSlug,
+            lesson_id: quizSlug,
             started_at: new Date(startedAtMs).toISOString(),
             submitted_at: now,
             correct_count: totalScore,

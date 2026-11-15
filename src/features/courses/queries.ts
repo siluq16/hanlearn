@@ -49,7 +49,7 @@ export const getLearnerCurriculumProgress = cache(
     // 2. Fetch quiz attempts for unit tests & mini quizzes
     const { data: attemptRows } = await supabase
       .from("curriculum_quiz_attempts")
-      .select("quiz_slug, correct_count, question_count, passed")
+      .select("lesson_id, quiz_id, correct_count, question_count, passed")
       .eq("user_id", user.id);
 
     const stageMap = new Map<string, { currentStage: number; completedStages: number[] }>();
@@ -80,7 +80,9 @@ export const getLearnerCurriculumProgress = cache(
     const testAttemptMap = new Map<string, { passed: boolean; bestScore: number }>();
     if (attemptRows) {
       for (const row of attemptRows) {
-        const slug = row.quiz_slug || "";
+        const slug = (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).lesson_id ||
+          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).quiz_id ||
+          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).quiz_slug || "";
         const existing = testAttemptMap.get(slug);
         const score = row.correct_count || 0;
         testAttemptMap.set(slug, {

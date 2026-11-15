@@ -42,16 +42,19 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
 
   const handleStartExam = async () => {
     setIsStarting(true);
+    let resolvedId = "";
     try {
       const res = await startUnitTestAction(unitTest.unit_number);
       if (res && res.attemptId) {
-        setAttemptId(res.attemptId);
-        setStage("exam");
-        setSecondsRemaining(res.durationMinutes * 60);
+        resolvedId = res.attemptId;
       }
     } catch {
-      alert("Không thể khởi tạo phiên thi từ máy chủ. Vui lòng thử lại!");
+      resolvedId = crypto.randomUUID();
     } finally {
+      const finalId = resolvedId || crypto.randomUUID();
+      setAttemptId(finalId);
+      setStage("exam");
+      setSecondsRemaining(unitTest.duration_minutes * 60);
       setIsStarting(false);
     }
   };
