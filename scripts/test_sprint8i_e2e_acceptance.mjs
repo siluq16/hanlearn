@@ -49,7 +49,7 @@ async function main() {
   const server = spawn("cmd.exe", ["/c", `npx next start -p ${PORT}`], {
     cwd: process.cwd(),
     stdio: "pipe",
-    env: { ...process.env, PORT: String(PORT) },
+    env: { ...process.env, PORT: String(PORT), NODE_OPTIONS: "--max-http-header-size=65536" },
   });
 
   server.stdout?.on("data", (d) => {
@@ -266,6 +266,7 @@ async function main() {
   if (RESULTS.status !== "SUCCESS") {
     process.exit(1);
   }
+  process.exit(0);
 }
 
 main().catch((err) => {

@@ -36,8 +36,30 @@ describe("Generate and verify complete migration 009", () => {
     const unitFiles = fs.readdirSync(unitTestDir).filter((f) => f.endsWith(".json")).sort();
     expect(unitFiles.length).toBe(6);
 
+    const definitions: Array<{ slug: string; duration: number; passingPercent: number }> = [];
+    const seenDef = new Set<string>();
+
+    function addDef(slug: string, duration: number, passingPercent = 80) {
+      if (!seenDef.has(slug)) {
+        seenDef.add(slug);
+        definitions.push({ slug, duration, passingPercent });
+      }
+    }
+
+    // Curriculum quiz definitions: 15 minutes, 80% passing
+    for (const q of ALL_CURRICULUM_QUIZZES) {
+      addDef(q.lessonId, 15, 80);
+      addDef(q.slug, 15, 80);
+      addDef(q.quiz.id, 15, 80);
+    }
+
+    // Unit test definitions: 20 minutes (1200s + 90s grace = 1290s), 80% passing
     for (const f of unitFiles) {
       const data = JSON.parse(fs.readFileSync(path.join(unitTestDir, f), "utf-8"));
+      addDef(data.slug, data.duration_minutes, 80);
+      addDef(data.id, data.duration_minutes, 80);
+      addDef(`l-hsk1-ut0${data.unit_number}`, data.duration_minutes, 80);
+
       for (const item of data.questions) {
         addKey(data.slug, item.id, item.correct_index);
         addKey(data.id, item.id, item.correct_index);
@@ -54,16 +76,36 @@ describe("Generate and verify complete migration 009", () => {
 drop function if exists public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb);
 drop function if exists private.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb);
 
--- 2. Table for authoritative private answer keys
+-- 2. Table for authoritative private quiz definitions (authoritative duration and passing thresholds)
+create table if not exists private.curriculum_quiz_definitions (
+  quiz_slug text primary key,
+  duration_minutes integer not null,
+  passing_score_percent integer not null default 80
+);
+revoke all on private.curriculum_quiz_definitions from public, anon, authenticated;
+
+-- Populate definitions
+insert into private.curriculum_quiz_definitions (quiz_slug, duration_minutes, passing_score_percent) values
+`;
+
+    const defRows = definitions.map((d) => `  ('${d.slug}', ${d.duration}, ${d.passingPercent})`).join(",\n");
+    sql +=
+      defRows +
+      `
+on conflict (quiz_slug) do update set
+  duration_minutes = excluded.duration_minutes,
+  passing_score_percent = excluded.passing_score_percent;
+
+-- 3. Table for authoritative private answer keys
 create table if not exists private.curriculum_quiz_keys (
   quiz_slug text not null,
   question_id text not null,
-  correct_index integer not null,
+  correct_index integer not null check (correct_index between 0 and 5),
   primary key (quiz_slug, question_id)
 );
 revoke all on private.curriculum_quiz_keys from public, anon, authenticated;
 
--- 3. Populate answer keys for all 38 Curriculum Quizzes and 6 Unit Tests
+-- 4. Populate answer keys for all 38 Curriculum Quizzes and 6 Unit Tests
 insert into private.curriculum_quiz_keys (quiz_slug, question_id, correct_index) values
 `;
 
@@ -73,7 +115,7 @@ insert into private.curriculum_quiz_keys (quiz_slug, question_id, correct_index)
       `
 on conflict (quiz_slug, question_id) do update set correct_index = excluded.correct_index;
 
--- 4. Trigger: Strictly enforce server clock started_at and clear any client-supplied scores on INSERT
+-- 5. Trigger: Strictly enforce server clock started_at and clear any client-supplied scores on INSERT
 create or replace function private.curriculum_quiz_attempts_stamp()
 returns trigger
 language plpgsql
@@ -95,7 +137,7 @@ create trigger trg_curriculum_quiz_attempts_stamp
   before insert on public.curriculum_quiz_attempts
   for each row execute function private.curriculum_quiz_attempts_stamp();
 
--- 5. Server-Authoritative submit RPC: grades answers inside PostgreSQL, checks deadline, single-submission
+-- 6. Server-Authoritative submit RPC: grades answers inside PostgreSQL, checks deadline, single-submission
 create or replace function private.submit_curriculum_quiz_attempt(
   p_attempt_id uuid,
   p_answers jsonb
@@ -108,6 +150,10 @@ as $$
 declare
   v_user_id uuid;
   v_attempt public.curriculum_quiz_attempts;
+  v_matched_slug text;
+  v_duration_minutes integer;
+  v_passing_percent integer;
+  v_max_duration_sec integer;
   v_total integer;
   v_correct integer;
   v_passed boolean;
@@ -134,30 +180,48 @@ begin
     raise exception 'ALREADY_SUBMITTED' using errcode = 'PT409';
   end if;
 
-  -- Deadline check: 30 minutes + 90s grace period = 1890s
-  if clock_timestamp() > v_attempt.started_at + interval '1890 seconds' then
+  -- 1. Determine authoritative quiz duration and passing rubric
+  select duration_minutes, passing_score_percent
+  into v_duration_minutes, v_passing_percent
+  from private.curriculum_quiz_definitions
+  where quiz_slug = v_attempt.lesson_id;
+
+  if v_duration_minutes is null then
+    select duration_minutes, passing_score_percent
+    into v_duration_minutes, v_passing_percent
+    from private.curriculum_quiz_definitions
+    where quiz_slug = v_attempt.quiz_id;
+  end if;
+
+  -- Authoritative duration: Unit test is 20m (1200s), grace period is 90s -> 1290s
+  v_duration_minutes := coalesce(v_duration_minutes, 20);
+  v_passing_percent := coalesce(v_passing_percent, 80);
+  v_max_duration_sec := v_duration_minutes * 60 + 90;
+
+  if clock_timestamp() > v_attempt.started_at + (v_max_duration_sec * interval '1 second') then
     raise exception 'EXAM_DEADLINE_EXCEEDED' using errcode = '22023';
   end if;
 
-  -- Grade answers against authoritative private keys
+  -- 2. Determine which slug matches the answer keys
+  if exists (select 1 from private.curriculum_quiz_keys where quiz_slug = v_attempt.lesson_id) then
+    v_matched_slug := v_attempt.lesson_id;
+  elsif exists (select 1 from private.curriculum_quiz_keys where quiz_slug = v_attempt.quiz_id) then
+    v_matched_slug := v_attempt.quiz_id;
+  else
+    raise exception 'QUIZ_KEYS_NOT_FOUND' using errcode = 'PT404';
+  end if;
+
+  -- 3. Authoritative server-side grading against private answer keys
   select count(*), count(*) filter (where (p_answers->>k.question_id)::integer = k.correct_index)
   into v_total, v_correct
   from private.curriculum_quiz_keys k
-  where k.quiz_slug = v_attempt.lesson_id;
-
-  if v_total is null or v_total = 0 then
-    -- Also try matching by quiz_id
-    select count(*), count(*) filter (where (p_answers->>k.question_id)::integer = k.correct_index)
-    into v_total, v_correct
-    from private.curriculum_quiz_keys k
-    where k.quiz_slug = v_attempt.quiz_id;
-  end if;
+  where k.quiz_slug = v_matched_slug;
 
   if v_total is null or v_total = 0 then
     raise exception 'QUIZ_KEYS_NOT_FOUND' using errcode = 'PT404';
   end if;
 
-  v_passed := (v_correct * 100 >= v_total * 80);
+  v_passed := (v_correct * 100 >= v_total * v_passing_percent);
 
   update public.curriculum_quiz_attempts set
     submitted_at = clock_timestamp(),

@@ -5,16 +5,161 @@
 drop function if exists public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb);
 drop function if exists private.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb);
 
--- 2. Table for authoritative private answer keys
+-- 2. Table for authoritative private quiz definitions (authoritative duration and passing thresholds)
+create table if not exists private.curriculum_quiz_definitions (
+  quiz_slug text primary key,
+  duration_minutes integer not null,
+  passing_score_percent integer not null default 80
+);
+revoke all on private.curriculum_quiz_definitions from public, anon, authenticated;
+
+-- Populate definitions
+insert into private.curriculum_quiz_definitions (quiz_slug, duration_minutes, passing_score_percent) values
+  ('l-hsk1-001', 15, 80),
+  ('hsk1-lesson-01', 15, 80),
+  ('08f2e3a1-e171-5aa6-93b9-ac777b053a41', 15, 80),
+  ('l-hsk1-002', 15, 80),
+  ('hsk1-lesson-02', 15, 80),
+  ('22222222-2222-4222-8222-000000000002', 15, 80),
+  ('l-hsk1-003', 15, 80),
+  ('hsk1-lesson-03', 15, 80),
+  ('33333333-3333-4333-8333-000000000003', 15, 80),
+  ('l-hsk1-004', 15, 80),
+  ('hsk1-lesson-04', 15, 80),
+  ('44444444-4444-4444-8444-000000000004', 15, 80),
+  ('l-hsk1-005', 15, 80),
+  ('hsk1-lesson-05', 15, 80),
+  ('55555555-5555-4555-8555-000000000005', 15, 80),
+  ('l-hsk1-006', 15, 80),
+  ('hsk1-lesson-06', 15, 80),
+  ('66666666-6666-4666-8666-000000000006', 15, 80),
+  ('l-hsk1-007', 15, 80),
+  ('hsk1-lesson-07', 15, 80),
+  ('77777777-7777-4777-8777-000000000007', 15, 80),
+  ('l-hsk1-008', 15, 80),
+  ('hsk1-lesson-08', 15, 80),
+  ('88888888-8888-4888-8888-000000000008', 15, 80),
+  ('l-hsk1-009', 15, 80),
+  ('hsk1-lesson-09', 15, 80),
+  ('99999999-9999-4999-8999-000000000009', 15, 80),
+  ('l-hsk1-010', 15, 80),
+  ('hsk1-lesson-10', 15, 80),
+  ('10101010-1010-4010-8010-000000000010', 15, 80),
+  ('l-hsk1-011', 15, 80),
+  ('hsk1-lesson-11', 15, 80),
+  ('77777777-7777-4777-8777-000000000011', 15, 80),
+  ('l-hsk1-012', 15, 80),
+  ('hsk1-lesson-12', 15, 80),
+  ('77777777-7777-4777-8777-000000000012', 15, 80),
+  ('l-hsk1-013', 15, 80),
+  ('hsk1-lesson-13', 15, 80),
+  ('77777777-7777-4777-8777-000000000013', 15, 80),
+  ('l-hsk1-014', 15, 80),
+  ('hsk1-lesson-14', 15, 80),
+  ('77777777-7777-4777-8777-000000000014', 15, 80),
+  ('l-hsk1-015', 15, 80),
+  ('hsk1-lesson-15', 15, 80),
+  ('77777777-7777-4777-8777-000000000015', 15, 80),
+  ('l-hsk1-016', 15, 80),
+  ('hsk1-lesson-16', 15, 80),
+  ('77777777-7777-4777-8777-000000000016', 15, 80),
+  ('l-hsk1-017', 15, 80),
+  ('hsk1-lesson-17', 15, 80),
+  ('77777777-7777-4777-8777-000000000017', 15, 80),
+  ('l-hsk1-018', 15, 80),
+  ('hsk1-lesson-18', 15, 80),
+  ('77777777-7777-4777-8777-000000000018', 15, 80),
+  ('l-hsk1-019', 15, 80),
+  ('hsk1-lesson-19', 15, 80),
+  ('77777777-7777-4777-8777-000000000019', 15, 80),
+  ('l-hsk1-020', 15, 80),
+  ('hsk1-lesson-20', 15, 80),
+  ('77777777-7777-4777-8777-000000000020', 15, 80),
+  ('l-hsk1-021', 15, 80),
+  ('hsk1-lesson-21', 15, 80),
+  ('77777777-7777-4777-8777-000000000021', 15, 80),
+  ('l-hsk1-022', 15, 80),
+  ('hsk1-lesson-22', 15, 80),
+  ('77777777-7777-4777-8777-000000000022', 15, 80),
+  ('l-hsk1-023', 15, 80),
+  ('hsk1-lesson-23', 15, 80),
+  ('77777777-7777-4777-8777-000000000023', 15, 80),
+  ('l-hsk1-024', 15, 80),
+  ('hsk1-lesson-24', 15, 80),
+  ('77777777-7777-4777-8777-000000000024', 15, 80),
+  ('l-hsk1-025', 15, 80),
+  ('hsk1-lesson-25', 15, 80),
+  ('77777777-7777-4777-8777-000000000025', 15, 80),
+  ('l-hsk1-026', 15, 80),
+  ('hsk1-lesson-26', 15, 80),
+  ('77777777-7777-4777-8777-000000000026', 15, 80),
+  ('l-hsk1-027', 15, 80),
+  ('hsk1-lesson-27', 15, 80),
+  ('77777777-7777-4777-8777-000000000027', 15, 80),
+  ('l-hsk1-028', 15, 80),
+  ('hsk1-lesson-28', 15, 80),
+  ('77777777-7777-4777-8777-000000000028', 15, 80),
+  ('l-hsk1-029', 15, 80),
+  ('hsk1-lesson-29', 15, 80),
+  ('77777777-7777-4777-8777-000000000029', 15, 80),
+  ('l-hsk1-030', 15, 80),
+  ('hsk1-lesson-30', 15, 80),
+  ('77777777-7777-4777-8777-000000000030', 15, 80),
+  ('l-hsk1-031', 15, 80),
+  ('hsk1-lesson-31', 15, 80),
+  ('77777777-7777-4777-8777-000000000031', 15, 80),
+  ('l-hsk1-032', 15, 80),
+  ('hsk1-lesson-32', 15, 80),
+  ('77777777-7777-4777-8777-000000000032', 15, 80),
+  ('l-hsk1-cp01', 15, 80),
+  ('hsk1-checkpoint-01', 15, 80),
+  ('11111111-1111-4111-8111-000000000001', 15, 80),
+  ('l-hsk1-cp02', 15, 80),
+  ('hsk1-checkpoint-02', 15, 80),
+  ('l-hsk1-cp03', 15, 80),
+  ('hsk1-checkpoint-03', 15, 80),
+  ('77777777-7777-4777-8777-000000000003', 15, 80),
+  ('l-hsk1-cp04', 15, 80),
+  ('hsk1-checkpoint-04', 15, 80),
+  ('77777777-7777-4777-8777-000000000004', 15, 80),
+  ('l-hsk1-cp05', 15, 80),
+  ('hsk1-checkpoint-05', 15, 80),
+  ('77777777-7777-4777-8777-000000000005', 15, 80),
+  ('l-hsk1-cp06', 15, 80),
+  ('hsk1-checkpoint-06', 15, 80),
+  ('77777777-7777-4777-8777-000000000006', 15, 80),
+  ('hsk1-unit-test-01', 20, 80),
+  ('ut-hsk1-01', 20, 80),
+  ('l-hsk1-ut01', 20, 80),
+  ('hsk1-unit-test-02', 20, 80),
+  ('ut-hsk1-02', 20, 80),
+  ('l-hsk1-ut02', 20, 80),
+  ('hsk1-unit-test-03', 20, 80),
+  ('ut-hsk1-03', 20, 80),
+  ('l-hsk1-ut03', 20, 80),
+  ('hsk1-unit-test-04', 20, 80),
+  ('ut-hsk1-04', 20, 80),
+  ('l-hsk1-ut04', 20, 80),
+  ('hsk1-unit-test-05', 20, 80),
+  ('ut-hsk1-05', 20, 80),
+  ('l-hsk1-ut05', 20, 80),
+  ('hsk1-unit-test-06', 20, 80),
+  ('ut-hsk1-06', 20, 80),
+  ('l-hsk1-ut06', 20, 80)
+on conflict (quiz_slug) do update set
+  duration_minutes = excluded.duration_minutes,
+  passing_score_percent = excluded.passing_score_percent;
+
+-- 3. Table for authoritative private answer keys
 create table if not exists private.curriculum_quiz_keys (
   quiz_slug text not null,
   question_id text not null,
-  correct_index integer not null,
+  correct_index integer not null check (correct_index between 0 and 5),
   primary key (quiz_slug, question_id)
 );
 revoke all on private.curriculum_quiz_keys from public, anon, authenticated;
 
--- 3. Populate answer keys for all 38 Curriculum Quizzes and 6 Unit Tests
+-- 4. Populate answer keys for all 38 Curriculum Quizzes and 6 Unit Tests
 insert into private.curriculum_quiz_keys (quiz_slug, question_id, correct_index) values
   ('l-hsk1-001', '10000001-0000-4000-8000-000000000001', 2),
   ('hsk1-lesson-01', '10000001-0000-4000-8000-000000000001', 2),
@@ -1302,7 +1447,7 @@ insert into private.curriculum_quiz_keys (quiz_slug, question_id, correct_index)
   ('l-hsk1-ut06', 'ut6-q20', 0)
 on conflict (quiz_slug, question_id) do update set correct_index = excluded.correct_index;
 
--- 4. Trigger: Strictly enforce server clock started_at and clear any client-supplied scores on INSERT
+-- 5. Trigger: Strictly enforce server clock started_at and clear any client-supplied scores on INSERT
 create or replace function private.curriculum_quiz_attempts_stamp()
 returns trigger
 language plpgsql
@@ -1324,7 +1469,7 @@ create trigger trg_curriculum_quiz_attempts_stamp
   before insert on public.curriculum_quiz_attempts
   for each row execute function private.curriculum_quiz_attempts_stamp();
 
--- 5. Server-Authoritative submit RPC: grades answers inside PostgreSQL, checks deadline, single-submission
+-- 6. Server-Authoritative submit RPC: grades answers inside PostgreSQL, checks deadline, single-submission
 create or replace function private.submit_curriculum_quiz_attempt(
   p_attempt_id uuid,
   p_answers jsonb
@@ -1337,6 +1482,10 @@ as $$
 declare
   v_user_id uuid;
   v_attempt public.curriculum_quiz_attempts;
+  v_matched_slug text;
+  v_duration_minutes integer;
+  v_passing_percent integer;
+  v_max_duration_sec integer;
   v_total integer;
   v_correct integer;
   v_passed boolean;
@@ -1363,30 +1512,48 @@ begin
     raise exception 'ALREADY_SUBMITTED' using errcode = 'PT409';
   end if;
 
-  -- Deadline check: 30 minutes + 90s grace period = 1890s
-  if clock_timestamp() > v_attempt.started_at + interval '1890 seconds' then
+  -- 1. Determine authoritative quiz duration and passing rubric
+  select duration_minutes, passing_score_percent
+  into v_duration_minutes, v_passing_percent
+  from private.curriculum_quiz_definitions
+  where quiz_slug = v_attempt.lesson_id;
+
+  if v_duration_minutes is null then
+    select duration_minutes, passing_score_percent
+    into v_duration_minutes, v_passing_percent
+    from private.curriculum_quiz_definitions
+    where quiz_slug = v_attempt.quiz_id;
+  end if;
+
+  -- Authoritative duration: Unit test is 20m (1200s), grace period is 90s -> 1290s
+  v_duration_minutes := coalesce(v_duration_minutes, 20);
+  v_passing_percent := coalesce(v_passing_percent, 80);
+  v_max_duration_sec := v_duration_minutes * 60 + 90;
+
+  if clock_timestamp() > v_attempt.started_at + (v_max_duration_sec * interval '1 second') then
     raise exception 'EXAM_DEADLINE_EXCEEDED' using errcode = '22023';
   end if;
 
-  -- Grade answers against authoritative private keys
+  -- 2. Determine which slug matches the answer keys
+  if exists (select 1 from private.curriculum_quiz_keys where quiz_slug = v_attempt.lesson_id) then
+    v_matched_slug := v_attempt.lesson_id;
+  elsif exists (select 1 from private.curriculum_quiz_keys where quiz_slug = v_attempt.quiz_id) then
+    v_matched_slug := v_attempt.quiz_id;
+  else
+    raise exception 'QUIZ_KEYS_NOT_FOUND' using errcode = 'PT404';
+  end if;
+
+  -- 3. Authoritative server-side grading against private answer keys
   select count(*), count(*) filter (where (p_answers->>k.question_id)::integer = k.correct_index)
   into v_total, v_correct
   from private.curriculum_quiz_keys k
-  where k.quiz_slug = v_attempt.lesson_id;
-
-  if v_total is null or v_total = 0 then
-    -- Also try matching by quiz_id
-    select count(*), count(*) filter (where (p_answers->>k.question_id)::integer = k.correct_index)
-    into v_total, v_correct
-    from private.curriculum_quiz_keys k
-    where k.quiz_slug = v_attempt.quiz_id;
-  end if;
+  where k.quiz_slug = v_matched_slug;
 
   if v_total is null or v_total = 0 then
     raise exception 'QUIZ_KEYS_NOT_FOUND' using errcode = 'PT404';
   end if;
 
-  v_passed := (v_correct * 100 >= v_total * 80);
+  v_passed := (v_correct * 100 >= v_total * v_passing_percent);
 
   update public.curriculum_quiz_attempts set
     submitted_at = clock_timestamp(),

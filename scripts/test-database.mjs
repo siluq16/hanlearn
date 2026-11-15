@@ -28,6 +28,12 @@ console.log(`PASS ${(quiz.stderr.match(/NOTICE:  PASS:/g)||[]).length} mini quiz
 const study=spawnSync(psql,[...args,'-f','supabase/tests/study_confirmation.sql'],{encoding:'utf8'});
 if(study.status!==0) throw Error(study.stderr || study.error?.message || 'Study confirmation SQL failed');
 console.log(`PASS ${(study.stderr.match(/NOTICE:  PASS:/g)||[]).length} study confirmation SQL assertions (disposable native/Auth shim only)`);
+
+if(existsSync('supabase/tests/migration_009_security.sql')) {
+ const m9=spawnSync(psql,[...args,'-f','supabase/tests/migration_009_security.sql'],{encoding:'utf8'});
+ if(m9.status!==0) throw Error(m9.stderr || m9.error?.message || 'Migration 009 security SQL failed');
+ console.log(`PASS ${(m9.stderr.match(/NOTICE:  PASS:/g)||[]).length} migration 009 security SQL assertions (deadline, anti-replay, auth isolation, no legacy RPC)`);
+}
 const vid='d0000000-0000-0000-0000-000000000001';
 const cid='c0000000-0000-0000-0000-000000000001';
 const auth=`set local role authenticated; select set_config('request.jwt.claim.sub','${uid}',true);`;
