@@ -104,7 +104,11 @@ export async function getReviewView(): Promise<ReviewView> {
       .digest("hex"),
     cards: textCards.slice(0, 20).map((c) => {
       const w = readable.get(c.vocabulary_id)!;
-      const sanitized = sanitizeCardPrompt(w.meaning_vi);
+      const sanitized = sanitizeCardPrompt(
+        w.meaning_vi,
+        w.simplified,
+        w.pinyin_marked
+      );
       return {
         id: c.id,
         vocabularyId: w.id,

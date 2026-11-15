@@ -4,7 +4,9 @@
  * - Preserves grammar, usage, and pronunciation notes for display on the card back.
  */
 export function sanitizeCardPrompt(
-  meaningVi: string
+  meaningVi: string,
+  targetHanzi?: string,
+  targetPinyin?: string
 ): { prompt: string; notes: string | null } {
   if (!meaningVi) return { prompt: "", notes: null };
 
@@ -14,12 +16,22 @@ export function sanitizeCardPrompt(
 
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
-    const hasHanzi = /[\u4e00-\u9fa5]/.test(part);
+    const hasHanzi =
+      /[\u4e00-\u9fa5]/.test(part) ||
+      (targetHanzi ? part.includes(targetHanzi) : false);
+    const hasPinyin =
+      targetPinyin && targetPinyin.length > 1
+        ? new RegExp(
+            `\\b${targetPinyin.replace(/[āáǎàēéěèīíǐìōóǒòūúǔù]/g, "\\w*")}\\b`,
+            "i"
+          ).test(part)
+        : false;
     const hasNoteKeywords =
       /^(thường đọc|trong bài|dùng trong|phân biệt|còn có nghĩa|ở cách dùng|đơn vị chỉ|trong cách nói|không dùng|khi đếm)/i.test(
         part
       );
-    const hasPronunciationNote = /đọc\s+(nhẹ|biến điệu|thành)/i.test(part);
+    const hasPronunciationNote =
+      /đọc\s+(nhẹ|biến điệu|thành)/i.test(part) || Boolean(hasPinyin);
 
     if (i > 0 && (hasHanzi || hasNoteKeywords || hasPronunciationNote)) {
       noteParts.push(part);
