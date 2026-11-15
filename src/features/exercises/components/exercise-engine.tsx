@@ -98,6 +98,7 @@ export function ExerciseEngine({
   // For matching pairs
   const [selectedLeftId, setSelectedLeftId] = useState<string | null>(null);
   const [matchedPairs, setMatchedPairs] = useState<string[]>([]);
+  const [mismatchPair, setMismatchPair] = useState<{ leftId: string; rightId: string } | null>(null);
 
   // For listening dictation / text input
   const [textInput, setTextInput] = useState("");
@@ -115,6 +116,15 @@ export function ExerciseEngine({
   } = useMandarinRecognition();
 
   const currentExercise = safeExercises[currentIndex];
+
+  // Deterministically shuffle right pairs for interactive matching
+  const shuffledRightPairs = useMemo(() => {
+    if (!currentExercise?.matchingPairs) return [];
+    const list = [...currentExercise.matchingPairs];
+    if (list.length <= 1) return list;
+    // Permute by shifting elements by 1 so right column isn't identical in order to left column
+    return [...list.slice(1), list[0]];
+  }, [currentExercise]);
   const progressPercent = safeExercises.length
     ? Math.round((currentIndex / safeExercises.length) * 100)
     : 0;
@@ -213,7 +223,12 @@ export function ExerciseEngine({
   // Handle matching pairs click
   function handleSelectLeft(leftId: string) {
     if (isAnswered || matchedPairs.includes(leftId)) return;
+    if (selectedLeftId === leftId) {
+      setSelectedLeftId(null);
+      return;
+    }
     setSelectedLeftId(leftId);
+    setMismatchPair(null);
   }
 
   function handleSelectRight(rightId: string) {
@@ -225,13 +240,18 @@ export function ExerciseEngine({
       const newMatched = [...matchedPairs, selectedLeftId];
       setMatchedPairs(newMatched);
       setSelectedLeftId(null);
+      setMismatchPair(null);
       if (newMatched.length === (currentExercise.matchingPairs?.length || 0)) {
         setIsAnswered(true);
         setIsCorrect(true);
         setScore((prev) => prev + 1);
       }
     } else {
-      setSelectedLeftId(null);
+      setMismatchPair({ leftId: selectedLeftId, rightId });
+      setTimeout(() => {
+        setMismatchPair(null);
+        setSelectedLeftId(null);
+      }, 600);
     }
   }
 
@@ -528,6 +548,7 @@ export function ExerciseEngine({
                   {currentExercise.matchingPairs.map((pair) => {
                     const isMatched = matchedPairs.includes(pair.leftId);
                     const isSelected = selectedLeftId === pair.leftId;
+                    const isMismatch = mismatchPair?.leftId === pair.leftId;
                     return (
                       <button
                         key={pair.leftId}
@@ -537,9 +558,11 @@ export function ExerciseEngine({
                         className={`w-full text-left p-3 rounded-xl border text-base font-bold transition-all ${
                           isMatched
                             ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : isSelected
-                              ? "bg-primary text-primary-foreground border-primary shadow-sm"
-                              : "bg-card border-border hover:bg-muted text-foreground"
+                            : isMismatch
+                              ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                              : isSelected
+                                ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                                : "bg-card border-border hover:bg-muted text-foreground"
                         }`}
                       >
                         {pair.leftLabel}
@@ -551,8 +574,11 @@ export function ExerciseEngine({
                 {/* Right Column */}
                 <div className="space-y-2">
                   <span className="text-xs font-semibold text-muted-foreground">Pinyin & Nghĩa</span>
-                  {currentExercise.matchingPairs.map((pair) => {
-                    const isMatched = matchedPairs.includes(pair.leftId);
+                  {shuffledRightPairs.map((pair) => {
+                    const isMatched = matchedPairs.some(
+                      (lId) => currentExercise.matchingPairs?.find((p) => p.leftId === lId)?.rightId === pair.rightId
+                    );
+                    const isMismatch = mismatchPair?.rightId === pair.rightId;
                     return (
                       <button
                         key={pair.rightId}
@@ -562,7 +588,9 @@ export function ExerciseEngine({
                         className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${
                           isMatched
                             ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : "bg-card border-border hover:bg-muted text-foreground"
+                            : isMismatch
+                              ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                              : "bg-card border-border hover:bg-muted text-foreground"
                         }`}
                       >
                         {pair.rightLabel}

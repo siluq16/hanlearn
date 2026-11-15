@@ -85,11 +85,19 @@ export function PracticeCenter({
   practiceSets,
   learnerHistory,
 }: PracticeCenterProps) {
+  const resolveUnitId = (u?: string) => {
+    if (!u || u === "all") return "all";
+    if (u.startsWith("u-hsk1-")) return u;
+    const num = parseInt(u, 10);
+    if (!isNaN(num)) return `u-hsk1-0${num}`;
+    return "all";
+  };
+
   const [selectedSkill, setSelectedSkill] = useState<PracticeSkill>(
     (initialSkill as PracticeSkill) || "vocabulary"
   );
   const [selectedUnit, setSelectedUnit] = useState<string>(
-    initialUnit ? `u-hsk1-0${initialUnit}` : "all"
+    resolveUnitId(initialUnit)
   );
   const [selectedDiff, setSelectedDiff] = useState<string>("all");
   const [collapsedUnits, setCollapsedUnits] = useState<Record<string, boolean>>({});

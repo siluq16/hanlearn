@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -45,6 +45,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   // Matching pairs interactive state
   const [selectedLeftIdx, setSelectedLeftIdx] = useState<number | null>(null);
   const [matchedPairIndices, setMatchedPairIndices] = useState<number[]>([]);
+  const [mismatchPair, setMismatchPair] = useState<{ leftIdx: number; rightIdx: number } | null>(null);
 
   // Fill in the blank / text input state
   const [typedAnswer, setTypedAnswer] = useState("");
@@ -60,6 +61,16 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   const totalCount = isDialogue ? turns.length : questions.length;
 
   const currentQ = questions[currentIndex];
+
+  // Deterministically permute right column for matching so it's not strictly 1-to-1 horizontal
+  const shuffledRightIndices = useMemo(() => {
+    if (!currentQ?.pairs || currentQ.pairs.length <= 1) {
+      return (currentQ?.pairs || []).map((_, i) => i);
+    }
+    const len = currentQ.pairs.length;
+    // shift by 1 to guarantee mismatching row alignment
+    return Array.from({ length: len }, (_, i) => (i + 1) % len);
+  }, [currentQ]);
 
   const handleSelect = (idx: number) => {
     if (isAnswerChecked) return;
@@ -88,7 +99,12 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   // Interactive Matching Pairs Selection
   const handleSelectMatchingLeft = (leftIdx: number) => {
     if (isAnswerChecked || matchedPairIndices.includes(leftIdx)) return;
+    if (selectedLeftIdx === leftIdx) {
+      setSelectedLeftIdx(null);
+      return;
+    }
     setSelectedLeftIdx(leftIdx);
+    setMismatchPair(null);
   };
 
   const handleSelectMatchingRight = (rightIdx: number) => {
@@ -97,12 +113,17 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       const nextMatched = [...matchedPairIndices, selectedLeftIdx];
       setMatchedPairIndices(nextMatched);
       setSelectedLeftIdx(null);
+      setMismatchPair(null);
       if (nextMatched.length === (currentQ.pairs?.length || 0)) {
         setIsAnswerChecked(true);
         setScore((s) => s + 1);
       }
     } else {
-      setSelectedLeftIdx(null);
+      setMismatchPair({ leftIdx: selectedLeftIdx, rightIdx });
+      setTimeout(() => {
+        setMismatchPair(null);
+        setSelectedLeftIdx(null);
+      }, 600);
     }
   };
 
@@ -112,7 +133,14 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
     setIsAnswerChecked(true);
     const cleanUser = cleanForComparison(typedAnswer);
     const cleanTarget = cleanForComparison(currentQ.targetText || currentQ.hanzi || currentQ.pinyin);
-    const isCorrect = cleanUser === cleanTarget;
+    const isCorrect =
+      cleanUser === cleanTarget ||
+      ((currentQ as any).acceptedAnswers &&
+        Array.isArray((currentQ as any).acceptedAnswers) &&
+        (currentQ as any).acceptedAnswers.some(
+          (alt: string) => cleanUser === cleanForComparison(alt)
+        ));
+
     if (isCorrect) {
       setScore((s) => s + 1);
     }
@@ -600,6 +628,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                   {currentQ.pairs.map((p, idx) => {
                     const isMatched = matchedPairIndices.includes(idx);
                     const isSelected = selectedLeftIdx === idx;
+                    const isMismatch = mismatchPair?.leftIdx === idx;
                     return (
                       <button
                         key={idx}
@@ -609,9 +638,11 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                         className={`w-full text-left p-3 rounded-xl border text-sm font-semibold transition-all ${
                           isMatched
                             ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : isSelected
-                              ? "border-primary bg-primary text-primary-foreground shadow-xs"
-                              : "border-border bg-card text-foreground hover:bg-muted"
+                            : isMismatch
+                              ? "border-rose-500 bg-rose-500/15 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                              : isSelected
+                                ? "border-primary bg-primary text-primary-foreground shadow-xs"
+                                : "border-border bg-card text-foreground hover:bg-muted"
                         }`}
                       >
                         {p.left}
@@ -623,18 +654,22 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                 {/* Right Column */}
                 <div className="space-y-2">
                   <span className="text-xs font-semibold text-muted-foreground">Nghĩa tương ứng</span>
-                  {currentQ.pairs.map((p, idx) => {
-                    const isMatched = matchedPairIndices.includes(idx);
+                  {shuffledRightIndices.map((origIdx) => {
+                    const p = currentQ.pairs![origIdx];
+                    const isMatched = matchedPairIndices.includes(origIdx);
+                    const isMismatch = mismatchPair?.rightIdx === origIdx;
                     return (
                       <button
-                        key={idx}
+                        key={origIdx}
                         type="button"
                         disabled={isMatched || isAnswerChecked}
-                        onClick={() => handleSelectMatchingRight(idx)}
+                        onClick={() => handleSelectMatchingRight(origIdx)}
                         className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${
                           isMatched
                             ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : "border-border bg-card text-foreground hover:bg-muted"
+                            : isMismatch
+                              ? "border-rose-500 bg-rose-500/15 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                              : "border-border bg-card text-foreground hover:bg-muted"
                         }`}
                       >
                         {p.right}
