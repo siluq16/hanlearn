@@ -350,6 +350,9 @@ speaking_sets_meta = [
 ]
 
 for sid, uid, etype, title, desc, diff, questions in speaking_sets_meta:
+    for q in questions:
+        if "prompt" not in q:
+            q["prompt"] = f"Luyện phát âm chuẩn: {q['hanzi']}\n({q['meaning_vi']})"
     practice_sets.append({
         "practice_set_id": sid,
         "course_id": "course-hsk1",

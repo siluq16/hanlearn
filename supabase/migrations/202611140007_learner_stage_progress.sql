@@ -25,7 +25,7 @@ create policy learner_stage_progress_update on public.learner_stage_progress
   with check ((select private.is_learner()) and user_id = (select auth.uid()));
 
 -- Atomic stage progress upsert preventing lost updates under concurrent modifications
-create or replace function public.upsert_learner_stage_progress(
+create or replace function private.upsert_learner_stage_progress(
   p_lesson_id text,
   p_completed_stages integer[],
   p_current_stage integer default 0
@@ -71,6 +71,22 @@ begin
 
   return v_result;
 end;
+$$;
+
+revoke all on function private.upsert_learner_stage_progress(text, integer[], integer) from public, anon;
+grant execute on function private.upsert_learner_stage_progress(text, integer[], integer) to authenticated;
+
+-- Public wrapper function: SECURITY INVOKER
+create or replace function public.upsert_learner_stage_progress(
+  p_lesson_id text,
+  p_completed_stages integer[],
+  p_current_stage integer default 0
+)
+returns public.learner_stage_progress
+language sql
+security invoker
+as $$
+  select private.upsert_learner_stage_progress(p_lesson_id, p_completed_stages, p_current_stage);
 $$;
 
 revoke all on function public.upsert_learner_stage_progress(text, integer[], integer) from public, anon;

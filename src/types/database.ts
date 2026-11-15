@@ -143,6 +143,16 @@ export type LearnerStageProgress = {
   completed_stages: number[];
   updated_at: string;
 };
+export type LearnerPracticeHistory = {
+  id: string;
+  user_id: string;
+  practice_set_id: string;
+  skill: string;
+  best_score: number;
+  total_questions: number;
+  completed_at: string;
+  metadata?: Json | null;
+};
 export type CurriculumQuizAttempt = {
   id: string;
   user_id: string;
@@ -173,6 +183,7 @@ export type Database = {
       grammar_points: Table<GrammarPoint>;
       learner_stage_progress: Table<LearnerStageProgress>;
       curriculum_quiz_attempts: Table<CurriculumQuizAttempt>;
+      learner_practice_history: Table<LearnerPracticeHistory>;
       lesson_progress: Table<Progress>;
       vocabulary: Table<Vocabulary & PublicationFields>;
       syllabus_vocabulary: Table<Membership>;

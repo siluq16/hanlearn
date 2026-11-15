@@ -69,7 +69,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
     } else {
       setIsFinished(true);
       const finalScore = isDialogue || isSpeaking ? totalCount : score + (currentQ?.correct_index === selectedChoice ? 0 : 0);
-      savePracticeAttempt(practiceSet.practice_set_id, finalScore, totalCount).catch(() => {});
+      savePracticeAttempt(practiceSet.practice_set_id, finalScore, totalCount, practiceSet.skill).catch(() => {});
     }
   };
 
@@ -204,7 +204,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
               <Button
                 type="button"
                 onClick={() => {
-                  savePracticeAttempt(practiceSet.practice_set_id, turns.length, turns.length).catch(() => {});
+                  savePracticeAttempt(practiceSet.practice_set_id, turns.length, turns.length, practiceSet.skill).catch(() => {});
                   alert("Chúc mừng bạn đã hoàn thành bài luyện hội thoại!");
                 }}
                 className="gap-1.5 text-xs font-semibold"

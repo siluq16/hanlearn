@@ -90,6 +90,7 @@ export async function submitUnitTestAction(
 ): Promise<UnitTestResult> {
   const learner = await requireLearner();
   const raw = loadUnitTestRaw(unitNumber);
+  const clampedTimeSpent = Math.max(1, Math.min(Number(timeSpentSeconds) || 0, raw.duration_minutes * 60));
 
   let listeningCorrect = 0;
   let vocabularyCorrect = 0;
@@ -140,7 +141,7 @@ export async function submitUnitTestAction(
         user_id: learner.user.id,
         quiz_id: attemptId,
         quiz_slug: quizSlug,
-        started_at: new Date(Date.now() - timeSpentSeconds * 1000).toISOString(),
+        started_at: new Date(Date.now() - clampedTimeSpent * 1000).toISOString(),
         submitted_at: now,
         correct_count: totalScore,
         question_count: maxScore,
@@ -168,7 +169,7 @@ export async function submitUnitTestAction(
           ...existingAttempts,
           {
             id: attemptId,
-            started_at: new Date(Date.now() - timeSpentSeconds * 1000).toISOString(),
+            started_at: new Date(Date.now() - clampedTimeSpent * 1000).toISOString(),
             submitted_at: now,
             correct_count: totalScore,
             question_count: maxScore,

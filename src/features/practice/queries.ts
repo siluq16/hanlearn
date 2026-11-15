@@ -44,13 +44,43 @@ export const getPracticeSetById = cache(
 export const getLearnerPracticeHistory = cache(
   async (): Promise<Record<string, { bestScore: number; total: number; completedAt: string }>> => {
     try {
-      const { user } = await requireLearner();
+      const { user, supabase } = await requireLearner();
+      const result: Record<string, { bestScore: number; total: number; completedAt: string }> = {};
+
+      // 1. Fetch from DB table
+      try {
+        const { data: dbRows } = await supabase
+          .from("learner_practice_history")
+          .select("practice_set_id, best_score, total_questions, completed_at")
+          .eq("user_id", user.id);
+
+        if (dbRows) {
+          for (const row of dbRows) {
+            result[row.practice_set_id] = {
+              bestScore: row.best_score,
+              total: row.total_questions,
+              completedAt: row.completed_at,
+            };
+          }
+        }
+      } catch {
+        // Fallback to user_metadata
+      }
+
+      // 2. Merge user_metadata
       const meta = user.user_metadata || {};
-      const history = (meta["practice_history"] as Record<
+      const metaHistory = (meta["practice_history"] as Record<
         string,
         { bestScore: number; total: number; completedAt: string }
       >) || {};
-      return history;
+
+      for (const [k, v] of Object.entries(metaHistory)) {
+        if (!result[k] || v.bestScore > result[k].bestScore) {
+          result[k] = v;
+        }
+      }
+
+      return result;
     } catch {
       return {};
     }

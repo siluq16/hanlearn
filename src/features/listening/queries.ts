@@ -37,10 +37,81 @@ function isValidSentence(hanzi: string, vi: string): boolean {
 }
 
 /**
- * Load static pilot curriculum for offline/test environments only
+ * Load static curriculum for offline/test environments:
+ * Loads all 32 HSK 1 lessons from content/hsk_library/ if present,
+ * or falls back to pilot-hsk1 if not found.
  */
 function loadStaticCurriculum(): ListeningCurriculumData {
   try {
+    const libraryLesson01 = path.join(process.cwd(), "content/hsk_library/hsk1_lesson_01.json");
+    if (fs.existsSync(libraryLesson01)) {
+      const lessons: ListeningLessonItem[] = [];
+      const vocabulary: ListeningVocabularyItem[] = [];
+      const sentenceMap = new Map<string, ListeningSentenceItem>();
+
+      for (let i = 1; i <= 32; i++) {
+        const pad = String(i).padStart(2, "0");
+        const lessonPath = path.join(process.cwd(), `content/hsk_library/hsk1_lesson_${pad}.json`);
+        if (fs.existsSync(lessonPath)) {
+          const l = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
+          const lessonId = l.id || `l-hsk1-${pad}`;
+          lessons.push({
+            id: lessonId,
+            title: l.title,
+            sortOrder: i,
+          });
+
+          if (Array.isArray(l.stages)) {
+            for (const st of l.stages) {
+              if (Array.isArray(st.vocabulary)) {
+                for (const v of st.vocabulary) {
+                  vocabulary.push({
+                    id: `vocab-${v.simplified}`,
+                    simplified: v.simplified,
+                    pinyin: v.pinyin,
+                    meaningVi: v.meaning_vi,
+                    lessonId,
+                  });
+                }
+              }
+              if (st.grammar_points) {
+                for (const gp of st.grammar_points) {
+                  if (gp.examples) {
+                    for (const ex of gp.examples) {
+                      if (ex.hanzi && ex.translationVi && isValidSentence(ex.hanzi, ex.translationVi) && !sentenceMap.has(ex.hanzi)) {
+                        sentenceMap.set(ex.hanzi, {
+                          hanzi: ex.hanzi,
+                          pinyin: ex.pinyin || "",
+                          translationVi: cleanTranslation(ex.translationVi),
+                          lessonId,
+                        });
+                      }
+                    }
+                  }
+                }
+              }
+              if (st.dialogue && st.dialogue.turns) {
+                for (const t of st.dialogue.turns) {
+                  const vi = t.translationVi || t.vi;
+                  if (t.hanzi && vi && isValidSentence(t.hanzi, vi) && !sentenceMap.has(t.hanzi)) {
+                    sentenceMap.set(t.hanzi, {
+                      hanzi: t.hanzi,
+                      pinyin: t.pinyin || "",
+                      translationVi: cleanTranslation(vi),
+                      lessonId,
+                    });
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return { lessons, vocabulary, sentences: Array.from(sentenceMap.values()) };
+    }
+
+    // Fallback: 4 Pilot lessons
     const vocabPath = path.join(process.cwd(), "content/pilot-hsk1/v1/vocabulary.json");
     const rawVocab = JSON.parse(fs.readFileSync(vocabPath, "utf8")) as Array<{
       id: string;

@@ -157,8 +157,8 @@ export function PracticeCenter({
             <option value="all">Tất cả các Unit</option>
             <option value="u-hsk1-01">Unit 1: Khởi đầu (Bài 1–4)</option>
             <option value="u-hsk1-02">Unit 2: Sinh hoạt (Bài 5–8)</option>
-            <option value="u-hsk1-03">Unit 3: Mua sắm (Bài 9–14)</option>
-            <option value="u-hsk1-04">Unit 4: Giao thông (Bài 15–20)</option>
+            <option value="u-hsk1-03">Unit 3: Nơi chốn & Học đường (Bài 9–14)</option>
+            <option value="u-hsk1-04">Unit 4: Đời sống & Giải trí (Bài 15–20)</option>
             <option value="u-hsk1-05">Unit 5: Giao tiếp (Bài 21–25)</option>
             <option value="u-hsk1-06">Unit 6: Xã hội (Bài 26–32)</option>
           </select>

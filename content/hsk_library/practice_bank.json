@@ -2573,7 +2573,8 @@
           "hanzi": "你好",
           "pinyin": "nǐhǎo",
           "meaning_vi": "Xin chào (chú ý biến điệu 2 thanh 3 thành ní hǎo)",
-          "targetText": "你好"
+          "targetText": "你好",
+          "prompt": "Luyện phát âm chuẩn: 你好\n(Xin chào (chú ý biến điệu 2 thanh 3 thành ní hǎo))"
         },
         {
           "id": "ps01-2",
@@ -2581,7 +2582,8 @@
           "hanzi": "老师",
           "pinyin": "lǎoshī",
           "meaning_vi": "Thầy cô giáo",
-          "targetText": "老师"
+          "targetText": "老师",
+          "prompt": "Luyện phát âm chuẩn: 老师\n(Thầy cô giáo)"
         },
         {
           "id": "ps01-3",
@@ -2589,7 +2591,8 @@
           "hanzi": "学生",
           "pinyin": "xuésheng",
           "meaning_vi": "Học sinh (chữ sheng đọc thanh nhẹ)",
-          "targetText": "学生"
+          "targetText": "学生",
+          "prompt": "Luyện phát âm chuẩn: 学生\n(Học sinh (chữ sheng đọc thanh nhẹ))"
         },
         {
           "id": "ps01-4",
@@ -2597,7 +2600,8 @@
           "hanzi": "谢谢",
           "pinyin": "xièxie",
           "meaning_vi": "Cảm ơn",
-          "targetText": "谢谢"
+          "targetText": "谢谢",
+          "prompt": "Luyện phát âm chuẩn: 谢谢\n(Cảm ơn)"
         },
         {
           "id": "ps01-5",
@@ -2605,7 +2609,8 @@
           "hanzi": "再见",
           "pinyin": "zàijiàn",
           "meaning_vi": "Tạm biệt (hai thanh 4 dứt khoát)",
-          "targetText": "再见"
+          "targetText": "再见",
+          "prompt": "Luyện phát âm chuẩn: 再见\n(Tạm biệt (hai thanh 4 dứt khoát))"
         }
       ]
     },
@@ -2626,7 +2631,8 @@
           "hanzi": "我叫李明，我是中国人。",
           "pinyin": "Wǒ jiào Lǐ Míng, wǒ shì Zhōngguó rén.",
           "meaning_vi": "Tôi tên là Lý Minh, tôi là người Trung Quốc.",
-          "targetText": "我叫李明我是中国人"
+          "targetText": "我叫李明我是中国人",
+          "prompt": "Luyện phát âm chuẩn: 我叫李明，我是中国人。\n(Tôi tên là Lý Minh, tôi là người Trung Quốc.)"
         },
         {
           "id": "ps02-2",
@@ -2634,7 +2640,8 @@
           "hanzi": "很高兴认识你！",
           "pinyin": "Hěn gāoxìng rènshi nǐ!",
           "meaning_vi": "Rất vui được làm quen với bạn!",
-          "targetText": "很高兴认识你"
+          "targetText": "很高兴认识你",
+          "prompt": "Luyện phát âm chuẩn: 很高兴认识你！\n(Rất vui được làm quen với bạn!)"
         },
         {
           "id": "ps02-3",
@@ -2642,7 +2649,8 @@
           "hanzi": "我不是老师，我是学生。",
           "pinyin": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.",
           "meaning_vi": "Tôi không phải giáo viên, tôi là học sinh.",
-          "targetText": "我不是老师我是学生"
+          "targetText": "我不是老师我是学生",
+          "prompt": "Luyện phát âm chuẩn: 我不是老师，我是学生。\n(Tôi không phải giáo viên, tôi là học sinh.)"
         },
         {
           "id": "ps02-4",
@@ -2650,7 +2658,8 @@
           "hanzi": "你在哪里学习汉语？",
           "pinyin": "Nǐ zài nǎlǐ xuéxí Hànyǔ?",
           "meaning_vi": "Bạn học tiếng Trung ở đâu?",
-          "targetText": "你在哪里学习汉语"
+          "targetText": "你在哪里学习汉语",
+          "prompt": "Luyện phát âm chuẩn: 你在哪里学习汉语？\n(Bạn học tiếng Trung ở đâu?)"
         }
       ]
     },
@@ -2671,7 +2680,8 @@
           "hanzi": "请问，这个苹果多少钱一斤？",
           "pinyin": "Qǐngwèn, zhè gè píngguǒ duōshao qián yì jīn?",
           "meaning_vi": "Xin hỏi, táo này bao nhiêu tiền một cân?",
-          "targetText": "请问这个苹果多少钱一斤"
+          "targetText": "请问这个苹果多少钱一斤",
+          "prompt": "Luyện phát âm chuẩn: 请问，这个苹果多少钱一斤？\n(Xin hỏi, táo này bao nhiêu tiền một cân?)"
         },
         {
           "id": "ps03-2",
@@ -2679,7 +2689,8 @@
           "hanzi": "五块钱一斤，太贵了，便宜点儿吧。",
           "pinyin": "Wǔ kuài qián yì jīn, tài guì le, piányi diǎnr ba.",
           "meaning_vi": "Năm tệ một cân, đắt quá, rẻ một chút đi.",
-          "targetText": "五块钱一斤太贵了便宜点儿吧"
+          "targetText": "五块钱一斤太贵了便宜点儿吧",
+          "prompt": "Luyện phát âm chuẩn: 五块钱一斤，太贵了，便宜点儿吧。\n(Năm tệ một cân, đắt quá, rẻ một chút đi.)"
         },
         {
           "id": "ps03-3",
@@ -2687,7 +2698,8 @@
           "hanzi": "一共六十八块钱，请扫码支付。",
           "pinyin": "Yígòng liùshíbā kuài qián, qǐng sǎomǎ zhīfù.",
           "meaning_vi": "Tổng cộng 68 tệ, mời quét mã thanh toán.",
-          "targetText": "一共六十八块钱请扫码支付"
+          "targetText": "一共六十八块钱请扫码支付",
+          "prompt": "Luyện phát âm chuẩn: 一共六十八块钱，请扫码支付。\n(Tổng cộng 68 tệ, mời quét mã thanh toán.)"
         }
       ]
     },
@@ -2708,7 +2720,8 @@
           "hanzi": "你想吃米饭还是面条？——我想吃一碗面条。",
           "pinyin": "Wǒ xiǎng chī yì wǎn miàntiáo.",
           "meaning_vi": "Tôi muốn ăn một bát mì.",
-          "targetText": "我想吃一碗面条"
+          "targetText": "我想吃一碗面条",
+          "prompt": "Luyện phát âm chuẩn: 你想吃米饭还是面条？——我想吃一碗面条。\n(Tôi muốn ăn một bát mì.)"
         },
         {
           "id": "ps04-2",
@@ -2716,7 +2729,8 @@
           "hanzi": "服务员，请给我一杯热水。",
           "pinyin": "Fúwùyuán, qǐng gěi wǒ yì bēi rèshuǐ.",
           "meaning_vi": "Phục vụ ơi, vui lòng cho tôi một ly nước nóng.",
-          "targetText": "服务员请给我一杯热水"
+          "targetText": "服务员请给我一杯热水",
+          "prompt": "Luyện phát âm chuẩn: 服务员，请给我一杯热水。\n(Phục vụ ơi, vui lòng cho tôi một ly nước nóng.)"
         },
         {
           "id": "ps04-3",
@@ -2724,7 +2738,8 @@
           "hanzi": "这里的菜很好吃，我很喜欢。",
           "pinyin": "Zhèlǐ de cài hěn hǎochī, wǒ hěn xǐhuan.",
           "meaning_vi": "Món ăn ở đây rất ngon, tôi rất thích.",
-          "targetText": "这里的菜很好吃我很喜欢"
+          "targetText": "这里的菜很好吃我很喜欢",
+          "prompt": "Luyện phát âm chuẩn: 这里的菜很好吃，我很喜欢。\n(Món ăn ở đây rất ngon, tôi rất thích.)"
         }
       ]
     },
@@ -2745,7 +2760,8 @@
           "hanzi": "火车站就在学校的前面。",
           "pinyin": "Huǒchēzhàn jiù zài xuéxiào de qiánmiàn.",
           "meaning_vi": "Ga tàu hỏa ở ngay phía trước trường học.",
-          "targetText": "火车站就在学校的前面"
+          "targetText": "火车站就在学校的前面",
+          "prompt": "Luyện phát âm chuẩn: 火车站就在学校的前面。\n(Ga tàu hỏa ở ngay phía trước trường học.)"
         },
         {
           "id": "ps05-2",
@@ -2753,7 +2769,8 @@
           "hanzi": "一直往前走，在路口往右拐。",
           "pinyin": "Yìzhí wǎng qián zǒu, zài lùkǒu wǎng yòu guǎi.",
           "meaning_vi": "Cứ đi thẳng về phía trước, ở ngã tư thì rẽ phải.",
-          "targetText": "一直往前走在路口往右拐"
+          "targetText": "一直往前走在路口往右拐",
+          "prompt": "Luyện phát âm chuẩn: 一直往前走，在路口往右拐。\n(Cứ đi thẳng về phía trước, ở ngã tư thì rẽ phải.)"
         },
         {
           "id": "ps05-3",
@@ -2761,7 +2778,8 @@
           "hanzi": "今天下雨，我们坐出租车去吧。",
           "pinyin": "Jīntiān xiàyǔ, wǒmen zuò chūzūchē qù ba.",
           "meaning_vi": "Hôm nay trời mưa, chúng ta đi taxi nhé.",
-          "targetText": "今天下雨我们坐出租车去吧"
+          "targetText": "今天下雨我们坐出租车去吧",
+          "prompt": "Luyện phát âm chuẩn: 今天下雨，我们坐出租车去吧。\n(Hôm nay trời mưa, chúng ta đi taxi nhé.)"
         }
       ]
     },
@@ -2782,7 +2800,8 @@
           "hanzi": "你今天身体怎么样？好点儿了吗？",
           "pinyin": "Nǐ jīntiān shēntǐ zěnmeyàng? Hǎo diǎnr le ma?",
           "meaning_vi": "Hôm nay sức khỏe bạn thế nào? Đã đỡ hơn chút nào chưa?",
-          "targetText": "你今天身体怎么样好点儿了吗"
+          "targetText": "你今天身体怎么样好点儿了吗",
+          "prompt": "Luyện phát âm chuẩn: 你今天身体怎么样？好点儿了吗？\n(Hôm nay sức khỏe bạn thế nào? Đã đỡ hơn chút nào chưa?)"
         },
         {
           "id": "ps06-2",
@@ -2790,7 +2809,8 @@
           "hanzi": "医生让我多喝水，多在家里休息。",
           "pinyin": "Yīshēng ràng wǒ duō hē shuǐ, duō zài jiālǐ xiūxi.",
           "meaning_vi": "Bác sĩ dặn tôi uống nhiều nước và nghỉ ngơi nhiều ở nhà.",
-          "targetText": "医生让我多喝水多在家里休息"
+          "targetText": "医生让我多喝水多在家里休息",
+          "prompt": "Luyện phát âm chuẩn: 医生让我多喝水，多在家里休息。\n(Bác sĩ dặn tôi uống nhiều nước và nghỉ ngơi nhiều ở nhà.)"
         },
         {
           "id": "ps06-3",
@@ -2798,7 +2818,8 @@
           "hanzi": "周末我和同学们一起去打篮球。",
           "pinyin": "Zhōumò wǒ hé tóngxuémen yìqǐ qù dǎ lánqiú.",
           "meaning_vi": "Cuối tuần tôi và các bạn cùng đi chơi bóng rổ.",
-          "targetText": "周末我和同学们一起去打篮球"
+          "targetText": "周末我和同学们一起去打篮球",
+          "prompt": "Luyện phát âm chuẩn: 周末我和同学们一起去打篮球。\n(Cuối tuần tôi và các bạn cùng đi chơi bóng rổ.)"
         }
       ]
     },
@@ -2819,7 +2840,8 @@
           "hanzi": "喂，请问王经理在办公室吗？",
           "pinyin": "Wéi, qǐngwèn Wáng jīnglǐ zài bàngōngshì ma?",
           "meaning_vi": "Alo, xin hỏi giám đốc Vương có ở văn phòng không ạ?",
-          "targetText": "喂请问王经理在办公室吗"
+          "targetText": "喂请问王经理在办公室吗",
+          "prompt": "Luyện phát âm chuẩn: 喂，请问王经理在办公室吗？\n(Alo, xin hỏi giám đốc Vương có ở văn phòng không ạ?)"
         },
         {
           "id": "ps07-2",
@@ -2827,7 +2849,8 @@
           "hanzi": "他正在开会，请您半小时后再打来。",
           "pinyin": "Tā zhèngzài kāihuì, qǐng nín bàn xiǎoshí hòu zài dǎ lái.",
           "meaning_vi": "Ông ấy đang họp, xin vui lòng gọi lại sau nửa tiếng nữa ạ.",
-          "targetText": "他正在开会请您半小时后再打来"
+          "targetText": "他正在开会请您半小时后再打来",
+          "prompt": "Luyện phát âm chuẩn: 他正在开会，请您半小时后再打来。\n(Ông ấy đang họp, xin vui lòng gọi lại sau nửa tiếng nữa ạ.)"
         },
         {
           "id": "ps07-3",
@@ -2835,7 +2858,8 @@
           "hanzi": "好的，谢谢您，再见！",
           "pinyin": "Hǎo de, xièxie nín, zàijiàn!",
           "meaning_vi": "Vâng, cảm ơn ngài, tạm biệt!",
-          "targetText": "好的谢谢您再见"
+          "targetText": "好的谢谢您再见",
+          "prompt": "Luyện phát âm chuẩn: 好的，谢谢您，再见！\n(Vâng, cảm ơn ngài, tạm biệt!)"
         }
       ]
     },
@@ -2856,7 +2880,8 @@
           "hanzi": "我爱学中文，我希望明年去中国留学。",
           "pinyin": "Wǒ ài xué Zhōngwén, wǒ xīwàng míngnián qù Zhōngguó liúxué.",
           "meaning_vi": "Tôi yêu học tiếng Trung, tôi hy vọng năm sau đi Trung Quốc du học.",
-          "targetText": "我爱学中文我希望明年去中国留学"
+          "targetText": "我爱学中文我希望明年去中国留学",
+          "prompt": "Luyện phát âm chuẩn: 我爱学中文，我希望明年去中国留学。\n(Tôi yêu học tiếng Trung, tôi hy vọng năm sau đi Trung Quốc du học.)"
         },
         {
           "id": "ps08-2",
@@ -2864,7 +2889,8 @@
           "hanzi": "北京有很多好玩的地方，烤鸭也非常好吃。",
           "pinyin": "Běijīng yǒu hěn duō hǎowán de dìfang, kǎoyā yě fēicháng hǎochī.",
           "meaning_vi": "Bắc Kinh có nhiều nơi vui chơi, vịt quay cũng vô cùng ngon.",
-          "targetText": "北京有很多好玩的地方烤鸭也非常好吃"
+          "targetText": "北京有很多好玩的地方烤鸭也非常好吃",
+          "prompt": "Luyện phát âm chuẩn: 北京有很多好玩的地方，烤鸭也非常好吃。\n(Bắc Kinh có nhiều nơi vui chơi, vịt quay cũng vô cùng ngon.)"
         },
         {
           "id": "ps08-3",
@@ -2872,7 +2898,8 @@
           "hanzi": "我们一起努力，天天向上！",
           "pinyin": "Wǒmen yìqǐ nǔlì, tiāntiān xiàngshàng!",
           "meaning_vi": "Chúng ta cùng nhau cố gắng, ngày ngày tiến bộ!",
-          "targetText": "我们一起努力天天向上"
+          "targetText": "我们一起努力天天向上",
+          "prompt": "Luyện phát âm chuẩn: 我们一起努力，天天向上！\n(Chúng ta cùng nhau cố gắng, ngày ngày tiến bộ!)"
         }
       ]
     },
