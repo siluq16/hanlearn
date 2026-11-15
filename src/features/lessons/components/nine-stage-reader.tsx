@@ -58,8 +58,8 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
   const [completedStages, setCompletedStages] = useState<number[]>(() => {
     const serverStages =
       initialProgress &&
-      Array.isArray(initialProgress.completedStages) &&
-      initialProgress.completedStages.length > 0
+        Array.isArray(initialProgress.completedStages) &&
+        initialProgress.completedStages.length > 0
         ? initialProgress.completedStages
         : [];
 
@@ -74,7 +74,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         ...(Array.isArray(rawLegacy) ? rawLegacy : []),
       ];
       return Array.from(new Set([...serverStages, ...localList])).sort((a, b) => a - b);
-    } catch {}
+    } catch { }
     return serverStages;
   });
 
@@ -88,9 +88,9 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           lessonId: lesson.slug || lesson.id,
           completedStages,
           currentStage: currentStageIndex,
-        }).catch(() => {});
+        }).catch(() => { });
       }
-    } catch {}
+    } catch { }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -100,12 +100,12 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
       const next = [...prev, idx];
       try {
         localStorage.setItem(storageKey, JSON.stringify(next));
-      } catch {}
+      } catch { }
       saveStageProgress({
         lessonId: lesson.slug || lesson.id,
         completedStages: next,
         currentStage: currentStageIndex,
-      }).catch(() => {});
+      }).catch(() => { });
       return next;
     });
   }
@@ -116,7 +116,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
       lessonId: lesson.slug || lesson.id,
       completedStages,
       currentStage: idx,
-    }).catch(() => {});
+    }).catch(() => { });
   }
 
   const stages = lesson.stages;
@@ -202,13 +202,12 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                     handleSelectStage(group.stageIndices[0]);
                   }
                 }}
-                className={`flex flex-col items-center justify-center p-2.5 rounded-xl text-xs transition-all relative ${
-                  isGroupActive
-                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/50 ring-2 ring-primary/30"
-                    : isGroupAllDone
-                      ? "text-emerald-700 dark:text-emerald-300 hover:bg-card/60 font-medium"
-                      : "text-muted-foreground hover:text-foreground hover:bg-card/50"
-                }`}
+                className={`flex flex-col items-center justify-center p-2.5 rounded-xl text-xs transition-all relative ${isGroupActive
+                  ? "bg-card text-foreground shadow-xs font-bold border border-primary/50 ring-2 ring-primary/30"
+                  : isGroupAllDone
+                    ? "text-emerald-700 dark:text-emerald-300 hover:bg-card/60 font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                  }`}
               >
                 <div className="flex items-center gap-1.5 w-full justify-center">
                   {isGroupAllDone ? (
@@ -257,13 +256,12 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                   key={st.stage}
                   type="button"
                   onClick={() => handleSelectStage(idx)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
-                    isActive
-                      ? "bg-primary text-primary-foreground shadow-xs font-bold"
-                      : isDone
-                        ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30"
-                        : "bg-muted text-muted-foreground hover:bg-muted/80"
-                  }`}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all ${isActive
+                    ? "bg-primary text-primary-foreground shadow-xs font-bold"
+                    : isDone
+                      ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
                 >
                   <span className="shrink-0">{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
                   <span>Chặng {idx + 1}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
@@ -442,11 +440,10 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                 {currentStage.dialogue.turns.map((t, tIdx) => (
                   <div
                     key={tIdx}
-                    className={`p-4 rounded-2xl border transition-all space-y-1.5 ${
-                      t.speaker.toLowerCase().includes("a")
-                        ? "border-primary/30 bg-primary/5 mr-6 sm:mr-12"
-                        : "border-border bg-card ml-6 sm:ml-12"
-                    }`}
+                    className={`p-4 rounded-2xl border transition-all space-y-1.5 ${t.speaker.toLowerCase().includes("a")
+                      ? "border-primary/30 bg-primary/5 mr-6 sm:mr-12"
+                      : "border-border bg-card ml-6 sm:ml-12"
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-primary">{t.speaker}</span>

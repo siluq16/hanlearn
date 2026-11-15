@@ -255,6 +255,7 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
 
   // Total correct score computed
   const totalCorrect = Object.values(scoreMap).filter(Boolean).length;
+  const completedCount = Object.values(questionStatuses).filter((s) => s === "completed").length;
   const isPass = totalCorrect >= Math.ceil(totalCount * 0.75);
 
   // 1. DIALOGUE SCRIPTED ROLEPLAY PRESENTATION (Mode 5)
@@ -497,18 +498,31 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
             </div>
           )}
 
-          <span className="text-xs font-semibold text-muted-foreground">
-            Câu {currentIndex + 1} / {totalCount}
-          </span>
+          <div className="flex items-center gap-1.5 text-xs">
+            <Badge className="border border-border bg-card text-foreground font-semibold">
+              Đang xem: {currentIndex + 1}/{totalCount}
+            </Badge>
+            <Badge className="bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 font-semibold">
+              Đã làm: {completedCount}/{totalCount}
+            </Badge>
+          </div>
         </div>
       </div>
 
-      {/* Progress Bar */}
-      <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
-        <div
-          className="h-full bg-primary transition-all duration-300"
-          style={{ width: `${((currentIndex + 1) / totalCount) * 100}%` }}
-        />
+      {/* Progress Bar: Real completion progress */}
+      <div className="space-y-1">
+        <div className="flex items-center justify-between text-[11px] text-muted-foreground px-0.5">
+          <span>Tiến độ hoàn thành</span>
+          <span className="font-semibold text-foreground">
+            {completedCount} / {totalCount} câu ({Math.round((completedCount / totalCount) * 100)}%)
+          </span>
+        </div>
+        <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
+          <div
+            className="h-full bg-primary transition-all duration-300"
+            style={{ width: `${(completedCount / totalCount) * 100}%` }}
+          />
+        </div>
       </div>
 
       {/* Question Stepper / Navigator */}
@@ -668,8 +682,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                 </div>
               )}
 
-              {/* Hanzi / Pinyin Display */}
-              {currentQ?.hanzi && (
+              {/* Hanzi / Pinyin Display: ONLY for Speaking exercises or when explicitly needed */}
+              {isSpeaking && currentQ?.hanzi && (
                 <div className="text-center py-3 bg-muted/30 rounded-xl border border-border/60 space-y-1">
                   <p className="hanzi text-3xl font-bold text-foreground">
                     {currentQ.hanzi}

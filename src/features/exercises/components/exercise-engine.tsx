@@ -374,9 +374,9 @@ export function ExerciseEngine({
                 onClick={() =>
                   speak(
                     currentExercise.targetContent?.audioText ||
-                      currentExercise.targetContent?.hanzi ||
-                      currentExercise.expectedAnswer ||
-                      "",
+                    currentExercise.targetContent?.hanzi ||
+                    currentExercise.expectedAnswer ||
+                    "",
                     preferredRate
                   )
                 }
@@ -500,11 +500,10 @@ export function ExerciseEngine({
                     type="button"
                     disabled={isAnswered || isPicked}
                     onClick={() => handleToggleToken(token.id)}
-                    className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
-                      isPicked
-                        ? "border-dashed border-border/40 text-muted-foreground/40 bg-muted/30 cursor-not-allowed"
-                        : "border-border bg-card hover:bg-muted text-foreground shadow-xs"
-                    }`}
+                    className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${isPicked
+                      ? "border-dashed border-border/40 text-muted-foreground/40 bg-muted/30 cursor-not-allowed"
+                      : "border-border bg-card hover:bg-muted text-foreground shadow-xs"
+                      }`}
                   >
                     {token.text}
                   </button>
@@ -559,15 +558,14 @@ export function ExerciseEngine({
                         type="button"
                         disabled={isMatched || isAnswered}
                         onClick={() => handleSelectLeft(pair.leftId)}
-                        className={`w-full text-left p-3 rounded-xl border text-base font-bold transition-all ${
-                          isMatched
-                            ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : isMismatch
-                              ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
-                              : isSelected
-                                ? "bg-primary text-primary-foreground border-primary shadow-sm"
-                                : "bg-card border-border hover:bg-muted text-foreground"
-                        }`}
+                        className={`w-full text-left p-3 rounded-xl border text-base font-bold transition-all ${isMatched
+                          ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
+                          : isMismatch
+                            ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                            : isSelected
+                              ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                              : "bg-card border-border hover:bg-muted text-foreground"
+                          }`}
                       >
                         {pair.leftLabel}
                       </button>
@@ -589,13 +587,12 @@ export function ExerciseEngine({
                         type="button"
                         disabled={isMatched || isAnswered}
                         onClick={() => handleSelectRight(pair.rightId)}
-                        className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${
-                          isMatched
-                            ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
-                            : isMismatch
-                              ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
-                              : "bg-card border-border hover:bg-muted text-foreground"
-                        }`}
+                        className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${isMatched
+                          ? "bg-emerald-500/10 border-emerald-500 text-emerald-600 dark:text-emerald-400 cursor-default"
+                          : isMismatch
+                            ? "bg-rose-500/15 border-rose-500 text-rose-600 dark:text-rose-400 ring-1 ring-rose-500"
+                            : "bg-card border-border hover:bg-muted text-foreground"
+                          }`}
                       >
                         {pair.rightLabel}
                       </button>
@@ -799,11 +796,10 @@ export function ExerciseEngine({
         {/* Answer Feedback Banner */}
         {isAnswered && (
           <div
-            className={`p-4 rounded-xl border flex items-start gap-3 transition-all ${
-              isCorrect
-                ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300"
-                : "bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-300"
-            }`}
+            className={`p-4 rounded-xl border flex items-start gap-3 transition-all ${isCorrect
+              ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300"
+              : "bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-300"
+              }`}
           >
             {isCorrect ? (
               <CheckCircle2 className="size-5 shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5" />

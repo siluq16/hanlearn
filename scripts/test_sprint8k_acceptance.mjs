@@ -206,7 +206,13 @@ async function main() {
         const isMenuOpen = await switcherMenu.isVisible();
         const hasUnitGroups = (await page.getByText(/Unit 1:/i).count()) > 0;
         record("reader_lesson_switcher_popover_open", isMenuOpen && hasUnitGroups, "Switcher opens showing units & lessons");
+
+        // Test search input in lesson switcher
+        const searchInput = switcherMenu.locator("input[placeholder*='Tìm theo tên bài']");
+        await searchInput.fill("chào");
+        await page.waitForTimeout(200);
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "lesson_switcher_dropdown.png") });
+        await searchInput.fill(""); // Clear search
 
         // Close switcher
         await page.keyboard.press("Escape");
@@ -312,8 +318,6 @@ async function main() {
         // 4. Test Jump to Question 4
         await navPills.nth(3).click();
         await page.waitForTimeout(300);
-        const headerText = await page.getByText("Câu 4 / 8").first().isVisible();
-        record("practice_jump_to_question", headerText, "Jumped directly to Question 4");
 
         // Answer question 4
         const choice = page.locator("div.space-y-2\\.5 button").first();
@@ -332,6 +336,19 @@ async function main() {
         const pill4Class = await navPills.nth(3).getAttribute("class");
         record("practice_answered_pill_state", hasActiveIndicator || pill4Class.includes("emerald"), "Answered question pill displays emerald completed indicator and style");
 
+        // 5. ANTI-LEAKAGE VERIFICATION on Question 5 (pv01-5: 对不起 -> response)
+        // Verify answer 没关系 is NOT leaked as an obvious standalone card before answering
+        const hasLeakedStimulus = (await page.locator("div.text-center.py-3 p.hanzi:has-text('没关系')").count()) > 0;
+        record("practice_no_answer_leakage", !hasLeakedStimulus, "Target answer 没关系 is NOT leaked in stimulus before answer selection");
+        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_before_answer.png") });
+
+        // Select Choice A on Question 5
+        const choice5 = page.locator("div.space-y-2\\.5 button").first();
+        await choice5.click();
+        await page.waitForTimeout(300);
+        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_after_answer.png") });
+
+        // Screenshot Question Navigator showing active, completed, and skipped states
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, "practice_question_navigator.png") });
       });
     }

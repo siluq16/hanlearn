@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   BookOpen,
   X,
+  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -74,6 +75,36 @@ export function LessonNavHeader({
   const currentUnitDef = HSK1_UNITS.find(
     (u) => u.unit_id === unitId || u.lesson_slugs.includes(currentSlug)
   ) || HSK1_UNITS[0];
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [expandedUnits, setExpandedUnits] = useState<Record<string, boolean>>(() => ({
+    [currentUnitDef.unit_id]: true,
+  }));
+
+  const toggleUnit = (uid: string) => {
+    setExpandedUnits((prev) => ({ ...prev, [uid]: !prev[uid] }));
+  };
+
+  const filteredUnits = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return HSK1_UNITS.map((unit) => {
+      const unitLessons = regularLessons.filter((l) => unit.lesson_slugs.includes(l.slug));
+      if (!q) {
+        return { unit, lessons: unitLessons, matchesSearch: false };
+      }
+      const matched = unitLessons.filter((l) => {
+        const num = regularLessons.findIndex((r) => r.slug === l.slug) + 1;
+        return (
+          l.title.toLowerCase().includes(q) ||
+          l.slug.toLowerCase().includes(q) ||
+          `bài ${num}`.includes(q) ||
+          `bai ${num}`.includes(q) ||
+          unit.title.toLowerCase().includes(q)
+        );
+      });
+      return { unit, lessons: matched, matchesSearch: true };
+    }).filter((group) => group.lessons.length > 0);
+  }, [searchQuery, regularLessons]);
 
   const shortLessonTitle = lessonTitle.split(":")[0]?.trim() || `Bài ${currentLessonNumber}`;
 
@@ -153,7 +184,7 @@ export function LessonNavHeader({
               />
             </button>
 
-            {/* Dropdown Menu organized by Unit */}
+            {/* Dropdown Menu organized by Unit with Search & Accordion */}
             {isSwitcherOpen && (
               <div
                 className="absolute right-0 mt-1.5 w-80 sm:w-96 rounded-2xl border border-border bg-popover/95 backdrop-blur-md p-3 shadow-xl z-50 animate-in fade-in zoom-in-95 space-y-3 max-h-[80vh] overflow-y-auto"
@@ -175,62 +206,107 @@ export function LessonNavHeader({
                   </button>
                 </div>
 
-                <div className="space-y-3">
-                  {HSK1_UNITS.map((unit) => {
-                    const unitLessons = regularLessons.filter((l) =>
-                      unit.lesson_slugs.includes(l.slug)
-                    );
-                    if (unitLessons.length === 0) return null;
+                {/* Search Bar */}
+                <div className="relative">
+                  <Search className="size-3.5 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Tìm theo tên bài, số bài hoặc Unit..."
+                    className="w-full pl-8 pr-7 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-hidden focus:ring-1 focus:ring-primary shadow-2xs placeholder:text-muted-foreground"
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery("")}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground text-[10px] font-semibold"
+                    >
+                      Xóa
+                    </button>
+                  )}
+                </div>
 
-                    const isUnitCurrent = unit.lesson_slugs.includes(currentSlug);
+                {/* Units List */}
+                <div className="space-y-2">
+                  {filteredUnits.length === 0 ? (
+                    <div className="text-center py-6 text-xs text-muted-foreground">
+                      Không tìm thấy bài học nào phù hợp với &quot;{searchQuery}&quot;
+                    </div>
+                  ) : (
+                    filteredUnits.map(({ unit, lessons }) => {
+                      const isUnitCurrent = unit.lesson_slugs.includes(currentSlug);
+                      const isExpanded = !!searchQuery || !!expandedUnits[unit.unit_id];
 
-                    return (
-                      <div
-                        key={unit.unit_id}
-                        className={`rounded-xl border p-2.5 space-y-1.5 transition-colors ${
-                          isUnitCurrent
-                            ? "border-primary/40 bg-primary/5"
-                            : "border-border/60 bg-card/60"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between text-[11px] font-semibold text-muted-foreground">
-                          <span className="truncate">{unit.title}</span>
-                          <span className="shrink-0 text-[10px]">
-                            {unitLessons.length} bài
-                          </span>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
-                          {unitLessons.map((les) => {
-                            const isCurrent = les.slug === currentSlug;
-                            const lesNumber = regularLessons.findIndex((r) => r.slug === les.slug) + 1;
-
-                            return (
-                              <Link
-                                key={les.slug}
-                                href={`/lessons/stage/${les.slug}`}
-                                onClick={() => setIsSwitcherOpen(false)}
-                                className={`flex items-center justify-between p-2 rounded-lg text-xs transition-all ${
-                                  isCurrent
-                                    ? "bg-primary text-primary-foreground font-bold shadow-xs"
-                                    : "bg-muted/50 hover:bg-muted text-foreground"
+                      return (
+                        <div
+                          key={unit.unit_id}
+                          className={`rounded-xl border transition-colors ${
+                            isUnitCurrent
+                              ? "border-primary/40 bg-primary/5"
+                              : "border-border/60 bg-card/60"
+                          }`}
+                        >
+                          {/* Unit Accordion Header */}
+                          <button
+                            type="button"
+                            onClick={() => toggleUnit(unit.unit_id)}
+                            className="w-full flex items-center justify-between p-2.5 text-left text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
+                          >
+                            <div className="flex items-center gap-1.5 truncate">
+                              <ChevronRight
+                                className={`size-3.5 text-muted-foreground transition-transform duration-200 shrink-0 ${
+                                  isExpanded ? "rotate-90" : ""
                                 }`}
-                              >
-                                <span className="truncate pr-1">
-                                  Bài {lesNumber}: {les.title.split(":")[1]?.trim() || les.title}
-                                </span>
-                                {isCurrent && (
-                                  <Badge className="bg-primary-foreground text-primary text-[9px] px-1 py-0 font-bold shrink-0">
-                                    Đang học
-                                  </Badge>
-                                )}
-                              </Link>
-                            );
-                          })}
+                              />
+                              <span className="truncate">{unit.title}</span>
+                            </div>
+
+                            <div className="flex items-center gap-1.5 shrink-0 text-[10px]">
+                              {isUnitCurrent && (
+                                <Badge className="bg-primary/10 text-primary border-primary/20 text-[9px] px-1 py-0 font-bold">
+                                  Unit hiện tại
+                                </Badge>
+                              )}
+                              <span className="text-muted-foreground">{lessons.length} bài</span>
+                            </div>
+                          </button>
+
+                          {/* Unit Lessons Grid (when expanded) */}
+                          {isExpanded && (
+                            <div className="p-2 pt-0 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                              {lessons.map((les) => {
+                                const isCurrent = les.slug === currentSlug;
+                                const lesNumber = regularLessons.findIndex((r) => r.slug === les.slug) + 1;
+
+                                return (
+                                  <Link
+                                    key={les.slug}
+                                    href={`/lessons/stage/${les.slug}`}
+                                    onClick={() => setIsSwitcherOpen(false)}
+                                    className={`flex items-center justify-between p-2 rounded-lg text-xs transition-all ${
+                                      isCurrent
+                                        ? "bg-primary text-primary-foreground font-bold shadow-xs"
+                                        : "bg-muted/50 hover:bg-muted text-foreground"
+                                    }`}
+                                  >
+                                    <span className="truncate pr-1">
+                                      Bài {lesNumber}: {les.title.split(":")[1]?.trim() || les.title}
+                                    </span>
+                                    {isCurrent && (
+                                      <Badge className="bg-primary-foreground text-primary text-[9px] px-1 py-0 font-bold shrink-0">
+                                        Đang học
+                                      </Badge>
+                                    )}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })
+                  )}
                 </div>
               </div>
             )}

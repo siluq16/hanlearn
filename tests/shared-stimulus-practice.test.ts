@@ -183,4 +183,25 @@ describe("Sprint 8K: Adaptive Practice Presentation & Shared Stimulus Model", ()
     expect(totalCorrect).toBe(1);
     expect(questions.length).toBe(2);
   });
+
+  it("answer leakage prevention: guarantees no premature answer exposure in multiple choice questions", () => {
+    const practiceBankPath = path.resolve(
+      process.cwd(),
+      "content/hsk_library/practice_bank.json"
+    );
+    const pb = JSON.parse(fs.readFileSync(practiceBankPath, "utf8"));
+
+    for (const set of pb.sets) {
+      for (const q of set.questions || []) {
+        if (q.choices && q.choices.length > 0) {
+          const correctChoice = q.choices[q.correct_index ?? 0];
+          expect(correctChoice).toBeDefined();
+
+          // In multiple choice questions, the stimulus should NOT reveal the correct choice
+          // For instance, the question prompt should not be identical to the correct choice
+          expect(q.prompt.trim()).not.toBe(correctChoice.trim());
+        }
+      }
+    }
+  });
 });

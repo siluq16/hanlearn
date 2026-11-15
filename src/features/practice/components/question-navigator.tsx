@@ -17,6 +17,9 @@ export function QuestionNavigator({
   onSelectQuestion,
   allowJump = true,
 }: QuestionNavigatorProps) {
+  const completedCount = Object.values(questionStatuses).filter((s) => s === "completed").length;
+  const skippedCount = Object.values(questionStatuses).filter((s) => s === "skipped").length;
+
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between text-xs text-muted-foreground px-0.5">
@@ -24,11 +27,11 @@ export function QuestionNavigator({
         <div className="flex items-center gap-3 text-[11px]">
           <span className="flex items-center gap-1">
             <span className="size-2 rounded-full bg-emerald-500 inline-block" />
-            Đã làm
+            Đã làm ({completedCount})
           </span>
           <span className="flex items-center gap-1">
             <span className="size-2 rounded-full bg-amber-500 inline-block" />
-            Bỏ qua
+            Bỏ qua ({skippedCount})
           </span>
           <span className="flex items-center gap-1">
             <span className="size-2 rounded-full bg-primary inline-block" />
