@@ -99,7 +99,7 @@ export default async function ExamOverviewPage() {
 
       {/* 6 Unit Tests Grid */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 items-start">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <Award className="size-5 text-primary" />
@@ -111,7 +111,7 @@ export default async function ExamOverviewPage() {
               Mỗi Unit Test gồm 20 câu hỏi tổng hợp 4 kỹ năng (Nghe, Từ vựng, Ngữ pháp, Đọc hiểu) trong 20 phút. Chuẩn đạt 80% (16/20).
             </p>
           </div>
-          <Badge className="bg-primary/10 text-primary border-primary/20 text-xs font-semibold">
+          <Badge className="bg-primary/10 text-primary border-primary/20 text-xs font-semibold shrink-0 self-start sm:self-auto">
             {prog.passedUnitTestsCount} / 6 Unit đã đạt
           </Badge>
         </div>

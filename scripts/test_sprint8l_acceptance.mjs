@@ -334,6 +334,13 @@ async function main() {
 
     await pageMobile.goto(`${ORIGIN}/review`, { waitUntil: "domcontentloaded" });
     await pageMobile.waitForSelector("[data-review-stat]", { timeout: 10000 });
+
+    const mobileFlipBtn = pageMobile.getByRole("button", { name: "Lật thẻ" });
+    if (await mobileFlipBtn.isVisible()) {
+      await mobileFlipBtn.click();
+      await pageMobile.waitForTimeout(400);
+    }
+
     await pageMobile.screenshot({ path: path.join(SCREENSHOT_DIR, "review_mobile.png"), fullPage: false });
     console.log("[Screenshot] saved review_mobile.png");
     await contextMobile.close();

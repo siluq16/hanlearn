@@ -4,6 +4,7 @@ import { requireLearner } from "@/features/auth/session";
 import { HSK1_UNITS } from "./constants";
 import { HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
 import { getLessonMeta } from "@/features/curriculum/unified-metadata";
+import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
 
 export interface LearnerProgressOverview {
   courseSlug: string;
@@ -52,6 +53,13 @@ export const getLearnerCurriculumProgress = cache(
       .from("curriculum_quiz_attempts")
       .select("lesson_id, quiz_id, correct_count, question_count, passed")
       .eq("user_id", user.id);
+
+    // 3. Fetch vocabulary progress records
+    const { data: vocabRows } = await supabase
+      .from("vocabulary_progress")
+      .select("vocabulary_id, mastery_state")
+      .eq("user_id", user.id)
+      .neq("mastery_state", "not_introduced");
 
     const stageMap = new Map<string, { currentStage: number; completedStages: number[] }>();
     if (stageRows) {
@@ -112,10 +120,13 @@ export const getLearnerCurriculumProgress = cache(
       const completedCount = prog?.completedStages.length || 0;
       // A lesson is considered completed if 8 or more stages are done (including Mini Quiz)
       const isCompleted = completedCount >= 8 || (prog?.completedStages.includes(8) ?? false);
+      const hasStudiedVocab = isCompleted || (prog?.completedStages.includes(1) ?? false) || (prog?.completedStages.includes(2) ?? false);
 
       if (isCompleted) {
         completedLessonsCount += 1;
-        // Accumulate vocabulary
+      }
+
+      if (hasStudiedVocab) {
         for (const st of lesson.stages) {
           if (st.vocabulary) {
             for (const v of st.vocabulary) {
@@ -123,7 +134,7 @@ export const getLearnerCurriculumProgress = cache(
             }
           }
         }
-      } else if (!foundNext) {
+      } else if (!foundNext && !isCompleted) {
         nextLessonSlug = slug;
         nextLessonTitle = getLessonMeta(slug).fullTitle;
         foundNext = true;
@@ -134,6 +145,16 @@ export const getLearnerCurriculumProgress = cache(
         currentStage: prog?.currentStage || 0,
         completedStagesCount: completedCount,
       };
+    }
+
+    // Merge any words learned from vocabulary_progress
+    if (vocabRows && vocabRows.length > 0) {
+      const official300 = getOfficial300VocabItems();
+      const vocabIdMap = new Map(official300.map((w) => [w.id, w.simplified]));
+      for (const vr of vocabRows) {
+        const hz = vocabIdMap.get(vr.vocabulary_id);
+        if (hz) learnedWordsSet.add(hz);
+      }
     }
 
     // Process 6 Units
@@ -181,7 +202,7 @@ export const getLearnerCurriculumProgress = cache(
       totalUnitTests: 6,
       passedUnitTestsCount,
       totalVocabulary: 300,
-      vocabularyLearnedCount: Math.min(300, learnedWordsSet.size),
+      vocabularyLearnedCount: Math.min(300, Math.max(learnedWordsSet.size, vocabRows?.length || 0)),
       overallPercent,
       nextLessonSlug,
       nextLessonTitle,

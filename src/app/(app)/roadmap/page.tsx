@@ -47,8 +47,8 @@ export default async function Roadmap() {
 
       {/* Course Overall Progress Card */}
       <Card className="border-primary/30 bg-card shadow-sm">
-        <CardContent className="p-6 sm:p-8 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <CardContent className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
                 Tiến độ tổng quan HSK 1
@@ -61,10 +61,10 @@ export default async function Roadmap() {
             <div className="flex items-center gap-2">
               <Link
                 href={`/lessons/stage/${prog.nextLessonSlug}`}
-                className="inline-flex min-h-11 items-center gap-2 px-5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-xs"
+                className="inline-flex min-h-10 sm:min-h-11 items-center gap-2 px-4 sm:px-5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-xs"
               >
                 <span>Tiếp tục: {prog.nextLessonTitle}</span>
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-3.5 sm:size-4" />
               </Link>
             </div>
           </div>
@@ -74,28 +74,28 @@ export default async function Roadmap() {
             label="Tiến độ khóa học HSK 1"
           />
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-            <div className="p-3.5 rounded-xl bg-muted/60 border border-border">
-              <span className="block text-xl font-extrabold text-foreground">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1">
+            <div className="p-2.5 sm:p-3.5 rounded-xl bg-muted/60 border border-border">
+              <span className="block text-lg sm:text-xl font-extrabold text-foreground">
                 {prog.completedLessonsCount} / {prog.totalLessons}
               </span>
-              <span className="text-[11px] text-muted-foreground">Bài học hoàn thành</span>
+              <span className="text-[10px] sm:text-[11px] text-muted-foreground">Bài học hoàn thành</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-muted/60 border border-border">
-              <span className="block text-xl font-extrabold text-primary">
+            <div className="p-2.5 sm:p-3.5 rounded-xl bg-muted/60 border border-border">
+              <span className="block text-lg sm:text-xl font-extrabold text-primary">
                 {prog.passedUnitTestsCount} / {prog.totalUnitTests}
               </span>
-              <span className="text-[11px] text-muted-foreground">Unit Test đã đạt</span>
+              <span className="text-[10px] sm:text-[11px] text-muted-foreground">Unit Test đã đạt</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-muted/60 border border-border">
-              <span className="block text-xl font-extrabold text-emerald-600 dark:text-emerald-400">
+            <div className="p-2.5 sm:p-3.5 rounded-xl bg-muted/60 border border-border">
+              <span className="block text-lg sm:text-xl font-extrabold text-emerald-600 dark:text-emerald-400">
                 {prog.vocabularyLearnedCount} / {prog.totalVocabulary}
               </span>
-              <span className="text-[11px] text-muted-foreground">Từ vựng đã học</span>
+              <span className="text-[10px] sm:text-[11px] text-muted-foreground">Từ vựng đã học</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-muted/60 border border-border">
-              <span className="block text-xl font-extrabold text-foreground">6 / 6</span>
-              <span className="text-[11px] text-muted-foreground">Unit học tập</span>
+            <div className="p-2.5 sm:p-3.5 rounded-xl bg-muted/60 border border-border">
+              <span className="block text-lg sm:text-xl font-extrabold text-foreground">6 / 6</span>
+              <span className="text-[10px] sm:text-[11px] text-muted-foreground">Unit học tập</span>
             </div>
           </div>
         </CardContent>

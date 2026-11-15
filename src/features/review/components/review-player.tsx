@@ -240,30 +240,45 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
             </div>
           </div>
 
-          <Card className="border-border bg-card shadow-sm overflow-hidden">
-            <CardContent className="space-y-6 p-5 sm:p-8">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+          <Card className="border border-border/70 bg-card shadow-xs overflow-hidden">
+            <CardContent className="space-y-5 p-4 sm:p-7">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/50 pb-3">
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
+                  <span className="size-1.5 rounded-full bg-primary" />
                   {card.direction === "hanzi_to_vi"
                     ? "Hán tự → Nghĩa tiếng Việt"
                     : "Nghĩa tiếng Việt → Hán tự"}
-                </p>
+                </span>
                 <MandarinSpeedToggle />
               </div>
+
               <h2
                 ref={heading}
                 tabIndex={-1}
-                className={`whitespace-pre-wrap break-words text-center font-bold leading-relaxed outline-offset-4 ${card.direction === "hanzi_to_vi" ? "hanzi text-5xl sm:text-6xl text-foreground" : "text-2xl text-foreground"}`}
+                className={`whitespace-pre-wrap break-words text-center font-bold leading-relaxed outline-offset-4 ${
+                  card.direction === "hanzi_to_vi"
+                    ? card.hanzi.length <= 2
+                      ? "hanzi text-4xl sm:text-6xl text-foreground"
+                      : card.hanzi.length <= 4
+                        ? "hanzi text-3xl sm:text-5xl text-foreground"
+                        : "hanzi text-2xl sm:text-4xl text-foreground"
+                    : card.meaning.length <= 25
+                      ? "text-xl sm:text-2xl font-bold text-foreground"
+                      : card.meaning.length <= 60
+                        ? "text-base sm:text-xl font-semibold text-foreground"
+                        : "text-sm sm:text-base font-medium text-foreground"
+                }`}
                 lang={card.direction === "hanzi_to_vi" ? "zh-Hans" : "vi"}
               >
                 {card.direction === "hanzi_to_vi" ? card.hanzi : card.meaning}
               </h2>
+
               {!flipped ? (
-                <div className="space-y-4">
+                <div className="space-y-3.5 pt-2">
                   <ListenBeforeGuessButton hanzi={card.hanzi} />
                   <Button
                     variant="outline"
-                    className="min-h-12 w-full font-semibold"
+                    className="min-h-11 w-full font-semibold shadow-2xs"
                     disabled={pending || !ready || !!recovery}
                     onClick={() => {
                       stopMandarin();
@@ -276,27 +291,42 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
               ) : (
                 <div
                   data-review-back
-                  className="space-y-4 border-t border-border pt-5 text-center animate-in fade-in-50 duration-200"
+                  className="space-y-4 border-t border-border/60 pt-4 text-center animate-in fade-in-50 duration-200"
                 >
+                  <div className="flex items-center justify-between text-[11px] text-muted-foreground pb-1">
+                    <span className="font-semibold text-primary">✓ Đáp án &amp; Chi tiết</span>
+                    <span>Đã lật thẻ</span>
+                  </div>
+
                   {card.direction === "vi_to_hanzi" && (
                     <p
                       lang="zh-Hans"
-                      className="hanzi text-4xl leading-relaxed font-bold"
+                      className="hanzi text-3xl sm:text-4xl leading-relaxed font-bold text-foreground"
                     >
                       {card.hanzi}
                     </p>
                   )}
-                  <p className="text-xl font-bold text-primary">{card.pinyin}</p>
-                  <p className="whitespace-pre-wrap text-base font-medium leading-8 text-foreground">
+
+                  <p className="text-lg sm:text-xl font-bold text-primary">{card.pinyin}</p>
+
+                  <p
+                    className={`whitespace-pre-wrap ${
+                      card.meaning.length <= 40
+                        ? "text-base sm:text-lg font-semibold text-foreground"
+                        : "text-sm sm:text-base font-medium leading-relaxed text-foreground"
+                    }`}
+                  >
                     {card.meaning}
                   </p>
-                  <div className="flex justify-center">
+
+                  <div className="flex justify-center pt-1">
                     <MandarinAudioBar text={card.hanzi} />
                   </div>
+
                   {card.example && (
-                    <div className="space-y-2 rounded-xl bg-muted/60 border border-border p-4 text-left text-sm leading-7">
+                    <div className="space-y-1.5 rounded-xl bg-muted/40 border border-border/50 p-3 sm:p-4 text-left text-xs sm:text-sm leading-relaxed">
                       <div className="flex items-start justify-between gap-2">
-                        <p lang="zh-Hans" className="hanzi text-xl font-bold">
+                        <p lang="zh-Hans" className="hanzi text-lg sm:text-xl font-bold text-foreground">
                           {card.example.hanzi}
                         </p>
                         <MandarinAudioButton
@@ -307,17 +337,22 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                         />
                       </div>
                       {card.example.pinyin && (
-                        <p className="text-primary font-medium">{card.example.pinyin}</p>
+                        <p className="text-primary font-medium text-xs sm:text-sm">{card.example.pinyin}</p>
                       )}
-                      {card.example.meaning && <p className="text-muted-foreground">{card.example.meaning}</p>}
+                      {card.example.meaning && (
+                        <p className="text-muted-foreground text-xs">{card.example.meaning}</p>
+                      )}
                     </div>
                   )}
-                  <a
-                    href={`/vocabulary/${card.vocabularyId}`}
-                    className="inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline"
-                  >
-                    Xem từ vựng chi tiết →
-                  </a>
+
+                  <div className="pt-1">
+                    <a
+                      href={`/vocabulary/${card.vocabularyId}`}
+                      className="inline-flex min-h-9 items-center text-xs font-semibold text-primary hover:underline"
+                    >
+                      Xem từ vựng chi tiết →
+                    </a>
+                  </div>
                 </div>
               )}
             </CardContent>
