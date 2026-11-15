@@ -275,7 +275,9 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
 
               {!flipped ? (
                 <div className="space-y-3.5 pt-2">
-                  <ListenBeforeGuessButton hanzi={card.hanzi} />
+                  {card.direction === "hanzi_to_vi" && (
+                    <ListenBeforeGuessButton hanzi={card.hanzi} />
+                  )}
                   <Button
                     variant="outline"
                     className="min-h-11 w-full font-semibold shadow-2xs"
@@ -298,26 +300,30 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                     <span>Đã lật thẻ</span>
                   </div>
 
-                  {card.direction === "vi_to_hanzi" && (
-                    <p
-                      lang="zh-Hans"
-                      className="hanzi text-3xl sm:text-4xl leading-relaxed font-bold text-foreground"
-                    >
-                      {card.hanzi}
-                    </p>
+                  {card.direction === "vi_to_hanzi" ? (
+                    <div className="space-y-1.5">
+                      <p
+                        lang="zh-Hans"
+                        className="hanzi text-3xl sm:text-5xl leading-relaxed font-bold text-foreground"
+                      >
+                        {card.hanzi}
+                      </p>
+                      <p className="text-xl sm:text-2xl font-bold text-primary">{card.pinyin}</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-1.5">
+                      <p className="text-xl sm:text-2xl font-bold text-primary">{card.pinyin}</p>
+                      <p
+                        className={`whitespace-pre-wrap ${
+                          card.meaning.length <= 40
+                            ? "text-base sm:text-lg font-semibold text-foreground"
+                            : "text-sm sm:text-base font-medium leading-relaxed text-foreground"
+                        }`}
+                      >
+                        {card.meaning}
+                      </p>
+                    </div>
                   )}
-
-                  <p className="text-lg sm:text-xl font-bold text-primary">{card.pinyin}</p>
-
-                  <p
-                    className={`whitespace-pre-wrap ${
-                      card.meaning.length <= 40
-                        ? "text-base sm:text-lg font-semibold text-foreground"
-                        : "text-sm sm:text-base font-medium leading-relaxed text-foreground"
-                    }`}
-                  >
-                    {card.meaning}
-                  </p>
 
                   <div className="flex justify-center pt-1">
                     <MandarinAudioBar text={card.hanzi} />
@@ -346,12 +352,12 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                   )}
 
                   <div className="pt-1">
-                    <a
+                    <Link
                       href={`/vocabulary/${card.vocabularyId}`}
                       className="inline-flex min-h-9 items-center text-xs font-semibold text-primary hover:underline"
                     >
                       Xem từ vựng chi tiết →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
