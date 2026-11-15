@@ -225,9 +225,16 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           {/* Progress Bar for Current Session */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-xs font-semibold">
-              <span className="text-muted-foreground">Tiến độ phiên ôn</span>
+              <span className="text-muted-foreground">
+                Tiến độ phiên ôn {view.dueCount > view.cards.length ? `(đợt ${view.cards.length} thẻ)` : ""}
+              </span>
               <span className="text-primary font-bold">
                 Thẻ {count + 1} / {count + view.cards.length}
+                {view.dueCount > count + view.cards.length && (
+                  <span className="text-[11px] font-normal text-muted-foreground ml-1.5">
+                    (tổng {view.dueCount} đến hạn)
+                  </span>
+                )}
               </span>
             </div>
             <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
