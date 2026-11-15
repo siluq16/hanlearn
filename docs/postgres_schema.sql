@@ -997,17 +997,88 @@ create table if not exists public.curriculum_quiz_attempts (
 
 alter table public.curriculum_quiz_attempts enable row level security;
 revoke all on public.curriculum_quiz_attempts from public, anon, authenticated;
-grant select, insert, update on public.curriculum_quiz_attempts to authenticated;
+grant select, insert on public.curriculum_quiz_attempts to authenticated;
 
 create policy curriculum_quiz_attempts_read on public.curriculum_quiz_attempts
   for select to authenticated
   using ((select private.is_learner()) and user_id = (select auth.uid()));
 
+-- Learners can only insert an unstarted attempt; scores cannot be forged on insert
 create policy curriculum_quiz_attempts_insert on public.curriculum_quiz_attempts
   for insert to authenticated
-  with check ((select private.is_learner()) and user_id = (select auth.uid()));
+  with check (
+    (select private.is_learner())
+    and user_id = (select auth.uid())
+    and correct_count is null
+    and passed is null
+    and submitted_at is null
+  );
 
-create policy curriculum_quiz_attempts_update on public.curriculum_quiz_attempts
-  for update to authenticated
-  using ((select private.is_learner()) and user_id = (select auth.uid()))
-  with check ((select private.is_learner()) and user_id = (select auth.uid()));
+-- Atomic submission function: records result securely under row lock and validates single-submission
+create or replace function private.submit_curriculum_quiz_attempt(
+  p_attempt_id uuid,
+  p_correct_count integer,
+  p_question_count integer,
+  p_passed boolean,
+  p_answers jsonb
+)
+returns public.curriculum_quiz_attempts
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user_id uuid;
+  v_attempt public.curriculum_quiz_attempts;
+begin
+  v_user_id := (select auth.uid());
+  if v_user_id is null or not (select private.is_learner()) then
+    raise exception 'FORBIDDEN' using errcode = '42501';
+  end if;
+
+  select * into v_attempt
+  from public.curriculum_quiz_attempts
+  where id = p_attempt_id and user_id = v_user_id
+  for update;
+
+  if not found then
+    raise exception 'ATTEMPT_NOT_FOUND' using errcode = 'PT404';
+  end if;
+
+  if v_attempt.submitted_at is not null then
+    raise exception 'ALREADY_SUBMITTED' using errcode = 'PT409';
+  end if;
+
+  update public.curriculum_quiz_attempts set
+    submitted_at = clock_timestamp(),
+    correct_count = p_correct_count,
+    question_count = p_question_count,
+    passed = p_passed,
+    answers = p_answers
+  where id = p_attempt_id and user_id = v_user_id
+  returning * into v_attempt;
+
+  return v_attempt;
+end;
+$$;
+
+revoke all on function private.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) from public, anon;
+grant execute on function private.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) to authenticated;
+
+-- Public wrapper: SECURITY INVOKER
+create or replace function public.submit_curriculum_quiz_attempt(
+  p_attempt_id uuid,
+  p_correct_count integer,
+  p_question_count integer,
+  p_passed boolean,
+  p_answers jsonb
+)
+returns public.curriculum_quiz_attempts
+language sql
+security invoker
+as $$
+  select private.submit_curriculum_quiz_attempt(p_attempt_id, p_correct_count, p_question_count, p_passed, p_answers);
+$$;
+
+revoke all on function public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) from public, anon;
+grant execute on function public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) to authenticated;

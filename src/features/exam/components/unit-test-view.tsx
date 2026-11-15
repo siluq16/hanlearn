@@ -20,6 +20,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { MandarinAudioButton } from "@/components/mandarin-audio";
 import {
+  startUnitTestAction,
   submitUnitTestAction,
   type UnitTestDefinition,
   type UnitTestResult,
@@ -35,12 +36,28 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [secondsRemaining, setSecondsRemaining] = useState(unitTest.duration_minutes * 60);
   const [attemptId, setAttemptId] = useState<string>("");
-  const [startTime, setStartTime] = useState<number>(0);
+  const [isStarting, setIsStarting] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [result, setResult] = useState<UnitTestResult | null>(null);
 
+  const handleStartExam = async () => {
+    setIsStarting(true);
+    try {
+      const res = await startUnitTestAction(unitTest.unit_number);
+      if (res && res.attemptId) {
+        setAttemptId(res.attemptId);
+        setStage("exam");
+        setSecondsRemaining(res.durationMinutes * 60);
+      }
+    } catch {
+      alert("Không thể khởi tạo phiên thi từ máy chủ. Vui lòng thử lại!");
+    } finally {
+      setIsStarting(false);
+    }
+  };
+
   const handleSubmit = useCallback(async () => {
-    if (isSubmitting) return;
+    if (isSubmitting || !attemptId) return;
     setIsSubmitting(true);
     try {
       const timeSpent = unitTest.duration_minutes * 60 - secondsRemaining;
@@ -48,17 +65,17 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
         unitTest.unit_number,
         answers,
         timeSpent,
-        attemptId,
-        startTime
+        attemptId
       );
       setResult(res);
       setStage("result");
-    } catch {
-      alert("Có lỗi khi nộp bài. Vui lòng thử lại!");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Có lỗi khi nộp bài. Vui lòng thử lại!";
+      alert(msg);
     } finally {
       setIsSubmitting(false);
     }
-  }, [answers, isSubmitting, secondsRemaining, unitTest.duration_minutes, unitTest.unit_number, attemptId, startTime]);
+  }, [answers, isSubmitting, secondsRemaining, unitTest.duration_minutes, unitTest.unit_number, attemptId]);
 
   // Timer countdown
   useEffect(() => {
@@ -159,15 +176,11 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
 
             <Button
               type="button"
-              onClick={() => {
-                setAttemptId(crypto.randomUUID());
-                setStartTime(Date.now());
-                setStage("exam");
-                setSecondsRemaining(unitTest.duration_minutes * 60);
-              }}
+              disabled={isStarting}
+              onClick={handleStartExam}
               className="w-full min-h-12 text-sm font-semibold gap-2"
             >
-              <span>Bắt đầu làm bài kiểm tra Unit {unitTest.unit_number}</span>
+              <span>{isStarting ? "Đang khởi tạo đề thi..." : `Bắt đầu làm bài kiểm tra Unit ${unitTest.unit_number}`}</span>
               <ArrowRight className="size-4" />
             </Button>
           </CardContent>

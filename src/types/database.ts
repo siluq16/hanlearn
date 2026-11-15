@@ -262,6 +262,16 @@ export type Database = {
         };
         Returns: LearnerStageProgress;
       };
+      submit_curriculum_quiz_attempt: {
+        Args: {
+          p_attempt_id: string;
+          p_correct_count: number;
+          p_question_count: number;
+          p_passed: boolean;
+          p_answers: Json;
+        };
+        Returns: CurriculumQuizAttempt;
+      };
       mark_lesson_studied: { Args: { p_lesson_id: string }; Returns: Json };
       start_quiz: {
         Args: { p_quiz_id: string; p_idempotency_key: string };
