@@ -146,11 +146,14 @@ async function run() {
     const readerTitle = await page.getByRole("heading", { level: 2 }).first().innerText();
     record("lesson2_9stage_reader_loads", readerTitle.includes("Bài 2"), readerTitle);
 
-    const hasVocabTab = await page.getByText("1. Từ vựng").isVisible();
-    const hasGrammarTab = await page.getByText("2. Ngữ pháp & Thoại").isVisible();
-    const hasReadingTab = await page.getByText("3. Nghe & Đọc").isVisible();
-    const hasQuizTab = await page.getByText("4. Quiz & SRS").isVisible();
-    record("grouped_4_phase_navigation", hasVocabTab && hasGrammarTab && hasReadingTab && hasQuizTab, "Grouped skill tabs prevent overflow");
+    const hasWarmupTab = await page.getByText("1. Khởi động").first().isVisible();
+    const hasVocabTab = await page.getByText("2. Từ vựng").first().isVisible();
+    const hasGrammarTab = await page.getByText("3. Ngữ pháp & Thoại").first().isVisible();
+    const hasListenTab = await page.getByText("4. Nghe & Nói").first().isVisible();
+    const hasReadQuizTab = await page.getByText("5. Đọc & Quiz").first().isVisible();
+    const hasReviewTab = await page.getByText("6. Ôn tập").first().isVisible();
+    const has6GroupTabs = hasWarmupTab && hasVocabTab && hasGrammarTab && hasListenTab && hasReadQuizTab && hasReviewTab;
+    record("grouped_skill_navigation", has6GroupTabs, "6 grouped skill tabs prevent overflow and structure 10 stages");
 
     // Test legacy UUID redirect
     console.log("\nTesting Legacy Pilot UUID Redirect...");

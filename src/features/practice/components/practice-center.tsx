@@ -11,6 +11,8 @@ import {
   ArrowRight,
   CheckCircle2,
   Layers,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +25,15 @@ interface PracticeCenterProps {
   practiceSets: PracticeSet[];
   learnerHistory: Record<string, { bestScore: number; total: number; completedAt: string }>;
 }
+
+const UNIT_DEFINITIONS = [
+  { id: "u-hsk1-01", title: "Unit 1: Khởi đầu (Bài 1–4)", desc: "Chào hỏi, làm quen, số đếm & xưng hô" },
+  { id: "u-hsk1-02", title: "Unit 2: Sinh hoạt (Bài 5–8)", desc: "Gia đình, nghề nghiệp, mua sắm & ẩm thực" },
+  { id: "u-hsk1-03", title: "Unit 3: Nơi chốn & Học đường (Bài 9–14)", desc: "Thời gian, địa điểm, thời tiết & học tập" },
+  { id: "u-hsk1-04", title: "Unit 4: Đời sống & Giải trí (Bài 15–20)", desc: "Sở thích, phương tiện, thể thao & thói quen" },
+  { id: "u-hsk1-05", title: "Unit 5: Giao tiếp & Xã hội (Bài 21–25)", desc: "Nhờ vả, điện thoại, cảm xúc & lịch trình" },
+  { id: "u-hsk1-06", title: "Unit 6: Tổng hợp & Nâng cao (Bài 26–32)", desc: "Mô tả người, việc làm, so sánh & tổng kết HSK 1" },
+];
 
 const SKILL_CONFIG: {
   id: PracticeSkill;
@@ -81,6 +92,11 @@ export function PracticeCenter({
     initialUnit ? `u-hsk1-0${initialUnit}` : "all"
   );
   const [selectedDiff, setSelectedDiff] = useState<string>("all");
+  const [collapsedUnits, setCollapsedUnits] = useState<Record<string, boolean>>({});
+
+  const toggleUnit = (unitId: string) => {
+    setCollapsedUnits((prev) => ({ ...prev, [unitId]: !prev[unitId] }));
+  };
 
   const filteredSets = practiceSets.filter((s) => {
     if (s.skill !== selectedSkill) return false;
@@ -177,77 +193,153 @@ export function PracticeCenter({
         </div>
       </div>
 
-      {/* Prebuilt Sets Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {filteredSets.map((set) => {
-          const history = learnerHistory[set.practice_set_id];
-          const isDone = !!history;
+      {/* Unit-grouped Accordions */}
+      {filteredSets.length === 0 ? (
+        <Card className="p-8 text-center border-dashed border-border bg-card">
+          <p className="text-sm font-medium text-muted-foreground">
+            Không tìm thấy bộ bài tập nào phù hợp với bộ lọc hiện tại.
+          </p>
+        </Card>
+      ) : (
+        <div className="space-y-4">
+          {UNIT_DEFINITIONS.filter(
+            (u) => selectedUnit === "all" || selectedUnit === u.id
+          ).map((unit) => {
+            const unitSets = filteredSets.filter((s) => s.unit_id === unit.id);
+            if (unitSets.length === 0) return null;
 
-          return (
-            <Card
-              key={set.practice_set_id}
-              className="border-border hover:border-primary/40 transition-all flex flex-col justify-between"
-            >
-              <CardContent className="p-5 flex flex-col justify-between h-full space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between gap-2">
-                    <Badge className="border border-border bg-transparent text-[10px] font-bold uppercase tracking-wider">
-                      {set.unit_id.replace("u-hsk1-0", "Unit ")}
-                    </Badge>
+            const isCollapsed = !!collapsedUnits[unit.id];
+            const completedInUnit = unitSets.filter(
+              (s) => !!learnerHistory[s.practice_set_id]
+            ).length;
 
-                    <div className="flex items-center gap-1.5">
-                      <Badge
-                        className={`text-[10px] uppercase font-bold ${
-                          set.difficulty === "easy"
-                            ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                            : set.difficulty === "medium"
-                              ? "bg-amber-500/10 text-amber-600 dark:text-amber-400"
-                              : "bg-red-500/10 text-red-600 dark:text-red-400"
-                        }`}
-                      >
-                        {set.difficulty === "easy" ? "Dễ" : set.difficulty === "medium" ? "Trung bình" : "Nâng cao"}
-                      </Badge>
-                      <span className="text-[11px] text-muted-foreground">
-                        {set.question_count} câu
+            return (
+              <div
+                key={unit.id}
+                className="rounded-2xl border border-border bg-card overflow-hidden shadow-xs transition-all"
+              >
+                {/* Accordion Header */}
+                <button
+                  type="button"
+                  onClick={() => toggleUnit(unit.id)}
+                  className="w-full p-4 sm:p-5 flex items-center justify-between gap-4 text-left hover:bg-muted/40 transition-colors"
+                >
+                  <div className="space-y-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-bold text-base text-foreground">
+                        {unit.title}
                       </span>
+                      <Badge className="bg-primary/10 text-primary border-primary/20 text-[11px] font-semibold">
+                        {unitSets.length} bộ bài
+                      </Badge>
+                      {completedInUnit === unitSets.length && unitSets.length > 0 && (
+                        <Badge className="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30 text-[11px] font-semibold gap-1">
+                          <CheckCircle2 className="size-3" />
+                          Hoàn tất Unit
+                        </Badge>
+                      )}
                     </div>
+                    <p className="text-xs text-muted-foreground line-clamp-1">
+                      {unit.desc} · Đã làm {completedInUnit}/{unitSets.length} bộ
+                    </p>
                   </div>
 
-                  <h4 className="text-base font-bold text-foreground leading-snug">
-                    {set.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {set.description}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-border/60 flex items-center justify-between">
-                  <div>
-                    {isDone ? (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-                        <CheckCircle2 className="size-3.5" />
-                        Đã làm · {history.bestScore}/{history.total} câu
-                      </span>
+                  <div className="flex items-center gap-2 shrink-0 text-muted-foreground">
+                    <span className="text-xs hidden sm:inline">
+                      {isCollapsed ? "Mở rộng" : "Thu gọn"}
+                    </span>
+                    {isCollapsed ? (
+                      <ChevronDown className="size-5" />
                     ) : (
-                      <span className="text-[11px] text-muted-foreground">
-                        Chưa hoàn thành
-                      </span>
+                      <ChevronUp className="size-5" />
                     )}
                   </div>
+                </button>
 
-                  <Link
-                    href={`/practice/${set.practice_set_id}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-                  >
-                    <span>{isDone ? "Luyện lại" : "Bắt đầu"}</span>
-                    <ArrowRight className="size-3.5" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
+                {/* Accordion Content */}
+                {!isCollapsed && (
+                  <div className="p-4 sm:p-5 pt-0 border-t border-border/50 mt-1">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-3">
+                      {unitSets.map((set) => {
+                        const history = learnerHistory[set.practice_set_id];
+                        const isDone = !!history;
+
+                        return (
+                          <Card
+                            key={set.practice_set_id}
+                            className="border-border hover:border-primary/40 transition-all flex flex-col justify-between shadow-none bg-muted/20"
+                          >
+                            <CardContent className="p-4 sm:p-5 flex flex-col justify-between h-full space-y-3.5">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between gap-2">
+                                  <Badge className="border border-border bg-transparent text-[10px] font-bold uppercase tracking-wider">
+                                    {set.exercise_type.replace(/_/g, " ")}
+                                  </Badge>
+
+                                  <div className="flex items-center gap-1.5">
+                                    <Badge
+                                      className={`text-[10px] uppercase font-bold ${
+                                        set.difficulty === "easy"
+                                          ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                                          : set.difficulty === "medium"
+                                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400"
+                                            : "bg-red-500/10 text-red-600 dark:text-red-400"
+                                      }`}
+                                    >
+                                      {set.difficulty === "easy"
+                                        ? "Dễ"
+                                        : set.difficulty === "medium"
+                                          ? "Trung bình"
+                                          : "Nâng cao"}
+                                    </Badge>
+                                    <span className="text-[11px] text-muted-foreground">
+                                      {set.question_count} câu
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <h4 className="text-sm sm:text-base font-bold text-foreground leading-snug">
+                                  {set.title}
+                                </h4>
+                                <p className="text-xs text-muted-foreground leading-relaxed">
+                                  {set.description}
+                                </p>
+                              </div>
+
+                              <div className="pt-3 border-t border-border/60 flex items-center justify-between">
+                                <div>
+                                  {isDone ? (
+                                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                                      <CheckCircle2 className="size-3.5" />
+                                      Đã làm · {history.bestScore}/{history.total} câu
+                                    </span>
+                                  ) : (
+                                    <span className="text-[11px] text-muted-foreground">
+                                      Chưa làm
+                                    </span>
+                                  )}
+                                </div>
+
+                                <Link
+                                  href={`/practice/${set.practice_set_id}`}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+                                >
+                                  <span>{isDone ? "Luyện lại" : "Bắt đầu"}</span>
+                                  <ArrowRight className="size-3.5" />
+                                </Link>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

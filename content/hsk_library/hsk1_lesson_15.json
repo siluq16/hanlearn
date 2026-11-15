@@ -102,94 +102,220 @@
       "exercises": [
         {
           "id": "ex-v-15-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'người nhà, gia đình'?",
-          "correct_answer": "家人",
           "options": [
-            "家人",
-            "弟弟",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "家人",
+              "isCorrect": true,
+              "explanationVi": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+            },
+            {
+              "id": "opt-2",
+              "label": "弟弟",
+              "isCorrect": false,
+              "explanationVi": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+            }
           ],
-          "explanation": "家人 (jiārén) mang nghĩa là 'người nhà, gia đình'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'người nhà, gia đình'?"
         },
         {
           "id": "ex-v-15-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '弟弟' là gì?",
-          "correct_answer": "dìdi",
           "options": [
-            "dìdi",
-            "jiārén",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "dìdi",
+              "isCorrect": true,
+              "explanationVi": "Từ '弟弟' đọc chuẩn là dìdi."
+            },
+            {
+              "id": "opt-2",
+              "label": "jiārén",
+              "isCorrect": false,
+              "explanationVi": "Từ '弟弟' đọc chuẩn là dìdi."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '弟弟' đọc chuẩn là dìdi."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '弟弟' đọc chuẩn là dìdi."
+            }
           ],
-          "explanation": "Từ '弟弟' đọc chuẩn là dìdi."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '弟弟' là gì?"
         },
         {
           "id": "ex-v-15-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 15:",
-          "correct_answer": "家人",
           "options": [
-            "家人",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "家人",
+              "isCorrect": true,
+              "explanationVi": "Từ '家人' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '家人' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '家人' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '家人' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '家人' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 15:"
         },
         {
           "id": "ex-15-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ chỉ 'con trai' (trong quan hệ cha mẹ - con cái) là:",
-          "correct_answer": "儿子",
           "options": [
-            "儿子",
-            "女儿",
-            "哥哥",
-            "弟弟"
+            {
+              "id": "opt-1",
+              "label": "儿子",
+              "isCorrect": true,
+              "explanationVi": "'儿子' (érzi) nghĩa là con trai."
+            },
+            {
+              "id": "opt-2",
+              "label": "女儿",
+              "isCorrect": false,
+              "explanationVi": "'儿子' (érzi) nghĩa là con trai."
+            },
+            {
+              "id": "opt-3",
+              "label": "哥哥",
+              "isCorrect": false,
+              "explanationVi": "'儿子' (érzi) nghĩa là con trai."
+            },
+            {
+              "id": "opt-4",
+              "label": "弟弟",
+              "isCorrect": false,
+              "explanationVi": "'儿子' (érzi) nghĩa là con trai."
+            }
           ],
-          "explanation": "'儿子' (érzi) nghĩa là con trai."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ chỉ 'con trai' (trong quan hệ cha mẹ - con cái) là:"
         },
         {
           "id": "ex-15-v-extra-02",
-          "type": "vocab_mcq",
-          "prompt": "Từ chỉ 'đứa trẻ / con cái' nói chung là:",
-          "correct_answer": "孩子",
           "options": [
-            "孩子",
-            "朋友",
-            "同学",
-            "老师"
+            {
+              "id": "opt-1",
+              "label": "孩子",
+              "isCorrect": true,
+              "explanationVi": "'孩子' (háizi) là đứa trẻ, con cái."
+            },
+            {
+              "id": "opt-2",
+              "label": "朋友",
+              "isCorrect": false,
+              "explanationVi": "'孩子' (háizi) là đứa trẻ, con cái."
+            },
+            {
+              "id": "opt-3",
+              "label": "同学",
+              "isCorrect": false,
+              "explanationVi": "'孩子' (háizi) là đứa trẻ, con cái."
+            },
+            {
+              "id": "opt-4",
+              "label": "老师",
+              "isCorrect": false,
+              "explanationVi": "'孩子' (háizi) là đứa trẻ, con cái."
+            }
           ],
-          "explanation": "'孩子' (háizi) là đứa trẻ, con cái."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ chỉ 'đứa trẻ / con cái' nói chung là:"
         },
         {
           "id": "ex-15-v-extra-03",
-          "type": "vocab_mcq",
-          "prompt": "Cách gọi thân mật dành cho các em nhỏ, bạn nhỏ là:",
-          "correct_answer": "小朋友",
           "options": [
-            "小朋友",
-            "大朋友",
-            "老朋友",
-            "好朋友"
+            {
+              "id": "opt-1",
+              "label": "小朋友",
+              "isCorrect": true,
+              "explanationVi": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+            },
+            {
+              "id": "opt-2",
+              "label": "大朋友",
+              "isCorrect": false,
+              "explanationVi": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+            },
+            {
+              "id": "opt-3",
+              "label": "老朋友",
+              "isCorrect": false,
+              "explanationVi": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+            },
+            {
+              "id": "opt-4",
+              "label": "好朋友",
+              "isCorrect": false,
+              "explanationVi": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+            }
           ],
-          "explanation": "'小朋友' (xiǎopéngyou) nghĩa là bạn nhỏ, em nhỏ."
+          "kind": "vocab-mcq",
+          "promptVi": "Cách gọi thân mật dành cho các em nhỏ, bạn nhỏ là:"
         },
         {
           "id": "ex-15-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ chỉ 'em gái' trong gia đình là:",
-          "correct_answer": "妹妹",
           "options": [
-            "妹妹",
-            "姐姐",
-            "弟弟",
-            "哥哥"
+            {
+              "id": "opt-1",
+              "label": "妹妹",
+              "isCorrect": true,
+              "explanationVi": "'妹妹' (mèimei) là em gái."
+            },
+            {
+              "id": "opt-2",
+              "label": "姐姐",
+              "isCorrect": false,
+              "explanationVi": "'妹妹' (mèimei) là em gái."
+            },
+            {
+              "id": "opt-3",
+              "label": "弟弟",
+              "isCorrect": false,
+              "explanationVi": "'妹妹' (mèimei) là em gái."
+            },
+            {
+              "id": "opt-4",
+              "label": "哥哥",
+              "isCorrect": false,
+              "explanationVi": "'妹妹' (mèimei) là em gái."
+            }
           ],
-          "explanation": "'妹妹' (mèimei) là em gái."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ chỉ 'em gái' trong gia đình là:"
         }
       ]
     },
@@ -218,26 +344,82 @@
       "exercises": [
         {
           "id": "ex-g-15-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我和家人住在北京。",
-          "options": [
-            "我和家人住在北京。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "和",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "家",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "人",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "住",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "在",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "北京",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "。",
+              "correctIndex": 7
+            }
           ],
-          "explanation": "Cấu trúc đúng: Chủ ngữ + 住在 + Địa điểm."
+          "targetSentence": "我和家人住在北京。"
         },
         {
           "id": "ex-g-15-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Chủ ngữ + 住在 + Địa điểm",
-          "correct_answer": "Động từ cư trú 住",
           "options": [
-            "Động từ cư trú 住",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Động từ cư trú 住",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Động từ cư trú 住."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Động từ cư trú 住."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Động từ cư trú 住."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Động từ cư trú 住."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Động từ cư trú 住."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Chủ ngữ + 住在 + Địa điểm"
         }
       ]
     },
@@ -265,16 +447,34 @@
       "exercises": [
         {
           "id": "ex-d-15-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "你家有小动物吗？",
           "options": [
-            "你家有小动物吗？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "你家有小动物吗？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '你家有小动物吗？' (Nhà bạn có nuôi thú cưng không?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你家有小动物吗？' (Nhà bạn có nuôi thú cưng không?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你家有小动物吗？' (Nhà bạn có nuôi thú cưng không?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你家有小动物吗？' (Nhà bạn có nuôi thú cưng không?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '你家有小动物吗？' (Nhà bạn có nuôi thú cưng không?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -284,29 +484,57 @@
       "exercises": [
         {
           "id": "ex-ls-15-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 15:",
-          "audio_target": "我家有一只小猫和一只小狗，它们很可爱。",
-          "correct_answer": "我家有一只小猫和一只小狗，它们很可爱。",
           "options": [
-            "我家有一只小猫和一只小狗，它们很可爱。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "我家有一只小猫和一只小狗，它们很可爱。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '我家有一只小猫和一只小狗，它们很可爱。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我家有一只小猫和一只小狗，它们很可爱。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我家有一只小猫和一只小狗，它们很可爱。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我家有一只小猫和一只小狗，它们很可爱。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '我家有一只小猫和一只小狗，它们很可爱。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 15:",
+          "targetContent": {
+            "hanzi": "我家有一只小猫和一只小狗，它们很可爱。",
+            "pinyin": "",
+            "audioText": "我家有一只小猫和一只小狗，它们很可爱。"
+          }
         },
         {
           "id": "ex-ls-15-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你家有小动物吗？",
-          "pinyin_target": "Nǐ jiā yǒu xiǎo dòngwù ma?",
-          "correct_answer": "你家有小动物吗？",
           "options": [
-            "你家有小动物吗？"
+            {
+              "id": "opt-1",
+              "label": "你家有小动物吗？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '你家有小动物吗？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '你家有小动物吗？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "你家有小动物吗？",
+            "pinyin": "Nǐ jiā yǒu xiǎo dòngwù ma?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -321,14 +549,27 @@
       "exercises": [
         {
           "id": "ex-r-15-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 15 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Gia đình tôi."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Gia đình tôi."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Gia đình tôi."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 15 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 15 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

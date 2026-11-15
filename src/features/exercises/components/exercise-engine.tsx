@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   CheckCircle2,
   XCircle,
@@ -22,6 +22,54 @@ import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
 import { useMandarinRecognition } from "@/hooks/use-mandarin-recognition";
 import type { LibraryExercise, ExerciseOption } from "@/features/content-library/types";
 
+function normalizeEngineExercise(raw: any): LibraryExercise {
+  if (!raw) return raw;
+  const ex = { ...raw };
+  const rawKind = ex.kind || ex.type || "vocab-mcq";
+  let standardKind = rawKind;
+  if (rawKind === "vocab_mcq" || rawKind === "pinyin_mcq") standardKind = "vocab-mcq";
+  else if (rawKind === "grammar-mcq" || rawKind === "fill_in_blank") standardKind = "grammar-choice";
+  else if (rawKind === "sentence_scramble" || rawKind === "sentence_ordering") standardKind = "sentence-order";
+  else if (rawKind === "listening_hidden_transcript" || rawKind === "listening-mcq") standardKind = "listening_cloze";
+  else if (rawKind === "speaking_shadowing") standardKind = "sentence_shadowing";
+  else if (rawKind === "true-false") standardKind = "reading_true_false";
+  else if (rawKind === "matching") standardKind = "matching_pairs";
+
+  ex.kind = standardKind;
+  if (!ex.promptVi && ex.prompt) ex.promptVi = ex.prompt;
+
+  if (ex.options && Array.isArray(ex.options) && typeof ex.options[0] === "string") {
+    const correctVal = ex.correct_answer ?? ex.options[0];
+    ex.options = ex.options.map((optStr: any, idx: number) => ({
+      id: `opt-${idx + 1}`,
+      label: String(optStr),
+      isCorrect: String(optStr).trim() === String(correctVal).trim(),
+      explanationVi: ex.explanation,
+    }));
+  }
+
+  if (ex.kind === "matching_pairs" && !ex.matchingPairs && ex.pairs) {
+    ex.matchingPairs = ex.pairs.map((p: any, idx: number) => ({
+      leftId: `l-${idx + 1}`,
+      leftLabel: p.left || p.leftLabel || "",
+      rightId: `r-${idx + 1}`,
+      rightLabel: p.right || p.rightLabel || "",
+    }));
+  }
+
+  if (ex.kind === "sentence-order" && !ex.orderTokens) {
+    if (Array.isArray(ex.tokens)) {
+      ex.orderTokens = ex.tokens.map((tok: string, idx: number) => ({
+        id: `tok-${idx + 1}`,
+        text: tok,
+        correctIndex: idx,
+      }));
+    }
+  }
+
+  return ex;
+}
+
 interface ExerciseEngineProps {
   exercises: LibraryExercise[];
   title?: string;
@@ -32,6 +80,11 @@ export function ExerciseEngine({
   exercises,
   onComplete,
 }: ExerciseEngineProps) {
+  const safeExercises = useMemo(
+    () => (exercises || []).map(normalizeEngineExercise),
+    [exercises]
+  );
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -61,12 +114,12 @@ export function ExerciseEngine({
     isSupported: isSpeechSupported,
   } = useMandarinRecognition();
 
-  const currentExercise = exercises[currentIndex];
-  const progressPercent = exercises.length
-    ? Math.round((currentIndex / exercises.length) * 100)
+  const currentExercise = safeExercises[currentIndex];
+  const progressPercent = safeExercises.length
+    ? Math.round((currentIndex / safeExercises.length) * 100)
     : 0;
 
-  if (!exercises.length) {
+  if (!safeExercises.length) {
     return (
       <Card className="p-8 text-center text-muted-foreground">
         <p>Không có bài tập nào để hiển thị.</p>
@@ -76,7 +129,7 @@ export function ExerciseEngine({
 
   // --- SUMMARY SCREEN ---
   if (isCompleted) {
-    const total = exercises.length;
+    const total = safeExercises.length;
     const isPass = score >= total * 0.7;
 
     return (
@@ -142,10 +195,16 @@ export function ExerciseEngine({
     if (!currentExercise.orderTokens || isAnswered) return;
     setIsAnswered(true);
     const sortedTokens = [...currentExercise.orderTokens].sort((a, b) => a.correctIndex - b.correctIndex);
-    const correctIds = sortedTokens.map((t) => t.id);
-    const isMatch =
-      correctIds.length === selectedTokenIds.length &&
-      correctIds.every((id, idx) => id === selectedTokenIds[idx]);
+    const selectedText = selectedTokenIds
+      .map((id) => currentExercise.orderTokens?.find((t) => t.id === id)?.text || "")
+      .join("")
+      .replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
+    const expectedText = sortedTokens
+      .map((t) => t.text)
+      .join("")
+      .replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
+
+    const isMatch = selectedText.length > 0 && selectedText === expectedText;
 
     setIsCorrect(isMatch);
     if (isMatch) setScore((prev) => prev + 1);
@@ -371,27 +430,41 @@ export function ExerciseEngine({
         {/* 4. Sentence Ordering Mode */}
         {currentExercise.kind === "sentence-order" && currentExercise.orderTokens && (
           <div className="space-y-4">
-            <div className="min-h-16 rounded-xl border-2 border-dashed border-border bg-card p-3 flex flex-wrap gap-2 items-center">
-              {selectedTokenIds.length === 0 ? (
-                <span className="text-xs text-muted-foreground italic">
-                  Bấm vào các từ bên dưới theo thứ tự đúng để tạo thành câu...
-                </span>
-              ) : (
-                selectedTokenIds.map((id) => {
-                  const token = currentExercise.orderTokens?.find((t) => t.id === id);
-                  return (
-                    <button
-                      key={id}
-                      type="button"
-                      disabled={isAnswered}
-                      onClick={() => handleToggleToken(id)}
-                      className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold shadow-xs"
-                    >
-                      {token?.text}
-                    </button>
-                  );
-                })
-              )}
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-xs text-muted-foreground font-medium">
+                <span>Thứ tự câu của bạn:</span>
+                {!isAnswered && selectedTokenIds.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedTokenIds([])}
+                    className="text-primary hover:underline"
+                  >
+                    Xóa làm lại
+                  </button>
+                )}
+              </div>
+              <div className="min-h-16 rounded-xl border-2 border-dashed border-border bg-card p-3 flex flex-wrap gap-2 items-center">
+                {selectedTokenIds.length === 0 ? (
+                  <span className="text-xs text-muted-foreground italic">
+                    Bấm vào các từ bên dưới theo thứ tự đúng để tạo thành câu...
+                  </span>
+                ) : (
+                  selectedTokenIds.map((id) => {
+                    const token = currentExercise.orderTokens?.find((t) => t.id === id);
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        disabled={isAnswered}
+                        onClick={() => handleToggleToken(id)}
+                        className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold shadow-xs"
+                      >
+                        {token?.text}
+                      </button>
+                    );
+                  })
+                )}
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -424,6 +497,18 @@ export function ExerciseEngine({
                 >
                   Kiểm tra câu
                 </Button>
+              </div>
+            )}
+
+            {isAnswered && (
+              <div className="p-3 rounded-xl bg-muted/40 border border-border text-xs space-y-1">
+                <span className="font-semibold text-muted-foreground">Đáp án đúng:</span>
+                <p className="hanzi text-base font-bold text-foreground">
+                  {[...currentExercise.orderTokens]
+                    .sort((a, b) => a.correctIndex - b.correctIndex)
+                    .map((t) => t.text)
+                    .join("")}
+                </p>
               </div>
             )}
           </div>

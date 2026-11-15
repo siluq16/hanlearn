@@ -39,6 +39,16 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   // Speaking state
   const [spokenDone, setSpokenDone] = useState<Record<number, boolean>>({});
 
+  // Sentence ordering interactive state
+  const [orderedTokenIndices, setOrderedTokenIndices] = useState<number[]>([]);
+
+  // Matching pairs interactive state
+  const [selectedLeftIdx, setSelectedLeftIdx] = useState<number | null>(null);
+  const [matchedPairIndices, setMatchedPairIndices] = useState<number[]>([]);
+
+  // Fill in the blank / text input state
+  const [typedAnswer, setTypedAnswer] = useState("");
+
   // Dialogue roleplay state
   const [selectedRole, setSelectedRole] = useState<"A" | "B" | "ALL">("A");
   const [showPinyin, setShowPinyin] = useState(true);
@@ -61,11 +71,62 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
     }
   };
 
+  const cleanForComparison = (str?: string) =>
+    (str || "").toLowerCase().replace(/[\s\.\,\!\?，。！？'’\-]/g, "");
+
+  // Interactive Sentence Ordering Check
+  const handleCheckSentenceOrder = () => {
+    if (!currentQ?.tokens || isAnswerChecked) return;
+    setIsAnswerChecked(true);
+    const userSentence = orderedTokenIndices.map((i) => currentQ.tokens![i]).join("");
+    const isCorrect = cleanForComparison(userSentence) === cleanForComparison(currentQ.targetSentence);
+    if (isCorrect) {
+      setScore((s) => s + 1);
+    }
+  };
+
+  // Interactive Matching Pairs Selection
+  const handleSelectMatchingLeft = (leftIdx: number) => {
+    if (isAnswerChecked || matchedPairIndices.includes(leftIdx)) return;
+    setSelectedLeftIdx(leftIdx);
+  };
+
+  const handleSelectMatchingRight = (rightIdx: number) => {
+    if (isAnswerChecked || selectedLeftIdx === null) return;
+    if (selectedLeftIdx === rightIdx) {
+      const nextMatched = [...matchedPairIndices, selectedLeftIdx];
+      setMatchedPairIndices(nextMatched);
+      setSelectedLeftIdx(null);
+      if (nextMatched.length === (currentQ.pairs?.length || 0)) {
+        setIsAnswerChecked(true);
+        setScore((s) => s + 1);
+      }
+    } else {
+      setSelectedLeftIdx(null);
+    }
+  };
+
+  // Interactive Text / Fill Blank Check
+  const handleCheckTypedAnswer = () => {
+    if (!typedAnswer.trim() || isAnswerChecked) return;
+    setIsAnswerChecked(true);
+    const cleanUser = cleanForComparison(typedAnswer);
+    const cleanTarget = cleanForComparison(currentQ.targetText || currentQ.hanzi || currentQ.pinyin);
+    const isCorrect = cleanUser === cleanTarget;
+    if (isCorrect) {
+      setScore((s) => s + 1);
+    }
+  };
+
   const handleNext = () => {
     if (currentIndex < totalCount - 1) {
       setCurrentIndex((i) => i + 1);
       setSelectedChoice(null);
       setIsAnswerChecked(false);
+      setOrderedTokenIndices([]);
+      setSelectedLeftIdx(null);
+      setMatchedPairIndices([]);
+      setTypedAnswer("");
     } else {
       setIsFinished(true);
       const finalScore = isDialogue || isSpeaking ? totalCount : score + (currentQ?.correct_index === selectedChoice ? 0 : 0);
@@ -436,24 +497,186 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
             </div>
           )}
 
-          {/* Sentence Ordering Target Tokens */}
-          {currentQ?.tokens && (
-            <div className="space-y-3 py-2">
-              <p className="text-xs text-muted-foreground">
-                Đáp án chuẩn: <strong>{currentQ.targetSentence}</strong>
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {currentQ.tokens.map((tok, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="px-3 py-1.5 rounded-lg border border-primary/20 bg-primary/10 text-primary font-bold text-sm"
-                  >
-                    {tok}
+          {/* Interactive Sentence Ordering */}
+          {currentQ?.tokens && currentQ.tokens.length > 0 && (
+            <div className="space-y-4 py-2">
+              <div className="space-y-1.5">
+                <span className="text-xs font-semibold text-muted-foreground">
+                  Thứ tự câu của bạn (bấm vào từ để bỏ chọn):
+                </span>
+                <div className="min-h-14 rounded-xl border-2 border-dashed border-border bg-card p-3 flex flex-wrap gap-2 items-center">
+                  {orderedTokenIndices.length === 0 ? (
+                    <span className="text-xs text-muted-foreground italic">
+                      Bấm vào các từ bên dưới theo thứ tự để ghép thành câu...
+                    </span>
+                  ) : (
+                    orderedTokenIndices.map((tIdx, seq) => (
+                      <button
+                        key={seq}
+                        type="button"
+                        disabled={isAnswerChecked}
+                        onClick={() => {
+                          setOrderedTokenIndices((prev) => prev.filter((_, i) => i !== seq));
+                        }}
+                        className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-xs transition-transform active:scale-95"
+                      >
+                        {currentQ.tokens![tIdx]}
+                      </button>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {/* Available tokens pool */}
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold text-muted-foreground">
+                    Từ vựng có sẵn:
                   </span>
-                ))}
+                  {!isAnswerChecked && orderedTokenIndices.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => setOrderedTokenIndices([])}
+                      className="text-xs text-muted-foreground hover:text-foreground underline"
+                    >
+                      Xóa làm lại
+                    </button>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {currentQ.tokens.map((tok, tIdx) => {
+                    const isPicked = orderedTokenIndices.includes(tIdx);
+                    return (
+                      <button
+                        key={tIdx}
+                        type="button"
+                        disabled={isAnswerChecked || isPicked}
+                        onClick={() => setOrderedTokenIndices((prev) => [...prev, tIdx])}
+                        className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
+                          isPicked
+                            ? "border-dashed border-border/40 text-muted-foreground/30 bg-muted/20 cursor-not-allowed"
+                            : "border-border bg-card text-foreground hover:bg-muted shadow-xs active:scale-95"
+                        }`}
+                      >
+                        {tok}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {!isAnswerChecked && (
+                <div className="flex justify-end pt-2">
+                  <Button
+                    type="button"
+                    disabled={orderedTokenIndices.length !== currentQ.tokens.length}
+                    onClick={handleCheckSentenceOrder}
+                    className="text-xs font-semibold px-5"
+                  >
+                    Kiểm tra câu
+                  </Button>
+                </div>
+              )}
+
+              {isAnswerChecked && currentQ.targetSentence && (
+                <div className="p-3 rounded-xl bg-muted/40 border border-border text-xs space-y-1">
+                  <span className="font-semibold text-muted-foreground">Câu chuẩn:</span>
+                  <p className="hanzi text-base font-bold text-foreground">{currentQ.targetSentence}</p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Interactive Matching Pairs */}
+          {currentQ?.pairs && currentQ.pairs.length > 0 && (
+            <div className="space-y-4 py-2">
+              <p className="text-xs text-muted-foreground">
+                Bấm vào 1 mục ở cột trái, sau đó bấm mục tương ứng ở cột phải để ghép cặp:
+              </p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {/* Left Column */}
+                <div className="space-y-2">
+                  <span className="text-xs font-semibold text-muted-foreground">Mục cần ghép</span>
+                  {currentQ.pairs.map((p, idx) => {
+                    const isMatched = matchedPairIndices.includes(idx);
+                    const isSelected = selectedLeftIdx === idx;
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        disabled={isMatched || isAnswerChecked}
+                        onClick={() => handleSelectMatchingLeft(idx)}
+                        className={`w-full text-left p-3 rounded-xl border text-sm font-semibold transition-all ${
+                          isMatched
+                            ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 cursor-default"
+                            : isSelected
+                              ? "border-primary bg-primary text-primary-foreground shadow-xs"
+                              : "border-border bg-card text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        {p.left}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Column */}
+                <div className="space-y-2">
+                  <span className="text-xs font-semibold text-muted-foreground">Nghĩa tương ứng</span>
+                  {currentQ.pairs.map((p, idx) => {
+                    const isMatched = matchedPairIndices.includes(idx);
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        disabled={isMatched || isAnswerChecked}
+                        onClick={() => handleSelectMatchingRight(idx)}
+                        className={`w-full text-left p-3 rounded-xl border text-sm font-medium transition-all ${
+                          isMatched
+                            ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 cursor-default"
+                            : "border-border bg-card text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        {p.right}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
+
+          {/* Fill-in-the-blank / Dictation text input when no choices, tokens or pairs */}
+          {(!currentQ?.choices || currentQ.choices.length === 0) &&
+            !currentQ?.tokens &&
+            !currentQ?.pairs &&
+            !isSpeaking && (
+              <div className="space-y-3 py-2">
+                <label className="text-xs font-medium text-muted-foreground block">
+                  Nhập câu trả lời (Hán tự hoặc Pinyin):
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    disabled={isAnswerChecked}
+                    value={typedAnswer}
+                    onChange={(e) => setTypedAnswer(e.target.value)}
+                    placeholder="Nhập câu trả lời..."
+                    className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary"
+                  />
+                  {!isAnswerChecked && (
+                    <Button
+                      type="button"
+                      disabled={!typedAnswer.trim()}
+                      onClick={handleCheckTypedAnswer}
+                      className="text-xs font-semibold"
+                    >
+                      Kiểm tra
+                    </Button>
+                  )}
+                </div>
+              </div>
+            )}
 
           {/* Explanation Banner */}
           {isAnswerChecked && currentQ?.explanation_vi && (

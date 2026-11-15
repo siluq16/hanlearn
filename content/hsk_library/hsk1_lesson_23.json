@@ -102,55 +102,127 @@
       "exercises": [
         {
           "id": "ex-v-23-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'mọi người, cả nhà'?",
-          "correct_answer": "大家",
           "options": [
-            "大家",
-            "您",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "大家",
+              "isCorrect": true,
+              "explanationVi": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+            },
+            {
+              "id": "opt-2",
+              "label": "您",
+              "isCorrect": false,
+              "explanationVi": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+            }
           ],
-          "explanation": "大家 (dàjiā) mang nghĩa là 'mọi người, cả nhà'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'mọi người, cả nhà'?"
         },
         {
           "id": "ex-v-23-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '您' là gì?",
-          "correct_answer": "nín",
           "options": [
-            "nín",
-            "dàjiā",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "nín",
+              "isCorrect": true,
+              "explanationVi": "Từ '您' đọc chuẩn là nín."
+            },
+            {
+              "id": "opt-2",
+              "label": "dàjiā",
+              "isCorrect": false,
+              "explanationVi": "Từ '您' đọc chuẩn là nín."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '您' đọc chuẩn là nín."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '您' đọc chuẩn là nín."
+            }
           ],
-          "explanation": "Từ '您' đọc chuẩn là nín."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '您' là gì?"
         },
         {
           "id": "ex-v-23-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 23:",
-          "correct_answer": "大家",
           "options": [
-            "大家",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "大家",
+              "isCorrect": true,
+              "explanationVi": "Từ '大家' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '大家' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '大家' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '大家' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '大家' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 23:"
         },
         {
           "id": "ex-23-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Đại từ chỉ 'các bạn' và 'họ (toàn nữ)' là:",
-          "correct_answer": "你们、她们",
           "options": [
-            "你们、她们",
-            "我们、他们",
-            "大家、它们",
-            "您、他们"
+            {
+              "id": "opt-1",
+              "label": "你们、她们",
+              "isCorrect": true,
+              "explanationVi": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
+            },
+            {
+              "id": "opt-2",
+              "label": "我们、他们",
+              "isCorrect": false,
+              "explanationVi": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
+            },
+            {
+              "id": "opt-3",
+              "label": "大家、它们",
+              "isCorrect": false,
+              "explanationVi": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
+            },
+            {
+              "id": "opt-4",
+              "label": "您、他们",
+              "isCorrect": false,
+              "explanationVi": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
+            }
           ],
-          "explanation": "'你们' (các bạn) và '她们' (các cô ấy / họ - phái nữ)."
+          "kind": "vocab-mcq",
+          "promptVi": "Đại từ chỉ 'các bạn' và 'họ (toàn nữ)' là:"
         }
       ]
     },
@@ -192,26 +264,72 @@
       "exercises": [
         {
           "id": "ex-g-23-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我们都是大学生。",
-          "options": [
-            "我们都是大学生。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我们",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "都",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "是",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "大",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "学生",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "。",
+              "correctIndex": 5
+            }
           ],
-          "explanation": "Cấu trúc đúng: Đại từ/Danh từ + 们."
+          "targetSentence": "我们都是大学生。"
         },
         {
           "id": "ex-g-23-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Đại từ/Danh từ + 们",
-          "correct_answer": "Hậu tố số nhiều 们",
           "options": [
-            "Hậu tố số nhiều 们",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Hậu tố số nhiều 们",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Hậu tố số nhiều 们."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hậu tố số nhiều 们."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hậu tố số nhiều 们."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hậu tố số nhiều 们."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Hậu tố số nhiều 们."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Đại từ/Danh từ + 们"
         }
       ]
     },
@@ -239,16 +357,34 @@
       "exercises": [
         {
           "id": "ex-d-23-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "大家早上好！他们都来了吗？",
           "options": [
-            "大家早上好！他们都来了吗？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "大家早上好！他们都来了吗？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '大家早上好！他们都来了吗？' (Chào buổi sáng cả lớp! Các bạn ấy đã đến đông đủ chưa?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -258,29 +394,57 @@
       "exercises": [
         {
           "id": "ex-ls-23-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 23:",
-          "audio_target": "我们都来了，老师您请坐！",
-          "correct_answer": "我们都来了，老师您请坐！",
           "options": [
-            "我们都来了，老师您请坐！",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "我们都来了，老师您请坐！",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '我们都来了，老师您请坐！'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我们都来了，老师您请坐！'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我们都来了，老师您请坐！'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我们都来了，老师您请坐！'."
+            }
           ],
-          "explanation": "Câu nghe được là: '我们都来了，老师您请坐！'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 23:",
+          "targetContent": {
+            "hanzi": "我们都来了，老师您请坐！",
+            "pinyin": "",
+            "audioText": "我们都来了，老师您请坐！"
+          }
         },
         {
           "id": "ex-ls-23-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "大家早上好！他们都来了吗？",
-          "pinyin_target": "Dàjiā zǎoshang hǎo! Tāmen dōu lái le ma?",
-          "correct_answer": "大家早上好！他们都来了吗？",
           "options": [
-            "大家早上好！他们都来了吗？"
+            {
+              "id": "opt-1",
+              "label": "大家早上好！他们都来了吗？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '大家早上好！他们都来了吗？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '大家早上好！他们都来了吗？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "大家早上好！他们都来了吗？",
+            "pinyin": "Dàjiā zǎoshang hǎo! Tāmen dōu lái le ma?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -295,14 +459,27 @@
       "exercises": [
         {
           "id": "ex-r-23-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 23 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Lớp học của chúng tôi."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Lớp học của chúng tôi."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Lớp học của chúng tôi."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 23 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 23 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

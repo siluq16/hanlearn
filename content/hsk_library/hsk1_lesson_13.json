@@ -127,81 +127,189 @@
       "exercises": [
         {
           "id": "ex-v-13-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'đại học'?",
-          "correct_answer": "大学",
           "options": [
-            "大学",
-            "大学生",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "大学",
+              "isCorrect": true,
+              "explanationVi": "大学 (dàxué) mang nghĩa là 'đại học'."
+            },
+            {
+              "id": "opt-2",
+              "label": "大学生",
+              "isCorrect": false,
+              "explanationVi": "大学 (dàxué) mang nghĩa là 'đại học'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "大学 (dàxué) mang nghĩa là 'đại học'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "大学 (dàxué) mang nghĩa là 'đại học'."
+            }
           ],
-          "explanation": "大学 (dàxué) mang nghĩa là 'đại học'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'đại học'?"
         },
         {
           "id": "ex-v-13-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '大学生' là gì?",
-          "correct_answer": "dàxuéshēng",
           "options": [
-            "dàxuéshēng",
-            "dàxué",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "dàxuéshēng",
+              "isCorrect": true,
+              "explanationVi": "Từ '大学生' đọc chuẩn là dàxuéshēng."
+            },
+            {
+              "id": "opt-2",
+              "label": "dàxué",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学生' đọc chuẩn là dàxuéshēng."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学生' đọc chuẩn là dàxuéshēng."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学生' đọc chuẩn là dàxuéshēng."
+            }
           ],
-          "explanation": "Từ '大学生' đọc chuẩn là dàxuéshēng."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '大学生' là gì?"
         },
         {
           "id": "ex-v-13-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 13:",
-          "correct_answer": "大学",
           "options": [
-            "大学",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "大学",
+              "isCorrect": true,
+              "explanationVi": "Từ '大学' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '大学' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '大学' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 13:"
         },
         {
           "id": "ex-13-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Hành động 'đi học' trong tiếng Trung là:",
-          "correct_answer": "上学",
           "options": [
-            "上学",
-            "放学",
-            "下课",
-            "上班"
+            {
+              "id": "opt-1",
+              "label": "上学",
+              "isCorrect": true,
+              "explanationVi": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+            },
+            {
+              "id": "opt-2",
+              "label": "放学",
+              "isCorrect": false,
+              "explanationVi": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+            },
+            {
+              "id": "opt-3",
+              "label": "下课",
+              "isCorrect": false,
+              "explanationVi": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+            },
+            {
+              "id": "opt-4",
+              "label": "上班",
+              "isCorrect": false,
+              "explanationVi": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+            }
           ],
-          "explanation": "'上学' (shàngxué) nghĩa là đến trường, đi học."
+          "kind": "vocab-mcq",
+          "promptVi": "Hành động 'đi học' trong tiếng Trung là:"
         },
         {
           "id": "ex-13-v-extra-02",
-          "type": "vocab_mcq",
-          "prompt": "Trường tiểu học và trường trung học lần lượt là:",
-          "correct_answer": "小学、中学",
           "options": [
-            "小学、中学",
-            "大学、中学",
-            "幼儿园、小学",
-            "高中、大学"
+            {
+              "id": "opt-1",
+              "label": "小学、中学",
+              "isCorrect": true,
+              "explanationVi": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+            },
+            {
+              "id": "opt-2",
+              "label": "大学、中学",
+              "isCorrect": false,
+              "explanationVi": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+            },
+            {
+              "id": "opt-3",
+              "label": "幼儿园、小学",
+              "isCorrect": false,
+              "explanationVi": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+            },
+            {
+              "id": "opt-4",
+              "label": "高中、大学",
+              "isCorrect": false,
+              "explanationVi": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+            }
           ],
-          "explanation": "'小学' là trường cấp 1 (tiểu học), '中学' là trường trung học (cấp 2 & 3)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trường tiểu học và trường trung học lần lượt là:"
         },
         {
           "id": "ex-13-v-extra-03",
-          "type": "vocab_mcq",
-          "prompt": "Học sinh tiểu học và học sinh trung học lần lượt là:",
-          "correct_answer": "小学生、中学生",
           "options": [
-            "小学生、中学生",
-            "大学生、中学生",
-            "留学生、小学生",
-            "研究生、小学生"
+            {
+              "id": "opt-1",
+              "label": "小学生、中学生",
+              "isCorrect": true,
+              "explanationVi": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
+            },
+            {
+              "id": "opt-2",
+              "label": "大学生、中学生",
+              "isCorrect": false,
+              "explanationVi": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
+            },
+            {
+              "id": "opt-3",
+              "label": "留学生、小学生",
+              "isCorrect": false,
+              "explanationVi": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
+            },
+            {
+              "id": "opt-4",
+              "label": "研究生、小学生",
+              "isCorrect": false,
+              "explanationVi": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
+            }
           ],
-          "explanation": "'小学生' là học sinh tiểu học, '中学生' là học sinh trung học."
+          "kind": "vocab-mcq",
+          "promptVi": "Học sinh tiểu học và học sinh trung học lần lượt là:"
         }
       ]
     },
@@ -230,26 +338,87 @@
       "exercises": [
         {
           "id": "ex-g-13-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我买了两本中文书。",
-          "options": [
-            "我买了两本中文书。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "买",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "了",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "两",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "本",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "中",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "文",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "书",
+              "correctIndex": 7
+            },
+            {
+              "id": "tok-9",
+              "text": "。",
+              "correctIndex": 8
+            }
           ],
-          "explanation": "Cấu trúc đúng: Số từ + 本 + 书/本子."
+          "targetSentence": "我买了两本中文书。"
         },
         {
           "id": "ex-g-13-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Số từ + 本 + 书/本子",
-          "correct_answer": "Lượng từ 本 cho sách vở",
           "options": [
-            "Lượng từ 本 cho sách vở",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Lượng từ 本 cho sách vở",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Lượng từ 本 cho sách vở."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Số từ + 本 + 书/本子"
         }
       ]
     },
@@ -277,16 +446,34 @@
       "exercises": [
         {
           "id": "ex-d-13-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "王同学，你去书店买什么？",
           "options": [
-            "王同学，你去书店买什么？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "王同学，你去书店买什么？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '王同学，你去书店买什么？' (Bạn Vương, bạn đi hiệu sách mua gì?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -296,29 +483,57 @@
       "exercises": [
         {
           "id": "ex-ls-13-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 13:",
-          "audio_target": "我想买两本中文书和几支笔。",
-          "correct_answer": "我想买两本中文书和几支笔。",
           "options": [
-            "我想买两本中文书和几支笔。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "我想买两本中文书和几支笔。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '我想买两本中文书和几支笔。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我想买两本中文书和几支笔。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我想买两本中文书和几支笔。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '我想买两本中文书和几支笔。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '我想买两本中文书和几支笔。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 13:",
+          "targetContent": {
+            "hanzi": "我想买两本中文书和几支笔。",
+            "pinyin": "",
+            "audioText": "我想买两本中文书和几支笔。"
+          }
         },
         {
           "id": "ex-ls-13-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "王同学，你去书店买什么？",
-          "pinyin_target": "Wáng tóngxué, nǐ qù shūdiàn mǎi shénme?",
-          "correct_answer": "王同学，你去书店买什么？",
           "options": [
-            "王同学，你去书店买什么？"
+            {
+              "id": "opt-1",
+              "label": "王同学，你去书店买什么？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '王同学，你去书店买什么？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '王同学，你去书店买什么？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "王同学，你去书店买什么？",
+            "pinyin": "Wáng tóngxué, nǐ qù shūdiàn mǎi shénme?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -333,14 +548,27 @@
       "exercises": [
         {
           "id": "ex-r-13-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 13 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Trường học của tôi."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Trường học của tôi."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Trường học của tôi."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 13 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 13 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

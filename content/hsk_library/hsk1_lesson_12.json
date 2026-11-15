@@ -127,81 +127,189 @@
       "exercises": [
         {
           "id": "ex-v-12-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'xe, xe cộ'?",
-          "correct_answer": "车",
           "options": [
-            "车",
-            "坐",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "车",
+              "isCorrect": true,
+              "explanationVi": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+            },
+            {
+              "id": "opt-2",
+              "label": "坐",
+              "isCorrect": false,
+              "explanationVi": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+            }
           ],
-          "explanation": "车 (chē) mang nghĩa là 'xe, xe cộ'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'xe, xe cộ'?"
         },
         {
           "id": "ex-v-12-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '坐' là gì?",
-          "correct_answer": "zuò",
           "options": [
-            "zuò",
-            "chē",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "zuò",
+              "isCorrect": true,
+              "explanationVi": "Từ '坐' đọc chuẩn là zuò."
+            },
+            {
+              "id": "opt-2",
+              "label": "chē",
+              "isCorrect": false,
+              "explanationVi": "Từ '坐' đọc chuẩn là zuò."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '坐' đọc chuẩn là zuò."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '坐' đọc chuẩn là zuò."
+            }
           ],
-          "explanation": "Từ '坐' đọc chuẩn là zuò."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '坐' là gì?"
         },
         {
           "id": "ex-v-12-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 12:",
-          "correct_answer": "车",
           "options": [
-            "车",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "车",
+              "isCorrect": true,
+              "explanationVi": "Từ '车' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '车' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '车' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '车' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '车' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 12:"
         },
         {
           "id": "ex-12-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào chỉ phương tiện hàng không 'máy bay'?",
-          "correct_answer": "飞机",
           "options": [
-            "飞机",
-            "出租车",
-            "公共汽车",
-            "火车"
+            {
+              "id": "opt-1",
+              "label": "飞机",
+              "isCorrect": true,
+              "explanationVi": "'飞机' (fēijī) nghĩa là máy bay."
+            },
+            {
+              "id": "opt-2",
+              "label": "出租车",
+              "isCorrect": false,
+              "explanationVi": "'飞机' (fēijī) nghĩa là máy bay."
+            },
+            {
+              "id": "opt-3",
+              "label": "公共汽车",
+              "isCorrect": false,
+              "explanationVi": "'飞机' (fēijī) nghĩa là máy bay."
+            },
+            {
+              "id": "opt-4",
+              "label": "火车",
+              "isCorrect": false,
+              "explanationVi": "'飞机' (fēijī) nghĩa là máy bay."
+            }
           ],
-          "explanation": "'飞机' (fēijī) nghĩa là máy bay."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào chỉ phương tiện hàng không 'máy bay'?"
         },
         {
           "id": "ex-12-v-extra-02",
-          "type": "vocab_mcq",
-          "prompt": "Hành động 'lái xe' trong tiếng Trung là gì?",
-          "correct_answer": "开车",
           "options": [
-            "开车",
-            "坐车",
-            "骑车",
-            "走路"
+            {
+              "id": "opt-1",
+              "label": "开车",
+              "isCorrect": true,
+              "explanationVi": "'开车' (kāichē) nghĩa là lái xe hơi."
+            },
+            {
+              "id": "opt-2",
+              "label": "坐车",
+              "isCorrect": false,
+              "explanationVi": "'开车' (kāichē) nghĩa là lái xe hơi."
+            },
+            {
+              "id": "opt-3",
+              "label": "骑车",
+              "isCorrect": false,
+              "explanationVi": "'开车' (kāichē) nghĩa là lái xe hơi."
+            },
+            {
+              "id": "opt-4",
+              "label": "走路",
+              "isCorrect": false,
+              "explanationVi": "'开车' (kāichē) nghĩa là lái xe hơi."
+            }
           ],
-          "explanation": "'开车' (kāichē) nghĩa là lái xe hơi."
+          "kind": "vocab-mcq",
+          "promptVi": "Hành động 'lái xe' trong tiếng Trung là gì?"
         },
         {
           "id": "ex-12-v-extra-03",
-          "type": "vocab_mcq",
-          "prompt": "Động từ 'trở về / về (nhà, nước)' là:",
-          "correct_answer": "回",
           "options": [
-            "回",
-            "去",
-            "来",
-            "走"
+            {
+              "id": "opt-1",
+              "label": "回",
+              "isCorrect": true,
+              "explanationVi": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
+            },
+            {
+              "id": "opt-2",
+              "label": "去",
+              "isCorrect": false,
+              "explanationVi": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
+            },
+            {
+              "id": "opt-3",
+              "label": "来",
+              "isCorrect": false,
+              "explanationVi": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
+            },
+            {
+              "id": "opt-4",
+              "label": "走",
+              "isCorrect": false,
+              "explanationVi": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
+            }
           ],
-          "explanation": "'回' (huí) là trở về (ví dụ: 回家 - về nhà)."
+          "kind": "vocab-mcq",
+          "promptVi": "Động từ 'trở về / về (nhà, nước)' là:"
         }
       ]
     },
@@ -230,26 +338,72 @@
       "exercises": [
         {
           "id": "ex-g-12-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我坐出租车去火车站。",
-          "options": [
-            "我坐出租车去火车站。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "坐",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "出租车",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "去",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "火车站",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "。",
+              "correctIndex": 5
+            }
           ],
-          "explanation": "Cấu trúc đúng: Chủ ngữ + 坐/开 + Xe."
+          "targetSentence": "我坐出租车去火车站。"
         },
         {
           "id": "ex-g-12-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Chủ ngữ + 坐/开 + Xe",
-          "correct_answer": "Phương thức di chuyển với 坐 / 开 / 走路",
           "options": [
-            "Phương thức di chuyển với 坐 / 开 / 走路",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Phương thức di chuyển với 坐 / 开 / 走路",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Phương thức di chuyển với 坐 / 开 / 走路."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phương thức di chuyển với 坐 / 开 / 走路."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phương thức di chuyển với 坐 / 开 / 走路."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phương thức di chuyển với 坐 / 开 / 走路."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Phương thức di chuyển với 坐 / 开 / 走路."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Chủ ngữ + 坐/开 + Xe"
         }
       ]
     },
@@ -277,16 +431,34 @@
       "exercises": [
         {
           "id": "ex-d-12-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "火车站远吗？",
           "options": [
-            "火车站远吗？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "火车站远吗？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '火车站远吗？' (Ga tàu có xa không?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '火车站远吗？' (Ga tàu có xa không?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '火车站远吗？' (Ga tàu có xa không?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '火车站远吗？' (Ga tàu có xa không?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '火车站远吗？' (Ga tàu có xa không?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -296,29 +468,57 @@
       "exercises": [
         {
           "id": "ex-ls-12-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 12:",
-          "audio_target": "不太远，坐出租车十分钟就到了。",
-          "correct_answer": "不太远，坐出租车十分钟就到了。",
           "options": [
-            "不太远，坐出租车十分钟就到了。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "不太远，坐出租车十分钟就到了。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '不太远，坐出租车十分钟就到了。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '不太远，坐出租车十分钟就到了。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '不太远，坐出租车十分钟就到了。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '不太远，坐出租车十分钟就到了。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '不太远，坐出租车十分钟就到了。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 12:",
+          "targetContent": {
+            "hanzi": "不太远，坐出租车十分钟就到了。",
+            "pinyin": "",
+            "audioText": "不太远，坐出租车十分钟就到了。"
+          }
         },
         {
           "id": "ex-ls-12-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "火车站远吗？",
-          "pinyin_target": "Huǒchēzhàn yuǎn ma?",
-          "correct_answer": "火车站远吗？",
           "options": [
-            "火车站远吗？"
+            {
+              "id": "opt-1",
+              "label": "火车站远吗？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '火车站远吗？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '火车站远吗？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "火车站远吗？",
+            "pinyin": "Huǒchēzhàn yuǎn ma?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -333,14 +533,27 @@
       "exercises": [
         {
           "id": "ex-r-12-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 12 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Đi lại ở thành phố."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Đi lại ở thành phố."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Đi lại ở thành phố."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 12 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 12 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

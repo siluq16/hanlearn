@@ -235,29 +235,49 @@
           "id": "ex-02-g1",
           "lessonId": "l-hsk1-002",
           "sortOrder": 1,
-          "kind": "sentence_ordering",
+          "kind": "sentence-order",
           "hskLevel": 1,
           "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh: 'Bạn tên là gì?'",
-          "tokens": [
-            "你",
-            "叫",
-            "什么",
-            "名字",
-            "？"
-          ],
           "targetSentence": "你叫什么名字？",
           "translationVi": "Bạn tên là gì?",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "你",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "叫",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "什么",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "名字",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "？",
+              "correctIndex": 4
+            }
+          ]
         },
         {
           "id": "ex-02-g2",
           "lessonId": "l-hsk1-002",
           "sortOrder": 2,
-          "kind": "grammar-mcq",
+          "kind": "grammar-choice",
           "hskLevel": 1,
           "promptVi": "Chọn từ thích hợp điền vào chỗ trống: '他____中国学生。'",
           "targetContent": {
@@ -337,10 +357,9 @@
           "id": "ex-02-ls1",
           "lessonId": "l-hsk1-002",
           "sortOrder": 1,
-          "kind": "listening-mcq",
+          "kind": "listening_cloze",
           "hskLevel": 1,
           "promptVi": "Nghe câu hỏi và chọn câu đáp phù hợp:",
-          "audioText": "你叫什么名字？",
           "options": [
             {
               "id": "o1",
@@ -367,6 +386,11 @@
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "targetContent": {
+            "hanzi": "你叫什么名字？",
+            "pinyin": "",
+            "audioText": "你叫什么名字？"
           }
         }
       ]
@@ -384,15 +408,19 @@
           "id": "ex-02-r1",
           "lessonId": "l-hsk1-002",
           "sortOrder": 1,
-          "kind": "true-false",
+          "kind": "reading_true_false",
           "hskLevel": 1,
           "promptVi": "Đại Vệ là học sinh người Trung Quốc.",
-          "isTrue": false,
           "explanationVi": "Trong bài nêu rõ: 大卫不是中国人 (David không phải người Trung Quốc).",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "trueFalseStatement": {
+            "statement": "Đại Vệ là học sinh người Trung Quốc.",
+            "isTrue": false,
+            "explanationVi": "Trong bài nêu rõ: 大卫不是中国人 (David không phải người Trung Quốc)."
           }
         }
       ]

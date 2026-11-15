@@ -141,46 +141,68 @@
           "kind": "matching_pairs",
           "hskLevel": 1,
           "promptVi": "Ghép cặp từ tiếng Trung và nghĩa tiếng Việt tương ứng:",
-          "pairs": [
-            {
-              "id": "p1",
-              "left": "买 (mǎi)",
-              "right": "Mua"
-            },
-            {
-              "id": "p2",
-              "left": "贵 (guì)",
-              "right": "Đắt"
-            },
-            {
-              "id": "p3",
-              "left": "便宜 (piányi)",
-              "right": "Rẻ"
-            },
-            {
-              "id": "p4",
-              "left": "苹果 (píngguǒ)",
-              "right": "Quả táo"
-            }
-          ],
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "matchingPairs": [
+            {
+              "leftId": "l-1",
+              "leftLabel": "买 (mǎi)",
+              "rightId": "r-1",
+              "rightLabel": "Mua"
+            },
+            {
+              "leftId": "l-2",
+              "leftLabel": "贵 (guì)",
+              "rightId": "r-2",
+              "rightLabel": "Đắt"
+            },
+            {
+              "leftId": "l-3",
+              "leftLabel": "便宜 (piányi)",
+              "rightId": "r-3",
+              "rightLabel": "Rẻ"
+            },
+            {
+              "leftId": "l-4",
+              "leftLabel": "苹果 (píngguǒ)",
+              "rightId": "r-4",
+              "rightLabel": "Quả táo"
+            }
+          ]
         },
         {
           "id": "ex-07-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào đồng nghĩa với '块' (đồng tiền) trong văn bản chính thức?",
-          "correct_answer": "元",
           "options": [
-            "元",
-            "角",
-            "分",
-            "斤"
+            {
+              "id": "opt-1",
+              "label": "元",
+              "isCorrect": true,
+              "explanationVi": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
+            },
+            {
+              "id": "opt-2",
+              "label": "角",
+              "isCorrect": false,
+              "explanationVi": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
+            },
+            {
+              "id": "opt-3",
+              "label": "分",
+              "isCorrect": false,
+              "explanationVi": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
+            },
+            {
+              "id": "opt-4",
+              "label": "斤",
+              "isCorrect": false,
+              "explanationVi": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
+            }
           ],
-          "explanation": "'元' (yuán) là đơn vị tiền tệ chính thức, khẩu ngữ tương đương với '块' (kuài)."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào đồng nghĩa với '块' (đồng tiền) trong văn bản chính thức?"
         }
       ]
     },

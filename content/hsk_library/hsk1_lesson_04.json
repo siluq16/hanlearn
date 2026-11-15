@@ -245,29 +245,49 @@
           "id": "ex-04-g1",
           "lessonId": "l-hsk1-004",
           "sortOrder": 1,
-          "kind": "sentence_ordering",
+          "kind": "sentence-order",
           "hskLevel": 1,
           "promptVi": "Sắp xếp thành câu: 'Hôm nay là thứ mấy?'",
-          "tokens": [
-            "今天",
-            "是",
-            "星期",
-            "几",
-            "？"
-          ],
           "targetSentence": "今天是星期几？",
           "translationVi": "Hôm nay là thứ mấy?",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "今天",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "是",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "星期",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "几",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "？",
+              "correctIndex": 4
+            }
+          ]
         },
         {
           "id": "ex-04-g2",
           "lessonId": "l-hsk1-004",
           "sortOrder": 2,
-          "kind": "grammar-mcq",
+          "kind": "grammar-choice",
           "hskLevel": 1,
           "promptVi": "Chọn cách nói đúng cho 'Chủ nhật':",
           "targetContent": {
@@ -359,10 +379,9 @@
           "id": "ex-04-ls1",
           "lessonId": "l-hsk1-004",
           "sortOrder": 1,
-          "kind": "listening-mcq",
+          "kind": "listening_cloze",
           "hskLevel": 1,
           "promptVi": "Nghe câu thông báo thời gian và chọn giờ đúng:",
-          "audioText": "现在是下午三点半。",
           "options": [
             {
               "id": "o1",
@@ -389,6 +408,11 @@
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "targetContent": {
+            "hanzi": "现在是下午三点半。",
+            "pinyin": "",
+            "audioText": "现在是下午三点半。"
           }
         }
       ]
@@ -406,15 +430,19 @@
           "id": "ex-04-r1",
           "lessonId": "l-hsk1-004",
           "sortOrder": 1,
-          "kind": "true-false",
+          "kind": "reading_true_false",
           "hskLevel": 1,
           "promptVi": "Lý Minh và David đi mua đồ vào sáng thứ Bảy.",
-          "isTrue": false,
           "explanationVi": "Trong bài: Buổi sáng đi thư viện (上午去图书馆), chiều 2 giờ mới đi mua đồ (下午两点去商店).",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "trueFalseStatement": {
+            "statement": "Lý Minh và David đi mua đồ vào sáng thứ Bảy.",
+            "isTrue": false,
+            "explanationVi": "Trong bài: Buổi sáng đi thư viện (上午去图书馆), chiều 2 giờ mới đi mua đồ (下午两点去商店)."
           }
         }
       ]

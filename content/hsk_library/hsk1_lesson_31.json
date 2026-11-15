@@ -112,55 +112,127 @@
       "exercises": [
         {
           "id": "ex-v-31-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'đừng'?",
-          "correct_answer": "别",
           "options": [
-            "别",
-            "不要",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "别",
+              "isCorrect": true,
+              "explanationVi": "别 (bié) mang nghĩa là 'đừng'."
+            },
+            {
+              "id": "opt-2",
+              "label": "不要",
+              "isCorrect": false,
+              "explanationVi": "别 (bié) mang nghĩa là 'đừng'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "别 (bié) mang nghĩa là 'đừng'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "别 (bié) mang nghĩa là 'đừng'."
+            }
           ],
-          "explanation": "别 (bié) mang nghĩa là 'đừng'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'đừng'?"
         },
         {
           "id": "ex-v-31-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '不要' là gì?",
-          "correct_answer": "búyào",
           "options": [
-            "búyào",
-            "bié",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "búyào",
+              "isCorrect": true,
+              "explanationVi": "Từ '不要' đọc chuẩn là búyào."
+            },
+            {
+              "id": "opt-2",
+              "label": "bié",
+              "isCorrect": false,
+              "explanationVi": "Từ '不要' đọc chuẩn là búyào."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '不要' đọc chuẩn là búyào."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '不要' đọc chuẩn là búyào."
+            }
           ],
-          "explanation": "Từ '不要' đọc chuẩn là búyào."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '不要' là gì?"
         },
         {
           "id": "ex-v-31-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 31:",
-          "correct_answer": "别",
           "options": [
-            "别",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "别",
+              "isCorrect": true,
+              "explanationVi": "Từ '别' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '别' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '别' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '别' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '别' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 31:"
         },
         {
           "id": "ex-31-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ đứng trước tính từ biểu thị 'hơi... một chút (không vừa ý)' là:",
-          "correct_answer": "有点儿",
           "options": [
-            "有点儿",
-            "一点儿",
-            "非常",
-            "十分"
+            {
+              "id": "opt-1",
+              "label": "有点儿",
+              "isCorrect": true,
+              "explanationVi": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+            },
+            {
+              "id": "opt-2",
+              "label": "一点儿",
+              "isCorrect": false,
+              "explanationVi": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+            },
+            {
+              "id": "opt-3",
+              "label": "非常",
+              "isCorrect": false,
+              "explanationVi": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+            },
+            {
+              "id": "opt-4",
+              "label": "十分",
+              "isCorrect": false,
+              "explanationVi": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+            }
           ],
-          "explanation": "'有点儿' (yǒudiǎnr) + Tính từ (ví dụ: 有点儿累, 有点儿贵)."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ đứng trước tính từ biểu thị 'hơi... một chút (không vừa ý)' là:"
         }
       ]
     },
@@ -202,26 +274,97 @@
       "exercises": [
         {
           "id": "ex-g-31-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "在教室里请不要大声说话。",
-          "options": [
-            "在教室里请不要大声说话。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "在",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "教",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "室",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "里",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "请",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "不",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "要",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "大",
+              "correctIndex": 7
+            },
+            {
+              "id": "tok-9",
+              "text": "声",
+              "correctIndex": 8
+            },
+            {
+              "id": "tok-10",
+              "text": "说话",
+              "correctIndex": 9
+            },
+            {
+              "id": "tok-11",
+              "text": "。",
+              "correctIndex": 10
+            }
           ],
-          "explanation": "Cấu trúc đúng: 别 / 不要 + Động từ."
+          "targetSentence": "在教室里请不要大声说话。"
         },
         {
           "id": "ex-g-31-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: 别 / 不要 + Động từ",
-          "correct_answer": "Phó từ cấm chỉ 别 và 不要",
           "options": [
-            "Phó từ cấm chỉ 别 và 不要",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Phó từ cấm chỉ 别 và 不要",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Phó từ cấm chỉ 别 và 不要."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: 别 / 不要 + Động từ"
         }
       ]
     },
@@ -249,16 +392,34 @@
       "exercises": [
         {
           "id": "ex-d-31-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "外面太冷了，你别出去了！",
           "options": [
-            "外面太冷了，你别出去了！",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "外面太冷了，你别出去了！",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+            }
           ],
-          "explanation": "Lời thoại của A: '外面太冷了，你别出去了！' (Bên ngoài lạnh quá, bạn đừng ra ngoài nữa!)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -268,29 +429,57 @@
       "exercises": [
         {
           "id": "ex-ls-31-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 31:",
-          "audio_target": "好的，我正在房间里复习功课呢。",
-          "correct_answer": "好的，我正在房间里复习功课呢。",
           "options": [
-            "好的，我正在房间里复习功课呢。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "好的，我正在房间里复习功课呢。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '好的，我正在房间里复习功课呢。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 31:",
+          "targetContent": {
+            "hanzi": "好的，我正在房间里复习功课呢。",
+            "pinyin": "",
+            "audioText": "好的，我正在房间里复习功课呢。"
+          }
         },
         {
           "id": "ex-ls-31-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "外面太冷了，你别出去了！",
-          "pinyin_target": "Wàimiàn tài lěng le, nǐ bié chūqù le!",
-          "correct_answer": "外面太冷了，你别出去了！",
           "options": [
-            "外面太冷了，你别出去了！"
+            {
+              "id": "opt-1",
+              "label": "外面太冷了，你别出去了！",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '外面太冷了，你别出去了！'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '外面太冷了，你别出去了！'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "外面太冷了，你别出去了！",
+            "pinyin": "Wàimiàn tài lěng le, nǐ bié chūqù le!",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -305,14 +494,27 @@
       "exercises": [
         {
           "id": "ex-r-31-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 31 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Chăm chỉ ôn tập."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Chăm chỉ ôn tập."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Chăm chỉ ôn tập."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 31 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 31 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

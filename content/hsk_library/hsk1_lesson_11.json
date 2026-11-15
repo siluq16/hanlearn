@@ -87,55 +87,127 @@
       "exercises": [
         {
           "id": "ex-v-11-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'thời tiết'?",
-          "correct_answer": "天气",
           "options": [
-            "天气",
-            "冷",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "天气",
+              "isCorrect": true,
+              "explanationVi": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+            },
+            {
+              "id": "opt-2",
+              "label": "冷",
+              "isCorrect": false,
+              "explanationVi": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+            }
           ],
-          "explanation": "天气 (tiānqì) mang nghĩa là 'thời tiết'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'thời tiết'?"
         },
         {
           "id": "ex-v-11-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '冷' là gì?",
-          "correct_answer": "lěng",
           "options": [
-            "lěng",
-            "tiānqì",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "lěng",
+              "isCorrect": true,
+              "explanationVi": "Từ '冷' đọc chuẩn là lěng."
+            },
+            {
+              "id": "opt-2",
+              "label": "tiānqì",
+              "isCorrect": false,
+              "explanationVi": "Từ '冷' đọc chuẩn là lěng."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '冷' đọc chuẩn là lěng."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '冷' đọc chuẩn là lěng."
+            }
           ],
-          "explanation": "Từ '冷' đọc chuẩn là lěng."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '冷' là gì?"
         },
         {
           "id": "ex-v-11-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 11:",
-          "correct_answer": "天气",
           "options": [
-            "天气",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "天气",
+              "isCorrect": true,
+              "explanationVi": "Từ '天气' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '天气' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '天气' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '天气' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '天气' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 11:"
         },
         {
           "id": "ex-11-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Hiện tượng thời tiết 'trời mưa' trong tiếng Trung là gì?",
-          "correct_answer": "下雨",
           "options": [
-            "下雨",
-            "刮风",
-            "下雪",
-            "出太阳"
+            {
+              "id": "opt-1",
+              "label": "下雨",
+              "isCorrect": true,
+              "explanationVi": "'下雨' (xiàyǔ) nghĩa là trời mưa, đổ mưa."
+            },
+            {
+              "id": "opt-2",
+              "label": "刮风",
+              "isCorrect": false,
+              "explanationVi": "'下雨' (xiàyǔ) nghĩa là trời mưa, đổ mưa."
+            },
+            {
+              "id": "opt-3",
+              "label": "下雪",
+              "isCorrect": false,
+              "explanationVi": "'下雨' (xiàyǔ) nghĩa là trời mưa, đổ mưa."
+            },
+            {
+              "id": "opt-4",
+              "label": "出太阳",
+              "isCorrect": false,
+              "explanationVi": "'下雨' (xiàyǔ) nghĩa là trời mưa, đổ mưa."
+            }
           ],
-          "explanation": "'下雨' (xiàyǔ) nghĩa là trời mưa, đổ mưa."
+          "kind": "vocab-mcq",
+          "promptVi": "Hiện tượng thời tiết 'trời mưa' trong tiếng Trung là gì?"
         }
       ]
     },
@@ -164,26 +236,62 @@
       "exercises": [
         {
           "id": "ex-g-11-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "今天天气怎么样？",
-          "options": [
-            "今天天气怎么样？"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "今天",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "天气",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "怎么样",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "？",
+              "correctIndex": 3
+            }
           ],
-          "explanation": "Cấu trúc đúng: Thời gian/Địa điểm + 天气怎么样？."
+          "targetSentence": "今天天气怎么样？"
         },
         {
           "id": "ex-g-11-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Thời gian/Địa điểm + 天气怎么样？",
-          "correct_answer": "Hỏi thời tiết với 怎么样",
           "options": [
-            "Hỏi thời tiết với 怎么样",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Hỏi thời tiết với 怎么样",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Hỏi thời tiết với 怎么样."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hỏi thời tiết với 怎么样."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hỏi thời tiết với 怎么样."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Hỏi thời tiết với 怎么样."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Hỏi thời tiết với 怎么样."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Thời gian/Địa điểm + 天气怎么样？"
         }
       ]
     },
@@ -211,16 +319,34 @@
       "exercises": [
         {
           "id": "ex-d-11-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "今天天气真冷！",
           "options": [
-            "今天天气真冷！",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "今天天气真冷！",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+            }
           ],
-          "explanation": "Lời thoại của A: '今天天气真冷！' (Hôm nay thời tiết thật là lạnh!)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -230,29 +356,57 @@
       "exercises": [
         {
           "id": "ex-ls-11-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 11:",
-          "audio_target": "下雪了，明天会更冷。",
-          "correct_answer": "下雪了，明天会更冷。",
           "options": [
-            "下雪了，明天会更冷。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "下雪了，明天会更冷。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '下雪了，明天会更冷。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下雪了，明天会更冷。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下雪了，明天会更冷。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下雪了，明天会更冷。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '下雪了，明天会更冷。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 11:",
+          "targetContent": {
+            "hanzi": "下雪了，明天会更冷。",
+            "pinyin": "",
+            "audioText": "下雪了，明天会更冷。"
+          }
         },
         {
           "id": "ex-ls-11-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "今天天气真冷！",
-          "pinyin_target": "Jīntiān tiānqì zhēn lěng!",
-          "correct_answer": "今天天气真冷！",
           "options": [
-            "今天天气真冷！"
+            {
+              "id": "opt-1",
+              "label": "今天天气真冷！",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '今天天气真冷！'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '今天天气真冷！'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "今天天气真冷！",
+            "pinyin": "Jīntiān tiānqì zhēn lěng!",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -267,14 +421,27 @@
       "exercises": [
         {
           "id": "ex-r-11-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 11 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời tiết hôm nay."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời tiết hôm nay."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời tiết hôm nay."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 11 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 11 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

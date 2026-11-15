@@ -112,81 +112,189 @@
       "exercises": [
         {
           "id": "ex-v-28-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'năm'?",
-          "correct_answer": "年",
           "options": [
-            "年",
-            "月",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "年",
+              "isCorrect": true,
+              "explanationVi": "年 (nián) mang nghĩa là 'năm'."
+            },
+            {
+              "id": "opt-2",
+              "label": "月",
+              "isCorrect": false,
+              "explanationVi": "年 (nián) mang nghĩa là 'năm'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "年 (nián) mang nghĩa là 'năm'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "年 (nián) mang nghĩa là 'năm'."
+            }
           ],
-          "explanation": "年 (nián) mang nghĩa là 'năm'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'năm'?"
         },
         {
           "id": "ex-v-28-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '月' là gì?",
-          "correct_answer": "yuè",
           "options": [
-            "yuè",
-            "nián",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "yuè",
+              "isCorrect": true,
+              "explanationVi": "Từ '月' đọc chuẩn là yuè."
+            },
+            {
+              "id": "opt-2",
+              "label": "nián",
+              "isCorrect": false,
+              "explanationVi": "Từ '月' đọc chuẩn là yuè."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '月' đọc chuẩn là yuè."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '月' đọc chuẩn là yuè."
+            }
           ],
-          "explanation": "Từ '月' đọc chuẩn là yuè."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '月' là gì?"
         },
         {
           "id": "ex-v-28-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 28:",
-          "correct_answer": "年",
           "options": [
-            "年",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "年",
+              "isCorrect": true,
+              "explanationVi": "Từ '年' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '年' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '年' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '年' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '年' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 28:"
         },
         {
           "id": "ex-28-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Một cách gọi khác trang trọng của 'Chủ nhật' (bên cạnh 星期天) là:",
-          "correct_answer": "星期日",
           "options": [
-            "星期日",
-            "星期六",
-            "星期七",
-            "星期八"
+            {
+              "id": "opt-1",
+              "label": "星期日",
+              "isCorrect": true,
+              "explanationVi": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+            },
+            {
+              "id": "opt-2",
+              "label": "星期六",
+              "isCorrect": false,
+              "explanationVi": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+            },
+            {
+              "id": "opt-3",
+              "label": "星期七",
+              "isCorrect": false,
+              "explanationVi": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+            },
+            {
+              "id": "opt-4",
+              "label": "星期八",
+              "isCorrect": false,
+              "explanationVi": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+            }
           ],
-          "explanation": "'星期日' (xīngqīrì) nghĩa là ngày Chủ nhật."
+          "kind": "vocab-mcq",
+          "promptVi": "Một cách gọi khác trang trọng của 'Chủ nhật' (bên cạnh 星期天) là:"
         },
         {
           "id": "ex-28-v-extra-02",
-          "type": "vocab_mcq",
-          "prompt": "Khoảng thời gian 'buổi tối' trong ngày là:",
-          "correct_answer": "晚上",
           "options": [
-            "晚上",
-            "早上",
-            "中午",
-            "下午"
+            {
+              "id": "opt-1",
+              "label": "晚上",
+              "isCorrect": true,
+              "explanationVi": "'晚上' (wǎnshang) là buổi tối."
+            },
+            {
+              "id": "opt-2",
+              "label": "早上",
+              "isCorrect": false,
+              "explanationVi": "'晚上' (wǎnshang) là buổi tối."
+            },
+            {
+              "id": "opt-3",
+              "label": "中午",
+              "isCorrect": false,
+              "explanationVi": "'晚上' (wǎnshang) là buổi tối."
+            },
+            {
+              "id": "opt-4",
+              "label": "下午",
+              "isCorrect": false,
+              "explanationVi": "'晚上' (wǎnshang) là buổi tối."
+            }
           ],
-          "explanation": "'晚上' (wǎnshang) là buổi tối."
+          "kind": "vocab-mcq",
+          "promptVi": "Khoảng thời gian 'buổi tối' trong ngày là:"
         },
         {
           "id": "ex-28-v-extra-03",
-          "type": "vocab_mcq",
-          "prompt": "Từ chỉ 'ban ngày' (ngược với ban đêm) là:",
-          "correct_answer": "白天",
           "options": [
-            "白天",
-            "晚上",
-            "早晨",
-            "深夜"
+            {
+              "id": "opt-1",
+              "label": "白天",
+              "isCorrect": true,
+              "explanationVi": "'白天' (báitiān) nghĩa là ban ngày."
+            },
+            {
+              "id": "opt-2",
+              "label": "晚上",
+              "isCorrect": false,
+              "explanationVi": "'白天' (báitiān) nghĩa là ban ngày."
+            },
+            {
+              "id": "opt-3",
+              "label": "早晨",
+              "isCorrect": false,
+              "explanationVi": "'白天' (báitiān) nghĩa là ban ngày."
+            },
+            {
+              "id": "opt-4",
+              "label": "深夜",
+              "isCorrect": false,
+              "explanationVi": "'白天' (báitiān) nghĩa là ban ngày."
+            }
           ],
-          "explanation": "'白天' (báitiān) nghĩa là ban ngày."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ chỉ 'ban ngày' (ngược với ban đêm) là:"
         }
       ]
     },
@@ -228,26 +336,92 @@
       "exercises": [
         {
           "id": "ex-g-28-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "今天是十月一日，星期天。",
-          "options": [
-            "今天是十月一日，星期天。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "今天",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "是",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "十",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "月",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "一",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "日",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "，",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "星期",
+              "correctIndex": 7
+            },
+            {
+              "id": "tok-9",
+              "text": "天",
+              "correctIndex": 8
+            },
+            {
+              "id": "tok-10",
+              "text": "。",
+              "correctIndex": 9
+            }
           ],
-          "explanation": "Cấu trúc đúng: Năm (年) + Tháng (月) + Ngày (日/号)."
+          "targetSentence": "今天是十月一日，星期天。"
         },
         {
           "id": "ex-g-28-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Năm (年) + Tháng (月) + Ngày (日/号)",
-          "correct_answer": "Cách nói ngày tháng năm",
           "options": [
-            "Cách nói ngày tháng năm",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Cách nói ngày tháng năm",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Cách nói ngày tháng năm."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Cách nói ngày tháng năm."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Cách nói ngày tháng năm."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Cách nói ngày tháng năm."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Cách nói ngày tháng năm."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Năm (年) + Tháng (月) + Ngày (日/号)"
         }
       ]
     },
@@ -275,16 +449,34 @@
       "exercises": [
         {
           "id": "ex-d-28-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "今天星期几？几号？",
           "options": [
-            "今天星期几？几号？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "今天星期几？几号？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '今天星期几？几号？' (Hôm nay thứ mấy? Ngày mấy?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天星期几？几号？' (Hôm nay thứ mấy? Ngày mấy?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天星期几？几号？' (Hôm nay thứ mấy? Ngày mấy?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '今天星期几？几号？' (Hôm nay thứ mấy? Ngày mấy?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '今天星期几？几号？' (Hôm nay thứ mấy? Ngày mấy?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -294,29 +486,57 @@
       "exercises": [
         {
           "id": "ex-ls-28-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 28:",
-          "audio_target": "今天星期五，十五号。星期天我们一起去公园吧！",
-          "correct_answer": "今天星期五，十五号。星期天我们一起去公园吧！",
           "options": [
-            "今天星期五，十五号。星期天我们一起去公园吧！",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "今天星期五，十五号。星期天我们一起去公园吧！",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '今天星期五，十五号。星期天我们一起去公园吧！'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '今天星期五，十五号。星期天我们一起去公园吧！'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '今天星期五，十五号。星期天我们一起去公园吧！'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '今天星期五，十五号。星期天我们一起去公园吧！'."
+            }
           ],
-          "explanation": "Câu nghe được là: '今天星期五，十五号。星期天我们一起去公园吧！'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 28:",
+          "targetContent": {
+            "hanzi": "今天星期五，十五号。星期天我们一起去公园吧！",
+            "pinyin": "",
+            "audioText": "今天星期五，十五号。星期天我们一起去公园吧！"
+          }
         },
         {
           "id": "ex-ls-28-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "今天星期几？几号？",
-          "pinyin_target": "Jīntiān xīngqī jǐ? Jǐ hào?",
-          "correct_answer": "今天星期几？几号？",
           "options": [
-            "今天星期几？几号？"
+            {
+              "id": "opt-1",
+              "label": "今天星期几？几号？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '今天星期几？几号？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '今天星期几？几号？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "今天星期几？几号？",
+            "pinyin": "Jīntiān xīngqī jǐ? Jǐ hào?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -331,14 +551,27 @@
       "exercises": [
         {
           "id": "ex-r-28-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 28 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Lịch sinh hoạt của Lan."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Lịch sinh hoạt của Lan."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Lịch sinh hoạt của Lan."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 28 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 28 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

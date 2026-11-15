@@ -20,7 +20,7 @@
       "title": "Bộ 01: Nhận diện từ vựng Chào hỏi & Xưng hô",
       "description": "Luyện phản xạ chọn nghĩa tiếng Việt cho các từ xưng hô, chào hỏi cơ bản.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv01-1",
@@ -96,6 +96,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Đáp lại '对不起' dùng '没关系'."
+        },
+        {
+          "id": "ps-vocab-01-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '老师' (lǎoshī):",
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "choices": [
+            "Thầy cô giáo",
+            "Học sinh",
+            "Bác sĩ",
+            "Bạn học"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'老师' đọc là 'lǎoshī', nghĩa là 'Thầy cô giáo'."
+        },
+        {
+          "id": "ps-vocab-01-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '学生' (xuésheng):",
+          "hanzi": "学生",
+          "pinyin": "xuésheng",
+          "choices": [
+            "Luật sư",
+            "Bác sĩ",
+            "Giáo viên",
+            "Học sinh / Sinh viên"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'学生' đọc là 'xuésheng', nghĩa là 'Học sinh / Sinh viên'."
+        },
+        {
+          "id": "ps-vocab-01-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '中国' (Zhōngguó):",
+          "hanzi": "中国",
+          "pinyin": "Zhōngguó",
+          "choices": [
+            "Trung Quốc",
+            "Việt Nam",
+            "Mỹ",
+            "Nhật Bản"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'中国' đọc là 'Zhōngguó', nghĩa là 'Trung Quốc'."
         }
       ]
     },
@@ -108,7 +153,7 @@
       "title": "Bộ 02: Pinyin & Thanh điệu Từ vựng Gia đình",
       "description": "Luyện nhận diện phiên âm Pinyin và thanh điệu các thành viên gia đình.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv02-1",
@@ -179,6 +224,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'妹妹' phiên âm là mèimei."
+        },
+        {
+          "id": "ps-vocab-02-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '老师' (lǎoshī):",
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "choices": [
+            "Thầy cô giáo",
+            "Học sinh",
+            "Bác sĩ",
+            "Bạn học"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'老师' đọc là 'lǎoshī', nghĩa là 'Thầy cô giáo'."
+        },
+        {
+          "id": "ps-vocab-02-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '学生' (xuésheng):",
+          "hanzi": "学生",
+          "pinyin": "xuésheng",
+          "choices": [
+            "Học sinh / Sinh viên",
+            "Luật sư",
+            "Bác sĩ",
+            "Giáo viên"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'学生' đọc là 'xuésheng', nghĩa là 'Học sinh / Sinh viên'."
+        },
+        {
+          "id": "ps-vocab-02-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '中国' (Zhōngguó):",
+          "hanzi": "中国",
+          "pinyin": "Zhōngguó",
+          "choices": [
+            "Trung Quốc",
+            "Việt Nam",
+            "Mỹ",
+            "Nhật Bản"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'中国' đọc là 'Zhōngguó', nghĩa là 'Trung Quốc'."
         }
       ]
     },
@@ -191,7 +281,7 @@
       "title": "Bộ 03: Nhận diện Hán tự Nghề nghiệp & Nơi chốn",
       "description": "Phân biệt mặt chữ Hán các từ vựng nghề nghiệp và cơ quan.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv03-1",
@@ -262,6 +352,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'公司' (gōngsī) là công ty."
+        },
+        {
+          "id": "ps-vocab-03-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '买东西' (mǎi dōngxi):",
+          "hanzi": "买东西",
+          "pinyin": "mǎi dōngxi",
+          "choices": [
+            "Bán đồ",
+            "Dọn phòng",
+            "Nấu ăn",
+            "Mua sắm đồ đạc"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'买东西' đọc là 'mǎi dōngxi', nghĩa là 'Mua sắm đồ đạc'."
+        },
+        {
+          "id": "ps-vocab-03-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '多少钱' (duōshao qián):",
+          "hanzi": "多少钱",
+          "pinyin": "duōshao qián",
+          "choices": [
+            "Bao nhiêu người",
+            "Mấy giờ rồi",
+            "Bao nhiêu tiền",
+            "Bao xa"
+          ],
+          "correct_index": 2,
+          "explanation_vi": "'多少钱' đọc là 'duōshao qián', nghĩa là 'Bao nhiêu tiền'."
+        },
+        {
+          "id": "ps-vocab-03-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '块' (kuài):",
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "choices": [
+            "Đồng / Tệ (tiền)",
+            "Cốc",
+            "Quyển",
+            "Cái"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'块' đọc là 'kuài', nghĩa là 'Đồng / Tệ (tiền)'."
         }
       ]
     },
@@ -274,7 +409,7 @@
       "title": "Bộ 04: Điền từ Thực phẩm & Đồ uống",
       "description": "Luyện lựa chọn từ vựng thích hợp trong ngữ cảnh ăn uống.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv04-1",
@@ -340,6 +475,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'包子' (bāozi) là bánh bao."
+        },
+        {
+          "id": "ps-vocab-04-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '买东西' (mǎi dōngxi):",
+          "hanzi": "买东西",
+          "pinyin": "mǎi dōngxi",
+          "choices": [
+            "Mua sắm đồ đạc",
+            "Bán đồ",
+            "Nấu ăn",
+            "Dọn phòng"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'买东西' đọc là 'mǎi dōngxi', nghĩa là 'Mua sắm đồ đạc'."
+        },
+        {
+          "id": "ps-vocab-04-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '多少钱' (duōshao qián):",
+          "hanzi": "多少钱",
+          "pinyin": "duōshao qián",
+          "choices": [
+            "Mấy giờ rồi",
+            "Bao xa",
+            "Bao nhiêu tiền",
+            "Bao nhiêu người"
+          ],
+          "correct_index": 2,
+          "explanation_vi": "'多少钱' đọc là 'duōshao qián', nghĩa là 'Bao nhiêu tiền'."
+        },
+        {
+          "id": "ps-vocab-04-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '块' (kuài):",
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "choices": [
+            "Cái",
+            "Quyển",
+            "Đồng / Tệ (tiền)",
+            "Cốc"
+          ],
+          "correct_index": 2,
+          "explanation_vi": "'块' đọc là 'kuài', nghĩa là 'Đồng / Tệ (tiền)'."
         }
       ]
     },
@@ -352,7 +532,7 @@
       "title": "Bộ 05: Ghép cặp Phương tiện, Địa điểm & Hoạt động",
       "description": "Ghép các cặp từ tương ứng giữa phương tiện di chuyển, trạm dừng và hoạt động.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv05-1",
@@ -425,6 +605,81 @@
             }
           ],
           "explanation_vi": "Cụm động tân chuẩn xác trong tiếng Trung."
+        },
+        {
+          "id": "ps-vocab-05-q4",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '北京' (Běijīng):",
+          "hanzi": "北京",
+          "pinyin": "Běijīng",
+          "choices": [
+            "Bắc Kinh",
+            "Thượng Hải",
+            "Quảng Châu",
+            "Hà Nội"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'北京' đọc là 'Běijīng', nghĩa là 'Bắc Kinh'."
+        },
+        {
+          "id": "ps-vocab-05-q5",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '今天' (jīntiān):",
+          "hanzi": "今天",
+          "pinyin": "jīntiān",
+          "choices": [
+            "Năm sau",
+            "Ngày mai",
+            "Hôm qua",
+            "Hôm nay"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'今天' đọc là 'jīntiān', nghĩa là 'Hôm nay'."
+        },
+        {
+          "id": "ps-vocab-05-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '昨天' (zuótiān):",
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "choices": [
+            "Tuần trước",
+            "Ngày mai",
+            "Hôm nay",
+            "Hôm qua"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'昨天' đọc là 'zuótiān', nghĩa là 'Hôm qua'."
+        },
+        {
+          "id": "ps-vocab-05-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '明天' (míngtiān):",
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "choices": [
+            "Ngày mai",
+            "Tuần sau",
+            "Hôm qua",
+            "Hôm nay"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'明天' đọc là 'míngtiān', nghĩa là 'Ngày mai'."
+        },
+        {
+          "id": "ps-vocab-05-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '现在' (xiànzài):",
+          "hanzi": "现在",
+          "pinyin": "xiànzài",
+          "choices": [
+            "Tương lai",
+            "Lúc nãy",
+            "Quá khứ",
+            "Bây giờ / Hiện tại"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'现在' đọc là 'xiànzài', nghĩa là 'Bây giờ / Hiện tại'."
         }
       ]
     },
@@ -437,7 +692,7 @@
       "title": "Bộ 06: Nhận diện từ qua Âm thanh (Thời tiết & Thiên nhiên)",
       "description": "Nghe phát âm từ vựng và chọn Hán tự tương ứng.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv06-1",
@@ -508,6 +763,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Phát âm là 'jīntiān' (今天)."
+        },
+        {
+          "id": "ps-vocab-06-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '昨天' (zuótiān):",
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "choices": [
+            "Ngày mai",
+            "Tuần trước",
+            "Hôm nay",
+            "Hôm qua"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'昨天' đọc là 'zuótiān', nghĩa là 'Hôm qua'."
+        },
+        {
+          "id": "ps-vocab-06-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '明天' (míngtiān):",
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "choices": [
+            "Tuần sau",
+            "Hôm nay",
+            "Hôm qua",
+            "Ngày mai"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'明天' đọc là 'míngtiān', nghĩa là 'Ngày mai'."
+        },
+        {
+          "id": "ps-vocab-06-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '现在' (xiànzài):",
+          "hanzi": "现在",
+          "pinyin": "xiànzài",
+          "choices": [
+            "Lúc nãy",
+            "Quá khứ",
+            "Tương lai",
+            "Bây giờ / Hiện tại"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'现在' đọc là 'xiànzài', nghĩa là 'Bây giờ / Hiện tại'."
         }
       ]
     },
@@ -520,7 +820,7 @@
       "title": "Bộ 07: Quần áo, Màu sắc & Đồ dùng cá nhân",
       "description": "Luyện tập từ vựng về trang phục, màu sắc và vật dụng thường ngày.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv07-1",
@@ -586,6 +886,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'手机' (shǒujī) là điện thoại cầm tay / di động."
+        },
+        {
+          "id": "ps-vocab-07-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '出租车' (chūzūchē):",
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "choices": [
+            "Tàu ngầm",
+            "Xe máy",
+            "Xe đạp",
+            "Xe taxi"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'出租车' đọc là 'chūzūchē', nghĩa là 'Xe taxi'."
+        },
+        {
+          "id": "ps-vocab-07-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '睡觉' (shuìjiào):",
+          "hanzi": "睡觉",
+          "pinyin": "shuìjiào",
+          "choices": [
+            "Đi ngủ",
+            "Thức dậy",
+            "Tập thể dục",
+            "Ăn tối"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'睡觉' đọc là 'shuìjiào', nghĩa là 'Đi ngủ'."
+        },
+        {
+          "id": "ps-vocab-07-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '喜欢' (xǐhuan):",
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "choices": [
+            "Tránh",
+            "Thích / Yêu thích",
+            "Ghét",
+            "Sợ"
+          ],
+          "correct_index": 1,
+          "explanation_vi": "'喜欢' đọc là 'xǐhuan', nghĩa là 'Thích / Yêu thích'."
         }
       ]
     },
@@ -598,7 +943,7 @@
       "title": "Bộ 08: Sức khỏe, Thể thao & Hoạt động",
       "description": "Luyện từ vựng về tình trạng thể chất và thể dục thể thao.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv08-1",
@@ -664,6 +1009,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'身体' (shēntǐ) là thân thể, sức khỏe."
+        },
+        {
+          "id": "ps-vocab-08-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '出租车' (chūzūchē):",
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "choices": [
+            "Xe taxi",
+            "Xe máy",
+            "Xe đạp",
+            "Tàu ngầm"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'出租车' đọc là 'chūzūchē', nghĩa là 'Xe taxi'."
+        },
+        {
+          "id": "ps-vocab-08-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '睡觉' (shuìjiào):",
+          "hanzi": "睡觉",
+          "pinyin": "shuìjiào",
+          "choices": [
+            "Thức dậy",
+            "Tập thể dục",
+            "Đi ngủ",
+            "Ăn tối"
+          ],
+          "correct_index": 2,
+          "explanation_vi": "'睡觉' đọc là 'shuìjiào', nghĩa là 'Đi ngủ'."
+        },
+        {
+          "id": "ps-vocab-08-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '喜欢' (xǐhuan):",
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "choices": [
+            "Tránh",
+            "Sợ",
+            "Ghét",
+            "Thích / Yêu thích"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'喜欢' đọc là 'xǐhuan', nghĩa là 'Thích / Yêu thích'."
         }
       ]
     },
@@ -676,7 +1066,7 @@
       "title": "Bộ 09: Phương vị từ & Không gian",
       "description": "Luyện tập các từ chỉ phương hướng và vị trí trong không gian.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv09-1",
@@ -742,6 +1132,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'里边' là bên trong, '外边' là bên ngoài."
+        },
+        {
+          "id": "ps-vocab-09-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '晚上' (wǎnshang):",
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "choices": [
+            "Buổi tối",
+            "Buổi sáng",
+            "Hoàng hôn",
+            "Buổi chiều"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'晚上' đọc là 'wǎnshang', nghĩa là 'Buổi tối'."
+        },
+        {
+          "id": "ps-vocab-09-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '工作' (gōngzuò):",
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "choices": [
+            "Làm việc / Công việc",
+            "Nghỉ ngơi",
+            "Đi chơi",
+            "Học tập"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'工作' đọc là 'gōngzuò', nghĩa là 'Làm việc / Công việc'."
+        },
+        {
+          "id": "ps-vocab-09-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '做饭' (zuòfàn):",
+          "hanzi": "做饭",
+          "pinyin": "zuòfàn",
+          "choices": [
+            "Nấu cơm / Nấu ăn",
+            "Ăn cơm",
+            "Rửa bát",
+            "Đi chợ"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'做饭' đọc là 'zuòfàn', nghĩa là 'Nấu cơm / Nấu ăn'."
         }
       ]
     },
@@ -754,7 +1189,7 @@
       "title": "Bộ 10: Đại từ chỉ định & Nghi vấn",
       "description": "Luyện nhận diện đại từ nhân xưng, chỉ định và nghi vấn.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv10-1",
@@ -820,6 +1255,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'怎么' + Động từ hỏi cách thức (ví dụ: 怎么去 - đi như thế nào)."
+        },
+        {
+          "id": "ps-vocab-10-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '晚上' (wǎnshang):",
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "choices": [
+            "Buổi sáng",
+            "Buổi chiều",
+            "Hoàng hôn",
+            "Buổi tối"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'晚上' đọc là 'wǎnshang', nghĩa là 'Buổi tối'."
+        },
+        {
+          "id": "ps-vocab-10-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '工作' (gōngzuò):",
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "choices": [
+            "Nghỉ ngơi",
+            "Đi chơi",
+            "Học tập",
+            "Làm việc / Công việc"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'工作' đọc là 'gōngzuò', nghĩa là 'Làm việc / Công việc'."
+        },
+        {
+          "id": "ps-vocab-10-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '做饭' (zuòfàn):",
+          "hanzi": "做饭",
+          "pinyin": "zuòfàn",
+          "choices": [
+            "Nấu cơm / Nấu ăn",
+            "Đi chợ",
+            "Ăn cơm",
+            "Rửa bát"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'做饭' đọc là 'zuòfàn', nghĩa là 'Nấu cơm / Nấu ăn'."
         }
       ]
     },
@@ -832,7 +1312,7 @@
       "title": "Bộ 11: Số đếm lớn & Lượng từ Nâng cao",
       "description": "Luyện số từ hàng trăm, nghìn và các lượng từ chuyên biệt.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv11-1",
@@ -898,6 +1378,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "2.500 đọc là '两千五百' (liǎng qiān wǔ bǎi)."
+        },
+        {
+          "id": "ps-vocab-11-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '热' (rè):",
+          "hanzi": "热",
+          "pinyin": "rè",
+          "choices": [
+            "Nóng (thời tiết/nước)",
+            "Lạnh",
+            "Mát",
+            "Ấm"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'热' đọc là 'rè', nghĩa là 'Nóng (thời tiết/nước)'."
+        },
+        {
+          "id": "ps-vocab-11-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '冷' (lěng):",
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "choices": [
+            "Khô ráo",
+            "Ấm áp",
+            "Nóng",
+            "Lạnh / Rét"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "'冷' đọc là 'lěng', nghĩa là 'Lạnh / Rét'."
+        },
+        {
+          "id": "ps-vocab-11-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '身体' (shēntǐ):",
+          "hanzi": "身体",
+          "pinyin": "shēntǐ",
+          "choices": [
+            "Sức khỏe / Thân thể",
+            "Tính cách",
+            "Vóc dáng",
+            "Tuổi tác"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'身体' đọc là 'shēntǐ', nghĩa là 'Sức khỏe / Thân thể'."
         }
       ]
     },
@@ -910,7 +1435,7 @@
       "title": "Bộ 12: Động từ Năng nguyện & Trợ từ Ngữ khí",
       "description": "Luyện nhận diện 想, 要, 会, 能, 可以, 吧, 呢, 了.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pv12-1",
@@ -976,6 +1501,51 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'非常' (vô cùng) nhấn mạnh mức độ cao."
+        },
+        {
+          "id": "ps-vocab-12-q6",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '热' (rè):",
+          "hanzi": "热",
+          "pinyin": "rè",
+          "choices": [
+            "Mát",
+            "Nóng (thời tiết/nước)",
+            "Lạnh",
+            "Ấm"
+          ],
+          "correct_index": 1,
+          "explanation_vi": "'热' đọc là 'rè', nghĩa là 'Nóng (thời tiết/nước)'."
+        },
+        {
+          "id": "ps-vocab-12-q7",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '冷' (lěng):",
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "choices": [
+            "Lạnh / Rét",
+            "Khô ráo",
+            "Nóng",
+            "Ấm áp"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "'冷' đọc là 'lěng', nghĩa là 'Lạnh / Rét'."
+        },
+        {
+          "id": "ps-vocab-12-q8",
+          "type": "mcq",
+          "prompt": "Chọn nghĩa tiếng Việt chính xác của từ '身体' (shēntǐ):",
+          "hanzi": "身体",
+          "pinyin": "shēntǐ",
+          "choices": [
+            "Tuổi tác",
+            "Sức khỏe / Thân thể",
+            "Tính cách",
+            "Vóc dáng"
+          ],
+          "correct_index": 1,
+          "explanation_vi": "'身体' đọc là 'shēntǐ', nghĩa là 'Sức khỏe / Thân thể'."
         }
       ]
     },
@@ -988,7 +1558,7 @@
       "title": "Bộ 01: Sắp xếp Câu Khẳng định & Phủ định 是/不是",
       "description": "Luyện cấu trúc phán đoán danh tính và nghề nghiệp.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg01-1",
@@ -1061,6 +1631,47 @@
           ],
           "targetSentence": "这不是我的书。",
           "explanation_vi": "这不是 + Định ngữ + 的 + Danh từ."
+        },
+        {
+          "id": "ps-gram-01-q6",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Tôi không phải là giáo viên.'",
+          "tokens": [
+            "。",
+            "老师",
+            "不是",
+            "我"
+          ],
+          "targetSentence": "我不是老师。",
+          "explanation_vi": "Cấu trúc phủ định với 不是: Chủ ngữ + 不是 + Tân ngữ danh từ."
+        },
+        {
+          "id": "ps-gram-01-q7",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Bạn có thích xem phim không?'",
+          "tokens": [
+            "吗",
+            "你",
+            "？",
+            "喜欢",
+            "看电影"
+          ],
+          "targetSentence": "你喜欢看电影吗？",
+          "explanation_vi": "Câu hỏi có không với trợ từ 吗: Mệnh đề khẳng định + 吗？"
+        },
+        {
+          "id": "ps-gram-01-q8",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Quyển sách này rất hay.'",
+          "tokens": [
+            "好看",
+            "这本",
+            "。",
+            "书",
+            "很"
+          ],
+          "targetSentence": "这本书很好看。",
+          "explanation_vi": "Lượng từ 本 đi kèm với danh từ 書: 这/那 + 本 + 书."
         }
       ]
     },
@@ -1073,7 +1684,7 @@
       "title": "Bộ 02: Chọn Lượng từ & Số từ (个, 口, 本, 只)",
       "description": "Phân biệt và sử dụng chính xác các lượng từ căn bản.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg02-1",
@@ -1139,6 +1750,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Trước lượng từ dùng '两' (liǎng)."
+        },
+        {
+          "id": "ps-gram-02-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-02-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-02-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1151,7 +1801,7 @@
       "title": "Bộ 03: Trợ từ Nghi vấn 吗, 呢 & Đại từ 什么, 谁",
       "description": "Luyện đặt và phân biệt các loại câu hỏi trong tiếng Trung.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg03-1",
@@ -1217,6 +1867,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Hỏi giá tiền dùng '多少钱'."
+        },
+        {
+          "id": "ps-gram-03-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-03-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-03-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1229,7 +1918,7 @@
       "title": "Bộ 04: Cấu trúc Thời gian (Trật tự lớn đến nhỏ)",
       "description": "Rèn luyện quy tắc sắp xếp Năm, Tháng, Ngày, Giờ, Phút.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg04-1",
@@ -1304,6 +1993,47 @@
           ],
           "targetSentence": "昨天晚上你做什么？",
           "explanation_vi": "Hôm qua (昨天) -> Buổi tối (晚上)."
+        },
+        {
+          "id": "ps-gram-04-q6",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Tôi không phải là giáo viên.'",
+          "tokens": [
+            "我",
+            "不是",
+            "老师",
+            "。"
+          ],
+          "targetSentence": "我不是老师。",
+          "explanation_vi": "Cấu trúc phủ định với 不是: Chủ ngữ + 不是 + Tân ngữ danh từ."
+        },
+        {
+          "id": "ps-gram-04-q7",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Bạn có thích xem phim không?'",
+          "tokens": [
+            "喜欢",
+            "？",
+            "你",
+            "吗",
+            "看电影"
+          ],
+          "targetSentence": "你喜欢看电影吗？",
+          "explanation_vi": "Câu hỏi có không với trợ từ 吗: Mệnh đề khẳng định + 吗？"
+        },
+        {
+          "id": "ps-gram-04-q8",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Quyển sách này rất hay.'",
+          "tokens": [
+            "这本",
+            "书",
+            "很",
+            "好看",
+            "。"
+          ],
+          "targetSentence": "这本书很好看。",
+          "explanation_vi": "Lượng từ 本 đi kèm với danh từ 書: 这/那 + 本 + 书."
         }
       ]
     },
@@ -1316,7 +2046,7 @@
       "title": "Bộ 05: Giới từ Nơi chốn '在' (Ở / tại đâu làm gì)",
       "description": "Thực hành cấu trúc: Chủ ngữ + 在 + Nơi chốn + Động từ.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg05-1",
@@ -1385,6 +2115,47 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Ở tại địa điểm dùng giới từ '在'."
+        },
+        {
+          "id": "ps-gram-05-q6",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Tôi không phải là giáo viên.'",
+          "tokens": [
+            "老师",
+            "。",
+            "不是",
+            "我"
+          ],
+          "targetSentence": "我不是老师。",
+          "explanation_vi": "Cấu trúc phủ định với 不是: Chủ ngữ + 不是 + Tân ngữ danh từ."
+        },
+        {
+          "id": "ps-gram-05-q7",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Bạn có thích xem phim không?'",
+          "tokens": [
+            "你",
+            "吗",
+            "？",
+            "喜欢",
+            "看电影"
+          ],
+          "targetSentence": "你喜欢看电影吗？",
+          "explanation_vi": "Câu hỏi có không với trợ từ 吗: Mệnh đề khẳng định + 吗？"
+        },
+        {
+          "id": "ps-gram-05-q8",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Quyển sách này rất hay.'",
+          "tokens": [
+            "好看",
+            "很",
+            "书",
+            "。",
+            "这本"
+          ],
+          "targetSentence": "这本书很好看。",
+          "explanation_vi": "Lượng từ 本 đi kèm với danh từ 書: 这/那 + 本 + 书."
         }
       ]
     },
@@ -1397,7 +2168,7 @@
       "title": "Bộ 06: Động từ Năng nguyện 想, 要, 会, 能",
       "description": "Phân biệt các sắc thái mong muốn, dự định và năng lực.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg06-1",
@@ -1463,6 +2234,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'可以' biểu thị điều kiện khách quan cho phép làm gì."
+        },
+        {
+          "id": "ps-gram-06-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-06-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-06-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1475,7 +2285,7 @@
       "title": "Bộ 07: Phó từ Chỉ Mức độ 很, 太, 非常, 有点儿",
       "description": "Luyện cách bổ nghĩa mức độ cho tính từ.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg07-1",
@@ -1541,6 +2351,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Ví dụ: 有点儿大 (hơi to) vs. 便宜一点儿 (rẻ một chút)."
+        },
+        {
+          "id": "ps-gram-07-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-07-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-07-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1553,7 +2402,7 @@
       "title": "Bộ 08: Thể Tiếp diễn '正在...呢'",
       "description": "Luyện diễn tả hành động đang xảy ra tại thời điểm nói.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg08-1",
@@ -1622,6 +2471,47 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Trợ từ '呢' phối hợp cùng 在/正在 tạo thành kết cấu tiếp diễn."
+        },
+        {
+          "id": "ps-gram-08-q6",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Tôi không phải là giáo viên.'",
+          "tokens": [
+            "。",
+            "老师",
+            "不是",
+            "我"
+          ],
+          "targetSentence": "我不是老师。",
+          "explanation_vi": "Cấu trúc phủ định với 不是: Chủ ngữ + 不是 + Tân ngữ danh từ."
+        },
+        {
+          "id": "ps-gram-08-q7",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Bạn có thích xem phim không?'",
+          "tokens": [
+            "喜欢",
+            "你",
+            "看电影",
+            "吗",
+            "？"
+          ],
+          "targetSentence": "你喜欢看电影吗？",
+          "explanation_vi": "Câu hỏi có không với trợ từ 吗: Mệnh đề khẳng định + 吗？"
+        },
+        {
+          "id": "ps-gram-08-q8",
+          "type": "sentence_ordering",
+          "prompt": "Sắp xếp thành câu: 'Quyển sách này rất hay.'",
+          "tokens": [
+            "。",
+            "好看",
+            "很",
+            "书",
+            "这本"
+          ],
+          "targetSentence": "这本书很好看。",
+          "explanation_vi": "Lượng từ 本 đi kèm với danh từ 書: 这/那 + 本 + 书."
         }
       ]
     },
@@ -1634,7 +2524,7 @@
       "title": "Bộ 09: Trợ từ Động thái '了' (Hành động hoàn thành)",
       "description": "Luyện diễn đạt sự hoàn thành của hành vi hoặc tình huống mới.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg09-1",
@@ -1703,6 +2593,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'了' cuối câu biểu thị sự biến đổi trạng thái mới (ấm lên rồi)."
+        },
+        {
+          "id": "ps-gram-09-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-09-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-09-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1715,7 +2644,7 @@
       "title": "Bộ 10: Phát hiện Lỗi sai Ngữ pháp Tổng hợp",
       "description": "Phân tích và sửa các lỗi ngữ pháp kinh điển của người học HSK 1.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 8,
       "questions": [
         {
           "id": "pg10-1",
@@ -1781,6 +2710,45 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Cấu trúc so sánh chữ 比: A + 比 + B + Tính từ + Mức độ chênh lệch."
+        },
+        {
+          "id": "ps-gram-10-q6",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-10-q7",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
+        },
+        {
+          "id": "ps-gram-10-q8",
+          "type": "mcq",
+          "prompt": "Chọn phó từ thích hợp điền vào chỗ trống: '他____是中国人。' (Anh ấy cũng là người Trung Quốc.)",
+          "choices": [
+            "也",
+            "很",
+            "太",
+            "都"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Phó từ '也' (cũng) đứng trước động từ '是' để biểu thị sự tương đồng."
         }
       ]
     },
@@ -1793,7 +2761,7 @@
       "title": "Bộ 01: Nghe Từ vựng Chọn Nghĩa (Chào hỏi & Số đếm)",
       "description": "Nghe phát âm từ đơn và chọn đúng nghĩa tiếng Việt tương ứng.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl01-1",
@@ -1864,6 +2832,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'bǎi' là hàng trăm."
+        },
+        {
+          "id": "ps-listen-01-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "老师",
+          "choices": [
+            "喜欢",
+            "朋友",
+            "中国",
+            "老师"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '老师' (lǎoshī), nghĩa là 'Thầy cô giáo'."
         }
       ]
     },
@@ -1876,7 +2858,7 @@
       "title": "Bộ 02: Nghe Âm thanh Chọn Hán tự Nền tảng",
       "description": "Luyện phản xạ kết nối âm thanh với mặt chữ Hán.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl02-1",
@@ -1947,6 +2929,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Âm đọc 'nián' tương ứng chữ 年."
+        },
+        {
+          "id": "ps-listen-02-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "老师",
+          "choices": [
+            "老师",
+            "中国",
+            "喜欢",
+            "朋友"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Âm thanh phát ra là '老师' (lǎoshī), nghĩa là 'Thầy cô giáo'."
         }
       ]
     },
@@ -1959,7 +2955,7 @@
       "title": "Bộ 03: Nghe Câu Đối đáp & Giao tiếp Ngắn",
       "description": "Nghe câu hỏi hoặc phát biểu và chọn câu đáp phù hợp.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl03-1",
@@ -2030,6 +3026,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Hỏi dự định cuối tuần -> '我想去电影院看电影'."
+        },
+        {
+          "id": "ps-listen-03-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "买东西",
+          "choices": [
+            "喜欢",
+            "朋友",
+            "中国",
+            "买东西"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '买东西' (mǎi dōngxi), nghĩa là 'Mua sắm đồ đạc'."
         }
       ]
     },
@@ -2042,7 +3052,7 @@
       "title": "Bộ 04: Nghe Chép Chính tả & Điền khuyết (Giờ giấc & Mua bán)",
       "description": "Nghe đoạn ghi âm ngắn và xác định từ bị khuyết.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl04-1",
@@ -2113,6 +3123,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Audio đọc: 两块."
+        },
+        {
+          "id": "ps-listen-04-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "买东西",
+          "choices": [
+            "中国",
+            "朋友",
+            "喜欢",
+            "买东西"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '买东西' (mǎi dōngxi), nghĩa là 'Mua sắm đồ đạc'."
         }
       ]
     },
@@ -2125,7 +3149,7 @@
       "title": "Bộ 05: Nghe Hội thoại Xác định Địa điểm & Đi lại",
       "description": "Nghe mẩu hội thoại 2 lượt và trả lời câu hỏi về vị trí.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl05-1",
@@ -2196,6 +3220,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Nội dung: '不冷，晴天，二十五度'."
+        },
+        {
+          "id": "ps-listen-05-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "昨天",
+          "choices": [
+            "喜欢",
+            "朋友",
+            "中国",
+            "昨天"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '昨天' (zuótiān), nghĩa là 'Hôm qua'."
         }
       ]
     },
@@ -2208,7 +3246,7 @@
       "title": "Bộ 06: Nghe Đoạn văn Ngắn & Phán đoán Đúng/Sai",
       "description": "Nghe phát biểu hoặc đoạn tin vắn và nhận xét tính chân thực.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl06-1",
@@ -2269,6 +3307,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Trong audio: '穿了一件红色的漂亮衣服' -> Nhận định là Sai."
+        },
+        {
+          "id": "ps-listen-06-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "昨天",
+          "choices": [
+            "昨天",
+            "中国",
+            "朋友",
+            "喜欢"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Âm thanh phát ra là '昨天' (zuótiān), nghĩa là 'Hôm qua'."
         }
       ]
     },
@@ -2281,7 +3333,7 @@
       "title": "Bộ 07: Nghe Tình huống Mua sắm & Chọn đồ",
       "description": "Luyện nghe các cuộc trò chuyện mặc cả, thanh toán và chọn size.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl07-1",
@@ -2352,6 +3404,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Nội dung: '扫桌上的二维码' (WeChat Pay)."
+        },
+        {
+          "id": "ps-listen-07-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "出租车",
+          "choices": [
+            "喜欢",
+            "朋友",
+            "中国",
+            "出租车"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '出租车' (chūzūchē), nghĩa là 'Xe taxi'."
         }
       ]
     },
@@ -2364,7 +3430,7 @@
       "title": "Bộ 08: Nghe Cuộc gọi Điện thoại & Hẹn gặp",
       "description": "Luyện nghe ngữ điệu và thông tin qua đàm thoại điện thoại.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl08-1",
@@ -2435,6 +3501,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Nội dung: '他在开会' (Ông ấy đang họp)."
+        },
+        {
+          "id": "ps-listen-08-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "晚上",
+          "choices": [
+            "中国",
+            "朋友",
+            "喜欢",
+            "晚上"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '晚上' (wǎnshang), nghĩa là 'Buổi tối'."
         }
       ]
     },
@@ -2447,7 +3527,7 @@
       "title": "Bộ 09: Nghe Chép Chính tả Câu Hoàn chỉnh",
       "description": "Nghe trọn vẹn câu khẩu ngữ ngắn và xác định toàn bộ văn bản.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl09-1",
@@ -2518,6 +3598,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Audio đọc: '时间不早了，我们走吧！'"
+        },
+        {
+          "id": "ps-listen-09-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "热",
+          "choices": [
+            "热",
+            "中国",
+            "朋友",
+            "喜欢"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Âm thanh phát ra là '热' (rè), nghĩa là 'Nóng (thời tiết/nước)'."
         }
       ]
     },
@@ -2530,7 +3624,7 @@
       "title": "Bộ 10: Nghe Tổng hợp Đời sống Thường nhật",
       "description": "Bài luyện nghe tổng kết toàn diện các kỹ năng ngữ âm HSK 1.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "pl10-1",
@@ -2601,6 +3695,20 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Nội dung: '把雨伞放在包里了' (ô đi mưa)."
+        },
+        {
+          "id": "ps-listen-10-q6",
+          "type": "mcq",
+          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "audioText": "热",
+          "choices": [
+            "朋友",
+            "中国",
+            "喜欢",
+            "热"
+          ],
+          "correct_index": 3,
+          "explanation_vi": "Âm thanh phát ra là '热' (rè), nghĩa là 'Nóng (thời tiết/nước)'."
         }
       ]
     },
@@ -2613,7 +3721,7 @@
       "title": "Bộ 01: Luyện Phát âm Từ đơn & Thanh điệu",
       "description": "Luyện đọc chính xác từng âm tiết thanh 1, 2, 3, 4.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps01-1",
@@ -2664,6 +3772,15 @@
           "targetText": "再见",
           "prompt": "Luyện phát âm chuẩn: 再见\n(Tạm biệt (hai thanh 4 dứt khoát))",
           "explanation_vi": "Phát âm: zàijiàn. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-01-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 老师",
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "meaning_vi": "Thầy cô giáo",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '老师' (lǎoshī)."
         }
       ]
     },
@@ -2676,7 +3793,7 @@
       "title": "Bộ 02: Đọc Câu Giới thiệu Họ tên & Quốc tịch",
       "description": "Luyện đọc lưu loát câu giới thiệu bản thân.",
       "difficulty": "easy",
-      "question_count": 4,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps02-1",
@@ -2717,6 +3834,24 @@
           "targetText": "你在哪里学习汉语",
           "prompt": "Luyện phát âm chuẩn: 你在哪里学习汉语？\n(Bạn học tiếng Trung ở đâu?)",
           "explanation_vi": "Phát âm: Nǐ zài nǎlǐ xuéxí Hànyǔ?. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-02-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 没关系",
+          "hanzi": "没关系",
+          "pinyin": "méiguānxi",
+          "meaning_vi": "Không sao đâu / Không có gì",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '没关系' (méiguānxi)."
+        },
+        {
+          "id": "ps-speak-02-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 老师",
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "meaning_vi": "Thầy cô giáo",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '老师' (lǎoshī)."
         }
       ]
     },
@@ -2729,7 +3864,7 @@
       "title": "Bộ 03: Shadowing Mua sắm & Hỏi giá tiền",
       "description": "Nghe phát âm chuẩn và nhại lại với ngữ điệu tự nhiên.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps03-1",
@@ -2760,6 +3895,33 @@
           "targetText": "一共六十八块钱请扫码支付",
           "prompt": "Luyện phát âm chuẩn: 一共六十八块钱，请扫码支付。\n(Tổng cộng 68 tệ, mời quét mã thanh toán.)",
           "explanation_vi": "Phát âm: Yígòng liùshíbā kuài qián, qǐng sǎomǎ zhīfù.. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-03-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 喝茶",
+          "hanzi": "喝茶",
+          "pinyin": "hēchá",
+          "meaning_vi": "Uống trà",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '喝茶' (hēchá)."
+        },
+        {
+          "id": "ps-speak-03-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 吃苹果",
+          "hanzi": "吃苹果",
+          "pinyin": "chī píngguǒ",
+          "meaning_vi": "Ăn quả táo",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '吃苹果' (chī píngguǒ)."
+        },
+        {
+          "id": "ps-speak-03-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 买东西",
+          "hanzi": "买东西",
+          "pinyin": "mǎi dōngxi",
+          "meaning_vi": "Mua sắm đồ đạc",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '买东西' (mǎi dōngxi)."
         }
       ]
     },
@@ -2772,7 +3934,7 @@
       "title": "Bộ 04: Luyện Phản xạ Hỏi đáp Thực đơn & Ăn uống",
       "description": "Nghe câu hỏi tình huống và phát âm câu trả lời tương ứng.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps04-1",
@@ -2803,6 +3965,33 @@
           "targetText": "这里的菜很好吃我很喜欢",
           "prompt": "Luyện phát âm chuẩn: 这里的菜很好吃，我很喜欢。\n(Món ăn ở đây rất ngon, tôi rất thích.)",
           "explanation_vi": "Phát âm: Zhèlǐ de cài hěn hǎochī, wǒ hěn xǐhuan.. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-04-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 喝茶",
+          "hanzi": "喝茶",
+          "pinyin": "hēchá",
+          "meaning_vi": "Uống trà",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '喝茶' (hēchá)."
+        },
+        {
+          "id": "ps-speak-04-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 吃苹果",
+          "hanzi": "吃苹果",
+          "pinyin": "chī píngguǒ",
+          "meaning_vi": "Ăn quả táo",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '吃苹果' (chī píngguǒ)."
+        },
+        {
+          "id": "ps-speak-04-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 买东西",
+          "hanzi": "买东西",
+          "pinyin": "mǎi dōngxi",
+          "meaning_vi": "Mua sắm đồ đạc",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '买东西' (mǎi dōngxi)."
         }
       ]
     },
@@ -2815,7 +4004,7 @@
       "title": "Bộ 05: Luyện Đọc Câu Vị trí, Phương hướng & Giao thông",
       "description": "Luyện nói câu chỉ đường đi và vị trí không gian.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps05-1",
@@ -2846,6 +4035,33 @@
           "targetText": "今天下雨我们坐出租车去吧",
           "prompt": "Luyện phát âm chuẩn: 今天下雨，我们坐出租车去吧。\n(Hôm nay trời mưa, chúng ta đi taxi nhé.)",
           "explanation_vi": "Phát âm: Jīntiān xiàyǔ, wǒmen zuò chūzūchē qù ba.. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-05-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 北京",
+          "hanzi": "北京",
+          "pinyin": "Běijīng",
+          "meaning_vi": "Bắc Kinh",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '北京' (Běijīng)."
+        },
+        {
+          "id": "ps-speak-05-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 今天",
+          "hanzi": "今天",
+          "pinyin": "jīntiān",
+          "meaning_vi": "Hôm nay",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '今天' (jīntiān)."
+        },
+        {
+          "id": "ps-speak-05-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 昨天",
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "meaning_vi": "Hôm qua",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '昨天' (zuótiān)."
         }
       ]
     },
@@ -2858,7 +4074,7 @@
       "title": "Bộ 06: Shadowing Cuộc sống, Sức khỏe & Thể thao",
       "description": "Nhại âm các đoạn giao tiếp về sức khỏe và sinh hoạt thường ngày.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps06-1",
@@ -2889,6 +4105,33 @@
           "targetText": "周末我和同学们一起去打篮球",
           "prompt": "Luyện phát âm chuẩn: 周末我和同学们一起去打篮球。\n(Cuối tuần tôi và các bạn cùng đi chơi bóng rổ.)",
           "explanation_vi": "Phát âm: Zhōumò wǒ hé tóngxuémen yìqǐ qù dǎ lánqiú.. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-06-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 打电话",
+          "hanzi": "打电话",
+          "pinyin": "dǎ diànhuà",
+          "meaning_vi": "Gọi điện thoại",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '打电话' (dǎ diànhuà)."
+        },
+        {
+          "id": "ps-speak-06-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 坐飞机",
+          "hanzi": "坐飞机",
+          "pinyin": "zuò fēijī",
+          "meaning_vi": "Đi máy bay",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '坐飞机' (zuò fēijī)."
+        },
+        {
+          "id": "ps-speak-06-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 出租车",
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning_vi": "Xe taxi",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '出租车' (chūzūchē)."
         }
       ]
     },
@@ -2901,7 +4144,7 @@
       "title": "Bộ 07: Luyện Nói Đàm thoại Điện thoại & Lịch sự",
       "description": "Luyện câu khẩu ngữ điện thoại và xã giao lịch thiệp.",
       "difficulty": "hard",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps07-1",
@@ -2932,6 +4175,33 @@
           "targetText": "好的谢谢您再见",
           "prompt": "Luyện phát âm chuẩn: 好的，谢谢您，再见！\n(Vâng, cảm ơn ngài, tạm biệt!)",
           "explanation_vi": "Phát âm: Hǎo de, xièxie nín, zàijiàn!. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-07-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 下午",
+          "hanzi": "下午",
+          "pinyin": "xiàwǔ",
+          "meaning_vi": "Buổi chiều",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '下午' (xiàwǔ)."
+        },
+        {
+          "id": "ps-speak-07-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 上午",
+          "hanzi": "上午",
+          "pinyin": "shàngwǔ",
+          "meaning_vi": "Buổi sáng",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '上午' (shàngwǔ)."
+        },
+        {
+          "id": "ps-speak-07-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 晚上",
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "meaning_vi": "Buổi tối",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '晚上' (wǎnshang)."
         }
       ]
     },
@@ -2944,7 +4214,7 @@
       "title": "Bộ 08: Đọc Đoạn văn Ngắn Trôi chảy & Ngữ cảm",
       "description": "Luyện phát âm đoạn văn hoàn chỉnh với ngữ điệu tự nhiên.",
       "difficulty": "hard",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "ps08-1",
@@ -2975,6 +4245,33 @@
           "targetText": "我们一起努力天天向上",
           "prompt": "Luyện phát âm chuẩn: 我们一起努力，天天向上！\n(Chúng ta cùng nhau cố gắng, ngày ngày tiến bộ!)",
           "explanation_vi": "Phát âm: Wǒmen yìqǐ nǔlì, tiāntiān xiàngshàng!. Chú ý độ cao thanh điệu và khẩu hình tự nhiên."
+        },
+        {
+          "id": "ps-speak-08-q4",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 多",
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning_vi": "Nhiều",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '多' (duō)."
+        },
+        {
+          "id": "ps-speak-08-q5",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 少",
+          "hanzi": "少",
+          "pinyin": "shǎo",
+          "meaning_vi": "Ít",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '少' (shǎo)."
+        },
+        {
+          "id": "ps-speak-08-q6",
+          "type": "speaking_item",
+          "prompt": "Đọc to từ sau theo đúng thanh điệu: 热",
+          "hanzi": "热",
+          "pinyin": "rè",
+          "meaning_vi": "Nóng (thời tiết/nước)",
+          "explanation_vi": "Hãy nghe audio mẫu và phát âm to rõ ràng '热' (rè)."
         }
       ]
     },
@@ -2987,7 +4284,7 @@
       "title": "Bộ 01: Đọc hiểu Đoạn văn Tự Giới thiệu",
       "description": "Đọc đoạn văn tự giới thiệu và trả lời các câu hỏi chi tiết.",
       "difficulty": "easy",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr01-1",
@@ -3030,6 +4327,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'在大学学英语' -> Học tiếng Anh."
+        },
+        {
+          "id": "ps-read-01-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-01-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-01-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3042,7 +4381,7 @@
       "title": "Bộ 02: Đúng/Sai - Đi Chợ Mua đồ & Nấu ăn",
       "description": "Đọc mẩu nhật ký sinh hoạt gia đình và phán đoán đúng sai.",
       "difficulty": "easy",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr02-1",
@@ -3079,6 +4418,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Trong bài: '中午妈妈做了一顿丰盛的午饭' (mẹ nấu ở nhà) -> Nhận định là Sai."
+        },
+        {
+          "id": "ps-read-02-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-02-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-02-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3091,7 +4472,7 @@
       "title": "Bộ 03: Thời tiết & Hoạt động Ngoại khóa",
       "description": "Đọc văn bản miêu tả khí hậu bốn mùa và hoạt động thể thao.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr03-1",
@@ -3134,6 +4515,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'北京的秋天最美' -> Mùa thu Bắc Kinh đẹp nhất năm."
+        },
+        {
+          "id": "ps-read-03-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-03-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-03-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3146,7 +4569,7 @@
       "title": "Bộ 04: Điền từ vào Đoạn văn (Đời sống Đại học)",
       "description": "Chọn từ thích hợp điền vào các vị trí trống trong đoạn văn ngắn.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr04-1",
@@ -3189,6 +4612,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "Đá bóng dùng '踢足球'."
+        },
+        {
+          "id": "ps-read-04-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-04-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-04-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3201,7 +4666,7 @@
       "title": "Bộ 05: Thói quen Sinh hoạt & Sức khỏe",
       "description": "Đọc văn bản nói về thời gian biểu sinh hoạt lành mạnh.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr05-1",
@@ -3244,6 +4709,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'不喝浓茶... 每天都喝很多白开水' -> Không uống trà đặc, uống nước lọc."
+        },
+        {
+          "id": "ps-read-05-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-05-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-05-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3256,7 +4763,7 @@
       "title": "Bộ 06: Đọc Bảng Tin, Biển báo & Thông báo Ngắn",
       "description": "Trích xuất thông tin thực tế từ các biển hiệu, thông báo đời sống.",
       "difficulty": "medium",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr06-1",
@@ -3299,6 +4806,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'馆内请保持安静' -> Giữ trật tự yên tĩnh."
+        },
+        {
+          "id": "ps-read-06-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-06-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-06-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3311,7 +4860,7 @@
       "title": "Bộ 07: Kế hoạch Tương lai & Du học",
       "description": "Đọc bài viết chia sẻ về ước mơ học tập và cơ hội du học.",
       "difficulty": "hard",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr07-1",
@@ -3354,6 +4903,48 @@
           ],
           "correct_index": 0,
           "explanation_vi": "'我的老师非常有耐心，每天帮我纠正发音' -> Thầy cô giáo tận tâm."
+        },
+        {
+          "id": "ps-read-07-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-07-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-07-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3366,7 +4957,7 @@
       "title": "Bộ 08: Sắp xếp Trình tự Câu chuyện",
       "description": "Đọc các câu rời rạc và sắp xếp lại theo diễn biến hợp lý.",
       "difficulty": "hard",
-      "question_count": 3,
+      "question_count": 6,
       "questions": [
         {
           "id": "pr08-1",
@@ -3406,6 +4997,48 @@
           ],
           "targetSentence": "B D A C",
           "explanation_vi": "Trình tự: Đến siêu thị (B) -> Thấy nhiều hàng giảm giá (D) -> Chọn hoa quả bánh mì (A) -> Thanh toán về trường (C)."
+        },
+        {
+          "id": "ps-read-08-q4",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-08-q5",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
+        },
+        {
+          "id": "ps-read-08-q6",
+          "type": "mcq",
+          "passage": "我是大卫。我今天在学校学习汉语。我和我的中国朋友一起喝茶。我很喜欢汉语。",
+          "prompt": "Đọc đoạn văn trên và cho biết: Đại Vệ đang học gì?",
+          "choices": [
+            "Học tiếng Trung (汉语)",
+            "Học tiếng Anh (英语)",
+            "Học làm cơm (做饭)",
+            "Học lái xe (开车)"
+          ],
+          "correct_index": 0,
+          "explanation_vi": "Đoạn văn nêu rõ: '我和我的中国朋友一起喝茶。我很喜欢汉语。我今天在学校学习汉语。'"
         }
       ]
     },
@@ -3418,7 +5051,7 @@
       "title": "Hội thoại 01: Lần đầu Gặp gỡ & Làm quen (Vai A / Vai B)",
       "description": "Đóng vai bạn học mới trong ngày đầu nhập trường.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "A",
@@ -3454,6 +5087,13 @@
           "hanzi": "我也很高兴认识你！",
           "pinyin": "Wǒ yě hěn gāoxìng rènshi nǐ!",
           "vi": "Tôi cũng rất vui được làm quen với bạn!"
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3466,7 +5106,7 @@
       "title": "Hội thoại 02: Đi Chợ Mua Hoa quả & Mặc cả",
       "description": "Đóng vai người mua hoặc người bán hoa quả trên phố.",
       "difficulty": "easy",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "A",
@@ -3502,6 +5142,13 @@
           "hanzi": "好的，给我称三斤，扫码付钱。",
           "pinyin": "Hǎo de, gěi wǒ chēng sān jīn, sǎomǎ fùqián.",
           "vi": "Vâng, cân cho tôi ba cân, tôi quét mã trả tiền."
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3514,7 +5161,7 @@
       "title": "Hội thoại 03: Gọi món trong Quán ăn",
       "description": "Đóng vai thực khách hoặc nhân viên phục vụ bàn.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "B",
@@ -3550,6 +5197,13 @@
           "hanzi": "好的，请稍等，菜马上就来！",
           "pinyin": "Hǎo de, qǐng shāoděng, cài mǎshàng jiù lái!",
           "vi": "Dạ vâng, xin chờ chút, món ăn sẽ lên ngay!"
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3562,7 +5216,7 @@
       "title": "Hội thoại 04: Hỏi Đường đến Ga Tàu hỏa",
       "description": "Đóng vai người hỏi đường hoặc người dân bản xứ chỉ đường.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "A",
@@ -3598,6 +5252,13 @@
           "hanzi": "太感谢您了！",
           "pinyin": "Tài gǎnxiè nín le!",
           "vi": "Vô cùng cảm ơn bác!"
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3610,7 +5271,7 @@
       "title": "Hội thoại 05: Đi Khám bệnh ở Bệnh viện",
       "description": "Đóng vai bệnh nhân hoặc bác sĩ chẩn đoán triệu chứng.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "B",
@@ -3646,6 +5307,13 @@
           "hanzi": "不用打针，吃点儿退烧药，多喝热水，在家休息两天就好了。",
           "pinyin": "Bú yòng dǎzhēn, chī diǎnr tuìshāoyào, duō hē rèshuǐ, zài jiā xiūxi liǎng tiān jiù hǎo le.",
           "vi": "Không cần tiêm đâu, uống chút thuốc hạ sốt, uống nhiều nước ấm, nghỉ ở nhà hai ngày là khỏi thôi."
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3658,7 +5326,7 @@
       "title": "Hội thoại 06: Mua sắm Quần áo trong Cửa hàng",
       "description": "Đóng vai khách hàng chọn màu hoặc nhân viên tư vấn.",
       "difficulty": "medium",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "B",
@@ -3694,6 +5362,13 @@
           "hanzi": "当然可以，试衣间在左边第二间。",
           "pinyin": "Dāngrán kěyǐ, shìyījiān zài zuǒbiān dì-èr jiān.",
           "vi": "Dạ tất nhiên được chứ, phòng thử đồ ở phòng thứ hai bên trái ạ."
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3706,7 +5381,7 @@
       "title": "Hội thoại 07: Gọi Điện thoại Xin phép Nghỉ học",
       "description": "Đóng vai học sinh gọi điện xin phép thầy cô giáo.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "A",
@@ -3742,6 +5417,13 @@
           "hanzi": "谢谢老师关心，明天我好了就去上课！",
           "pinyin": "Xièxie lǎoshī guānxīn, míngtiān wǒ hǎo le jiù qù shàngkè!",
           "vi": "Em cảm ơn thầy đã quan tâm ạ, ngày mai khỏe lại em sẽ đi học ngay!"
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     },
@@ -3754,7 +5436,7 @@
       "title": "Hội thoại 08: Lên Kế hoạch Cuối tuần & Rủ rê Đi chơi",
       "description": "Đóng vai hai người bạn lên lịch hẹn đi chơi cuối tuần.",
       "difficulty": "hard",
-      "question_count": 5,
+      "question_count": 6,
       "turns": [
         {
           "role": "A",
@@ -3790,6 +5472,13 @@
           "hanzi": "好啊！星期天早上九点，我在你宿舍楼下等你！",
           "pinyin": "Hǎo a! Xīngqītiān zǎoshang jiǔ diǎn, wǒ zài nǐ sùshè lóu xià děng nǐ!",
           "vi": "Nhất trí! 9 giờ sáng Chủ nhật, tớ đứng dưới chân ký túc xá đợi cậu nhé!"
+        },
+        {
+          "role": "B",
+          "speaker": "Người B",
+          "hanzi": "好的，明天见，祝你一天愉快！",
+          "pinyin": "Hǎo de, míngtiān jiàn, zhù nǐ yìtiān yúkuài!",
+          "vi": "Được rồi, hẹn gặp ngày mai, chúc bạn một ngày vui vẻ!"
         }
       ]
     }

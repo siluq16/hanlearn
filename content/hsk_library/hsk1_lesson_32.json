@@ -112,42 +112,96 @@
       "exercises": [
         {
           "id": "ex-v-32-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'nhé, đi (trợ từ ngữ khí)'?",
-          "correct_answer": "吧",
           "options": [
-            "吧",
-            "呢",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "吧",
+              "isCorrect": true,
+              "explanationVi": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+            },
+            {
+              "id": "opt-2",
+              "label": "呢",
+              "isCorrect": false,
+              "explanationVi": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+            }
           ],
-          "explanation": "吧 (ba) mang nghĩa là 'nhé, đi (trợ từ ngữ khí)'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'nhé, đi (trợ từ ngữ khí)'?"
         },
         {
           "id": "ex-v-32-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '呢' là gì?",
-          "correct_answer": "ne",
           "options": [
-            "ne",
-            "ba",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "ne",
+              "isCorrect": true,
+              "explanationVi": "Từ '呢' đọc chuẩn là ne."
+            },
+            {
+              "id": "opt-2",
+              "label": "ba",
+              "isCorrect": false,
+              "explanationVi": "Từ '呢' đọc chuẩn là ne."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '呢' đọc chuẩn là ne."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '呢' đọc chuẩn là ne."
+            }
           ],
-          "explanation": "Từ '呢' đọc chuẩn là ne."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '呢' là gì?"
         },
         {
           "id": "ex-v-32-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 32:",
-          "correct_answer": "吧",
           "options": [
-            "吧",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "吧",
+              "isCorrect": true,
+              "explanationVi": "Từ '吧' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '吧' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '吧' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '吧' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '吧' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 32:"
         }
       ]
     },
@@ -194,26 +248,62 @@
       "exercises": [
         {
           "id": "ex-g-32-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我们走吧！",
-          "options": [
-            "我们走吧！"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我们",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "走",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "吧",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "！",
+              "correctIndex": 3
+            }
           ],
-          "explanation": "Cấu trúc đúng: Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)."
+          "targetSentence": "我们走吧！"
         },
         {
           "id": "ex-g-32-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)",
-          "correct_answer": "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
           "options": [
-            "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Bộ ba trợ từ ngữ khí: 吧, 呢, 了",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Bộ ba trợ từ ngữ khí: 吧, 呢, 了."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Gợi ý (吧) / Tiếp diễn (呢) / Thay đổi tình huống (了)"
         }
       ]
     },
@@ -241,16 +331,34 @@
       "exercises": [
         {
           "id": "ex-d-32-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "你觉得这道题对不对？",
           "options": [
-            "你觉得这道题对不对？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "你觉得这道题对不对？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '你觉得这道题对不对？' (Bạn thấy câu hỏi này đúng hay không?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -260,29 +368,57 @@
       "exercises": [
         {
           "id": "ex-ls-32-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 32:",
-          "audio_target": "对的，没有错！我们准备好去参加考试吧！",
-          "correct_answer": "对的，没有错！我们准备好去参加考试吧！",
           "options": [
-            "对的，没有错！我们准备好去参加考试吧！",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "对的，没有错！我们准备好去参加考试吧！",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+            }
           ],
-          "explanation": "Câu nghe được là: '对的，没有错！我们准备好去参加考试吧！'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 32:",
+          "targetContent": {
+            "hanzi": "对的，没有错！我们准备好去参加考试吧！",
+            "pinyin": "",
+            "audioText": "对的，没有错！我们准备好去参加考试吧！"
+          }
         },
         {
           "id": "ex-ls-32-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你觉得这道题对不对？",
-          "pinyin_target": "Nǐ juéde zhè dào tí duì bu duì?",
-          "correct_answer": "你觉得这道题对不对？",
           "options": [
-            "你觉得这道题对不对？"
+            {
+              "id": "opt-1",
+              "label": "你觉得这道题对不对？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '你觉得这道题对不对？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '你觉得这道题对不对？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "你觉得这道题对不对？",
+            "pinyin": "Nǐ juéde zhè dào tí duì bu duì?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -297,14 +433,27 @@
       "exercises": [
         {
           "id": "ex-r-32-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 32 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Hoàn thành HSK 1."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Hoàn thành HSK 1."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Hoàn thành HSK 1."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 32 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 32 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

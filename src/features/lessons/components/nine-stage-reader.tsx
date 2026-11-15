@@ -29,6 +29,15 @@ interface NineStageReaderProps {
   userId?: string;
 }
 
+const LESSON_SKILL_GROUPS = [
+  { id: "warmup", label: "1. Khởi động", stageIndices: [0], description: "Khởi động phát âm & từ mở đầu" },
+  { id: "vocab", label: "2. Từ vựng", stageIndices: [1, 2], description: "Học từ mới & bài tập nhận diện" },
+  { id: "grammar", label: "3. Ngữ pháp & Thoại", stageIndices: [3, 4, 5], description: "Cấu trúc ngữ pháp & hội thoại tình huống" },
+  { id: "listen_speak", label: "4. Nghe & Nói", stageIndices: [6], description: "Luyện thính lực & nhại âm chuẩn giọng" },
+  { id: "reading_quiz", label: "5. Đọc & Quiz", stageIndices: [7, 8], description: "Đọc hiểu văn bản & bài kiểm tra đánh giá" },
+  { id: "review", label: "6. Ôn tập", stageIndices: [9], description: "Đưa từ vựng vào chu kỳ nhớ ngắt quãng SRS" },
+];
+
 export function NineStageReader({ lesson, initialProgress, userId }: NineStageReaderProps) {
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
@@ -166,14 +175,9 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           />
         </div>
 
-        {/* Skill Group Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 rounded-2xl bg-muted/60 border border-border">
-          {[
-            { id: "vocab", label: "1. Từ vựng", stageIndices: [0, 1, 2] },
-            { id: "grammar", label: "2. Ngữ pháp & Thoại", stageIndices: [3, 4, 5] },
-            { id: "skills", label: "3. Nghe & Đọc", stageIndices: [6, 7] },
-            { id: "evaluation", label: "4. Quiz & SRS", stageIndices: [8, 9] },
-          ].map((group) => {
+        {/* 6 Skill Group Tabs */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 p-1.5 rounded-2xl bg-muted/60 border border-border">
+          {LESSON_SKILL_GROUPS.map((group) => {
             const isGroupActive = group.stageIndices.includes(currentStageIndex);
             const groupDoneCount = group.stageIndices.filter((idx) => completedStages.includes(idx)).length;
             const isGroupAllDone = groupDoneCount === group.stageIndices.length;
@@ -190,15 +194,15 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
                 }}
                 className={`flex flex-col items-center justify-center p-2 rounded-xl text-xs transition-all ${
                   isGroupActive
-                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/30"
+                    ? "bg-card text-foreground shadow-xs font-bold border border-primary/40 ring-1 ring-primary/30"
                     : "text-muted-foreground hover:text-foreground hover:bg-card/50"
                 }`}
               >
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1">
                   {isGroupAllDone && (
                     <span className="text-emerald-500 font-bold">✓</span>
                   )}
-                  <span>{group.label}</span>
+                  <span className="truncate">{group.label}</span>
                 </div>
                 <span className="text-[10px] text-muted-foreground mt-0.5">
                   {groupDoneCount}/{group.stageIndices.length} chặng
@@ -208,33 +212,92 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
           })}
         </div>
 
-        {/* Individual Stage Pills */}
-        <div className="flex flex-wrap gap-1.5">
-          {stages.map((st, idx) => {
-            const isActive = idx === currentStageIndex;
-            const isDone = completedStages.includes(idx);
-            return (
-              <button
-                key={st.stage}
-                type="button"
-                onClick={() => {
-                  markStageComplete(currentStageIndex);
-                  handleSelectStage(idx);
-                }}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
-                  isActive
-                    ? "bg-primary text-primary-foreground shadow-xs"
-                    : isDone
-                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}
-              >
-                <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
-                <span>GĐ {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Active Group Context & Sub-stage Navigation */}
+        {(() => {
+          const activeGroup =
+            LESSON_SKILL_GROUPS.find((g) => g.stageIndices.includes(currentStageIndex)) ||
+            LESSON_SKILL_GROUPS[0];
+
+          return (
+            <div className="p-3.5 rounded-2xl bg-card border border-border space-y-2.5 shadow-xs">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <Badge className="bg-primary/10 text-primary border-primary/20 font-bold">
+                    {activeGroup.label}
+                  </Badge>
+                  <span className="text-muted-foreground hidden sm:inline">
+                    {activeGroup.description}
+                  </span>
+                </div>
+                <span className="text-muted-foreground text-[11px]">
+                  Giai đoạn {currentStageIndex + 1} / {stages.length}
+                </span>
+              </div>
+
+              {/* Sub-stages of Active Group */}
+              <div className="flex flex-wrap gap-1.5">
+                {activeGroup.stageIndices.map((idx) => {
+                  const st = stages[idx];
+                  if (!st) return null;
+                  const isActive = idx === currentStageIndex;
+                  const isDone = completedStages.includes(idx);
+
+                  return (
+                    <button
+                      key={st.stage}
+                      type="button"
+                      onClick={() => {
+                        markStageComplete(currentStageIndex);
+                        handleSelectStage(idx);
+                      }}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                        isActive
+                          ? "bg-primary text-primary-foreground shadow-xs"
+                          : isDone
+                            ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 border border-emerald-500/30"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80"
+                      }`}
+                    >
+                      <span>{isDone ? "✓" : (stageIcons[idx] || (idx + 1))}</span>
+                      <span>Chặng {idx}: {st.title_vi.split("&")[0].split("(")[0].trim()}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Compact Overall 10-Stage Dot Bar */}
+              <div className="pt-2 border-t border-border/50 flex items-center justify-between">
+                <span className="text-[11px] text-muted-foreground">Toàn bộ 10 chặng:</span>
+                <div className="flex items-center gap-1.5">
+                  {stages.map((_, idx) => {
+                    const isActive = idx === currentStageIndex;
+                    const isDone = completedStages.includes(idx);
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          markStageComplete(currentStageIndex);
+                          handleSelectStage(idx);
+                        }}
+                        title={`Giai đoạn ${idx}`}
+                        className={`size-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all ${
+                          isActive
+                            ? "bg-primary text-primary-foreground ring-2 ring-primary/40 ring-offset-1"
+                            : isDone
+                              ? "bg-emerald-500 text-white"
+                              : "bg-muted text-muted-foreground hover:bg-muted/80"
+                        }`}
+                      >
+                        {idx}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       {/* Current Stage Card */}
@@ -276,6 +339,25 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         </CardHeader>
 
         <CardContent className="p-5 sm:p-6 space-y-6">
+          {/* Defensive fallback when stage content is missing */}
+          {!((currentStage.stage === "0_warmup" && currentStage.warmup_words?.length) ||
+            (currentStage.stage === "1_vocab_learn" && currentStage.vocabulary?.length) ||
+            (currentStage.exercises && currentStage.exercises.length > 0) ||
+            (currentStage.stage === "3_grammar_learn" && currentStage.grammar_points?.length) ||
+            (currentStage.stage === "5_dialogue_interactive" && currentStage.dialogue?.turns?.length) ||
+            (currentStage.stage === "7_reading_comprehension" && currentStage.passage?.text) ||
+            currentStage.stage === "8_mini_quiz" ||
+            currentStage.stage === "9_srs_review") && (
+            <div className="p-6 rounded-2xl border border-dashed border-amber-500/40 bg-amber-500/5 text-center space-y-2">
+              <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
+                Nội dung giai đoạn này đang được biên soạn
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Giai đoạn này chưa có bài tập hoàn chỉnh. Vui lòng chọn giai đoạn khác để tiếp tục bài học.
+              </p>
+            </div>
+          )}
+
           {/* GIAI ĐOẠN 0: Khởi động (Warmup) */}
           {currentStage.stage === "0_warmup" && currentStage.warmup_words && (
             <div className="space-y-4">

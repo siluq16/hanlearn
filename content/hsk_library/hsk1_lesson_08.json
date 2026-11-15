@@ -136,33 +136,37 @@
           "kind": "matching_pairs",
           "hskLevel": 1,
           "promptVi": "Nối cặp từ đồ ăn đồ uống với nghĩa tiếng Việt:",
-          "pairs": [
-            {
-              "id": "p1",
-              "left": "米饭 (mǐfàn)",
-              "right": "Cơm trắng"
-            },
-            {
-              "id": "p2",
-              "left": "面条儿 (miàntiáor)",
-              "right": "Mì sợi"
-            },
-            {
-              "id": "p3",
-              "left": "茶 (chá)",
-              "right": "Trà"
-            },
-            {
-              "id": "p4",
-              "left": "中国菜 (Zhōngguó cài)",
-              "right": "Món ăn Trung Quốc"
-            }
-          ],
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "matchingPairs": [
+            {
+              "leftId": "l-1",
+              "leftLabel": "米饭 (mǐfàn)",
+              "rightId": "r-1",
+              "rightLabel": "Cơm trắng"
+            },
+            {
+              "leftId": "l-2",
+              "leftLabel": "面条儿 (miàntiáor)",
+              "rightId": "r-2",
+              "rightLabel": "Mì sợi"
+            },
+            {
+              "leftId": "l-3",
+              "leftLabel": "茶 (chá)",
+              "rightId": "r-3",
+              "rightLabel": "Trà"
+            },
+            {
+              "leftId": "l-4",
+              "leftLabel": "中国菜 (Zhōngguó cài)",
+              "rightId": "r-4",
+              "rightLabel": "Món ăn Trung Quốc"
+            }
+          ]
         }
       ]
     },

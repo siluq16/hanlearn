@@ -250,31 +250,59 @@
           "id": "ex-03-g1",
           "lessonId": "l-hsk1-003",
           "sortOrder": 1,
-          "kind": "sentence_ordering",
+          "kind": "sentence-order",
           "hskLevel": 1,
           "promptVi": "Sắp xếp thành câu: 'Nhà tôi có bốn người.'",
-          "tokens": [
-            "我",
-            "家",
-            "有",
-            "四",
-            "口",
-            "人",
-            "。"
-          ],
           "targetSentence": "我家有四口人。",
           "translationVi": "Nhà tôi có bốn người.",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "家",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "有",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "四",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "口",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "人",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "。",
+              "correctIndex": 6
+            }
+          ]
         },
         {
           "id": "ex-03-g2",
           "lessonId": "l-hsk1-003",
           "sortOrder": 2,
-          "kind": "grammar-mcq",
+          "kind": "grammar-choice",
           "hskLevel": 1,
           "promptVi": "Điền từ thích hợp: '我有____个姐姐。' (Tôi có hai người chị gái)",
           "targetContent": {
@@ -360,10 +388,9 @@
           "id": "ex-03-ls1",
           "lessonId": "l-hsk1-003",
           "sortOrder": 1,
-          "kind": "listening-mcq",
+          "kind": "listening_cloze",
           "hskLevel": 1,
           "promptVi": "Nghe câu nói và chọn số thành viên gia đình được nhắc tới:",
-          "audioText": "我家有五口人：爸爸、妈妈、哥哥、姐姐和我。",
           "options": [
             {
               "id": "o1",
@@ -390,6 +417,11 @@
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "targetContent": {
+            "hanzi": "我家有五口人：爸爸、妈妈、哥哥、姐姐和我。",
+            "pinyin": "",
+            "audioText": "我家有五口人：爸爸、妈妈、哥哥、姐姐和我。"
           }
         }
       ]
@@ -407,15 +439,19 @@
           "id": "ex-03-r1",
           "lessonId": "l-hsk1-003",
           "sortOrder": 1,
-          "kind": "true-false",
+          "kind": "reading_true_false",
           "hskLevel": 1,
           "promptVi": "Nhà bạn ấy có một anh trai và một em gái.",
-          "isTrue": false,
           "explanationVi": "Trong bài nêu rõ: có một em trai (一个弟弟), không có anh trai hay em gái.",
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
+          },
+          "trueFalseStatement": {
+            "statement": "Nhà bạn ấy có một anh trai và một em gái.",
+            "isTrue": false,
+            "explanationVi": "Trong bài nêu rõ: có một em trai (一个弟弟), không có anh trai hay em gái."
           }
         }
       ]

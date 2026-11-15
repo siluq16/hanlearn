@@ -102,68 +102,158 @@
       "exercises": [
         {
           "id": "ex-v-19-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'cửa hàng, tiệm'?",
-          "correct_answer": "店",
           "options": [
-            "店",
-            "饭馆",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "店",
+              "isCorrect": true,
+              "explanationVi": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
+            },
+            {
+              "id": "opt-2",
+              "label": "饭馆",
+              "isCorrect": false,
+              "explanationVi": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
+            }
           ],
-          "explanation": "店 (diàn) mang nghĩa là 'cửa hàng, tiệm'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'cửa hàng, tiệm'?"
         },
         {
           "id": "ex-v-19-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '饭馆' là gì?",
-          "correct_answer": "fànguǎn",
           "options": [
-            "fànguǎn",
-            "diàn",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "fànguǎn",
+              "isCorrect": true,
+              "explanationVi": "Từ '饭馆' đọc chuẩn là fànguǎn."
+            },
+            {
+              "id": "opt-2",
+              "label": "diàn",
+              "isCorrect": false,
+              "explanationVi": "Từ '饭馆' đọc chuẩn là fànguǎn."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '饭馆' đọc chuẩn là fànguǎn."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '饭馆' đọc chuẩn là fànguǎn."
+            }
           ],
-          "explanation": "Từ '饭馆' đọc chuẩn là fànguǎn."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '饭馆' là gì?"
         },
         {
           "id": "ex-v-19-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 19:",
-          "correct_answer": "店",
           "options": [
-            "店",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "店",
+              "isCorrect": true,
+              "explanationVi": "Từ '店' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '店' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '店' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '店' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '店' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 19:"
         },
         {
           "id": "ex-19-v-extra-01",
-          "type": "vocab_mcq",
-          "prompt": "Nơi làm việc 'công ty' trong tiếng Trung là:",
-          "correct_answer": "公司",
           "options": [
-            "公司",
-            "学校",
-            "医院",
-            "银行"
+            {
+              "id": "opt-1",
+              "label": "公司",
+              "isCorrect": true,
+              "explanationVi": "'公司' (gōngsī) nghĩa là công ty."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "'公司' (gōngsī) nghĩa là công ty."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "'公司' (gōngsī) nghĩa là công ty."
+            },
+            {
+              "id": "opt-4",
+              "label": "银行",
+              "isCorrect": false,
+              "explanationVi": "'公司' (gōngsī) nghĩa là công ty."
+            }
           ],
-          "explanation": "'公司' (gōngsī) nghĩa là công ty."
+          "kind": "vocab-mcq",
+          "promptVi": "Nơi làm việc 'công ty' trong tiếng Trung là:"
         },
         {
           "id": "ex-19-v-extra-02",
-          "type": "vocab_mcq",
-          "prompt": "Địa điểm ăn uống 'nhà hàng / tiệm ăn' là:",
-          "correct_answer": "饭店",
           "options": [
-            "饭店",
-            "商店",
-            "书店",
-            "超市"
+            {
+              "id": "opt-1",
+              "label": "饭店",
+              "isCorrect": true,
+              "explanationVi": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
+            },
+            {
+              "id": "opt-2",
+              "label": "商店",
+              "isCorrect": false,
+              "explanationVi": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
+            },
+            {
+              "id": "opt-3",
+              "label": "书店",
+              "isCorrect": false,
+              "explanationVi": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
+            },
+            {
+              "id": "opt-4",
+              "label": "超市",
+              "isCorrect": false,
+              "explanationVi": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
+            }
           ],
-          "explanation": "'饭店' (fàndiàn) nghĩa là quán ăn, nhà hàng, khách sạn."
+          "kind": "vocab-mcq",
+          "promptVi": "Địa điểm ăn uống 'nhà hàng / tiệm ăn' là:"
         }
       ]
     },
@@ -192,26 +282,112 @@
       "exercises": [
         {
           "id": "ex-g-19-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "他每天八点半上班，五点下班。",
-          "options": [
-            "他每天八点半上班，五点下班。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "他",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "每",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "天",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "八",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "点",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "半",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "上",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "班",
+              "correctIndex": 7
+            },
+            {
+              "id": "tok-9",
+              "text": "，",
+              "correctIndex": 8
+            },
+            {
+              "id": "tok-10",
+              "text": "五",
+              "correctIndex": 9
+            },
+            {
+              "id": "tok-11",
+              "text": "点",
+              "correctIndex": 10
+            },
+            {
+              "id": "tok-12",
+              "text": "下",
+              "correctIndex": 11
+            },
+            {
+              "id": "tok-13",
+              "text": "班",
+              "correctIndex": 12
+            },
+            {
+              "id": "tok-14",
+              "text": "。",
+              "correctIndex": 13
+            }
           ],
-          "explanation": "Cấu trúc đúng: 几点 + 上班/下班？."
+          "targetSentence": "他每天八点半上班，五点下班。"
         },
         {
           "id": "ex-g-19-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: 几点 + 上班/下班？",
-          "correct_answer": "Đi làm và tan ca: 上班 / 下班",
           "options": [
-            "Đi làm và tan ca: 上班 / 下班",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Đi làm và tan ca: 上班 / 下班",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Đi làm và tan ca: 上班 / 下班."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: 几点 + 上班/下班？"
         }
       ]
     },
@@ -239,16 +415,34 @@
       "exercises": [
         {
           "id": "ex-d-19-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "你今天工作忙吗？",
           "options": [
-            "你今天工作忙吗？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "你今天工作忙吗？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '你今天工作忙吗？' (Hôm nay công việc của bạn có bận không?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -258,29 +452,57 @@
       "exercises": [
         {
           "id": "ex-ls-19-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 19:",
-          "audio_target": "下班后没事，我们去超市买水果吧。",
-          "correct_answer": "下班后没事，我们去超市买水果吧。",
           "options": [
-            "下班后没事，我们去超市买水果吧。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "下班后没事，我们去超市买水果吧。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '下班后没事，我们去超市买水果吧。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 19:",
+          "targetContent": {
+            "hanzi": "下班后没事，我们去超市买水果吧。",
+            "pinyin": "",
+            "audioText": "下班后没事，我们去超市买水果吧。"
+          }
         },
         {
           "id": "ex-ls-19-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你今天工作忙吗？",
-          "pinyin_target": "Nǐ jīntiān gōngzuò máng ma?",
-          "correct_answer": "你今天工作忙吗？",
           "options": [
-            "你今天工作忙吗？"
+            {
+              "id": "opt-1",
+              "label": "你今天工作忙吗？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '你今天工作忙吗？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '你今天工作忙吗？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "你今天工作忙吗？",
+            "pinyin": "Nǐ jīntiān gōngzuò máng ma?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -295,14 +517,27 @@
       "exercises": [
         {
           "id": "ex-r-19-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 19 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Công việc của tôi."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Công việc của tôi."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Công việc của tôi."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 19 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 19 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

@@ -102,42 +102,96 @@
       "exercises": [
         {
           "id": "ex-v-29-01",
-          "type": "vocab_mcq",
-          "prompt": "Từ nào có nghĩa là: 'phút'?",
-          "correct_answer": "分钟",
           "options": [
-            "分钟",
-            "小时",
-            "对不起",
-            "再见"
+            {
+              "id": "opt-1",
+              "label": "分钟",
+              "isCorrect": true,
+              "explanationVi": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+            },
+            {
+              "id": "opt-2",
+              "label": "小时",
+              "isCorrect": false,
+              "explanationVi": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+            },
+            {
+              "id": "opt-3",
+              "label": "对不起",
+              "isCorrect": false,
+              "explanationVi": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+            },
+            {
+              "id": "opt-4",
+              "label": "再见",
+              "isCorrect": false,
+              "explanationVi": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+            }
           ],
-          "explanation": "分钟 (fēnzhōng) mang nghĩa là 'phút'."
+          "kind": "vocab-mcq",
+          "promptVi": "Từ nào có nghĩa là: 'phút'?"
         },
         {
           "id": "ex-v-29-02",
-          "type": "pinyin_mcq",
-          "prompt": "Pinyin chuẩn xác của từ '小时' là gì?",
-          "correct_answer": "xiǎoshí",
           "options": [
-            "xiǎoshí",
-            "fēnzhōng",
-            "shénme",
-            "hǎo"
+            {
+              "id": "opt-1",
+              "label": "xiǎoshí",
+              "isCorrect": true,
+              "explanationVi": "Từ '小时' đọc chuẩn là xiǎoshí."
+            },
+            {
+              "id": "opt-2",
+              "label": "fēnzhōng",
+              "isCorrect": false,
+              "explanationVi": "Từ '小时' đọc chuẩn là xiǎoshí."
+            },
+            {
+              "id": "opt-3",
+              "label": "shénme",
+              "isCorrect": false,
+              "explanationVi": "Từ '小时' đọc chuẩn là xiǎoshí."
+            },
+            {
+              "id": "opt-4",
+              "label": "hǎo",
+              "isCorrect": false,
+              "explanationVi": "Từ '小时' đọc chuẩn là xiǎoshí."
+            }
           ],
-          "explanation": "Từ '小时' đọc chuẩn là xiǎoshí."
+          "kind": "vocab-mcq",
+          "promptVi": "Pinyin chuẩn xác của từ '小时' là gì?"
         },
         {
           "id": "ex-v-29-03",
-          "type": "vocab_mcq",
-          "prompt": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 29:",
-          "correct_answer": "分钟",
           "options": [
-            "分钟",
-            "学校",
-            "医院",
-            "睡觉"
+            {
+              "id": "opt-1",
+              "label": "分钟",
+              "isCorrect": true,
+              "explanationVi": "Từ '分钟' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-2",
+              "label": "学校",
+              "isCorrect": false,
+              "explanationVi": "Từ '分钟' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-3",
+              "label": "医院",
+              "isCorrect": false,
+              "explanationVi": "Từ '分钟' là đáp án phù hợp nhất."
+            },
+            {
+              "id": "opt-4",
+              "label": "睡觉",
+              "isCorrect": false,
+              "explanationVi": "Từ '分钟' là đáp án phù hợp nhất."
+            }
           ],
-          "explanation": "Từ '分钟' là đáp án phù hợp nhất."
+          "kind": "vocab-mcq",
+          "promptVi": "Chọn từ thích hợp điền vào chỗ trống theo ngữ cảnh bài học 29:"
         }
       ]
     },
@@ -179,26 +233,92 @@
       "exercises": [
         {
           "id": "ex-g-29-01",
-          "type": "sentence_scramble",
-          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
-          "correct_answer": "我看了两个小时的书。",
-          "options": [
-            "我看了两个小时的书。"
+          "kind": "sentence-order",
+          "promptVi": "Sắp xếp các từ thành câu hoàn chỉnh theo ngữ pháp vừa học:",
+          "orderTokens": [
+            {
+              "id": "tok-1",
+              "text": "我",
+              "correctIndex": 0
+            },
+            {
+              "id": "tok-2",
+              "text": "看",
+              "correctIndex": 1
+            },
+            {
+              "id": "tok-3",
+              "text": "了",
+              "correctIndex": 2
+            },
+            {
+              "id": "tok-4",
+              "text": "两",
+              "correctIndex": 3
+            },
+            {
+              "id": "tok-5",
+              "text": "个",
+              "correctIndex": 4
+            },
+            {
+              "id": "tok-6",
+              "text": "小",
+              "correctIndex": 5
+            },
+            {
+              "id": "tok-7",
+              "text": "时",
+              "correctIndex": 6
+            },
+            {
+              "id": "tok-8",
+              "text": "的",
+              "correctIndex": 7
+            },
+            {
+              "id": "tok-9",
+              "text": "书",
+              "correctIndex": 8
+            },
+            {
+              "id": "tok-10",
+              "text": "。",
+              "correctIndex": 9
+            }
           ],
-          "explanation": "Cấu trúc đúng: Số + 个小时 / Số + 分钟."
+          "targetSentence": "我看了两个小时的书。"
         },
         {
           "id": "ex-g-29-02",
-          "type": "fill_in_blank",
-          "prompt": "Chọn cấu trúc chuẩn xác: Số + 个小时 / Số + 分钟",
-          "correct_answer": "Khoảng thời gian 分钟 và 小时",
           "options": [
-            "Khoảng thời gian 分钟 và 小时",
-            "Câu chữ 把",
-            "Câu chữ 被",
-            "So sánh hơn 比"
+            {
+              "id": "opt-1",
+              "label": "Khoảng thời gian 分钟 và 小时",
+              "isCorrect": true,
+              "explanationVi": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+            },
+            {
+              "id": "opt-2",
+              "label": "Câu chữ 把",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+            },
+            {
+              "id": "opt-3",
+              "label": "Câu chữ 被",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+            },
+            {
+              "id": "opt-4",
+              "label": "So sánh hơn 比",
+              "isCorrect": false,
+              "explanationVi": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+            }
           ],
-          "explanation": "Đây là cấu trúc: Khoảng thời gian 分钟 và 小时."
+          "kind": "grammar-choice",
+          "promptVi": "Chọn cấu trúc chuẩn xác: Số + 个小时 / Số + 分钟"
         }
       ]
     },
@@ -226,16 +346,34 @@
       "exercises": [
         {
           "id": "ex-d-29-01",
-          "type": "vocab_mcq",
-          "prompt": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?",
-          "correct_answer": "你去年去过北京吗？",
           "options": [
-            "你去年去过北京吗？",
-            "你好！",
-            "再见！",
-            "我是学生。"
+            {
+              "id": "opt-1",
+              "label": "你去年去过北京吗？",
+              "isCorrect": true,
+              "explanationVi": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+            },
+            {
+              "id": "opt-2",
+              "label": "你好！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+            },
+            {
+              "id": "opt-3",
+              "label": "再见！",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+            },
+            {
+              "id": "opt-4",
+              "label": "我是学生。",
+              "isCorrect": false,
+              "explanationVi": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+            }
           ],
-          "explanation": "Lời thoại của A: '你去年去过北京吗？' (Năm ngoái bạn từng đi Bắc Kinh chưa?)."
+          "kind": "vocab-mcq",
+          "promptVi": "Trong đoạn hội thoại đối đáp, nhân vật A nói gì đầu tiên?"
         }
       ]
     },
@@ -245,29 +383,57 @@
       "exercises": [
         {
           "id": "ex-ls-29-01",
-          "type": "listening_hidden_transcript",
-          "prompt": "Nghe và chọn câu đáp phù hợp cho Bài 29:",
-          "audio_target": "去过，今年很忙没去，明年打算再去住两个星期。",
-          "correct_answer": "去过，今年很忙没去，明年打算再去住两个星期。",
           "options": [
-            "去过，今年很忙没去，明年打算再去住两个星期。",
-            "我不喜欢。",
-            "没关系。",
-            "他是医生。"
+            {
+              "id": "opt-1",
+              "label": "去过，今年很忙没去，明年打算再去住两个星期。",
+              "isCorrect": true,
+              "explanationVi": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+            },
+            {
+              "id": "opt-2",
+              "label": "我不喜欢。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+            },
+            {
+              "id": "opt-3",
+              "label": "没关系。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+            },
+            {
+              "id": "opt-4",
+              "label": "他是医生。",
+              "isCorrect": false,
+              "explanationVi": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+            }
           ],
-          "explanation": "Câu nghe được là: '去过，今年很忙没去，明年打算再去住两个星期。'."
+          "kind": "listening_cloze",
+          "promptVi": "Nghe và chọn câu đáp phù hợp cho Bài 29:",
+          "targetContent": {
+            "hanzi": "去过，今年很忙没去，明年打算再去住两个星期。",
+            "pinyin": "",
+            "audioText": "去过，今年很忙没去，明年打算再去住两个星期。"
+          }
         },
         {
           "id": "ex-ls-29-02",
-          "type": "speaking_shadowing",
-          "prompt": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
-          "speech_target": "你去年去过北京吗？",
-          "pinyin_target": "Nǐ qùnián qù guo Běijīng ma?",
-          "correct_answer": "你去年去过北京吗？",
           "options": [
-            "你去年去过北京吗？"
+            {
+              "id": "opt-1",
+              "label": "你去年去过北京吗？",
+              "isCorrect": true,
+              "explanationVi": "Phát âm to rõ ràng: '你去年去过北京吗？'."
+            }
           ],
-          "explanation": "Phát âm to rõ ràng: '你去年去过北京吗？'."
+          "kind": "sentence_shadowing",
+          "promptVi": "Luyện nói nhại âm (Shadowing) theo mẫu câu:",
+          "targetContent": {
+            "hanzi": "你去年去过北京吗？",
+            "pinyin": "Nǐ qùnián qù guo Běijīng ma?",
+            "translationVi": ""
+          }
         }
       ]
     },
@@ -282,14 +448,27 @@
       "exercises": [
         {
           "id": "ex-r-29-01",
-          "type": "reading_true_false",
-          "prompt": "Nội dung đoạn văn có đúng với chủ đề bài học 29 không?",
-          "correct_answer": "Đúng",
           "options": [
-            "Đúng",
-            "Sai"
+            {
+              "id": "opt-1",
+              "label": "Đúng",
+              "isCorrect": true,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời gian quý báu."
+            },
+            {
+              "id": "opt-2",
+              "label": "Sai",
+              "isCorrect": false,
+              "explanationVi": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời gian quý báu."
+            }
           ],
-          "explanation": "Thông tin hoàn toàn chính xác theo đoạn văn: Thời gian quý báu."
+          "kind": "reading_true_false",
+          "promptVi": "Nội dung đoạn văn có đúng với chủ đề bài học 29 không?",
+          "trueFalseStatement": {
+            "statement": "Nội dung đoạn văn có đúng với chủ đề bài học 29 không?",
+            "isTrue": true,
+            "explanationVi": ""
+          }
         }
       ]
     },

@@ -131,33 +131,37 @@
           "kind": "matching_pairs",
           "hskLevel": 1,
           "promptVi": "Ghép các động từ kỹ năng với nghĩa tương ứng:",
-          "pairs": [
-            {
-              "id": "p1",
-              "left": "听 (tīng)",
-              "right": "Nghe"
-            },
-            {
-              "id": "p2",
-              "left": "读 (dú)",
-              "right": "Đọc"
-            },
-            {
-              "id": "p3",
-              "left": "写 (xiě)",
-              "right": "Viết"
-            },
-            {
-              "id": "p4",
-              "left": "看 (kàn)",
-              "right": "Xem / Nhìn"
-            }
-          ],
           "qualityStatus": "VERIFIED",
           "sourceRef": {
             "document": "HanLearn Standard Curriculum",
             "license": "CC-BY-NC-4.0"
-          }
+          },
+          "matchingPairs": [
+            {
+              "leftId": "l-1",
+              "leftLabel": "听 (tīng)",
+              "rightId": "r-1",
+              "rightLabel": "Nghe"
+            },
+            {
+              "leftId": "l-2",
+              "leftLabel": "读 (dú)",
+              "rightId": "r-2",
+              "rightLabel": "Đọc"
+            },
+            {
+              "leftId": "l-3",
+              "leftLabel": "写 (xiě)",
+              "rightId": "r-3",
+              "rightLabel": "Viết"
+            },
+            {
+              "leftId": "l-4",
+              "leftLabel": "看 (kàn)",
+              "rightId": "r-4",
+              "rightLabel": "Xem / Nhìn"
+            }
+          ]
         }
       ]
     },
