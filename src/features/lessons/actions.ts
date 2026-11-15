@@ -132,9 +132,8 @@ export async function saveStageProgress(input: unknown): Promise<{
     }
 
     const { lessonId, completedStages, currentStage } = parsed.data;
-    const updatedAt = new Date().toISOString();
 
-    // 1. Try atomic PostgreSQL RPC first to prevent lost updates under concurrent modifications
+    // 1. Mandatory Atomic PostgreSQL RPC: row-level lock & atomic set union on DB engine
     const rpcRes = await supabase.rpc("upsert_learner_stage_progress", {
       p_lesson_id: lessonId,
       p_completed_stages: completedStages,
@@ -155,92 +154,11 @@ export async function saveStageProgress(input: unknown): Promise<{
       };
     }
 
-    // 2. Read existing row from learner_stage_progress table as graceful fallback
-    const { data: existingRow } = await supabase
-      .from("learner_stage_progress")
-      .select("current_stage, completed_stages, updated_at")
-      .eq("lesson_id", lessonId)
-      .maybeSingle();
-
-    // 2. Migration support: Check legacy user_metadata if no existing table row yet
-    const key = `stage_prog_${lessonId.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
-    const legacyMeta = user.user_metadata?.[key];
-    const legacyCompleted = Array.isArray(legacyMeta?.completed_stages)
-      ? legacyMeta.completed_stages
-      : [];
-    const legacyStage =
-      typeof legacyMeta?.current_stage === "number" ? legacyMeta.current_stage : 0;
-
-    // 3. Safe Union & Conflict Resolution:
-    // Merge stages from current request, existing table row, and legacy metadata.
-    // Set union guarantees stages are never lost even with near-simultaneous multi-device updates.
-    const mergedStagesSet = new Set<number>([
-      ...completedStages,
-      ...(existingRow?.completed_stages || []),
-      ...legacyCompleted,
-    ]);
-    const mergedStages = Array.from(mergedStagesSet).sort((a, b) => a - b);
-
-    // Resolve current_stage: If existing row has newer timestamp, avoid overwriting with stale current_stage
-    let resolvedCurrentStage = currentStage;
-    if (existingRow && existingRow.updated_at && existingRow.updated_at > updatedAt) {
-      resolvedCurrentStage = existingRow.current_stage;
-    } else if (!existingRow && legacyStage > currentStage) {
-      resolvedCurrentStage = legacyStage;
-    }
-
-    // 4. Upsert into learner_stage_progress table with auth.uid() bound
-    const { data: upserted, error: upsertError } = await supabase
-      .from("learner_stage_progress")
-      .upsert(
-        {
-          user_id: user.id,
-          lesson_id: lessonId,
-          current_stage: resolvedCurrentStage,
-          completed_stages: mergedStages,
-          updated_at: updatedAt,
-        },
-        { onConflict: "user_id,lesson_id" },
-      )
-      .select("lesson_id, current_stage, completed_stages, updated_at")
-      .single();
-
-    if (upsertError) {
-      // If table is not present yet, fall back gracefully to user_metadata without failing user flow
-      if (upsertError.code === "PGRST205" || upsertError.code === "42P01") {
-        await supabase.auth.updateUser({
-          data: {
-            ...user.user_metadata,
-            [key]: {
-              completed_stages: mergedStages,
-              current_stage: resolvedCurrentStage,
-              updated_at: updatedAt,
-            },
-          },
-        });
-        return {
-          ok: true,
-          progress: {
-            lessonId,
-            userId: user.id,
-            completedStages: mergedStages,
-            currentStage: resolvedCurrentStage,
-            updatedAt,
-          },
-        };
-      }
-      return { ok: false, error: upsertError.message };
-    }
-
+    // Never fallback to non-atomic read-modify-write to prevent lost updates under concurrency.
+    // Return explicit error so client retains pending stages in localStorage and retries atomically.
     return {
-      ok: true,
-      progress: {
-        lessonId: upserted.lesson_id,
-        userId: user.id,
-        completedStages: upserted.completed_stages,
-        currentStage: upserted.current_stage,
-        updatedAt: upserted.updated_at,
-      },
+      ok: false,
+      error: rpcRes.error?.message || "Lỗi đồng bộ tiến độ bài học lên máy chủ",
     };
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "UNKNOWN_ERROR";
