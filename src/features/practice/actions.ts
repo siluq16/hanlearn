@@ -9,7 +9,8 @@ export async function savePracticeAttempt(
   score: number,
   total: number,
   skill?: string
-): Promise<{ ok: boolean }> {
+): Promise<{ ok: boolean; dbPersisted: boolean }> {
+  let dbPersisted = false;
   try {
     const { user, supabase } = await requireLearner();
     const now = new Date().toISOString();
@@ -25,7 +26,7 @@ export async function savePracticeAttempt(
       const existingScore = existingRows && existingRows[0] ? existingRows[0].best_score : 0;
       const finalBestScore = Math.max(existingScore, score);
 
-      await supabase
+      const { error: upsertErr } = await supabase
         .from("learner_practice_history")
         .upsert(
           {
@@ -39,40 +40,46 @@ export async function savePracticeAttempt(
           },
           { onConflict: "user_id,practice_set_id" }
         );
+
+      if (!upsertErr) {
+        dbPersisted = true;
+      }
     } catch {
-      // Table may not yet be migrated on older environments; proceed to dual-layer
+      // Table may not yet be migrated on older environments; proceed to fallback
     }
 
-    // 2. Dual-layer safe persistence in user_metadata
-    try {
-      const meta = user.user_metadata || {};
-      const history = (meta["practice_history"] as Record<
-        string,
-        { bestScore: number; total: number; completedAt: string }
-      >) || {};
+    // 2. Fallback persistence in user_metadata only when DB table is not yet available
+    if (!dbPersisted) {
+      try {
+        const meta = user.user_metadata || {};
+        const history = (meta["practice_history"] as Record<
+          string,
+          { bestScore: number; total: number; completedAt: string }
+        >) || {};
 
-      const existingMeta = history[setId];
-      const bestScoreMeta = existingMeta ? Math.max(existingMeta.bestScore, score) : score;
+        const existingMeta = history[setId];
+        const bestScoreMeta = existingMeta ? Math.max(existingMeta.bestScore, score) : score;
 
-      history[setId] = {
-        bestScore: bestScoreMeta,
-        total,
-        completedAt: now,
-      };
+        history[setId] = {
+          bestScore: bestScoreMeta,
+          total,
+          completedAt: now,
+        };
 
-      await supabase.auth.updateUser({
-        data: {
-          practice_history: history,
-        },
-      });
-    } catch {
-      // Ignore user_metadata update errors if DB succeeded
+        await supabase.auth.updateUser({
+          data: {
+            practice_history: history,
+          },
+        });
+      } catch {
+        // Suppress metadata update errors
+      }
     }
 
     revalidatePath("/practice");
     revalidatePath("/dashboard");
-    return { ok: true };
+    return { ok: true, dbPersisted };
   } catch {
-    return { ok: false };
+    return { ok: false, dbPersisted: false };
   }
 }

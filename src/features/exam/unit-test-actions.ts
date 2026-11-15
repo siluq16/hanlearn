@@ -86,11 +86,43 @@ export async function getUnitTestDefinition(
 export async function submitUnitTestAction(
   unitNumber: number,
   answers: Record<string, number>,
-  timeSpentSeconds: number
+  timeSpentSeconds: number,
+  attemptIdParam?: string,
+  clientStartTime?: number
 ): Promise<UnitTestResult> {
   const learner = await requireLearner();
   const raw = loadUnitTestRaw(unitNumber);
-  const clampedTimeSpent = Math.max(1, Math.min(Number(timeSpentSeconds) || 0, raw.duration_minutes * 60));
+  const maxAllowedDurationSec = raw.duration_minutes * 60;
+
+  // Server-authoritative start time & deadline validation
+  const nowMs = Date.now();
+  let verifiedTimeSpent = Math.max(1, Math.min(Number(timeSpentSeconds) || 0, maxAllowedDurationSec));
+
+  if (typeof clientStartTime === "number" && clientStartTime > 0) {
+    const elapsedFromStart = Math.max(1, Math.round((nowMs - clientStartTime) / 1000));
+    // Hard cutoff: 90 seconds grace period for network submission
+    if (elapsedFromStart > maxAllowedDurationSec + 90) {
+      throw new Error("Bài thi đã quá thời hạn làm bài quy định (Exam deadline exceeded).");
+    }
+    verifiedTimeSpent = Math.min(elapsedFromStart, maxAllowedDurationSec);
+  }
+
+  const attemptId = attemptIdParam && /^[a-f0-9-]{36}$/i.test(attemptIdParam)
+    ? attemptIdParam
+    : randomUUID();
+
+  // Guard against duplicate submission of an already finished attempt
+  if (learner && learner.supabase) {
+    const { data: existingAttempt } = await learner.supabase
+      .from("curriculum_quiz_attempts")
+      .select("id")
+      .eq("id", attemptId)
+      .maybeSingle();
+
+    if (existingAttempt) {
+      throw new Error("Lượt thi này đã được nộp và ghi nhận trước đó. Không được nộp trùng.");
+    }
+  }
 
   let listeningCorrect = 0;
   let vocabularyCorrect = 0;
@@ -128,7 +160,6 @@ export async function submitUnitTestAction(
   const percentage = Math.round((totalScore / maxScore) * 100);
   const passed = totalScore >= raw.passing_score; // >= 16 / 20 (80%)
 
-  const attemptId = randomUUID();
   const now = new Date().toISOString();
   const quizSlug = `hsk1-unit-test-0${unitNumber}`;
 
@@ -141,7 +172,7 @@ export async function submitUnitTestAction(
         user_id: learner.user.id,
         quiz_id: attemptId,
         quiz_slug: quizSlug,
-        started_at: new Date(Date.now() - clampedTimeSpent * 1000).toISOString(),
+        started_at: new Date(Date.now() - verifiedTimeSpent * 1000).toISOString(),
         submitted_at: now,
         correct_count: totalScore,
         question_count: maxScore,
@@ -169,7 +200,7 @@ export async function submitUnitTestAction(
           ...existingAttempts,
           {
             id: attemptId,
-            started_at: new Date(Date.now() - clampedTimeSpent * 1000).toISOString(),
+            started_at: new Date(Date.now() - verifiedTimeSpent * 1000).toISOString(),
             submitted_at: now,
             correct_count: totalScore,
             question_count: maxScore,

@@ -34,6 +34,8 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [secondsRemaining, setSecondsRemaining] = useState(unitTest.duration_minutes * 60);
+  const [attemptId, setAttemptId] = useState<string>("");
+  const [startTime, setStartTime] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [result, setResult] = useState<UnitTestResult | null>(null);
 
@@ -42,7 +44,13 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
     setIsSubmitting(true);
     try {
       const timeSpent = unitTest.duration_minutes * 60 - secondsRemaining;
-      const res = await submitUnitTestAction(unitTest.unit_number, answers, timeSpent);
+      const res = await submitUnitTestAction(
+        unitTest.unit_number,
+        answers,
+        timeSpent,
+        attemptId,
+        startTime
+      );
       setResult(res);
       setStage("result");
     } catch {
@@ -50,7 +58,7 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
     } finally {
       setIsSubmitting(false);
     }
-  }, [answers, isSubmitting, secondsRemaining, unitTest.duration_minutes, unitTest.unit_number]);
+  }, [answers, isSubmitting, secondsRemaining, unitTest.duration_minutes, unitTest.unit_number, attemptId, startTime]);
 
   // Timer countdown
   useEffect(() => {
@@ -152,6 +160,8 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
             <Button
               type="button"
               onClick={() => {
+                setAttemptId(crypto.randomUUID());
+                setStartTime(Date.now());
                 setStage("exam");
                 setSecondsRemaining(unitTest.duration_minutes * 60);
               }}
