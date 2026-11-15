@@ -250,13 +250,10 @@ export async function submitUnitTestAction(
   if (learner && learner.supabase && learner.user) {
     let submitted = false;
 
-    // 1. Try atomic submit RPC
+    // 1. Try atomic submit RPC (server-authoritative PostgreSQL grading)
     try {
       const { error: rpcErr } = await learner.supabase.rpc("submit_curriculum_quiz_attempt", {
         p_attempt_id: attemptId,
-        p_correct_count: totalScore,
-        p_question_count: maxScore,
-        p_passed: passed,
         p_answers: answers,
       });
       if (!rpcErr) {

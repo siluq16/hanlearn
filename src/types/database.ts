@@ -265,9 +265,6 @@ export type Database = {
       submit_curriculum_quiz_attempt: {
         Args: {
           p_attempt_id: string;
-          p_correct_count: number;
-          p_question_count: number;
-          p_passed: boolean;
           p_answers: Json;
         };
         Returns: CurriculumQuizAttempt;
