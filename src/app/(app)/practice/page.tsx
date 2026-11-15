@@ -8,17 +8,20 @@ export const metadata = { title: "Trung tâm Luyện tập Đa Kỹ năng" };
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ skill?: string; unit?: string }>;
+  searchParams: Promise<{ skill?: string; unit?: string; diff?: string }>;
 }) {
   await requireLearner();
-  const { skill, unit } = await searchParams;
-  const practiceSets = await getAllPracticeSets();
-  const learnerHistory = await getLearnerPracticeHistory();
+  const [{ skill, unit, diff }, practiceSets, learnerHistory] = await Promise.all([
+    searchParams,
+    getAllPracticeSets(),
+    getLearnerPracticeHistory(),
+  ]);
 
   return (
     <PracticeCenter
       initialSkill={skill}
       initialUnit={unit}
+      initialDiff={diff}
       practiceSets={practiceSets}
       learnerHistory={learnerHistory}
     />

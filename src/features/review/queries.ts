@@ -22,8 +22,31 @@ const cardSchema = z
   .strict();
 export const REVIEW_COLUMNS =
   "id,user_id,vocabulary_id,card_type,version,due_at,algorithm_version";
+
+type VocabRecord = {
+  id: string;
+  simplified: string;
+  pinyin_marked: string;
+  meaning_vi: string;
+  example_zh: string;
+  example_pinyin: string;
+  example_vi: string;
+  audio_asset_id: string | null;
+};
+
+const vocabCache = new Map<string, VocabRecord>();
+let publishedAudioCache: Set<string> | null = null;
+let lastCacheReset = 0;
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
+
 export async function getReviewView(): Promise<ReviewView> {
   const { user, supabase } = await requireLearner();
+  const now = Date.now();
+  if (now - lastCacheReset > CACHE_TTL_MS) {
+    vocabCache.clear();
+    publishedAudioCache = null;
+    lastCacheReset = now;
+  }
   const bounds = vietnamDayBounds(new Date());
   const [raw, today] = await Promise.all([
     readAll((from, to) =>
@@ -50,47 +73,64 @@ export async function getReviewView(): Promise<ReviewView> {
   const cards = z.array(cardSchema).parse(raw);
   if (cards.some((c) => c.user_id !== user.id)) throw new DataError();
   const ids = [...new Set(cards.map((c) => c.vocabulary_id))];
-  const words = (
-    await Promise.all(
-      Array.from({ length: Math.ceil(ids.length / 100) }, (_, i) =>
-        readAll((from, to) =>
-          supabase
-            .from("vocabulary")
-            .select(
-              "id,simplified,pinyin_marked,meaning_vi,example_zh,example_pinyin,example_vi,audio_asset_id",
-            )
-            .in("id", ids.slice(i * 100, i * 100 + 100))
-            .eq("status", "published")
-            .order("id")
-            .range(from, to),
+  const missingIds = ids.filter((id) => !vocabCache.has(id));
+
+  if (missingIds.length > 0) {
+    const fetchedWords = (
+      await Promise.all(
+        Array.from({ length: Math.ceil(missingIds.length / 100) }, (_, i) =>
+          readAll((from, to) =>
+            supabase
+              .from("vocabulary")
+              .select(
+                "id,simplified,pinyin_marked,meaning_vi,example_zh,example_pinyin,example_vi,audio_asset_id",
+              )
+              .in("id", missingIds.slice(i * 100, i * 100 + 100))
+              .eq("status", "published")
+              .order("id")
+              .range(from, to),
+          ),
         ),
-      ),
-    )
-  ).flat();
-  const readable = new Map(words.map((w) => [w.id, w]));
+      )
+    ).flat();
+    for (const w of fetchedWords) {
+      vocabCache.set(w.id, w as VocabRecord);
+    }
+  }
+
+  const readable = new Map<string, VocabRecord>();
+  for (const id of ids) {
+    const w = vocabCache.get(id);
+    if (w) readable.set(id, w);
+  }
   const textCards = cards.filter(
     (c) => c.card_type !== "audio_to_hanzi" && readable.has(c.vocabulary_id),
   );
-  const audioIds = [
-    ...new Set(
-      cards
-        .filter((c) => c.card_type === "audio_to_hanzi")
-        .map((c) => readable.get(c.vocabulary_id)?.audio_asset_id)
-        .filter((id): id is string => !!id),
-    ),
-  ];
-  const assets = audioIds.length
-    ? await readAll((from, to) =>
-        supabase
-          .from("audio_assets")
-          .select("id")
-          .in("id", audioIds)
-          .eq("status", "published")
-          .order("id")
-          .range(from, to),
-      )
-    : [];
-  const publishedAudio = new Set(assets.map((a) => a.id));
+
+  let publishedAudio = publishedAudioCache;
+  if (!publishedAudio) {
+    const audioIds = [
+      ...new Set(
+        cards
+          .filter((c) => c.card_type === "audio_to_hanzi")
+          .map((c) => readable.get(c.vocabulary_id)?.audio_asset_id)
+          .filter((id): id is string => !!id),
+      ),
+    ];
+    const assets = audioIds.length
+      ? await readAll((from, to) =>
+          supabase
+            .from("audio_assets")
+            .select("id")
+            .in("id", audioIds)
+            .eq("status", "published")
+            .order("id")
+            .range(from, to),
+        )
+      : [];
+    publishedAudio = new Set(assets.map((a) => a.id));
+    publishedAudioCache = publishedAudio;
+  }
   return {
     dueCount: textCards.length,
     reviewedToday: today.count,

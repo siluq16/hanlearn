@@ -42,24 +42,26 @@ export const getLearnerCurriculumProgress = cache(
   async (): Promise<LearnerProgressOverview> => {
     const { user, supabase } = await requireLearner();
 
-    // 1. Fetch stage progress for all lessons
-    const { data: stageRows } = await supabase
-      .from("learner_stage_progress")
-      .select("lesson_id, current_stage, completed_stages")
-      .eq("user_id", user.id);
+    // Parallel fetch stage progress, quiz attempts, and vocabulary progress
+    const [stageRowsRes, attemptRowsRes, vocabRowsRes] = await Promise.all([
+      supabase
+        .from("learner_stage_progress")
+        .select("lesson_id, current_stage, completed_stages")
+        .eq("user_id", user.id),
+      supabase
+        .from("curriculum_quiz_attempts")
+        .select("lesson_id, quiz_id, correct_count, question_count, passed")
+        .eq("user_id", user.id),
+      supabase
+        .from("vocabulary_progress")
+        .select("vocabulary_id, mastery_state")
+        .eq("user_id", user.id)
+        .neq("mastery_state", "not_introduced"),
+    ]);
 
-    // 2. Fetch quiz attempts for unit tests & mini quizzes
-    const { data: attemptRows } = await supabase
-      .from("curriculum_quiz_attempts")
-      .select("lesson_id, quiz_id, correct_count, question_count, passed")
-      .eq("user_id", user.id);
-
-    // 3. Fetch vocabulary progress records
-    const { data: vocabRows } = await supabase
-      .from("vocabulary_progress")
-      .select("vocabulary_id, mastery_state")
-      .eq("user_id", user.id)
-      .neq("mastery_state", "not_introduced");
+    const stageRows = stageRowsRes.data;
+    const attemptRows = attemptRowsRes.data;
+    const vocabRows = vocabRowsRes.data;
 
     const stageMap = new Map<string, { currentStage: number; completedStages: number[] }>();
     if (stageRows) {

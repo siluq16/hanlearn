@@ -13,7 +13,10 @@ interface PracticeBankFile {
   sets: PracticeSet[];
 }
 
+let cachedPracticeBank: PracticeBankFile | null = null;
+
 function loadPracticeBank(): PracticeBankFile {
+  if (cachedPracticeBank) return cachedPracticeBank;
   const filePath = path.join(process.cwd(), "content/hsk_library/practice_bank.json");
   if (!fs.existsSync(filePath)) {
     return {
@@ -24,7 +27,8 @@ function loadPracticeBank(): PracticeBankFile {
       sets: [],
     };
   }
-  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as PracticeBankFile;
+  cachedPracticeBank = JSON.parse(fs.readFileSync(filePath, "utf-8")) as PracticeBankFile;
+  return cachedPracticeBank;
 }
 
 export const getAllPracticeSets = cache(async (): Promise<PracticeSet[]> => {

@@ -23,6 +23,7 @@ import { UNIFIED_UNITS, getPracticeSetMeta } from "@/features/curriculum/unified
 interface PracticeCenterProps {
   initialSkill?: string;
   initialUnit?: string;
+  initialDiff?: string;
   practiceSets: PracticeSet[];
   learnerHistory: Record<string, { bestScore: number; total: number; completedAt: string }>;
 }
@@ -74,6 +75,7 @@ const SKILL_CONFIG: {
 export function PracticeCenter({
   initialSkill,
   initialUnit,
+  initialDiff,
   practiceSets,
   learnerHistory,
 }: PracticeCenterProps) {
@@ -91,8 +93,34 @@ export function PracticeCenter({
   const [selectedUnit, setSelectedUnit] = useState<string>(
     resolveUnitId(initialUnit)
   );
-  const [selectedDiff, setSelectedDiff] = useState<string>("all");
+  const [selectedDiff, setSelectedDiff] = useState<string>(initialDiff || "all");
   const [collapsedUnits, setCollapsedUnits] = useState<Record<string, boolean>>({});
+
+  const updateUrlState = (skill: PracticeSkill, unit: string, diff: string) => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams();
+    if (skill !== "vocabulary") params.set("skill", skill);
+    if (unit !== "all") params.set("unit", unit);
+    if (diff !== "all") params.set("diff", diff);
+    const qs = params.toString();
+    const newUrl = qs ? `/practice?${qs}` : "/practice";
+    window.history.replaceState(null, "", newUrl);
+  };
+
+  const handleSelectSkill = (skill: PracticeSkill) => {
+    setSelectedSkill(skill);
+    updateUrlState(skill, selectedUnit, selectedDiff);
+  };
+
+  const handleSelectUnit = (unit: string) => {
+    setSelectedUnit(unit);
+    updateUrlState(selectedSkill, unit, selectedDiff);
+  };
+
+  const handleSelectDiff = (diff: string) => {
+    setSelectedDiff(diff);
+    updateUrlState(selectedSkill, selectedUnit, diff);
+  };
 
   const toggleUnit = (unitId: string) => {
     setCollapsedUnits((prev) => ({ ...prev, [unitId]: !prev[unitId] }));
@@ -127,7 +155,7 @@ export function PracticeCenter({
             <button
               key={sk.id}
               type="button"
-              onClick={() => setSelectedSkill(sk.id)}
+              onClick={() => handleSelectSkill(sk.id)}
               className={`flex flex-col items-center justify-center p-3 rounded-2xl border text-center transition-all ${
                 isActive
                   ? "border-primary bg-primary text-primary-foreground shadow-sm"
@@ -167,7 +195,7 @@ export function PracticeCenter({
           {/* Unit Filter */}
           <select
             value={selectedUnit}
-            onChange={(e) => setSelectedUnit(e.target.value)}
+            onChange={(e) => handleSelectUnit(e.target.value)}
             className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
           >
             <option value="all">Tất cả các Unit</option>
@@ -181,7 +209,7 @@ export function PracticeCenter({
           {/* Difficulty Filter */}
           <select
             value={selectedDiff}
-            onChange={(e) => setSelectedDiff(e.target.value)}
+            onChange={(e) => handleSelectDiff(e.target.value)}
             className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
           >
             <option value="all">Tất cả độ khó</option>
@@ -327,6 +355,7 @@ export function PracticeCenter({
 
                                 <Link
                                   href={`/practice/${set.practice_set_id}`}
+                                  prefetch={true}
                                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
                                 >
                                   <span>{isDone ? "Luyện lại" : "Bắt đầu"}</span>

@@ -5,17 +5,29 @@ import { nextLesson } from "@/features/roadmap/model";
 import { getSettings } from "@/features/settings/queries";
 import { dataOrThrow, readAll } from "@/lib/data";
 import { ALL_CURRICULUM_QUIZZES } from "@/features/quizzes/curriculum-quizzes";
+
+type StaticDashboardMetadata = {
+  vocabulary: Array<{ id: string }>;
+  membership: Array<{ syllabus_id: string; vocabulary_id: string; introduced_level: number }>;
+  quizzes: Array<{ id: string; lesson_id: string; title: string }>;
+  timestamp: number;
+};
+
+let staticMetadataCache: StaticDashboardMetadata | null = null;
+const METADATA_TTL = 10 * 60 * 1000; // 10 minutes
+
 export async function getDashboard() {
   const { user, supabase } = await requireLearner();
+  const now = Date.now();
+  const isFresh = staticMetadataCache && (now - staticMetadataCache.timestamp < METADATA_TTL);
+
   const [
     settings,
     curriculum,
     cards,
-    vocabulary,
-    membership,
+    staticMeta,
     dueResult,
     sessionsResult,
-    quizzesResult,
     quizAttemptsResult,
   ] = await Promise.all([
     getSettings(),
@@ -29,17 +41,33 @@ export async function getDashboard() {
         .order("id")
         .range(f, t),
     ),
-    readAll((f, t) =>
-      supabase.from("vocabulary").select("id").order("id").range(f, t),
-    ),
-    readAll((f, t) =>
-      supabase
-        .from("syllabus_vocabulary")
-        .select("syllabus_id,vocabulary_id,introduced_level")
-        .order("syllabus_id")
-        .order("vocabulary_id")
-        .range(f, t),
-    ),
+    isFresh
+      ? Promise.resolve(staticMetadataCache!)
+      : Promise.all([
+          readAll((f, t) =>
+            supabase.from("vocabulary").select("id").order("id").range(f, t),
+          ),
+          readAll((f, t) =>
+            supabase
+              .from("syllabus_vocabulary")
+              .select("syllabus_id,vocabulary_id,introduced_level")
+              .order("syllabus_id")
+              .order("vocabulary_id")
+              .range(f, t),
+          ),
+          readAll((f, t) =>
+            supabase
+              .from("lesson_quizzes")
+              .select("id,lesson_id,title")
+              .eq("status", "published")
+              .order("id")
+              .range(f, t),
+          ),
+        ]).then(([vocabulary, membership, quizzes]) => {
+          const fresh = { vocabulary, membership, quizzes, timestamp: Date.now() };
+          staticMetadataCache = fresh;
+          return fresh;
+        }),
     supabase.rpc("get_due_review_count"),
     supabase
       .from("study_sessions")
@@ -47,14 +75,6 @@ export async function getDashboard() {
       .eq("user_id", user.id)
       .order("started_at", { ascending: false })
       .limit(5),
-    readAll((f, t) =>
-      supabase
-        .from("lesson_quizzes")
-        .select("id,lesson_id,title")
-        .eq("status", "published")
-        .order("id")
-        .range(f, t),
-    ),
     supabase
       .from("quiz_attempts")
       .select(
@@ -65,6 +85,11 @@ export async function getDashboard() {
       .order("submitted_at", { ascending: false })
       .limit(5),
   ]);
+
+  const vocabulary = staticMeta.vocabulary;
+  const membership = staticMeta.membership;
+  const quizzesResult = staticMeta.quizzes;
+
   const published = new Set(vocabulary.map((v) => v.id));
   const introduced = new Set(
     cards

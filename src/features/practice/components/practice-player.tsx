@@ -303,7 +303,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       <div className="max-w-2xl mx-auto space-y-6 animate-in fade-in pb-16">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
-            href="/practice?skill=dialogue"
+            href={`/practice?skill=dialogue&unit=${practiceSet.unit_id}`}
+            prefetch={true}
             className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
           >
             <ArrowLeft className="size-4" />
@@ -476,7 +477,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
               </Button>
 
               <Button asChild className="w-full gap-2 text-xs font-semibold">
-                <Link href={`/practice?skill=${practiceSet.skill}`}>
+                <Link
+                  href={`/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`}
+                  prefetch={true}
+                >
                   <span>Các bộ bài tiếp theo</span>
                   <ArrowRight className="size-4" />
                 </Link>
@@ -497,7 +501,8 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
       {/* Top Header & Breadcrumb */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
-          href={`/practice?skill=${practiceSet.skill}`}
+          href={`/practice?skill=${practiceSet.skill}&unit=${practiceSet.unit_id}`}
+          prefetch={true}
           className="inline-flex items-center gap-2 text-sm text-primary underline underline-offset-4"
         >
           <ArrowLeft className="size-4" />

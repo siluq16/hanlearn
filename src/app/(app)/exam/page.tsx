@@ -12,15 +12,19 @@ export const metadata = { title: "Kiểm tra HSK 1" };
 
 export default async function ExamOverviewPage() {
   const { user, supabase } = await requireLearner();
-  const prog = await getLearnerCurriculumProgress();
 
-  // Fetch mock exam attempts
-  const { data: mockAttempts } = await supabase
-    .from("curriculum_quiz_attempts")
-    .select("correct_count, question_count, passed, submitted_at, answers")
-    .eq("user_id", user.id)
-    .eq("lesson_id", "exam-hsk1-official-mock")
-    .order("submitted_at", { ascending: false });
+  // Parallel fetch curriculum progress and mock exam attempts
+  const [prog, mockAttemptsRes] = await Promise.all([
+    getLearnerCurriculumProgress(),
+    supabase
+      .from("curriculum_quiz_attempts")
+      .select("correct_count, question_count, passed, submitted_at, answers")
+      .eq("user_id", user.id)
+      .eq("lesson_id", "exam-hsk1-official-mock")
+      .order("submitted_at", { ascending: false }),
+  ]);
+
+  const mockAttempts = mockAttemptsRes.data;
 
   const latestMock = mockAttempts?.[0];
   const bestMockScore = mockAttempts?.reduce((max, cur) => {

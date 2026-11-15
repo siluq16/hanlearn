@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { CheckCircle2, Loader2, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
@@ -35,7 +36,14 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
   const [count, setCount] = useState(0),
     [ended, setEnded] = useState(false),
     [nextDue, setNextDue] = useState<string | null>(null);
+  const [saveStatus, setSaveStatus] = useState<{
+    state: "idle" | "saving" | "saved" | "error";
+    text?: string;
+    cardId?: string;
+  }>({ state: "idle" });
+
   const busy = useRef(false),
+    saveQueue = useRef<Promise<void>>(Promise.resolve()),
     heading = useRef<HTMLHeadingElement>(null);
   const key = `hanlearn-review:${initial.scope}`;
   const card = view.cards[0];
@@ -77,18 +85,17 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       stopMandarin();
     };
   }, [card?.id]);
+
   async function send(input: ReviewInput) {
     stopMandarin();
     if (busy.current || pending || !ready || !enabled) return;
     busy.current = true;
-    setPending(true);
-    setRecovery(input);
     setError(null);
+
     try {
       sessionStorage.setItem(key, JSON.stringify(input));
     } catch {
       busy.current = false;
-      setPending(false);
       setError({
         code: "STORAGE",
         message: "Không lưu được yêu cầu retry. Chưa gửi đánh giá.",
@@ -97,34 +104,92 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       });
       return;
     }
-    try {
-      const result = await submit(input);
-      if (result.ok) {
-        // Only the verified DB receipt advances this session; dates come from PostgreSQL.
-        sessionStorage.removeItem(key);
-        setRecovery(null);
-        setView(result.view);
-        setFlipped(false);
-        setCount((n) => n + 1);
-        setNextDue(result.receipt.nextDueAt);
-      } else {
-        setError(result.error);
-        if (!result.error.outcomeUnknown) {
+
+    const hasNextCard = view.cards.length > 1;
+
+    if (hasNextCard) {
+      // 1. OPTIMISTIC INSTANT TRANSITION (< 15ms): Advance to next card in current batch
+      const currentInput = input;
+      setView((prev) => ({
+        ...prev,
+        cards: prev.cards.slice(1),
+        dueCount: Math.max(0, prev.dueCount - 1),
+        reviewedToday: prev.reviewedToday + 1,
+      }));
+      setFlipped(false);
+      setCount((n) => n + 1);
+      setSaveStatus({ state: "saving", text: "Đang lưu...", cardId: currentInput.cardId });
+      busy.current = false; // Release immediately so learner can read & interact with next card!
+
+      // 2. FIFO Background Persistence Queue: Saves without blocking the learner's flow
+      saveQueue.current = saveQueue.current
+        .then(async () => {
+          const result = await submit(currentInput);
+          if (result.ok) {
+            sessionStorage.removeItem(key);
+            setSaveStatus({ state: "saved", text: "Đã lưu", cardId: currentInput.cardId });
+            setNextDue(result.receipt.nextDueAt);
+            setTimeout(() => {
+              setSaveStatus((s) => (s.cardId === currentInput.cardId && s.state === "saved" ? { state: "idle" } : s));
+            }, 2000);
+          } else {
+            sessionStorage.setItem(key, JSON.stringify(currentInput));
+            setRecovery(currentInput);
+            setError(result.error);
+            setSaveStatus({ state: "error", text: "Lỗi lưu", cardId: currentInput.cardId });
+            if (!result.error.outcomeUnknown) {
+              sessionStorage.removeItem(key);
+              setRecovery(null);
+            }
+          }
+        })
+        .catch(() => {
+          sessionStorage.setItem(key, JSON.stringify(currentInput));
+          setRecovery(currentInput);
+          setSaveStatus({ state: "error", text: "Mất kết nối", cardId: currentInput.cardId });
+          setError({
+            code: "NETWORK",
+            message:
+              "Mất kết nối; chưa rõ đánh giá đã lưu chưa. Thử lại yêu cầu cũ, không chọn mức khác.",
+            retryable: true,
+            outcomeUnknown: true,
+          });
+        });
+    } else {
+      // Final card of the session: Await queue to complete and finalize session with server view
+      setPending(true);
+      setSaveStatus({ state: "saving", text: "Đang hoàn tất phiên ôn..." });
+      try {
+        await saveQueue.current;
+        const result = await submit(input);
+        if (result.ok) {
           sessionStorage.removeItem(key);
           setRecovery(null);
+          setView(result.view);
+          setFlipped(false);
+          setCount((n) => n + 1);
+          setNextDue(result.receipt.nextDueAt);
+          setSaveStatus({ state: "saved", text: "Đã lưu toàn bộ phiên" });
+        } else {
+          setError(result.error);
+          setSaveStatus({ state: "error", text: "Lỗi lưu", cardId: input.cardId });
+          if (!result.error.outcomeUnknown) {
+            sessionStorage.removeItem(key);
+            setRecovery(null);
+          }
         }
+      } catch {
+        setError({
+          code: "NETWORK",
+          message:
+            "Mất kết nối; chưa rõ đánh giá đã lưu chưa. Thử lại yêu cầu cũ, không chọn mức khác.",
+          retryable: true,
+          outcomeUnknown: true,
+        });
+      } finally {
+        busy.current = false;
+        setPending(false);
       }
-    } catch {
-      setError({
-        code: "NETWORK",
-        message:
-          "Mất kết nối; chưa rõ đánh giá đã lưu chưa. Thử lại yêu cầu cũ, không chọn mức khác.",
-        retryable: true,
-        outcomeUnknown: true,
-      });
-    } finally {
-      busy.current = false;
-      setPending(false);
     }
   }
   async function reload() {
@@ -227,8 +292,28 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           {/* Progress Bar for Current Session */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-xs font-semibold">
-              <span className="text-muted-foreground">
-                Tiến độ phiên ôn {view.dueCount > view.cards.length ? `(đợt ${view.cards.length} thẻ)` : ""}
+              <span className="text-muted-foreground flex items-center gap-2">
+                <span>
+                  Tiến độ phiên ôn {view.dueCount > view.cards.length ? `(đợt ${view.cards.length} thẻ)` : ""}
+                </span>
+                {saveStatus.state === "saving" && (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-600 dark:text-amber-400" data-review-save-status="saving">
+                    <Loader2 className="size-3 animate-spin" />
+                    Đang lưu…
+                  </span>
+                )}
+                {saveStatus.state === "saved" && (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 animate-in fade-in" data-review-save-status="saved">
+                    <CheckCircle2 className="size-3" />
+                    Đã lưu
+                  </span>
+                )}
+                {saveStatus.state === "error" && (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-destructive animate-in fade-in" data-review-save-status="error">
+                    <RotateCcw className="size-3" />
+                    Chưa lưu được
+                  </span>
+                )}
               </span>
               <span className="text-primary font-bold">
                 Thẻ {count + 1} / {count + view.cards.length}
