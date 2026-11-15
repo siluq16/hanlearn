@@ -1,4 +1,5 @@
 import type { CourseDefinition, UnitDefinition } from "./types";
+import { UNIFIED_UNITS } from "@/features/curriculum/unified-metadata";
 
 export const AVAILABLE_COURSES: CourseDefinition[] = [
   {
@@ -6,7 +7,7 @@ export const AVAILABLE_COURSES: CourseDefinition[] = [
     slug: "hsk1",
     name: "HSK 1",
     level_name: "Sơ cấp 1",
-    description: "Khóa học tiếng Trung HSK 1 toàn diện gồm 32 bài học, 6 Unit, Module 0 Pinyin, 6 Unit Test và Đề thi thử chuẩn CTI.",
+    description: "Khóa học tiếng Trung HSK 1 toàn diện gồm 32 bài học, 6 Unit, Module 0 Pinyin, 6 Unit Test và Đề thi thử HSK 1.",
     curriculum_version: "2025.1",
     status: "available",
     total_units: 6,
@@ -63,106 +64,16 @@ export const AVAILABLE_COURSES: CourseDefinition[] = [
   },
 ];
 
-export const HSK1_UNITS: UnitDefinition[] = [
-  {
-    unit_id: "u-hsk1-01",
-    unit_number: 1,
-    course_id: "course-hsk1",
-    title: "Unit 1: Khởi đầu & Giới thiệu bản thân",
-    topic: "Chào hỏi, họ tên, quốc tịch, gia đình, ngày tháng và thời gian",
-    description: "Xây dựng phản xạ làm quen căn bản, tự giới thiệu, đếm số và hỏi thứ/ngày.",
-    lesson_slugs: [
-      "hsk1-lesson-01",
-      "hsk1-lesson-02",
-      "hsk1-lesson-03",
-      "hsk1-lesson-04",
-    ],
-    unit_test_slug: "hsk1-unit-test-01",
-  },
-  {
-    unit_id: "u-hsk1-02",
-    unit_number: 2,
-    course_id: "course-hsk1",
-    title: "Unit 2: Gia đình, Thời gian & Sinh hoạt",
-    topic: "Nghề nghiệp, hỏi giờ, mua sắm hoa quả, giá cả và ăn uống gọi món",
-    description: "Giao tiếp trong quán ăn, mặc cả giá cả, hỏi giờ giấc và nghề nghiệp thành viên.",
-    lesson_slugs: [
-      "hsk1-lesson-05",
-      "hsk1-lesson-06",
-      "hsk1-lesson-07",
-      "hsk1-lesson-08",
-    ],
-    unit_test_slug: "hsk1-unit-test-02",
-  },
-  {
-    unit_id: "u-hsk1-03",
-    unit_number: 3,
-    course_id: "course-hsk1",
-    title: "Unit 3: Nơi chốn, Phương tiện, Thời tiết & Học đường",
-    topic: "Vị trí nơi chốn, thói quen sinh hoạt, thời tiết khí hậu, phương tiện đi lại và giảng đường đại học",
-    description: "Hỏi vị trí và phương hướng, cách đi lại bằng xe buýt/tàu hỏa, nhận xét thời tiết và sinh hoạt lớp học.",
-    lesson_slugs: [
-      "hsk1-lesson-09",
-      "hsk1-lesson-10",
-      "hsk1-lesson-11",
-      "hsk1-lesson-12",
-      "hsk1-lesson-13",
-      "hsk1-lesson-14",
-    ],
-    unit_test_slug: "hsk1-unit-test-03",
-  },
-  {
-    unit_id: "u-hsk1-04",
-    unit_number: 4,
-    course_id: "course-hsk1",
-    title: "Unit 4: Đời sống, Sức khỏe, Mua sắm & Giải trí",
-    topic: "Phòng ốc thú cưng, sức khỏe khám bệnh, trang phục màu sắc, nấu ăn, siêu thị và xem phim ca hát cuối tuần",
-    description: "Thăm khám sức khỏe, chọn mua quần áo, đi siêu thị, làm việc tại công ty và giải trí cuối tuần.",
-    lesson_slugs: [
-      "hsk1-lesson-15",
-      "hsk1-lesson-16",
-      "hsk1-lesson-17",
-      "hsk1-lesson-18",
-      "hsk1-lesson-19",
-      "hsk1-lesson-20",
-    ],
-    unit_test_slug: "hsk1-unit-test-04",
-  },
-  {
-    unit_id: "u-hsk1-05",
-    unit_number: 5,
-    course_id: "course-hsk1",
-    title: "Unit 5: Sở thích, Công việc & Giao tiếp",
-    topic: "Điện thoại, xưng hô lịch sự, đại từ chỉ định, vị trí không gian đa chiều",
-    description: "Đàm thoại điện thoại, kết bạn giúp đỡ nhau và định vị vật dụng trong phòng.",
-    lesson_slugs: [
-      "hsk1-lesson-21",
-      "hsk1-lesson-22",
-      "hsk1-lesson-23",
-      "hsk1-lesson-24",
-      "hsk1-lesson-25",
-    ],
-    unit_test_slug: "hsk1-unit-test-05",
-  },
-  {
-    unit_id: "u-hsk1-06",
-    unit_number: 6,
-    course_id: "course-hsk1",
-    title: "Unit 6: Hoạt động xã hội & Đời sống hàng ngày",
-    topic: "Số đếm lớn, lượng từ động vật, lịch trình, động từ năng nguyện và tổng kết",
-    description: "Sử dụng số đếm hàng nghìn, lập kế hoạch tương lai và tổng ôn ngữ pháp toàn khóa.",
-    lesson_slugs: [
-      "hsk1-lesson-26",
-      "hsk1-lesson-27",
-      "hsk1-lesson-28",
-      "hsk1-lesson-29",
-      "hsk1-lesson-30",
-      "hsk1-lesson-31",
-      "hsk1-lesson-32",
-    ],
-    unit_test_slug: "hsk1-unit-test-06",
-  },
-];
+export const HSK1_UNITS: UnitDefinition[] = UNIFIED_UNITS.map((u) => ({
+  unit_id: u.id,
+  unit_number: u.unitNumber,
+  course_id: "course-hsk1",
+  title: u.fullTitle,
+  topic: u.topic,
+  description: u.description,
+  lesson_slugs: u.lessonSlugs,
+  unit_test_slug: u.unitTestSlug,
+}));
 
 export function getCourseBySlug(slug: string): CourseDefinition | undefined {
   return AVAILABLE_COURSES.find((c) => c.slug === slug);

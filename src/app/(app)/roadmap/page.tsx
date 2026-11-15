@@ -1,13 +1,8 @@
 import Link from "next/link";
 import {
-  BookOpen,
-  CheckCircle2,
-  ChevronDown,
   Clock3,
   Sparkles,
-  Award,
   ArrowRight,
-  Dumbbell,
 } from "lucide-react";
 import { PageHeading } from "@/components/page-heading";
 import { Badge } from "@/components/ui/badge";
@@ -68,7 +63,7 @@ export default async function Roadmap() {
                 href={`/lessons/stage/${prog.nextLessonSlug}`}
                 className="inline-flex min-h-11 items-center gap-2 px-5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-xs"
               >
-                <span>Tiếp tục: {prog.nextLessonTitle.split(":")[0]}</span>
+                <span>Tiếp tục: {prog.nextLessonTitle}</span>
                 <ArrowRight className="size-4" />
               </Link>
             </div>
@@ -147,7 +142,7 @@ export default async function Roadmap() {
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-              Đề thi thử HSK 1 Chuẩn CTI (40 câu)
+              Đề thi thử HSK 1 (40 câu)
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               Sau khi hoàn thành 6 Unit, hãy thử sức với bài thi chuẩn hóa 20 câu Nghe và 20 câu Đọc để kiểm tra độ sẵn sàng trước kỳ thi thật.

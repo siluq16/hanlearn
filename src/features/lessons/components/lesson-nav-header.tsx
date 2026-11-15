@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HSK1_UNITS } from "@/features/courses/constants";
 import { HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
+import { getLessonMeta } from "@/features/curriculum/unified-metadata";
 
 interface LessonNavHeaderProps {
   currentSlug: string;
@@ -106,7 +107,7 @@ export function LessonNavHeader({
     }).filter((group) => group.lessons.length > 0);
   }, [searchQuery, regularLessons]);
 
-  const shortLessonTitle = lessonTitle.split(":")[0]?.trim() || `Bài ${currentLessonNumber}`;
+  const shortLessonTitle = getLessonMeta(currentSlug).fullTitle || `Bài ${currentLessonNumber}`;
 
   return (
     <div className="space-y-3">
@@ -277,7 +278,6 @@ export function LessonNavHeader({
                             <div className="p-2 pt-0 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                               {lessons.map((les) => {
                                 const isCurrent = les.slug === currentSlug;
-                                const lesNumber = regularLessons.findIndex((r) => r.slug === les.slug) + 1;
 
                                 return (
                                   <Link
@@ -291,7 +291,7 @@ export function LessonNavHeader({
                                     }`}
                                   >
                                     <span className="truncate pr-1">
-                                      Bài {lesNumber}: {les.title.split(":")[1]?.trim() || les.title}
+                                      {getLessonMeta(les.slug).fullTitle}
                                     </span>
                                     {isCurrent && (
                                       <Badge className="bg-primary-foreground text-primary text-[9px] px-1 py-0 font-bold shrink-0">

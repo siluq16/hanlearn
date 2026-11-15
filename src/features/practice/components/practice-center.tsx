@@ -18,6 +18,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageHeading } from "@/components/page-heading";
 import type { PracticeSet, PracticeSkill } from "../types";
+import { UNIFIED_UNITS, getPracticeSetMeta } from "@/features/curriculum/unified-metadata";
 
 interface PracticeCenterProps {
   initialSkill?: string;
@@ -25,15 +26,6 @@ interface PracticeCenterProps {
   practiceSets: PracticeSet[];
   learnerHistory: Record<string, { bestScore: number; total: number; completedAt: string }>;
 }
-
-const UNIT_DEFINITIONS = [
-  { id: "u-hsk1-01", title: "Unit 1: Khởi đầu (Bài 1–4)", desc: "Chào hỏi, làm quen, số đếm & xưng hô" },
-  { id: "u-hsk1-02", title: "Unit 2: Sinh hoạt (Bài 5–8)", desc: "Gia đình, nghề nghiệp, mua sắm & ẩm thực" },
-  { id: "u-hsk1-03", title: "Unit 3: Nơi chốn & Học đường (Bài 9–14)", desc: "Thời gian, địa điểm, thời tiết & học tập" },
-  { id: "u-hsk1-04", title: "Unit 4: Đời sống & Giải trí (Bài 15–20)", desc: "Sở thích, phương tiện, thể thao & thói quen" },
-  { id: "u-hsk1-05", title: "Unit 5: Giao tiếp & Xã hội (Bài 21–25)", desc: "Nhờ vả, điện thoại, cảm xúc & lịch trình" },
-  { id: "u-hsk1-06", title: "Unit 6: Tổng hợp & Nâng cao (Bài 26–32)", desc: "Mô tả người, việc làm, so sánh & tổng kết HSK 1" },
-];
 
 const SKILL_CONFIG: {
   id: PracticeSkill;
@@ -179,12 +171,11 @@ export function PracticeCenter({
             className="h-8 px-2.5 rounded-lg border border-border bg-card text-xs font-medium text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary"
           >
             <option value="all">Tất cả các Unit</option>
-            <option value="u-hsk1-01">Unit 1: Khởi đầu (Bài 1–4)</option>
-            <option value="u-hsk1-02">Unit 2: Sinh hoạt (Bài 5–8)</option>
-            <option value="u-hsk1-03">Unit 3: Nơi chốn & Học đường (Bài 9–14)</option>
-            <option value="u-hsk1-04">Unit 4: Đời sống & Giải trí (Bài 15–20)</option>
-            <option value="u-hsk1-05">Unit 5: Giao tiếp (Bài 21–25)</option>
-            <option value="u-hsk1-06">Unit 6: Xã hội (Bài 26–32)</option>
+            {UNIFIED_UNITS.map((u) => (
+              <option key={u.id} value={u.id}>
+                {u.fullTitle}
+              </option>
+            ))}
           </select>
 
           {/* Difficulty Filter */}
@@ -210,7 +201,7 @@ export function PracticeCenter({
         </Card>
       ) : (
         <div className="space-y-4">
-          {UNIT_DEFINITIONS.filter(
+          {UNIFIED_UNITS.filter(
             (u) => selectedUnit === "all" || selectedUnit === u.id
           ).map((unit) => {
             const unitSets = filteredSets.filter((s) => s.unit_id === unit.id);
@@ -235,7 +226,7 @@ export function PracticeCenter({
                   <div className="space-y-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="font-bold text-base text-foreground">
-                        {unit.title}
+                        {unit.fullTitle}
                       </span>
                       <Badge className="bg-primary/10 text-primary border-primary/20 text-[11px] font-semibold">
                         {unitSets.length} bộ bài
@@ -248,7 +239,7 @@ export function PracticeCenter({
                       )}
                     </div>
                     <p className="text-xs text-muted-foreground line-clamp-1">
-                      {unit.desc} · Đã làm {completedInUnit}/{unitSets.length} bộ
+                      {unit.topic} · Đã làm {completedInUnit}/{unitSets.length} bộ
                     </p>
                   </div>
 
@@ -271,6 +262,7 @@ export function PracticeCenter({
                       {unitSets.map((set) => {
                         const history = learnerHistory[set.practice_set_id];
                         const isDone = !!history;
+                        const setMeta = getPracticeSetMeta(set.practice_set_id);
 
                         return (
                           <Card
@@ -280,9 +272,14 @@ export function PracticeCenter({
                             <CardContent className="p-4 sm:p-5 flex flex-col justify-between h-full space-y-3.5">
                               <div className="space-y-2">
                                 <div className="flex items-center justify-between gap-2">
-                                  <Badge className="border border-border bg-transparent text-[10px] font-bold uppercase tracking-wider">
-                                    {set.exercise_type.replace(/_/g, " ")}
-                                  </Badge>
+                                  <div className="flex items-center gap-1.5">
+                                    <Badge className="bg-primary text-primary-foreground text-[10px] font-bold">
+                                      {setMeta.setCode}
+                                    </Badge>
+                                    <Badge className="border border-border bg-transparent text-[10px] font-bold uppercase tracking-wider">
+                                      {set.exercise_type.replace(/_/g, " ")}
+                                    </Badge>
+                                  </div>
 
                                   <div className="flex items-center gap-1.5">
                                     <Badge
@@ -307,10 +304,10 @@ export function PracticeCenter({
                                 </div>
 
                                 <h4 className="text-sm sm:text-base font-bold text-foreground leading-snug">
-                                  {set.title}
+                                  {setMeta.shortTitle}
                                 </h4>
-                                <p className="text-xs text-muted-foreground leading-relaxed">
-                                  {set.description}
+                                <p className="text-xs text-muted-foreground line-clamp-1">
+                                  {setMeta.description}
                                 </p>
                               </div>
 

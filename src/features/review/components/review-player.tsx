@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/empty-state";
@@ -221,10 +222,28 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
       )}
       {!summary && (
         <>
-          <Card>
+          {/* Progress Bar for Current Session */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between text-xs font-semibold">
+              <span className="text-muted-foreground">Tiến độ phiên ôn</span>
+              <span className="text-primary font-bold">
+                Thẻ {count + 1} / {count + view.cards.length}
+              </span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full bg-primary transition-all duration-300"
+                style={{
+                  width: `${Math.round(((count) / (count + view.cards.length)) * 100)}%`,
+                }}
+              />
+            </div>
+          </div>
+
+          <Card className="border-border bg-card shadow-sm overflow-hidden">
             <CardContent className="space-y-6 p-5 sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs font-medium text-muted-foreground">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   {card.direction === "hanzi_to_vi"
                     ? "Hán tự → Nghĩa tiếng Việt"
                     : "Nghĩa tiếng Việt → Hán tự"}
@@ -234,7 +253,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
               <h2
                 ref={heading}
                 tabIndex={-1}
-                className={`whitespace-pre-wrap break-words text-center font-semibold leading-relaxed outline-offset-4 ${card.direction === "hanzi_to_vi" ? "hanzi text-5xl sm:text-6xl" : "text-2xl"}`}
+                className={`whitespace-pre-wrap break-words text-center font-bold leading-relaxed outline-offset-4 ${card.direction === "hanzi_to_vi" ? "hanzi text-5xl sm:text-6xl text-foreground" : "text-2xl text-foreground"}`}
                 lang={card.direction === "hanzi_to_vi" ? "zh-Hans" : "vi"}
               >
                 {card.direction === "hanzi_to_vi" ? card.hanzi : card.meaning}
@@ -244,7 +263,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                   <ListenBeforeGuessButton hanzi={card.hanzi} />
                   <Button
                     variant="outline"
-                    className="min-h-12 w-full"
+                    className="min-h-12 w-full font-semibold"
                     disabled={pending || !ready || !!recovery}
                     onClick={() => {
                       stopMandarin();
@@ -257,27 +276,27 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
               ) : (
                 <div
                   data-review-back
-                  className="space-y-4 border-t border-border pt-5 text-center"
+                  className="space-y-4 border-t border-border pt-5 text-center animate-in fade-in-50 duration-200"
                 >
                   {card.direction === "vi_to_hanzi" && (
                     <p
                       lang="zh-Hans"
-                      className="hanzi text-4xl leading-relaxed"
+                      className="hanzi text-4xl leading-relaxed font-bold"
                     >
                       {card.hanzi}
                     </p>
                   )}
-                  <p className="text-lg text-primary">{card.pinyin}</p>
-                  <p className="whitespace-pre-wrap text-base leading-8">
+                  <p className="text-xl font-bold text-primary">{card.pinyin}</p>
+                  <p className="whitespace-pre-wrap text-base font-medium leading-8 text-foreground">
                     {card.meaning}
                   </p>
                   <div className="flex justify-center">
                     <MandarinAudioBar text={card.hanzi} />
                   </div>
                   {card.example && (
-                    <div className="space-y-2 rounded-xl bg-muted p-4 text-left text-sm leading-7">
+                    <div className="space-y-2 rounded-xl bg-muted/60 border border-border p-4 text-left text-sm leading-7">
                       <div className="flex items-start justify-between gap-2">
-                        <p lang="zh-Hans" className="hanzi text-xl">
+                        <p lang="zh-Hans" className="hanzi text-xl font-bold">
                           {card.example.hanzi}
                         </p>
                         <MandarinAudioButton
@@ -288,16 +307,16 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                         />
                       </div>
                       {card.example.pinyin && (
-                        <p className="text-primary">{card.example.pinyin}</p>
+                        <p className="text-primary font-medium">{card.example.pinyin}</p>
                       )}
-                      {card.example.meaning && <p>{card.example.meaning}</p>}
+                      {card.example.meaning && <p className="text-muted-foreground">{card.example.meaning}</p>}
                     </div>
                   )}
                   <a
                     href={`/vocabulary/${card.vocabularyId}`}
-                    className="inline-flex min-h-11 items-center text-sm text-primary underline"
+                    className="inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline"
                   >
-                    Xem từ vựng
+                    Xem từ vựng chi tiết →
                   </a>
                 </div>
               )}
@@ -317,7 +336,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
               <Button
                 key={item.rating}
                 variant={item.variant}
-                className="min-h-12 px-2"
+                className="min-h-12 px-2 font-bold text-sm shadow-xs"
                 disabled={
                   !flipped ||
                   pending ||
@@ -341,7 +360,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
           </div>
           {!flipped && (
             <p className="text-center text-xs text-muted-foreground">
-              Lật thẻ để mở các nút đánh giá.
+              Lật thẻ để mở các nút đánh giá mức độ ghi nhớ.
             </p>
           )}
           <Button
@@ -357,7 +376,7 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
         </>
       )}
       {summary && (
-        <div role="status">
+        <div role="status" className="space-y-4">
           <EmptyState
             title={
               ended || count ? "Đã kết thúc phiên ôn" : "Chưa có thẻ đến hạn"
@@ -370,12 +389,20 @@ export function ReviewPlayer({ initial, enabled, submit, refresh }: Props) {
                   : "Hoàn thành bài học bằng xác nhận học và quiz đạt để tạo thẻ. Thẻ chưa đến hạn sẽ xuất hiện sau."
             }
           >
-            <a
-              href="/roadmap"
-              className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground"
-            >
-              Về lộ trình học
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <a
+                href="/roadmap"
+                className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-xs"
+              >
+                Về lộ trình học
+              </a>
+              <Link
+                href="/practice"
+                className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-4 text-sm font-semibold text-foreground hover:bg-muted transition-colors shadow-2xs"
+              >
+                Luyện tập kỹ năng
+              </Link>
+            </div>
           </EmptyState>
         </div>
       )}

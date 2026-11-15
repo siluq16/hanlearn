@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import type { UnitDefinition } from "@/features/courses/types";
 import type { LearnerProgressOverview } from "@/features/courses/queries";
+import { getUnitMeta, getLessonMeta } from "@/features/curriculum/unified-metadata";
 
 export interface LessonSummaryInfo {
   slug: string;
@@ -28,13 +28,13 @@ export interface LessonSummaryInfo {
 interface RoadmapUnitAccordionProps {
   units: UnitDefinition[];
   prog: LearnerProgressOverview;
-  lessonSummaries: Record<string, LessonSummaryInfo>;
+  lessonSummaries?: Record<string, LessonSummaryInfo>;
 }
 
 export function RoadmapUnitAccordion({
   units,
   prog,
-  lessonSummaries,
+  lessonSummaries: _lessonSummaries,
 }: RoadmapUnitAccordionProps) {
   // Determine initially expanded unit (the first in_progress unit, or unit 1)
   const defaultExpandedId =
@@ -55,6 +55,7 @@ export function RoadmapUnitAccordion({
   return (
     <div className="space-y-4">
       {units.map((unit) => {
+        const uMeta = getUnitMeta(unit.unit_id);
         const uProg = prog.unitProgress[unit.unit_id];
         const isCompleted = uProg?.status === "completed";
         const isInProgress = uProg?.status === "in_progress";
@@ -97,7 +98,7 @@ export function RoadmapUnitAccordion({
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="text-base sm:text-lg font-bold text-foreground">
-                        {unit.title}
+                        {uMeta.fullTitle}
                       </h3>
                       <Badge
                         className={`text-[10px] font-semibold ${
@@ -109,15 +110,15 @@ export function RoadmapUnitAccordion({
                         }`}
                       >
                         {isCompleted
-                          ? "Đã hoàn thành"
+                          ? "Hoàn thành"
                           : isInProgress
                             ? "Đang học"
-                            : "Chưa bắt đầu"}
+                            : "Chưa học"}
                       </Badge>
                     </div>
 
                     <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
-                      {unit.topic}
+                      {uMeta.topic}
                     </p>
 
                     {/* Progress & Test Status row (Visible always) */}
@@ -131,11 +132,11 @@ export function RoadmapUnitAccordion({
                         <Award className="size-3.5 text-amber-500" />
                         {uProg?.isUnitTestPassed ? (
                           <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
-                            Unit Test: Đạt 80% ✓
+                            Unit Test: Đã đạt ({uProg.unitTestBestScore}/20)
                           </span>
                         ) : uProg?.unitTestBestScore !== null && uProg?.unitTestBestScore !== undefined ? (
                           <span className="text-amber-600 dark:text-amber-400">
-                            Unit Test: {uProg.unitTestBestScore}/20 (Chưa đạt)
+                            Unit Test: Chưa đạt ({uProg.unitTestBestScore}/20)
                           </span>
                         ) : (
                           <span className="text-muted-foreground">
@@ -158,7 +159,7 @@ export function RoadmapUnitAccordion({
                       className="inline-flex min-h-9 items-center gap-1.5 px-3 rounded-lg bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-xs"
                     >
                       <PlayCircle className="size-3.5" />
-                      <span>{isCompleted ? "Ôn tập Unit" : "Tiếp tục học"}</span>
+                      <span>{isCompleted ? "Xem lại" : isInProgress ? "Tiếp tục" : "Học bài"}</span>
                     </Link>
 
                     <Link
@@ -167,7 +168,7 @@ export function RoadmapUnitAccordion({
                     >
                       <Dumbbell className="size-3.5 text-primary" />
                       <span className="hidden sm:inline">Luyện tập Unit</span>
-                      <span className="sm:hidden">Luyện</span>
+                      <span className="sm:hidden">Luyện tập</span>
                     </Link>
                   </div>
 
@@ -197,9 +198,10 @@ export function RoadmapUnitAccordion({
 
                   <div className="grid grid-cols-1 gap-2">
                     {unit.lesson_slugs.map((lSlug: string, idx: number) => {
-                      const lesson = lessonSummaries[lSlug];
+                      const lMeta = getLessonMeta(lSlug);
                       const lProg = prog.lessonProgress[lSlug];
                       const isDone = lProg?.isCompleted;
+                      const isInProg = Boolean(lProg?.completedStagesCount && !isDone);
 
                       return (
                         <div
@@ -217,31 +219,38 @@ export function RoadmapUnitAccordion({
                               <BookOpen className="size-5 shrink-0 text-primary mt-0.5" />
                             )}
                             <div className="min-w-0">
-                              <span className="block text-sm font-bold text-foreground">
-                                {lesson?.title || lSlug}
-                              </span>
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                <span className="text-sm font-bold text-foreground">
+                                  {lMeta.fullTitle}
+                                </span>
+                                {lMeta.hanziSubtitle && (
+                                  <span className="text-xs text-muted-foreground font-medium">
+                                    ({lMeta.hanziSubtitle})
+                                  </span>
+                                )}
+                              </div>
                               <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
-                                {lesson?.objective_vi || "Học từ vựng, ngữ pháp, bài tập tương tác, hội thoại và mini quiz."}
+                                {lMeta.objectiveVi}
                               </p>
                               <div className="flex items-center gap-2 mt-1">
                                 <span className="text-[11px] text-muted-foreground flex items-center gap-1">
                                   <Clock3 className="size-3" />
-                                  {lesson?.estimated_minutes || 25} phút
+                                  {lMeta.estimatedMinutes} phút
                                 </span>
                                 <span className="text-muted-foreground text-[10px]">•</span>
                                 <span
                                   className={`text-[11px] font-medium ${
                                     isDone
                                       ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                                      : lProg?.completedStagesCount
+                                      : isInProg
                                         ? "text-primary"
                                         : "text-muted-foreground"
                                   }`}
                                 >
                                   {isDone
-                                    ? "Đã hoàn thành 10 chặng"
-                                    : lProg?.completedStagesCount
-                                      ? `Đang học · Xong ${lProg.completedStagesCount}/10 chặng`
+                                    ? "Hoàn thành 10 chặng"
+                                    : isInProg
+                                      ? `Đang học · Xong ${lProg?.completedStagesCount}/10 chặng`
                                       : "Chưa học"}
                                 </span>
                               </div>
@@ -253,7 +262,9 @@ export function RoadmapUnitAccordion({
                               href={`/lessons/stage/${lSlug}`}
                               className="inline-flex min-h-8 items-center gap-1 px-3 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground text-xs font-semibold transition-colors"
                             >
-                              <span>{isDone ? "Xem lại" : "Vào học"}</span>
+                              <span>
+                                {isDone ? "Xem lại" : isInProg ? "Tiếp tục" : "Học bài"}
+                              </span>
                               <ArrowRight className="size-3" />
                             </Link>
                           </div>
@@ -273,20 +284,24 @@ export function RoadmapUnitAccordion({
                       <div>
                         <div className="flex flex-wrap items-center gap-2">
                           <h4 className="font-bold text-sm sm:text-base text-foreground">
-                            Bài Kiểm tra Đánh giá Unit {unit.unit_number}
+                            {uMeta.unitTestFullTitle}
                           </h4>
                           {uProg?.isUnitTestPassed ? (
                             <Badge className="bg-emerald-500 text-white font-semibold text-[10px]">
-                              Đạt 80% ✓
+                              Đã đạt ({uProg.unitTestBestScore}/20)
+                            </Badge>
+                          ) : uProg?.unitTestBestScore !== null && uProg?.unitTestBestScore !== undefined ? (
+                            <Badge className="bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30 text-[10px] font-semibold">
+                              Chưa đạt ({uProg.unitTestBestScore}/20)
                             </Badge>
                           ) : (
                             <Badge className="border border-border bg-card text-[10px] font-semibold text-muted-foreground">
-                              Mastery 80%
+                              Chưa làm · Mastery 80%
                             </Badge>
                           )}
                         </div>
                         <p className="text-xs text-muted-foreground mt-0.5">
-                          Thời gian: 20 phút · Quy mô: 20 câu hỏi tổng hợp 4 kỹ năng (Nghe, Từ vựng, Ngữ pháp, Đọc hiểu)
+                          20 phút · 20 câu hỏi 4 kỹ năng (Nghe, Từ vựng, Ngữ pháp, Đọc hiểu)
                         </p>
                       </div>
                     </div>
@@ -296,9 +311,9 @@ export function RoadmapUnitAccordion({
                       className="inline-flex min-h-10 items-center px-4 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity gap-1.5 shrink-0 shadow-xs"
                     >
                       <span>
-                        {uProg?.isUnitTestPassed
-                          ? `Thi lại Unit Test ${unit.unit_number}`
-                          : `Bắt đầu Unit Test ${unit.unit_number}`}
+                        {uProg?.unitTestBestScore !== null && uProg?.unitTestBestScore !== undefined
+                          ? `Làm lại ${uMeta.unitTestShortTitle}`
+                          : `Bắt đầu ${uMeta.unitTestShortTitle}`}
                       </span>
                       <ArrowRight className="size-3.5" />
                     </Link>

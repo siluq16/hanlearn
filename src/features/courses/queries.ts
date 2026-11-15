@@ -3,6 +3,7 @@ import { cache } from "react";
 import { requireLearner } from "@/features/auth/session";
 import { HSK1_UNITS } from "./constants";
 import { HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
+import { getLessonMeta } from "@/features/curriculum/unified-metadata";
 
 export interface LearnerProgressOverview {
   courseSlug: string;
@@ -102,7 +103,7 @@ export const getLearnerCurriculumProgress = cache(
     const learnedWordsSet = new Set<string>();
 
     let nextLessonSlug = realLessons[0]?.slug || "hsk1-lesson-01";
-    let nextLessonTitle = realLessons[0]?.title || "Bài 1";
+    let nextLessonTitle = getLessonMeta(nextLessonSlug).fullTitle;
     let foundNext = false;
 
     for (const lesson of realLessons) {
@@ -124,7 +125,7 @@ export const getLearnerCurriculumProgress = cache(
         }
       } else if (!foundNext) {
         nextLessonSlug = slug;
-        nextLessonTitle = lesson.title;
+        nextLessonTitle = getLessonMeta(slug).fullTitle;
         foundNext = true;
       }
 
