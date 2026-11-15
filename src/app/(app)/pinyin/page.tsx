@@ -246,7 +246,7 @@ export default function PinyinFoundationPage() {
           href="/lessons/stage/hsk1-lesson-01"
           className="inline-flex min-h-11 items-center px-5 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 transition-all shadow-sm"
         >
-          Bắt đầu Bài 1 (9 Giai đoạn)
+          Bắt đầu Bài 1 (10 Chặng)
         </Link>
       </div>
     </div>

@@ -161,7 +161,7 @@ export default async function Dashboard() {
                   className="min-h-12 w-full whitespace-normal sm:w-auto"
                 >
                   <Link href={`/lessons/stage/${prog.nextLessonSlug}`}>
-                    Tiếp tục học 9 giai đoạn <ArrowRight />
+                    Tiếp tục bài học (10 chặng) <ArrowRight />
                   </Link>
                 </Button>
               </div>

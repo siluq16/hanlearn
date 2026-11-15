@@ -239,7 +239,7 @@ export function RoadmapUnitAccordion({
                                   }`}
                                 >
                                   {isDone
-                                    ? "Đã hoàn thành 9 giai đoạn"
+                                    ? "Đã hoàn thành 10 chặng"
                                     : lProg?.completedStagesCount
                                       ? `Đang học · Xong ${lProg.completedStagesCount}/10 chặng`
                                       : "Chưa học"}

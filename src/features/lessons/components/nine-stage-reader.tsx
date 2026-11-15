@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  Volume2,
   BookOpen,
   MessageSquare,
   Headphones,
@@ -16,13 +15,11 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  RotateCcw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MandarinAudioButton } from "@/components/mandarin-audio";
-import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
 import { ExerciseEngine } from "@/features/exercises/components/exercise-engine";
 import { saveStageProgress, type StageProgressData } from "@/features/lessons/actions";
 import type { NineStageLessonData } from "@/features/content-library/curriculum-data";
@@ -34,18 +31,17 @@ interface NineStageReaderProps {
 }
 
 export const LESSON_SKILL_GROUPS = [
-  { id: "warmup", label: "1. Khởi động", stageIndices: [0], description: "Khởi động phát âm & từ mở đầu" },
-  { id: "vocab", label: "2. Từ vựng", stageIndices: [1, 2], description: "Học từ mới & bài tập nhận diện" },
-  { id: "grammar", label: "3. Ngữ pháp & Thoại", stageIndices: [3, 4, 5], description: "Cấu trúc ngữ pháp & hội thoại tình huống" },
-  { id: "listen_speak", label: "4. Nghe & Nói", stageIndices: [6], description: "Luyện thính lực & nhại âm chuẩn giọng" },
-  { id: "reading_quiz", label: "5. Đọc & Quiz", stageIndices: [7, 8], description: "Đọc hiểu văn bản & bài kiểm tra đánh giá" },
-  { id: "review", label: "6. Ôn tập", stageIndices: [9], description: "Đưa từ vựng vào chu kỳ nhớ ngắt quãng SRS" },
+  { id: "warmup", label: "Khởi động", stageIndices: [0], description: "Khởi động phát âm & từ mở đầu" },
+  { id: "vocab", label: "Từ vựng", stageIndices: [1, 2], description: "Học từ mới & bài tập nhận diện" },
+  { id: "grammar_dialogue", label: "Ngữ pháp & Hội thoại", stageIndices: [3, 4, 5], description: "Cấu trúc ngữ pháp & hội thoại tình huống" },
+  { id: "listen_speak", label: "Nghe & Nói", stageIndices: [6], description: "Luyện thính lực & nhại âm chuẩn giọng" },
+  { id: "reading_quiz", label: "Đọc & Quiz", stageIndices: [7, 8], description: "Đọc hiểu văn bản & mini quiz đánh giá" },
+  { id: "review", label: "Ôn tập", stageIndices: [9], description: "Đưa từ vựng vào chu kỳ nhớ ngắt quãng SRS" },
 ];
 
 export function NineStageReader({ lesson, initialProgress, userId }: NineStageReaderProps) {
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
-  const { speak, preferredRate } = useMandarinSpeech();
 
   const lessonKey = lesson.slug || lesson.id;
   const storageKey = userId
@@ -140,7 +136,6 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
   ];
 
   const isCurrentStageCompleted = completedStages.includes(currentStageIndex);
-  const isAllStagesCompleted = completedStages.length === stages.length;
 
   // Active skill group computed from current stage index
   const activeGroup =
@@ -290,10 +285,15 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
               <Badge className="text-xs bg-muted text-muted-foreground font-semibold">
                 Chặng {currentStageIndex + 1} / {stages.length}
               </Badge>
-              {isCurrentStageCompleted && (
+              {isCurrentStageCompleted ? (
                 <Badge className="bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 text-[10px] gap-1 font-semibold">
                   <CheckCircle2 className="size-3" />
                   Đã hoàn thành
+                </Badge>
+              ) : (
+                <Badge className="border border-primary/30 bg-primary/5 text-primary text-[10px] gap-1 font-semibold">
+                  <span className="size-1.5 rounded-full bg-primary animate-pulse" />
+                  Đang xem
                 </Badge>
               )}
             </div>
@@ -331,7 +331,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
         </CardHeader>
 
         <CardContent className="p-5 sm:p-6 space-y-6">
-          {/* GIAI ĐOẠN 0: Khởi động (Warmup) */}
+          {/* CHẶNG 1: Khởi động (Warmup) */}
           {currentStage.stage === "0_warmup" && currentStage.warmup_words && (
             <div className="space-y-4">
               <p className="text-xs text-muted-foreground font-medium">
@@ -359,7 +359,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 1: Học từ vựng (Vocab Learn) */}
+          {/* CHẶNG 2: Học từ vựng (Vocab Learn) */}
           {currentStage.stage === "1_vocab_learn" && currentStage.vocabulary && (
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -384,7 +384,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 3: Học ngữ pháp (Grammar Focus) */}
+          {/* CHẶNG 4: Học ngữ pháp (Grammar Focus) */}
           {currentStage.stage === "3_grammar_learn" && currentStage.grammar_points && (
             <div className="space-y-5">
               {currentStage.grammar_points.map((gp) => (
@@ -424,7 +424,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 5: Hội thoại đối đáp (Dialogue) */}
+          {/* CHẶNG 6: Hội thoại đối đáp (Dialogue) */}
           {currentStage.stage === "5_dialogue_interactive" && currentStage.dialogue && (
             <div className="space-y-4">
               <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-between">
@@ -465,7 +465,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 7: Đọc hiểu văn bản (Reading Passage) */}
+          {/* CHẶNG 8: Đọc hiểu văn bản (Reading Passage) */}
           {currentStage.stage === "7_reading_comprehension" && currentStage.passage && (
             <div className="space-y-4">
               <div className="p-5 rounded-2xl border border-border bg-card space-y-3 shadow-xs">
@@ -485,7 +485,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* CÁC CHẶNG TƯƠNG TÁC (Chặng 2, 4, 6, 7, 8) */}
+          {/* CÁC CHẶNG TƯƠNG TÁC (Chặng 3, 5, 7, 8) */}
           {currentStage.exercises && currentStage.exercises.length > 0 && (
             <div className="space-y-4 pt-2">
               <ExerciseEngine
@@ -495,7 +495,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 8: Mini Quiz */}
+          {/* CHẶNG 9: Mini Quiz */}
           {currentStage.stage === "8_mini_quiz" && (
             <div className="text-center p-8 space-y-4 rounded-2xl border border-border bg-card shadow-xs">
               <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-primary/10 text-primary">
@@ -518,7 +518,7 @@ export function NineStageReader({ lesson, initialProgress, userId }: NineStageRe
             </div>
           )}
 
-          {/* GIAI ĐOẠN 9: Ôn tập ngắt quãng (SRS Review) */}
+          {/* CHẶNG 10: Ôn tập ngắt quãng (SRS Review) */}
           {currentStage.stage === "9_srs_review" && (
             <div className="text-center p-8 space-y-4 rounded-2xl border border-border bg-card shadow-xs">
               <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">

@@ -48,7 +48,7 @@ function killTree(pid) {
     } else {
       process.kill(pid, "SIGKILL");
     }
-  } catch {}
+  } catch { }
 }
 
 async function waitForServer(url, timeoutMs = 30000) {
@@ -57,7 +57,7 @@ async function waitForServer(url, timeoutMs = 30000) {
     try {
       const res = await fetch(`${url}/api/health`, { redirect: "manual" });
       if (res.status === 200 || res.status === 401 || res.status === 307) return true;
-    } catch {}
+    } catch { }
     await new Promise((r) => setTimeout(r, 400));
   }
   return false;
@@ -82,7 +82,7 @@ async function runStepWithTimeout(name, page, timeoutMs, stepFn) {
     if (page && !page.isClosed()) {
       try {
         await page.screenshot({ path: path.join(SCREENSHOT_DIR, `FAIL_${name}.png`) });
-      } catch {}
+      } catch { }
     }
     throw err;
   }
@@ -206,6 +206,7 @@ async function main() {
         const isMenuOpen = await switcherMenu.isVisible();
         const hasUnitGroups = (await page.getByText(/Unit 1:/i).count()) > 0;
         record("reader_lesson_switcher_popover_open", isMenuOpen && hasUnitGroups, "Switcher opens showing units & lessons");
+        await page.screenshot({ path: path.join(SCREENSHOT_DIR, "lesson_switcher_dropdown.png") });
 
         // Close switcher
         await page.keyboard.press("Escape");
@@ -235,12 +236,23 @@ async function main() {
         const isStandard1Indexed = subStageText.includes("Chặng 1:");
         record("reader_substages_layer_only", subStageCount === 1 && isStandard1Indexed, `Sub-stage text: ${subStageText}`);
 
-        // Click Group 2 (Từ vựng) to verify dynamic 2-layer switching
+        // Click Group 2 (Từ vựng) to verify dynamic 2-layer switching (stages 1, 2)
         await skillTabs.nth(1).click();
         await page.waitForTimeout(300);
         const vocabSubStages = await page.locator("div.p-3\\.5.sm\\:p-4 button").count();
         const vocabText = await page.locator("div.p-3\\.5.sm\\:p-4 button").first().innerText();
-        record("reader_group2_substages", vocabSubStages === 2 && vocabText.includes("Chặng 2:"), `Group 2 has ${vocabSubStages} sub-stages (${vocabText.trim()})`);
+        record("reader_group2_substages", vocabSubStages === 2 && vocabText.includes("Chặng 2:"), `Group 2 (Từ vựng) has ${vocabSubStages} sub-stages`);
+
+        // Click Group 3 (Ngữ pháp & Hội thoại) to verify 3 sub-stages (stages 3, 4, 5)
+        await skillTabs.nth(2).click();
+        await page.waitForTimeout(300);
+        const grammarSubStages = await page.locator("div.p-3\\.5.sm\\:p-4 button").count();
+        const grammarText = await page.locator("div.p-3\\.5.sm\\:p-4 button").first().innerText();
+        record("reader_group3_substages", grammarSubStages === 3 && grammarText.includes("Chặng 4:"), `Group 3 (Ngữ pháp & Hội thoại) has ${grammarSubStages} sub-stages`);
+
+        // Switch back to Group 1
+        await skillTabs.first().click();
+        await page.waitForTimeout(200);
 
         // 7. Verify NO redundant 10-dot row (0-9)
         const dotRow = page.locator("span:has-text('Toàn bộ 10 chặng:')");
@@ -370,13 +382,13 @@ async function main() {
     console.log("\n>>> Cleaning up resources (closing browser & terminating server tree)...");
     try {
       if (page && !page.isClosed()) await page.close();
-    } catch {}
+    } catch { }
     try {
       if (context) await context.close();
-    } catch {}
+    } catch { }
     try {
       if (browser) await browser.close();
-    } catch {}
+    } catch { }
     if (server && server.pid) {
       killTree(server.pid);
     }

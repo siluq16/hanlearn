@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   XCircle,
   Headphones,
-  Volume2,
   Award,
   Eye,
   EyeOff,
@@ -19,7 +18,6 @@ import {
   SkipForward,
   Maximize2,
   X,
-  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -57,13 +55,13 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   const [questionStatuses, setQuestionStatuses] = useState<Record<number, QuestionStatus>>({
     0: "active",
   });
-  const [userAnswers, setUserAnswers] = useState<Record<number, any>>({});
+  const [userAnswers, setUserAnswers] = useState<Record<number, string | number | number[]>>({});
   const [isAnswerCheckedMap, setIsAnswerCheckedMap] = useState<Record<number, boolean>>({});
   const [scoreMap, setScoreMap] = useState<Record<number, boolean>>({});
   const [isFinished, setIsFinished] = useState(false);
 
   // Audio / Speech
-  const { speak, preferredRate, setPreferredRate } = useMandarinSpeech();
+  const { setPreferredRate } = useMandarinSpeech();
   const [audioSpeed, setAudioSpeed] = useState<0.55 | 1.0>(1.0);
 
   // Global display toggles
@@ -73,41 +71,27 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
   // Mobile passage drawer for Reading Mode
   const [isMobilePassageOpen, setIsMobilePassageOpen] = useState(false);
 
-  // Interactive Sentence Ordering State for current question
-  const [orderedTokenIndices, setOrderedTokenIndices] = useState<number[]>([]);
-
-  // Interactive Matching Pairs State for current question
+  // Interactive Matching Pairs Selection State
   const [selectedLeftIdx, setSelectedLeftIdx] = useState<number | null>(null);
-  const [matchedPairIndices, setMatchedPairIndices] = useState<number[]>([]);
   const [mismatchPair, setMismatchPair] = useState<{ leftIdx: number; rightIdx: number } | null>(null);
-
-  // Fill in the blank / text input state
-  const [typedAnswer, setTypedAnswer] = useState("");
 
   // Dialogue roleplay state
   const [selectedRole, setSelectedRole] = useState<"A" | "B" | "ALL">("A");
 
   const currentQ = questions[currentIndex];
   const isCurrentChecked = !!isAnswerCheckedMap[currentIndex];
-  const currentSelectedChoice = userAnswers[currentIndex] ?? null;
+  const currentSelectedChoice = typeof userAnswers[currentIndex] === "number" ? (userAnswers[currentIndex] as number) : null;
 
-  // Restore question state when currentIndex changes
-  useEffect(() => {
-    if (userAnswers[currentIndex] !== undefined) {
-      if (currentQ?.tokens) {
-        setOrderedTokenIndices(userAnswers[currentIndex] || []);
-      } else if (currentQ?.pairs) {
-        setMatchedPairIndices(userAnswers[currentIndex] || []);
-      } else if (typeof userAnswers[currentIndex] === "string") {
-        setTypedAnswer(userAnswers[currentIndex]);
-      }
-    } else {
-      setOrderedTokenIndices([]);
-      setSelectedLeftIdx(null);
-      setMatchedPairIndices([]);
-      setTypedAnswer("");
-    }
-  }, [currentIndex, currentQ]);
+  // Question-specific derived answer values
+  const orderedTokenIndices: number[] = Array.isArray(userAnswers[currentIndex])
+    ? (userAnswers[currentIndex] as number[])
+    : [];
+  const matchedPairIndices: number[] = Array.isArray(userAnswers[currentIndex])
+    ? (userAnswers[currentIndex] as number[])
+    : [];
+  const typedAnswer: string = typeof userAnswers[currentIndex] === "string"
+    ? (userAnswers[currentIndex] as string)
+    : "";
 
   // Shuffled right column for matching pairs
   const shuffledRightIndices = useMemo(() => {
@@ -191,7 +175,6 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
     if (isCurrentChecked || selectedLeftIdx === null) return;
     if (selectedLeftIdx === rightIdx) {
       const nextMatched = [...matchedPairIndices, selectedLeftIdx];
-      setMatchedPairIndices(nextMatched);
       setSelectedLeftIdx(null);
       setMismatchPair(null);
       setUserAnswers((prev) => ({ ...prev, [currentIndex]: nextMatched }));
@@ -220,19 +203,23 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
     const cleanTarget = cleanForComparison(currentQ.targetText || currentQ.hanzi || currentQ.pinyin);
     const isCorrect =
       cleanUser === cleanTarget ||
-      ((currentQ as any).acceptedAnswers &&
-        Array.isArray((currentQ as any).acceptedAnswers) &&
-        (currentQ as any).acceptedAnswers.some(
-          (alt: string) => cleanUser === cleanForComparison(alt)
-        ));
+      Boolean(
+        currentQ.acceptedAnswers &&
+          Array.isArray(currentQ.acceptedAnswers) &&
+          currentQ.acceptedAnswers.some(
+            (alt: string) => cleanUser === cleanForComparison(alt)
+          )
+      );
 
-    setScoreMap((prev) => ({ ...prev, [currentIndex]: !!isCorrect }));
+    setScoreMap((prev) => ({ ...prev, [currentIndex]: isCorrect }));
     setQuestionStatuses((prev) => ({ ...prev, [currentIndex]: "completed" }));
   };
 
   // Navigation: Jump to Question
   const handleJumpToQuestion = (index: number) => {
     if (index >= 0 && index < totalCount) {
+      setSelectedLeftIdx(null);
+      setMismatchPair(null);
       setCurrentIndex(index);
       setQuestionStatuses((prev) => ({
         ...prev,
@@ -533,6 +520,30 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
         allowJump={true}
       />
 
+      {/* LISTENING MODE: Persistent Shared Audio Player (does not unmount or restart on question jump) */}
+      {mode === "listening_comprehension" && sharedAudioText && (
+        <Card className="border-primary/30 bg-primary/5 shadow-2xs">
+          <CardContent className="p-4 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="size-9 rounded-xl bg-primary/15 text-primary grid place-items-center shrink-0">
+                <Headphones className="size-4.5" />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-xs font-bold text-foreground">
+                  {practiceSet.stimulus?.title || "Đoạn nghe dùng chung"}
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  Nghe kỹ đoạn âm thanh ({audioSpeed}x) để trả lời các câu hỏi liên quan bên dưới
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <MandarinAudioButton text={sharedAudioText} size="sm" />
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* READING MODE: Hybrid Desktop Layout & Mobile Drawer Toggle */}
       {isReadingMode && sharedPassage && (
         <div className="lg:hidden">
@@ -813,7 +824,10 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                             type="button"
                             disabled={isCurrentChecked}
                             onClick={() => {
-                              setOrderedTokenIndices((prev) => prev.filter((_, i) => i !== seq));
+                              setUserAnswers((prev) => ({
+                                ...prev,
+                                [currentIndex]: orderedTokenIndices.filter((_, i) => i !== seq),
+                              }));
                             }}
                             className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-xs transition-transform active:scale-95"
                           >
@@ -833,7 +847,12 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                       {!isCurrentChecked && orderedTokenIndices.length > 0 && (
                         <button
                           type="button"
-                          onClick={() => setOrderedTokenIndices([])}
+                          onClick={() => {
+                            setUserAnswers((prev) => ({
+                              ...prev,
+                              [currentIndex]: [],
+                            }));
+                          }}
                           className="text-xs text-muted-foreground hover:text-foreground underline"
                         >
                           Xóa làm lại
@@ -848,7 +867,12 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                             key={tIdx}
                             type="button"
                             disabled={isCurrentChecked || isPicked}
-                            onClick={() => setOrderedTokenIndices((prev) => [...prev, tIdx])}
+                            onClick={() => {
+                              setUserAnswers((prev) => ({
+                                ...prev,
+                                [currentIndex]: [...orderedTokenIndices, tIdx],
+                              }));
+                            }}
                             className={`px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
                               isPicked
                                 ? "border-dashed border-border/40 text-muted-foreground/30 bg-muted/20 cursor-not-allowed"
@@ -898,7 +922,13 @@ export function PracticePlayer({ practiceSet }: PracticePlayerProps) {
                       type="text"
                       disabled={isCurrentChecked}
                       value={typedAnswer}
-                      onChange={(e) => setTypedAnswer(e.target.value)}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        setUserAnswers((prev) => ({
+                          ...prev,
+                          [currentIndex]: val,
+                        }));
+                      }}
                       onKeyDown={(e) => {
                         if (e.key === "Enter" && !isCurrentChecked) {
                           handleCheckTypedAnswer();

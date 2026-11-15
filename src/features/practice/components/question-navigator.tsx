@@ -1,7 +1,5 @@
 "use client";
 
-import { CheckCircle2, CircleDot, SkipForward } from "lucide-react";
-
 export type QuestionStatus = "unanswered" | "active" | "completed" | "skipped";
 
 interface QuestionNavigatorProps {

@@ -197,7 +197,7 @@ export function LessonReader({ content, vocabulary, grammar, lessonId }: ReaderC
             <div className="flex items-center gap-2">
               <Sparkles className="size-4 text-primary" />
               <p className="text-sm font-bold text-foreground">
-                Đã có Lộ trình Tương tác 9 Giai đoạn (Interactive Curriculum)
+                Đã có Lộ trình Học tương tác 10 Chặng (Interactive Curriculum)
               </p>
             </div>
             <p className="text-xs text-muted-foreground max-w-xl">
@@ -223,7 +223,7 @@ export function LessonReader({ content, vocabulary, grammar, lessonId }: ReaderC
               className="text-xs"
             >
               <Sparkles className="size-3.5 mr-1.5" />
-              Luyện 9 giai đoạn
+              Học 10 chặng
             </Button>
           </div>
         </div>

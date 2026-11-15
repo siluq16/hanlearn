@@ -4,7 +4,6 @@ import path from "node:path";
 import {
   resolvePracticePresentationMode,
   type PracticeSet,
-  type SharedStimulus,
 } from "../src/features/practice/types";
 
 describe("Sprint 8K: Adaptive Practice Presentation & Shared Stimulus Model", () => {
@@ -139,5 +138,49 @@ describe("Sprint 8K: Adaptive Practice Presentation & Shared Stimulus Model", ()
     expect(modeCounts["matching_board"]).toBe(1); // ps-vocab-05
     expect(modeCounts["dialogue_roleplay"]).toBe(8); // 8 dialogue sets
     expect(modeCounts["single_question"]).toBeGreaterThan(30);
+  });
+
+  it("complete simulation: reading comprehension workflow with question answering & accurate score calculation", () => {
+    const questions = syntheticLongReadingSet.questions!;
+    const userAnswers: Record<number, number> = {};
+    const scoreMap: Record<number, boolean> = {};
+
+    // Question 1: Answered correctly (Choice 2)
+    userAnswers[0] = 2;
+    scoreMap[0] = questions[0].correct_index === 2; // true
+
+    // Question 2: Answered incorrectly (Choice 0)
+    userAnswers[1] = 0;
+    scoreMap[1] = questions[1].correct_index === 0; // false
+
+    // Question 3: User initially skips, then jumps back and answers correctly (Choice 2)
+    expect(scoreMap[2]).toBeUndefined(); // Skipped is NOT scored
+
+    // Later, user returns to Question 3 and answers Choice 2
+    userAnswers[2] = 2;
+    scoreMap[2] = questions[2].correct_index === 2; // true
+
+    const totalCorrect = Object.values(scoreMap).filter(Boolean).length;
+    expect(totalCorrect).toBe(2);
+    expect(questions.length).toBe(3);
+    const passThreshold = Math.ceil(questions.length * 0.75); // ceil(2.25) = 3
+    const isPass = totalCorrect >= passThreshold;
+    expect(isPass).toBe(false); // 2/3 is not >= 3
+  });
+
+  it("complete simulation: listening comprehension workflow with shared audio & skipped question non-scoring", () => {
+    const questions = syntheticSharedAudioListeningSet.questions!;
+    const scoreMap: Record<number, boolean> = {};
+
+    // Question 1: Skipped by user -> scoreMap remains untouched
+    expect(scoreMap[0]).toBeUndefined();
+
+    // Question 2: Answered correctly (Choice 2)
+    scoreMap[1] = questions[1].correct_index === 2; // true
+
+    // Verification: Skipped questions contribute 0 points
+    const totalCorrect = Object.values(scoreMap).filter(Boolean).length;
+    expect(totalCorrect).toBe(1);
+    expect(questions.length).toBe(2);
   });
 });

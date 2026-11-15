@@ -6,10 +6,7 @@ import {
   ChevronRight,
   ChevronDown,
   ChevronLeft,
-  CheckCircle2,
   BookOpen,
-  ArrowRight,
-  Sparkles,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,8 +26,8 @@ export function LessonNavHeader({
   currentSlug,
   lessonTitle,
   unitId,
-  completedStagesCount = 0,
-  totalStages = 10,
+  completedStagesCount: _completedStagesCount = 0,
+  totalStages: _totalStages = 10,
 }: LessonNavHeaderProps) {
   const [isSwitcherOpen, setIsSwitcherOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

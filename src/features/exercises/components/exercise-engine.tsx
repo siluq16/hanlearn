@@ -22,10 +22,10 @@ import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
 import { useMandarinRecognition } from "@/hooks/use-mandarin-recognition";
 import type { LibraryExercise, ExerciseOption } from "@/features/content-library/types";
 
-function normalizeEngineExercise(raw: any): LibraryExercise {
-  if (!raw) return raw;
-  const ex = { ...raw };
-  const rawKind = ex.kind || ex.type || "vocab-mcq";
+function normalizeEngineExercise(raw: LibraryExercise | (Record<string, unknown> & { id?: string })): LibraryExercise {
+  if (!raw) return raw as unknown as LibraryExercise;
+  const ex = { ...raw } as Record<string, unknown> & Partial<LibraryExercise>;
+  const rawKind = (ex.kind || ex.type || "vocab-mcq") as string;
   let standardKind = rawKind;
   if (rawKind === "vocab_mcq" || rawKind === "pinyin_mcq") standardKind = "vocab-mcq";
   else if (rawKind === "grammar-mcq" || rawKind === "fill_in_blank") standardKind = "grammar-choice";
@@ -35,26 +35,30 @@ function normalizeEngineExercise(raw: any): LibraryExercise {
   else if (rawKind === "true-false") standardKind = "reading_true_false";
   else if (rawKind === "matching") standardKind = "matching_pairs";
 
-  ex.kind = standardKind;
-  if (!ex.promptVi && ex.prompt) ex.promptVi = ex.prompt;
+  ex.kind = standardKind as LibraryExercise["kind"];
+  if (!ex.id) ex.id = `ex-${Math.random().toString(36).slice(2, 9)}`;
+  if (!ex.promptVi && ex.prompt) ex.promptVi = ex.prompt as string;
 
   if (ex.options && Array.isArray(ex.options) && typeof ex.options[0] === "string") {
     const correctVal = ex.correct_answer ?? ex.options[0];
-    ex.options = ex.options.map((optStr: any, idx: number) => ({
+    ex.options = ex.options.map((optStr: unknown, idx: number) => ({
       id: `opt-${idx + 1}`,
       label: String(optStr),
       isCorrect: String(optStr).trim() === String(correctVal).trim(),
-      explanationVi: ex.explanation,
+      explanationVi: ex.explanation as string | undefined,
     }));
   }
 
-  if (ex.kind === "matching_pairs" && !ex.matchingPairs && ex.pairs) {
-    ex.matchingPairs = ex.pairs.map((p: any, idx: number) => ({
-      leftId: `l-${idx + 1}`,
-      leftLabel: p.left || p.leftLabel || "",
-      rightId: `r-${idx + 1}`,
-      rightLabel: p.right || p.rightLabel || "",
-    }));
+  if (ex.kind === "matching_pairs" && !ex.matchingPairs && ex.pairs && Array.isArray(ex.pairs)) {
+    ex.matchingPairs = ex.pairs.map((p: unknown, idx: number) => {
+      const pairObj = (p && typeof p === "object" ? p : {}) as Record<string, unknown>;
+      return {
+        leftId: `l-${idx + 1}`,
+        leftLabel: String(pairObj.left || pairObj.leftLabel || ""),
+        rightId: `r-${idx + 1}`,
+        rightLabel: String(pairObj.right || pairObj.rightLabel || ""),
+      };
+    });
   }
 
   if (ex.kind === "sentence-order" && !ex.orderTokens) {
@@ -67,7 +71,7 @@ function normalizeEngineExercise(raw: any): LibraryExercise {
     }
   }
 
-  return ex;
+  return ex as LibraryExercise;
 }
 
 interface ExerciseEngineProps {
