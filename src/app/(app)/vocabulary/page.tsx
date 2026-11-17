@@ -2,8 +2,10 @@ import { requireLearner } from "@/features/auth/session";
 import { PageHeading } from "@/components/page-heading";
 import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
 import { getWordUnit } from "@/features/vocabulary/unit-mapping";
-import { getLearnerCurriculumProgress } from "@/features/courses/queries";
-import { getReviewView } from "@/features/review/queries";
+import {
+  getLearnerCurriculumProgress,
+  getLearnerCurriculumSnapshot,
+} from "@/features/courses/queries";
 import {
   VocabularyView,
   type VocabularyViewItem,
@@ -13,23 +15,23 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Từ vựng HSK 1" };
 
 export default async function VocabularyPage() {
-  const { user, supabase } = await requireLearner();
+  await requireLearner();
 
-  const [prog, vocabProgRes, reviewView] = await Promise.all([
+  const [prog, snapshot] = await Promise.all([
     getLearnerCurriculumProgress(),
-    supabase
-      .from("vocabulary_progress")
-      .select("vocabulary_id, mastery_state")
-      .eq("user_id", user.id),
-    getReviewView().catch(() => null),
+    getLearnerCurriculumSnapshot(),
   ]);
 
-  const vocabProgressMap = new Map<string, "not_introduced" | "introduced" | "learning" | "mastered">();
-  if (vocabProgRes.data) {
-    for (const row of vocabProgRes.data) {
-      if (row.vocabulary_id && row.mastery_state) {
-        vocabProgressMap.set(row.vocabulary_id, row.mastery_state as "not_introduced" | "introduced" | "learning" | "mastered");
-      }
+  const vocabProgressMap = new Map<
+    string,
+    "not_introduced" | "introduced" | "learning" | "mastered"
+  >();
+  for (const row of snapshot.vocabularyProgress) {
+    if (row.vocabulary_id && row.mastery_state) {
+      vocabProgressMap.set(
+        row.vocabulary_id,
+        row.mastery_state as "not_introduced" | "introduced" | "learning" | "mastered"
+      );
     }
   }
 
@@ -48,7 +50,7 @@ export default async function VocabularyPage() {
     };
   });
 
-  const dueCount = reviewView?.dueCount || 0;
+  const dueCount = snapshot.dueCount;
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto pb-16">

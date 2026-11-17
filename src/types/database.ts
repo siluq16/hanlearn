@@ -280,6 +280,8 @@ export type Database = {
       };
       get_learner_access: { Args: Record<string, never>; Returns: boolean };
       get_due_review_count: { Args: Record<string, never>; Returns: number };
+      get_learner_curriculum_snapshot: { Args: Record<string, never>; Returns: Json };
+      get_learner_dashboard_snapshot: { Args: Record<string, never>; Returns: Json };
       search_vocabulary: {
         Args: {
           p_syllabus_id: string;

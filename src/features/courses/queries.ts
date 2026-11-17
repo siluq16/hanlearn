@@ -6,6 +6,34 @@ import { HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-d
 import { getLessonMeta } from "@/features/curriculum/unified-metadata";
 import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
 
+export interface LearnerCurriculumSnapshot {
+  stageProgress: Array<{
+    lesson_id: string;
+    current_stage: number;
+    completed_stages: number[];
+  }>;
+  quizAttempts: Array<{
+    lesson_id: string;
+    quiz_id: string;
+    correct_count: number;
+    question_count: number;
+    passed: boolean;
+    submitted_at?: string | null;
+    answers?: unknown;
+  }>;
+  vocabularyProgress: Array<{
+    vocabulary_id: string;
+    mastery_state: string;
+  }>;
+  practiceHistory: Array<{
+    practice_set_id: string;
+    best_score: number;
+    total_questions: number;
+    completed_at: string;
+  }>;
+  dueCount: number;
+}
+
 export interface LearnerProgressOverview {
   courseSlug: string;
   totalLessons: number;
@@ -38,30 +66,169 @@ export interface LearnerProgressOverview {
   >;
 }
 
+const SNAPSHOT_TTL_MS = process.env.VITEST ? 0 : 30_000;
+const userSnapshotCache = new Map<
+  string,
+  { data: LearnerCurriculumSnapshot; expiresAt: number }
+>();
+const inFlightSnapshots = new Map<string, Promise<LearnerCurriculumSnapshot>>();
+const extraInvalidators = new Set<(userId?: string) => void>();
+let snapshotRpcFallbackUntil = 0;
+
+export function registerSnapshotInvalidator(fn: (userId?: string) => void) {
+  extraInvalidators.add(fn);
+}
+
+export function invalidateLearnerSnapshot(userId?: string) {
+  if (userId) {
+    userSnapshotCache.delete(userId);
+    inFlightSnapshots.delete(userId);
+  } else {
+    userSnapshotCache.clear();
+    inFlightSnapshots.clear();
+  }
+  for (const fn of extraInvalidators) {
+    fn(userId);
+  }
+}
+
+export const getLearnerCurriculumSnapshot = cache(
+  async (): Promise<LearnerCurriculumSnapshot> => {
+    const { user, supabase } = await requireLearner();
+    const now = Date.now();
+
+    if (SNAPSHOT_TTL_MS > 0) {
+      const cached = userSnapshotCache.get(user.id);
+      if (cached && cached.expiresAt > now) {
+        return cached.data;
+      }
+      const inFlight = inFlightSnapshots.get(user.id);
+      if (inFlight) {
+        return inFlight;
+      }
+    }
+
+    const fetchPromise = (async (): Promise<LearnerCurriculumSnapshot> => {
+      // 1. Try unified single-roundtrip PostgreSQL RPC first
+      if (typeof supabase.rpc === "function" && Date.now() >= snapshotRpcFallbackUntil) {
+        try {
+          const rpcRes = await supabase.rpc("get_learner_curriculum_snapshot");
+          if (
+            rpcRes &&
+            !rpcRes.error &&
+            rpcRes.data &&
+            typeof rpcRes.data === "object" &&
+            !Array.isArray(rpcRes.data)
+          ) {
+            const payload = rpcRes.data as Record<string, unknown>;
+            const snapshot: LearnerCurriculumSnapshot = {
+              stageProgress: Array.isArray(payload.stage_progress)
+                ? (payload.stage_progress as LearnerCurriculumSnapshot["stageProgress"])
+                : [],
+              quizAttempts: Array.isArray(payload.quiz_attempts)
+                ? (payload.quiz_attempts as LearnerCurriculumSnapshot["quizAttempts"])
+                : [],
+              vocabularyProgress: Array.isArray(payload.vocabulary_progress)
+                ? (payload.vocabulary_progress as LearnerCurriculumSnapshot["vocabularyProgress"])
+                : [],
+              practiceHistory: Array.isArray(payload.practice_history)
+                ? (payload.practice_history as LearnerCurriculumSnapshot["practiceHistory"])
+                : [],
+              dueCount: typeof payload.due_count === "number" ? payload.due_count : 0,
+            };
+            if (SNAPSHOT_TTL_MS > 0) {
+              userSnapshotCache.set(user.id, {
+                data: snapshot,
+                expiresAt: Date.now() + SNAPSHOT_TTL_MS,
+              });
+            }
+            return snapshot;
+          }
+          if (rpcRes?.error && !process.env.VITEST) {
+            snapshotRpcFallbackUntil = Date.now() + 60_000;
+          }
+        } catch {
+          if (!process.env.VITEST) {
+            snapshotRpcFallbackUntil = Date.now() + 60_000;
+          }
+        }
+      }
+
+      // 2. Parallel batch query fallback (unified into the same shared snapshot)
+      const [stageRowsRes, attemptRowsRes, vocabRowsRes, practiceRowsRes, dueRes] =
+        await Promise.all([
+          supabase
+            .from("learner_stage_progress")
+            .select("lesson_id, current_stage, completed_stages")
+            .eq("user_id", user.id),
+          supabase
+            .from("curriculum_quiz_attempts")
+            .select(
+              "lesson_id, quiz_id, correct_count, question_count, passed, submitted_at, answers"
+            )
+            .eq("user_id", user.id)
+            .order("submitted_at", { ascending: false }),
+          supabase
+            .from("vocabulary_progress")
+            .select("vocabulary_id, mastery_state")
+            .eq("user_id", user.id),
+          Promise.resolve(
+            supabase
+              .from("learner_practice_history")
+              .select("practice_set_id, best_score, total_questions, completed_at")
+              .eq("user_id", user.id)
+          ).catch(() => ({ data: null })),
+          typeof supabase.rpc === "function"
+            ? Promise.resolve(supabase.rpc("get_due_review_count")).catch(() => ({
+                data: 0,
+              }))
+            : Promise.resolve({ data: 0 }),
+        ]);
+
+      const snapshot: LearnerCurriculumSnapshot = {
+        stageProgress: (stageRowsRes?.data || []) as LearnerCurriculumSnapshot["stageProgress"],
+        quizAttempts: (attemptRowsRes?.data || []) as LearnerCurriculumSnapshot["quizAttempts"],
+        vocabularyProgress: (vocabRowsRes?.data ||
+          []) as LearnerCurriculumSnapshot["vocabularyProgress"],
+        practiceHistory: (practiceRowsRes?.data ||
+          []) as LearnerCurriculumSnapshot["practiceHistory"],
+        dueCount: typeof dueRes?.data === "number" ? dueRes.data : 0,
+      };
+
+      if (SNAPSHOT_TTL_MS > 0) {
+        userSnapshotCache.set(user.id, {
+          data: snapshot,
+          expiresAt: Date.now() + SNAPSHOT_TTL_MS,
+        });
+      }
+      return snapshot;
+    })();
+
+    if (SNAPSHOT_TTL_MS > 0) {
+      inFlightSnapshots.set(user.id, fetchPromise);
+      fetchPromise.finally(() => {
+        if (inFlightSnapshots.get(user.id) === fetchPromise) {
+          inFlightSnapshots.delete(user.id);
+        }
+      });
+    }
+
+    return fetchPromise;
+  }
+);
+
 export const getLearnerCurriculumProgress = cache(
   async (): Promise<LearnerProgressOverview> => {
-    const { user, supabase } = await requireLearner();
-
-    // Parallel fetch stage progress, quiz attempts, and vocabulary progress
-    const [stageRowsRes, attemptRowsRes, vocabRowsRes] = await Promise.all([
-      supabase
-        .from("learner_stage_progress")
-        .select("lesson_id, current_stage, completed_stages")
-        .eq("user_id", user.id),
-      supabase
-        .from("curriculum_quiz_attempts")
-        .select("lesson_id, quiz_id, correct_count, question_count, passed")
-        .eq("user_id", user.id),
-      supabase
-        .from("vocabulary_progress")
-        .select("vocabulary_id, mastery_state")
-        .eq("user_id", user.id)
-        .neq("mastery_state", "not_introduced"),
+    const [{ user }, snapshot] = await Promise.all([
+      requireLearner(),
+      getLearnerCurriculumSnapshot(),
     ]);
 
-    const stageRows = stageRowsRes.data;
-    const attemptRows = attemptRowsRes.data;
-    const vocabRows = vocabRowsRes.data;
+    const stageRows = snapshot.stageProgress;
+    const attemptRows = snapshot.quizAttempts;
+    const vocabRows = snapshot.vocabularyProgress.filter(
+      (r) => r.mastery_state && r.mastery_state !== "not_introduced"
+    );
 
     const stageMap = new Map<string, { currentStage: number; completedStages: number[] }>();
     if (stageRows) {
@@ -91,9 +258,14 @@ export const getLearnerCurriculumProgress = cache(
     const testAttemptMap = new Map<string, { passed: boolean; bestScore: number }>();
     if (attemptRows) {
       for (const row of attemptRows) {
-        const slug = (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).lesson_id ||
-          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).quiz_id ||
-          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string }).quiz_slug || "";
+        const slug =
+          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string })
+            .lesson_id ||
+          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string })
+            .quiz_id ||
+          (row as unknown as { lesson_id?: string; quiz_id?: string; quiz_slug?: string })
+            .quiz_slug ||
+          "";
         const existing = testAttemptMap.get(slug);
         const score = row.correct_count || 0;
         testAttemptMap.set(slug, {
@@ -122,7 +294,10 @@ export const getLearnerCurriculumProgress = cache(
       const completedCount = prog?.completedStages.length || 0;
       // A lesson is considered completed if 8 or more stages are done (including Mini Quiz)
       const isCompleted = completedCount >= 8 || (prog?.completedStages.includes(8) ?? false);
-      const hasStudiedVocab = isCompleted || (prog?.completedStages.includes(1) ?? false) || (prog?.completedStages.includes(2) ?? false);
+      const hasStudiedVocab =
+        isCompleted ||
+        (prog?.completedStages.includes(1) ?? false) ||
+        (prog?.completedStages.includes(2) ?? false);
 
       if (isCompleted) {
         completedLessonsCount += 1;
@@ -204,7 +379,10 @@ export const getLearnerCurriculumProgress = cache(
       totalUnitTests: 6,
       passedUnitTestsCount,
       totalVocabulary: 300,
-      vocabularyLearnedCount: Math.min(300, Math.max(learnedWordsSet.size, vocabRows?.length || 0)),
+      vocabularyLearnedCount: Math.min(
+        300,
+        Math.max(learnedWordsSet.size, vocabRows?.length || 0)
+      ),
       overallPercent,
       nextLessonSlug,
       nextLessonTitle,

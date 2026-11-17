@@ -1,6 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { requireLearner } from "@/features/auth/session";
+import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 import { settingsSchema } from "./schemas";
 export type SettingsState = { error?: string; success?: boolean };
 export async function saveSettings(
@@ -59,6 +60,7 @@ export async function saveSettings(
     return {
       error: "Chưa lưu được hồ sơ. Kiểm tra quyền truy cập và thử lại.",
     };
+  invalidateLearnerSnapshot(user.id);
   revalidatePath("/", "layout");
   return { success: true };
 }

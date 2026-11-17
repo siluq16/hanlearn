@@ -1,6 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { requireLearner } from "@/features/auth/session";
+import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 import { learningEnabled } from "@/lib/learning";
 import { getReviewView } from "./queries";
 import {
@@ -80,6 +81,7 @@ export async function submitReview(input: unknown): Promise<ReviewResult> {
       JSON.stringify(stored.data) !== JSON.stringify(receipt)
     )
       return failure("RETRY", true, true);
+    invalidateLearnerSnapshot(user.id);
     const view = await getReviewView();
     for (const path of ["/review", "/dashboard", "/vocabulary"])
       revalidatePath(path);

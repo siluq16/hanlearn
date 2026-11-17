@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { requireLearner } from "@/features/auth/session";
+import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 import { getLessonBundle } from "./queries";
 import { PROGRESS_COLUMNS } from "./columns";
 import { progressRowSchema } from "./schemas";
@@ -84,6 +85,7 @@ export async function confirmLessonStudy(input: unknown): Promise<StudyResult> {
         true,
       );
     // Validate identity and timestamps again; receipt.completed never manufactures UI state.
+    invalidateLearnerSnapshot(user.id);
     for (const path of [`/lessons/${lessonId}`, "/roadmap", "/dashboard"])
       revalidatePath(path);
     return {
@@ -142,6 +144,7 @@ export async function saveStageProgress(input: unknown): Promise<{
 
     if (!rpcRes.error && rpcRes.data) {
       const data = rpcRes.data;
+      invalidateLearnerSnapshot(user.id);
       return {
         ok: true,
         progress: {

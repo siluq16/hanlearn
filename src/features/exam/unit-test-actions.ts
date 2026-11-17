@@ -5,6 +5,7 @@ import path from "node:path";
 import { revalidatePath } from "next/cache";
 import { randomUUID } from "node:crypto";
 import { requireLearner } from "@/features/auth/session";
+import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 
 export interface UnitTestQuestion {
   id: string;
@@ -339,6 +340,7 @@ export async function submitUnitTestAction(
     } catch {}
   }
 
+  invalidateLearnerSnapshot(learner?.user?.id);
   revalidatePath("/exam");
   revalidatePath("/roadmap");
   revalidatePath("/dashboard");

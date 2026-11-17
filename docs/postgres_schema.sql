@@ -1,3 +1,6 @@
+-- GENERATED from ordered supabase/migrations. Fresh install only; do not apply twice.
+
+-- Migration: 202611120001_catalog.sql
 -- Fresh baseline only. Requires Supabase auth.users/auth.uid()/roles.
 create schema if not exists private;
 revoke all on schema private from public, anon, authenticated;
@@ -230,6 +233,7 @@ set search_path='' as $$
 $$;
 revoke all on function private.lesson_visible(uuid) from public,anon,authenticated;
 
+-- Migration: 202611120002_srs.sql
 create table public.review_cards (
  id uuid primary key default gen_random_uuid(), user_id uuid not null references auth.users(id),
  vocabulary_id uuid not null references public.vocabulary(id),
@@ -422,6 +426,7 @@ create view public.vocabulary_progress with (security_invoker=true) as
 revoke all on public.vocabulary_progress from public,anon,authenticated;
 grant select on public.vocabulary_progress to authenticated;
 
+-- Migration: 202611120003_quiz.sql
 create table public.lesson_quizzes (
  id uuid primary key default gen_random_uuid(), lesson_id uuid not null unique references public.lessons(id),
  revision integer not null default 1 check(revision>0), title text not null,
@@ -639,6 +644,7 @@ create function public.submit_quiz(p_attempt_id uuid,p_answers jsonb) returns js
 revoke all on function public.submit_quiz(uuid,jsonb) from public,anon,authenticated;
 grant execute on function public.submit_quiz(uuid,jsonb) to authenticated;
 
+-- Migration: 202611120004_plans_sessions.sql
 create table public.study_plans (
  id uuid primary key default gen_random_uuid(), user_id uuid not null references auth.users(id),
  syllabus_id uuid not null references public.syllabus_versions(id), created_at timestamptz not null default now(),
@@ -845,6 +851,7 @@ as $$ select private.log_manual_session(p_source,p_started_at,p_ended_at,p_idemp
 revoke all on function public.log_manual_session(text,timestamptz,timestamptz,uuid) from public,anon,authenticated;
 grant execute on function public.log_manual_session(text,timestamptz,timestamptz,uuid) to authenticated;
 
+-- Migration: 202611120005_learner_access.sql
 -- Sprint 1 Auth bootstrap: distinguish an authorized learner without a profile
 -- from an authenticated outsider without exposing private through PostgREST.
 -- Read-only; reuses the existing verified-UUID allowlist predicate unchanged.
@@ -854,6 +861,7 @@ as $$ select private.is_learner() $$;
 revoke all on function public.get_learner_access() from public,anon,authenticated;
 grant execute on function public.get_learner_access() to authenticated;
 
+-- Migration: 202611120006_catalog_queries.sql
 -- Read-only Sprint 1 query RPCs. SECURITY INVOKER preserves all existing RLS.
 -- No content/answers/private rows are exposed and no domain transitions change.
 create function public.get_due_review_count() returns bigint
@@ -892,6 +900,8 @@ begin
 end $$;
 revoke all on function public.search_vocabulary(uuid,text,integer,integer,integer) from public,anon,authenticated;
 grant execute on function public.search_vocabulary(uuid,text,integer,integer,integer) to authenticated;
+
+-- Migration: 202611140007_learner_stage_progress.sql
 create table if not exists public.learner_stage_progress (
   user_id uuid not null references auth.users(id) on delete cascade,
   lesson_id text not null,
@@ -1088,6 +1098,8 @@ $$;
 
 revoke all on function public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) from public, anon;
 grant execute on function public.submit_curriculum_quiz_attempt(uuid, integer, integer, boolean, jsonb) to authenticated;
+
+-- Migration: 202611150008_practice_history.sql
 -- Migration: 202611150008_practice_history.sql
 -- Description: Learner practice history table with user isolation and RLS
 
@@ -1119,6 +1131,8 @@ create policy learner_practice_history_update on public.learner_practice_history
   for update to authenticated
   using ((select private.is_learner()) and user_id = (select auth.uid()))
   with check ((select private.is_learner()) and user_id = (select auth.uid()));
+
+-- Migration: 202611150009_curriculum_quiz_server_grading.sql
 -- Migration: 202611150009_curriculum_quiz_server_grading.sql
 -- Description: Enforce server clock started_at and server-side authoritative grading in PostgreSQL
 
@@ -2707,3 +2721,136 @@ $$;
 
 revoke all on function public.submit_curriculum_quiz_attempt(uuid, jsonb) from public, anon;
 grant execute on function public.submit_curriculum_quiz_attempt(uuid, jsonb) to authenticated;
+
+-- Migration: 202611160010_learner_snapshot_rpc.sql
+-- Migration: 202611160010_learner_snapshot_rpc.sql
+-- Description: Read-only single-roundtrip learner snapshot RPCs for high-performance navigation.
+-- SECURITY INVOKER preserves all existing RLS policies and user isolation invariants.
+
+create or replace function public.get_learner_curriculum_snapshot()
+returns jsonb
+language sql
+stable
+security invoker
+set search_path = ''
+as $$
+  select jsonb_build_object(
+    'stage_progress', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'lesson_id', s.lesson_id,
+        'current_stage', s.current_stage,
+        'completed_stages', s.completed_stages
+      ))
+      from public.learner_stage_progress s
+      where s.user_id = (select auth.uid())
+    ), '[]'::jsonb),
+    'quiz_attempts', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'lesson_id', q.lesson_id,
+        'quiz_id', q.quiz_id,
+        'correct_count', q.correct_count,
+        'question_count', q.question_count,
+        'passed', q.passed,
+        'submitted_at', q.submitted_at,
+        'answers', q.answers
+      ))
+      from (
+        select lesson_id, quiz_id, correct_count, question_count, passed, submitted_at, answers
+        from public.curriculum_quiz_attempts
+        where user_id = (select auth.uid())
+        order by submitted_at desc nulls last
+      ) q
+    ), '[]'::jsonb),
+    'vocabulary_progress', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'vocabulary_id', vp.vocabulary_id,
+        'mastery_state', vp.mastery_state
+      ))
+      from public.vocabulary_progress vp
+      where vp.user_id = (select auth.uid())
+    ), '[]'::jsonb),
+    'practice_history', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'practice_set_id', ph.practice_set_id,
+        'best_score', ph.best_score,
+        'total_questions', ph.total_questions,
+        'completed_at', ph.completed_at
+      ))
+      from public.learner_practice_history ph
+      where ph.user_id = (select auth.uid())
+    ), '[]'::jsonb),
+    'due_count', coalesce((select public.get_due_review_count()), 0)
+  );
+$$;
+
+revoke all on function public.get_learner_curriculum_snapshot() from public, anon, authenticated;
+grant execute on function public.get_learner_curriculum_snapshot() to authenticated;
+
+create or replace function public.get_learner_dashboard_snapshot()
+returns jsonb
+language sql
+stable
+security invoker
+set search_path = ''
+as $$
+  select jsonb_build_object(
+    'profile', (
+      select jsonb_build_object(
+        'id', p.id,
+        'display_name', p.display_name,
+        'timezone', p.timezone,
+        'daily_goal_minutes', p.daily_goal_minutes,
+        'baseline_hsk_level', p.baseline_hsk_level,
+        'target_hsk_level', p.target_hsk_level,
+        'preferred_syllabus_id', p.preferred_syllabus_id,
+        'created_at', p.created_at
+      )
+      from public.profiles p
+      where p.id = (select auth.uid())
+    ),
+    'lesson_progress', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'user_id', lp.user_id,
+        'lesson_id', lp.lesson_id,
+        'studied_at', lp.studied_at,
+        'completed_at', lp.completed_at
+      ) order by lp.lesson_id)
+      from public.lesson_progress lp
+      where lp.user_id = (select auth.uid())
+    ), '[]'::jsonb),
+    'review_cards', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'id', rc.id,
+        'vocabulary_id', rc.vocabulary_id
+      ) order by rc.id)
+      from public.review_cards rc
+      where rc.user_id = (select auth.uid())
+        and rc.archived_at is null
+    ), '[]'::jsonb),
+    'due_count', coalesce((select public.get_due_review_count()), 0),
+    'study_sessions', coalesce((
+      select jsonb_agg(to_jsonb(ss))
+      from (
+        select id, user_id, source, evidence, started_at, ended_at
+        from public.study_sessions
+        where user_id = (select auth.uid())
+        order by started_at desc
+        limit 5
+      ) ss
+    ), '[]'::jsonb),
+    'quiz_attempts', coalesce((
+      select jsonb_agg(to_jsonb(qa))
+      from (
+        select id, quiz_id, started_at, submitted_at, correct_count, question_count, passed
+        from public.quiz_attempts
+        where user_id = (select auth.uid())
+          and submitted_at is not null
+        order by submitted_at desc
+        limit 5
+      ) qa
+    ), '[]'::jsonb)
+  );
+$$;
+
+revoke all on function public.get_learner_dashboard_snapshot() from public, anon, authenticated;
+grant execute on function public.get_learner_dashboard_snapshot() to authenticated;

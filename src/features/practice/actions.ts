@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { randomUUID } from "node:crypto";
 import { requireLearner } from "@/features/auth/session";
+import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 
 export async function savePracticeAttempt(
   setId: string,
@@ -76,6 +77,7 @@ export async function savePracticeAttempt(
       }
     }
 
+    invalidateLearnerSnapshot(user.id);
     revalidatePath("/practice");
     revalidatePath("/dashboard");
     return { ok: true, dbPersisted };

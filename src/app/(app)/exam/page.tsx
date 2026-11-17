@@ -4,27 +4,26 @@ import { PageHeading } from "@/components/page-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { requireLearner } from "@/features/auth/session";
-import { getLearnerCurriculumProgress } from "@/features/courses/queries";
+import {
+  getLearnerCurriculumProgress,
+  getLearnerCurriculumSnapshot,
+} from "@/features/courses/queries";
 import { UNIFIED_UNITS, getUnitMeta } from "@/features/curriculum/unified-metadata";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Kiểm tra HSK 1" };
 
 export default async function ExamOverviewPage() {
-  const { user, supabase } = await requireLearner();
+  await requireLearner();
 
-  // Parallel fetch curriculum progress and mock exam attempts
-  const [prog, mockAttemptsRes] = await Promise.all([
+  const [prog, snapshot] = await Promise.all([
     getLearnerCurriculumProgress(),
-    supabase
-      .from("curriculum_quiz_attempts")
-      .select("correct_count, question_count, passed, submitted_at, answers")
-      .eq("user_id", user.id)
-      .eq("lesson_id", "exam-hsk1-official-mock")
-      .order("submitted_at", { ascending: false }),
+    getLearnerCurriculumSnapshot(),
   ]);
 
-  const mockAttempts = mockAttemptsRes.data;
+  const mockAttempts = snapshot.quizAttempts.filter(
+    (a) => a.lesson_id === "exam-hsk1-official-mock"
+  );
 
   const latestMock = mockAttempts?.[0];
   const bestMockScore = mockAttempts?.reduce((max, cur) => {

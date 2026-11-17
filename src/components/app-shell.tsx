@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   BookOpen,
   LayoutDashboard,
@@ -44,6 +44,18 @@ const mobileSecondaryLinks = [
   { href: "/exam", label: "Kiểm tra HSK 1", icon: FileCheck2 },
   { href: "/settings", label: "Cài đặt", icon: Settings },
 ];
+
+// Priority order for background idle prewarming
+const PREWARM_PRIORITY_ROUTES = [
+  "/roadmap",
+  "/practice",
+  "/vocabulary",
+  "/exam",
+  "/review",
+  "/dashboard",
+  "/settings",
+];
+
 export function AppShell({
   children,
   displayName,
@@ -52,14 +64,101 @@ export function AppShell({
   displayName: string;
 }) {
   const path = usePathname();
+  const router = useRouter();
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
+  const [prevPath, setPrevPath] = useState(path);
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+  const prewarmedRef = useRef<Set<string>>(new Set());
+
+  if (prevPath !== path) {
+    setPrevPath(path);
+    setPendingHref(null);
+  }
+
+  // Pointer Intent Prefetch: immediately warm target route on hover / focus / touchstart
+  const handleIntentPrefetch = useCallback(
+    (href: string) => {
+      if (path.startsWith(href)) return;
+      prewarmedRef.current.add(href);
+      router.prefetch(href);
+    },
+    [path, router],
+  );
+
+  // Idle Prewarming: staggeredly prefetch core sibling routes when browser is idle
+  useEffect(() => {
+    let cancelled = false;
+    const timers: Array<ReturnType<typeof setTimeout>> = [];
+
+    const runPrewarm = () => {
+      if (cancelled) return;
+      const targets = PREWARM_PRIORITY_ROUTES.filter(
+        (href) => !path.startsWith(href) && !prewarmedRef.current.has(href),
+      );
+      targets.forEach((href, index) => {
+        const timer = setTimeout(() => {
+          if (cancelled) return;
+          prewarmedRef.current.add(href);
+          router.prefetch(href);
+        }, index * 120);
+        timers.push(timer);
+      });
+    };
+
+    const win = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+
+    let idleId: number | null = null;
+    if (typeof win.requestIdleCallback === "function") {
+      idleId = win.requestIdleCallback(runPrewarm, { timeout: 1200 });
+    } else {
+      const fallbackTimer = setTimeout(runPrewarm, 250);
+      timers.push(fallbackTimer);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== null && typeof win.cancelIdleCallback === "function") {
+        win.cancelIdleCallback(idleId);
+      }
+      for (const t of timers) {
+        clearTimeout(t);
+      }
+    };
+  }, [path, router]);
+
+  function handleNavClick(href: string) {
+    if (!path.startsWith(href)) {
+      setPendingHref(href);
+    }
+  }
+
   return (
     <div className="min-h-screen">
+      {pendingHref && (
+        <div
+          className="fixed top-0 left-0 right-0 z-50 h-1 bg-primary/20 overflow-hidden"
+          role="progressbar"
+          aria-label="Đang chuyển trang"
+        >
+          <div className="h-full bg-primary animate-pulse w-full" />
+        </div>
+      )}
       <a href="#main-content" className="skip-link">
         Đến nội dung chính
       </a>
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-border bg-card lg:flex">
-        <Link href="/dashboard" className="flex h-24 items-center gap-3 px-7">
+        <Link
+          href="/dashboard"
+          prefetch={true}
+          onMouseEnter={() => handleIntentPrefetch("/dashboard")}
+          onFocus={() => handleIntentPrefetch("/dashboard")}
+          onTouchStart={() => handleIntentPrefetch("/dashboard")}
+          onClick={() => handleNavClick("/dashboard")}
+          className="flex h-24 items-center gap-3 px-7"
+        >
           <span
             className="hanzi grid size-10 place-items-center rounded-xl bg-primary text-2xl text-white"
             aria-hidden="true"
@@ -77,20 +176,36 @@ export function AppShell({
           Không gian của bạn
         </p>
         <nav aria-label="Điều hướng chính" className="space-y-2 px-4">
-          {links.map(({ href, label, icon: Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              aria-current={path.startsWith(href) ? "page" : undefined}
-              className={cn(
-                "flex min-h-12 items-center gap-3 rounded-xl px-4 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
-                path.startsWith(href) && "bg-secondary text-primary",
-              )}
-            >
-              <Icon size={19} aria-hidden="true" />
-              {label}
-            </Link>
-          ))}
+          {links.map(({ href, label, icon: Icon }) => {
+            const isCurrent = path.startsWith(href);
+            const isPending = pendingHref === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                prefetch={true}
+                onMouseEnter={() => handleIntentPrefetch(href)}
+                onFocus={() => handleIntentPrefetch(href)}
+                onTouchStart={() => handleIntentPrefetch(href)}
+                onClick={() => handleNavClick(href)}
+                aria-current={isCurrent ? "page" : undefined}
+                className={cn(
+                  "flex min-h-12 items-center gap-3 rounded-xl px-4 text-sm font-medium transition-colors",
+                  isCurrent
+                    ? "bg-secondary text-primary font-semibold"
+                    : isPending
+                      ? "bg-secondary/70 text-primary font-semibold"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                )}
+              >
+                <Icon size={19} aria-hidden="true" />
+                <span>{label}</span>
+                {isPending && (
+                  <span className="ml-auto size-2 rounded-full bg-primary animate-ping" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
         <div className="mx-5 mb-6 mt-auto rounded-2xl bg-secondary p-5">
           <p className="text-sm font-semibold">Từng chút, mỗi ngày.</p>
@@ -99,6 +214,11 @@ export function AppShell({
           </p>
           <Link
             href="/roadmap"
+            prefetch={true}
+            onMouseEnter={() => handleIntentPrefetch("/roadmap")}
+            onFocus={() => handleIntentPrefetch("/roadmap")}
+            onTouchStart={() => handleIntentPrefetch("/roadmap")}
+            onClick={() => handleNavClick("/roadmap")}
             className="mt-4 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-primary"
           >
             Xem lộ trình <ArrowUpRight size={14} />
@@ -109,6 +229,9 @@ export function AppShell({
         <header className="flex min-h-20 items-center justify-between gap-3 border-b border-border bg-card/90 px-5 sm:px-9">
           <Link
             href="/dashboard"
+            prefetch={true}
+            onTouchStart={() => handleIntentPrefetch("/dashboard")}
+            onClick={() => handleNavClick("/dashboard")}
             className="flex items-center gap-2 font-bold lg:hidden"
           >
             <span className="hanzi text-2xl text-primary" aria-hidden="true">
@@ -134,6 +257,10 @@ export function AppShell({
               <div className="absolute right-0 z-40 mt-2 w-56 rounded-xl border bg-card p-2 shadow-lg">
                 <Link
                   href="/settings"
+                  prefetch={true}
+                  onMouseEnter={() => handleIntentPrefetch("/settings")}
+                  onTouchStart={() => handleIntentPrefetch("/settings")}
+                  onClick={() => handleNavClick("/settings")}
                   className="flex min-h-11 items-center gap-2 rounded-lg px-3 text-sm hover:bg-muted"
                 >
                   <Settings size={16} />
@@ -179,20 +306,37 @@ export function AppShell({
             </div>
 
             <div className="space-y-1">
-              {mobileSecondaryLinks.map(({ href, label, icon: Icon }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setIsMoreMenuOpen(false)}
-                  className={cn(
-                    "flex min-h-12 items-center gap-3 rounded-xl px-3.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors",
-                    path.startsWith(href) && "bg-secondary text-primary font-semibold",
-                  )}
-                >
-                  <Icon size={18} aria-hidden="true" />
-                  <span>{label}</span>
-                </Link>
-              ))}
+              {mobileSecondaryLinks.map(({ href, label, icon: Icon }) => {
+                const isCurrent = path.startsWith(href);
+                const isPending = pendingHref === href;
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    prefetch={true}
+                    onMouseEnter={() => handleIntentPrefetch(href)}
+                    onTouchStart={() => handleIntentPrefetch(href)}
+                    onClick={() => {
+                      setIsMoreMenuOpen(false);
+                      handleNavClick(href);
+                    }}
+                    className={cn(
+                      "flex min-h-12 items-center gap-3 rounded-xl px-3.5 text-sm font-medium transition-colors",
+                      isCurrent
+                        ? "bg-secondary text-primary font-semibold"
+                        : isPending
+                          ? "bg-secondary/70 text-primary font-semibold"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                    )}
+                  >
+                    <Icon size={18} aria-hidden="true" />
+                    <span>{label}</span>
+                    {isPending && (
+                      <span className="ml-auto size-2 rounded-full bg-primary animate-ping" />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="pt-2 border-t border-border">
@@ -215,24 +359,43 @@ export function AppShell({
         aria-label="Điều hướng di động"
         className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-border bg-card/95 backdrop-blur-md px-1 pb-[env(safe-area-inset-bottom)] lg:hidden shadow-lg"
       >
-        {mobilePrimaryLinks.map(({ href, label, icon: Icon }) => (
-          <Link
-            key={href}
-            href={href}
-            aria-current={path.startsWith(href) ? "page" : undefined}
-            className={cn(
-              "flex min-h-16 flex-col items-center justify-center gap-1 py-1 text-[11px] font-medium transition-colors",
-              path.startsWith(href) ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            <Icon size={19} aria-hidden="true" />
-            <span className="truncate w-full text-center px-0.5">{label}</span>
-          </Link>
-        ))}
+        {mobilePrimaryLinks.map(({ href, label, icon: Icon }) => {
+          const isCurrent = path.startsWith(href);
+          const isPending = pendingHref === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              prefetch={true}
+              onMouseEnter={() => handleIntentPrefetch(href)}
+              onFocus={() => handleIntentPrefetch(href)}
+              onTouchStart={() => handleIntentPrefetch(href)}
+              onClick={() => handleNavClick(href)}
+              aria-current={isCurrent ? "page" : undefined}
+              className={cn(
+                "flex min-h-16 flex-col items-center justify-center gap-1 py-1 text-[11px] font-medium transition-colors",
+                isCurrent
+                  ? "text-primary font-bold"
+                  : isPending
+                    ? "text-primary font-semibold animate-pulse"
+                    : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              <Icon size={19} aria-hidden="true" />
+              <span className="truncate w-full text-center px-0.5">{label}</span>
+            </Link>
+          );
+        })}
 
         {/* More Tab */}
         <button
           type="button"
+          onTouchStart={() => {
+            mobileSecondaryLinks.forEach((l) => handleIntentPrefetch(l.href));
+          }}
+          onMouseEnter={() => {
+            mobileSecondaryLinks.forEach((l) => handleIntentPrefetch(l.href));
+          }}
           onClick={() => setIsMoreMenuOpen(true)}
           className={cn(
             "flex min-h-16 flex-col items-center justify-center gap-1 py-1 text-[11px] font-medium transition-colors",

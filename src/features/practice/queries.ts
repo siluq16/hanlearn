@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { cache } from "react";
 import { requireLearner } from "@/features/auth/session";
+import { getLearnerCurriculumSnapshot } from "@/features/courses/queries";
 import type { PracticeSet, PracticeSkill } from "./types";
 
 interface PracticeBankFile {
@@ -48,30 +49,22 @@ export const getPracticeSetById = cache(
 export const getLearnerPracticeHistory = cache(
   async (): Promise<Record<string, { bestScore: number; total: number; completedAt: string }>> => {
     try {
-      const { user, supabase } = await requireLearner();
+      const [{ user }, snapshot] = await Promise.all([
+        requireLearner(),
+        getLearnerCurriculumSnapshot(),
+      ]);
       const result: Record<string, { bestScore: number; total: number; completedAt: string }> = {};
 
-      // 1. Fetch from DB table
-      try {
-        const { data: dbRows } = await supabase
-          .from("learner_practice_history")
-          .select("practice_set_id, best_score, total_questions, completed_at")
-          .eq("user_id", user.id);
-
-        if (dbRows) {
-          for (const row of dbRows) {
-            result[row.practice_set_id] = {
-              bestScore: row.best_score,
-              total: row.total_questions,
-              completedAt: row.completed_at,
-            };
-          }
-        }
-      } catch {
-        // Fallback to user_metadata
+      // 1. Read from unified curriculum snapshot
+      for (const row of snapshot.practiceHistory) {
+        result[row.practice_set_id] = {
+          bestScore: row.best_score,
+          total: row.total_questions,
+          completedAt: row.completed_at,
+        };
       }
 
-      // 2. Merge user_metadata
+      // 2. Merge user_metadata fallback
       const meta = user.user_metadata || {};
       const metaHistory = (meta["practice_history"] as Record<
         string,
