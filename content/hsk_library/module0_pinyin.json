@@ -1,7 +1,7 @@
 {
   "id": "module-0-pinyin-foundation",
   "title": "Module 0: Ngữ âm và Phát âm Pinyin Tiếng Trung Nền tảng",
-  "description": "Hệ thống toàn diện về Thanh mẫu (Initials), Vận mẫu (Finals), 4 Thanh điệu và quy tắc biến điệu quan trọng cho người mới bắt đầu.",
+  "description": "Hệ thống toàn diện về 21 Thanh mẫu (Initials), 36 Vận mẫu (Finals), 4 Thanh điệu và quy tắc biến điệu & chính tả Pinyin quan trọng cho người mới bắt đầu.",
   "hsk_level": 1,
   "sections": [
     {
@@ -9,33 +9,33 @@
       "title": "21 Thanh mẫu (Phụ âm đầu - Shengmu)",
       "groups": [
         {
-          "name": "Âm môi",
+          "name": "Âm hai môi & môi răng",
           "initials": [
             "b",
             "p",
             "m",
             "f"
           ],
-          "description": "b (pô), p (bật hơi), m (mô), f (phô)"
+          "description": "b (như p không bật hơi: pô), p (p bật hơi mạnh: phô), m (mô), f (phô). Lưu ý: phiên âm Việt chỉ mang tính gợi ý vị trí cấu âm."
         },
         {
-          "name": "Âm đầu lưỡi",
+          "name": "Âm đầu lưỡi giữa",
           "initials": [
             "d",
             "t",
             "n",
             "l"
           ],
-          "description": "d (tơ), t (thờ bật hơi), n (nơ), l (lơ)"
+          "description": "d (như t tiếng Việt: tơ), t (như th bật hơi mạnh: thơ), n (nơ), l (lơ)"
         },
         {
-          "name": "Âm gốc lưỡi",
+          "name": "Âm gốc lưỡi (cuống lưỡi)",
           "initials": [
             "g",
             "k",
             "h"
           ],
-          "description": "g (cơ), k (khờ bật hơi), h (hơ/khờ nhẹ)"
+          "description": "g (như c/k tiếng Việt: cơ), k (kh bật hơi mạnh: khơ), h (hơ/khờ nhẹ ở cuống họng)"
         },
         {
           "name": "Âm mặt lưỡi",
@@ -44,26 +44,26 @@
             "q",
             "x"
           ],
-          "description": "j (chi), q (si bật hơi), x (xi nhẹ)"
+          "description": "j (chi mặt lưỡi phẳng, không bật hơi), q (chi bật hơi mạnh, đầu lưỡi chạm hàm dưới), x (xi nhẹ mặt lưỡi)"
         },
         {
-          "name": "Âm đầu lưỡi trước",
+          "name": "Âm đầu lưỡi trước (thẳng lưỡi)",
           "initials": [
             "z",
             "c",
             "s"
           ],
-          "description": "z (chơ thẳng lưỡi), c (bật hơi xì), s (xơ)"
+          "description": "z (chơ đầu lưỡi thẳng chạm mặt sau răng cửa, không bật hơi), c (chơ thẳng lưỡi bật hơi mạnh), s (xơ nhẹ không uốn lưỡi)"
         },
         {
-          "name": "Âm uốn lưỡi (cuốn lưỡi)",
+          "name": "Âm đầu lưỡi sau (uốn lưỡi / cong lưỡi)",
           "initials": [
             "zh",
             "ch",
             "sh",
             "r"
           ],
-          "description": "zh (trưa), ch (trưa bật hơi), sh (sưa), r (rơ)"
+          "description": "zh (trưa uốn cong đầu lưỡi lên ngạc cứng, không bật hơi), ch (trưa cong lưỡi bật hơi mạnh), sh (sưa cong lưỡi), r (rơ cong lưỡi rung nhẹ)"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "title": "36 Vận mẫu (Nguyên âm & Vần - Yunmu)",
       "groups": [
         {
-          "name": "Vận mẫu đơn",
+          "name": "6 Vận mẫu đơn",
           "finals": [
             "a",
             "o",
@@ -83,7 +83,7 @@
           ]
         },
         {
-          "name": "Vận mẫu kép",
+          "name": "9 Vận mẫu kép & uốn lưỡi",
           "finals": [
             "ai",
             "ei",
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "name": "Vận mẫu mũi trước (-n)",
+          "name": "5 Vận mẫu mũi trước (-n)",
           "finals": [
             "an",
             "en",
@@ -107,12 +107,29 @@
           ]
         },
         {
-          "name": "Vận mẫu mũi sau (-ng)",
+          "name": "4 Vận mẫu mũi sau (-ng)",
           "finals": [
             "ang",
             "eng",
             "ing",
             "ong"
+          ]
+        },
+        {
+          "name": "12 Vận mẫu ghép có giới âm (i-, u-, ü-)",
+          "finals": [
+            "ia",
+            "iao",
+            "ian",
+            "iang",
+            "iong",
+            "ua",
+            "uo",
+            "uai",
+            "uan",
+            "uang",
+            "ueng",
+            "üan"
           ]
         }
       ]
@@ -125,57 +142,62 @@
           "tone": 1,
           "symbol": "¯ (55)",
           "name": "Thanh 1 (Âm Bình)",
-          "description": "Độ cao 5-5, cao và ngân đều phẳng (mā)",
+          "description": "Độ cao 5-5, cao và ngân đều phẳng (妈 mā)",
           "pitch": "Cao phẳng"
         },
         {
           "tone": 2,
           "symbol": "ˊ (35)",
           "name": "Thanh 2 (Dương Bình)",
-          "description": "Độ cao 3-5, vút lên như dấu sắc tiếng Việt (má)",
+          "description": "Độ cao 3-5, đi từ trung bình vút lên cao (麻 má)",
           "pitch": "Lên cao"
         },
         {
           "tone": 3,
           "symbol": "ˇ (214)",
           "name": "Thanh 3 (Thượng Thanh)",
-          "description": "Độ cao 2-1-4, hạ xuống thấp rồi hơi vút lên (mǎ)",
-          "pitch": "Xuống rồi lên"
+          "description": "Độ cao 2-1-4, hạ xuống thấp rồi vút lên; khi đi trước thanh 1, 2, 4 chỉ đọc nửa thanh 3 trầm thấp (马 mǎ)",
+          "pitch": "Trầm xuống rồi lên"
         },
         {
           "tone": 4,
           "symbol": "ˋ (51)",
           "name": "Thanh 4 (Khứ Thanh)",
-          "description": "Độ cao 5-1, dứt khoát hạ nhanh từ đỉnh xuống đáy (mà)",
-          "pitch": "Rơi mạnh"
+          "description": "Độ cao 5-1, dứt khoát hạ nhanh từ đỉnh xuống đáy (骂 mà)",
+          "pitch": "Rơi dứt khoát"
         },
         {
           "tone": 0,
           "symbol": "Không dấu",
           "name": "Thanh nhẹ (Khinh thanh)",
-          "description": "Phát âm nhẹ, ngắn, nhanh (ma, ba, de)",
+          "description": "Phát âm nhẹ, ngắn, nhanh, độ cao phụ thuộc vào âm tiết đứng trước (吗 ma, 爸爸 bàba, 的 de)",
           "pitch": "Nhẹ, ngắn"
         }
       ]
     },
     {
       "id": "tone_sandhi",
-      "title": "Các quy tắc biến điệu bắt buộc (Tone Sandhi)",
+      "title": "Các quy tắc Biến điệu & Chính tả Pinyin bắt buộc",
       "rules": [
         {
           "name": "Biến điệu hai thanh 3 đi liền nhau",
-          "rule": "3 + 3 -> 2 + 3",
-          "example": "nǐ + hǎo -> ní hǎo (你好), měi + hǎo -> méi hǎo (美好)"
+          "rule": "Thanh 3 + Thanh 3 -> Thanh 2 + Thanh 3 (khi phát âm thực tế; chữ viết Pinyin từ điển vẫn giữ nguyên dấu thanh 3)",
+          "example": "nǐ + hǎo -> đọc là ní hǎo (你好), hěn + hǎo -> đọc là hén hǎo (很好)"
         },
         {
           "name": "Biến điệu chữ '不' (bù)",
-          "rule": "bù + thanh 4 -> bú + thanh 4; giữ bù trước thanh 1, 2, 3",
-          "example": "bù + shì -> bú shì (不是), bù + yào -> bú yào (不要)"
+          "rule": "bù + Thanh 4 -> đọc là bú + Thanh 4; giữ nguyên bù trước Thanh 1, 2, 3",
+          "example": "bù + shì -> bú shì (不是), bù + kèqi -> bú kèqi (不客气); nhưng bù hǎo (不好), bù chī (不吃)"
         },
         {
           "name": "Biến điệu chữ '一' (yī)",
-          "rule": "yī + thanh 4 -> yí + thanh 4; yī + thanh 1,2,3 -> yì + thanh 1,2,3; đứng một mình đọc yī",
-          "example": "yī + gè -> yí gè (一个), yī + tiān -> yì tiān (一天)"
+          "rule": "yī + Thanh 4 -> yí + Thanh 4; yī + Thanh 1, 2, 3 -> yì + Thanh 1, 2, 3; đếm số thứ tự hoặc đứng cuối đọc yī",
+          "example": "yī + gè -> yí gè (一个), yī + tiān -> yì tiān (一天), yī + nián -> yì nián (一年), dì-yī (第一)"
+        },
+        {
+          "name": "Quy tắc viết nguyên âm tròn môi 'ü' sau j, q, x, y",
+          "rule": "Khi ü (hoặc üe, üan, ün) kết hợp với j, q, x, y thì bỏ hai dấu chấm trên đầu (viết là u nhưng vẫn đọc tròn môi là ü); sau n và l vẫn giữ nguyên dấu hai chấm (nǚ, lǜ)",
+          "example": "q + ü -> qù (去 - đi), x + üe -> xué (学 - học), y + ü -> yǔ (语 - ngôn ngữ); nhưng nǚshì (女士), lǚyóu (旅游)"
         }
       ]
     }

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useMandarinSpeech } from "@/hooks/use-mandarin-speech";
 import pinyinData from "../../../../content/hsk_library/module0_pinyin.json";
+
 interface InitialsGroup {
   name: string;
   initials: string[];
@@ -38,6 +39,78 @@ const finalsGroups = pinyinData.sections[1].groups as unknown as FinalsGroup[];
 const tonesList = pinyinData.sections[2].tones as unknown as ToneItem[];
 const rulesList = pinyinData.sections[3].rules as unknown as ToneRule[];
 
+// Canonical Mandarin hūdúyīn (呼读音) syllables so zh-CN TTS engines pronounce authentic Mandarin phonemes instead of English alphabet letters
+const INITIAL_CALL_HANZI: Record<string, string> = {
+  b: "波",
+  p: "坡",
+  m: "摸",
+  f: "佛",
+  d: "得",
+  t: "特",
+  n: "讷",
+  l: "勒",
+  g: "哥",
+  k: "科",
+  h: "喝",
+  j: "基",
+  q: "欺",
+  x: "希",
+  z: "资",
+  c: "雌",
+  s: "思",
+  zh: "知",
+  ch: "蚩",
+  sh: "诗",
+  r: "日",
+};
+
+const FINAL_CALL_HANZI: Record<string, string> = {
+  a: "啊",
+  o: "喔",
+  e: "鹅",
+  i: "衣",
+  u: "乌",
+  ü: "迂",
+  ai: "哀",
+  ei: "诶",
+  ui: "威",
+  ao: "熬",
+  ou: "欧",
+  iu: "优",
+  ie: "耶",
+  üe: "约",
+  er: "儿",
+  an: "安",
+  en: "恩",
+  in: "因",
+  un: "温",
+  ün: "晕",
+  ang: "昂",
+  eng: "亨",
+  ing: "英",
+  ong: "轰",
+  ia: "呀",
+  iao: "腰",
+  ian: "烟",
+  iang: "央",
+  iong: "拥",
+  ua: "蛙",
+  uo: "窝",
+  uai: "歪",
+  uan: "弯",
+  uang: "汪",
+  ueng: "翁",
+  üan: "冤",
+};
+
+const TONE_CALL_HANZI: Record<number, string> = {
+  1: "妈",
+  2: "麻",
+  3: "马",
+  4: "骂",
+  0: "吗",
+};
+
 export default function PinyinFoundationPage() {
   const { speak } = useMandarinSpeech();
   const [activeTab, setActiveTab] = useState<"initials" | "finals" | "tones" | "rules">("initials");
@@ -63,7 +136,7 @@ export default function PinyinFoundationPage() {
           Module 0: Ngữ âm &amp; Phát âm Pinyin Tiếng Trung Nền tảng
         </h1>
         <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
-          Hệ thống trọn vẹn 21 Thanh mẫu, 36 Vận mẫu, 4 Thanh điệu và quy tắc biến điệu bắt buộc (thanh 3, 不, 一). Nhấp vào bất kỳ âm nào để lắng nghe phát âm chuẩn bản xứ.
+          Hệ thống trọn vẹn 21 Thanh mẫu, 36 Vận mẫu, 4 Thanh điệu và các quy tắc biến điệu &amp; chính tả bắt buộc (thanh 3, 不, 一, ü). Nhấp vào bất kỳ âm nào để nghe âm đọc mẫu qua giọng đọc tiếng Trung phổ thông (zh-CN TTS).
         </p>
       </header>
 
@@ -103,7 +176,7 @@ export default function PinyinFoundationPage() {
           className="rounded-xl gap-1.5"
         >
           <Volume2 className="size-4" />
-          Quy tắc Biến điệu
+          Quy tắc Biến điệu &amp; Chính tả
         </Button>
       </div>
 
@@ -111,7 +184,7 @@ export default function PinyinFoundationPage() {
       {activeTab === "initials" && (
         <div className="space-y-4">
           <p className="text-xs text-muted-foreground">
-            Thanh mẫu là phụ âm mở đầu một âm tiết tiếng Trung. Hãy nghe và chú ý các âm bật hơi (p, t, k, q, c, ch) và âm uốn lưỡi (zh, ch, sh, r).
+            Thanh mẫu là phụ âm mở đầu một âm tiết tiếng Trung. Hãy nghe âm hô độc (呼读音) và chú ý phân biệt nhóm âm bật hơi (p, t, k, q, c, ch) với nhóm không bật hơi (b, d, g, j, z, zh).
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {initialsGroups.map((group, idx) => (
@@ -126,7 +199,7 @@ export default function PinyinFoundationPage() {
                       key={init}
                       variant="outline"
                       size="sm"
-                      onClick={() => speak(init)}
+                      onClick={() => speak(INITIAL_CALL_HANZI[init] || init)}
                       className="size-11 rounded-xl text-base font-bold hover:bg-primary/10 hover:border-primary flex items-center justify-center p-0"
                     >
                       {init}
@@ -143,7 +216,7 @@ export default function PinyinFoundationPage() {
       {activeTab === "finals" && (
         <div className="space-y-4">
           <p className="text-xs text-muted-foreground">
-            Vận mẫu gồm phần vần và nguyên âm. Phân chia rõ ràng giữa vận mẫu đơn, vận mẫu kép và vận mẫu mũi (-n, -ng).
+            Vận mẫu gồm phần giới âm, nguyên âm chính và âm cuối. Bao gồm đầy đủ 36 vận mẫu: 6 vận mẫu đơn, 9 vận mẫu kép, 9 vận mẫu mũi (-n, -ng) và 12 vận mẫu ghép có giới âm (i-, u-, ü-).
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {finalsGroups.map((group, idx) => (
@@ -157,7 +230,7 @@ export default function PinyinFoundationPage() {
                       key={final}
                       variant="outline"
                       size="sm"
-                      onClick={() => speak(final)}
+                      onClick={() => speak(FINAL_CALL_HANZI[final] || final)}
                       className="h-10 px-3 rounded-xl text-sm font-semibold hover:bg-primary/10 hover:border-primary"
                     >
                       {final}
@@ -174,7 +247,7 @@ export default function PinyinFoundationPage() {
       {activeTab === "tones" && (
         <div className="space-y-4">
           <p className="text-xs text-muted-foreground">
-            Tiếng Trung là ngôn ngữ thanh điệu. Thay đổi thanh điệu sẽ thay đổi hoàn toàn ý nghĩa của từ.
+            Tiếng Trung là ngôn ngữ thanh điệu. Thay đổi thanh điệu sẽ thay đổi hoàn toàn ý nghĩa của từ (ví dụ: 妈 mā mẹ, 麻 má gai, 马 mǎ ngựa, 骂 mà mắng, 吗 ma trợ từ).
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {tonesList.map((tone, idx) => (
@@ -193,14 +266,11 @@ export default function PinyinFoundationPage() {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => {
-                      const sample = tone.tone === 1 ? "mā" : tone.tone === 2 ? "má" : tone.tone === 3 ? "mǎ" : tone.tone === 4 ? "mà" : "ma";
-                      speak(sample);
-                    }}
+                    onClick={() => speak(TONE_CALL_HANZI[tone.tone] || "妈")}
                     className="w-full rounded-xl gap-2 text-xs font-semibold"
                   >
                     <Volume2 className="size-3.5" />
-                    Nghe mẫu phát âm
+                    Nghe mẫu phát âm ({TONE_CALL_HANZI[tone.tone]})
                   </Button>
                 </CardContent>
               </Card>
@@ -213,7 +283,7 @@ export default function PinyinFoundationPage() {
       {activeTab === "rules" && (
         <div className="space-y-4">
           <p className="text-xs text-muted-foreground">
-            3 quy tắc biến điệu bắt buộc phải thuộc lòng khi nói tiếng Trung để đảm bảo sự trôi chảy tự nhiên.
+            4 quy tắc biến điệu và chính tả Pinyin cốt lõi cần nắm vững khi đọc và nói tiếng Trung.
           </p>
           <div className="space-y-4">
             {rulesList.map((rule, idx) => (

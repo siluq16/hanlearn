@@ -40,6 +40,41 @@
       "title_vi": "Học từ vựng trọng tâm",
       "vocabulary": [
         {
+          "simplified": "再见",
+          "pinyin": "zàijiàn",
+          "meaning_vi": "tạm biệt, hẹn gặp lại"
+        },
+        {
+          "simplified": "谢谢",
+          "pinyin": "xièxie",
+          "meaning_vi": "cảm ơn"
+        },
+        {
+          "simplified": "吗",
+          "pinyin": "ma",
+          "meaning_vi": "không, à (trợ từ nghi vấn cuối câu)"
+        },
+        {
+          "simplified": "很",
+          "pinyin": "hěn",
+          "meaning_vi": "rất (phó từ chỉ mức độ)"
+        },
+        {
+          "simplified": "好",
+          "pinyin": "hǎo",
+          "meaning_vi": "tốt, khỏe, hay"
+        },
+        {
+          "simplified": "我",
+          "pinyin": "wǒ",
+          "meaning_vi": "tôi, mình (ngôi thứ nhất số ít)"
+        },
+        {
+          "simplified": "你",
+          "pinyin": "nǐ",
+          "meaning_vi": "bạn, anh, chị (ngôi thứ hai số ít)"
+        },
+        {
           "simplified": "你好",
           "pinyin": "nǐhǎo",
           "meaning_vi": "Xin chào (thông dụng)"

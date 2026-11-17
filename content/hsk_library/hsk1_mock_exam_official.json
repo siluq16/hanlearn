@@ -176,7 +176,7 @@
       "section": "listening",
       "part": 3,
       "audio_text": "女：你看见我的小猫了吗？ 男：在椅子下面睡着呢。",
-      "prompt": "Câu 11: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNữ: 你看见我的小猫了吗？\nNam: 在椅子下面睡着呢。",
+      "prompt": "Câu 11: Nghe đoạn đối thoại và chọn tình huống / bức tranh tương ứng:",
       "choices": [
         "A. Chú mèo con đang ngủ dưới gầm ghế",
         "B. Chú chó chạy trong sân",
@@ -191,7 +191,7 @@
       "section": "listening",
       "part": 3,
       "audio_text": "男：这件黑衣服多少钱？ 女：八十块钱。",
-      "prompt": "Câu 12: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNam: 这件黑衣服多少钱？\nNữ: 八十块钱。",
+      "prompt": "Câu 12: Nghe đoạn đối thoại và chọn tình huống / bức tranh tương ứng:",
       "choices": [
         "A. Quầy bán hoa quả tươi",
         "B. Cửa hàng quần áo với chiếc áo đen ghi giá 80 tệ",
@@ -206,7 +206,7 @@
       "section": "listening",
       "part": 3,
       "audio_text": "女：你什么时候去北京？ 男：下星期三坐飞机去。",
-      "prompt": "Câu 13: Nghe đoạn đối thoại và chọn đáp án tương ứng:\nNữ: 你什么时候去北京？\nNam: 下星期三坐飞机去。",
+      "prompt": "Câu 13: Nghe đoạn đối thoại và chọn tình huống / bức tranh tương ứng:",
       "choices": [
         "A. Thứ Tư tuần sau đi máy bay đến Bắc Kinh",
         "B. Ngày mai đi tàu hỏa",
@@ -221,7 +221,7 @@
       "section": "listening",
       "part": 3,
       "audio_text": "男：你想喝茶还是喝咖啡？ 女：给我一杯热茶吧，谢谢！",
-      "prompt": "Câu 14: Nghe đoạn đối thoại và chọn bức tranh tương ứng:\nNam: 你想喝茶还是喝咖啡？\nNữ: 给我一杯热茶吧，谢谢！",
+      "prompt": "Câu 14: Nghe đoạn đối thoại và chọn tình huống / bức tranh tương ứng:",
       "choices": [
         "A. Một ly bia mát",
         "B. Một chén trà nóng thơm nghi ngút khói",
@@ -236,7 +236,7 @@
       "section": "listening",
       "part": 3,
       "audio_text": "女：喂，张老师在学校吗？ 男：他去医院看病了，下午才回来。",
-      "prompt": "Câu 15: Nghe đoạn đối thoại và trả lời người nam nói gì:\nNữ: 喂，张老师在学校吗？\nNam: 他去医院看病了，下午才回来。",
+      "prompt": "Câu 15: Nghe đoạn đối thoại và chọn tình huống / bức tranh tương ứng:",
       "choices": [
         "A. Thầy Trương đã đi bệnh viện khám bệnh, chiều mới về",
         "B. Thầy Trương đang giảng bài ở phòng học",
@@ -251,11 +251,11 @@
       "section": "listening",
       "part": 4,
       "audio_text": "男：现在几点了？ 女：差五分两点，我们要上课了。 问：他们几点上课？",
-      "prompt": "Câu 16: Nghe hội thoại và câu hỏi, chọn đáp án đúng:\nNam: 现在几点了？\nNữ: 差五分两点，我们要上课了。\nHỏi: 他们几点上课？",
+      "prompt": "Câu 16: Nghe đoạn hội thoại và câu hỏi cuối băng, sau đó chọn đáp án đúng:",
       "choices": [
-        "A. 1:55 (两点差五分)",
-        "B. 3:00 (三点整)",
-        "C. 12:30 (十二点半)"
+        "A. 1:55 (liǎng diǎn chà wǔ fēn)",
+        "B. 3:00 (sān diǎn)",
+        "C. 12:30 (shí'èr diǎn bàn)"
       ],
       "correct_index": 0,
       "explanation_vi": "Nữ nói hiện tại là 2 giờ kém 5 và sắp vào lớp -> Giờ vào lớp là khoảng 2 giờ kém 5 (1:55) -> Chọn A."
@@ -266,11 +266,11 @@
       "section": "listening",
       "part": 4,
       "audio_text": "女：你认识李小姐吗？ 男：认识，我们是大学同学。 问：他们是什么关系？",
-      "prompt": "Câu 17: Nghe hội thoại và chọn câu trả lời đúng:\nNữ: 你认识李小姐吗？\nNam: 认识，我们是大学同学。\nHỏi: 他们是什么关系？",
+      "prompt": "Câu 17: Nghe đoạn hội thoại và câu hỏi cuối băng, sau đó chọn đáp án đúng:",
       "choices": [
-        "A. 老师和学生 (Thầy trò)",
-        "B. 大学同学 (Bạn học đại học)",
-        "C. 医生和病人 (Bác sĩ và bệnh nhân)"
+        "A. 老师和学生 (lǎoshī hé xuésheng)",
+        "B. 大学同学 (dàxué tóngxué)",
+        "C. 医生和病人 (yīshēng hé bìngrén)"
       ],
       "correct_index": 1,
       "explanation_vi": "Người nam xác nhận: '我们是大学同学' (Chúng tôi là bạn cùng học đại học) -> Chọn B."
@@ -281,11 +281,11 @@
       "section": "listening",
       "part": 4,
       "audio_text": "男：这个西瓜真甜！多少钱一斤？ 女：三块钱一斤。 问：西瓜多少钱一斤？",
-      "prompt": "Câu 18: Nghe hội thoại và chọn đáp án đúng:\nNam: 这个西瓜真甜！多少钱一斤？\nNữ: 三块钱一斤。\nHỏi: 西瓜多少钱一斤？",
+      "prompt": "Câu 18: Nghe đoạn hội thoại và câu hỏi cuối băng, sau đó chọn đáp án đúng:",
       "choices": [
-        "A. 3 块 (3 đồng)",
-        "B. 5 块 (5 đồng)",
-        "C. 10 块 (10 đồng)"
+        "A. 3 块 (sān kuài)",
+        "B. 5 块 (wǔ kuài)",
+        "C. 10 块 (shí kuài)"
       ],
       "correct_index": 0,
       "explanation_vi": "Người bán hàng trả lời rõ ràng: '三块钱一斤' -> 3 đồng một cân -> Chọn A."
@@ -296,11 +296,11 @@
       "section": "listening",
       "part": 4,
       "audio_text": "女：你明天下午有时间吗？一起去看电影吧。 男：对不起，明天下午我要去公司加班。 问：男的明天下午做什么？",
-      "prompt": "Câu 19: Nghe hội thoại và chọn đáp án đúng:\nNữ: 你明天下午有时间吗？一起去看电影吧。\nNam: 对不起，明天下午我要去公司加班。\nHỏi: 男的明天下午做什么？",
+      "prompt": "Câu 19: Nghe đoạn hội thoại và câu hỏi cuối băng, sau đó chọn đáp án đúng:",
       "choices": [
-        "A. 去看电影 (Đi xem phim)",
-        "B. 去公司工作 (Đến công ty làm việc)",
-        "C. 在家睡觉 (Ở nhà ngủ)"
+        "A. 去看电影 (qù kàn diànyǐng)",
+        "B. 去公司工作 (qù gōngsī gōngzuò)",
+        "C. 在家睡觉 (zài jiā shuìjiào)"
       ],
       "correct_index": 1,
       "explanation_vi": "Người nam từ chối vì phải đến công ty tăng ca (去公司加班) -> Chọn B."
@@ -311,11 +311,11 @@
       "section": "listening",
       "part": 4,
       "audio_text": "男：喂，请问王经理在吗？ 女：他不在，他开车去机场接朋友了。 问：王经理去哪儿了？",
-      "prompt": "Câu 20: Nghe hội thoại và chọn đáp án đúng:\nNam: 喂，请问王经理在吗？\nNữ: 他不在，他开车去机场接朋友了。\nHỏi: 王经理去哪儿了？",
+      "prompt": "Câu 20: Nghe đoạn hội thoại và câu hỏi cuối băng, sau đó chọn đáp án đúng:",
       "choices": [
-        "A. 机场 (Sân bay)",
-        "B. 饭店 (Nhà hàng)",
-        "C. 超市 (Siêu thị)"
+        "A. 机场 (jīchǎng)",
+        "B. 饭店 (fàndiàn)",
+        "C. 超市 (chāoshì)"
       ],
       "correct_index": 0,
       "explanation_vi": "Giám đốc Vương đã lái xe ra sân bay đón bạn (去机场) -> Chọn A."
@@ -467,9 +467,9 @@
       "part": 3,
       "prompt": "Câu 31: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'请问，去第三教室怎么走？'",
       "choices": [
-        "A. 直走，在前边左拐就是。(Đi thẳng, rẽ trái phía trước là tới)",
-        "B. 今天天气很冷。(Hôm nay trời rất lạnh)",
-        "C. 我今年二十岁。(Năm nay tôi hai mươi tuổi)"
+        "A. 一直走，在前面左边的楼就是。(Yìzhí zǒu, zài qiánmiàn zuǒbian de lóu jiù shì.)",
+        "B. 今天天气很冷。(Jīntiān tiānqì hěn lěng.)",
+        "C. 我今年二十岁。(Wǒ jīnnián èrshí suì.)"
       ],
       "correct_index": 0,
       "explanation_vi": "Hỏi đường đi phòng học thì hồi đáp phải chỉ đường hướng -> Chọn A."
@@ -481,9 +481,9 @@
       "part": 3,
       "prompt": "Câu 32: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'昨天晚上的电影好看吗？'",
       "choices": [
-        "A. 我吃饱了。(Tôi ăn no rồi)",
-        "B. 非常好看，大家都非常喜欢。(Rất hay, ai cũng thích cả)",
-        "C. 是出租车。(Là xe taxi)"
+        "A. 我吃饱了。(Wǒ chī bǎo le.)",
+        "B. 非常好看，大家都非常喜欢。(Fēicháng hǎokàn, dàjiā dōu fēicháng xǐhuan.)",
+        "C. 是出租车。(Shì chūzūchē.)"
       ],
       "correct_index": 1,
       "explanation_vi": "Hỏi phim xem có hay không (好看吗) thì trả lời '非常好看' -> Chọn B."
@@ -495,9 +495,9 @@
       "part": 3,
       "prompt": "Câu 33: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'你认识前面的那位先生吗？'",
       "choices": [
-        "A. 认识，他是我们的大学老师。(Quen chứ, thầy ấy là giảng viên đại học của chúng tôi)",
-        "B. 一共三十块钱。(Tổng cộng ba mươi đồng)",
-        "C. 下午两点三十分。(2 giờ 30 phút chiều)"
+        "A. 认识，他是我们的大学老师。(Rènshi, tā shì wǒmen de dàxué lǎoshī.)",
+        "B. 一共三十块钱。(Yígòng sānshí kuài qián.)",
+        "C. 下午两点三十分。(Xiàwǔ liǎng diǎn sānshí fēn.)"
       ],
       "correct_index": 0,
       "explanation_vi": "Hỏi có quen người phía trước không (认识...吗) thì trả lời '认识，他是...' -> Chọn A."
@@ -509,9 +509,9 @@
       "part": 3,
       "prompt": "Câu 34: Chọn câu hồi đáp phù hợp nhất cho lời nói:\n'谢谢你帮我找到我的电脑！'",
       "choices": [
-        "A. 不客气，没事！(Không có gì, chuyện nhỏ thôi!)",
-        "B. 再见，明天见！(Tạm biệt, mai gặp!)",
-        "C. 我不爱吃包子。(Tôi không thích ăn bánh bao)"
+        "A. 不客气，没事！(Bú kèqi, méishì!)",
+        "B. 再见，明天见！(Zàijiàn, míngtiān jiàn!)",
+        "C. 我不爱吃包子。(Wǒ bú ài chī bāozi.)"
       ],
       "correct_index": 0,
       "explanation_vi": "Đáp lại lời cảm ơn (谢谢) chuẩn mực trong tiếng Trung là '不客气' -> Chọn A."
@@ -523,9 +523,9 @@
       "part": 3,
       "prompt": "Câu 35: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'你今天身体好些了吗？'",
       "choices": [
-        "A. 好多了，吃了药已经不发烧了。(Đỡ nhiều rồi, uống thuốc xong đã hết sốt)",
-        "B. 商店在学校旁边。(Cửa hàng ở cạnh trường học)",
-        "C. 这是我的新衣服。(Đây là áo mới của tôi)"
+        "A. 好多了，今天已经去上课了。(Hǎo duō le, jīntiān yǐjīng qù shàngkè le.)",
+        "B. 商店在学校旁边。(Shāngdiàn zài xuéxiào pángbiān.)",
+        "C. 这是我的新衣服。(Zhè shì wǒ de xīn yīfu.)"
       ],
       "correct_index": 0,
       "explanation_vi": "Hỏi thăm sức khỏe (身体好些了吗) thì trả lời tình trạng bệnh (好多了...) -> Chọn A."
@@ -537,9 +537,9 @@
       "part": 4,
       "prompt": "Câu 36: Đọc đoạn văn ngắn và chọn đáp án đúng:\n'大卫是美国人，他在北京学习汉语。他每天早上七点起床，八点去大学上课。下午他常去图书馆看书。'\n-> 大卫每天早上几点去大学？",
       "choices": [
-        "A. 六点 (6 giờ)",
-        "B. 七点 (7 giờ)",
-        "C. 八点 (8 giờ)"
+        "A. 六点 (liù diǎn)",
+        "B. 七点 (qī diǎn)",
+        "C. 八点 (bā diǎn)"
       ],
       "correct_index": 2,
       "explanation_vi": "Đoạn văn nêu rõ: '八点去大学上课' (8 giờ đi học đại học) -> Chọn C."
@@ -551,9 +551,9 @@
       "part": 4,
       "prompt": "Câu 37: Đọc đoạn văn ngắn và chọn đáp án đúng:\n'王先生家有一只白色的小猫和两只黑色的狗。小猫很喜欢在桌子下面睡觉，小狗喜欢在外面跑。'\n-> 王先生家有几只狗？",
       "choices": [
-        "A. 一只 (1 con)",
-        "B. 两只 (2 con)",
-        "C. 三只 (3 con)"
+        "A. 一只 (yì zhī)",
+        "B. 两只 (liǎng zhī)",
+        "C. 三只 (sān zhī)"
       ],
       "correct_index": 1,
       "explanation_vi": "Đoạn văn ghi: '两只黑色的狗' (hai con chó màu đen) -> Chọn B."
@@ -579,9 +579,9 @@
       "part": 4,
       "prompt": "Câu 39: Đọc đoạn hội thoại và xác định thông tin đúng:\n'兰兰：明天是星期六，我们一起去超市买水果吧。\n明明：好的，几点见？\n兰兰：上午九点半在超市门口见。'\n-> 他们打算什么时候在哪儿见？",
       "choices": [
-        "A. 星期六上午九点半在超市门口 (Thứ Bảy, 9h30 sáng tại cửa siêu thị)",
-        "B. 星期五下午两点在学校 (Thứ Sáu, 2h chiều ở trường)",
-        "C. 星期日晚上在电影院 (Chủ nhật tối ở rạp chiếu phim)"
+        "A. 星期六上午九点半在超市门口 (xīngqīliù shàngwǔ jiǔ diǎn bàn zài chāoshì ménkǒu)",
+        "B. 星期五下午两点在学校 (xīngqīwǔ xiàwǔ liǎng diǎn zài xuéxiào)",
+        "C. 星期日晚上在电影院 (xīngqīrì wǎnshang zài diànyǐngyuàn)"
       ],
       "correct_index": 0,
       "explanation_vi": "Lan Lan hẹn: '明天是星期六... 上午九点半在超市门口见' -> Chọn A."
@@ -591,14 +591,14 @@
       "sort_order": 40,
       "section": "reading",
       "part": 4,
-      "prompt": "Câu 40: Đọc đoạn tổng kết và chọn kết luận chuẩn xác nhất:\n'学好汉语需要多听、多说、多读、多写。只要每天坚持复习三十个词汇和语法，通过 HSK 1 考试就会非常轻松！'\n-> Để học tốt tiếng Trung cần chú ý điều gì?",
+      "prompt": "Câu 40: Đọc đoạn văn ngắn và chọn thông tin đúng:\n'李老师是我们的汉语老师。她的课很有意思，我们都很喜欢听她说话，也喜欢写汉字。'\n-> Học sinh thích làm gì trong giờ học của cô Lý?",
       "choices": [
-        "A. Đa dạng hóa 4 kỹ năng nghe, nói, đọc, viết và kiên trì ôn tập mỗi ngày",
-        "B. Chỉ cần học nghe không cần học viết chữ Hán",
-        "C. Mỗi tuần chỉ cần học 15 phút là đủ"
+        "A. 听她说话和写汉字 (tīng tā shuōhuà hé xiě Hànzì)",
+        "B. 去商店买东西 (qù shāngdiàn mǎi dōngxi)",
+        "C. 在家看电视 (zài jiā kàn diànshì)"
       ],
       "correct_index": 0,
-      "explanation_vi": "Lời khuyên: đa dạng 4 kỹ năng (多听、多说、多读、多写) và kiên trì luyện tập hằng ngày -> Chọn A."
+      "explanation_vi": "Đoạn văn nêu rõ: '我们都很喜欢听她说话，也喜欢写汉字' (Chúng tôi đều rất thích nghe cô nói và thích viết chữ Hán) -> Chọn A."
     }
   ]
 }

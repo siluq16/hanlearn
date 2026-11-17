@@ -288,6 +288,9 @@ export const getLearnerCurriculumProgress = cache(
     let nextLessonTitle = getLessonMeta(nextLessonSlug).fullTitle;
     let foundNext = false;
 
+    const official300 = getOfficial300VocabItems();
+    const official300Set = new Set(official300.map((w) => w.simplified));
+
     for (const lesson of realLessons) {
       const slug = lesson.slug;
       const prog = stageMap.get(slug) || stageMap.get(lesson.id);
@@ -307,7 +310,9 @@ export const getLearnerCurriculumProgress = cache(
         for (const st of lesson.stages) {
           if (st.vocabulary) {
             for (const v of st.vocabulary) {
-              learnedWordsSet.add(v.simplified);
+              if (official300Set.has(v.simplified)) {
+                learnedWordsSet.add(v.simplified);
+              }
             }
           }
         }
@@ -326,7 +331,6 @@ export const getLearnerCurriculumProgress = cache(
 
     // Merge any words learned from vocabulary_progress
     if (vocabRows && vocabRows.length > 0) {
-      const official300 = getOfficial300VocabItems();
       const vocabIdMap = new Map(official300.map((w) => [w.id, w.simplified]));
       for (const vr of vocabRows) {
         const hz = vocabIdMap.get(vr.vocabulary_id);

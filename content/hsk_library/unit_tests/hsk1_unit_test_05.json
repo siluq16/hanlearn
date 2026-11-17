@@ -171,7 +171,7 @@
       "section": "grammar",
       "prompt": "Hậu tố '们' thêm vào sau đại từ hoặc danh từ chỉ người để biểu thị điều gì?",
       "choices": [
-        "Số nhiều (chúng tôi, các bạn, họ)",
+        "Biểu thị số nhiều cho đại từ/danh từ chỉ người",
         "Sở hữu",
         "Kính trọng",
         "Thời gian"

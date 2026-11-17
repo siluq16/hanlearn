@@ -26,7 +26,10 @@ export function getOfficial300VocabItems(): HSK1VocabItem[] {
   if (cachedItems) return cachedItems;
 
   const vocabPath = path.join(process.cwd(), "content/hsk_library/hsk1_vocabulary.json");
-  const official300Path = path.join(process.cwd(), "content/hsk_library/hsk1_exam_2025_official_300.json");
+  const official300Path = path.join(
+    process.cwd(),
+    "content/hsk_library/hsk1_exam_2025_official_300.json"
+  );
 
   let vocabList: Array<Record<string, unknown>> = [];
   if (fs.existsSync(vocabPath)) {
@@ -41,7 +44,15 @@ export function getOfficial300VocabItems(): HSK1VocabItem[] {
     }
   }
 
-  let official300: Array<{ hanzi: string; pinyin: string; meaning_en?: string }> = [];
+  let official300: Array<{
+    hanzi: string;
+    pinyin: string;
+    meaning_vi?: string;
+    meaning_en?: string;
+    example_zh?: string;
+    example_pinyin?: string;
+    example_vi?: string;
+  }> = [];
   if (fs.existsSync(official300Path)) {
     official300 = JSON.parse(fs.readFileSync(official300Path, "utf-8"));
   }
@@ -53,24 +64,33 @@ export function getOfficial300VocabItems(): HSK1VocabItem[] {
     const v = vocabMap.get(hz);
 
     let meaningVi = "";
-    if (v && v.raw_definition) {
-      meaningVi = String(v.raw_definition);
+    if (item.meaning_vi) {
+      meaningVi = item.meaning_vi;
     } else if (v && v.meaning_vi) {
       meaningVi = String(v.meaning_vi);
+    } else if (v && v.raw_definition) {
+      meaningVi = String(v.raw_definition);
     } else {
       meaningVi = item.meaning_en || "Từ vựng HSK 1 chuẩn 2025";
     }
 
-    let exampleZh = "";
-    let examplePy = "";
-    let exampleVi = "";
+    let exampleZh = item.example_zh || "";
+    let examplePy = item.example_pinyin || "";
+    let exampleVi = item.example_vi || "";
 
-    if (v && v.example_zh_py) {
-      const parts = String(v.example_zh_py).split(/([A-ZÀ-Ỹa-zà-ỹ0-9\s.,?!'"]+)/);
-      exampleZh = parts[0] || String(v.example_zh_py);
-      examplePy = parts.slice(1).join("").trim();
+    if (!exampleZh && v && v.example_zh_py) {
+      const cleaned = String(v.example_zh_py).replace(/\s+/g, " ").trim();
+      const match = cleaned.match(
+        /^([\u4e00-\u9fff0-9，。！？、“”‘’：；（）\s]+?)\s*([A-Za-z\u00C0-\u024F\u1E00-\u1EFF].*)$/
+      );
+      if (match) {
+        exampleZh = match[1].trim();
+        examplePy = match[2].trim();
+      } else {
+        exampleZh = cleaned;
+      }
     }
-    if (v && v.example_vi) {
+    if (!exampleVi && v && v.example_vi) {
       exampleVi = String(v.example_vi);
     }
 

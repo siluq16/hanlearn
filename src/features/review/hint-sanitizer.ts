@@ -37,8 +37,8 @@ export function sanitizeCardPrompt(
       noteParts.push(part);
     } else if (i === 0 && (hasHanzi || hasPronunciationNote)) {
       const clean = part
+        .replace(/,?\s*đọc\s+(?:nhẹ\s+|biến điệu\s+|thành\s+)?[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+(?:\s+trước\s+[^);]+)?/gi, "")
         .replace(/[\u4e00-\u9fa5]+/g, "…")
-        .replace(/đọc\s+(nhẹ|biến điệu)\s+\w+/gi, "")
         .trim();
       promptParts.push(clean);
       noteParts.push(part);
