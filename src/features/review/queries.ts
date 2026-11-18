@@ -5,6 +5,7 @@ import { requireLearner } from "@/features/auth/session";
 import { DataError, readAll } from "@/lib/data";
 import { vietnamDayBounds, type ReviewView } from "./contracts";
 import { sanitizeCardPrompt } from "./hint-sanitizer";
+import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
 const cardSchema = z
   .object({
     id: z.uuid(),
@@ -93,8 +94,16 @@ export async function getReviewView(): Promise<ReviewView> {
         ),
       )
     ).flat();
+    const canonicalBySimplified = new Map(
+      getOfficial300VocabItems().map((item) => [item.simplified, item]),
+    );
     for (const w of fetchedWords) {
-      vocabCache.set(w.id, w as VocabRecord);
+      const canonical = canonicalBySimplified.get(w.simplified);
+      vocabCache.set(w.id, {
+        ...(w as VocabRecord),
+        pinyin_marked: canonical?.pinyin_marked ?? w.pinyin_marked,
+        meaning_vi: canonical?.meaning_vi ?? w.meaning_vi,
+      });
     }
   }
 

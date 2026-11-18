@@ -467,12 +467,12 @@
       "part": 3,
       "prompt": "Câu 31: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'请问，去第三教室怎么走？'",
       "choices": [
-        "A. 一直走，在前面左边的楼就是。(Yìzhí zǒu, zài qiánmiàn zuǒbian de lóu jiù shì.)",
+        "A. 一直走，在二楼左边。(Yìzhí zǒu, zài èr lóu zuǒbian.)",
         "B. 今天天气很冷。(Jīntiān tiānqì hěn lěng.)",
         "C. 我今年二十岁。(Wǒ jīnnián èrshí suì.)"
       ],
       "correct_index": 0,
-      "explanation_vi": "Hỏi đường đi phòng học thì hồi đáp phải chỉ đường hướng -> Chọn A."
+      "explanation_vi": "Hỏi đường đi đến phòng học số 3 ('去第三教室怎么走？') -> Đáp lại chỉ hướng và vị trí tầng: '一直走，在二楼左边' (Đi thẳng, ở bên trái tầng 2) -> Chọn A."
     },
     {
       "id": "q-hsk1-mock-32",
@@ -523,12 +523,12 @@
       "part": 3,
       "prompt": "Câu 35: Chọn câu hồi đáp phù hợp nhất cho lời hỏi:\n'你今天身体好些了吗？'",
       "choices": [
-        "A. 好多了，今天已经去上课了。(Hǎo duō le, jīntiān yǐjīng qù shàngkè le.)",
+        "A. 好多了，今天可以去上课了。(Hǎo duō le, jīntiān kěyǐ qù shàngkè le.)",
         "B. 商店在学校旁边。(Shāngdiàn zài xuéxiào pángbiān.)",
         "C. 这是我的新衣服。(Zhè shì wǒ de xīn yīfu.)"
       ],
       "correct_index": 0,
-      "explanation_vi": "Hỏi thăm sức khỏe (身体好些了吗) thì trả lời tình trạng bệnh (好多了...) -> Chọn A."
+      "explanation_vi": "Hỏi thăm sức khỏe ('你今天身体好些了吗？') -> Trả lời đã đỡ nhiều và hôm nay có thể đi học ('好多了，今天可以去上课了') -> Chọn A."
     },
     {
       "id": "q-hsk1-mock-36",

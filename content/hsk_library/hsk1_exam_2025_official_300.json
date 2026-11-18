@@ -2586,7 +2586,7 @@
   {
     "no_2025": 153,
     "hanzi": "女儿",
-    "pinyin": "nǚ’ér",
+    "pinyin": "nǚ'ér",
     "part_of_speech": "noun",
     "meaning_en": "daughter",
     "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
@@ -3062,7 +3062,7 @@
   {
     "no_2025": 181,
     "hanzi": "谁",
-    "pinyin": "shéi/shuí",
+    "pinyin": "shéi",
     "part_of_speech": "pronoun",
     "meaning_en": "who",
     "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
@@ -3606,7 +3606,7 @@
   {
     "no_2025": 213,
     "hanzi": "外边",
-    "pinyin": "wàibian",
+    "pinyin": "wàibiān",
     "part_of_speech": "noun",
     "meaning_en": "outside",
     "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
@@ -4201,7 +4201,7 @@
   {
     "no_2025": 248,
     "hanzi": "学生",
-    "pinyin": "xuéshēng",
+    "pinyin": "xuésheng",
     "part_of_speech": "noun",
     "meaning_en": "student",
     "provenance": "COMMUNITY_MANDARINBEAN_HSK30_BAND1",
@@ -4873,7 +4873,7 @@
     "gf0025_level": 2,
     "gf0025_stt": 730,
     "in_hsk1_500": false,
-    "meaning_vi": "con, chiếc (lượng từ dùng cho động vật hoặc một chiếc trong cặp)",
+    "meaning_vi": "con (lượng từ cho động vật) / chỉ (phó từ zhǐ)",
     "example_zh": "我家有一只小猫。",
     "example_pinyin": "Wǒ jiā yǒu yì zhī xiǎo māo.",
     "example_vi": "Nhà tôi có một chú mèo con."

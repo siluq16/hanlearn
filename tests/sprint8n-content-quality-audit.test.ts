@@ -185,5 +185,44 @@ describe("Sprint 8N – HSK 1 Content Quality & Learning Experience Audit Suite"
     }
 
     expect(ALL_CURRICULUM_QUIZZES.length).toBe(38);
+
+    const q31 = mockExam.questions.find((q: { id: string }) => q.id === "q-hsk1-mock-31");
+    expect(q31?.choices[0]).toBe("A. 一直走，在二楼左边。(Yìzhí zǒu, zài èr lóu zuǒbian.)");
+
+    const q35 = mockExam.questions.find((q: { id: string }) => q.id === "q-hsk1-mock-35");
+    expect(q35?.choices[0]).toBe("A. 好多了，今天可以去上课了。(Hǎo duō le, jīntiān kěyǐ qù shàngkè le.)");
+  });
+
+  it("8. verifies all listening q6 questions use camelCase audioText matching explanation_vi and zero Pinyin/meaning_vi drift between 300-word list and 32 lessons", () => {
+    const listeningSets = practiceBank.sets.filter((s: { skill: string }) => s.skill === "listening");
+    expect(listeningSets.length).toBe(10);
+
+    for (const s of listeningSets) {
+      for (const q of s.questions) {
+        expect(typeof q.audioText).toBe("string");
+        expect(q.audioText.trim().length).toBeGreaterThan(0);
+        expect((q as Record<string, unknown>).audio_text).toBeUndefined();
+        if (q.id.endsWith("-q6")) {
+          expect(q.type).toBe("audio_mcq");
+          expect(q.explanation_vi).toContain(q.audioText);
+        }
+      }
+    }
+
+    const official300 = getOfficial300VocabItems();
+    const map300 = new Map(official300.map((w) => [w.simplified, w]));
+    const lessons = HSK1_NINE_STAGE_LESSONS.filter((l) => l.slug.startsWith("hsk1-lesson-"));
+
+    for (const lesson of lessons) {
+      for (const st of lesson.stages) {
+        for (const v of st.vocabulary || []) {
+          const ref = map300.get(v.simplified);
+          if (ref) {
+            expect(v.pinyin).toBe(ref.pinyin_marked);
+            expect(v.meaning_vi).toBe(ref.meaning_vi);
+          }
+        }
+      }
+    }
   });
 });

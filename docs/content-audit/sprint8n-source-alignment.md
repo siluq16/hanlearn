@@ -96,3 +96,41 @@ Ngoài **300/300 từ mục tiêu** đã được phủ kín 100% trong `stages[
 2. **Xử lý nhiễm bẩn dữ liệu từ tài liệu tham khảo:**
    - Phát hiện trong `hsk1_vocabulary.json` .. `hsk5_vocabulary.json` có 2 vị trí ở mỗi file bị dính chuỗi quảng cáo chân trang PDF (`ZALO : 0329797625`, `TIKTOK : THÍCH HỌC TIẾNG TRUNG ĐÀI`).
    - **Đã xử lý triệt để:** Xóa sạch toàn bộ chuỗi quảng cáo/watermark bên thứ ba khỏi cả 5 file JSON và bổ sung kiểm thử tự động ngăn tái nhiễm.
+
+---
+
+## 5. Kiểm tra Nhất quán Nguồn Dữ liệu Thực tế trên 7 Bề mặt Ứng dụng (Content Source Consistency)
+
+| Bề mặt / Route | File truy vấn (`Server` / `Client`) | Nguồn dữ liệu thực tế | Cơ chế Cache | Trạng thái đồng bộ sau Sprint 8N |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. `/vocabulary`** | `src/app/(app)/vocabulary/page.tsx` → `getOfficial300VocabItems()` | **Local JSON** (`hsk1_exam_2025_official_300.json` + câu ví dụ từ `hsk1_vocabulary.json`) + tiến độ `vocabulary_progress` từ **Supabase Cloud** (`getLearnerCurriculumSnapshot()`). | Không cache tĩnh (`force-dynamic`); ánh xạ cả MD5 UUID lẫn Pilot v1 UUID qua `PILOT_ID_TO_SIMPLIFIED`. | **ĐỒNG BỘ 100%** (300/300 từ dùng nghĩa/Pinyin mới nhất). |
+| **2. `/vocabulary/[id]`** | `src/features/vocabulary/queries.ts` → `getVocabulary(id)` | **Hybrid:** Truy vấn `public.vocabulary` trên **Supabase Cloud** trước; nếu không có (256/300 từ mới) thì fallback về `getOfficial300VocabItems()`. Với 44 từ Pilot có trên Cloud, hàm `getVocabulary(id)` đã được bổ sung **Canonical Overlay** từ `getOfficial300VocabItems()` theo `simplified`. | Không cache; luôn đọc trực tiếp và overlay `pinyin_marked` + `meaning_vi` chuẩn từ `getOfficial300VocabItems()`. | **ĐỒNG BỘ 100%** (Không còn trả về nghĩa cũ trên Cloud của từ `不`). |
+| **3. `Lesson Reader` (`/lessons/stage/[slug]`)** | `src/features/curriculum/stage-Always-reader` / `lesson-loader.ts` | **Local JSON** (`content/hsk_library/hsk1_lesson_01..32.json` & `hsk1_checkpoint_01..06.json`). Tiến độ chặng lưu qua RPC `upsert_learner_stage_progress` trên **Supabase Cloud**. | In-memory `lessonCache` theo tiến trình Node.js. | **ĐỒNG BỘ 100%** (Đã chuẩn hóa toàn bộ 35 mục từ giữa 32 bài học và danh sách 300 từ: `0` lệch Pinyin, `0` lệch `meaning_vi`). |
+| **4. `SRS Review` (`/review`)** | `src/features/review/queries.ts` → `getReviewView()` | **Supabase Cloud** (`public.review_cards` + `public.vocabulary` gồm 44 từ Pilot v1) kết hợp **Canonical Overlay** từ `getOfficial300VocabItems()` và bộ lọc `sanitizeCardPrompt()`. | In-memory `vocabCache` (`TTL = 10 phút`). Overlay được áp dụng ngay khi nạp vào `vocabCache`. | **ĐỒNG BỘ 100%** (Thẻ SRS của từ `不` nhận nghĩa chuẩn `"không (đọc là bú trước thanh 4)"`, sau khi qua `sanitizeCardPrompt()` hiển thị `prompt: "không"`, `notes: "đọc là bú trước thanh 4"`). |
+| **5. `Practice` (`/practice`, `/practice/[setId]`)** | `src/features/practice/practice-loader.ts` | **Local JSON** (`content/hsk_library/practice_bank.json`, 56 bộ / 381 câu). | In-memory `cachedPracticeBank` (nạp lại từ file JSON mới). | **ĐỒNG BỘ 100%** (Đã đồng bộ `audioText` camelCase trên toàn bộ `ps-listen-01-q6..10-q6`). |
+| **6. `Unit Tests` (`/exam/unit/[unitId]`)** | `src/features/curriculum/unit-test-loader.ts` + `src/features/curriculum/unit-test-actions.ts` | Câu hỏi và lựa chọn từ **Local JSON** (`content/hsk_library/unit_tests/hsk1_unit_test_01..06.json`). Chấm điểm server-side đối chiếu bảng `private.curriculum_quiz_keys` trên **Supabase Cloud**. | In-memory `unitTestCache`. | **ĐỒNG BỘ 100%** (120/120 câu khớp `correct_index` với `private.curriculum_quiz_keys`). |
+| **7. `Mock Exam` (`/exam/hsk1`)** | `src/features/exam/queries.ts` + `src/features/exam/actions.ts` | **Local JSON** (`content/hsk_library/hsk1_mock_exam_official.json`, 40 câu). Chấm điểm trong Server Action `submitMockExamAction`. | Đọc từ JSON module server-side. | **ĐỒNG BỘ 100%** (Đã cập nhật câu 11–20 và 31–40, bao gồm sửa ngữ nghĩa câu 31 và 35). |
+
+### Đối chiếu chi tiết 5 từ mục tiêu (`不`, `只`, `杯子`, `大学生`, `不客气`) trên toàn hệ thống
+
+| Chữ Hán | MD5 UUID (`/vocabulary`) | Pinyin chuẩn (`300-list` & `Lesson`) | Nghĩa chuẩn (`meaning_vi`) | Trạng thái trên Supabase Cloud (`public.vocabulary`) | Trạng thái hiển thị thực tế tới Học viên |
+| :---: | :--- | :---: | :--- | :--- | :--- |
+| **不** | `3a27411c-0f69-4fd8-aa0b-46b94c7911ef` | `bù` | `không (đọc là bú trước thanh 4)` | Có bản ghi Pilot v1 (`07072003-2d5d-5d6e-9170-12a6c9d2b578`) mang chuỗi cũ `"không; trong bài dùng để phủ định 是"`. | **ĐÃ ĐỒNG BỘ 100%** trên `/vocabulary`, `/vocabulary/[id]`, `Lesson 03`, và `/review` (nhờ Canonical Overlay + `sanitizeCardPrompt`). |
+| **只** | `29f8512b-0936-4f59-8873-2532165c6278` | `zhī` | `con (lượng từ cho động vật) / chỉ (phó từ zhǐ)` | Chưa có trong 44 từ Pilot trên Cloud. | **ĐÃ ĐỒNG BỘ 100%** giữa `/vocabulary`, `/vocabulary/[id]`, và `Lesson 27`. |
+| **杯子** | `70671642-1607-4703-a660-767275365831` | `bēizi` | `cái cốc, cái ly` | Chưa có trong 44 từ Pilot trên Cloud. | **ĐÃ ĐỒNG BỘ 100%** (Ví dụ chuẩn: `桌子上有一个杯子。`). |
+| **大学生** | `0c080a93-9566-46a2-96d5-491811602833` | `dàxuéshēng` | `sinh viên đại học` | Chưa có trong 44 từ Pilot trên Cloud. | **ĐÃ ĐỒNG BỘ 100%** (Ví dụ chuẩn: `哥哥是大学生。`). |
+| **不客气** | `7c1c1a9f-4c26-445f-8730-350463751836` | `bú kèqi` | `Không có chi / đừng khách sáo` | Chưa có trong 44 từ Pilot trên Cloud. | **ĐÃ ĐỒNG BỘ 100%** trên `/vocabulary`, `Lesson 04`, `ps-listen-01-q6`, và `q-hsk1-mock-34`. |
+
+---
+
+## 6. Trạng thái Xác minh với `https://www.chinesetest.cn/HSK/1?type=syllabus`
+
+- **Phương thức kiểm chứng:** Đối chiếu danh mục 300 từ (`content/hsk_library/hsk1_exam_2025_official_300.json`) với:
+  1. Đề cương HSK 1 sửa đổi (300 từ, áp dụng 2025–2026) được công bố trên hệ thống thông tin của Chinese Testing International (`chinesetest.cn`) và bản tổng hợp đối chiếu cộng đồng MandarinBean.
+  2. Danh mục 500 từ Band 1 thuộc Tiêu chuẩn Quốc gia `GF0025-2021` (`content/hsk_library/hsk1_vocabulary.json`).
+- **Kết quả định lượng:**
+  - **Số từ khớp với Đề cương HSK 1 rút gọn 300 từ (2025/2026):** `300 / 300` từ (`0` từ lệch).
+  - **Số từ khớp với Chuẩn GF0025-2021 Band 1 (500 từ):** `262 / 300` từ khớp trực tiếp; `38 / 300` từ thuộc nhóm từ giao tiếp thiết yếu được giữ lại trong đề cương 300 từ từ HSK 2.0 / Band 2 (xem danh sách đầy đủ 38 từ tại Mục 2).
+- **Giới hạn xác minh cần ghi nhận trung thực (`PARTIAL_DIRECT_PORTAL_VERIFICATION`):**
+  - Trang `https://www.chinesetest.cn/HSK/1?type=syllabus` trên cổng `chinesetest.cn` là giao diện SPA tải dữ liệu động / tài liệu PDF đính kèm theo phiên truy cập. Việc đối chiếu tự động không qua xác thực cổng CTI được thực hiện gián tiếp qua bản chụp đề cương 300 từ và chuẩn quốc gia `GF0025-2021` lưu trong kho dữ liệu, **chưa đối chiếu thủ công từng dòng trực tiếp trên file PDF gốc tải từ phiên đăng nhập `chinesetest.cn`**. Do đó, trạng thái xác minh trực tiếp với cổng `chinesetest.cn` được gắn nhãn trung thực là **`CROSS_CHECKED_VIA_PUBLISHED_SYLLABUS_SNAPSHOT (DIRECT_PORTAL_SPA_UNVERIFIED)`**.
+

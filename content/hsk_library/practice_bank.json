@@ -2803,22 +2803,17 @@
         },
         {
           "id": "ps-listen-01-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "老师",
+          "type": "audio_mcq",
+          "audioText": "不客气",
+          "prompt": "Nghe phát âm và chọn nghĩa tiếng Việt chính xác:",
           "choices": [
-            "你好",
-            "谢谢",
-            "不客气",
-            "再见"
+            "Xin chào",
+            "Cảm ơn",
+            "Xin lỗi",
+            "Không có chi / đừng khách sáo"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '再见' (zàijiàn) nghĩa là: Tạm biệt.",
-          "audio_text": "再见",
-          "hanzi": "再见",
-          "pinyin": "zàijiàn",
-          "meaning_vi": "Tạm biệt",
-          "answer": "再见"
+          "explanation_vi": "Audio phát âm '不客气' (bú kèqi) nghĩa là: Không có chi / đừng khách sáo."
         }
       ]
     },
@@ -2905,9 +2900,9 @@
         },
         {
           "id": "ps-listen-02-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "老师",
+          "type": "audio_mcq",
+          "audioText": "学生",
+          "prompt": "Nghe âm thanh và chọn từ tiếng Trung tương ứng:",
           "choices": [
             "学生",
             "老师",
@@ -2915,12 +2910,7 @@
             "朋友"
           ],
           "correct_index": 0,
-          "explanation_vi": "Audio phát âm '学生' (xuésheng) nghĩa là: Học sinh / sinh viên.",
-          "audio_text": "学生",
-          "hanzi": "学生",
-          "pinyin": "xuésheng",
-          "meaning_vi": "Học sinh / sinh viên",
-          "answer": "学生"
+          "explanation_vi": "Audio phát âm '学生' (xuésheng) nghĩa là: Học sinh / sinh viên."
         }
       ]
     },
@@ -3007,9 +2997,9 @@
         },
         {
           "id": "ps-listen-03-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "买东西",
+          "type": "audio_mcq",
+          "audioText": "米饭",
+          "prompt": "Bấm nghe audio và chọn từ bạn nghe được:",
           "choices": [
             "面条儿",
             "包子",
@@ -3017,12 +3007,7 @@
             "米饭"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '米饭' (mǐfàn) nghĩa là: Cơm trắng.",
-          "audio_text": "米饭",
-          "hanzi": "米饭",
-          "pinyin": "mǐfàn",
-          "meaning_vi": "Cơm trắng",
-          "answer": "米饭"
+          "explanation_vi": "Audio phát âm '米饭' (mǐfàn) nghĩa là: Cơm trắng."
         }
       ]
     },
@@ -3109,9 +3094,9 @@
         },
         {
           "id": "ps-listen-04-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "type": "audio_mcq",
           "audioText": "买东西",
+          "prompt": "Bấm nghe audio và chọn cụm từ bạn nghe được:",
           "choices": [
             "看电影",
             "打电话",
@@ -3119,12 +3104,7 @@
             "买东西"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '买东西' (mǎi dōngxi) nghĩa là: Mua đồ.",
-          "audio_text": "买东西",
-          "hanzi": "买东西",
-          "pinyin": "mǎi dōngxi",
-          "meaning_vi": "Mua đồ",
-          "answer": "买东西"
+          "explanation_vi": "Audio phát âm '买东西' (mǎi dōngxi) nghĩa là: Mua đồ."
         }
       ]
     },
@@ -3211,9 +3191,9 @@
         },
         {
           "id": "ps-listen-05-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "昨天",
+          "type": "audio_mcq",
+          "audioText": "星期天",
+          "prompt": "Bấm nghe audio và chọn từ chỉ thời gian bạn nghe được:",
           "choices": [
             "今天",
             "明天",
@@ -3221,12 +3201,7 @@
             "星期天"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '星期天' (xīngqītiān) nghĩa là: Chủ nhật.",
-          "audio_text": "星期天",
-          "hanzi": "星期天",
-          "pinyin": "xīngqītiān",
-          "meaning_vi": "Chủ nhật",
-          "answer": "星期天"
+          "explanation_vi": "Audio phát âm '星期天' (xīngqītiān) nghĩa là: Chủ nhật."
         }
       ]
     },
@@ -3303,9 +3278,9 @@
         },
         {
           "id": "ps-listen-06-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "昨天",
+          "type": "audio_mcq",
+          "audioText": "图书馆",
+          "prompt": "Bấm nghe audio và chọn địa điểm bạn nghe được:",
           "choices": [
             "图书馆",
             "医院",
@@ -3313,12 +3288,7 @@
             "饭店"
           ],
           "correct_index": 0,
-          "explanation_vi": "Audio phát âm '图书馆' (túshūguǎn) nghĩa là: Thư viện.",
-          "audio_text": "图书馆",
-          "hanzi": "图书馆",
-          "pinyin": "túshūguǎn",
-          "meaning_vi": "Thư viện",
-          "answer": "图书馆"
+          "explanation_vi": "Audio phát âm '图书馆' (túshūguǎn) nghĩa là: Thư viện."
         }
       ]
     },
@@ -3405,9 +3375,9 @@
         },
         {
           "id": "ps-listen-07-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "type": "audio_mcq",
           "audioText": "出租车",
+          "prompt": "Bấm nghe audio và chọn phương tiện giao thông bạn nghe được:",
           "choices": [
             "火车",
             "飞机",
@@ -3415,12 +3385,7 @@
             "出租车"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '出租车' (chūzūchē) nghĩa là: Xe taxi.",
-          "audio_text": "出租车",
-          "hanzi": "出租车",
-          "pinyin": "chūzūchē",
-          "meaning_vi": "Xe taxi",
-          "answer": "出租车"
+          "explanation_vi": "Audio phát âm '出租车' (chūzūchē) nghĩa là: Xe taxi."
         }
       ]
     },
@@ -3507,9 +3472,9 @@
         },
         {
           "id": "ps-listen-08-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
+          "type": "audio_mcq",
           "audioText": "晚上",
+          "prompt": "Bấm nghe audio và chọn buổi trong ngày bạn nghe được:",
           "choices": [
             "早上",
             "上午",
@@ -3517,12 +3482,7 @@
             "晚上"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '晚上' (wǎnshang) nghĩa là: Buổi tối.",
-          "audio_text": "晚上",
-          "hanzi": "晚上",
-          "pinyin": "wǎnshang",
-          "meaning_vi": "Buổi tối",
-          "answer": "晚上"
+          "explanation_vi": "Audio phát âm '晚上' (wǎnshang) nghĩa là: Buổi tối."
         }
       ]
     },
@@ -3609,9 +3569,9 @@
         },
         {
           "id": "ps-listen-09-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "热",
+          "type": "audio_mcq",
+          "audioText": "下雨",
+          "prompt": "Bấm nghe audio và chọn từ chỉ thời tiết bạn nghe được:",
           "choices": [
             "下雨",
             "下雪",
@@ -3619,12 +3579,7 @@
             "太热"
           ],
           "correct_index": 0,
-          "explanation_vi": "Audio phát âm '下雨' (xià yǔ) nghĩa là: Trời mưa.",
-          "audio_text": "下雨",
-          "hanzi": "下雨",
-          "pinyin": "xià yǔ",
-          "meaning_vi": "Mưa rơi",
-          "answer": "下雨"
+          "explanation_vi": "Audio phát âm '下雨' (xià yǔ) nghĩa là: Trời mưa."
         }
       ]
     },
@@ -3711,9 +3666,9 @@
         },
         {
           "id": "ps-listen-10-q6",
-          "type": "mcq",
-          "prompt": "Bấm nghe audio và chọn từ/câu bạn nghe được:",
-          "audioText": "热",
+          "type": "audio_mcq",
+          "audioText": "高兴",
+          "prompt": "Bấm nghe audio và chọn tính từ bạn nghe được:",
           "choices": [
             "漂亮",
             "便宜",
@@ -3721,12 +3676,7 @@
             "高兴"
           ],
           "correct_index": 3,
-          "explanation_vi": "Audio phát âm '高兴' (gāoxìng) nghĩa là: Vui vẻ, phấn khởi.",
-          "audio_text": "高兴",
-          "hanzi": "高兴",
-          "pinyin": "gāoxìng",
-          "meaning_vi": "Vui vẻ, phấn khởi",
-          "answer": "高兴"
+          "explanation_vi": "Audio phát âm '高兴' (gāoxìng) nghĩa là: Vui vẻ, phấn khởi."
         }
       ]
     },

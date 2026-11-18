@@ -144,8 +144,22 @@ export async function getVocabulary(id: string) {
     if (asset.error) throw new DataError();
     hasAudio = !!asset.data;
   }
+  const canonical300 = getOfficial300VocabItems().find(
+    (w) => w.simplified === wordResult.data!.simplified,
+  );
+  const mergedWord = canonical300
+    ? {
+        ...wordResult.data,
+        pinyin_marked: canonical300.pinyin_marked,
+        meaning_vi: canonical300.meaning_vi,
+        example_zh: wordResult.data.example_zh || canonical300.example_zh || null,
+        example_pinyin:
+          wordResult.data.example_pinyin || canonical300.example_pinyin || null,
+        example_vi: wordResult.data.example_vi || canonical300.example_vi || null,
+      }
+    : wordResult.data;
   return {
-    word: wordResult.data,
+    word: mergedWord,
     members: members.map((m) => ({
       ...m,
       syllabus: syllabuses.find((s) => s.id === m.syllabus_id),

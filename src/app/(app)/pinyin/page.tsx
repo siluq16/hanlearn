@@ -183,9 +183,10 @@ export default function PinyinFoundationPage() {
       {/* Tab: 21 Thanh mẫu */}
       {activeTab === "initials" && (
         <div className="space-y-4">
-          <p className="text-xs text-muted-foreground">
-            Thanh mẫu là phụ âm mở đầu một âm tiết tiếng Trung. Hãy nghe âm hô độc (呼读音) và chú ý phân biệt nhóm âm bật hơi (p, t, k, q, c, ch) với nhóm không bật hơi (b, d, g, j, z, zh).
-          </p>
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-3.5 text-xs leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Lưu ý sư phạm quan trọng (Phân biệt Âm vị độc lập &amp; Âm tiết minh họa 呼读音):</strong>{" "}
+            Thanh mẫu bản chất là <strong>phụ âm đầu</strong> (ngắn, không kéo dài độc lập khi đánh vần). Để người học nghe rõ vị trí cấu âm qua bộ phát âm TTS, mỗi nút bên dưới phát <strong>âm tiết minh họa chuẩn (呼读音)</strong> bằng cách ghép thêm nguyên âm đi kèm (ví dụ: phụ âm <code className="font-mono text-foreground">b</code> đọc mẫu qua âm tiết <code className="font-mono text-foreground">波 bō</code>, <code className="font-mono text-foreground">j</code> đọc mẫu qua <code className="font-mono text-foreground">基 jī</code>). Khi ghép vần thực tế (như <code className="font-mono text-foreground">b + a = bā</code>), chỉ giữ phần phụ âm đầu <code className="font-mono text-foreground">b</code>, không giữ nguyên âm đệm của âm minh họa.
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {initialsGroups.map((group, idx) => (
               <Card key={idx} className="border-border/60 bg-card/60">
@@ -199,10 +200,14 @@ export default function PinyinFoundationPage() {
                       key={init}
                       variant="outline"
                       size="sm"
+                      title={`Thanh mẫu '${init}' — Âm tiết minh họa (呼读音): ${INITIAL_CALL_HANZI[init] || init}`}
                       onClick={() => speak(INITIAL_CALL_HANZI[init] || init)}
-                      className="size-11 rounded-xl text-base font-bold hover:bg-primary/10 hover:border-primary flex items-center justify-center p-0"
+                      className="h-12 px-3 rounded-xl hover:bg-primary/10 hover:border-primary flex flex-col items-center justify-center gap-0.5"
                     >
-                      {init}
+                      <span className="text-sm font-bold leading-none">{init}</span>
+                      <span className="text-[10px] font-normal text-muted-foreground leading-none">
+                        mẫu: {INITIAL_CALL_HANZI[init]}
+                      </span>
                     </Button>
                   ))}
                 </CardContent>
@@ -215,9 +220,10 @@ export default function PinyinFoundationPage() {
       {/* Tab: 36 Vận mẫu */}
       {activeTab === "finals" && (
         <div className="space-y-4">
-          <p className="text-xs text-muted-foreground">
-            Vận mẫu gồm phần giới âm, nguyên âm chính và âm cuối. Bao gồm đầy đủ 36 vận mẫu: 6 vận mẫu đơn, 9 vận mẫu kép, 9 vận mẫu mũi (-n, -ng) và 12 vận mẫu ghép có giới âm (i-, u-, ü-).
-          </p>
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-3.5 text-xs leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Lưu ý sư phạm (Vận mẫu &amp; Chữ Hán đồng âm minh họa):</strong>{" "}
+            Vận mẫu là phần vần đứng sau thanh mẫu (gồm giới âm, nguyên âm chính và âm cuối). Bao gồm đầy đủ 36 vận mẫu: 6 vận mẫu đơn, 9 vận mẫu kép, 9 vận mẫu mũi (<code className="font-mono text-foreground">-n</code>, <code className="font-mono text-foreground">-ng</code>) và 12 vận mẫu ghép có giới âm (<code className="font-mono text-foreground">i-</code>, <code className="font-mono text-foreground">u-</code>, <code className="font-mono text-foreground">ü-</code>). Để tránh trình duyệt đọc theo bảng chữ cái tiếng Anh, nút nghe sử dụng chữ Hán mang âm tiết thanh 1 tương ứng làm mẫu phát âm (ví dụ: vần <code className="font-mono text-foreground">-ong</code> minh họa qua âm <code className="font-mono text-foreground">轰 hōng</code>, <code className="font-mono text-foreground">-eng</code> minh họa qua <code className="font-mono text-foreground">亨 hēng</code>).
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {finalsGroups.map((group, idx) => (
               <Card key={idx} className="border-border/60 bg-card/60">
@@ -230,10 +236,14 @@ export default function PinyinFoundationPage() {
                       key={final}
                       variant="outline"
                       size="sm"
+                      title={`Vận mẫu '${final}' — Âm tiết minh họa: ${FINAL_CALL_HANZI[final] || final}`}
                       onClick={() => speak(FINAL_CALL_HANZI[final] || final)}
-                      className="h-10 px-3 rounded-xl text-sm font-semibold hover:bg-primary/10 hover:border-primary"
+                      className="h-12 px-3 rounded-xl hover:bg-primary/10 hover:border-primary flex flex-col items-center justify-center gap-0.5"
                     >
-                      {final}
+                      <span className="text-sm font-semibold leading-none">{final}</span>
+                      <span className="text-[10px] font-normal text-muted-foreground leading-none">
+                        mẫu: {FINAL_CALL_HANZI[final]}
+                      </span>
                     </Button>
                   ))}
                 </CardContent>
