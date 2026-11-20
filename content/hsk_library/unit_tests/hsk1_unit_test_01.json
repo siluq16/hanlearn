@@ -22,12 +22,12 @@
       "audioText": "你好！很高兴认识你。",
       "prompt": "Nghe đoạn ghi âm và chọn câu đáp lại phù hợp nhất:",
       "choices": [
-        "我也很高兴认识你。",
-        "我家有四口人。",
         "今天星期五。",
-        "明天见。"
+        "明天见。",
+        "我也很高兴认识你。",
+        "我家有四口人。"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Khi đối phương nói '很高兴认识你', câu đáp lễ chuẩn là '我也很高兴认识你' (Tôi cũng rất vui được làm quen với bạn)."
     },
     {
@@ -36,12 +36,12 @@
       "audioText": "你叫什么名字？",
       "prompt": "Nghe câu hỏi và chọn câu trả lời đúng:",
       "choices": [
-        "我叫李明。",
-        "我是老师。",
         "我不是中国人。",
+        "我是老师。",
+        "我叫李明。",
         "他叫大卫。"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Hỏi '你叫什么名字' (Bạn tên là gì) trả lời bằng '我叫...' (Tôi tên là...)."
     },
     {
@@ -50,12 +50,12 @@
       "audioText": "你家有几口人？",
       "prompt": "Nghe câu hỏi và chọn câu trả lời đúng ngữ cảnh:",
       "choices": [
+        "他是医生。",
         "我家有四口人。",
         "现在三点半。",
-        "我是学生。",
-        "他是医生。"
+        "我是学生。"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Hỏi số người trong gia đình '几口人' trả lời '我家有四口人' (Nhà tôi có 4 người)."
     },
     {
@@ -64,12 +64,12 @@
       "audioText": "今天星期几？",
       "prompt": "Nghe câu hỏi và chọn câu trả lời tương ứng:",
       "choices": [
-        "今天星期三。",
-        "今天是十月。",
         "现在八点。",
-        "明天不上课。"
+        "今天是十月。",
+        "明天不上课。",
+        "今天星期三。"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "Hỏi thứ trong tuần '星期几' trả lời '今天星期三' (Hôm nay thứ Tư)."
     },
     {
@@ -79,9 +79,9 @@
       "prompt": "Nghe câu hỏi nghi vấn và chọn câu trả lời:",
       "choices": [
         "他不是中国人，他是美国人。",
-        "我今年二十岁。",
+        "他是我的爸爸。",
         "我家在北京。",
-        "他是我的爸爸。"
+        "我今年二十岁。"
       ],
       "correct_index": 0,
       "explanation_vi": "Hỏi '他是中国学生吗', câu trả lời xác định quốc tịch là '他不是中国人...'."
@@ -92,12 +92,12 @@
       "audioText": "现在几点？——现在上午十点十分。",
       "prompt": "Nghe đoạn đối thoại và xác định thời gian:",
       "choices": [
-        "10:10 sáng",
-        "10:30 sáng",
         "9:10 sáng",
-        "2:10 chiều"
+        "10:30 sáng",
+        "2:10 chiều",
+        "10:10 sáng"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'上午十点十分' là 10 giờ 10 phút sáng."
     },
     {
@@ -105,12 +105,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào dưới đây có nghĩa là 'giáo viên, thầy cô giáo'?",
       "choices": [
-        "老师",
         "学生",
+        "朋友",
         "医生",
-        "朋友"
+        "老师"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'老师' (lǎoshī) là giáo viên; '学生' là học sinh, '医生' là bác sĩ."
     },
     {
@@ -118,12 +118,12 @@
       "section": "vocabulary",
       "prompt": "Chọn Pinyin chuẩn của từ '名字' (tên):",
       "choices": [
+        "mínzi",
         "míngzi",
-        "míngzhì",
         "míngshì",
-        "mínzi"
+        "míngzhì"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'名字' có pinyin là 'míngzi' (chữ zi đọc thanh nhẹ)."
     },
     {
@@ -144,12 +144,12 @@
       "section": "vocabulary",
       "prompt": "Cách nói 'Chủ nhật' đúng quy tắc trong tiếng Trung là:",
       "choices": [
-        "星期天",
-        "星期七",
         "星期八",
-        "星期九"
+        "星期九",
+        "星期天",
+        "星期七"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Chủ nhật dùng '星期天' hoặc '星期日', không dùng '星期七'."
     },
     {
@@ -157,12 +157,12 @@
       "section": "grammar",
       "prompt": "Điền từ phủ định thích hợp: '我____是老师，我是学生。'",
       "choices": [
+        "很",
         "不",
         "没",
-        "很",
         "也"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Phủ định trước động từ 是 dùng '不' (đọc biến điệu bú shì)."
     },
     {
@@ -171,9 +171,9 @@
       "prompt": "Điền số từ thích hợp trước lượng từ: '我有____个姐姐。' (Tôi có hai người chị gái)",
       "choices": [
         "两",
-        "二",
+        "口",
         "几",
-        "口"
+        "二"
       ],
       "correct_index": 0,
       "explanation_vi": "Trước lượng từ 个 dùng '两' (liǎng), không dùng '二'."
@@ -184,9 +184,9 @@
       "prompt": "Cặp câu nào sắp xếp trật tự thời gian đúng quy tắc tiếng Trung?",
       "choices": [
         "明天上午九点",
-        "九点明天上午",
+        "九点上午明天",
         "上午九点明天",
-        "九点上午明天"
+        "九点明天上午"
       ],
       "correct_index": 0,
       "explanation_vi": "Trật tự thời gian tiếng Trung đi từ lớn đến nhỏ: Ngày (明天) -> Buổi (上午) -> Giờ (九点)."
@@ -196,12 +196,12 @@
       "section": "grammar",
       "prompt": "Trợ từ kết cấu '的' trong câu '这是我妈妈的书' biểu thị ý nghĩa gì?",
       "choices": [
-        "Mối quan hệ sở hữu",
         "Mối quan hệ so sánh",
-        "Hành động tiếp diễn",
-        "Câu hỏi nghi vấn"
+        "Câu hỏi nghi vấn",
+        "Mối quan hệ sở hữu",
+        "Hành động tiếp diễn"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'的' ở đây là trợ từ sở hữu (sách của mẹ tôi)."
     },
     {
@@ -209,12 +209,12 @@
       "section": "reading",
       "prompt": "Đọc đoạn văn sau:\n'你好！我叫王朋。我是中国人，也是汉语老师。我家有三口人：爸爸、妈妈和我。'\nCâu hỏi: Vương Bằng làm nghề gì?",
       "choices": [
+        "Bác sĩ",
         "Giáo viên tiếng Trung",
         "Học sinh",
-        "Bác sĩ",
         "Nhân viên công ty"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Đoạn văn viết: '也是汉语老师' -> Giáo viên tiếng Trung."
     },
     {
@@ -222,12 +222,12 @@
       "section": "reading",
       "prompt": "Theo đoạn văn trên, nhà Vương Bằng có mấy người?",
       "choices": [
-        "3 người",
-        "4 người",
         "2 người",
-        "5 người"
+        "4 người",
+        "5 người",
+        "3 người"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'我家有三口人：爸爸、妈妈和我' -> Có 3 người."
     },
     {
@@ -248,10 +248,10 @@
       "section": "reading",
       "prompt": "Đọc câu: '李明不是医生，他是学生。'\nNhận định sau Đúng hay Sai: 'Lý Minh là bác sĩ.'",
       "choices": [
-        "Sai",
-        "Đúng"
+        "Đúng",
+        "Sai"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Trong bài: '李明不是医生' (Lý Minh không phải bác sĩ) -> Nhận định là Sai."
     },
     {
@@ -259,12 +259,12 @@
       "section": "reading",
       "prompt": "Đọc đối thoại:\nA: '请问，您是哪国人？'\nB: '我是越南人。你呢？'\nA: '我是中国人。'\nHỏi: Nhân vật A mang quốc tịch nào?",
       "choices": [
-        "Trung Quốc",
-        "Việt Nam",
+        "Pháp",
         "Mỹ",
-        "Pháp"
+        "Việt Nam",
+        "Trung Quốc"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "Nhân vật A trả lời: '我是中国人' (Tôi là người Trung Quốc)."
     },
     {
@@ -272,13 +272,14 @@
       "section": "reading",
       "prompt": "Đọc câu: '现在是下午两点半，我们去喝茶吧。'\nHỏi: Họ dự định làm gì lúc 2 giờ rưỡi chiều?",
       "choices": [
-        "Đi uống trà",
-        "Đi ăn cơm",
         "Đi mua đồ",
+        "Đi ăn cơm",
+        "Đi uống trà",
         "Đi ngủ"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'我们去喝茶吧' -> Đi uống trà."
     }
-  ]
+  ],
+  "revision": 2
 }

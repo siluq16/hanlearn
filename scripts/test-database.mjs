@@ -34,6 +34,11 @@ if(existsSync('supabase/tests/migration_009_security.sql')) {
  if(m9.status!==0) throw Error(m9.stderr || m9.error?.message || 'Migration 009 security SQL failed');
  console.log(`PASS ${(m9.stderr.match(/NOTICE:  PASS:/g)||[]).length} migration 009 security SQL assertions (deadline, anti-replay, auth isolation, no legacy RPC)`);
 }
+if(existsSync('supabase/tests/sprint8o_assessment_and_catalog.sql')) {
+ const s8o=spawnSync(psql,[...args,'-f','supabase/tests/sprint8o_assessment_and_catalog.sql'],{encoding:'utf8'});
+ if(s8o.status!==0) throw Error(s8o.stderr || s8o.error?.message || 'Sprint 8O assessment & catalog SQL failed');
+ console.log(`PASS ${(s8o.stderr.match(/NOTICE:  PASS:/g)||[]).length} Sprint 8O assessment permutation & catalog sync SQL assertions`);
+}
 const vid='d0000000-0000-0000-0000-000000000001';
 const cid='c0000000-0000-0000-0000-000000000001';
 const auth=`set local role authenticated; select set_config('request.jwt.claim.sub','${uid}',true);`;

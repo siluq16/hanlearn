@@ -165,6 +165,7 @@ export type CurriculumQuizAttempt = {
   question_count: number;
   passed: boolean | null;
   answers: Json | null;
+  key_revision?: number;
   metadata?: Json | null;
   created_at?: string;
 };

@@ -6,6 +6,10 @@ import { revalidatePath } from "next/cache";
 import { randomUUID } from "node:crypto";
 import { requireLearner } from "@/features/auth/session";
 import { invalidateLearnerSnapshot } from "@/features/courses/queries";
+import {
+  getQuestionRevisionEntry,
+  translateV2AnswersToV1,
+} from "@/features/quizzes/quiz-revisions";
 
 export interface UnitTestQuestion {
   id: string;
@@ -156,21 +160,39 @@ export async function submitUnitTestAction(
   }
   const attemptId = attemptIdParam;
 
-  let dbAttempt: { id: string; started_at: string; submitted_at: string | null } | null = null;
+  type DbUnitTestAttemptRow = {
+    id: string;
+    started_at: string;
+    submitted_at: string | null;
+    key_revision?: number;
+  };
+  let dbAttempt: DbUnitTestAttemptRow | null = null;
+  let dbHasKeyRevisionColumn = true;
 
   if (learner && learner.supabase && learner.user) {
     try {
-      const { data } = await learner.supabase
+      const revProbe = await learner.supabase
         .from("curriculum_quiz_attempts")
-        .select("id, started_at, submitted_at")
+        .select("id, started_at, submitted_at, key_revision")
         .eq("id", attemptId)
         .eq("user_id", learner.user.id)
         .maybeSingle();
-      if (data) {
-        dbAttempt = data as { id: string; started_at: string; submitted_at: string | null };
+      if (!revProbe.error && revProbe.data) {
+        dbAttempt = revProbe.data as DbUnitTestAttemptRow;
+      } else if (revProbe.error) {
+        dbHasKeyRevisionColumn = false;
+        const { data } = await learner.supabase
+          .from("curriculum_quiz_attempts")
+          .select("id, started_at, submitted_at")
+          .eq("id", attemptId)
+          .eq("user_id", learner.user.id)
+          .maybeSingle();
+        if (data) {
+          dbAttempt = data as DbUnitTestAttemptRow;
+        }
       }
     } catch {
-      // DB check failed
+      dbHasKeyRevisionColumn = false;
     }
   }
 
@@ -218,9 +240,17 @@ export async function submitUnitTestAction(
   const grammarTotal = raw.questions.filter((q) => q.section === "grammar").length;
   const readingTotal = raw.questions.filter((q) => q.section === "reading").length;
 
+  const quizSlug = `hsk1-unit-test-0${unitNumber}`;
+  const effectiveRevision = dbAttempt?.key_revision === 1 ? 1 : 2;
+
   const questionResults: UnitTestQuestionResult[] = raw.questions.map((q) => {
     const userChoice = answers[q.id] ?? null;
-    const isCorrect = userChoice === q.correct_index;
+    const revEntry = getQuestionRevisionEntry(quizSlug, q.id);
+    const expectedChoice =
+      effectiveRevision === 1 && revEntry
+        ? revEntry.v1CorrectIndex
+        : (q.correct_index ?? 0);
+    const isCorrect = userChoice === expectedChoice;
 
     if (isCorrect) {
       if (q.section === "listening") listeningCorrect += 1;
@@ -233,7 +263,7 @@ export async function submitUnitTestAction(
       questionId: q.id,
       section: q.section,
       userChoice,
-      correctChoice: q.correct_index ?? 0,
+      correctChoice: expectedChoice,
       isCorrect,
       explanationVi: q.explanation_vi || "",
     };
@@ -245,17 +275,20 @@ export async function submitUnitTestAction(
   const passed = totalScore >= raw.passing_score; // >= 16 / 20 (80%)
 
   const now = new Date().toISOString();
-  const quizSlug = `hsk1-unit-test-0${unitNumber}`;
 
   // Authoritative server-side submission into curriculum_quiz_attempts
   if (learner && learner.supabase && learner.user) {
     let submitted = false;
 
-    // 1. Try atomic submit RPC (server-authoritative PostgreSQL grading)
+    // 1. Try atomic submit RPC (translates v2->v1 if DB is still pre-Migration 0011)
     try {
+      const rpcAnswers =
+        !dbHasKeyRevisionColumn && effectiveRevision === 2
+          ? translateV2AnswersToV1(quizSlug, answers)
+          : answers;
       const { error: rpcErr } = await learner.supabase.rpc("submit_curriculum_quiz_attempt", {
         p_attempt_id: attemptId,
-        p_answers: answers,
+        p_answers: rpcAnswers,
       });
       if (!rpcErr) {
         submitted = true;

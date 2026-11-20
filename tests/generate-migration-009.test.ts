@@ -2,9 +2,10 @@ import { describe, it, expect } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import { ALL_CURRICULUM_QUIZZES } from "@/features/quizzes/curriculum-quizzes";
+import { getV1CorrectIndex } from "@/features/quizzes/quiz-revisions";
 
 describe("Generate and verify complete migration 009", () => {
-  it("builds migration 009 with all curriculum quizzes and unit tests", () => {
+  it("verifies immutable migration 009 matches Revision 1 baseline keys for all curriculum quizzes and unit tests", () => {
     expect(ALL_CURRICULUM_QUIZZES.length).toBe(38);
 
     const keys: Array<{ slug: string; qId: string; correctIndex: number }> = [];
@@ -18,15 +19,16 @@ describe("Generate and verify complete migration 009", () => {
       }
     }
 
-    // 1. All 38 Curriculum Quizzes
+    // 1. All 38 Curriculum Quizzes (Revision 1 baseline keys)
     for (const q of ALL_CURRICULUM_QUIZZES) {
       for (const item of q.questions) {
         const key = q.answerKeys[item.id];
         expect(key).toBeDefined();
         if (key) {
-          addKey(q.lessonId, item.id, key.correct_index);
-          addKey(q.slug, item.id, key.correct_index);
-          addKey(q.quiz.id, item.id, key.correct_index);
+          const v1Idx = getV1CorrectIndex(q.slug, item.id) ?? key.correct_index;
+          addKey(q.lessonId, item.id, v1Idx);
+          addKey(q.slug, item.id, v1Idx);
+          addKey(q.quiz.id, item.id, v1Idx);
         }
       }
     }
@@ -61,9 +63,10 @@ describe("Generate and verify complete migration 009", () => {
       addDef(`l-hsk1-ut0${data.unit_number}`, data.duration_minutes, 80);
 
       for (const item of data.questions) {
-        addKey(data.slug, item.id, item.correct_index);
-        addKey(data.id, item.id, item.correct_index);
-        addKey(`l-hsk1-ut0${data.unit_number}`, item.id, item.correct_index);
+        const v1Idx = getV1CorrectIndex(data.slug, item.id) ?? item.correct_index;
+        addKey(data.slug, item.id, v1Idx);
+        addKey(data.id, item.id, v1Idx);
+        addKey(`l-hsk1-ut0${data.unit_number}`, item.id, v1Idx);
       }
     }
 
@@ -256,7 +259,9 @@ revoke all on function public.submit_curriculum_quiz_attempt(uuid, jsonb) from p
 grant execute on function public.submit_curriculum_quiz_attempt(uuid, jsonb) to authenticated;
 `;
 
-    fs.writeFileSync("supabase/migrations/202611150009_curriculum_quiz_server_grading.sql", sql, "utf-8");
-    expect(fs.existsSync("supabase/migrations/202611150009_curriculum_quiz_server_grading.sql")).toBe(true);
+    const existingSql = fs
+      .readFileSync("supabase/migrations/202611150009_curriculum_quiz_server_grading.sql", "utf-8")
+      .replace(/\r\n/g, "\n");
+    expect(existingSql).toBe(sql.replace(/\r\n/g, "\n"));
   });
 });

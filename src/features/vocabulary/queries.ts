@@ -3,7 +3,10 @@ import { requireLearner } from "@/features/auth/session";
 import { getActiveSyllabus } from "@/features/settings/queries";
 import { dataOrThrow, DataError, readAll } from "@/lib/data";
 import { vocabularySearchResultSchema } from "./schemas";
-import { getOfficial300VocabItems } from "./hsk1-library-vocab";
+import {
+  getOfficial300VocabItems,
+  findOfficial300VocabItem,
+} from "./hsk1-library-vocab";
 export async function searchVocabulary(filters: {
   q: string;
   level?: number | "";
@@ -103,7 +106,7 @@ export async function getVocabulary(id: string) {
   ]);
   if (wordResult.error || masteryResult.error) throw new DataError();
   if (!wordResult.data) {
-    const fallback = getOfficial300VocabItems().find((w) => w.id === id || w.simplified === id);
+    const fallback = findOfficial300VocabItem(id);
     if (!fallback) return null;
     return {
       word: {
@@ -144,18 +147,18 @@ export async function getVocabulary(id: string) {
     if (asset.error) throw new DataError();
     hasAudio = !!asset.data;
   }
-  const canonical300 = getOfficial300VocabItems().find(
-    (w) => w.simplified === wordResult.data!.simplified,
-  );
+  const canonical300 =
+    findOfficial300VocabItem(wordResult.data.id) ||
+    findOfficial300VocabItem(wordResult.data.simplified);
   const mergedWord = canonical300
     ? {
         ...wordResult.data,
         pinyin_marked: canonical300.pinyin_marked,
         meaning_vi: canonical300.meaning_vi,
-        example_zh: wordResult.data.example_zh || canonical300.example_zh || null,
+        example_zh: canonical300.example_zh || wordResult.data.example_zh || null,
         example_pinyin:
-          wordResult.data.example_pinyin || canonical300.example_pinyin || null,
-        example_vi: wordResult.data.example_vi || canonical300.example_vi || null,
+          canonical300.example_pinyin || wordResult.data.example_pinyin || null,
+        example_vi: canonical300.example_vi || wordResult.data.example_vi || null,
       }
     : wordResult.data;
   return {

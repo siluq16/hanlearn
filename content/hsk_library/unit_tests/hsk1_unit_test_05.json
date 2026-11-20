@@ -24,9 +24,9 @@
       "prompt": "Nghe câu nói qua điện thoại và chọn mục đích:",
       "choices": [
         "Hỏi tìm giám đốc Vương",
-        "Báo tin có bưu kiện",
+        "Gọi nhầm số",
         "Hẹn đi ăn tối",
-        "Gọi nhầm số"
+        "Báo tin có bưu kiện"
       ],
       "correct_index": 0,
       "explanation_vi": "'请问王经理在吗' là hỏi giám đốc Vương có ở đó không."
@@ -39,8 +39,8 @@
       "choices": [
         "Danh thiếp",
         "Bức ảnh",
-        "Cuốn sách",
-        "Chiếc bút"
+        "Chiếc bút",
+        "Cuốn sách"
       ],
       "correct_index": 0,
       "explanation_vi": "'名片' là danh thiếp."
@@ -51,12 +51,12 @@
       "audioText": "我们大家都是好朋友，互相帮助。",
       "prompt": "Nghe và xác định mối quan hệ giữa các nhân vật:",
       "choices": [
-        "Bạn bè tốt, luôn giúp đỡ nhau",
-        "Đồng nghiệp mới quen",
         "Người xa lạ",
-        "Đối thủ cạnh tranh"
+        "Đồng nghiệp mới quen",
+        "Đối thủ cạnh tranh",
+        "Bạn bè tốt, luôn giúp đỡ nhau"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'大家都是好朋友，互相帮助' -> Đều là bạn tốt, giúp đỡ lẫn nhau."
     },
     {
@@ -65,12 +65,12 @@
       "audioText": "请问，卫生间在哪个方向？——在左边。",
       "prompt": "Nghe và xác định vị trí nhà vệ sinh:",
       "choices": [
-        "Ở bên trái",
-        "Ở bên phải",
         "Ở phía trước",
-        "Ở tầng hai"
+        "Ở bên phải",
+        "Ở tầng hai",
+        "Ở bên trái"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'在左边' -> Ở bên trái."
     },
     {
@@ -79,12 +79,12 @@
       "audioText": "这些苹果很甜，那些不大好吃。",
       "prompt": "Nghe và so sánh chất lượng hoa quả:",
       "choices": [
-        "Những quả này ngọt, những quả kia không ngon lắm",
         "Những quả kia ngọt hơn",
-        "Tất cả đều rất chua",
-        "Tất cả đều rất ngon"
+        "Tất cả đều rất ngon",
+        "Những quả này ngọt, những quả kia không ngon lắm",
+        "Tất cả đều rất chua"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'这些苹果很甜，那些不大好吃' -> Những quả này ngọt, quả kia không ngon lắm."
     },
     {
@@ -94,9 +94,9 @@
       "prompt": "Nghe và xác định vị trí thư viện:",
       "choices": [
         "Ở phía trước trường học",
+        "Ở bên trong bệnh viện",
         "Ở phía sau trường học",
-        "Ở bên ngoài trường học",
-        "Ở bên trong bệnh viện"
+        "Ở bên ngoài trường học"
       ],
       "correct_index": 0,
       "explanation_vi": "'在学校的前面' -> Ở phía trước trường học."
@@ -106,12 +106,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào sau đây là kính ngữ của '你' (bạn)?",
       "choices": [
-        "您",
-        "他",
+        "它",
         "她",
-        "它"
+        "您",
+        "他"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'您' (nín) là đại từ nhân xưng trang trọng, kính ngữ của '你'."
     },
     {
@@ -119,12 +119,12 @@
       "section": "vocabulary",
       "prompt": "Từ '大家' (dàjiā) có nghĩa là gì?",
       "choices": [
-        "Mọi người / tất cả mọi người",
         "Gia đình lớn",
-        "Nhà của anh ấy",
-        "Chuyên gia"
+        "Mọi người / tất cả mọi người",
+        "Chuyên gia",
+        "Nhà của anh ấy"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'大家' (dàjiā) là mọi người."
     },
     {
@@ -132,12 +132,12 @@
       "section": "vocabulary",
       "prompt": "Cặp từ trái nghĩa chỉ phương hướng nào đúng?",
       "choices": [
-        "左边 (trái) - 右边 (phải)",
-        "前边 (trên) - 后边 (dưới)",
         "里边 (ngoài) - 外边 (trong)",
-        "上边 (trái) - 下边 (phải)"
+        "左边 (trái) - 右边 (phải)",
+        "上边 (trái) - 下边 (phải)",
+        "前边 (trên) - 后边 (dưới)"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'左边' là bên trái, '右边' là bên phải."
     },
     {
@@ -145,12 +145,12 @@
       "section": "vocabulary",
       "prompt": "Từ '帮助' (bāngzhù) có nghĩa là:",
       "choices": [
-        "Giúp đỡ / tương trợ",
-        "Luyện tập",
+        "Nghỉ ngơi",
         "Học tập",
-        "Nghỉ ngơi"
+        "Giúp đỡ / tương trợ",
+        "Luyện tập"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'帮助' (bāngzhù) là giúp đỡ."
     },
     {
@@ -159,9 +159,9 @@
       "prompt": "Phân biệt đại từ chỉ định: '这' (gần) và '那' (xa). Câu nào đúng nghĩa 'Quyển sách này là của tôi'?",
       "choices": [
         "这本书是我的。",
-        "那本书是我的。",
+        "什么书是我的？",
         "哪本书是我的？",
-        "什么书是我的？"
+        "那本书是我的。"
       ],
       "correct_index": 0,
       "explanation_vi": "'这' chỉ vật ở gần người nói (này / đây)."
@@ -173,8 +173,8 @@
       "choices": [
         "Biểu thị số nhiều cho đại từ/danh từ chỉ người",
         "Sở hữu",
-        "Kính trọng",
-        "Thời gian"
+        "Thời gian",
+        "Kính trọng"
       ],
       "correct_index": 0,
       "explanation_vi": "Hậu tố '们' (men) biểu thị số nhiều (ví dụ: 我们, 你们, 他们, 老师们)."
@@ -184,12 +184,12 @@
       "section": "grammar",
       "prompt": "Điền từ chỉ phương vị thích hợp: '书在桌子____。'",
       "choices": [
-        "上",
-        "前",
         "后",
-        "左"
+        "前",
+        "左",
+        "上"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "Sách nằm ở trên bàn: 桌子上."
     },
     {
@@ -197,12 +197,12 @@
       "section": "grammar",
       "prompt": "Chọn câu hỏi đúng khi muốn hỏi vị trí: 'Quyển sách của tôi ở đâu?'",
       "choices": [
+        "我的书是谁？",
         "我的书在哪儿？",
         "我的书怎么了？",
-        "我的书是谁？",
         "我的书什么时候？"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Hỏi vị trí nơi chốn dùng '在哪儿？'."
     },
     {
@@ -210,12 +210,12 @@
       "section": "reading",
       "prompt": "Đọc đoạn văn:\n'李经理的办公室在三楼，电梯出来往右走就是。他现在正在开会，请您在会议室外边等一下。'\nHỏi: Văn phòng của giám đốc Lý ở tầng mấy?",
       "choices": [
-        "Tầng 3",
         "Tầng 2",
+        "Tầng 4",
         "Tầng 1",
-        "Tầng 4"
+        "Tầng 3"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'在三楼' -> Ở tầng 3."
     },
     {
@@ -223,12 +223,12 @@
       "section": "reading",
       "prompt": "Giám đốc Lý hiện đang làm gì?",
       "choices": [
-        "Đang họp",
         "Đang ăn cơm",
+        "Đang ngủ",
         "Đang đi công tác",
-        "Đang ngủ"
+        "Đang họp"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'正在开会' -> Đang họp."
     },
     {
@@ -236,12 +236,12 @@
       "section": "reading",
       "prompt": "Đọc câu: '我们学校的前面是一个大公园，后面是一个超市。'\nHỏi: Địa điểm nào nằm ở phía sau trường học?",
       "choices": [
-        "Siêu thị",
+        "Sân vận động",
         "Công viên lớn",
-        "Bệnh viện",
-        "Sân vận động"
+        "Siêu thị",
+        "Bệnh viện"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'后面是一个超市' -> Phía sau là một siêu thị."
     },
     {
@@ -249,10 +249,10 @@
       "section": "reading",
       "prompt": "Đọc câu: '这位是张老师，她是教我们汉语的。'\nNhận định Đúng hay Sai: Cô Trương là giáo viên dạy tiếng Anh.",
       "choices": [
-        "Sai",
-        "Đúng"
+        "Đúng",
+        "Sai"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Trong bài: '教我们汉语的' (dạy tiếng Hán) -> Nhận định là Sai."
     },
     {
@@ -260,12 +260,12 @@
       "section": "reading",
       "prompt": "Đọc câu: '大家在学习上遇到困难，老师都会热心帮助。'\nHỏi: Khi gặp khó khăn trong học tập, ai sẽ nhiệt tình giúp đỡ?",
       "choices": [
-        "Thầy cô giáo",
         "Bạn cùng phòng",
-        "Bác sĩ",
-        "Người lạ"
+        "Người lạ",
+        "Thầy cô giáo",
+        "Bác sĩ"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'老师都会热心帮助' -> Thầy cô giáo nhiệt tình giúp đỡ."
     },
     {
@@ -273,13 +273,14 @@
       "section": "reading",
       "prompt": "Đọc câu: '这几张照片很漂亮，是我在北京拍的。'\nHỏi: Những bức ảnh này được chụp ở đâu?",
       "choices": [
+        "Hà Nội",
         "Bắc Kinh",
         "Thượng Hải",
-        "Hà Nội",
         "Tokyo"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'在北京拍的' -> Chụp ở Bắc Kinh."
     }
-  ]
+  ],
+  "revision": 2
 }

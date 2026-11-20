@@ -1,6 +1,9 @@
 import { requireLearner } from "@/features/auth/session";
 import { PageHeading } from "@/components/page-heading";
-import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
+import {
+  getOfficial300VocabItems,
+  findOfficial300VocabItem,
+} from "@/features/vocabulary/hsk1-library-vocab";
 import { getWordUnit } from "@/features/vocabulary/unit-mapping";
 import {
   getLearnerCurriculumProgress,
@@ -10,14 +13,6 @@ import {
   VocabularyView,
   type VocabularyViewItem,
 } from "@/features/vocabulary/components/vocabulary-view";
-import pilotVocab from "../../../../content/pilot-hsk1/v1/vocabulary.json";
-
-const PILOT_ID_TO_SIMPLIFIED = new Map<string, string>(
-  (pilotVocab as Array<{ id: string; simplified: string }>).map((w) => [
-    w.id,
-    w.simplified,
-  ]),
-);
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Từ vựng HSK 1" };
@@ -42,9 +37,11 @@ export default async function VocabularyPage() {
         | "learning"
         | "mastered";
       vocabProgressMap.set(row.vocabulary_id, state);
-      const pilotSimplified = PILOT_ID_TO_SIMPLIFIED.get(row.vocabulary_id);
-      if (pilotSimplified) {
-        vocabProgressMap.set(pilotSimplified, state);
+      const canonical = findOfficial300VocabItem(row.vocabulary_id);
+      if (canonical) {
+        vocabProgressMap.set(canonical.id, state);
+        vocabProgressMap.set(canonical.canonical_source_id, state);
+        vocabProgressMap.set(canonical.simplified, state);
       }
     }
   }
@@ -54,6 +51,7 @@ export default async function VocabularyPage() {
     const unitNum = getWordUnit(v.simplified);
     const mastery =
       vocabProgressMap.get(v.id) ||
+      vocabProgressMap.get(v.canonical_source_id) ||
       vocabProgressMap.get(v.simplified) ||
       "not_introduced";
     return {

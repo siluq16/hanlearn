@@ -26,9 +26,9 @@
       "prompt": "Nghe đoạn thông báo giá tiền và chọn con số đúng:",
       "choices": [
         "2.500 tệ",
+        "250 tệ",
         "2.050 tệ",
-        "5.200 tệ",
-        "250 tệ"
+        "5.200 tệ"
       ],
       "correct_index": 0,
       "explanation_vi": "'两千五百块' là 2.500 tệ."
@@ -39,12 +39,12 @@
       "audioText": "我希望明年能去中国留学。",
       "prompt": "Nghe và xác định ước muốn của người nói:",
       "choices": [
-        "Năm sau có thể đi Trung Quốc du học",
         "Mua nhà mới",
+        "Năm sau có thể đi Trung Quốc du học",
         "Tìm được việc làm lương cao",
         "Học tiếng Anh"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'希望明年能去中国留学' -> Hy vọng năm sau đi Trung Quốc du học."
     },
     {
@@ -53,12 +53,12 @@
       "audioText": "请不要在图书馆里大声说话。",
       "prompt": "Nghe câu yêu cầu và cho biết nội dung cấm chỉ:",
       "choices": [
-        "Không được nói chuyện to trong thư viện",
-        "Không được ăn uống",
         "Không được dùng điện thoại",
-        "Không được mang cặp vào"
+        "Không được mang cặp vào",
+        "Không được nói chuyện to trong thư viện",
+        "Không được ăn uống"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'不要在图书馆里大声说话' -> Đừng nói to trong thư viện."
     },
     {
@@ -67,12 +67,12 @@
       "audioText": "他正在操场上跑步呢。",
       "prompt": "Nghe và xác định hành động đang tiếp diễn:",
       "choices": [
-        "Đang chạy bộ trên sân tập",
-        "Đang đá bóng",
+        "Đang nghe nhạc",
         "Đang học bài",
-        "Đang nghe nhạc"
+        "Đang chạy bộ trên sân tập",
+        "Đang đá bóng"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'正在操场上跑步呢' -> Đang chạy bộ trên sân thể dục."
     },
     {
@@ -81,12 +81,12 @@
       "audioText": "时间不早了，我们一起走吧！",
       "prompt": "Nghe câu giục và chọn ý nghĩa:",
       "choices": [
-        "Không còn sớm nữa, chúng ta cùng đi thôi!",
-        "Trời còn sớm, ở lại chơi tiếp nhé!",
         "Tôi muốn đi ngủ rồi.",
-        "Hôm nay tôi không đi đâu."
+        "Không còn sớm nữa, chúng ta cùng đi thôi!",
+        "Hôm nay tôi không đi đâu.",
+        "Trời còn sớm, ở lại chơi tiếp nhé!"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'时间不早了，我们一起走吧' -> Không còn sớm nữa, chúng ta cùng đi thôi."
     },
     {
@@ -95,12 +95,12 @@
       "audioText": "小猫趴在椅子下面睡着了。",
       "prompt": "Nghe và xác định vị trí chú mèo con đang ngủ:",
       "choices": [
-        "Dưới gầm ghế",
-        "Trên bàn",
+        "Trong phòng ngủ",
         "Bên ngoài cửa",
-        "Trong phòng ngủ"
+        "Dưới gầm ghế",
+        "Trên bàn"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'在椅子下面' -> Dưới ghế."
     },
     {
@@ -108,12 +108,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào sau đây biểu thị số đếm 'một nghìn' (1.000)?",
       "choices": [
-        "一千",
-        "一百",
         "一万",
-        "一十"
+        "一百",
+        "一十",
+        "一千"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'千' (qiān) là hàng nghìn -> '一千' là 1.000."
     },
     {
@@ -121,12 +121,12 @@
       "section": "vocabulary",
       "prompt": "Động từ năng nguyện nào mang nghĩa 'hy vọng, mong muốn'?",
       "choices": [
+        "工作",
         "希望",
-        "知道",
         "认识",
-        "工作"
+        "知道"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'希望' (xīwàng) là hy vọng, ước mong."
     },
     {
@@ -135,9 +135,9 @@
       "prompt": "Từ '非常' (fēicháng) là phó từ chỉ mức độ gì?",
       "choices": [
         "Rất / vô cùng",
-        "Một chút",
         "Không hẳn",
-        "Bình thường"
+        "Bình thường",
+        "Một chút"
       ],
       "correct_index": 0,
       "explanation_vi": "'非常' (fēicháng) nghĩa là vô cùng, hết sức."
@@ -147,12 +147,12 @@
       "section": "vocabulary",
       "prompt": "Trợ từ ngữ khí '吧' (ba) thường dùng ở cuối câu để biểu thị điều gì?",
       "choices": [
-        "Thương lượng, đề nghị, rủ rê",
-        "Khẳng định tuyệt đối",
         "Câu hỏi vặn lại",
-        "Cảm thán ngạc nhiên"
+        "Cảm thán ngạc nhiên",
+        "Khẳng định tuyệt đối",
+        "Thương lượng, đề nghị, rủ rê"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'吧' đứng cuối câu biểu thị lời đề xuất, rủ rê nhẹ nhàng."
     },
     {
@@ -160,12 +160,12 @@
       "section": "grammar",
       "prompt": "Chọn phó từ cấm chỉ thích hợp: '天气很冷，你____穿得太少。'",
       "choices": [
-        "不要",
-        "不会",
+        "不可",
         "不能",
-        "不可"
+        "不会",
+        "不要"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'不要' (bú yào) dùng trong câu khuyên can hoặc cấm chỉ (đừng mặc quá ít)."
     },
     {
@@ -174,9 +174,9 @@
       "prompt": "Cấu trúc biểu thị hành động đang diễn ra tại thời điểm nói:",
       "choices": [
         "Chủ ngữ + 正在 + Động từ + (呢)",
-        "Chủ ngữ + 已经 + Động từ + (了)",
         "Chủ ngữ + 要 + Động từ + (了)",
-        "Chủ ngữ + 曾 + Động từ + (过)"
+        "Chủ ngữ + 曾 + Động từ + (过)",
+        "Chủ ngữ + 已经 + Động từ + (了)"
       ],
       "correct_index": 0,
       "explanation_vi": "Cấu trúc tiếp diễn: 正在 + Động từ + (呢)."
@@ -186,12 +186,12 @@
       "section": "grammar",
       "prompt": "Điền động từ năng nguyện chỉ khả năng do tập luyện mà có: '他学了一年汉语，现在____说一点儿中文。'",
       "choices": [
-        "会",
+        "爱",
         "要",
-        "想",
-        "爱"
+        "会",
+        "想"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'会' biểu thị năng lực, kỹ năng có được qua học tập."
     },
     {
@@ -212,12 +212,12 @@
       "section": "reading",
       "prompt": "Đọc đoạn văn:\n'李明每天早上六点起床，六点半跑步，七点吃早饭。八点他准时去公司上班。下班以后，他喜欢去书店买书，或者和朋友去踢足球。他的生活很健康。'\nHỏi: Lý Minh thức dậy lúc mấy giờ?",
       "choices": [
-        "6:00 sáng",
-        "6:30 sáng",
         "7:00 sáng",
-        "8:00 sáng"
+        "8:00 sáng",
+        "6:00 sáng",
+        "6:30 sáng"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'早上六点起床' -> 6 giờ sáng."
     },
     {
@@ -225,12 +225,12 @@
       "section": "reading",
       "prompt": "Sau khi tan làm, Lý Minh thường làm gì?",
       "choices": [
-        "Đi hiệu sách mua sách hoặc đá bóng cùng bạn",
         "Ở lại công ty làm thêm",
-        "Đi ngủ ngay",
-        "Đi xem phim một mình"
+        "Đi hiệu sách mua sách hoặc đá bóng cùng bạn",
+        "Đi xem phim một mình",
+        "Đi ngủ ngay"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'去书店买书，或者和朋友去踢足球' -> Đi hiệu sách mua sách hoặc đá bóng."
     },
     {
@@ -239,9 +239,9 @@
       "prompt": "Đọc câu: '这台电脑非常贵，要八千块钱，但是质量很好。'\nHỏi: Giá tiền của chiếc máy tính là bao nhiêu?",
       "choices": [
         "8.000 tệ",
-        "800 tệ",
+        "80.000 tệ",
         "18.000 tệ",
-        "80.000 tệ"
+        "800 tệ"
       ],
       "correct_index": 0,
       "explanation_vi": "'八千块' -> 8.000 tệ."
@@ -251,12 +251,12 @@
       "section": "reading",
       "prompt": "Đọc câu: '王老师会说汉语、英语和法语三种语言。'\nHỏi: Thầy Vương có thể nói được mấy thứ tiếng?",
       "choices": [
-        "3 thứ tiếng",
+        "1 thứ tiếng",
         "2 thứ tiếng",
         "4 thứ tiếng",
-        "1 thứ tiếng"
+        "3 thứ tiếng"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'三种语言' -> 3 thứ tiếng."
     },
     {
@@ -264,10 +264,10 @@
       "section": "reading",
       "prompt": "Đọc thông báo:\n'明天是元旦假期，学校放假一天。请大家注意安全，祝大家新年快乐！'\nNhận định Đúng hay Sai: Ngày mai học sinh vẫn phải đến trường học bình thường.",
       "choices": [
-        "Sai",
-        "Đúng"
+        "Đúng",
+        "Sai"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Trong thông báo: '学校放假一天' (trường nghỉ một ngày) -> Nhận định là Sai."
     },
     {
@@ -275,13 +275,14 @@
       "section": "reading",
       "prompt": "Đọc câu: '我们已经学完了HSK 1的全部三十两课，现在准备参加模拟考试！'\nHỏi: Học viên đã sẵn sàng cho hoạt động nào tiếp theo?",
       "choices": [
-        "Tham gia thi thử HSK 1",
-        "Bắt đầu học bảng chữ cái",
+        "Mua giáo trình mới",
         "Đi nghỉ dưỡng",
-        "Mua giáo trình mới"
+        "Bắt đầu học bảng chữ cái",
+        "Tham gia thi thử HSK 1"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'准备参加模拟考试' -> Chuẩn bị tham gia thi thử."
     }
-  ]
+  ],
+  "revision": 2
 }

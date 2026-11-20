@@ -22,12 +22,12 @@
       "audioText": "这个苹果多少钱一斤？——五块钱一斤。",
       "prompt": "Nghe đoạn đối thoại và xác định giá táo:",
       "choices": [
-        "5 đồng một cân",
-        "10 đồng một cân",
         "15 đồng một cân",
+        "10 đồng một cân",
+        "5 đồng một cân",
         "2 đồng một cân"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'五块钱一斤' -> 5 đồng/cân."
     },
     {
@@ -38,8 +38,8 @@
       "choices": [
         "我想吃米饭。",
         "我是医生。",
-        "今天很冷。",
-        "谢谢你。"
+        "谢谢你。",
+        "今天很冷。"
       ],
       "correct_index": 0,
       "explanation_vi": "Hỏi '吃米饭还是面条' trả lời bằng món muốn ăn '我想吃米饭' (Tôi muốn ăn cơm)."
@@ -50,12 +50,12 @@
       "audioText": "太贵了，便宜一点儿吧！",
       "prompt": "Nghe câu nói và chọn ý nghĩa của người nói:",
       "choices": [
-        "Đắt quá, bớt một chút đi!",
         "Rẻ quá, tôi mua hết!",
         "Rất ngon, tôi muốn ăn nữa!",
-        "Đồ này không đẹp."
+        "Đồ này không đẹp.",
+        "Đắt quá, bớt một chút đi!"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'太贵了，便宜一点儿吧' là mẫu câu mặc cả: Đắt quá, rẻ một chút đi."
     },
     {
@@ -64,12 +64,12 @@
       "audioText": "服务员，我想喝一杯热茶。",
       "prompt": "Nghe và xác định thức uống được gọi:",
       "choices": [
-        "Một ly trà nóng",
-        "Một chai nước lạnh",
         "Một ly cà phê",
-        "Một bát canh"
+        "Một bát canh",
+        "Một ly trà nóng",
+        "Một chai nước lạnh"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'一杯热茶' là một ly trà nóng."
     },
     {
@@ -78,12 +78,12 @@
       "audioText": "现在差十分十二点。",
       "prompt": "Nghe giờ giấc và chọn mốc giờ tương ứng:",
       "choices": [
+        "11:10",
         "11:50",
         "12:10",
-        "10:12",
-        "11:10"
+        "10:12"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'差十分十二点' là 12 giờ kém 10 (tức 11:50)."
     },
     {
@@ -94,8 +94,8 @@
       "choices": [
         "Bác sĩ",
         "Giáo viên",
-        "Đầu bếp",
-        "Nhân viên"
+        "Nhân viên",
+        "Đầu bếp"
       ],
       "correct_index": 0,
       "explanation_vi": "'她是医生' -> Mẹ là bác sĩ."
@@ -105,12 +105,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào sau đây có nghĩa là 'cơm, gạo'?",
       "choices": [
-        "米饭",
-        "面条",
         "包子",
-        "菜"
+        "菜",
+        "面条",
+        "米饭"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'米饭' (mǐfàn) là cơm."
     },
     {
@@ -119,9 +119,9 @@
       "prompt": "Đơn vị tiền tệ khẩu ngữ phổ biến nhất của Trung Quốc là:",
       "choices": [
         "块",
-        "分",
+        "元",
         "角",
-        "元"
+        "分"
       ],
       "correct_index": 0,
       "explanation_vi": "Trong giao tiếp khẩu ngữ, người Trung Quốc thường dùng '块' (kuài) để chỉ đồng nhân dân tệ."
@@ -131,12 +131,12 @@
       "section": "vocabulary",
       "prompt": "Từ '买' (mǎi) và '卖' (mài) khác nhau như thế nào?",
       "choices": [
-        "买 là mua, 卖 là bán",
-        "买 là bán, 卖 là mua",
         "Cả hai đều là mua",
-        "Cả hai đều là bán"
+        "买 là mua, 卖 là bán",
+        "Cả hai đều là bán",
+        "买 là bán, 卖 là mua"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'买' (thanh 3) là Mua; '卖' (thanh 4) là Bán."
     },
     {
@@ -144,12 +144,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào có nghĩa là 'nước uống'?",
       "choices": [
-        "水",
-        "茶",
         "酒",
-        "奶"
+        "水",
+        "奶",
+        "茶"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'水' (shuǐ) là nước."
     },
     {
@@ -157,12 +157,12 @@
       "section": "grammar",
       "prompt": "Chọn trợ từ ngữ khí biểu thị cảm thán trong cấu trúc '太...了':",
       "choices": [
-        "太好了！",
         "太好吗？",
-        "太好呢！",
-        "太好吧！"
+        "太好吧！",
+        "太好了！",
+        "太好呢！"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Cấu trúc cảm thán: 太 + Tính từ + 了! -> '太好了!' (Tốt quá rồi!)."
     },
     {
@@ -170,12 +170,12 @@
       "section": "grammar",
       "prompt": "Để hỏi giá cả của một món đồ, câu nào đúng chuẩn?",
       "choices": [
-        "这个多少钱？",
         "这个几钱？",
-        "这个怎么钱？",
-        "这个什么钱？"
+        "这个什么钱？",
+        "这个多少钱？",
+        "这个怎么钱？"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Hỏi giá tiền dùng '多少钱？'."
     },
     {
@@ -183,12 +183,12 @@
       "section": "grammar",
       "prompt": "Chọn liên từ biểu thị sự lựa chọn trong câu hỏi: '你想吃米饭____面条？'",
       "choices": [
-        "还是",
-        "或者",
         "和",
-        "跟"
+        "跟",
+        "或者",
+        "还是"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "Trong câu hỏi lựa chọn, dùng '还是' (háishi)."
     },
     {
@@ -197,9 +197,9 @@
       "prompt": "Điền động từ năng nguyện: '我想____中国买东西。'",
       "choices": [
         "去",
-        "是",
         "在",
-        "叫"
+        "叫",
+        "是"
       ],
       "correct_index": 0,
       "explanation_vi": "'我想去中国...' (Tôi muốn đi Trung Quốc...)."
@@ -209,12 +209,12 @@
       "section": "reading",
       "prompt": "Đọc đoạn văn:\n'今天中午我和朋友去饭馆吃饭。我吃了一碗面条，喝了一杯水。朋友想吃米饭和牛肉。我们一共花了五十块钱。'\nHỏi: Nhân vật 'tôi' đã ăn gì vào buổi trưa?",
       "choices": [
-        "Một bát mì",
+        "Không ăn gì",
         "Cơm và thịt bò",
         "Bánh bao",
-        "Không ăn gì"
+        "Một bát mì"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'我吃了一碗面条' -> Ăn một bát mì."
     },
     {
@@ -222,12 +222,12 @@
       "section": "reading",
       "prompt": "Tổng số tiền hai bạn đã chi cho bữa trưa là bao nhiêu?",
       "choices": [
-        "50 tệ",
-        "15 tệ",
         "5 tệ",
-        "100 tệ"
+        "50 tệ",
+        "100 tệ",
+        "15 tệ"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'我们一共花了五十块钱' -> 50 tệ."
     },
     {
@@ -237,8 +237,8 @@
       "choices": [
         "4 tệ",
         "6 tệ",
-        "2 tệ",
-        "5 tệ"
+        "5 tệ",
+        "2 tệ"
       ],
       "correct_index": 0,
       "explanation_vi": "Dưa hấu 2 tệ/cân, 2 cân là 2 * 2 = 4 tệ."
@@ -248,12 +248,12 @@
       "section": "reading",
       "prompt": "Đọc đối thoại:\nA: '服务员，买单！'\nB: '您好，一共七十八块。'\nHỏi: Nhân vật A đang làm gì?",
       "choices": [
-        "Thanh toán tiền bữa ăn",
-        "Gọi thêm món",
+        "Chào tạm biệt",
         "Hỏi đường đi",
-        "Chào tạm biệt"
+        "Gọi thêm món",
+        "Thanh toán tiền bữa ăn"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'买单' là thanh toán hóa đơn."
     },
     {
@@ -261,10 +261,10 @@
       "section": "reading",
       "prompt": "Đọc câu: '这家饭馆的菜很好吃，但是有点儿贵。'\nNhận định Đúng hay Sai: Món ăn ở đây dở nhưng rẻ.",
       "choices": [
-        "Sai",
-        "Đúng"
+        "Đúng",
+        "Sai"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Trong bài: món ăn rất ngon (很好吃) nhưng hơi đắt (有点儿贵) -> Nhận định là Sai."
     },
     {
@@ -272,13 +272,14 @@
       "section": "reading",
       "prompt": "Đọc câu: '我爸爸不喝茶，他喜欢喝水。'\nHỏi: Bố thích uống gì?",
       "choices": [
-        "Nước",
-        "Trà",
         "Cà phê",
-        "Rượu"
+        "Rượu",
+        "Nước",
+        "Trà"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'他喜欢喝水' -> Thích uống nước."
     }
-  ]
+  ],
+  "revision": 2
 }

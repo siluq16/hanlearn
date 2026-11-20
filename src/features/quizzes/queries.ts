@@ -5,6 +5,7 @@ import { requireLearner } from "@/features/auth/session";
 import { getLessonBundle } from "@/features/lessons/queries";
 import { DataError } from "@/lib/data";
 import { findCurriculumQuiz } from "./curriculum-quizzes";
+import { getQuestionRevisionEntry } from "./quiz-revisions";
 import {
   responseRow,
   readInput,
@@ -37,12 +38,26 @@ export async function getQuizView(
   // Handle curriculum quizzes (Lesson 5, 6, etc.)
   const curriculum = findCurriculumQuiz(lessonId);
   if (curriculum) {
-    // 1. Try reading from curriculum_quiz_attempts table first
-    const { data: dbRows } = await supabase
+    // 1. Try reading from curriculum_quiz_attempts table first (with key_revision if migrated)
+    let dbRows: unknown[] | null = null;
+    const withRev = await supabase
       .from("curriculum_quiz_attempts")
-      .select("id, started_at, submitted_at, correct_count, question_count, passed, answers")
+      .select(
+        "id, started_at, submitted_at, correct_count, question_count, passed, answers, key_revision"
+      )
       .eq("quiz_id", curriculum.quiz.id)
       .order("started_at", { ascending: false });
+
+    if (!withRev.error && withRev.data) {
+      dbRows = withRev.data;
+    } else {
+      const legacyRes = await supabase
+        .from("curriculum_quiz_attempts")
+        .select("id, started_at, submitted_at, correct_count, question_count, passed, answers")
+        .eq("quiz_id", curriculum.quiz.id)
+        .order("started_at", { ascending: false });
+      dbRows = legacyRes.data;
+    }
 
     const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
     const metaAttempts: Array<{
@@ -53,6 +68,7 @@ export async function getQuizView(
       question_count: number | null;
       passed: boolean | null;
       answers?: Record<string, number>;
+      key_revision?: number;
     }> = Array.isArray(user.user_metadata?.[metaKey]) ? user.user_metadata[metaKey] : [];
 
     // Use DB rows if present; otherwise fallback to user_metadata
@@ -64,6 +80,7 @@ export async function getQuizView(
       question_count: number | null;
       passed: boolean | null;
       answers?: Record<string, number>;
+      key_revision?: number;
     };
     const rawAttempts: RawCurriculumAttempt[] =
       dbRows && dbRows.length > 0
@@ -89,12 +106,18 @@ export async function getQuizView(
       passed: attemptRaw.passed,
     } : null;
 
+    const effectiveRevision = attemptRaw?.key_revision === 1 ? 1 : 2;
+
     let responses: Array<{ question_id: string; answer_index: number | null; is_correct: boolean }> = [];
     if (attemptRaw?.submitted_at && attemptRaw.answers) {
       responses = curriculum.questions.map((q) => {
         const ans = attemptRaw.answers ? attemptRaw.answers[q.id] : null;
-        const key = curriculum.answerKeys[q.id];
-        const isCorrect = ans !== undefined && ans !== null && ans === key?.correct_index;
+        const revEntry = getQuestionRevisionEntry(curriculum.slug, q.id);
+        const expectedIdx =
+          effectiveRevision === 1 && revEntry
+            ? revEntry.v1CorrectIndex
+            : curriculum.answerKeys[q.id]?.correct_index;
+        const isCorrect = ans !== undefined && ans !== null && ans === expectedIdx;
         return {
           question_id: q.id,
           answer_index: ans ?? null,
@@ -107,11 +130,15 @@ export async function getQuizView(
       lessonId: curriculum.lessonId,
       lessonTitle: curriculum.lessonTitle,
       quiz: curriculum.quiz,
-      questions: curriculum.questions.map((q) => ({
-        id: q.id,
-        prompt: q.prompt,
-        choices: q.choices,
-      })),
+      questions: curriculum.questions.map((q) => {
+        const revEntry = getQuestionRevisionEntry(curriculum.slug, q.id);
+        return {
+          id: q.id,
+          prompt: q.prompt,
+          choices:
+            effectiveRevision === 1 && revEntry ? revEntry.v1Choices : q.choices,
+        };
+      }),
       attempt,
       history,
       responses,
@@ -120,7 +147,7 @@ export async function getQuizView(
         completedAt: history.some((h) => h.passed === true) ? new Date().toISOString() : null,
       },
       recoveryScope: createHash("sha256")
-        .update(`${user.id}:${curriculum.quiz.id}:${curriculum.quiz.revision}`)
+        .update(`${user.id}:${curriculum.quiz.id}:${effectiveRevision}`)
         .digest("hex"),
     };
   }

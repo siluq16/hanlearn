@@ -5,6 +5,10 @@ import { requireLearner } from "@/features/auth/session";
 import { getQuizView } from "./queries";
 import { findCurriculumQuiz } from "./curriculum-quizzes";
 import {
+  getQuestionRevisionEntry,
+  translateV2AnswersToV1,
+} from "./quiz-revisions";
+import {
   readInput,
   startInput,
   submitInput,
@@ -128,6 +132,46 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
   const curriculum = findCurriculumQuiz(parsed.data.lessonId);
   if (curriculum) {
     const p = parsed.data;
+    if (!validAnswers(p.answers, curriculum.questions)) {
+      return failure("INVALID_INPUT");
+    }
+
+    // 1. Check authoritative curriculum_quiz_attempts row first (with key_revision probe)
+    type DbCurriculumAttemptRow = {
+      id: string;
+      started_at: string;
+      submitted_at: string | null;
+      key_revision?: number;
+    };
+    let dbAttempt: DbCurriculumAttemptRow | null = null;
+    let dbHasKeyRevisionColumn = true;
+
+    try {
+      const revProbe = await supabase
+        .from("curriculum_quiz_attempts")
+        .select("id, started_at, submitted_at, key_revision")
+        .eq("id", p.attemptId)
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      if (!revProbe.error && revProbe.data) {
+        dbAttempt = revProbe.data as DbCurriculumAttemptRow;
+      } else if (revProbe.error) {
+        dbHasKeyRevisionColumn = false;
+        const legacyProbe = await supabase
+          .from("curriculum_quiz_attempts")
+          .select("id, started_at, submitted_at")
+          .eq("id", p.attemptId)
+          .eq("user_id", user.id)
+          .maybeSingle();
+        if (legacyProbe.data) {
+          dbAttempt = legacyProbe.data as DbCurriculumAttemptRow;
+        }
+      }
+    } catch {
+      dbHasKeyRevisionColumn = false;
+    }
+
     const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
     const prevAttempts: Array<{
       id: string;
@@ -137,53 +181,90 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
       question_count: number | null;
       passed: boolean | null;
       answers?: Record<string, number>;
+      key_revision?: number;
     }> = Array.isArray(user.user_metadata?.[metaKey]) ? [...user.user_metadata[metaKey]] : [];
 
-    const targetAttempt = prevAttempts.find((a) => a.id === p.attemptId);
-    if (!targetAttempt) return failure("UNAVAILABLE");
-    if (targetAttempt.submitted_at) return failure("CONFLICT", false, true);
+    const metaAttempt = prevAttempts.find((a) => a.id === p.attemptId);
+    if (!dbAttempt && !metaAttempt) return failure("UNAVAILABLE");
+    if (dbAttempt?.submitted_at || metaAttempt?.submitted_at) {
+      return failure("CONFLICT", false, true);
+    }
+
+    const effectiveRevision =
+      dbAttempt?.key_revision === 1 || metaAttempt?.key_revision === 1 ? 1 : 2;
 
     let correctCount = 0;
     for (const q of curriculum.questions) {
-      const key = curriculum.answerKeys[q.id];
+      const revEntry = getQuestionRevisionEntry(curriculum.slug, q.id);
+      const expectedIdx =
+        effectiveRevision === 1 && revEntry
+          ? revEntry.v1CorrectIndex
+          : curriculum.answerKeys[q.id]?.correct_index;
       const given = p.answers[q.id];
-      if (given !== undefined && given === key?.correct_index) {
+      if (given !== undefined && given === expectedIdx) {
         correctCount++;
       }
     }
     const questionCount = curriculum.questions.length;
-    // Unified 80% Mastery Threshold (consistent with PostgreSQL submit_quiz rubric in 202611120003_quiz.sql)
     const passed = correctCount * 100 >= questionCount * 80;
     const submittedAt = new Date().toISOString();
 
-    targetAttempt.submitted_at = submittedAt;
-    targetAttempt.correct_count = correctCount;
-    targetAttempt.question_count = questionCount;
-    targetAttempt.passed = passed;
-    targetAttempt.answers = p.answers;
+    // 2. Authoritative PostgreSQL RPC submission (translates v2->v1 if DB is still pre-Migration 0011)
+    let rpcSucceeded = false;
+    if (typeof supabase.rpc === "function") {
+      try {
+        const rpcPayloadAnswers =
+          !dbHasKeyRevisionColumn && effectiveRevision === 2
+            ? translateV2AnswersToV1(curriculum.slug, p.answers)
+            : p.answers;
+        const { error: rpcErr } = await supabase.rpc(
+          "submit_curriculum_quiz_attempt",
+          {
+            p_attempt_id: p.attemptId,
+            p_answers: rpcPayloadAnswers,
+          }
+        );
+        if (!rpcErr) {
+          rpcSucceeded = true;
+        } else if (rpcErr.code === "PT409") {
+          return failure("CONFLICT", false, true);
+        } else if (rpcErr.code === "22023") {
+          return failure("INVALID_INPUT");
+        }
+      } catch {
+        // Fallback below
+      }
+    }
 
-    // 1. Update curriculum_quiz_attempts table
-    const { error: updateError } = await supabase
-      .from("curriculum_quiz_attempts")
-      .update({
-        submitted_at: submittedAt,
-        correct_count: correctCount,
-        question_count: questionCount,
-        passed,
-        answers: p.answers,
-      })
-      .eq("id", p.attemptId)
-      .eq("user_id", user.id);
+    if (!rpcSucceeded) {
+      if (metaAttempt) {
+        metaAttempt.submitted_at = submittedAt;
+        metaAttempt.correct_count = correctCount;
+        metaAttempt.question_count = questionCount;
+        metaAttempt.passed = passed;
+        metaAttempt.answers = p.answers;
+      }
+      const { error: updateError } = await supabase
+        .from("curriculum_quiz_attempts")
+        .update({
+          submitted_at: submittedAt,
+          correct_count: correctCount,
+          question_count: questionCount,
+          passed,
+          answers: p.answers,
+        })
+        .eq("id", p.attemptId)
+        .eq("user_id", user.id);
 
-    // 2. Migration fallback: If table update failed or table absent, write to user_metadata
-    if (updateError) {
-      const { error } = await supabase.auth.updateUser({
-        data: {
-          ...user.user_metadata,
-          [metaKey]: prevAttempts,
-        },
-      });
-      if (error) return failure("RETRY", true, true);
+      if (updateError && metaAttempt) {
+        const { error } = await supabase.auth.updateUser({
+          data: {
+            ...user.user_metadata,
+            [metaKey]: prevAttempts,
+          },
+        });
+        if (error) return failure("RETRY", true, true);
+      }
     }
 
     const readback = await getQuizView(curriculum.lessonId, p.attemptId);

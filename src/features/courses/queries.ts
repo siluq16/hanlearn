@@ -4,7 +4,10 @@ import { requireLearner } from "@/features/auth/session";
 import { HSK1_UNITS } from "./constants";
 import { HSK1_NINE_STAGE_LESSONS } from "@/features/content-library/curriculum-data";
 import { getLessonMeta } from "@/features/curriculum/unified-metadata";
-import { getOfficial300VocabItems } from "@/features/vocabulary/hsk1-library-vocab";
+import {
+  getOfficial300VocabItems,
+  findOfficial300VocabItem,
+} from "@/features/vocabulary/hsk1-library-vocab";
 
 export interface LearnerCurriculumSnapshot {
   stageProgress: Array<{
@@ -329,12 +332,15 @@ export const getLearnerCurriculumProgress = cache(
       };
     }
 
-    // Merge any words learned from vocabulary_progress
+    // Merge any words learned from vocabulary_progress (matching both Pilot v1 UUIDs and MD5 UUIDs)
+    let validVocabProgressCount = 0;
     if (vocabRows && vocabRows.length > 0) {
-      const vocabIdMap = new Map(official300.map((w) => [w.id, w.simplified]));
       for (const vr of vocabRows) {
-        const hz = vocabIdMap.get(vr.vocabulary_id);
-        if (hz) learnedWordsSet.add(hz);
+        const canonical = findOfficial300VocabItem(vr.vocabulary_id);
+        if (canonical) {
+          learnedWordsSet.add(canonical.simplified);
+          validVocabProgressCount += 1;
+        }
       }
     }
 
@@ -385,7 +391,7 @@ export const getLearnerCurriculumProgress = cache(
       totalVocabulary: 300,
       vocabularyLearnedCount: Math.min(
         300,
-        Math.max(learnedWordsSet.size, vocabRows?.length || 0)
+        Math.max(learnedWordsSet.size, validVocabProgressCount)
       ),
       overallPercent,
       nextLessonSlug,

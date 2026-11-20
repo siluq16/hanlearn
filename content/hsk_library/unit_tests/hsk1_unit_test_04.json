@@ -24,12 +24,12 @@
       "audioText": "你身体怎么样？——我感冒了，有点儿头疼。",
       "prompt": "Nghe đoạn thoại và cho biết người nói bị làm sao:",
       "choices": [
-        "Bị cảm và hơi đau đầu",
-        "Bị gãy chân",
         "Đau bụng do ăn no",
-        "Rất khỏe mạnh"
+        "Bị cảm và hơi đau đầu",
+        "Rất khỏe mạnh",
+        "Bị gãy chân"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'感冒了，有点儿头疼' -> Bị cảm, hơi đau đầu."
     },
     {
@@ -38,12 +38,12 @@
       "audioText": "这件衣服真漂亮，颜色也很好看。",
       "prompt": "Nghe và cho biết người nói khen điều gì:",
       "choices": [
-        "Bộ quần áo đẹp và màu sắc hài hòa",
-        "Đôi giày vừa vặn",
         "Chiếc mũ quá đắt",
-        "Cái túi xách nhỏ"
+        "Cái túi xách nhỏ",
+        "Đôi giày vừa vặn",
+        "Bộ quần áo đẹp và màu sắc hài hòa"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'这件衣服真漂亮，颜色也很好看' -> Khen áo đẹp và màu sắc."
     },
     {
@@ -52,12 +52,12 @@
       "audioText": "周末我们一起去看电影吧！",
       "prompt": "Nghe lời rủ và xác định hoạt động cuối tuần:",
       "choices": [
-        "Đi xem phim",
         "Đi bơi",
         "Đi leo núi",
-        "Đi ăn nhà hàng"
+        "Đi ăn nhà hàng",
+        "Đi xem phim"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'去看电影' là đi xem phim."
     },
     {
@@ -67,9 +67,9 @@
       "prompt": "Nghe và xác định nơi làm việc của người bố:",
       "choices": [
         "Công ty",
+        "Cửa hàng",
         "Bệnh viện",
-        "Trường học",
-        "Cửa hàng"
+        "Trường học"
       ],
       "correct_index": 0,
       "explanation_vi": "'在一家大公司上班' -> Làm việc ở công ty lớn."
@@ -80,12 +80,12 @@
       "audioText": "你喜欢打篮球还是踢足球？",
       "prompt": "Nghe câu hỏi và chọn hai môn thể thao được nhắc đến:",
       "choices": [
-        "Bóng rổ và bóng đá",
-        "Cầu lông và bơi lội",
         "Bóng bàn và chạy bộ",
-        "Tennis và bóng chuyền"
+        "Cầu lông và bơi lội",
+        "Tennis và bóng chuyền",
+        "Bóng rổ và bóng đá"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'打篮球' (bóng rổ) và '踢足球' (bóng đá)."
     },
     {
@@ -94,12 +94,12 @@
       "audioText": "医生让我多喝热水，多休息。",
       "prompt": "Nghe lời khuyên của bác sĩ:",
       "choices": [
-        "Uống nhiều nước ấm và nghỉ ngơi nhiều",
         "Uống thuốc đúng giờ và đi làm",
         "Ăn nhiều đồ ngọt",
+        "Uống nhiều nước ấm và nghỉ ngơi nhiều",
         "Chạy bộ mỗi sáng"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'多喝热水，多休息' -> Uống nhiều nước ấm và nghỉ ngơi."
     },
     {
@@ -107,12 +107,12 @@
       "section": "vocabulary",
       "prompt": "Lượng từ phù hợp cho quần áo (như áo sơ mi, áo khoác) là:",
       "choices": [
-        "件",
+        "只",
         "本",
-        "个",
-        "只"
+        "件",
+        "个"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "Lượng từ cho quần áo là '件' (jiàn, ví dụ: 一件衣服)."
     },
     {
@@ -120,12 +120,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào sau đây có nghĩa là 'màu đỏ'?",
       "choices": [
-        "红色",
         "白色",
+        "黄色",
         "黑色",
-        "黄色"
+        "红色"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'红色' (hóngsè) là màu đỏ."
     },
     {
@@ -133,12 +133,12 @@
       "section": "vocabulary",
       "prompt": "Từ '电影' có nghĩa là gì?",
       "choices": [
-        "Phim ảnh / điện ảnh",
-        "Truyền hình",
+        "Sách báo",
         "Âm nhạc",
-        "Sách báo"
+        "Phim ảnh / điện ảnh",
+        "Truyền hình"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'电影' (diànyǐng) là phim ảnh."
     },
     {
@@ -146,12 +146,12 @@
       "section": "vocabulary",
       "prompt": "Từ nào chỉ hành động 'nấu cơm / làm bếp'?",
       "choices": [
-        "做饭",
         "吃饭",
+        "做饭",
         "喝水",
         "买菜"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'做饭' (zuòfàn) là nấu cơm, làm đồ ăn."
     },
     {
@@ -159,12 +159,12 @@
       "section": "grammar",
       "prompt": "Phó từ '真' (zhēn) dùng để bổ nghĩa trước tính từ nhằm mục đích gì?",
       "choices": [
-        "Biểu thị sự trầm trồ, khen ngợi",
         "Phủ định tính chất",
         "Đặt câu hỏi nghi vấn",
+        "Biểu thị sự trầm trồ, khen ngợi",
         "So sánh hơn"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'真' đứng trước tính từ biểu thị cảm thán (ví dụ: 真漂亮 - thật đẹp)."
     },
     {
@@ -174,8 +174,8 @@
       "choices": [
         "有",
         "点",
-        "很",
-        "太"
+        "太",
+        "很"
       ],
       "correct_index": 0,
       "explanation_vi": "Cấu trúc: 有点儿 + Tính từ (biểu thị không hài lòng: 有点儿大 - hơi to một chút)."
@@ -185,12 +185,12 @@
       "section": "grammar",
       "prompt": "Điền trợ từ ngữ khí đề nghị, rủ rê: '我们一起去踢球____！'",
       "choices": [
-        "吧",
         "吗",
         "呢",
+        "吧",
         "了"
       ],
-      "correct_index": 0,
+      "correct_index": 2,
       "explanation_vi": "'吧' đứng cuối câu biểu thị lời rủ rê, đề xuất."
     },
     {
@@ -198,12 +198,12 @@
       "section": "grammar",
       "prompt": "Chọn cách nói đúng khi biểu thị sự yêu thích làm một việc gì đó:",
       "choices": [
+        "看电影我喜欢了。",
         "我喜欢看电影。",
         "我喜欢看电影吗。",
-        "看电影我喜欢了。",
         "我喜欢看电影吧。"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Cấu trúc: Chủ ngữ + 喜欢 + Động từ/Tân ngữ."
     },
     {
@@ -211,12 +211,12 @@
       "section": "reading",
       "prompt": "Đọc đoạn văn:\n'李明今天生病了，没去上班。他觉得身体很冷，头也疼。医生给他开了一些药，让他多睡一会儿。明天他就会好起来。'\nHỏi: Tại sao hôm nay Lý Minh không đi làm?",
       "choices": [
-        "Vì bị ốm",
-        "Vì đi du lịch",
         "Vì công ty cho nghỉ",
-        "Vì trời mưa to"
+        "Vì bị ốm",
+        "Vì trời mưa to",
+        "Vì đi du lịch"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "'李明今天生病了，没去上班' -> Bị ốm nên không đi làm."
     },
     {
@@ -226,8 +226,8 @@
       "choices": [
         "Kê thuốc và khuyên ngủ nhiều hơn",
         "Bảo đi làm bình thường",
-        "Khuyên đi tập thể thao",
-        "Bảo nhịn ăn"
+        "Bảo nhịn ăn",
+        "Khuyên đi tập thể thao"
       ],
       "correct_index": 0,
       "explanation_vi": "'开了一些药，让他多睡一会儿' -> Kê thuốc và bảo ngủ nhiều hơn."
@@ -238,9 +238,9 @@
       "prompt": "Đọc câu: '这件红色的衣服一百块，那件黑色的只要八十块。'\nHỏi: Bộ quần áo màu đen giá bao nhiêu?",
       "choices": [
         "80 tệ",
+        "20 tệ",
         "100 tệ",
-        "180 tệ",
-        "20 tệ"
+        "180 tệ"
       ],
       "correct_index": 0,
       "explanation_vi": "'黑色的只要八十块' -> Màu đen 80 tệ."
@@ -250,12 +250,12 @@
       "section": "reading",
       "prompt": "Đọc câu: '姐姐非常喜欢小狗，她家里养了三只小狗。'\nHỏi: Chị gái nuôi mấy con chó nhỏ?",
       "choices": [
-        "3 con",
-        "2 con",
+        "1 con",
         "4 con",
-        "1 con"
+        "2 con",
+        "3 con"
       ],
-      "correct_index": 0,
+      "correct_index": 3,
       "explanation_vi": "'养了三只小狗' -> Nuôi 3 con chó nhỏ."
     },
     {
@@ -263,10 +263,10 @@
       "section": "reading",
       "prompt": "Đọc câu: '明天晚上我们去超市买菜，然后在家里做饭。'\nNhận định Đúng hay Sai: Họ dự định ăn tối ở nhà hàng ngoài phố.",
       "choices": [
-        "Sai",
-        "Đúng"
+        "Đúng",
+        "Sai"
       ],
-      "correct_index": 0,
+      "correct_index": 1,
       "explanation_vi": "Trong bài: '在家里做饭' (nấu cơm ở nhà) -> Nhận định là Sai."
     },
     {
@@ -275,12 +275,13 @@
       "prompt": "Đọc câu: '王老师周末喜欢在家里听音乐、看书。'\nHỏi: Thầy Vương có sở thích gì vào cuối tuần?",
       "choices": [
         "Nghe nhạc và đọc sách",
+        "Đi leo núi",
         "Chơi điện tử",
-        "Đi mua sắm",
-        "Đi leo núi"
+        "Đi mua sắm"
       ],
       "correct_index": 0,
       "explanation_vi": "'听音乐、看书' -> Nghe nhạc, đọc sách."
     }
-  ]
+  ],
+  "revision": 2
 }
