@@ -6,8 +6,10 @@ alter table public.curriculum_quiz_attempts
   add column if not exists key_revision integer not null default 1
   check (key_revision in (1, 2));
 
+-- Keep default key_revision = 1 so any legacy/Old-App client that omits key_revision
+-- is deterministically pinned to Revision 1 and graded against correct_index_v1.
 alter table public.curriculum_quiz_attempts
-  alter column key_revision set default 2;
+  alter column key_revision set default 1;
 
 alter table private.curriculum_quiz_keys
   add column if not exists correct_index_v1 integer
@@ -1329,7 +1331,7 @@ begin
   new.submitted_at := null;
   new.correct_count := null;
   new.passed := null;
-  new.key_revision := coalesce(new.key_revision, 2);
+  new.key_revision := coalesce(new.key_revision, 1);
   return new;
 end;
 $$;
@@ -1407,7 +1409,7 @@ begin
     raise exception 'QUIZ_KEYS_NOT_FOUND' using errcode = 'PT404';
   end if;
 
-  v_effective_revision := coalesce(v_attempt.key_revision, 2);
+  v_effective_revision := coalesce(v_attempt.key_revision, 1);
 
   select
     count(*),

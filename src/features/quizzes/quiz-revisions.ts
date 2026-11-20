@@ -4753,8 +4753,62 @@ export function getV2CorrectIndex(slugOrId: string, questionId: string): number 
 }
 
 /**
+ * Returns the active assessment key revision configured for newly created attempts.
+ * Defaults to CURRENT_ASSESSMENT_KEY_REVISION (2). Can be switched to 1 via
+ * HANLEARN_ASSESSMENT_KEY_REVISION=1 for instant zero-data-loss feature-flag rollback.
+ */
+export function getConfiguredAssessmentRevision(): 1 | 2 {
+  if (process.env.HANLEARN_ASSESSMENT_KEY_REVISION === "1") {
+    return 1;
+  }
+  return CURRENT_ASSESSMENT_KEY_REVISION;
+}
+
+const PINNED_ATTEMPT_REVISIONS = new Map<string, 1 | 2>();
+const MAX_PINNED_ATTEMPTS = 2000;
+
+export function pinAttemptRevisionInMemory(attemptId: string, revision: 1 | 2): void {
+  if (!attemptId) return;
+  if (PINNED_ATTEMPT_REVISIONS.size >= MAX_PINNED_ATTEMPTS) {
+    const oldestKey = PINNED_ATTEMPT_REVISIONS.keys().next().value;
+    if (oldestKey) PINNED_ATTEMPT_REVISIONS.delete(oldestKey);
+  }
+  PINNED_ATTEMPT_REVISIONS.set(attemptId, revision);
+}
+
+export function getPinnedAttemptRevisionInMemory(attemptId?: string | null): 1 | 2 | undefined {
+  if (!attemptId) return undefined;
+  return PINNED_ATTEMPT_REVISIONS.get(attemptId);
+}
+
+export function clearPinnedAttemptRevisionsInMemory(): void {
+  PINNED_ATTEMPT_REVISIONS.clear();
+}
+
+/**
+ * Resolves the pinned key_revision (1 or 2) for a specific attempt across all 4 deployment states:
+ * - New DB (dbHasKeyRevisionColumn = true): DB column is authoritative (defaults to 1 for legacy/Old-App rows).
+ * - Old DB (dbHasKeyRevisionColumn = false): defaults to 1 for historical/Old-App rows unless explicitly pinned as 2 by New App.
+ */
+export function resolveAttemptKeyRevision(params: {
+  dbHasKeyRevisionColumn: boolean;
+  dbKeyRevision?: number | null;
+  metaKeyRevision?: number | null;
+  attemptId?: string | null;
+}): 1 | 2 {
+  if (params.dbHasKeyRevisionColumn) {
+    return params.dbKeyRevision === 2 ? 2 : 1;
+  }
+  const inMem = getPinnedAttemptRevisionInMemory(params.attemptId);
+  if (params.metaKeyRevision === 2 || inMem === 2) {
+    return 2;
+  }
+  return 1;
+}
+
+/**
  * Translates a user's Revision 2 displayed choice indices back to Revision 1 canonical indices.
- * Used when submitting against a Revision 1 database prior to Migration 0011 cutover.
+ * Used when submitting a Revision 2 attempt against a pre-Migration-0011 (Revision 1) database.
  */
 export function translateV2AnswersToV1(
   slugOrId: string,
@@ -4767,6 +4821,27 @@ export function translateV2AnswersToV1(
       out[qId] = entry.v2ToV1Map[v2Idx];
     } else {
       out[qId] = v2Idx;
+    }
+  }
+  return out;
+}
+
+/**
+ * Inverse bijection of translateV2AnswersToV1: translates Revision 1 stored answer indices to Revision 2 indices.
+ * Used when reading back a Revision 2 attempt that was stored via a Revision 1 RPC on an unmigrated database.
+ */
+export function translateV1AnswersToV2(
+  slugOrId: string,
+  answersV1: Record<string, number>
+): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const [qId, v1Idx] of Object.entries(answersV1)) {
+    const entry = getQuestionRevisionEntry(slugOrId, qId);
+    if (entry && typeof v1Idx === "number") {
+      const v2Idx = entry.v2ToV1Map.indexOf(v1Idx);
+      out[qId] = v2Idx !== -1 ? v2Idx : v1Idx;
+    } else {
+      out[qId] = v1Idx;
     }
   }
   return out;

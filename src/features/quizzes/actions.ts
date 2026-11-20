@@ -5,7 +5,10 @@ import { requireLearner } from "@/features/auth/session";
 import { getQuizView } from "./queries";
 import { findCurriculumQuiz } from "./curriculum-quizzes";
 import {
+  getConfiguredAssessmentRevision,
   getQuestionRevisionEntry,
+  pinAttemptRevisionInMemory,
+  resolveAttemptKeyRevision,
   translateV2AnswersToV1,
 } from "./quiz-revisions";
 import {
@@ -59,6 +62,9 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
   if (curriculum) {
     const attemptId = randomUUID();
     const startedAt = new Date().toISOString();
+    const pinnedRevision = getConfiguredAssessmentRevision();
+    pinAttemptRevisionInMemory(attemptId, pinnedRevision);
+
     const newAttempt = {
       id: attemptId,
       started_at: startedAt,
@@ -66,10 +72,13 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
       correct_count: null,
       question_count: curriculum.questions.length,
       passed: null,
+      key_revision: pinnedRevision,
     };
 
-    // 1. Persist to authoritative curriculum_quiz_attempts table
-    const { error: insertError } = await supabase
+    // 1. Persist to authoritative curriculum_quiz_attempts table with explicit pinned key_revision
+    let insertError: unknown = null;
+    let dbAcceptedKeyRevision = false;
+    const withRevInsert = await supabase
       .from("curriculum_quiz_attempts")
       .insert({
         id: attemptId,
@@ -78,22 +87,44 @@ export async function startQuiz(input: unknown): Promise<QuizResult> {
         lesson_id: curriculum.lessonId,
         started_at: startedAt,
         question_count: curriculum.questions.length,
+        key_revision: pinnedRevision,
       });
 
-    // 2. Migration fallback: If table is not created yet, mirror to user_metadata
-    if (insertError) {
+    if (!withRevInsert.error) {
+      dbAcceptedKeyRevision = true;
+    } else {
+      // Pre-Migration 0011 DB fallback: insert without key_revision column
+      const legacyInsert = await supabase
+        .from("curriculum_quiz_attempts")
+        .insert({
+          id: attemptId,
+          user_id: user.id,
+          quiz_id: curriculum.quiz.id,
+          lesson_id: curriculum.lessonId,
+          started_at: startedAt,
+          question_count: curriculum.questions.length,
+        });
+      insertError = legacyInsert.error;
+    }
+
+    // 2. Mirror pinned revision to user_metadata if DB lacks key_revision column or table is not created yet
+    if (insertError || !dbAcceptedKeyRevision) {
       const metaKey = `quiz_attempts_${curriculum.quiz.id}`;
       const prevAttempts = Array.isArray(user.user_metadata?.[metaKey])
         ? user.user_metadata[metaKey]
         : [];
       const nextAttempts = [newAttempt, ...prevAttempts].slice(0, 20);
-      const { error } = await supabase.auth.updateUser({
-        data: {
-          ...user.user_metadata,
-          [metaKey]: nextAttempts,
-        },
-      });
-      if (error) return failure("RETRY", true, true);
+      try {
+        const { error } = await supabase.auth.updateUser({
+          data: {
+            ...user.user_metadata,
+            [metaKey]: nextAttempts,
+          },
+        });
+        if (insertError && error) return failure("RETRY", true, true);
+      } catch {
+        if (insertError) return failure("RETRY", true, true);
+      }
     }
 
     const readback = await getQuizView(curriculum.lessonId, attemptId);
@@ -190,8 +221,12 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
       return failure("CONFLICT", false, true);
     }
 
-    const effectiveRevision =
-      dbAttempt?.key_revision === 1 || metaAttempt?.key_revision === 1 ? 1 : 2;
+    const effectiveRevision = resolveAttemptKeyRevision({
+      dbHasKeyRevisionColumn,
+      dbKeyRevision: dbAttempt?.key_revision,
+      metaKeyRevision: metaAttempt?.key_revision,
+      attemptId: p.attemptId,
+    });
 
     let correctCount = 0;
     for (const q of curriculum.questions) {
@@ -244,6 +279,10 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
         metaAttempt.passed = passed;
         metaAttempt.answers = p.answers;
       }
+      const dbFallbackAnswers =
+        !dbHasKeyRevisionColumn && effectiveRevision === 2
+          ? translateV2AnswersToV1(curriculum.slug, p.answers)
+          : p.answers;
       const { error: updateError } = await supabase
         .from("curriculum_quiz_attempts")
         .update({
@@ -251,7 +290,7 @@ export async function submitQuiz(input: unknown): Promise<QuizResult> {
           correct_count: correctCount,
           question_count: questionCount,
           passed,
-          answers: p.answers,
+          answers: dbFallbackAnswers,
         })
         .eq("id", p.attemptId)
         .eq("user_id", user.id);

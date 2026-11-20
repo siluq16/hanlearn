@@ -7,7 +7,10 @@ import { randomUUID } from "node:crypto";
 import { requireLearner } from "@/features/auth/session";
 import { invalidateLearnerSnapshot } from "@/features/courses/queries";
 import {
+  getConfiguredAssessmentRevision,
   getQuestionRevisionEntry,
+  pinAttemptRevisionInMemory,
+  resolveAttemptKeyRevision,
   translateV2AnswersToV1,
 } from "@/features/quizzes/quiz-revisions";
 
@@ -33,6 +36,7 @@ export interface UnitTestDefinition {
   total_questions: number;
   lessons_covered: string[];
   questions: UnitTestQuestion[];
+  key_revision?: 1 | 2;
 }
 
 export interface UnitTestQuestionResult {
@@ -77,30 +81,48 @@ export async function getUnitTestDefinition(
   unitNumber: number
 ): Promise<UnitTestDefinition> {
   const raw = loadUnitTestRaw(unitNumber);
+  const activeRevision = getConfiguredAssessmentRevision();
   // Strip correct_index and explanation_vi from client payload before submission
   return {
     ...raw,
+    key_revision: activeRevision,
     questions: raw.questions.map((q) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { correct_index, explanation_vi, ...safeQ } = q;
-      return safeQ as UnitTestQuestion;
+      const revEntry = getQuestionRevisionEntry(raw.slug, q.id);
+      return {
+        ...safeQ,
+        choices:
+          activeRevision === 1 && revEntry ? [...revEntry.v1Choices] : [...safeQ.choices],
+      } as UnitTestQuestion;
     }),
   };
 }
 
 export async function startUnitTestAction(
-  unitNumber: number
-): Promise<{ ok: boolean; attemptId: string; startedAt: string; durationMinutes: number }> {
+  unitNumber: number,
+  clientKeyRevision?: 1 | 2
+): Promise<{
+  ok: boolean;
+  attemptId: string;
+  startedAt: string;
+  durationMinutes: number;
+  keyRevision: 1 | 2;
+}> {
   const learner = await requireLearner();
   const raw = loadUnitTestRaw(unitNumber);
   const attemptId = randomUUID();
   const startedAt = new Date().toISOString();
   const quizSlug = `hsk1-unit-test-0${unitNumber}`;
+  const pinnedRevision: 1 | 2 =
+    clientKeyRevision === 1 ? 1 : getConfiguredAssessmentRevision();
+  pinAttemptRevisionInMemory(attemptId, pinnedRevision);
 
   let dbSaved = false;
+  let dbAcceptedKeyRevision = false;
   if (learner && learner.supabase && learner.user) {
     try {
-      const { error: insertErr } = await learner.supabase
+      const { error: insertWithRevErr } = await learner.supabase
         .from("curriculum_quiz_attempts")
         .insert({
           id: attemptId,
@@ -112,20 +134,46 @@ export async function startUnitTestAction(
           submitted_at: null,
           correct_count: null,
           passed: null,
+          key_revision: pinnedRevision,
         });
-      if (!insertErr) {
+      if (!insertWithRevErr) {
         dbSaved = true;
+        dbAcceptedKeyRevision = true;
+      } else {
+        const { error: legacyInsertErr } = await learner.supabase
+          .from("curriculum_quiz_attempts")
+          .insert({
+            id: attemptId,
+            user_id: learner.user.id,
+            quiz_id: attemptId,
+            lesson_id: quizSlug,
+            started_at: startedAt,
+            question_count: raw.total_questions,
+            submitted_at: null,
+            correct_count: null,
+            passed: null,
+          });
+        if (!legacyInsertErr) {
+          dbSaved = true;
+        }
       }
     } catch {
       // Table may not yet be migrated
     }
 
-    if (!dbSaved) {
+    if (!dbSaved || !dbAcceptedKeyRevision) {
       try {
         const meta = learner.user.user_metadata || {};
         const activeAttempts =
-          (meta["active_unit_test_attempts"] as Record<string, { unitNumber: number; startedAt: string }>) || {};
-        activeAttempts[attemptId] = { unitNumber, startedAt };
+          (meta["active_unit_test_attempts"] as Record<
+            string,
+            { unitNumber: number; startedAt: string; keyRevision?: 1 | 2 }
+          >) || {};
+        activeAttempts[attemptId] = {
+          unitNumber,
+          startedAt,
+          keyRevision: pinnedRevision,
+        };
         await learner.supabase.auth.updateUser({
           data: {
             active_unit_test_attempts: activeAttempts,
@@ -142,6 +190,7 @@ export async function startUnitTestAction(
     attemptId,
     startedAt,
     durationMinutes: raw.duration_minutes,
+    keyRevision: pinnedRevision,
   };
 }
 
@@ -198,6 +247,13 @@ export async function submitUnitTestAction(
 
   let startedAtMs = 0;
 
+  const activeAttempts =
+    (learner?.user?.user_metadata?.["active_unit_test_attempts"] as Record<
+      string,
+      { unitNumber: number; startedAt: string; keyRevision?: 1 | 2 }
+    >) || {};
+  const recordedMetaAttempt = activeAttempts[attemptId];
+
   if (dbAttempt) {
     // Atomic check: attempt must NOT have been submitted already
     if (dbAttempt.submitted_at) {
@@ -206,14 +262,8 @@ export async function submitUnitTestAction(
     startedAtMs = new Date(dbAttempt.started_at).getTime();
   } else {
     // Check fallback metadata
-    const activeAttempts =
-      (learner.user.user_metadata?.["active_unit_test_attempts"] as Record<
-        string,
-        { unitNumber: number; startedAt: string }
-      >) || {};
-    const recorded = activeAttempts[attemptId];
-    if (recorded) {
-      startedAtMs = new Date(recorded.startedAt).getTime();
+    if (recordedMetaAttempt) {
+      startedAtMs = new Date(recordedMetaAttempt.startedAt).getTime();
     } else {
       startedAtMs = Date.now() - Math.min(Number(timeSpentSeconds) || 0, maxAllowedDurationSec) * 1000;
     }
@@ -241,7 +291,12 @@ export async function submitUnitTestAction(
   const readingTotal = raw.questions.filter((q) => q.section === "reading").length;
 
   const quizSlug = `hsk1-unit-test-0${unitNumber}`;
-  const effectiveRevision = dbAttempt?.key_revision === 1 ? 1 : 2;
+  const effectiveRevision = resolveAttemptKeyRevision({
+    dbHasKeyRevisionColumn,
+    dbKeyRevision: dbAttempt?.key_revision,
+    metaKeyRevision: recordedMetaAttempt?.keyRevision,
+    attemptId,
+  });
 
   const questionResults: UnitTestQuestionResult[] = raw.questions.map((q) => {
     const userChoice = answers[q.id] ?? null;
@@ -370,7 +425,7 @@ export async function submitUnitTestAction(
           [`quiz_attempts_${quizSlug}`]: updated,
         },
       });
-    } catch {}
+    } catch { }
   }
 
   invalidateLearnerSnapshot(learner?.user?.id);

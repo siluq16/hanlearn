@@ -133,7 +133,7 @@ set local role postgres;
 drop table if exists _fixture_answers;
 create temp table _fixture_answers (answers jsonb);
 insert into _fixture_answers
-select jsonb_object_agg(question_id, correct_index)
+select jsonb_object_agg(question_id, coalesce(correct_index_v1, correct_index))
 from private.curriculum_quiz_keys
 where quiz_slug = 'hsk1-unit-test-01';
 grant select on _fixture_answers to authenticated;

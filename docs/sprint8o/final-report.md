@@ -42,7 +42,8 @@ Chi tiết đầy đủ tại [assessment-permutation-design.md](file:///d:/nam4
   1. Đạt phân bổ cân bằng tuyệt đối **`25.00% A / 25.00% B / 25.00% C / 25.00% D`** trong từng đề kiểm tra và trên toàn bộ 428 câu hỏi, đồng thời đảm bảo không có 3 câu liên tiếp nào trùng vị trí đáp án đúng.
   2. Không thể bị học viên suy đoán từ `question_id` vì thứ tự hoán vị được tính một lần ở thời điểm thiết kế với khóa muối riêng và ràng buộc phân tầng toàn cục.
   3. Bảo toàn 100% chữ ký RPC `submit_curriculum_quiz_attempt(uuid, jsonb)` và khóa chính `(quiz_slug, question_id)` của `private.curriculum_quiz_keys`.
-  4. Lưu đồng thời `correct_index` (Revision 2) và `correct_index_v1` (Revision 1) ngay trên mỗi dòng `private.curriculum_quiz_keys`, kết hợp cột `key_revision` trên `public.curriculum_quiz_attempts` và hàm dịch song ánh `translateV2AnswersToV1()`, giúp **triệt tiêu hoàn toàn lỗi Version Skew** dù deploy code trước hay chạy DB migration trước.
+  4. Lưu đồng thời `correct_index` (Revision 2) và `correct_index_v1` (Revision 1) ngay trên mỗi dòng `private.curriculum_quiz_keys`, giữ **`DEFAULT 1`** cho cột `public.curriculum_quiz_attempts.key_revision` (để Old App tạo attempt trên New DB luôn được ghim `key_revision = 1`), đồng thời ghim tường minh `key_revision: 2` khi New App tạo attempt mới và hỗ trợ `translateV2AnswersToV1()` / `translateV1AnswersToV2()`, giúp **triệt tiêu 100% lỗi Version Skew trên cả 4 trạng thái (`A: Old+Old`, `B: New+Old`, `C: Old+New`, `D: New+New`)**.
+  5. Hỗ trợ **Dual-Revision Feature-Flag Rollback (`HANLEARN_ASSESSMENT_KEY_REVISION=1`)**: khi kích hoạt rollback về Revision 1, các attempt mới tạo được ghim `key_revision = 1`, trong khi các attempt `key_revision = 2` đang làm dở (in-flight) hoặc đã nộp vẫn tiếp tục hiển thị `v2Choices` và chấm chính xác theo Revision 2.
 
 ---
 

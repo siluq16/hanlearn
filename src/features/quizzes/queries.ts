@@ -5,7 +5,12 @@ import { requireLearner } from "@/features/auth/session";
 import { getLessonBundle } from "@/features/lessons/queries";
 import { DataError } from "@/lib/data";
 import { findCurriculumQuiz } from "./curriculum-quizzes";
-import { getQuestionRevisionEntry } from "./quiz-revisions";
+import {
+  getConfiguredAssessmentRevision,
+  getQuestionRevisionEntry,
+  resolveAttemptKeyRevision,
+  translateV1AnswersToV2,
+} from "./quiz-revisions";
 import {
   responseRow,
   readInput,
@@ -40,6 +45,7 @@ export async function getQuizView(
   if (curriculum) {
     // 1. Try reading from curriculum_quiz_attempts table first (with key_revision if migrated)
     let dbRows: unknown[] | null = null;
+    let dbHasKeyRevisionColumn = true;
     const withRev = await supabase
       .from("curriculum_quiz_attempts")
       .select(
@@ -51,6 +57,9 @@ export async function getQuizView(
     if (!withRev.error && withRev.data) {
       dbRows = withRev.data;
     } else {
+      if (withRev.error) {
+        dbHasKeyRevisionColumn = false;
+      }
       const legacyRes = await supabase
         .from("curriculum_quiz_attempts")
         .select("id, started_at, submitted_at, correct_count, question_count, passed, answers")
@@ -106,12 +115,29 @@ export async function getQuizView(
       passed: attemptRaw.passed,
     } : null;
 
-    const effectiveRevision = attemptRaw?.key_revision === 1 ? 1 : 2;
+    const metaMatch = attemptRaw
+      ? metaAttempts.find((m) => m.id === attemptRaw.id)
+      : undefined;
+    const effectiveRevision: 1 | 2 = attemptRaw
+      ? resolveAttemptKeyRevision({
+          dbHasKeyRevisionColumn,
+          dbKeyRevision: attemptRaw.key_revision,
+          metaKeyRevision: metaMatch?.key_revision,
+          attemptId: attemptRaw.id,
+        })
+      : getConfiguredAssessmentRevision();
 
     let responses: Array<{ question_id: string; answer_index: number | null; is_correct: boolean }> = [];
     if (attemptRaw?.submitted_at && attemptRaw.answers) {
+      const displayAnswers =
+        !dbHasKeyRevisionColumn &&
+        effectiveRevision === 2 &&
+        dbRows &&
+        dbRows.length > 0
+          ? translateV1AnswersToV2(curriculum.slug, attemptRaw.answers)
+          : attemptRaw.answers;
       responses = curriculum.questions.map((q) => {
-        const ans = attemptRaw.answers ? attemptRaw.answers[q.id] : null;
+        const ans = displayAnswers ? displayAnswers[q.id] : null;
         const revEntry = getQuestionRevisionEntry(curriculum.slug, q.id);
         const expectedIdx =
           effectiveRevision === 1 && revEntry

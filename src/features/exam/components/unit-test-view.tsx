@@ -44,7 +44,10 @@ export function UnitTestView({ unitTest }: UnitTestViewProps) {
     setIsStarting(true);
     let resolvedId = "";
     try {
-      const res = await startUnitTestAction(unitTest.unit_number);
+      const res = await startUnitTestAction(
+        unitTest.unit_number,
+        unitTest.key_revision ?? 2
+      );
       if (res && res.attemptId) {
         resolvedId = res.attemptId;
       }

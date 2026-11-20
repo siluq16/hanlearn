@@ -123,7 +123,8 @@ export async function getVocabulary(id: string) {
         audio_asset_id: null,
         status: "published",
         source_uri: "urn:hanlearn:curriculum:hsk1",
-        content_license: "CC-BY-NC-4.0",
+        content_license:
+          "PRIVATE_INVITE_ONLY; AI-assisted experimental content shared with authenticated allowlisted invitees; third-party sharing/distribution rights unverified; no public release or third-party license asserted.",
       },
       members: [
         {
