@@ -27,17 +27,18 @@ export function sanitizeCardPrompt(
           ).test(part)
         : false;
     const hasNoteKeywords =
-      /^(thường đọc|trong bài|dùng trong|phân biệt|còn có nghĩa|ở cách dùng|đơn vị chỉ|trong cách nói|không dùng|khi đếm)/i.test(
+      /^(thường đọc|đọc|trong bài|dùng trong|phân biệt|còn có nghĩa|ở cách dùng|đơn vị chỉ|trong cách nói|không dùng|khi đếm)/i.test(
         part
       );
     const hasPronunciationNote =
-      /đọc\s+(nhẹ|biến điệu|thành)/i.test(part) || Boolean(hasPinyin);
+      /đọc\s+(?:là\s+|nhẹ\s+|biến điệu\s+|thành\s+)/i.test(part) || Boolean(hasPinyin);
 
     if (i > 0 && (hasHanzi || hasNoteKeywords || hasPronunciationNote)) {
       noteParts.push(part);
     } else if (i === 0 && (hasHanzi || hasPronunciationNote)) {
       const clean = part
-        .replace(/,?\s*đọc\s+(?:nhẹ\s+|biến điệu\s+|thành\s+)?[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+(?:\s+trước\s+[^);]+)?/gi, "")
+        .replace(/,?\s*đọc\s+(?:biến điệu\s+)?(?:là\s+|nhẹ\s+|biến điệu\s+|thành\s+)?[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+(?:\s+trước\s+[^);]+)?/gi, "")
+        .replace(/\(\s*\)/g, "")
         .replace(/[\u4e00-\u9fa5]+/g, "…")
         .trim();
       promptParts.push(clean);

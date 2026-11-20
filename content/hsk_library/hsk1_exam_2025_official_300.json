@@ -215,7 +215,7 @@
     "gf0025_level": 1,
     "gf0025_stt": 34,
     "in_hsk1_500": true,
-    "meaning_vi": "Không (phó từ phủ định); đọc biến điệu bú trước thanh 4 như 是",
+    "meaning_vi": "Không (phó từ phủ định); đọc biến điệu là bú trước thanh 4",
     "example_zh": "我不去。",
     "example_pinyin": "Wǒ bù qù.",
     "example_vi": "Tôi không đi."
@@ -4873,7 +4873,7 @@
     "gf0025_level": 2,
     "gf0025_stt": 730,
     "in_hsk1_500": false,
-    "meaning_vi": "con (lượng từ cho động vật) / chỉ (phó từ zhǐ)",
+    "meaning_vi": "con, chiếc (lượng từ cho động vật); phân biệt với phó từ zhǐ (chỉ)",
     "example_zh": "我家有一只小猫。",
     "example_pinyin": "Wǒ jiā yǒu yì zhī xiǎo māo.",
     "example_vi": "Nhà tôi có một chú mèo con."

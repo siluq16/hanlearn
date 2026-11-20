@@ -97,6 +97,19 @@ describe("Sprint 8N – HSK 1 Content Quality & Learning Experience Audit Suite"
       expect(sanitized.prompt).not.toContain(item.simplified);
       expect(sanitized.prompt).not.toMatch(/[\u4e00-\u9fff]/);
     }
+
+    const zhiItem = official300.find((w) => w.simplified === "只")!;
+    expect(zhiItem.pinyin_marked).toBe("zhī");
+    const zhiSanitized = sanitizeCardPrompt(zhiItem.meaning_vi, zhiItem.simplified, zhiItem.pinyin_marked);
+    expect(zhiSanitized.prompt).toBe("con, chiếc (lượng từ cho động vật)");
+    expect(zhiSanitized.prompt).not.toMatch(/zhī|zhǐ|phó từ/i);
+    expect(zhiSanitized.notes).toContain("phân biệt với phó từ zhǐ (chỉ)");
+
+    const buItem = official300.find((w) => w.simplified === "不")!;
+    const buSanitized = sanitizeCardPrompt(buItem.meaning_vi, buItem.simplified, buItem.pinyin_marked);
+    expect(buSanitized.prompt).toBe("Không (phó từ phủ định)");
+    expect(buSanitized.prompt).not.toMatch(/bù|bú/i);
+    expect(buSanitized.notes).toContain("đọc biến điệu là bú trước thanh 4");
   });
 
   it("4. verifies Module 0 Pinyin contains 21 initials, all 36 finals, 5 tone entries, and 4 sandhi/orthography rules", () => {
