@@ -27,4 +27,42 @@ describe("Development learning target", () => {
     expect(learningTarget("https://127.0.0.1", undefined, "1")).toBe(false);
     expect(learningTarget(development, undefined, "1", "preview")).toBe(true);
   });
+  it("gates production behind explicit server-only HANLEARN_PRODUCTION_LEARNING=1 and pinned origin", () => {
+    expect(
+      learningTarget(development, "1", "1", "production", undefined),
+    ).toBe(false);
+    expect(learningTarget(development, "1", "1", "production", "0")).toBe(
+      false,
+    );
+    expect(learningTarget(development, "1", "1", "production", "true")).toBe(
+      false,
+    );
+    expect(
+      learningTarget(development, undefined, undefined, "production", "1"),
+    ).toBe(true);
+    expect(
+      learningTarget("https://127.0.0.1:54321", "1", "1", "production", "1"),
+    ).toBe(false);
+    expect(
+      learningTarget(
+        "https://other.supabase.co",
+        undefined,
+        undefined,
+        "production",
+        "1",
+      ),
+    ).toBe(false);
+    expect(
+      learningTarget(
+        `http://${DEVELOPMENT_PROJECT_REF}.supabase.co`,
+        undefined,
+        undefined,
+        "production",
+        "1",
+      ),
+    ).toBe(false);
+    expect(
+      learningTarget(development, undefined, undefined, "preview", "1"),
+    ).toBe(false);
+  });
 });

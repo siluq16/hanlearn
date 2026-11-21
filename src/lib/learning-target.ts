@@ -1,14 +1,15 @@
 export const DEVELOPMENT_PROJECT_REF = "hhgxrjqkuwdgurphopok";
 
 // Pure target check shared by server-rendered controls and Server Actions.
-// Flags never authorize a different Cloud project or a production deployment.
+// Flags never authorize an unapproved Cloud project; Production requires explicit server-only opt-in.
 export function learningTarget(
   url: string | undefined,
   localEnabled: string | undefined,
   developmentEnabled?: string,
   deployment?: string,
+  productionEnabled?: string,
 ) {
-  if (!url || deployment === "production") return false;
+  if (!url) return false;
   try {
     const target = new URL(url);
     if (
@@ -20,15 +21,17 @@ export function learningTarget(
       target.pathname !== "/"
     )
       return false;
+    const isPinnedSupabase =
+      target.origin === `https://${DEVELOPMENT_PROJECT_REF}.supabase.co`;
+    if (deployment === "production") {
+      return productionEnabled === "1" && isPinnedSupabase;
+    }
     if (
       localEnabled === "1" &&
       ["127.0.0.1", "[::1]"].includes(target.hostname)
     )
       return true;
-    return (
-      developmentEnabled === "1" &&
-      target.origin === `https://${DEVELOPMENT_PROJECT_REF}.supabase.co`
-    );
+    return developmentEnabled === "1" && isPinnedSupabase;
   } catch {
     return false;
   }

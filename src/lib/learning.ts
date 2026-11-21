@@ -14,5 +14,6 @@ export function learningEnabled(feature: "study" | "quiz" | "review") {
       process.env.CONTEXT === "production"
       ? "production"
       : undefined,
+    process.env.HANLEARN_PRODUCTION_LEARNING,
   );
 }
