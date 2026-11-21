@@ -119,10 +119,25 @@ export async function startUnitTestAction(
   pinAttemptRevisionInMemory(attemptId, pinnedRevision);
 
   let dbSaved = false;
-  let dbAcceptedKeyRevision = false;
   if (learner && learner.supabase && learner.user) {
-    try {
-      const { error: insertWithRevErr } = await learner.supabase
+    const { error: insertWithRevErr } = await learner.supabase
+      .from("curriculum_quiz_attempts")
+      .insert({
+        id: attemptId,
+        user_id: learner.user.id,
+        quiz_id: attemptId,
+        lesson_id: quizSlug,
+        started_at: startedAt,
+        question_count: raw.total_questions,
+        submitted_at: null,
+        correct_count: null,
+        passed: null,
+        key_revision: pinnedRevision,
+      });
+    if (!insertWithRevErr) {
+      dbSaved = true;
+    } else {
+      const { error: legacyInsertErr } = await learner.supabase
         .from("curriculum_quiz_attempts")
         .insert({
           id: attemptId,
@@ -134,55 +149,15 @@ export async function startUnitTestAction(
           submitted_at: null,
           correct_count: null,
           passed: null,
-          key_revision: pinnedRevision,
         });
-      if (!insertWithRevErr) {
+      if (!legacyInsertErr) {
         dbSaved = true;
-        dbAcceptedKeyRevision = true;
-      } else {
-        const { error: legacyInsertErr } = await learner.supabase
-          .from("curriculum_quiz_attempts")
-          .insert({
-            id: attemptId,
-            user_id: learner.user.id,
-            quiz_id: attemptId,
-            lesson_id: quizSlug,
-            started_at: startedAt,
-            question_count: raw.total_questions,
-            submitted_at: null,
-            correct_count: null,
-            passed: null,
-          });
-        if (!legacyInsertErr) {
-          dbSaved = true;
-        }
       }
-    } catch {
-      // Table may not yet be migrated
     }
+  }
 
-    if (!dbSaved || !dbAcceptedKeyRevision) {
-      try {
-        const meta = learner.user.user_metadata || {};
-        const activeAttempts =
-          (meta["active_unit_test_attempts"] as Record<
-            string,
-            { unitNumber: number; startedAt: string; keyRevision?: 1 | 2 }
-          >) || {};
-        activeAttempts[attemptId] = {
-          unitNumber,
-          startedAt,
-          keyRevision: pinnedRevision,
-        };
-        await learner.supabase.auth.updateUser({
-          data: {
-            active_unit_test_attempts: activeAttempts,
-          },
-        });
-      } catch {
-        // Fallback metadata update
-      }
-    }
+  if (!dbSaved) {
+    throw new Error("Không thể khởi tạo phiên thi trên máy chủ. Vui lòng thử lại.");
   }
 
   return {
@@ -329,131 +304,28 @@ export async function submitUnitTestAction(
   const percentage = Math.round((totalScore / maxScore) * 100);
   const passed = totalScore >= raw.passing_score; // >= 16 / 20 (80%)
 
-  const now = new Date().toISOString();
+  // Authoritative server-side submission into curriculum_quiz_attempts (Fail-Closed: no fake client-side pass or user_metadata fallback)
+  if (!learner || !learner.supabase || !learner.user) {
+    throw new Error("Không thể xác thực phiên học viên để nộp bài.");
+  }
 
-  // Authoritative server-side submission into curriculum_quiz_attempts
-  if (learner && learner.supabase && learner.user) {
-    let submitted = false;
+  const rpcAnswers =
+    !dbHasKeyRevisionColumn && effectiveRevision === 2
+      ? translateV2AnswersToV1(quizSlug, answers)
+      : answers;
+  const { error: rpcErr } = await learner.supabase.rpc("submit_curriculum_quiz_attempt", {
+    p_attempt_id: attemptId,
+    p_answers: rpcAnswers,
+  });
 
-    // 1. Try atomic submit RPC (translates v2->v1 if DB is still pre-Migration 0011)
-    try {
-      const rpcAnswers =
-        !dbHasKeyRevisionColumn && effectiveRevision === 2
-          ? translateV2AnswersToV1(quizSlug, answers)
-          : answers;
-      const { error: rpcErr } = await learner.supabase.rpc("submit_curriculum_quiz_attempt", {
-        p_attempt_id: attemptId,
-        p_answers: rpcAnswers,
-      });
-      if (!rpcErr) {
-        submitted = true;
-      } else if (rpcErr.code === "PT409") {
-        throw new Error("Lượt thi này đã được nộp và ghi nhận trước đó. Không được nộp trùng.");
-      } else if (rpcErr.code === "22023") {
-        throw new Error("Bài thi đã quá thời hạn làm bài quy định (Exam deadline exceeded).");
-      }
-    } catch (err: unknown) {
-      if (
-        err instanceof Error &&
-        (err.message.includes("Không được nộp trùng") ||
-          err.message.includes("Exam deadline exceeded"))
-      ) {
-        throw err;
-      }
-      // RPC may not yet be available in unmigrated environments
+  if (rpcErr) {
+    if (rpcErr.code === "PT409") {
+      throw new Error("Lượt thi này đã được nộp và ghi nhận trước đó. Không được nộp trùng.");
     }
-
-    // 2. Direct update fallback if RPC not yet created
-    if (!submitted) {
-      try {
-        const { error: updateErr } = await learner.supabase
-          .from("curriculum_quiz_attempts")
-          .update({
-            submitted_at: now,
-            correct_count: totalScore,
-            question_count: maxScore,
-            passed,
-            answers,
-          })
-          .eq("id", attemptId)
-          .eq("user_id", learner.user.id);
-        if (!updateErr) {
-          submitted = true;
-        }
-      } catch {
-        // Direct update failed
-      }
+    if (rpcErr.code === "22023") {
+      throw new Error("Bài thi đã quá thời hạn làm bài quy định (Exam deadline exceeded).");
     }
-
-    // 3. Fallback insert if row didn't exist in DB
-    if (!submitted) {
-      try {
-        const { error: insertErr } = await learner.supabase
-          .from("curriculum_quiz_attempts")
-          .insert({
-            id: attemptId,
-            user_id: learner.user.id,
-            quiz_id: attemptId,
-            lesson_id: quizSlug,
-            started_at: new Date(startedAtMs).toISOString(),
-            submitted_at: now,
-            correct_count: totalScore,
-            question_count: maxScore,
-            passed,
-            answers,
-          });
-        if (!insertErr) {
-          submitted = true;
-        }
-      } catch {
-        // Insert failed
-      }
-    }
-
-    // 4. Bounded metadata cleanup / compatibility fallback:
-    //    - When PostgreSQL persistence succeeded (`submitted = true`), NEVER append Unit Test attempts or answers to user_metadata.
-    //      Only clean up `active_unit_test_attempts[attemptId]` if a pre-migration start fallback created it.
-    //    - When PostgreSQL persistence is unavailable (`!submitted`), store at most 3 summary-only entries (without 20-question answers payload)
-    //      so JWT/cookie headers never grow unboundedly toward HTTP 431.
-    try {
-      if (submitted) {
-        if (recordedMetaAttempt) {
-          const nextActive = { ...activeAttempts };
-          delete nextActive[attemptId];
-          await learner.supabase.auth.updateUser({
-            data: {
-              active_unit_test_attempts: nextActive,
-            },
-          });
-        }
-      } else {
-        const { data: userRecord } = await learner.supabase.auth.getUser();
-        const meta = userRecord?.user?.user_metadata || {};
-        const nextActive = { ...((meta["active_unit_test_attempts"] as Record<string, unknown>) || {}) };
-        delete nextActive[attemptId];
-
-        const existingAttempts = Array.isArray(meta[`quiz_attempts_${quizSlug}`])
-          ? (meta[`quiz_attempts_${quizSlug}`] as Array<Record<string, unknown>>)
-          : [];
-        const updated = [
-          ...existingAttempts.filter((a) => a && a.id !== attemptId).slice(-2),
-          {
-            id: attemptId,
-            started_at: new Date(startedAtMs).toISOString(),
-            submitted_at: now,
-            correct_count: totalScore,
-            question_count: maxScore,
-            passed,
-          },
-        ];
-        await learner.supabase.auth.updateUser({
-          data: {
-            active_unit_test_attempts: nextActive,
-            [`quiz_attempts_${quizSlug}`]: updated,
-          },
-        });
-      }
-    } catch { }
+    throw new Error("Không thể ghi nhận kết quả bài thi lên máy chủ. Vui lòng thử lại.");
   }
 
   invalidateLearnerSnapshot(learner?.user?.id);

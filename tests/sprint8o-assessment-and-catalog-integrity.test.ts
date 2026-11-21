@@ -906,5 +906,40 @@ describe("Sprint 8O – Pre-Cloud Migration Safety Gate: Assessment Integrity, 4
     expect(oldRes.totalScore).toBe(20);
     expect(oldRes.passed).toBe(true);
     expect(activeSimEnv.getUser().user_metadata["quiz_attempts_hsk1-unit-test-01"]).toBeUndefined();
+
+    // 4. Fail-closed check: if RPC fails (e.g., transient DB outage), submitUnitTestAction MUST reject and NOT return fake passed or write user_metadata
+    const failAtt = await startUnitTestAction(1, 2);
+    const origRpc = activeSimEnv.supabase.rpc;
+    activeSimEnv.supabase.rpc = async () => ({
+      data: null,
+      error: { code: "57014", message: "statement timeout" },
+    });
+    await expect(
+      submitUnitTestAction(1, v2Correct, 100, failAtt.attemptId)
+    ).rejects.toThrow("Không thể ghi nhận kết quả bài thi lên máy chủ");
+    expect(activeSimEnv.getUser().user_metadata["quiz_attempts_hsk1-unit-test-01"]).toBeUndefined();
+    activeSimEnv.supabase.rpc = origRpc;
+  });
+
+  it("11. verifies no Mini Quiz or Unit Test question IDs/keys are bundled into any .next/static client chunk", () => {
+    const nextStaticDir = path.join(process.cwd(), ".next", "static");
+    if (!fs.existsSync(nextStaticDir)) return;
+
+    const jsFiles: string[] = [];
+    const walk = (dir: string) => {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) walk(full);
+        else if (entry.name.endsWith(".js")) jsFiles.push(full);
+      }
+    };
+    walk(nextStaticDir);
+
+    for (const file of jsFiles) {
+      const content = fs.readFileSync(file, "utf8");
+      expect(content).not.toContain("10000001-0000-4000-8000-000000000001");
+      expect(content).not.toContain("ut1-q1");
+      expect(content).not.toContain("ut6-q20");
+    }
   });
 });

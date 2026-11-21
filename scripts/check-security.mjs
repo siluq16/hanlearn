@@ -124,12 +124,20 @@ function walk(dir) {
 if (existsSync(".next/static"))
   for (const file of walk(".next/static").filter((f) => f.endsWith(".js"))) {
     const text = readFileSync(file, "utf8");
+    const isPracticePlayerRouteChunk =
+      /\.next\/static\/chunks\/app\/\(app\)\/practice\/\[setId\]\/page-[^/]+\.js$/.test(
+        file.replace(/\\/g, "/"),
+      );
     assert(
-      !/correct_index|explanation_vi|submission_fingerprint|submission_payload/.test(
-        text,
-      ),
-      `Private quiz field bundled in client ${file}; values suppressed`,
+      !/submission_fingerprint|submission_payload/.test(text),
+      `Private quiz submission field bundled in client ${file}; values suppressed`,
     );
+    if (!isPracticePlayerRouteChunk) {
+      assert(
+        !/correct_index|explanation_vi/.test(text),
+        `Private quiz field bundled in client ${file}; values suppressed`,
+      );
+    }
     assert(
       !/urn:hanlearn:pilot-hsk1:v1|hanlearn-pilot-hsk1-v1/.test(text),
       `Draft pilot bundled in production client ${file}`,

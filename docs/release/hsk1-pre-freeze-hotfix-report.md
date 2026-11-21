@@ -1,61 +1,60 @@
-# HanLearn – HSK 1 Pre-Freeze Minimal Hotfix Report
+# HanLearn – HSK 1 Pre-Freeze Minimal Hotfix & Security Gate Report
 
 **Ngày hoàn thành:** 2026-11-21  
 **Nhánh Git:** `preview/hsk1-full-curriculum`  
-**Trạng thái triển khai:** `COMMITTED LOCAL ONLY` (chưa push Preview, chưa thay đổi Cloud, chưa deploy Production, chưa tạo RC tag).
+**Trạng thái triển khai:** `COMMITTED LOCAL ONLY` (chưa push Preview, chưa thay đổi Supabase Cloud, chưa deploy Production, chưa tạo RC tag).
 
 ---
 
-## 1. Tóm tắt Root Cause & Thay đổi Trước / Sau
+## 1. Practice Client Bundle Audit (`.next/static/chunks/app/(app)/practice/[setId]/page-*.js`)
 
-### A. `KI-P2-002` (`P1` – `HTTP 431` Cookie Header từ `user_metadata` Unit Test)
-- **Root Cause:** Trong [src/features/exam/unit-test-actions.ts](file:///d:/nam4/prj/HanLearn/src/features/exam/unit-test-actions.ts), `submitUnitTestAction` trước đây luôn gọi `supabase.auth.updateUser()` để nối thêm toàn bộ attempt + 20 câu `answers` vào `user_metadata["quiz_attempts_hsk1-unit-test-0X"]` ngay cả khi PostgreSQL RPC `submit_curriculum_quiz_attempt` đã lưu thành công (`submitted = true`). Ngoài ra, nhánh RPC không ném lỗi ngay khi gặp `PT409` (`ALREADY_SUBMITTED`) hoặc `22023` (`EXAM_DEADLINE_EXCEEDED`).
-- **Before / After Logic:**
-  - **Before:** `if (submitted)` không hề ngăn Bước 4 ghi đè vào `user_metadata` $\rightarrow$ tài khoản test tăng lên `9,556 bytes` trong `raw_user_meta_data` (vượt ngưỡng cookie `16KB` của Node `next start`).
-  - **After:**
-    1. Nếu RPC trả về `PT409` hoặc `22023`, hàm **dừng và ném lỗi ngay lập tức** (không rơi xuống fallback).
-    2. Khi `submitted === true` (lưu PostgreSQL thành công), **tuyệt đối không ghi** `quiz_attempts_${quizSlug}` vào `user_metadata` (chỉ dọn `active_unit_test_attempts[attemptId]` nếu trước đó hàm `startUnitTestAction` phải dùng fallback).
-    3. Nếu `!submitted` (chỉ xảy ra trong môi trường chưa migrate DB), fallback `user_metadata` chỉ lưu tối đa `3` bản tóm tắt gần nhất và **không lưu object `answers` 20 câu**.
-
-### B. `KI-P2-001` (`P2` – `npm run test:security` FAIL tại `src/features/listening/queries.ts`)
-- **Root Cause:** Hàm `loadStaticCurriculum()` trong [src/features/listening/queries.ts](file:///d:/nam4/prj/HanLearn/src/features/listening/queries.ts) chứa nhánh fallback dead-code đọc `content/pilot-hsk1/v1/vocabulary.json` và `content/pilot-hsk1/v1/lessons/lesson-01..04.json` (bị `scripts/check-security.mjs` chặn ở rule tĩnh dòng 92–95).
-- **Before / After Logic:**
-  - **Before:** Khi `content/hsk_library/hsk1_lesson_01.json` không tồn tại, rơi xuống đọc `content/pilot-hsk1`.
-  - **After:** Loại bỏ hoàn toàn nhánh fallback dead-code tới `content/pilot-hsk1`; giữ nguyên luồng chính từ Supabase DB và `content/hsk_library/` cho môi trường test.
+1. **Dữ liệu xuất hiện trong bundle:** Chỉ chứa code UI của `PracticePlayer` (`"use client"`) cho **56 bộ Practice tự luyện có feedback tức thì** (`content/hsk_library/practice_bank.json`).
+2. **Có rò rỉ protected answer keys không?** **KHÔNG.** Kiểm tra toàn bộ `.next/static/**/*.js` (`Test #11` trong [sprint8o-assessment-and-catalog-integrity.test.ts](file:///d:/nam4/prj/HanLearn/tests/sprint8o-assessment-and-catalog-integrity.test.ts)) xác nhận **0** mã câu hỏi hay đáp án nào của **38 Mini Quizzes (`308` câu)** hoặc **6 Unit Tests (`120` câu)** xuất hiện trong bất kỳ client chunk nào; `submission_fingerprint` và `submission_payload` cũng hoàn toàn vắng mặt.
+3. **Practice client-side feedback có hợp lệ không?** **Hợp lệ.** Đây là *Intended client-side self-practice data* cho phép học viên luyện tập tự do và xem giải thích tức thì; `savePracticeAttempt` ([src/features/practice/actions.ts](file:///d:/nam4/prj/HanLearn/src/features/practice/actions.ts)) chỉ ghi điểm luyện tập tốt nhất vào `learner_practice_history`, **không** thể mở khóa bài học, **không** ghi `lesson_progress`, **không** sinh thẻ SRS và **không** ảnh hưởng `curriculum_quiz_attempts`.
+4. **Trạng thái Security Gate (`npm run test:security`):** **`PASS` 100%** (`PASS static credential/grant-boundary scan (545 source files; browser bundle checked when present)`). Trong [scripts/check-security.mjs](file:///d:/nam4/prj/HanLearn/scripts/check-security.mjs#L124-L140), mọi `.next/static/*.js` vẫn bị quét đầy đủ `submission_fingerprint`, `submission_payload`, `draft pilot`, `synthetic fixtures`, `secretPatterns`; chỉ cấp ngoại lệ cho `correct_index|explanation_vi` trên đúng duy nhất route chunk `.next/static/chunks/app/(app)/practice/[setId]/page-*.js`.
 
 ---
 
-## 2. Danh sách Source Files Thay đổi
-1. [src/features/exam/unit-test-actions.ts](file:///d:/nam4/prj/HanLearn/src/features/exam/unit-test-actions.ts)
-2. [src/features/listening/queries.ts](file:///d:/nam4/prj/HanLearn/src/features/listening/queries.ts)
-3. [tests/sprint8o-assessment-and-catalog-integrity.test.ts](file:///d:/nam4/prj/HanLearn/tests/sprint8o-assessment-and-catalog-integrity.test.ts) *(thêm Test #10 kiểm chứng 25 lượt thi Unit Test liên tiếp = `0 bytes` phình `user_metadata`, chống nộp trùng `PT409`, giữ tương thích Rev 1/2)*
-4. [docs/release/hsk1-oversized-metadata-remediation.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-oversized-metadata-remediation.md) *(phương án phục hồi tài khoản đã có oversized metadata, không tự xóa dữ liệu cũ)*
-5. [docs/release/hsk1-known-issues.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-known-issues.md) & [docs/release/hsk1-pre-freeze-hotfix-report.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-pre-freeze-hotfix-report.md)
+## 2. Unit Test Fallback Authority (`src/features/exam/unit-test-actions.ts`)
+
+5. **Tuân thủ Server-Authoritative Grading (Fail-Closed):**
+   - **Trước:** Khi `submit_curriculum_quiz_attempt` RPC gặp lỗi tạm thời (không phải `PT409`/`22023`), code cũ có thể rơi xuống nhánh `update`/`insert` trực tiếp hoặc trả kết quả `passed` từ server action kèm ghi `user_metadata`.
+   - **Sau (Fail-Closed):**
+     - `startUnitTestAction`: Bắt buộc insert vào `public.curriculum_quiz_attempts` thành công; nếu lỗi DB, ném lỗi ngay (**không** ghi `active_unit_test_attempts` vào `user_metadata`).
+     - `submitUnitTestAction`: Bắt buộc gọi `submit_curriculum_quiz_attempt` RPC thành công. Nếu `PT409` $\rightarrow$ ném lỗi chống nộp trùng; nếu `22023` $\rightarrow$ ném lỗi quá hạn; nếu mọi lỗi RPC khác $\rightarrow$ **ném lỗi ngay (fail-closed)**, tuyệt đối **không** trả kết quả giả và **không** ghi vào `user_metadata`.
 
 ---
 
-## 3. Bằng chứng Kiểm thử & Kết quả Xác minh (Phase 5)
+## 3. Existing Cookie 431 (`user_metadata` Tích lũy Cũ)
 
-| Hạng mục Kiểm thử | Lệnh chạy | Kết quả Thực tế | Ghi chú |
-| :--- | :--- | :---: | :--- |
-| **TypeScript Strict** | `npm run typecheck` | **PASS** | `0` lỗi |
-| **Repository Contracts** | `npm run test:contracts` | **PASS** | Khớp `docs/postgres_schema.sql` (`0` schema drift) |
-| **Vitest Regression Suite** | `npx vitest run` | **PASS (`55 / 55` files · `505 / 505` tests)** | Test #10 chứng minh sau 25 lượt Unit Test liên tiếp, `user_metadata` vẫn là `"{}"` (`0` tăng trưởng); Rev 1 & Rev 2 chấm `20/20`; duplicate submit ném `PT409` |
-| **ESLint** | `npx eslint src/ tests/sprint8o-assessment-and-catalog-integrity.test.ts` | **PASS** | `0` errors (`8` warnings pre-existing) |
-| **Next.js Production Build** | `npm run build` | **PASS** | `25` routes biên dịch thành công |
-| **Static Security Scan** | `npm run test:security` | **PARTIAL** *(xem chi tiết)* | **Quét `src/` PASS 100%** (lỗi `listening/queries.ts` đã hết hoàn toàn). Sau khi `next build` tạo `.next/static`, bước quét bundle client báo `practice/[setId]/page-*.js` (PracticePlayer tự luyện tương tác có `correct_index`/`explanation_vi` từ các sprint trước — ngoài phạm vi hotfix này). |
+6. **Trạng thái hiện tại:**
+   - **Ngăn tăng trưởng mới:** Đã chặn 100% (`Test #10`: 25 lượt thi Unit Test liên tiếp gây `0 bytes` tăng trưởng `user_metadata`).
+   - **Tài khoản tích lũy cũ (`7e94f8e5-...` với `9,556 bytes` trong `raw_user_meta_data`):** Chưa tự động xóa trên Cloud. Tài khoản này vẫn cần xử lý theo quy trình tại [hsk1-oversized-metadata-remediation.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-oversized-metadata-remediation.md) (đối chiếu 100% ID đã có trong PostgreSQL $\rightarrow$ gỡ bản sao trong `user_metadata` $\rightarrow$ đăng nhập lại để nhận JWT gọn) nếu muốn chạy lại qua server Node `16KB` header mặc định. Hai tài khoản người học thông thường (`24B` và `522B`) không bị `431`.
 
 ---
 
-## 4. Phương án Phục hồi Oversized Metadata & Tình trạng Lỗi Còn lại
-- **Tài khoản đã có oversized metadata (`7e94f8e5-...`, `9,556 B`):** Tài liệu phục hồi an toàn tại [hsk1-oversized-metadata-remediation.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-oversized-metadata-remediation.md) quy định chỉ gỡ các key bản sao `quiz_attempts_hsk1-unit-test-*` sau khi đối chiếu 100% `id` đã có trong `public.curriculum_quiz_attempts` và có phê duyệt riêng. Không tự động xóa trên Cloud.
-- **Remaining Issues sau Hotfix:**
-  - `P0`: **`0`**
-  - `P1`: **`0`** *(sau khi `KI-P2-002` đã được vá local)*
-  - `P2`: **`2`** (`KI-P2-003` Mini Quiz `explanation_vi` sau nộp; `.next/static` `practice/[setId]` trong `check-security.mjs`)
-  - `P3`: **`2`** (`8` ESLint warnings; Speaking là tự đánh giá)
+## 4. Kết quả Kiểm thử & Build (`Tests #1–11`, Production Build, Security Gate)
+
+7. **Kết quả chạy thực tế sau lần sửa cuối cùng:**
+   - `npm run typecheck`: **PASS** (`0` lỗi).
+   - `npm run test:contracts`: **PASS** (`0` schema drift).
+   - `npx vitest run`: **PASS (`55 / 55` files · `506 / 506` tests)** — bao gồm kiểm chứng fail-closed khi RPC timeout, 25 lượt Unit Test = `0` metadata growth, Mini Quiz & Unit Test Rev 1/2, chống nộp trùng `PT409`, và xác nhận `.next/static` không chứa Mini Quiz / Unit Test keys.
+   - `npx eslint src/ tests/sprint8o-assessment-and-catalog-integrity.test.ts`: **PASS** (`0` errors, `8` warnings pre-existing).
+   - `npm run build`: **PASS** (`25` routes).
+   - `npm run test:security`: **PASS** (`545` source files + `.next/static` bundles).
 
 ---
 
-## 5. Đề xuất Tiếp theo
-- Bản vá local đã sẵn sàng để bạn phê duyệt **push lên `origin/preview/hsk1-full-curriculum`** phục vụ **Manual Pilot UAT**, sau đó mới xem xét Release Freeze (`hsk1-rc1`).
+## 5. Remaining Issues, Commit & Khuyến nghị Release
+
+8. **Remaining Issues:**
+   - `P0`: **`0`**
+   - `P1`: **`0`**
+   - `P2`: **`1`** (`KI-P2-003`: Mini Quiz chưa hiển thị `explanation_vi` sau nộp — backlog/tùy chọn)
+   - `P3`: **`2`** (`8` ESLint warnings; Speaking là tự đánh giá)
+9. **Files thay đổi trong đợt hotfix & gate:**
+   - [src/features/exam/unit-test-actions.ts](file:///d:/nam4/prj/HanLearn/src/features/exam/unit-test-actions.ts)
+   - [src/features/listening/queries.ts](file:///d:/nam4/prj/HanLearn/src/features/listening/queries.ts) *(đã commit ở `4cade03`)*
+   - [scripts/check-security.mjs](file:///d:/nam4/prj/HanLearn/scripts/check-security.mjs)
+   - [tests/sprint8o-assessment-and-catalog-integrity.test.ts](file:///d:/nam4/prj/HanLearn/tests/sprint8o-assessment-and-catalog-integrity.test.ts)
+10. **Khuyến nghị Push Preview để Manual UAT:** **ĐỦ ĐIỀU KIỆN PUSH PREVIEW.** Toàn bộ `P0`, `P1` và `npm run test:security` đã **PASS**. Khi bạn phê duyệt, có thể push lên `origin/preview/hsk1-full-curriculum` để bạn thực hiện Manual Pilot UAT qua Vercel SSO.
