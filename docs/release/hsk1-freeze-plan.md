@@ -1,7 +1,7 @@
 # HanLearn – Release Candidate Freeze Plan (`hsk1-rc1`)
 
 **Ngày cập nhật:** 2026-11-21  
-**Trạng thái hiện tại:** **`READY FOR FREEZE APPROVAL`** *(Chờ phê duyệt đóng băng chính thức của chủ dự án; chưa tự tạo tag `hsk1-rc1` hay triển khai Production).*
+**Trạng thái hiện tại:** **`RELEASE CANDIDATE FROZEN (PRIVATE_INVITE_ONLY)`** — Tag `hsk1-rc1` (`3c46acbfc41891afd63d596f34c4032351516972`) đã tạo và push lên `origin`, trỏ tới **`d68cf39eb2ad4a3ed19e483866321b4dd3c3ff3c`** (`d68cf39`). *(Không phải `PRODUCTION RELEASED` hoặc `PUBLIC RELEASED`).*
 
 ---
 
