@@ -37,9 +37,7 @@ function isValidSentence(hanzi: string, vi: string): boolean {
 }
 
 /**
- * Load static curriculum for offline/test environments:
- * Loads all 32 HSK 1 lessons from content/hsk_library/ if present,
- * or falls back to pilot-hsk1 if not found.
+ * Load static curriculum for offline/test environments from content/hsk_library/.
  */
 function loadStaticCurriculum(): ListeningCurriculumData {
   try {
@@ -111,84 +109,7 @@ function loadStaticCurriculum(): ListeningCurriculumData {
       return { lessons, vocabulary, sentences: Array.from(sentenceMap.values()) };
     }
 
-    // Fallback: 4 Pilot lessons
-    const vocabPath = path.join(process.cwd(), "content/pilot-hsk1/v1/vocabulary.json");
-    const rawVocab = JSON.parse(fs.readFileSync(vocabPath, "utf8")) as Array<{
-      id: string;
-      simplified: string;
-      pinyin_marked: string;
-      meaning_vi: string;
-      example_zh?: string | null;
-      example_pinyin?: string | null;
-      example_vi?: string | null;
-    }>;
-
-    const lessons: ListeningLessonItem[] = [];
-    const lessonFiles = ["lesson-01.json", "lesson-02.json", "lesson-03.json", "lesson-04.json"];
-    const vocabLessonMap = new Map<string, string>();
-    const sentenceMap = new Map<string, ListeningSentenceItem>();
-
-    for (let i = 0; i < lessonFiles.length; i++) {
-      const lessonPath = path.join(process.cwd(), "content/pilot-hsk1/v1/lessons", lessonFiles[i]);
-      if (fs.existsSync(lessonPath)) {
-        const rawLesson = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
-        lessons.push({
-          id: rawLesson.id,
-          title: rawLesson.title,
-          sortOrder: rawLesson.sort_order ?? i + 1,
-        });
-
-        if (rawLesson.content?.sections) {
-          for (const sec of rawLesson.content.sections) {
-            if (sec.type === "vocabulary_refs" && Array.isArray(sec.vocabularyIds)) {
-              for (const vid of sec.vocabularyIds) {
-                vocabLessonMap.set(vid, rawLesson.id);
-              }
-            }
-            if (sec.blocks && Array.isArray(sec.blocks)) {
-              for (const b of sec.blocks) {
-                if (b.type === "example" && b.hanzi && b.translationVi) {
-                  if (isValidSentence(b.hanzi, b.translationVi) && !sentenceMap.has(b.hanzi)) {
-                    sentenceMap.set(b.hanzi, {
-                      hanzi: b.hanzi,
-                      pinyin: b.pinyin ?? "",
-                      translationVi: cleanTranslation(b.translationVi),
-                      lessonId: rawLesson.id,
-                    });
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    const vocabulary: ListeningVocabularyItem[] = rawVocab.map((v) => {
-      const lessonId = vocabLessonMap.get(v.id);
-      if (v.example_zh && v.example_vi && isValidSentence(v.example_zh, v.example_vi)) {
-        if (!sentenceMap.has(v.example_zh)) {
-          sentenceMap.set(v.example_zh, {
-            hanzi: v.example_zh,
-            pinyin: v.example_pinyin ?? "",
-            translationVi: cleanTranslation(v.example_vi),
-            lessonId,
-          });
-        }
-      }
-      return {
-        id: v.id,
-        simplified: v.simplified,
-        pinyin: v.pinyin_marked,
-        meaningVi: v.meaning_vi,
-        exampleZh: v.example_zh ?? undefined,
-        examplePinyin: v.example_pinyin ?? undefined,
-        exampleVi: v.example_vi ?? undefined,
-        lessonId,
-      };
-    });
-
-    return { lessons, vocabulary, sentences: Array.from(sentenceMap.values()) };
+    return { lessons: [], vocabulary: [], sentences: [] };
   } catch {
     return { lessons: [], vocabulary: [], sentences: [] };
   }

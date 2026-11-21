@@ -854,4 +854,57 @@ describe("Sprint 8O – Pre-Cloud Migration Safety Gate: Assessment Integrity, 4
       expect(mig012).toContain(`'${item.id}'::uuid`);
     }
   });
+
+  it("10. [KI-P2-002] verifies Unit Test submission via PostgreSQL RPC causes ZERO user_metadata growth across 25 consecutive attempts, blocks duplicate submit (PT409), and preserves Rev 1/2", async () => {
+    activeSimEnv = createSimulatedAssessmentEnv("new_db");
+    const ut1 = unitTests[0];
+    const v2Correct: Record<string, number> = {};
+    const allWrong: Record<string, number> = {};
+    for (const q of ut1.questions) {
+      v2Correct[q.id] = q.correct_index;
+      allWrong[q.id] = (q.correct_index + 1) % q.choices.length;
+    }
+
+    // 1. Submit 25 consecutive Unit Test attempts (mix of pass & fail) on New DB -> user_metadata MUST stay empty (0 bytes growth)
+    const firstAttemptIds: string[] = [];
+    for (let i = 0; i < 25; i++) {
+      const started = await startUnitTestAction(1, 2);
+      expect(started.ok).toBe(true);
+      expect(started.keyRevision).toBe(2);
+      firstAttemptIds.push(started.attemptId);
+
+      const useCorrect = i % 2 === 0;
+      const res = await submitUnitTestAction(
+        1,
+        useCorrect ? v2Correct : allWrong,
+        90 + i,
+        started.attemptId
+      );
+      expect(res.totalScore).toBe(useCorrect ? 20 : 0);
+      expect(res.passed).toBe(useCorrect);
+    }
+
+    // Verify user_metadata remained completely untouched (no quiz_attempts_hsk1-unit-test-01 bloat!)
+    const metaAfter25 = activeSimEnv.getUser().user_metadata;
+    expect(metaAfter25["quiz_attempts_hsk1-unit-test-01"]).toBeUndefined();
+    expect(JSON.stringify(metaAfter25).length).toBe(2); // "{}"
+
+    // 2. Duplicate submit of an already-submitted attempt_id MUST reject immediately without writing metadata or overwriting score
+    await expect(
+      submitUnitTestAction(1, allWrong, 100, firstAttemptIds[0])
+    ).rejects.toThrow("Không được nộp trùng");
+    expect(activeSimEnv.attemptsTable.get(firstAttemptIds[0])?.correct_count).toBe(20);
+    expect(activeSimEnv.attemptsTable.get(firstAttemptIds[0])?.passed).toBe(true);
+
+    // 3. Revision 1 attempt started by Old App on New DB still grades 20/20 against v1CorrectIndex without polluting user_metadata
+    const oldAttId = await activeSimEnv.simulateOldAppStartAttempt("hsk1-unit-test-01");
+    const v1Correct: Record<string, number> = {};
+    for (const q of ut1.questions) {
+      v1Correct[q.id] = getQuestionRevisionEntry("hsk1-unit-test-01", q.id)!.v1CorrectIndex;
+    }
+    const oldRes = await submitUnitTestAction(1, v1Correct, 120, oldAttId);
+    expect(oldRes.totalScore).toBe(20);
+    expect(oldRes.passed).toBe(true);
+    expect(activeSimEnv.getUser().user_metadata["quiz_attempts_hsk1-unit-test-01"]).toBeUndefined();
+  });
 });

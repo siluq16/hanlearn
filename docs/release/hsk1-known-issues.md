@@ -7,12 +7,12 @@
 
 ## 1. Thống kê Tổng hợp theo Mức độ
 
-| Severity | Mở (Open) | Cần xử lý trước Freeze? | Ghi chú |
-| :---: | :---: | :---: | :--- |
-| **P0 – Release Blocker** | **0** | Bắt buộc = `0` | Không có lỗi mất dữ liệu, lộ đáp án hay sập hệ thống |
-| **P1 – High** | **0** | Bắt buộc = `0` | Chưa phát hiện lỗi P1; chờ xác nhận qua Manual UAT |
-| **P2 – Medium** | **3** | Có thể chấp nhận rủi ro cho Pilot UAT hoặc fix nhẹ theo phê duyệt | Các điểm đã xác minh từ kiểm tra tĩnh & kiểm thử |
-| **P3 – Low** | **2** | Backlog | Cảnh báo ESLint & cải tiến nhỏ chưa cấp thiết |
+| Severity | Mở (Open) | Đã sửa Local | Cần xử lý trước Freeze? | Ghi chú |
+| :---: | :---: | :---: | :---: | :--- |
+| **P0 – Release Blocker** | **0** | 0 | Bắt buộc = `0` | Không có lỗi mất dữ liệu, lộ đáp án hay sập hệ thống |
+| **P1 – High** | **0** | **1** (`KI-P2-002`) | Bắt buộc = `0` | `KI-P2-002` (`HTTP 431` từ `user_metadata` Unit Test) đã sửa local, chờ push Preview |
+| **P2 – Medium** | **2** | **1** (`KI-P2-001`) | Backlog / Tùy chọn | `KI-P2-001` đã sửa local; còn `KI-P2-003` và `.next/static` `practice/[setId]` |
+| **P3 – Low** | **2** | 0 | Backlog | Cảnh báo ESLint & phạm vi Speaking tự đánh giá |
 
 ---
 
@@ -26,7 +26,7 @@
 - **Evidence:** Kết quả chạy `npm run test:security` ngày `2026-11-21` (exit code 1).
 - **Impact:** Không lộ secrets hay answer keys vì `queries.ts` dùng `import "server-only"`, nhưng khiến `npm run test:security` trả về exit code `1`.
 - **Proposed fix:** Tách hoặc bỏ fallback đọc `content/pilot-hsk1` khỏi `src/features/listening/queries.ts` (hoặc thay bằng dữ liệu canonical) trong đợt bảo trì sau khi được phê duyệt.
-- **Status:** `OPEN` (Chờ quyết định sau UAT).
+- **Status:** `FIXED LOCAL` *(đã gỡ dead fallback `content/pilot-hsk1` trong `src/features/listening/queries.ts`; quét `src/` của `check-security.mjs` đã PASS).*
 
 ### `[KI-P2-002]` Cookie phiên test tích lũy vượt ngưỡng header mặc định `16KB` của Node (`HTTP 431`)
 - **Severity:** `P2` (Medium)
@@ -36,7 +36,7 @@
 - **Evidence:** Log chạy `sprint8o_post_deploy_smoke.mjs` lần đầu (`431`) và sau khi nâng header size (`200`).
 - **Impact:** Có thể xảy ra với tài khoản test dùng lâu ngày nếu còn lưu fallback `quiz_attempts_*` lớn trong JWT `user_metadata`; tài khoản người học mới dùng bảng `curriculum_quiz_attempts` ít bị ảnh hưởng.
 - **Proposed fix:** Dọn hoặc giới hạn lưu `user_metadata` khi đã có bảng `curriculum_quiz_attempts` ổn định trên Cloud.
-- **Status:** `OPEN` (Backlog sau UAT).
+- **Status:** `FIXED LOCAL (Upgraded P1)` *(đã vá `submitUnitTestAction` trong `src/features/exam/unit-test-actions.ts` để không ghi `user_metadata` khi DB RPC thành công; chờ push Preview).*
 
 ### `[KI-P2-003]` Mini Quiz chưa hiển thị `explanation_vi` chi tiết sau khi nộp bài
 - **Severity:** `P2` (Medium)

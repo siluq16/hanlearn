@@ -347,9 +347,20 @@ export async function submitUnitTestAction(
       });
       if (!rpcErr) {
         submitted = true;
+      } else if (rpcErr.code === "PT409") {
+        throw new Error("Lượt thi này đã được nộp và ghi nhận trước đó. Không được nộp trùng.");
+      } else if (rpcErr.code === "22023") {
+        throw new Error("Bài thi đã quá thời hạn làm bài quy định (Exam deadline exceeded).");
       }
-    } catch {
-      // RPC may not yet be available
+    } catch (err: unknown) {
+      if (
+        err instanceof Error &&
+        (err.message.includes("Không được nộp trùng") ||
+          err.message.includes("Exam deadline exceeded"))
+      ) {
+        throw err;
+      }
+      // RPC may not yet be available in unmigrated environments
     }
 
     // 2. Direct update fallback if RPC not yet created
@@ -399,32 +410,49 @@ export async function submitUnitTestAction(
       }
     }
 
-    // 4. Dual-layer safe persistence to user_metadata
+    // 4. Bounded metadata cleanup / compatibility fallback:
+    //    - When PostgreSQL persistence succeeded (`submitted = true`), NEVER append Unit Test attempts or answers to user_metadata.
+    //      Only clean up `active_unit_test_attempts[attemptId]` if a pre-migration start fallback created it.
+    //    - When PostgreSQL persistence is unavailable (`!submitted`), store at most 3 summary-only entries (without 20-question answers payload)
+    //      so JWT/cookie headers never grow unboundedly toward HTTP 431.
     try {
-      const { data: userRecord } = await learner.supabase.auth.getUser();
-      const meta = userRecord?.user?.user_metadata || {};
-      const activeAttempts = { ...(meta["active_unit_test_attempts"] || {}) };
-      delete activeAttempts[attemptId];
+      if (submitted) {
+        if (recordedMetaAttempt) {
+          const nextActive = { ...activeAttempts };
+          delete nextActive[attemptId];
+          await learner.supabase.auth.updateUser({
+            data: {
+              active_unit_test_attempts: nextActive,
+            },
+          });
+        }
+      } else {
+        const { data: userRecord } = await learner.supabase.auth.getUser();
+        const meta = userRecord?.user?.user_metadata || {};
+        const nextActive = { ...((meta["active_unit_test_attempts"] as Record<string, unknown>) || {}) };
+        delete nextActive[attemptId];
 
-      const existingAttempts = (meta[`quiz_attempts_${quizSlug}`] as Array<unknown>) || [];
-      const updated = [
-        ...existingAttempts,
-        {
-          id: attemptId,
-          started_at: new Date(startedAtMs).toISOString(),
-          submitted_at: now,
-          correct_count: totalScore,
-          question_count: maxScore,
-          passed,
-          answers,
-        },
-      ];
-      await learner.supabase.auth.updateUser({
-        data: {
-          active_unit_test_attempts: activeAttempts,
-          [`quiz_attempts_${quizSlug}`]: updated,
-        },
-      });
+        const existingAttempts = Array.isArray(meta[`quiz_attempts_${quizSlug}`])
+          ? (meta[`quiz_attempts_${quizSlug}`] as Array<Record<string, unknown>>)
+          : [];
+        const updated = [
+          ...existingAttempts.filter((a) => a && a.id !== attemptId).slice(-2),
+          {
+            id: attemptId,
+            started_at: new Date(startedAtMs).toISOString(),
+            submitted_at: now,
+            correct_count: totalScore,
+            question_count: maxScore,
+            passed,
+          },
+        ];
+        await learner.supabase.auth.updateUser({
+          data: {
+            active_unit_test_attempts: nextActive,
+            [`quiz_attempts_${quizSlug}`]: updated,
+          },
+        });
+      }
     } catch { }
   }
 
