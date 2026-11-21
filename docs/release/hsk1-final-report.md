@@ -1,47 +1,52 @@
 # HanLearn – HSK 1 Pilot Acceptance & Release Freeze Final Report
 
 **Ngày lập báo cáo:** 2026-11-21  
-**Trạng thái kết luận:** **`READY FOR MANUAL UAT`**  
-*(Không phải `RELEASE FROZEN` — chờ bạn học thử trực tiếp trên HTTPS Vercel Preview và xác nhận UAT).*
+**Kết luận chính thức:** **`READY FOR FREEZE APPROVAL`**  
+*(Không tự tuyên bố `RELEASE FROZEN` — chờ phê duyệt đóng băng chính thức của bạn đối với commit `d68cf39` và tag `hsk1-rc1`).*
 
 ---
 
-## 1. Thông tin Phiên bản & Hạ tầng
-1. **Verified Branch / HEAD:** `preview/hsk1-full-curriculum` tại **`111e16eab2735d85ffcf3e4c940405febc2b6a1c`** (`111e16e`).
-2. **Vercel Deployment:** **`state: "success"`** (`Deployment has completed`) cho commit `111e16e`, Deployment Protection (SSO) **BẬT**.
-3. **Migration History (`hhgxrjqkuwdgurphopok`):** **`001–012`** (`202611120001` $\rightarrow$ `202611200012`) đồng bộ 100% giữa local và remote, `0` schema drift.
-
-## 2. Kết quả Kiểm thử Tự động & Độ phủ
-4. **Test Coverage:** Bao phủ 4 trạng thái Version Skew (`Old/New App × Old/New DB`), rollback dual-revision, phân bố đáp án `428` câu (`[107, 107, 107, 107]`), `300` từ vựng HSK 1 + `43` Pilot UUIDs, RLS/anon isolation, và Cloud RPC grading.
-5. **Automated Tests:**
-   - `npm run typecheck`: **PASS** (`0` lỗi).
-   - `npm run build` (Next.js `16.4.6`): **PASS** (`25` routes).
-   - `npm run test:contracts`: **PASS**.
-   - `npx vitest run`: **PASS (`55 / 55` files · `504 / 504` tests)** *(chạy lại tại `111e16e`)*.
-   - `node scripts/check-anonymous-api.mjs`: **PASS**.
-   - `node .local/scripts/sprint8o_post_deploy_smoke.mjs` (Local Next.js $\rightarrow$ Cloud Development): **PASS** (`5/20` toàn A, `20/20` đúng Rev 2, `PT409` anti-replay, `0` leakage).
-   - `npm run test:security`: **FAIL (Pre-existing P2)** tại `src/features/listening/queries.ts` (fallback `content/pilot-hsk1`).
-
-## 3. Nghiệm thu Thực tế, Giáo dục & Giới hạn Con người
-6. **HTTPS Preview UAT thực tế:** **`NOT VERIFIED`** do Vercel SSO chặn truy cập tự động (`HTTP 302` $\rightarrow$ `vercel.com/sso-api`).
-7. **Educational Acceptance:** Structural Content **PASS** · Automated Content QA **PASS** · AI Linguistic Review **COMPLETED (Sprint 8N/8O)**.
-8. **Nội dung cần con người kiểm chứng (`PENDING`):**
-   - **Human Linguistic Review** (giáo viên tiếng Trung độc lập).
-   - **Human Audio Verification** (nghe thực tế TTS/Audio trên Chrome/Edge/Mobile).
-   - **Human Learner Acceptance** (bạn học thử theo [hsk1-manual-uat.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-manual-uat.md)).
-
-## 4. Lỗi, Bảo mật, Backup & Freeze Gate
-9. **P0 / P1 / P2 / P3 tồn tại:** **`0` P0 · `0` P1 · `3` P2 · `2` P3** (chi tiết tại [hsk1-known-issues.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-known-issues.md)).
-10. **Data Integrity & Security Status:** **PASS** (`tables_without_rls = 0`, private keys bị chặn qua API, checksum `60` `review_cards` và `89` `review_events` trùng khớp 100% trước/sau migration).
-11. **Backup / Restore Readiness:** **`NOT VERIFIED`** cho restore drill & Supabase PITR/daily backup. Các snapshot JSON trong `.local/` **không thay thế** bản backup PostgreSQL có thể restore.
-12. **Known Limitations:** Speaking là tự đánh giá; Mini Quiz chưa hiện `explanation_vi` sau khi nộp; chính sách nội dung là `PRIVATE_INVITE_ONLY` (chưa đủ quyền phát hành công khai `PUBLIC_RELEASE`).
-13. **Freeze Gate:** **`FAIL / PENDING`** (thiếu bằng chứng Manual Pilot UAT qua HTTPS Preview của người dùng và backup restore verification).
+## 1. Kết quả Nghiệm thu Dựa Trên Bằng chứng
+- **Automated Quality & Security Gate (`d68cf39`):**
+  - `npm run typecheck`: **PASS** (`0` lỗi).
+  - `npm run test:contracts`: **PASS** (`0` schema drift với [docs/postgres_schema.sql](file:///d:/nam4/prj/HanLearn/docs/postgres_schema.sql)).
+  - `npx vitest run`: **PASS (`55 / 55` files · `506 / 506` tests)**.
+  - `npx eslint src/ tests/sprint8o-assessment-and-catalog-integrity.test.ts`: **PASS** (`0` errors, `8` warnings pre-existing).
+  - `npm run build`: **PASS** (`25` routes).
+  - `npm run test:security`: **PASS** (`545` source files + `.next/static` bundles; `0` rò rỉ Mini Quiz / Unit Test keys).
+  - Cloud Development (`hhgxrjqkuwdgurphopok`): Migrations `001–012` đồng bộ 100%, `tables_without_rls = 0`, checksum `60` `review_cards` và `89` `review_events` bảo toàn 100%, smoke test grading & anti-replay (`PT409`) **PASS**.
+- **Manual UAT (Owner Trial trên Vercel Preview `d68cf39`):**
+  - Chủ dự án đã trực tiếp học thử HanLearn trên Vercel Preview (`CfSsCaJt1TkpktXCcjV5fh5B7nJM`) và xác nhận **không phát hiện lỗi trong quá trình sử dụng** (`0` P0/P1 mới).
 
 ---
 
-## 5. Việc Cần Bạn Xác nhận & Đề xuất Quyết định Cuối cùng
-- **Hành động tiếp theo dành cho bạn:**
-  1. Mở URL Preview, đăng nhập Vercel SSO và thực hiện học thử theo [docs/release/hsk1-manual-uat.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-manual-uat.md).
-  2. Gửi lại các lỗi phát hiện (nếu có) theo mẫu P0–P3.
-  3. Kiểm tra cấu hình backup/PITR trên Supabase Dashboard trước khi xét bước Production sau này.
-- **Kết luận chính thức:** **`READY FOR MANUAL UAT`**
+## 2. Phân định Test Case Đã `PASS` vs. Còn `NOT VERIFIED` / `PENDING`
+- **Đã `PASS` (kết hợp kiểm thử tự động & học thử thực tế của chủ dự án):**
+  - `UAT-A01..A03` (Vercel SSO, Auth, Anonymous & Cross-user isolation), `UAT-B01` (Module 0 trên Preview), `UAT-C01` (Curriculum 32 bài / 10 chặng), `UAT-D01/D02` (300 từ + Pilot UUIDs + SRS 2 chiều), `UAT-E01` (Practice 6 kỹ năng), `UAT-F01/F02` (Mini Quiz & Unit Test Rev 1/2, Mock Exam), `UAT-G01` (Dashboard & Progress).
+- **Vẫn còn `NOT VERIFIED` / `PENDING` (chưa có bằng chứng kiểm định độc lập):**
+  - **Human Native-Speaker Linguistic & Acoustic Review:** `PENDING` (chính sách hiện tại là `PRIVATE_INVITE_ONLY`, chưa đạt `PUBLIC_RELEASE`).
+  - **Supabase Backup / Restore Drill:** `NOT VERIFIED` (chưa diễn tập khôi phục từ backup vật lý/PITR; snapshot JSON trong `.local/` chỉ đối chiếu toàn vẹn, không thay thế bản backup PostgreSQL có thể restore).
+  - **Offline Sync:** `NOT VERIFIED` (ngoài phạm vi MVP).
+
+---
+
+## 3. Known Issues Cần Chấp nhận Trước Khi Freeze (`0` P0 · `0` P1)
+1. **`KI-P2-003` (`P2`):** Mini Quiz chưa hiển thị `explanation_vi` sau khi nộp bài.
+2. **Oversized Old Metadata:** Tài khoản test cũ (`7e94f8e5-...`, `9,556 bytes`) có thể gặp `HTTP 431` trên server `16KB` header nếu chưa dọn bản sao dư thừa theo [hsk1-oversized-metadata-remediation.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-oversized-metadata-remediation.md); tăng trưởng mới đã được chặn 100% ở `d68cf39`.
+3. **Human Native-Speaker Review:** Chưa hoàn tất (`PENDING`).
+4. **Backup / Restore Drill:** Chưa xác minh (`NOT VERIFIED`).
+
+---
+
+## 4. SHA Chính xác Đề xuất Đóng băng
+- **Branch:** `preview/hsk1-full-curriculum`
+- **Release Candidate SHA (Deployed Preview):** **`d68cf39eb2ad4a3ed19e483866321b4dd3c3ff3c`** (`d68cf39`)
+- **Đề xuất Tag:** **`hsk1-rc1`**
+- **Hồ sơ Checksums & Change-Control:** Lưu tại [docs/release/hsk1-freeze-plan.md](file:///d:/nam4/prj/HanLearn/docs/release/hsk1-freeze-plan.md).
+
+---
+
+## 5. Những Quyết định Cuối Cần Bạn Phê duyệt
+1. **Phê duyệt đóng băng Release Candidate `hsk1-rc1` tại commit `d68cf39`** (với các Known Issues & giới hạn `PRIVATE_INVITE_ONLY` đã nêu ở Mục 2 & 3).
+2. **Phê duyệt gắn & push tag `hsk1-rc1`** trỏ tới `d68cf39` (chỉ thực hiện khi bạn ra lệnh).
+3. *(Tách biệt, trước mọi kế hoạch Production)* **Xác nhận kiểm tra Backup/PITR & Restore Drill trên Supabase Dashboard** và quyết định có cần dọn `user_metadata` bản sao cho tài khoản test cũ `7e94f8e5-...` hay không.
